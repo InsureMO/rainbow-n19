@@ -25,8 +25,8 @@ DocsCollector.collect('java.util.function.DoubleBinaryOperator', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'applyAsDouble(double,double)', [
 			[/* method description */
@@ -40,10 +40,11 @@ DocsCollector.collect('java.util.function.DoubleBinaryOperator', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the operator result`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

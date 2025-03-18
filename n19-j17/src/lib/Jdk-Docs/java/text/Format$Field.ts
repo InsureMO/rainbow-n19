@@ -14,7 +14,7 @@ DocsCollector.collect('java.text.Format$Field', [
 		[/* inline code block */ 'i', `FieldPosition`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -28,5 +28,6 @@ DocsCollector.collect('java.text.Format$Field', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -185,7 +185,7 @@ DocsCollector.collect('java.net.URL', [
  as the encoding scheme defined in RFC2396.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -695,7 +695,7 @@ DocsCollector.collect('java.net.URL', [
 					[/* text */ 't', `the URL to compare against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -728,7 +728,7 @@ DocsCollector.collect('java.net.URL', [
 					[/* text */ 't', ` to compare against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if they reference the same remote object;
@@ -752,7 +752,7 @@ DocsCollector.collect('java.net.URL', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O exception occurs.`]
@@ -771,7 +771,7 @@ DocsCollector.collect('java.net.URL', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O exception occurs.`]
@@ -815,8 +815,8 @@ DocsCollector.collect('java.net.URL', [
  for the URL do not define a default port number,
  then -1 is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the port number`]
 			]
@@ -827,8 +827,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* inline code block */ 'i', `URL`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the port number, or -1 if the port is not set`]
 			]
@@ -839,8 +839,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* inline code block */ 'i', `URL`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the authority part of this `],
 				[/* inline code block */ 'i', `URL`]
@@ -863,8 +863,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* text */ 't', ` will
  return identical results.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the file name of this `],
 				[/* inline code block */ 'i', `URL`],
@@ -885,8 +885,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* inline code block */ 'i', `']'`],
 				[/* text */ 't', `).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the host name of this `],
 				[/* inline code block */ 'i', `URL`],
@@ -899,8 +899,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* inline code block */ 'i', `URL`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the path part of this `],
 				[/* inline code block */ 'i', `URL`],
@@ -914,8 +914,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* inline code block */ 'i', `URL`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the protocol of this `],
 				[/* inline code block */ 'i', `URL`],
@@ -928,8 +928,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* inline code block */ 'i', `URL`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the query part of this `],
 				[/* inline code block */ 'i', `URL`],
@@ -946,8 +946,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* inline code block */ 'i', `URL`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the anchor (also known as the "reference") of this
           `],
@@ -963,8 +963,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* inline code block */ 'i', `URL`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the userInfo part of this `],
 				[/* inline code block */ 'i', `URL`],
@@ -984,8 +984,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* text */ 't', `
  method of the stream protocol handler for this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this object.`]
 			]
@@ -1000,8 +1000,8 @@ DocsCollector.collect('java.net.URL', [
 				[/* text */ 't', `
  method of the stream protocol handler for this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this object.`]
 			]
@@ -1019,7 +1019,7 @@ DocsCollector.collect('java.net.URL', [
  to a URI. However, some URLs that are not strictly in compliance
  can not be converted to a URI.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.URISyntaxException', [/* throw description */
 					[/* text */ 't', `if this URL is not formatted strictly according to
@@ -1072,7 +1072,7 @@ DocsCollector.collect('java.net.URL', [
  HttpURLConnection will be returned, and for JAR a
  JarURLConnection will be returned.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O exception occurs.`]
@@ -1184,8 +1184,8 @@ construct a stream protocol handler from a protocol name.
  The hash code is based upon all the URL components relevant for URL
  comparison. As such, this operation is a blocking operation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code for this `],
 				[/* inline code block */ 'i', `URL`],
@@ -1193,4 +1193,5 @@ construct a stream protocol handler from a protocol name.
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -17,8 +17,8 @@ DocsCollector.collect('java.security.PrivilegedExceptionAction', [
 		[/* inline code block */ 'i', `PrivilegedAction`],
 		[/* text */ 't', ` instead.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'run()', [
 			[/* method description */
@@ -27,7 +27,7 @@ DocsCollector.collect('java.security.PrivilegedExceptionAction', [
 				[/* inline code block */ 'i', `AccessController.doPrivileged`],
 				[/* text */ 't', ` after enabling privileges.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.Exception', [/* throw description */
 					[/* text */ 't', `an exceptional condition has occurred.  Each class
@@ -47,4 +47,5 @@ DocsCollector.collect('java.security.PrivilegedExceptionAction', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

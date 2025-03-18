@@ -172,7 +172,8 @@ DocsCollector.collect('java.io.Serial', [
 		[/* text */ 't', ` class.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -81,8 +81,8 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  than would be allowed by a native application.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'destroy()', [
 			[/* method description */
@@ -124,7 +124,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 					[/* text */ 't', ` is called.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the process is the current process`]
@@ -174,7 +174,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 					[/* text */ 't', ` is called.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the process is the current process`]
@@ -204,7 +204,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 					[/* text */ 't', `another object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the `],
@@ -223,8 +223,8 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  Process termination is implementation and operating system specific.
  The process is considered alive as long as the PID is valid.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the process represented by this
@@ -248,8 +248,8 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 				[/* text */ 't', `
  forcibly and immediately terminates the process.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the implementation of `],
@@ -314,8 +314,8 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  method, then calling the hashCode method on each of the two objects
  must produce the same integer result.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object`]
 			]
@@ -332,8 +332,8 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  information about the process if it is available.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a snapshot of information about the process, always non-null`]
 			]
@@ -377,7 +377,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  the CompleteableFuture does not affect the Process.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the process is the current process`]
@@ -396,7 +396,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 				[/* text */ 't', ` for the parent process.
  Note that Processes in a zombie state usually don't have a parent.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager has been installed and
@@ -431,7 +431,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager has been installed and
@@ -460,7 +460,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager has been installed and
@@ -484,7 +484,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 				[/* reference */ 'r', `#compareTo(java.lang.ProcessHandle)`, `compareTo`],
 				[/* text */ 't', ` to compare ProcessHandles.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the implementation
@@ -502,7 +502,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 				[/* reference */ 'r', `java.lang.System#exit(int)`, `System.exit`],
 				[/* text */ 't', ` instead.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager has been installed and
@@ -556,7 +556,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  processes may have been created since the inception of the snapshot.
  `]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager has been installed and
@@ -572,4 +572,5 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

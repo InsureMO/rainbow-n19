@@ -36,8 +36,8 @@ DocsCollector.collect('java.io.Externalizable', [
  interface.`],
 		[/* new line */ 'n']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'readExternal(java.io.ObjectInput)', [
 			[/* method description */
@@ -83,4 +83,5 @@ DocsCollector.collect('java.io.Externalizable', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

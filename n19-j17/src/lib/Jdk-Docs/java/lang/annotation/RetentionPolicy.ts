@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.lang.annotation.RetentionPolicy', [
@@ -10,8 +9,8 @@ DocsCollector.collect('java.lang.annotation.RetentionPolicy', [
 		[/* text */ 't', ` meta-annotation interface to
  specify how long annotations are to be retained.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -44,11 +43,31 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'SOURCE', [
+			[/* enum value description */
+				[/* text */ 't', `Annotations are to be discarded by the compiler.`]
+			],
+		]],
+		[/* enum value */ 'CLASS', [
+			[/* enum value description */
+				[/* text */ 't', `Annotations are to be recorded in the class file by the compiler
+ but need not be retained by the VM at run time.  This is the default
+ behavior.`]
+			],
+		]],
+		[/* enum value */ 'RUNTIME', [
+			[/* enum value description */
+				[/* text */ 't', `Annotations are to be recorded in the class file by the compiler and
+ retained by the VM at run time, so they may be read reflectively.`]
+			],
 		]]
 	],
 ]);

@@ -48,8 +48,8 @@ DocsCollector.collect('java.io.DataOutputStream', [
  the number of bytes written to this data output stream so far.
  If the counter overflows, it will be wrapped to Integer.MAX_VALUE.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the `],
 				[/* inline code block */ 'i', `written`],
@@ -479,7 +479,7 @@ DocsCollector.collect('java.io.DataOutputStream', [
 					[/* text */ 't', ` method of its underlying output stream.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -488,4 +488,5 @@ DocsCollector.collect('java.io.DataOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -129,7 +129,7 @@ DocsCollector.collect('java.util.TreeSet', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -161,7 +161,7 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* inline code block */ 'i', `ClassCastException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.util.Collection)', [
@@ -366,8 +366,8 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this set contains no elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this set contains no elements`]
@@ -448,7 +448,7 @@ DocsCollector.collect('java.util.TreeSet', [
 			[/* method description */
 				[/* block */ 'b', `Returns the first (lowest) element currently in this set.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this set is empty`]
@@ -530,7 +530,7 @@ DocsCollector.collect('java.util.TreeSet', [
 			[/* method description */
 				[/* block */ 'b', `Returns the last (highest) element currently in this set.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this set is empty`]
@@ -583,8 +583,8 @@ DocsCollector.collect('java.util.TreeSet', [
 					[/* text */ 't', ` if this set is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first element, or `],
 				[/* inline code block */ 'i', `null`],
@@ -600,8 +600,8 @@ DocsCollector.collect('java.util.TreeSet', [
 					[/* text */ 't', ` if this set is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the last element, or `],
 				[/* inline code block */ 'i', `null`],
@@ -612,8 +612,8 @@ DocsCollector.collect('java.util.TreeSet', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of elements in this set (its cardinality).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in this set (its cardinality)`]
 			]
@@ -625,8 +625,8 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* text */ 't', ` instance. (The elements
  themselves are not cloned.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a shallow copy of this set`]
 			]
@@ -642,8 +642,8 @@ DocsCollector.collect('java.util.TreeSet', [
 					[/* text */ 't', ` of its elements.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator used to order the elements in this set,
          or `],
@@ -656,8 +656,8 @@ DocsCollector.collect('java.util.TreeSet', [
 			[/* method description */
 				[/* text */ 't', `Returns an iterator over the elements in this set in descending order.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this set in descending order`]
 			]
@@ -666,8 +666,8 @@ DocsCollector.collect('java.util.TreeSet', [
 			[/* method description */
 				[/* text */ 't', `Returns an iterator over the elements in this set in ascending order.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this set in ascending order`]
 			]
@@ -702,8 +702,8 @@ DocsCollector.collect('java.util.TreeSet', [
 					]]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reverse order view of this set`]
 			]
@@ -1235,8 +1235,8 @@ DocsCollector.collect('java.util.TreeSet', [
  same total ordering as the tree set's comparator.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -1248,9 +1248,10 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* text */ 't', `Removes all of the elements from this set.
  The set will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

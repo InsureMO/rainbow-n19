@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc$Kind', [
@@ -23,7 +22,7 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc$Kind', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(int)', [
 			[/* method description */
@@ -196,11 +195,74 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'STATIC', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for a method invoked as with `],
+				[/* inline code block */ 'i', `invokestatic`]
+			],
+		]],
+		[/* enum value */ 'INTERFACE_STATIC', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for a method invoked as with `],
+				[/* inline code block */ 'i', `invokestatic`]
+			],
+		]],
+		[/* enum value */ 'VIRTUAL', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for a method invoked as with `],
+				[/* inline code block */ 'i', `invokevirtual`]
+			],
+		]],
+		[/* enum value */ 'INTERFACE_VIRTUAL', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for a method invoked as with `],
+				[/* inline code block */ 'i', `invokeinterface`]
+			],
+		]],
+		[/* enum value */ 'SPECIAL', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for a method invoked as with `],
+				[/* inline code block */ 'i', `invokespecial`]
+			],
+		]],
+		[/* enum value */ 'INTERFACE_SPECIAL', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for an interface method invoked as with `],
+				[/* inline code block */ 'i', `invokespecial`]
+			],
+		]],
+		[/* enum value */ 'CONSTRUCTOR', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for a constructor`]
+			],
+		]],
+		[/* enum value */ 'GETTER', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for a read accessor for an instance field`]
+			],
+		]],
+		[/* enum value */ 'SETTER', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for a write accessor for an instance field`]
+			],
+		]],
+		[/* enum value */ 'STATIC_GETTER', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for a read accessor for a static field`]
+			],
+		]],
+		[/* enum value */ 'STATIC_SETTER', [
+			[/* enum value description */
+				[/* text */ 't', `A method handle for a write accessor for a static field`]
+			],
 		]]
 	],
 ]);

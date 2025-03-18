@@ -257,8 +257,8 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -290,7 +290,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
@@ -315,7 +315,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 				[/* inline code block */ 'i', `InputStream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
@@ -466,7 +466,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
                       the mark position becomes invalid.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
@@ -497,7 +497,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this stream has not been marked or,
@@ -518,7 +518,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
  or skip() invocations will throw an IOException.
  Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -527,4 +527,5 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

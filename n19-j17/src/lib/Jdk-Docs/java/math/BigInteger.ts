@@ -486,7 +486,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `Object to which this BigInteger is to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the specified Object is a
@@ -521,7 +521,7 @@ DocsCollector.collect('java.math.BigInteger', [
          this method is proportional to the value of this parameter.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this BigInteger is probably prime,
@@ -573,7 +573,7 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `ArithmeticException`],
 				[/* text */ 't', ` is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if the value of `],
@@ -608,8 +608,8 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* reference */ 'r', `#%3Cinit%3E(byte%5B%5D)`, `(byte[])`],
 				[/* text */ 't', ` constructor.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a byte array containing the two's-complement representation of
          this BigInteger.`]
@@ -644,8 +644,8 @@ DocsCollector.collect('java.math.BigInteger', [
  the return value is finite, this conversion can lose
  information about the precision of the BigInteger value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this BigInteger converted to a `],
 				[/* inline code block */ 'i', `double`],
@@ -681,8 +681,8 @@ DocsCollector.collect('java.math.BigInteger', [
  the return value is finite, this conversion can lose
  information about the precision of the BigInteger value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this BigInteger converted to a `],
 				[/* inline code block */ 'i', `float`],
@@ -695,8 +695,8 @@ DocsCollector.collect('java.math.BigInteger', [
  of this BigInteger that differ from its sign bit.  This method is
  useful when implementing bit-vector style sets atop BigIntegers.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `number of bits in the two's complement representation
          of this BigInteger that differ from its sign bit.`]
@@ -716,8 +716,8 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `(ceil(log2(this < 0 ? -this : this+1)))`],
 				[/* text */ 't', `.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `number of bits in the minimal two's-complement
          representation of this BigInteger, `],
@@ -747,7 +747,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `BigInteger to which this BigInteger is to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `-1, 0 or 1 as this BigInteger is numerically less than, equal
          to, or greater than `],
@@ -764,8 +764,8 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `(this == 0? -1 : log2(this & -this))`],
 				[/* text */ 't', `.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `index of the rightmost one bit in this BigInteger.`]
 			]
@@ -774,8 +774,8 @@ DocsCollector.collect('java.math.BigInteger', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code for this BigInteger.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `hash code for this BigInteger.`]
 			]
@@ -805,8 +805,8 @@ DocsCollector.collect('java.math.BigInteger', [
  overall magnitude of the BigInteger value as well as return a
  result with the opposite sign.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this BigInteger converted to an `],
 				[/* inline code block */ 'i', `int`],
@@ -830,7 +830,7 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `ArithmeticException`],
 				[/* text */ 't', ` is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if the value of `],
@@ -853,8 +853,8 @@ DocsCollector.collect('java.math.BigInteger', [
 			[/* method description */
 				[/* text */ 't', `Returns the signum function of this BigInteger.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `-1, 0 or 1 as the value of this BigInteger is negative, zero or
          positive.`]
@@ -873,8 +873,8 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', ` constructor, and
  allows for String concatenation with Java's + operator.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `decimal String representation of this BigInteger.`]
 			]
@@ -904,7 +904,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `radix of the String representation.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `String representation of this BigInteger in the given radix.`]
 			]
@@ -914,8 +914,8 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', `Returns a BigInteger whose value is the absolute value of this
  BigInteger.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `abs(this)`]
 			]
@@ -931,7 +931,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value to be added to this BigInteger.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this + val`]
 			]
@@ -949,7 +949,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value to be AND'ed with this BigInteger.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this & val`]
 			]
@@ -975,7 +975,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value to be complemented and AND'ed with this BigInteger.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this & ~val`]
 			]
@@ -1067,7 +1067,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value with which the GCD is to be computed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `GCD(abs(this), abs(val))`]
 			]
@@ -1083,7 +1083,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value with which the maximum is to be computed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the BigInteger whose value is the greater of this and
          `],
@@ -1102,7 +1102,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value with which the minimum is to be computed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the BigInteger whose value is the lesser of this BigInteger and
          `],
@@ -1217,7 +1217,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value to be multiplied by this BigInteger.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this * val`]
 			]
@@ -1228,8 +1228,8 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `(-this)`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `-this`]
 			]
@@ -1252,7 +1252,7 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `this < q < p`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', ``],
@@ -1277,8 +1277,8 @@ DocsCollector.collect('java.math.BigInteger', [
  returns a negative value if and only if this BigInteger is
  non-negative.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `~this`]
 			]
@@ -1296,7 +1296,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value to be OR'ed with this BigInteger.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this | val`]
 			]
@@ -1391,7 +1391,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `shift distance, in bits.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this << n`]
 			]
@@ -1414,7 +1414,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `shift distance, in bits.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this >> n`]
 			]
@@ -1441,7 +1441,7 @@ DocsCollector.collect('java.math.BigInteger', [
  square root will be less than the real square root if the latter is not
  representable as an integral value.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if `],
@@ -1479,7 +1479,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value to be subtracted from this BigInteger.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this - val`]
 			]
@@ -1497,7 +1497,7 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value to be XOR'ed with this BigInteger.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this ^ val`]
 			]
@@ -1546,7 +1546,7 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', `,
  respectively.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if `],
@@ -1598,8 +1598,8 @@ DocsCollector.collect('java.math.BigInteger', [
  overall magnitude of the BigInteger value as well as return a
  result with the opposite sign.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this BigInteger converted to a `],
 				[/* inline code block */ 'i', `long`],
@@ -1623,7 +1623,7 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `ArithmeticException`],
 				[/* text */ 't', ` is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if the value of `],
@@ -1659,7 +1659,7 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `ArithmeticException`],
 				[/* text */ 't', ` is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if the value of `],
@@ -1722,10 +1722,11 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `value of the BigInteger to return.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a BigInteger with the specified value.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

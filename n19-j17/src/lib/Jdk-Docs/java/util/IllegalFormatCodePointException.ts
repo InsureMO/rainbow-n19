@@ -21,7 +21,7 @@ DocsCollector.collect('java.util.IllegalFormatCodePointException', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
@@ -45,12 +45,13 @@ DocsCollector.collect('java.util.IllegalFormatCodePointException', [
 				[/* reference */ 'r', `java.lang.Character#isValidCodePoint(int)`, `Character.isValidCodePoint(int)`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The illegal Unicode code point`]
 			]
 		]],
 		[/* method */ 'getMessage()', UDF]
 	],
+	/* enum values */ UDF
 ]);

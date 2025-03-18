@@ -36,8 +36,8 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  Otherwise, the method call is re-dispatched to the matching method in this interface.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'adjustInto(java.time.temporal.Temporal,long)', [
 			[/* method description */
@@ -137,8 +137,8 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  to return false, such as when representing a field like minute-of-week.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this field is a component of a date`]
 			]
@@ -184,7 +184,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `the temporal object to query, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the date-time can be queried for this field, false if not`]
 			]
@@ -207,8 +207,8 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  to return false, such as when representing a field like minute-of-week.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this field is a component of a time`]
 			]
@@ -226,8 +226,8 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  the base unit is mentioned, such as 'Year' or 'Era'.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the field, not null`]
 			]
@@ -245,8 +245,8 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the unit defining the base unit of the field, not null`]
 			]
@@ -268,8 +268,8 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  The range is never null. For example, the 'Year' field is shorthand for
  'YearOfForever'. It therefore has a unit of 'Years' and a range of 'Forever'.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the unit defining the range of the field, not null`]
 			]
@@ -292,8 +292,8 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  and it is important not to read too much into them. For example, there
  could be values within the range that are invalid for the field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the range of valid values for the field, not null`]
 			]
@@ -448,7 +448,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `the locale to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the display name for the locale or a suitable default, not null`]
 			]
@@ -496,4 +496,5 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

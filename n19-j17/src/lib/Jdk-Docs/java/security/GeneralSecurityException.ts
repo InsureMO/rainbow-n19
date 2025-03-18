@@ -9,13 +9,13 @@ DocsCollector.collect('java.security.GeneralSecurityException', [
  security exception class that provides type safety for all the
  security-related exception classes that extend from it.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a GeneralSecurityException with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -85,5 +85,6 @@ DocsCollector.collect('java.security.GeneralSecurityException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

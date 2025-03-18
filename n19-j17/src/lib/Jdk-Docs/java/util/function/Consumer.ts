@@ -19,8 +19,8 @@ DocsCollector.collect('java.util.function.Consumer', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accept(java.lang.Object)', [
 			[/* method description */
@@ -31,7 +31,7 @@ DocsCollector.collect('java.util.function.Consumer', [
 					[/* text */ 't', `the input argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'andThen(java.util.function.Consumer)', [
@@ -70,4 +70,5 @@ DocsCollector.collect('java.util.function.Consumer', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

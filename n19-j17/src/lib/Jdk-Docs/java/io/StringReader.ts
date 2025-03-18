@@ -5,7 +5,7 @@ DocsCollector.collect('java.io.StringReader', [
 	[/* class description */
 		[/* text */ 't', `A character stream whose source is a string.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -24,8 +24,8 @@ DocsCollector.collect('java.io.StringReader', [
 			[/* method description */
 				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
 			]
@@ -34,7 +34,7 @@ DocsCollector.collect('java.io.StringReader', [
 			[/* method description */
 				[/* text */ 't', `Tells whether this stream is ready to be read.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If the stream is closed`]
@@ -48,7 +48,7 @@ DocsCollector.collect('java.io.StringReader', [
 			[/* method description */
 				[/* text */ 't', `Reads a single character.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -165,8 +165,8 @@ DocsCollector.collect('java.io.StringReader', [
  Closing a previously closed stream has no effect. This method will block
  while there is another thread blocking on the reader.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'mark(int)', [
@@ -199,7 +199,7 @@ DocsCollector.collect('java.io.StringReader', [
 				[/* text */ 't', `Resets the stream to the most recent mark, or to the beginning of the
  string if it has never been marked.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -208,4 +208,5 @@ DocsCollector.collect('java.io.StringReader', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -114,14 +114,14 @@ DocsCollector.collect('java.io.Console', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'readPassword()', [
 			[/* method description */
 				[/* text */ 't', `Reads a password or passphrase from the console with echoing disabled`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOError', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs.`]
@@ -287,8 +287,8 @@ DocsCollector.collect('java.io.Console', [
 				[/* text */ 't', ` object
  associated with this console.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The printwriter associated with this console`]
 			]
@@ -358,8 +358,8 @@ DocsCollector.collect('java.io.Console', [
  by a linefeed, or an end of stream.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The reader associated with this console`]
 			]
@@ -368,7 +368,7 @@ DocsCollector.collect('java.io.Console', [
 			[/* method description */
 				[/* text */ 't', `Reads a single line of text from the console.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOError', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs.`]
@@ -445,8 +445,8 @@ DocsCollector.collect('java.io.Console', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* reference */ 'r', `java.nio.charset.Charset`, `Charset`],
@@ -460,9 +460,10 @@ DocsCollector.collect('java.io.Console', [
 				[/* text */ 't', `Flushes the console and forces any buffered output to be written
  immediately .`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

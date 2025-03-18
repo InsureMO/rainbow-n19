@@ -103,14 +103,14 @@ DocsCollector.collect('java.util.ListResourceBundle', [
  of the methods in this class are thread-safe.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -127,8 +127,8 @@ DocsCollector.collect('java.util.ListResourceBundle', [
  element is the value associated with that key.  See the class
  description for details.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of an `],
 				[/* inline code block */ 'i', `Object`],
@@ -147,8 +147,8 @@ DocsCollector.collect('java.util.ListResourceBundle', [
 				[/* inline code block */ 'i', `ResourceBundle`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Set`],
@@ -168,7 +168,7 @@ DocsCollector.collect('java.util.ListResourceBundle', [
 					[/* text */ 't', `the key for the desired object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the object for the given key, or null`]
 			]
@@ -182,8 +182,8 @@ DocsCollector.collect('java.util.ListResourceBundle', [
 				[/* inline code block */ 'i', `ResourceBundle`],
 				[/* text */ 't', ` and its parent bundles.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Enumeration`],
@@ -194,4 +194,5 @@ DocsCollector.collect('java.util.ListResourceBundle', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

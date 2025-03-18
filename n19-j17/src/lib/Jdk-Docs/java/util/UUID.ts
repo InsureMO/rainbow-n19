@@ -61,7 +61,7 @@ DocsCollector.collect('java.util.UUID', [
  "Algorithms for Creating a Time-Based UUID".`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(long,long)', [
 			[/* constructor description */
@@ -111,7 +111,7 @@ DocsCollector.collect('java.util.UUID', [
 					[/* text */ 't', `The object to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same; `],
@@ -138,7 +138,7 @@ DocsCollector.collect('java.util.UUID', [
  then this method throws UnsupportedOperationException.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `If this UUID is not a version 1 UUID`]
@@ -167,7 +167,7 @@ DocsCollector.collect('java.util.UUID', [
 					[/* text */ 't', ` is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `-1, 0 or 1 as this `],
 				[/* inline code block */ 'i', `UUID`],
@@ -182,8 +182,8 @@ DocsCollector.collect('java.util.UUID', [
 				[/* inline code block */ 'i', `UUID`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A hash code value for this `],
 				[/* inline code block */ 'i', `UUID`]
@@ -216,8 +216,8 @@ DocsCollector.collect('java.util.UUID', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The variant number of this `],
 				[/* inline code block */ 'i', `UUID`]
@@ -245,8 +245,8 @@ DocsCollector.collect('java.util.UUID', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The version number of this `],
 				[/* inline code block */ 'i', `UUID`]
@@ -284,8 +284,8 @@ DocsCollector.collect('java.util.UUID', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string representation of this `],
 				[/* inline code block */ 'i', `UUID`]
@@ -295,8 +295,8 @@ DocsCollector.collect('java.util.UUID', [
 			[/* method description */
 				[/* text */ 't', `Returns the least significant 64 bits of this UUID's 128 bit value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The least significant 64 bits of this UUID's 128 bit value`]
 			]
@@ -305,8 +305,8 @@ DocsCollector.collect('java.util.UUID', [
 			[/* method description */
 				[/* text */ 't', `Returns the most significant 64 bits of this UUID's 128 bit value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The most significant 64 bits of this UUID's 128 bit value`]
 			]
@@ -325,7 +325,7 @@ DocsCollector.collect('java.util.UUID', [
  version type 1.  If this UUID is not a time-based UUID then this method
  throws UnsupportedOperationException.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `If this UUID is not a version 1 UUID`]
@@ -359,7 +359,7 @@ DocsCollector.collect('java.util.UUID', [
  this method throws UnsupportedOperationException.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `If this UUID is not a version 1 UUID`]
@@ -412,7 +412,7 @@ DocsCollector.collect('java.util.UUID', [
 					[/* inline code block */ 'i', `UUID`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A `],
 				[/* inline code block */ 'i', `UUID`],
@@ -428,12 +428,13 @@ DocsCollector.collect('java.util.UUID', [
 				[/* text */ 't', ` is generated using a cryptographically strong pseudo
  random number generator.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A randomly generated `],
 				[/* inline code block */ 'i', `UUID`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

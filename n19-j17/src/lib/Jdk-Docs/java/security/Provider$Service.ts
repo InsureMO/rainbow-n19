@@ -36,7 +36,7 @@ DocsCollector.collect('java.security.Provider$Service', [
 		]],
 		[/* block */ 'b', `Instances of this class are immutable.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.security.Provider,java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.Map)', [
 			[/* constructor description */
@@ -119,8 +119,8 @@ DocsCollector.collect('java.security.Provider$Service', [
 				[/* inline code block */ 'i', `SHA-1`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the algorithm of this service`]
 			]
@@ -149,8 +149,8 @@ DocsCollector.collect('java.security.Provider$Service', [
 			[/* method description */
 				[/* text */ 't', `Return the name of the class implementing this service.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the class implementing this service`]
 			]
@@ -161,8 +161,8 @@ DocsCollector.collect('java.security.Provider$Service', [
 				[/* inline code block */ 'i', `MessageDigest`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the type of this service`]
 			]
@@ -171,8 +171,8 @@ DocsCollector.collect('java.security.Provider$Service', [
 			[/* method description */
 				[/* text */ 't', `Return the Provider of this service.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Provider of this service`]
 			]
@@ -221,11 +221,12 @@ DocsCollector.collect('java.security.Provider$Service', [
 			[/* method description */
 				[/* text */ 't', `Return a String representation of this service.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a String representation of this service.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -143,8 +143,8 @@ DocsCollector.collect('java.lang.Package', [
 			[/* text */ 't', ` methods.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
@@ -361,8 +361,8 @@ DocsCollector.collect('java.lang.Package', [
 			[/* method description */
 				[/* text */ 't', `Returns true if this package is sealed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the package is sealed, false otherwise`]
 			]
@@ -379,7 +379,7 @@ DocsCollector.collect('java.lang.Package', [
 					[/* text */ 't', `the code source URL`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this package is sealed with respect to the given `],
 				[/* inline code block */ 'i', `url`]
@@ -389,8 +389,8 @@ DocsCollector.collect('java.lang.Package', [
 			[/* method description */
 				[/* text */ 't', `Return the hash code computed from the package name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code computed from the package name.`]
 			]
@@ -412,8 +412,8 @@ DocsCollector.collect('java.lang.Package', [
 				[/* block */ 'b', `Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations present on this element`]
 			]
@@ -436,8 +436,8 @@ DocsCollector.collect('java.lang.Package', [
 				[/* block */ 'b', `Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations directly present on this element`]
 			]
@@ -446,8 +446,8 @@ DocsCollector.collect('java.lang.Package', [
 			[/* method description */
 				[/* text */ 't', `Return the title of this package.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the title of the implementation, `],
 				[/* inline code block */ 'i', `null`],
@@ -461,8 +461,8 @@ DocsCollector.collect('java.lang.Package', [
 				[/* text */ 't', `
  is returned if it is not known.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the vendor that implemented this package, `],
 				[/* inline code block */ 'i', `null`],
@@ -479,8 +479,8 @@ DocsCollector.collect('java.lang.Package', [
  package version strings used for this implementation
  by this vendor for this package.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the version of the implementation, `],
 				[/* inline code block */ 'i', `null`],
@@ -491,8 +491,8 @@ DocsCollector.collect('java.lang.Package', [
 			[/* method description */
 				[/* text */ 't', `Return the name of this package.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The fully-qualified name of this package as defined in section `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-6.html#jls-6.5.3`, `6.5.3`],
@@ -508,8 +508,8 @@ DocsCollector.collect('java.lang.Package', [
 			[/* method description */
 				[/* text */ 't', `Return the title of the specification that this package implements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the specification title, `],
 				[/* inline code block */ 'i', `null`],
@@ -522,8 +522,8 @@ DocsCollector.collect('java.lang.Package', [
  or company that owns and maintains the specification
  of the classes that implement this package.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the specification vendor, `],
 				[/* inline code block */ 'i', `null`],
@@ -619,8 +619,8 @@ DocsCollector.collect('java.lang.Package', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the specification version, `],
 				[/* inline code block */ 'i', `null`],
@@ -634,8 +634,8 @@ DocsCollector.collect('java.lang.Package', [
  If the package title is defined it is appended.
  If the package version is defined it is appended.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of the package.`]
 			]
@@ -715,8 +715,8 @@ DocsCollector.collect('java.lang.Package', [
 					[/* text */ 't', ` instance which is the caller's class loader.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The array of `],
 				[/* inline code block */ 'i', `Package`],
@@ -725,4 +725,5 @@ DocsCollector.collect('java.lang.Package', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

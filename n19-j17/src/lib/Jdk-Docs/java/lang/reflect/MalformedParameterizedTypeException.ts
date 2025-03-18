@@ -8,7 +8,7 @@ DocsCollector.collect('java.lang.reflect.MalformedParameterizedTypeException', [
  For example, if the number of type arguments to a parameterized type
  is wrong.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.reflect.MalformedParameterizedTypeException', [
 				[/* text */ 't', ` with
  no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -36,5 +36,6 @@ DocsCollector.collect('java.lang.reflect.MalformedParameterizedTypeException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

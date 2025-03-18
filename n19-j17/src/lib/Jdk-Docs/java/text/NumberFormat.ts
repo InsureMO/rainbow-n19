@@ -270,7 +270,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -293,7 +293,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `the parse position`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the parsed value`]
 			]
@@ -397,7 +397,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -413,8 +413,8 @@ DocsCollector.collect('java.text.NumberFormat', [
  as "1,234,567". The grouping separator as well as the size of each group
  is locale dependent and is determined by sub-classes of NumberFormat.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if grouping is used;
@@ -432,8 +432,8 @@ DocsCollector.collect('java.text.NumberFormat', [
  by the parse operation is locale dependent and determined by sub-classes
  of NumberFormat.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if numbers should be parsed as integers only;
@@ -552,8 +552,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `Returns the maximum number of digits allowed in the fraction portion of a
  number.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum number of digits.`]
 			]
@@ -563,8 +563,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `Returns the maximum number of digits allowed in the integer portion of a
  number.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum number of digits`]
 			]
@@ -574,8 +574,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `Returns the minimum number of digits allowed in the fraction portion of a
  number.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum number of digits`]
 			]
@@ -585,8 +585,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `Returns the minimum number of digits allowed in the integer portion of a
  number.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum number of digits`]
 			]
@@ -595,8 +595,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Overrides hashCode.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -637,8 +637,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Overrides Cloneable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -756,7 +756,7 @@ DocsCollector.collect('java.text.NumberFormat', [
  Subclasses which handle different rounding modes should override
  this method.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `The default implementation
@@ -787,7 +787,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the number format class
@@ -813,8 +813,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `NumberFormat`],
@@ -832,8 +832,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* reference */ 'r', `#getNumberInstance()`, `getNumberInstance()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `NumberFormat`],
@@ -862,8 +862,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a number format for integer values`]
 			]
@@ -882,8 +882,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `NumberFormat`],
@@ -905,8 +905,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `NumberFormat`],
@@ -923,8 +923,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* reference */ 'r', `java.text.NumberFormat.Style#SHORT`, `"SHORT"`],
 				[/* text */ 't', ` format style.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A `],
 				[/* inline code block */ 'i', `NumberFormat`],
@@ -997,7 +997,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `the desired locale`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `NumberFormat`],
@@ -1017,7 +1017,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `the desired locale`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `NumberFormat`],
@@ -1041,7 +1041,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `the desired locale`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a number format for integer values`]
 			]
@@ -1055,7 +1055,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `the desired locale`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `NumberFormat`],
@@ -1072,7 +1072,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `the desired locale`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `NumberFormat`],
@@ -1098,8 +1098,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An array of locales for which localized
          `],
@@ -1153,7 +1153,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', ` otherwise`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMaximumFractionDigits(int)', [
@@ -1171,7 +1171,7 @@ DocsCollector.collect('java.text.NumberFormat', [
  upper limit to this value appropriate to the numeric type being formatted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMaximumIntegerDigits(int)', [
@@ -1189,7 +1189,7 @@ DocsCollector.collect('java.text.NumberFormat', [
  upper limit to this value appropriate to the numeric type being formatted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMinimumFractionDigits(int)', [
@@ -1207,7 +1207,7 @@ DocsCollector.collect('java.text.NumberFormat', [
  upper limit to this value appropriate to the numeric type being formatted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMinimumIntegerDigits(int)', [
@@ -1225,7 +1225,7 @@ DocsCollector.collect('java.text.NumberFormat', [
  upper limit to this value appropriate to the numeric type being formatted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setParseIntegerOnly(boolean)', [
@@ -1242,7 +1242,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', ` otherwise`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
@@ -1278,4 +1278,5 @@ DocsCollector.collect('java.text.NumberFormat', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

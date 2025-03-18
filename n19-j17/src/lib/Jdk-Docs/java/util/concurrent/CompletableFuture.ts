@@ -187,13 +187,13 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new incomplete CompletableFuture.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -220,7 +220,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -248,7 +248,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -279,7 +279,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -306,7 +306,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -334,7 +334,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -365,7 +365,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -392,7 +392,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -420,7 +420,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -451,7 +451,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -482,7 +482,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -514,7 +514,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -549,7 +549,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -562,8 +562,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  class as this CompletableFuture. The default implementation
  returns an instance of class CompletableFuture.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new CompletableFuture`]
 			]
@@ -601,7 +601,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -626,7 +626,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -653,7 +653,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -700,7 +700,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the function to use to compute another CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -738,7 +738,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the function to use to compute another CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -778,7 +778,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -804,7 +804,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  processing.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this task is now cancelled`]
@@ -821,7 +821,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the result value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this invocation caused this CompletableFuture
@@ -841,7 +841,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the exception`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this invocation caused this CompletableFuture
@@ -856,8 +856,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', ` if this CompletableFuture was cancelled
  before it completed normally.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this CompletableFuture was cancelled
@@ -875,8 +875,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `, and abrupt termination of a
  CompletionStage action.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this CompletableFuture completed
@@ -890,8 +890,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', ` if completed in any fashion: normally,
  exceptionally, or via cancellation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if completed`]
@@ -904,8 +904,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  This method is designed for use in monitoring system state, not
  for synchronization control.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of dependent CompletableFutures`]
 			]
@@ -923,8 +923,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', ` followed by the number of CompletableFutures
  dependent upon its completion, if any.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string identifying this CompletableFuture, as well as its state`]
 			]
@@ -951,7 +951,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -979,7 +979,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1010,7 +1010,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1036,7 +1036,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1063,7 +1063,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1093,7 +1093,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1119,7 +1119,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1146,7 +1146,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1176,7 +1176,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1200,7 +1200,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1225,7 +1225,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1252,7 +1252,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1275,7 +1275,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1299,7 +1299,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1325,7 +1325,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1342,7 +1342,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  to complete this CompletableFuture`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this CompletableFuture`]
 			]
@@ -1362,7 +1362,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this CompletableFuture`]
 			]
@@ -1390,7 +1390,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', ` parameter`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this CompletableFuture`]
 			]
@@ -1409,8 +1409,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  prevent clients from completing, while still being able to
  arrange dependent actions.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletableFuture`]
 			]
@@ -1430,7 +1430,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  exceptionally`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1463,7 +1463,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', ` parameter`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this CompletableFuture`]
 			]
@@ -1472,8 +1472,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* method description */
 				[/* text */ 't', `Returns this CompletableFuture.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this CompletableFuture`]
 			]
@@ -1517,7 +1517,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the action to perform`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1562,7 +1562,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the action to perform`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1610,7 +1610,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1644,8 +1644,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1660,8 +1660,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  task.  This method may be overridden in subclasses to return
  an Executor that provides at least one independent thread.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the executor`]
 			]
@@ -1676,7 +1676,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the completed CompletableFuture`]
 			]
@@ -1691,7 +1691,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the exception`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the exceptionally completed CompletableFuture`]
 			]
@@ -1710,7 +1710,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  to complete the returned CompletableFuture`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletableFuture`]
 			]
@@ -1730,7 +1730,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletableFuture`]
 			]
@@ -1748,7 +1748,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the completed CompletionStage`]
 			]
@@ -1766,7 +1766,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the exception`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the exceptionally completed CompletionStage`]
 			]
@@ -1853,7 +1853,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  returned CompletableFuture`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletableFuture`]
 			]
@@ -1873,7 +1873,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletableFuture`]
 			]
@@ -1901,7 +1901,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', ` parameter`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new delayed executor`]
 			]
@@ -1932,7 +1932,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the base executor`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new delayed executor`]
 			]
@@ -1942,7 +1942,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `Waits if necessary for this future to complete, and then
  returns its result.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.concurrent.CancellationException', [/* throw description */
 					[/* text */ 't', `if this future was cancelled`]
@@ -2026,7 +2026,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', ` with the underlying
  exception as its cause.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.concurrent.CancellationException', [/* throw description */
 					[/* text */ 't', `if the computation was cancelled`]
@@ -2079,8 +2079,9 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the completion value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

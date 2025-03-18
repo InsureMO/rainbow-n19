@@ -83,7 +83,7 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 			[/* text */ 't', ` instead.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.invoke.MethodHandle)', [
 			[/* constructor description */
@@ -155,8 +155,8 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a method handle which always invokes this call site's current target`]
 			]
@@ -182,8 +182,8 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
  of a previous read of the target from memory, and may fail to see
  a recent update to the target by another thread.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the linkage state of this call site, a method handle which can change over time`]
 			]
@@ -471,4 +471,5 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

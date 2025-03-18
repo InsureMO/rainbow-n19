@@ -68,8 +68,8 @@ DocsCollector.collect('java.util.Base64', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getDecoder()', [
 			[/* method description */
@@ -80,8 +80,8 @@ DocsCollector.collect('java.util.Base64', [
 				[/* text */ 't', `Basic`],
 				[/* text */ 't', ` type base64 encoding scheme.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A Base64 decoder.`]
 			]
@@ -95,8 +95,8 @@ DocsCollector.collect('java.util.Base64', [
 				[/* text */ 't', `MIME`],
 				[/* text */ 't', ` type base64 decoding scheme.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A Base64 decoder.`]
 			]
@@ -111,8 +111,8 @@ DocsCollector.collect('java.util.Base64', [
 				[/* text */ 't', ` type base64
  encoding scheme.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A Base64 decoder.`]
 			]
@@ -126,8 +126,8 @@ DocsCollector.collect('java.util.Base64', [
 				[/* text */ 't', `Basic`],
 				[/* text */ 't', ` type base64 encoding scheme.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A Base64 encoder.`]
 			]
@@ -141,8 +141,8 @@ DocsCollector.collect('java.util.Base64', [
 				[/* text */ 't', `MIME`],
 				[/* text */ 't', ` type base64 encoding scheme.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A Base64 encoder.`]
 			]
@@ -190,11 +190,12 @@ DocsCollector.collect('java.util.Base64', [
 				[/* text */ 't', ` type base64
  encoding scheme.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A Base64 encoder.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

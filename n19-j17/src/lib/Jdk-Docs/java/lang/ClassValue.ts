@@ -11,14 +11,14 @@ DocsCollector.collect('java.lang.ClassValue', [
 		[/* text */ 't', ` to cache information needed to
  perform the message send quickly, for each class encountered.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -59,7 +59,7 @@ DocsCollector.collect('java.lang.ClassValue', [
 					[/* text */ 't', `the type whose class value must be computed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the newly computed value associated with this `],
 				[/* inline code block */ 'i', `ClassValue`],
@@ -317,4 +317,5 @@ DocsCollector.collect('java.lang.ClassValue', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

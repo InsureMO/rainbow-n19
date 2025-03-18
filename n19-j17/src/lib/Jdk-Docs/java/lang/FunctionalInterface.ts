@@ -53,7 +53,8 @@ DocsCollector.collect('java.lang.FunctionalInterface', [
  annotation is present on the interface declaration.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

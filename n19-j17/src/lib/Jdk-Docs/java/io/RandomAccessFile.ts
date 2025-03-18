@@ -44,7 +44,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			[/* text */ 't', ` may be thrown if the stream has been closed.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.File,java.lang.String)', [
 			[/* constructor description */
@@ -340,7 +340,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until the byte is read, the end of the stream
  is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file has reached the end.`]
@@ -377,7 +377,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until the byte is read, the end of the stream
  is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file has reached the end.`]
@@ -418,7 +418,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until the two bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file reaches the end before reading
@@ -462,7 +462,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until the eight bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file reaches the end before reading
@@ -506,7 +506,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until the four bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file reaches the end before reading
@@ -552,7 +552,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until the four bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file reaches the end before reading
@@ -579,7 +579,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until the byte is read, the end of the stream
  is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file has reached the end.`]
@@ -618,7 +618,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until the two bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file reaches the end before reading
@@ -638,7 +638,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', `Returns the opaque file descriptor object associated with this
  stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -676,7 +676,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  return and the byte following it are read (to see if it is a newline),
  the end of the file is reached, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -713,7 +713,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until all the bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file reaches the end before
@@ -752,8 +752,8 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  channel, and vice versa.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the file channel associated with this file`]
 			]
@@ -806,7 +806,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until the eight bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file reaches the end before reading
@@ -850,7 +850,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  This method blocks until the two bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this file reaches the end before reading
@@ -1249,7 +1249,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs. Not thrown if
@@ -1428,7 +1428,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			[/* method description */
 				[/* text */ 't', `Returns the current offset in this file.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -1443,7 +1443,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			[/* method description */
 				[/* text */ 't', `Returns the length of this file.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -1512,7 +1512,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* block */ 'b', ` If this file has an associated channel then the channel is closed
  as well.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -1614,4 +1614,5 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

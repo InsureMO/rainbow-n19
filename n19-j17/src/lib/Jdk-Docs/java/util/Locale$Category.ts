@@ -1,4 +1,3 @@
-import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.util.Locale$Category', [
@@ -7,8 +6,8 @@ DocsCollector.collect('java.util.Locale$Category', [
  the default locale for the specific functionality represented by the
  category.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -41,11 +40,25 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'DISPLAY', [
+			[/* enum value description */
+				[/* text */ 't', `Category used to represent the default locale for
+ displaying user interfaces.`]
+			],
+		]],
+		[/* enum value */ 'FORMAT', [
+			[/* enum value description */
+				[/* text */ 't', `Category used to represent the default locale for
+ formatting dates, numbers, and/or currencies.`]
+			],
 		]]
 	],
 ]);

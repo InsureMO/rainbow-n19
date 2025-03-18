@@ -16,8 +16,8 @@ DocsCollector.collect('java.io.FileFilter', [
 			[/* text */ 't', ` class.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accept(java.io.File)', [
 			[/* method description */
@@ -29,7 +29,7 @@ DocsCollector.collect('java.io.FileFilter', [
 					[/* text */ 't', `The abstract pathname to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if `],
@@ -39,4 +39,5 @@ DocsCollector.collect('java.io.FileFilter', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

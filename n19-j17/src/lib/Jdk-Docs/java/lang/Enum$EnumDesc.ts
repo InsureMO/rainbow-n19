@@ -10,8 +10,8 @@ DocsCollector.collect('java.lang.Enum$EnumDesc', [
 		[/* inline code block */ 'i', `enum`],
 		[/* text */ 't', ` constant.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)', UDF],
 		[/* method */ 'toString()', UDF],
@@ -43,4 +43,5 @@ DocsCollector.collect('java.lang.Enum$EnumDesc', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

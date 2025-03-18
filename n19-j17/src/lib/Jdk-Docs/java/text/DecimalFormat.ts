@@ -814,7 +814,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			]]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -831,7 +831,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  return the most appropriate sub-class of NumberFormat for a given
  locale.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -906,7 +906,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -922,8 +922,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
  `],
 				[/* block */ 'b', `Example: Decimal ON: 12345 → 12345.; OFF: 12345 → 12345`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the decimal separator is always shown;
@@ -941,8 +941,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `. The default value is false.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the parse method returns BigDecimal;
@@ -1032,8 +1032,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* reference */ 'r', `java.text.NumberFormat#setGroupingUsed(boolean)`, `setGroupingUsed(false)`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the grouping size`]
 			]
@@ -1050,8 +1050,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', ` objects, the lower of the return value and
  340 is used.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum number of digits.`]
 			]
@@ -1068,8 +1068,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', ` objects, the lower of the return value and
  309 is used.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum number of digits`]
 			]
@@ -1086,8 +1086,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', ` objects, the lower of the return value and
  340 is used.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum number of digits`]
 			]
@@ -1104,8 +1104,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', ` objects, the lower of the return value and
  309 is used.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum number of digits`]
 			]
@@ -1115,8 +1115,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `Gets the multiplier for use in percent, per mille, and similar
  formats.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the multiplier`]
 			]
@@ -1125,8 +1125,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			[/* method description */
 				[/* text */ 't', `Overrides hashCode`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -1298,8 +1298,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			[/* method description */
 				[/* text */ 't', `Standard override; no change in semantics.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -1310,8 +1310,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
  `],
 				[/* block */ 'b', `Examples: -123, ($123) (with negative suffix), sFr-123`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the negative prefix`]
 			]
@@ -1322,8 +1322,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
  `],
 				[/* block */ 'b', `Examples: -123%, ($123) (with positive suffixes)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the negative suffix`]
 			]
@@ -1334,8 +1334,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
  `],
 				[/* block */ 'b', `Examples: +123, $123, sFr123`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the positive prefix`]
 			]
@@ -1346,8 +1346,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
  `],
 				[/* block */ 'b', `Example: 123%`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the positive suffix`]
 			]
@@ -1357,8 +1357,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `Synthesizes a localized pattern string that represents the current
  state of this Format object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a localized pattern string`]
 			]
@@ -1368,8 +1368,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `Synthesizes a pattern string that represents the current state
  of this Format object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a pattern string`]
 			]
@@ -1486,8 +1486,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this DecimalFormat.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The `],
 				[/* inline code block */ 'i', `RoundingMode`],
@@ -1541,8 +1541,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `Returns a copy of the decimal format symbols, which is generally not
  changed by the programmer or user.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of the desired DecimalFormatSymbols`]
 			]
@@ -1557,8 +1557,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `
  on this number format's symbols.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the currency used by this decimal format, or `],
 				[/* inline code block */ 'i', `null`]
@@ -1698,7 +1698,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* text */ 't', `desired DecimalFormatSymbols`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDecimalSeparatorAlwaysShown(boolean)', [
@@ -1718,7 +1718,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* text */ 't', ` otherwise`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setGroupingSize(int)', [
@@ -1781,7 +1781,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  upper limit to this value appropriate to the numeric type being formatted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMaximumIntegerDigits(int)', [
@@ -1805,7 +1805,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  upper limit to this value appropriate to the numeric type being formatted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMinimumFractionDigits(int)', [
@@ -1829,7 +1829,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  upper limit to this value appropriate to the numeric type being formatted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMinimumIntegerDigits(int)', [
@@ -1853,7 +1853,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  upper limit to this value appropriate to the numeric type being formatted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMultiplier(int)', [
@@ -1874,7 +1874,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* text */ 't', `the new multiplier`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setNegativePrefix(java.lang.String)', [
@@ -1888,7 +1888,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* text */ 't', `the new negative prefix`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setNegativeSuffix(java.lang.String)', [
@@ -1902,7 +1902,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* text */ 't', `the new negative suffix`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setParseBigDecimal(boolean)', [
@@ -1924,7 +1924,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* text */ 't', ` otherwise`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setPositivePrefix(java.lang.String)', [
@@ -1938,7 +1938,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* text */ 't', `the new positive prefix`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setPositiveSuffix(java.lang.String)', [
@@ -1952,7 +1952,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* text */ 't', `the new positive suffix`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
@@ -1978,4 +1978,5 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

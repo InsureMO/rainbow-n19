@@ -15,7 +15,7 @@ DocsCollector.collect('java.util.IllegalFormatPrecisionException', [
 		[/* text */ 't', ` will be used
  in the exception.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
@@ -39,12 +39,13 @@ DocsCollector.collect('java.util.IllegalFormatPrecisionException', [
 				[/* inline code block */ 'i', `Integer.MIN_VALUE`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The precision`]
 			]
 		]],
 		[/* method */ 'getMessage()', UDF]
 	],
+	/* enum values */ UDF
 ]);

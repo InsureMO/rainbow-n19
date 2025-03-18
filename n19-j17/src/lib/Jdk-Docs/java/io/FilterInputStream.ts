@@ -70,8 +70,8 @@ DocsCollector.collect('java.io.FilterInputStream', [
 				[/* inline code block */ 'i', `in.markSupported()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this stream type supports the
@@ -100,7 +100,7 @@ DocsCollector.collect('java.io.FilterInputStream', [
 					[/* text */ 't', `.available().`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -137,7 +137,7 @@ DocsCollector.collect('java.io.FilterInputStream', [
 					[/* text */ 't', ` and returns the result.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -327,7 +327,7 @@ DocsCollector.collect('java.io.FilterInputStream', [
                       the mark position becomes invalid.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
@@ -355,7 +355,7 @@ DocsCollector.collect('java.io.FilterInputStream', [
  If this happens within readlimit bytes, it allows the outer
  code to reset the stream and try another parser.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the stream has not been marked or if the
@@ -373,7 +373,7 @@ DocsCollector.collect('java.io.FilterInputStream', [
 				[/* inline code block */ 'i', `in.close()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -382,4 +382,5 @@ DocsCollector.collect('java.io.FilterInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

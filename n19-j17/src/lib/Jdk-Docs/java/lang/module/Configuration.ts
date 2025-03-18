@@ -97,8 +97,8 @@ DocsCollector.collect('java.lang.module.Configuration', [
     });`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'resolve(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)', [
 			[/* method description */
@@ -223,8 +223,8 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this configuration.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly empty string describing this configuration`]
 			]
@@ -237,8 +237,8 @@ DocsCollector.collect('java.lang.module.Configuration', [
 				[/* text */ 't', ` then an
  empty list is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable list of this parent configurations`]
 			]
@@ -263,7 +263,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
 					[/* text */ 't', `The module name of the resolved module to find`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The resolved module with the given name or an empty `],
 				[/* inline code block */ 'i', `Optional`],
@@ -275,8 +275,8 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			[/* method description */
 				[/* text */ 't', `Returns an unmodifiable set of the resolved modules in this configuration.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of the resolved modules
          in this configuration`]
@@ -289,8 +289,8 @@ DocsCollector.collect('java.lang.module.Configuration', [
 				[/* text */ 't', ` configuration. There are no modules in the
  empty configuration. It has no parents.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The empty configuration`]
 			]
@@ -568,4 +568,5 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

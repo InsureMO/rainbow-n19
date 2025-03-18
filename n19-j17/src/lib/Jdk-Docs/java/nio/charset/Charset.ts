@@ -476,7 +476,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
  between sequences of sixteen-bit UTF-16 code units (that is, sequences
  of chars) and sequences of bytes. `]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.String[])', [
 			[/* constructor description */
@@ -563,7 +563,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', `The given charset`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the given charset is contained in this charset`]
@@ -573,8 +573,8 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* method description */
 				[/* text */ 't', `Constructs a new decoder for this charset.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A new decoder for this charset`]
 			]
@@ -583,7 +583,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* method description */
 				[/* text */ 't', `Constructs a new encoder for this charset.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `If this charset does not support encoding`]
@@ -612,8 +612,8 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', `. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this charset supports encoding`]
@@ -632,7 +632,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this charset is equal to the
@@ -645,8 +645,8 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* external link */ 'a', `http://www.iana.org/assignments/character-sets`, `IANA Charset Registry`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this charset is known by its
@@ -666,7 +666,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', `The charset to which this charset is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A negative integer, zero, or a positive integer as this charset
          is less than, equal to, or greater than the specified charset`]
@@ -676,8 +676,8 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* method description */
 				[/* text */ 't', `Computes a hashcode for this charset.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An integer hashcode`]
 			]
@@ -686,8 +686,8 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* method description */
 				[/* text */ 't', `Returns this charset's canonical name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The canonical name of this charset`]
 			]
@@ -696,8 +696,8 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this charset.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string describing this charset`]
 			]
@@ -723,7 +723,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', `The string to be encoded`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A byte buffer containing the encoded characters`]
 			]
@@ -766,7 +766,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', `The char buffer to be encoded`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A byte buffer containing the encoded characters`]
 			]
@@ -809,7 +809,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', `The byte buffer to be decoded`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A char buffer containing the decoded characters`]
 			]
@@ -818,8 +818,8 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* method description */
 				[/* text */ 't', `Returns a set containing this charset's aliases.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An immutable set of this charset's aliases`]
 			]
@@ -833,8 +833,8 @@ DocsCollector.collect('java.nio.charset.Charset', [
  charset's canonical name.  Concrete subclasses of this class may
  override this method in order to provide a localized display name. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The display name of this charset in the default locale`]
 			]
@@ -853,7 +853,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', `The locale for which the display name is to be retrieved`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The display name of this charset in the given locale`]
 			]
@@ -893,8 +893,8 @@ DocsCollector.collect('java.nio.charset.Charset', [
  typically depends upon the locale and charset of the underlying
  operating system.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A charset object for the default charset`]
 			]
@@ -961,12 +961,13 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', ` method.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An immutable, case-insensitive map from canonical charset names
          to charset objects`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

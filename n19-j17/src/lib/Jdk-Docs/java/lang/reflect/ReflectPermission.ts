@@ -61,7 +61,7 @@ DocsCollector.collect('java.lang.reflect.ReflectPermission', [
 		],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -116,5 +116,6 @@ DocsCollector.collect('java.lang.reflect.ReflectPermission', [
 			]
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.ClassCircularityError', [
 		[/* text */ 't', `Thrown when the Java Virtual Machine detects a circularity in the
  superclass hierarchy of a class being loaded.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.ClassCircularityError', [
 				[/* inline code block */ 'i', `ClassCircularityError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -32,5 +32,6 @@ DocsCollector.collect('java.lang.ClassCircularityError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

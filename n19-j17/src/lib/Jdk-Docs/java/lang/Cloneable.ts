@@ -47,7 +47,8 @@ DocsCollector.collect('java.lang.Cloneable', [
  reflectively, there is no guarantee that it will succeed.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

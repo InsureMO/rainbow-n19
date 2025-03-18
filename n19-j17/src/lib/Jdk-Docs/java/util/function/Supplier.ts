@@ -19,18 +19,19 @@ DocsCollector.collect('java.util.function.Supplier', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'get()', [
 			[/* method description */
 				[/* text */ 't', `Gets a result.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a result`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

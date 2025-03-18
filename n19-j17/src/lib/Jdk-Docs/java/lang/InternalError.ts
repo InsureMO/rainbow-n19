@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.InternalError', [
 		[/* text */ 't', `Thrown to indicate some unexpected internal error has occurred in
  the Java Virtual Machine.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.InternalError', [
 				[/* inline code block */ 'i', `InternalError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -94,5 +94,6 @@ DocsCollector.collect('java.lang.InternalError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

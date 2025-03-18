@@ -18,8 +18,8 @@ DocsCollector.collect('java.util.function.BiPredicate', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'test(java.lang.Object,java.lang.Object)', [
 			[/* method description */
@@ -33,7 +33,7 @@ DocsCollector.collect('java.util.function.BiPredicate', [
 					[/* text */ 't', `the second input argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the input arguments match the predicate,
@@ -84,8 +84,8 @@ DocsCollector.collect('java.util.function.BiPredicate', [
 				[/* text */ 't', `Returns a predicate that represents the logical negation of this
  predicate.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a predicate that represents the logical negation of this
  predicate`]
@@ -130,4 +130,5 @@ DocsCollector.collect('java.util.function.BiPredicate', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

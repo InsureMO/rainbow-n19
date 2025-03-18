@@ -2,8 +2,8 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.security.AccessControlContext', [
-	/* class description */ UDF,
-	/* fields */ UDF,
+	/* class description */,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.security.AccessControlContext,java.security.DomainCombiner)', [
 			[/* constructor description */
@@ -96,7 +96,7 @@ DocsCollector.collect('java.security.AccessControlContext', [
 					[/* text */ 't', `the object we are testing for equality with this object.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if `],
 				[/* inline code block */ 'i', `obj`],
@@ -110,8 +110,8 @@ DocsCollector.collect('java.security.AccessControlContext', [
  is computed by exclusive or-ing the hash code of all the protection
  domains in the context together.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this context.`]
 			]
@@ -125,7 +125,7 @@ DocsCollector.collect('java.security.AccessControlContext', [
 				[/* inline code block */ 'i', `AccessControlContext`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager is installed and
@@ -178,4 +178,5 @@ DocsCollector.collect('java.security.AccessControlContext', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

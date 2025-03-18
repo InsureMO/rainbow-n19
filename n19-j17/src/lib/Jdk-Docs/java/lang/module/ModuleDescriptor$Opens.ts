@@ -9,8 +9,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
  `],
 		[/* block */ 'b', `opens`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -45,7 +45,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 					[/* text */ 't', `the object to which this object is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a module
@@ -60,8 +60,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 				[/* inline code block */ 'i', `Opens`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is a qualified `],
@@ -100,7 +100,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 					[/* text */ 't', ` to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A negative integer, zero, or a positive integer if this module
          `],
@@ -128,8 +128,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 					[/* text */ 't', ` method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hash-code value for this module `],
 				[/* inline code block */ 'i', `Opens`]
@@ -139,8 +139,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 			[/* method description */
 				[/* text */ 't', `Returns the package name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The package name`]
 			]
@@ -149,8 +149,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing the open package.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string describing the open package`]
 			]
@@ -159,8 +159,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 			[/* method description */
 				[/* text */ 't', `Returns the set of modifiers.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of modifiers`]
 			]
@@ -175,8 +175,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 				[/* inline code block */ 'i', `Opens`],
 				[/* text */ 't', `, returns an empty set.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The set of target module names or for an unqualified
          `],
@@ -185,4 +185,5 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

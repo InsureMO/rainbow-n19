@@ -31,8 +31,8 @@ DocsCollector.collect('java.time.chrono.Era', [
 			[/* text */ 't', ` operator.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getValue()', [
 			[/* method description */
@@ -55,8 +55,8 @@ DocsCollector.collect('java.time.chrono.Era', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric era value`]
 			]
@@ -150,7 +150,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this era, false if not`]
 			]
@@ -243,7 +243,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 					[/* text */ 't', `the locale to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the text value of the era, not null`]
 			]
@@ -426,4 +426,5 @@ DocsCollector.collect('java.time.chrono.Era', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -21,8 +21,8 @@ DocsCollector.collect('java.nio.channels.ScatteringByteChannel', [
 			[/* text */ 't', ` interface.  `]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'read(java.nio.ByteBuffer[])', [
 			[/* method description */
@@ -204,4 +204,5 @@ DocsCollector.collect('java.nio.channels.ScatteringByteChannel', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

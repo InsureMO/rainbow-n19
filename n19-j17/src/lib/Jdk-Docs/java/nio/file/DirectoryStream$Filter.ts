@@ -13,8 +13,8 @@ DocsCollector.collect('java.nio.file.DirectoryStream$Filter', [
  method when opening a directory to iterate over the entries in the
  directory.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accept(java.lang.Object)', [
 			[/* method description */
@@ -36,4 +36,5 @@ DocsCollector.collect('java.nio.file.DirectoryStream$Filter', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

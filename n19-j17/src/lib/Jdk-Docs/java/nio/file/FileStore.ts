@@ -26,13 +26,13 @@ DocsCollector.collect('java.nio.file.FileStore', [
  that provide a read-only or updatable view of a set of file store attributes.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Initializes a new instance of this class.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -60,7 +60,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 					[/* text */ 't', ` object corresponding to the attribute view`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a file store attribute view of the specified type or
           `],
@@ -77,8 +77,8 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* inline code block */ 'i', `IOException`],
 				[/* text */ 't', ` to be thrown.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this file store is read-only`]
@@ -106,7 +106,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 					[/* text */ 't', `the file attribute view type`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the file attribute view is
@@ -140,7 +140,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 					[/* text */ 't', ` of file attribute view`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the file attribute view is
@@ -230,8 +230,8 @@ DocsCollector.collect('java.nio.file.FileStore', [
 					[/* text */ 't', ` method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this file store`]
 			]
@@ -245,8 +245,8 @@ DocsCollector.collect('java.nio.file.FileStore', [
  indicate, for example, the format used or if the file store is local
  or remote.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representing the type of this file store`]
 			]
@@ -261,7 +261,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -289,7 +289,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
  made inaccurate by any external I/O operations including those made on
  the system outside of this virtual machine.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -317,7 +317,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
  by any external I/O operations including those made on the system outside
  of this Java virtual machine.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -340,7 +340,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
  Every read and write operation is performed on a multiple of blocks.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -355,4 +355,5 @@ DocsCollector.collect('java.nio.file.FileStore', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -21,8 +21,8 @@ DocsCollector.collect('java.util.function.IntFunction', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'apply(int)', [
 			[/* method description */
@@ -33,10 +33,11 @@ DocsCollector.collect('java.util.function.IntFunction', [
 					[/* text */ 't', `the function argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the function result`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

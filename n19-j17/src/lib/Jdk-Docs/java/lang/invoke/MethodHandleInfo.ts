@@ -400,7 +400,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'reflectAs(java.lang.Class,java.lang.invoke.MethodHandles.Lookup)', [
 			[/* method description */
@@ -452,8 +452,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* method description */
 				[/* text */ 't', `Returns the access modifiers of the underlying member.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Java language modifiers for underlying member,
          or -1 if the member cannot be accessed`]
@@ -467,8 +467,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', ` for definitions.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the integer code for the kind of reference used to access the underlying member`]
 			]
@@ -477,8 +477,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* method description */
 				[/* text */ 't', `Returns the class in which the cracked method handle's underlying member was defined.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the declaring class of the underlying member`]
 			]
@@ -516,8 +516,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the type of the underlying member, expressed as a method type`]
 			]
@@ -530,8 +530,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* text */ 't', ` if the underlying member was a constructor,
  else it is a simple method name or field name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the simple name of the underlying member`]
 			]
@@ -541,8 +541,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* text */ 't', `Determines if the underlying member was a variable arity method or constructor.
  Such members are represented by method handles that are varargs collectors.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the underlying member was declared with variable arity.`]
@@ -662,4 +662,5 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -117,7 +117,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'type()', [
 			[/* method description */
@@ -125,8 +125,8 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* inline code block */ 'i', `Redirect`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the type of this `],
 				[/* inline code block */ 'i', `Redirect`]
@@ -153,7 +153,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -168,8 +168,8 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* inline code block */ 'i', `Redirect`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this `],
 				[/* inline code block */ 'i', `Redirect`]
@@ -184,8 +184,8 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if there is no such file.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the file associated with this redirect,
          or `],
@@ -221,7 +221,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a redirect to append to the specified file`]
 			]
@@ -249,7 +249,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a redirect to read from the specified file`]
 			]
@@ -279,10 +279,11 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a redirect to write to the specified file`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

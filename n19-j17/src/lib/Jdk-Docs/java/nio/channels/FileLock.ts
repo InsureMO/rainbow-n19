@@ -150,7 +150,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
  care should be taken when locking files that reside on network filesystems.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.nio.channels.AsynchronousFileChannel,long,long,boolean)', [
 			[/* constructor description */
@@ -232,8 +232,8 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 				[/* block */ 'b', ` A lock object remains valid until it is released or the associated
  file channel is closed, whichever comes first.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this lock is valid`]
@@ -248,7 +248,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
  lock and renders the object invalid.  If this lock object is invalid
  then invoking this method has no effect.  `]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If the channel that was used to acquire this lock
@@ -264,8 +264,8 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 			[/* method description */
 				[/* text */ 't', `Tells whether this lock is shared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if lock is shared,
@@ -286,7 +286,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 					[/* text */ 't', `The size of the lock range`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this lock and the given lock
@@ -297,8 +297,8 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing the range, type, and validity of this lock.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A descriptive string`]
 			]
@@ -315,8 +315,8 @@ DocsCollector.collect('java.nio.channels.FileLock', [
  method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The file channel, or `],
 				[/* inline code block */ 'i', `null`],
@@ -334,8 +334,8 @@ DocsCollector.collect('java.nio.channels.FileLock', [
  actual underlying file, so the value returned by this method may exceed
  the file's current size.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The position`]
 			]
@@ -349,8 +349,8 @@ DocsCollector.collect('java.nio.channels.FileLock', [
  actual underlying file, so the value returned by this method may exceed
  the file's current size.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The size of the locked region`]
 			]
@@ -363,7 +363,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
  to the class so that it could be used in conjunction with the
  automatic resource management block construct.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', UDF]
 			],
@@ -373,11 +373,12 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 			[/* method description */
 				[/* text */ 't', `Returns the channel upon whose file this lock was acquired.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The channel upon whose file this lock was acquired.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

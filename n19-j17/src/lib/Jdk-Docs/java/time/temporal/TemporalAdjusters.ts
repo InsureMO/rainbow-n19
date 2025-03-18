@@ -54,8 +54,8 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'dayOfWeekInMonth(int,java.time.DayOfWeek)', [
 			[/* method description */
@@ -127,7 +127,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* text */ 't', `the day-of-week, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-week in month adjuster, not null`]
 			]
@@ -156,8 +156,8 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first day-of-month adjuster, not null`]
 			]
@@ -186,8 +186,8 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first day of next month adjuster, not null`]
 			]
@@ -213,8 +213,8 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first day of next month adjuster, not null`]
 			]
@@ -245,8 +245,8 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first day-of-year adjuster, not null`]
 			]
@@ -288,7 +288,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* text */ 't', `the day-of-week, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first in month adjuster, not null`]
 			]
@@ -324,8 +324,8 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the last day-of-month adjuster, not null`]
 			]
@@ -357,8 +357,8 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the last day-of-year adjuster, not null`]
 			]
@@ -400,7 +400,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* text */ 't', `the day-of-week, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first in month adjuster, not null`]
 			]
@@ -440,7 +440,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* text */ 't', `the day-of-week to move the date to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next day-of-week adjuster, not null`]
 			]
@@ -481,7 +481,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* text */ 't', `the day-of-week to check for or move the date to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next-or-same day-of-week adjuster, not null`]
 			]
@@ -522,7 +522,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* text */ 't', `the date-based adjuster, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the temporal adjuster wrapping on the date adjuster, not null`]
 			]
@@ -562,7 +562,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* text */ 't', `the day-of-week to move the date to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous day-of-week adjuster, not null`]
 			]
@@ -603,10 +603,11 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* text */ 't', `the day-of-week to check for or move the date to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous-or-same day-of-week adjuster, not null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

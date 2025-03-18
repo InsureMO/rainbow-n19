@@ -23,7 +23,7 @@ DocsCollector.collect('java.lang.CloneNotSupportedException', [
  should not be cloned.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -32,7 +32,7 @@ DocsCollector.collect('java.lang.CloneNotSupportedException', [
 				[/* text */ 't', ` with no
  detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -50,5 +50,6 @@ DocsCollector.collect('java.lang.CloneNotSupportedException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.IllegalThreadStateException', [
 		[/* inline code block */ 'i', `Thread`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -23,7 +23,7 @@ DocsCollector.collect('java.lang.IllegalThreadStateException', [
 				[/* text */ 't', ` with no
  detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -41,5 +41,6 @@ DocsCollector.collect('java.lang.IllegalThreadStateException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -25,8 +25,8 @@ DocsCollector.collect('java.util.function.LongBinaryOperator', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'applyAsLong(long,long)', [
 			[/* method description */
@@ -40,10 +40,11 @@ DocsCollector.collect('java.util.function.LongBinaryOperator', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the operator result`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -7,8 +7,8 @@ DocsCollector.collect('java.util.Spliterator$OfInt', [
 		[/* inline code block */ 'i', `int`],
 		[/* text */ 't', ` values.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'tryAdvance(java.util.function.IntConsumer)', UDF],
 		[/* method */ 'trySplit()', UDF],
@@ -35,7 +35,7 @@ DocsCollector.collect('java.util.Spliterator$OfInt', [
 					[/* text */ 't', `The action`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` if no remaining elements existed
@@ -63,9 +63,10 @@ DocsCollector.collect('java.util.Spliterator$OfInt', [
 					[/* text */ 't', `The action`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEachRemaining(java.util.function.IntConsumer)', UDF]
 	],
+	/* enum values */ UDF
 ]);

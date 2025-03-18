@@ -40,7 +40,7 @@ DocsCollector.collect('java.io.LineNumberReader', [
  end of stream, or end of stream not preceded by another terminator.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.Reader)', [
 			[/* constructor description */
@@ -75,8 +75,8 @@ DocsCollector.collect('java.io.LineNumberReader', [
 			[/* method description */
 				[/* text */ 't', `Get the current line number.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The current line number`]
 			]
@@ -91,7 +91,7 @@ DocsCollector.collect('java.io.LineNumberReader', [
  end of the stream is reached and the last character in the stream is
  not a line terminator.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -176,7 +176,7 @@ DocsCollector.collect('java.io.LineNumberReader', [
  stream is reached and the last character in the stream is not a line
  terminator.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -217,7 +217,7 @@ DocsCollector.collect('java.io.LineNumberReader', [
 			[/* method description */
 				[/* text */ 't', `Reset the stream to the most recent mark.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If the stream has not been marked, or if the mark has been
@@ -235,8 +235,9 @@ DocsCollector.collect('java.io.LineNumberReader', [
 					[/* text */ 't', `An int specifying the line number`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -202,7 +202,7 @@ DocsCollector.collect('java.security.cert.CertPath', [
 			[/* text */ 't', ` objects in question are immutable.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -241,7 +241,7 @@ DocsCollector.collect('java.security.cert.CertPath', [
 				[/* inline code block */ 'i', `CertPathRep`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.ObjectStreamException', [/* throw description */
 					[/* text */ 't', `if a `],
@@ -261,7 +261,7 @@ DocsCollector.collect('java.security.cert.CertPath', [
 				[/* text */ 't', `Returns the encoded form of this certification path, using the default
  encoding.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.security.cert.CertificateEncodingException', [/* throw description */
 					[/* text */ 't', `if an encoding error occurs`]
@@ -304,8 +304,8 @@ DocsCollector.collect('java.security.cert.CertPath', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Iterator`],
@@ -320,8 +320,8 @@ DocsCollector.collect('java.security.cert.CertPath', [
 				[/* inline code block */ 'i', `List`],
 				[/* text */ 't', ` returned must be immutable and thread-safe.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an immutable `],
 				[/* inline code block */ 'i', `List`],
@@ -361,7 +361,7 @@ DocsCollector.collect('java.security.cert.CertPath', [
 					[/* text */ 't', `the object to test for equality with this certification path`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the specified object is equal to this certification path,
  false otherwise`]
@@ -393,8 +393,8 @@ DocsCollector.collect('java.security.cert.CertPath', [
 				[/* inline code block */ 'i', `Object.hashCode`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hashcode value for this certification path`]
 			]
@@ -412,8 +412,8 @@ DocsCollector.collect('java.security.cert.CertPath', [
 				[/* inline code block */ 'i', `Certificate`],
 				[/* text */ 't', `s in the certification path.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the type of `],
 				[/* inline code block */ 'i', `Certificate`],
@@ -431,11 +431,12 @@ DocsCollector.collect('java.security.cert.CertPath', [
 				[/* inline code block */ 'i', `Certificate`],
 				[/* text */ 't', `s in the path.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this certification path`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

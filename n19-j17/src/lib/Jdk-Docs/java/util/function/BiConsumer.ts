@@ -22,8 +22,8 @@ DocsCollector.collect('java.util.function.BiConsumer', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accept(java.lang.Object,java.lang.Object)', [
 			[/* method description */
@@ -37,7 +37,7 @@ DocsCollector.collect('java.util.function.BiConsumer', [
 					[/* text */ 't', `the second input argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'andThen(java.util.function.BiConsumer)', [
@@ -76,4 +76,5 @@ DocsCollector.collect('java.util.function.BiConsumer', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

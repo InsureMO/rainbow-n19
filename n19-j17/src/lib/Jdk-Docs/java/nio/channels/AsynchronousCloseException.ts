@@ -7,15 +7,16 @@ DocsCollector.collect('java.nio.channels.AsynchronousCloseException', [
  channel or the part of the channel upon which it is blocked in an I/O
  operation.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an instance of this class.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

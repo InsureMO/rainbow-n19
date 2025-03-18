@@ -33,14 +33,14 @@ DocsCollector.collect('java.util.concurrent.Callable', [
 			[/* text */ 't', ` classes.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'call()', [
 			[/* method description */
 				[/* text */ 't', `Computes a result, or throws an exception if unable to do so.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.Exception', [/* throw description */
 					[/* text */ 't', `if unable to compute a result`]
@@ -51,4 +51,5 @@ DocsCollector.collect('java.util.concurrent.Callable', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

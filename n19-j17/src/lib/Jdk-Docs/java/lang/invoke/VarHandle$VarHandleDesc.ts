@@ -10,8 +10,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 		[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 		[/* text */ 't', ` constant.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'varType()', [
 			[/* method description */
@@ -20,8 +20,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 				[/* text */ 't', ` describing the type of the variable described
  by this descriptor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the variable type`]
 			]
@@ -38,8 +38,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 				[/* text */ 't', `,
  the name of the component type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A compact textual description of this descriptor`]
 			]
@@ -141,4 +141,5 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

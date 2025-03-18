@@ -175,7 +175,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 		[/* block */ 'b', ` Instances of this class are not safe for use by multiple concurrent
  threads.  `]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.nio.charset.Charset,float,float)', [
 			[/* constructor description */
@@ -304,7 +304,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					[/* text */ 't', `The output byte buffer`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A coder-result object describing the reason for termination`]
 			]
@@ -328,7 +328,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					[/* text */ 't', `The output byte buffer`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A coder-result object, either `],
 				[/* reference */ 'r', `java.nio.charset.CoderResult#UNDERFLOW`, `CoderResult.UNDERFLOW`],
@@ -351,7 +351,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					[/* text */ 't', `The new action`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'implOnUnmappableCharacter(java.nio.charset.CodingErrorAction)', [
@@ -368,7 +368,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					[/* text */ 't', `The new action`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'implReplaceWith(byte[])', [
@@ -385,7 +385,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					[/* text */ 't', `The replacement value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'implReset()', [
@@ -396,8 +396,8 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
  should be overridden by encoders that maintain internal state.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'canEncode(char)', [
@@ -506,7 +506,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					[/* text */ 't', `The byte array to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given byte array
@@ -517,8 +517,8 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 			[/* method description */
 				[/* text */ 't', `Returns this encoder's replacement value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This encoder's current replacement,
           which is never `],
@@ -532,8 +532,8 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
  character of input.  This heuristic value may be used to estimate the size
  of the output buffer required for a given input sequence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The average number of bytes produced
           per character of input`]
@@ -548,8 +548,8 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 
  bytes, such as byte-order marks.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The maximum number of bytes that will be produced per
           character of input`]
@@ -603,8 +603,8 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 			[/* method description */
 				[/* text */ 't', `Returns the charset that created this encoder.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This encoder's charset`]
 			]
@@ -715,8 +715,8 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
  charset-specific reset actions.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This encoder`]
 			]
@@ -979,8 +979,8 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 			[/* method description */
 				[/* text */ 't', `Returns this encoder's current action for malformed-input errors.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The current malformed-input action, which is never `],
 				[/* inline code block */ 'i', `null`]
@@ -990,8 +990,8 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 			[/* method description */
 				[/* text */ 't', `Returns this encoder's current action for unmappable-character errors.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The current unmappable-character action, which is never
          `],
@@ -999,4 +999,5 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -24,7 +24,7 @@ DocsCollector.collect('java.lang.RuntimeException', [
  propagate outside the method or constructor boundary.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.Throwable,boolean,boolean)', [
 			[/* constructor description */
@@ -63,7 +63,7 @@ DocsCollector.collect('java.lang.RuntimeException', [
 				[/* reference */ 'r', `java.lang.Throwable#initCause(java.lang.Throwable)`, `Throwable.initCause(java.lang.Throwable)`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -145,5 +145,6 @@ DocsCollector.collect('java.lang.RuntimeException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

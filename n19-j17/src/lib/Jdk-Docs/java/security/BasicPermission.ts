@@ -26,7 +26,7 @@ DocsCollector.collect('java.security.BasicPermission', [
  Subclasses may implement actions on top of BasicPermission,
  if desired.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -99,7 +99,7 @@ DocsCollector.collect('java.security.BasicPermission', [
 					[/* text */ 't', `the object we are testing for equality with this object.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if `],
 				[/* inline code block */ 'i', `obj`],
@@ -138,7 +138,7 @@ DocsCollector.collect('java.security.BasicPermission', [
 					[/* text */ 't', `the permission to check against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the passed permission is equal to or
  implied by this permission, false otherwise.`]
@@ -155,8 +155,8 @@ DocsCollector.collect('java.security.BasicPermission', [
 				[/* text */ 't', ` is
  from the Permission superclass.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -167,8 +167,8 @@ DocsCollector.collect('java.security.BasicPermission', [
  which currently is the empty string "", since there are no actions for
  a BasicPermission.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the empty string "".`]
 			]
@@ -188,12 +188,13 @@ DocsCollector.collect('java.security.BasicPermission', [
  to be implemented in an efficient (and consistent) manner.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new PermissionCollection object suitable for
  storing BasicPermissions.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

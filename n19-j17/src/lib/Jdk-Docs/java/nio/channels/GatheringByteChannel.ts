@@ -21,8 +21,8 @@ DocsCollector.collect('java.nio.channels.GatheringByteChannel', [
 			[/* text */ 't', ` interface.  `]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'write(java.nio.ByteBuffer[])', [
 			[/* method description */
@@ -202,4 +202,5 @@ DocsCollector.collect('java.nio.channels.GatheringByteChannel', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

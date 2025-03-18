@@ -8,8 +8,8 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
 		[/* reference */ 'r', `java.io.ObjectInputStream`, `ObjectInputStream`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'serialClass()', [
 			[/* method description */
@@ -30,8 +30,8 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
  created and to give the filter a chance to check the depth, number of
  references to existing objects, and the stream size.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `class of an object being deserialized; may be null`]
 			]
@@ -40,8 +40,8 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
 			[/* method description */
 				[/* text */ 't', `The number of array elements when deserializing an array of the class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the non-negative number of array elements when deserializing
  an array of the class, otherwise -1`]
@@ -55,8 +55,8 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
 				[/* text */ 't', ` and increases for each nested object and
  decrements when each nested object returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current depth`]
 			]
@@ -65,8 +65,8 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
 			[/* method description */
 				[/* text */ 't', `The current number of object references.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the non-negative current number of object references`]
 			]
@@ -75,11 +75,12 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
 			[/* method description */
 				[/* text */ 't', `The current number of bytes consumed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the non-negative current number of bytes consumed`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

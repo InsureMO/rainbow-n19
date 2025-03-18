@@ -23,7 +23,7 @@ DocsCollector.collect('java.lang.TypeNotPresentException', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.Throwable)', [
 			[/* constructor description */
@@ -51,11 +51,12 @@ DocsCollector.collect('java.lang.TypeNotPresentException', [
 			[/* method description */
 				[/* text */ 't', `Returns the fully qualified name of the unavailable type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the fully qualified name of the unavailable type`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

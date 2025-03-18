@@ -75,7 +75,7 @@ DocsCollector.collect('java.time.LocalDate', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
 			[/* method description */
@@ -148,7 +148,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other date`]
 			]
@@ -187,7 +187,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the other date to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this date is after the specified date`]
 			]
@@ -226,7 +226,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the other date to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this date is before the specified date`]
 			]
@@ -265,7 +265,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the other date to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this date is equal to the specified date`]
 			]
@@ -290,8 +290,8 @@ DocsCollector.collect('java.time.LocalDate', [
  The calculation is proleptic - applying the same rules into the far future and far past.
  This is historically inaccurate, but is correct for the ISO-8601 standard.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the year is leap, false otherwise`]
 			]
@@ -414,7 +414,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this date, false if not`]
 			]
@@ -509,7 +509,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the unit to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the unit can be added/subtracted, false if not`]
 			]
@@ -543,7 +543,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the other date to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
 			]
@@ -633,8 +633,8 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', ` value for the day-of-month.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-month, from 1 to 31`]
 			]
@@ -650,8 +650,8 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', ` value for the day-of-year.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-year, from 1 to 365, or 366 in a leap year`]
 			]
@@ -673,8 +673,8 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, from 1 to 12`]
 			]
@@ -700,8 +700,8 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the year, from MIN_YEAR to MAX_YEAR`]
 			]
@@ -710,8 +710,8 @@ DocsCollector.collect('java.time.LocalDate', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this date.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -724,8 +724,8 @@ DocsCollector.collect('java.time.LocalDate', [
  This returns the length of the month in days.
  For example, a date in January would return 31.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of the month in days`]
 			]
@@ -737,8 +737,8 @@ DocsCollector.collect('java.time.LocalDate', [
 				[/* block */ 'b', `
  This returns the length of the year in days, either 365 or 366.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `366 if the year is leap, 365 otherwise`]
 			]
@@ -779,8 +779,8 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this date, not null`]
 			]
@@ -799,8 +799,8 @@ DocsCollector.collect('java.time.LocalDate', [
  system, in which today's rules for leap years are applied for all time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ISO chronology, not null`]
 			]
@@ -829,8 +829,8 @@ DocsCollector.collect('java.time.LocalDate', [
  the Japanese calendar system.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the IsoEra applicable at this date, not null`]
 			]
@@ -865,8 +865,8 @@ DocsCollector.collect('java.time.LocalDate', [
  This includes textual names of the values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-week, not null`]
 			]
@@ -1969,8 +1969,8 @@ DocsCollector.collect('java.time.LocalDate', [
  midnight, 00:00, at the start of this date.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the local date-time of midnight at the start of this date, not null`]
 			]
@@ -2104,7 +2104,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the time to combine with, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the local date-time formed from this date and the specified time, not null`]
 			]
@@ -2131,8 +2131,8 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, not null`]
 			]
@@ -2156,7 +2156,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the time to combine with, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset date-time formed from this date and the specified time, not null`]
 			]
@@ -2218,7 +2218,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the end date, exclusive, which may be in any chronology, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period between this date and the end date, not null`]
 			]
@@ -2370,7 +2370,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the zone ID to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the zoned date-time formed from this date and the earliest valid time for the zone, not null`]
 			]
@@ -2550,7 +2550,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the zone offset, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of seconds since the epoch of 1970-01-01T00:00:00Z, may be negative`]
 			]
@@ -2748,8 +2748,8 @@ DocsCollector.collect('java.time.LocalDate', [
  Using this method will prevent the ability to use an alternate clock for testing
  because the clock is hard-coded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date using the system clock and default time-zone, not null`]
 			]
@@ -2772,7 +2772,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the clock to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date, not null`]
 			]
@@ -2798,7 +2798,7 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* text */ 't', `the zone ID to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date using the system clock, not null`]
 			]
@@ -3024,4 +3024,5 @@ DocsCollector.collect('java.time.LocalDate', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

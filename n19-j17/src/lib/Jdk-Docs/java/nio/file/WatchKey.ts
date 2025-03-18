@@ -94,8 +94,8 @@ DocsCollector.collect('java.nio.file.WatchKey', [
  is processing the events for an object at any time.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isValid()', [
 			[/* method description */
@@ -105,8 +105,8 @@ DocsCollector.collect('java.nio.file.WatchKey', [
 				[/* block */ 'b', ` A watch key is valid upon creation and remains until it is cancelled,
  or its watch service is closed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this watch key is valid`]
@@ -124,8 +124,8 @@ DocsCollector.collect('java.nio.file.WatchKey', [
  events then the watch key is put into the ready state and will remain in
  that state until an event is detected or the watch key is cancelled.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the watch key is valid and has been reset, and
@@ -154,8 +154,8 @@ DocsCollector.collect('java.nio.file.WatchKey', [
  method may no longer be a valid path to the directory.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the object for which this watch key was created`]
 			]
@@ -170,8 +170,8 @@ DocsCollector.collect('java.nio.file.WatchKey', [
  `],
 				[/* block */ 'b', ` Note that this method does not wait if there are no events pending.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the list of the events retrieved; may be empty`]
 			]
@@ -191,9 +191,10 @@ DocsCollector.collect('java.nio.file.WatchKey', [
 				[/* block */ 'b', ` If this watch key has already been cancelled then invoking this
  method has no effect.  Once cancelled, a watch key remains forever invalid.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

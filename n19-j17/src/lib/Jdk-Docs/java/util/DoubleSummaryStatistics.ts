@@ -48,7 +48,7 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
  maximum, sum, and average of their weights.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -60,7 +60,7 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
 				[/* text */ 't', `
  max and zero average.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(long,double,double,double)', [
@@ -138,8 +138,8 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
  for details.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the arithmetic mean of values, or zero if none`]
 			]
@@ -155,8 +155,8 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
  recorded. Unlike the numerical comparison operators, this method
  considers negative zero to be strictly smaller than positive zero.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum recorded value, `],
 				[/* inline code block */ 'i', `Double.NaN`],
@@ -178,8 +178,8 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
  recorded. Unlike the numerical comparison operators, this method
  considers negative zero to be strictly smaller than positive zero.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum recorded value, `],
 				[/* inline code block */ 'i', `Double.NaN`],
@@ -261,8 +261,8 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
 				[/* text */ 't', ` guaranteed to be preserved in the final sum.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sum of values, or zero if none`]
 			]
@@ -271,8 +271,8 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
 			[/* method description */
 				[/* text */ 't', `Return the count of values recorded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the count of values`]
 			]
@@ -283,8 +283,8 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
  debugging. The exact presentation format is unspecified and may vary
  between implementations and versions.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
@@ -298,7 +298,7 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
 					[/* text */ 't', `the input value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'combine(java.util.DoubleSummaryStatistics)', [
@@ -324,4 +324,5 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

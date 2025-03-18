@@ -64,7 +64,7 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
  control over the encoding process is required.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.OutputStream)', [
 			[/* constructor description */
@@ -149,8 +149,8 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
  been closed. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The historical name of this encoding, or possibly
          `],
@@ -164,7 +164,7 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
  further write() or flush() invocations will cause an IOException to be
  thrown. Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -176,7 +176,7 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
 			[/* method description */
 				[/* text */ 't', `Flushes the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -267,4 +267,5 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

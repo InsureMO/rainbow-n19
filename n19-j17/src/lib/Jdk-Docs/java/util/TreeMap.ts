@@ -154,7 +154,7 @@ DocsCollector.collect('java.util.TreeMap', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -184,7 +184,7 @@ DocsCollector.collect('java.util.TreeMap', [
 				[/* inline code block */ 'i', `ClassCastException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.util.Comparator)', [
@@ -333,7 +333,7 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', `value whose presence in this map is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if a mapping to `],
@@ -349,8 +349,8 @@ DocsCollector.collect('java.util.TreeMap', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of key-value mappings in this map.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of key-value mappings in this map`]
 			]
@@ -362,8 +362,8 @@ DocsCollector.collect('java.util.TreeMap', [
 				[/* text */ 't', ` instance. (The keys and
  values themselves are not cloned.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a shallow copy of this map`]
 			]
@@ -420,8 +420,8 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', ` operations.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collection view of the values contained in this map`]
 			]
@@ -437,8 +437,8 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', ` of its keys.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator used to order the keys in this map,
          or `],
@@ -491,8 +491,8 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', ` if the map is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an entry with the least key,
          or `],
@@ -579,8 +579,8 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', ` if the map is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an entry with the greatest key,
          or `],
@@ -632,8 +632,8 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', ` if the map is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the removed first entry of this map,
          or `],
@@ -650,8 +650,8 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', ` if the map is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the removed last entry of this map,
          or `],
@@ -689,8 +689,8 @@ DocsCollector.collect('java.util.TreeMap', [
 					]]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reverse order view of this map`]
 			]
@@ -975,8 +975,8 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', ` operations.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reverse order navigable set view of the keys in this map`]
 			]
@@ -1013,8 +1013,8 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', ` operations.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a navigable set view of the keys in this map`]
 			]
@@ -1076,8 +1076,8 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', ` operations.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the mappings contained in this map,
          sorted in ascending key order`]
@@ -1149,8 +1149,8 @@ DocsCollector.collect('java.util.TreeMap', [
  operations.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the keys contained in this map`]
 			]
@@ -1426,7 +1426,7 @@ DocsCollector.collect('java.util.TreeMap', [
 			[/* method description */
 				[/* block */ 'b', `Returns the first (lowest) key currently in this map.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this map is empty`]
@@ -1508,7 +1508,7 @@ DocsCollector.collect('java.util.TreeMap', [
 			[/* method description */
 				[/* block */ 'b', `Returns the last (highest) key currently in this map.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this map is empty`]
@@ -1958,8 +1958,8 @@ DocsCollector.collect('java.util.TreeMap', [
 				[/* text */ 't', `Removes all of the mappings from this map.
  The map will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
@@ -1989,4 +1989,5 @@ DocsCollector.collect('java.util.TreeMap', [
 		]],
 		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF]
 	],
+	/* enum values */ UDF
 ]);

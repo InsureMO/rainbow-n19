@@ -43,8 +43,8 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 		[/* block */ 'b', ` Mapped byte buffers otherwise behave no differently than ordinary direct
  byte buffers. `]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'compact()', [
 			[/* method description */
@@ -118,8 +118,8 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -149,8 +149,8 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  it will be read-only if, and only if, this buffer is read-only.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new byte buffer`]
 			]
@@ -198,8 +198,8 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new byte buffer`]
 			]
@@ -273,7 +273,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 					[/* inline code block */ 'i', `limit() - index`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new buffer`]
 			]
@@ -302,8 +302,8 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  underlying operating system may have paged out some of the buffer's data
  by the time that an invocation of this method returns.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if it is likely that this buffer's content
@@ -336,8 +336,8 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  is named as if it did because it will most often be used in situations
  in which that might as well be the case. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -377,8 +377,8 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  one place to another.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -416,7 +416,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  implementation-specific mapping modes. `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.UncheckedIOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs writing the buffer's content to the
@@ -502,7 +502,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
          and no larger than this buffer's capacity`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -517,8 +517,8 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  method may cause some number of page faults and I/O operations to
  occur. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -527,8 +527,8 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 			[/* method description */
 				[/* text */ 't', `Sets this buffer's mark at its position.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -544,7 +544,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
          and no larger than the current limit`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -557,8 +557,8 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 				[/* block */ 'b', ` Invoking this method neither changes nor discards the mark's
  value. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -585,11 +585,12 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

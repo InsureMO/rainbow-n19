@@ -61,7 +61,7 @@ DocsCollector.collect('java.util.PropertyPermission', [
  malevolent code sensitive information about the user environment
  (the user's account name and home directory).`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
 			[/* constructor description */
@@ -113,7 +113,7 @@ DocsCollector.collect('java.util.PropertyPermission', [
 					[/* text */ 't', `the object we are testing for equality with this object.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if obj is a PropertyPermission, and has the same name and
  actions as this PropertyPermission object.`]
@@ -156,7 +156,7 @@ DocsCollector.collect('java.util.PropertyPermission', [
 					[/* text */ 't', `the permission to check against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the specified permission is implied by this object,
  false if not.`]
@@ -173,8 +173,8 @@ DocsCollector.collect('java.util.PropertyPermission', [
 				[/* text */ 't', ` is
  from the Permission superclass.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -189,8 +189,8 @@ DocsCollector.collect('java.util.PropertyPermission', [
 				[/* text */ 't', `
  will return the string "read,write".`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the canonical string representation of the actions.`]
 			]
@@ -200,12 +200,13 @@ DocsCollector.collect('java.util.PropertyPermission', [
 				[/* text */ 't', `Returns a new PermissionCollection object for storing
  PropertyPermission objects.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new PermissionCollection object suitable for storing
  PropertyPermissions.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

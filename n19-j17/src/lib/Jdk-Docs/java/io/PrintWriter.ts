@@ -391,8 +391,8 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setError()', [
@@ -410,16 +410,16 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` is invoked.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'checkError()', [
 			[/* method description */
 				[/* text */ 't', `Flushes the stream if it's not closed and checks its error state.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the print stream has encountered an error,
@@ -450,7 +450,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', `The 16-bit character to append`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This writer`]
 			]
@@ -502,7 +502,7 @@ DocsCollector.collect('java.io.PrintWriter', [
          appended to this writer.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This writer`]
 			]
@@ -845,16 +845,16 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* text */ 't', `Closes the stream and releases any system resources associated
  with it. Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'flush()', [
 			[/* method description */
 				[/* text */ 't', `Flushes the stream.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(boolean)', [
@@ -874,7 +874,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(char)', [
@@ -892,7 +892,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(char[])', [
@@ -937,7 +937,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(float)', [
@@ -958,7 +958,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(int)', [
@@ -979,7 +979,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(java.lang.Object)', [
@@ -1000,7 +1000,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(java.lang.String)', [
@@ -1024,7 +1024,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(long)', [
@@ -1045,7 +1045,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println()', [
@@ -1058,8 +1058,8 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* inline code block */ 'i', `'\\n'`],
 				[/* text */ 't', `).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(boolean)', [
@@ -1079,7 +1079,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` value to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(char)', [
@@ -1098,7 +1098,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` value to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(char[])', [
@@ -1118,7 +1118,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` values to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(double)', [
@@ -1137,7 +1137,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` value to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(float)', [
@@ -1157,7 +1157,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` value to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(int)', [
@@ -1176,7 +1176,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` value to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(java.lang.Object)', [
@@ -1198,7 +1198,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` to be printed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(java.lang.String)', [
@@ -1218,7 +1218,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` value to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(long)', [
@@ -1238,7 +1238,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', ` value to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(char[])', [
@@ -1251,7 +1251,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', `Array of characters to be written`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(char[],int,int)', [
@@ -1294,7 +1294,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', `int specifying a character to be written.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(java.lang.String)', [
@@ -1307,7 +1307,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 					[/* text */ 't', `String to be written`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(java.lang.String,int,int)', [
@@ -1342,4 +1342,5 @@ DocsCollector.collect('java.io.PrintWriter', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

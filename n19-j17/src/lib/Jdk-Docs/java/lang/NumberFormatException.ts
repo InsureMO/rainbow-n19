@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.NumberFormatException', [
  a string to one of the numeric types, but that the string does not
  have the appropriate format.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.NumberFormatException', [
 				[/* inline code block */ 'i', `NumberFormatException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -33,5 +33,6 @@ DocsCollector.collect('java.lang.NumberFormatException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

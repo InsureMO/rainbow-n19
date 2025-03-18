@@ -103,8 +103,8 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
 				[/* reference */ 'r', `#reset()`, `reset()`],
 				[/* text */ 't', ` methods.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `false, always`]
 			]
@@ -117,7 +117,7 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
  Programs should not count on this method to return the actual number
  of bytes that could be read without blocking`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs or if this stream is
@@ -134,7 +134,7 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
 				[/* text */ 't', `Reads a single byte of compressed data from the input stream.
  This method will block until some input can be read and compressed.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs or if this stream is
@@ -215,7 +215,7 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
 				[/* text */ 't', `Closes this input stream and its underlying input stream, discarding
  any pending uncompressed data.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -233,7 +233,7 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
 					[/* text */ 't', `maximum bytes that can be read before invalidating the position marker`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
@@ -241,7 +241,7 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
 				[/* text */ 't', `This operation is not supported`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `always thrown`]
@@ -250,4 +250,5 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

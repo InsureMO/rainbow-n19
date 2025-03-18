@@ -159,8 +159,8 @@ DocsCollector.collect('java.nio.file.Path', [
 		[/* block */ 'b', ` Implementations of this interface are immutable and safe for use by
  multiple concurrent threads.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'endsWith(java.nio.file.Path)', [
 			[/* method description */
@@ -196,7 +196,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', `the given path`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this path ends with the given path; otherwise
@@ -242,7 +242,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', `the object to which this object is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a `],
@@ -260,8 +260,8 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', ` An absolute path is complete in that it doesn't need to be combined
  with other path information in order to locate a file.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this path is absolute`]
@@ -307,7 +307,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', `the given path`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this path starts with the given path; otherwise
@@ -349,8 +349,8 @@ DocsCollector.collect('java.nio.file.Path', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of name elements in the path.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in the path, or `],
 				[/* inline code block */ 'i', `0`],
@@ -370,8 +370,8 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', ` method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash-code value for this path`]
 			]
@@ -396,8 +396,8 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', ` to separate names in the path.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of this path`]
 			]
@@ -485,7 +485,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `compound`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOError', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs obtaining the absolute path, or where a
@@ -509,8 +509,8 @@ DocsCollector.collect('java.nio.file.Path', [
 			[/* method description */
 				[/* text */ 't', `Returns the file system that created this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the file system that created this object`]
 			]
@@ -525,8 +525,8 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* text */ 't', ` element from
  the root in the directory hierarchy.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a path representing the name of the file or directory, or
           `],
@@ -625,8 +625,8 @@ DocsCollector.collect('java.nio.file.Path', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a path representing the path's parent`]
 			]
@@ -640,8 +640,8 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this path does not have a root component.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a path representing the root component of this path,
           or `],
@@ -687,8 +687,8 @@ DocsCollector.collect('java.nio.file.Path', [
  path. This can arise when the preceding name is a symbolic link.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the resulting path or this path if it does not contain
           redundant name elements; an empty path is returned if this path
@@ -851,7 +851,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', `the path to resolve against this path`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the resulting path`]
 			]
@@ -938,7 +938,7 @@ DocsCollector.collect('java.nio.file.Path', [
  this method may throw an I/O error if the file system is not accessible.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOError', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -1276,7 +1276,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if this `],
@@ -1395,7 +1395,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', `the path to resolve against this path's parent`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the resulting path`]
 			]
@@ -1479,8 +1479,8 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', ` component, if present, is not returned by the iterator.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the name elements of this path.`]
 			]
@@ -1682,4 +1682,5 @@ DocsCollector.collect('java.nio.file.Path', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

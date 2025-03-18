@@ -25,8 +25,8 @@ DocsCollector.collect('java.lang.reflect.ParameterizedType', [
  an equals() method that equates any two instances that share the
  same generic class or interface declaration and have equal type parameters.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getOwnerType()', [
 			[/* method description */
@@ -47,7 +47,7 @@ DocsCollector.collect('java.lang.reflect.ParameterizedType', [
 					[/* text */ 't', ` is returned.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
 					[/* text */ 't', `if the owner type
@@ -76,8 +76,8 @@ DocsCollector.collect('java.lang.reflect.ParameterizedType', [
 				[/* text */ 't', ` object representing the class or interface
  that declared this type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `Type`],
@@ -97,7 +97,7 @@ DocsCollector.collect('java.lang.reflect.ParameterizedType', [
  if this type represents a non-parameterized type nested within
  a parameterized type.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
 					[/* text */ 't', `if any of the actual type arguments
@@ -117,4 +117,5 @@ DocsCollector.collect('java.lang.reflect.ParameterizedType', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

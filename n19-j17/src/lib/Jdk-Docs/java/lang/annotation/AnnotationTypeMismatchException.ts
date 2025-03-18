@@ -10,7 +10,7 @@ DocsCollector.collect('java.lang.annotation.AnnotationTypeMismatchException', [
 		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`, `API used to read annotations reflectively`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.reflect.Method,java.lang.String)', [
 			[/* constructor description */
@@ -46,8 +46,8 @@ DocsCollector.collect('java.lang.annotation.AnnotationTypeMismatchException', [
  The value may be unavailable if this exception has been
  serialized and then read back in.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `Method`],
@@ -66,11 +66,12 @@ DocsCollector.collect('java.lang.annotation.AnnotationTypeMismatchException', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the type of data found in the incorrectly typed element`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

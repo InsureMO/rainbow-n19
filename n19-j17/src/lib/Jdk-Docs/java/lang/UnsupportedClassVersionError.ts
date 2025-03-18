@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.UnsupportedClassVersionError', [
  file and determines that the major and minor version numbers
  in the file are not supported.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -16,7 +16,7 @@ DocsCollector.collect('java.lang.UnsupportedClassVersionError', [
 				[/* text */ 't', `
  with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -34,5 +34,6 @@ DocsCollector.collect('java.lang.UnsupportedClassVersionError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

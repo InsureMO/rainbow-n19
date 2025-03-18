@@ -68,8 +68,8 @@ DocsCollector.collect('java.lang.StackWalker', [
  No further permission check is done at stack walking time.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'walk(java.util.function.Function)', [
 			[/* method description */
@@ -102,7 +102,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 					[/* text */ 't', ` and returns a result.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of applying the function to the stream of
          `],
@@ -162,7 +162,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 					[/* text */ 't', ` option.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if this `],
@@ -204,8 +204,8 @@ DocsCollector.collect('java.lang.StackWalker', [
 					[/* text */ 't', ` is retained.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `StackWalker`],
@@ -427,8 +427,9 @@ DocsCollector.collect('java.lang.StackWalker', [
                of the stack of the current thread`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

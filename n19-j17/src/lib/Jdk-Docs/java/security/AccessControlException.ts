@@ -2,8 +2,8 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.security.AccessControlException', [
-	/* class description */ UDF,
-	/* fields */ UDF,
+	/* class description */,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -44,11 +44,12 @@ DocsCollector.collect('java.security.AccessControlException', [
 				[/* text */ 't', `Gets the Permission object associated with this exception, or
  null if there was no corresponding Permission object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Permission object.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

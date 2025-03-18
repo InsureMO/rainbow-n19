@@ -128,8 +128,8 @@ DocsCollector.collect('java.util.HexFormat', [
  and the suffix. A delimiter follows each formatted value, except the last.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'formatHex(java.lang.Appendable,byte[])', [
 			[/* method description */
@@ -256,7 +256,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', `an object, may be null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the other object is a `],
@@ -276,8 +276,8 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the hexadecimal digits are uppercase,
@@ -411,7 +411,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', ` of the value are used`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hexadecimal character for the bits `],
 				[/* inline code block */ 'i', `4-7`],
@@ -447,7 +447,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', ` of the value are used`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hexadecimal character for the low 4 bits `],
 				[/* inline code block */ 'i', `0-3`],
@@ -460,8 +460,8 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* inline code block */ 'i', `HexFormat`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hashcode for this `],
 				[/* inline code block */ 'i', `HexFormat`]
@@ -471,8 +471,8 @@ DocsCollector.collect('java.util.HexFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns the delimiter between hexadecimal values in formatted hexadecimal strings.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the delimiter, non-null, may be empty `],
 				[/* inline code block */ 'i', `""`]
@@ -497,7 +497,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', `a non-null array of bytes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string hexadecimal formatting of the byte array`]
 			]
@@ -535,8 +535,8 @@ DocsCollector.collect('java.util.HexFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns the prefix used for each hexadecimal value in formatted hexadecimal strings.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the prefix, non-null, may be empty `],
 				[/* inline code block */ 'i', `""`]
@@ -546,8 +546,8 @@ DocsCollector.collect('java.util.HexFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns the suffix used for each hexadecimal value in formatted hexadecimal strings.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the suffix, non-null, may be empty `],
 				[/* inline code block */ 'i', `""`]
@@ -569,7 +569,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', `a byte value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the two hexadecimal characters for the byte value`]
 			]
@@ -592,7 +592,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', ` value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the four hexadecimal characters for the `],
 				[/* inline code block */ 'i', `char`],
@@ -617,7 +617,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', ` value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the eight hexadecimal characters for the `],
 				[/* inline code block */ 'i', `int`],
@@ -642,7 +642,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', ` value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sixteen hexadecimal characters for the `],
 				[/* inline code block */ 'i', `long`],
@@ -701,7 +701,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', ` value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the four hexadecimal characters for the `],
 				[/* inline code block */ 'i', `short`],
@@ -713,8 +713,8 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `Returns a description of the formatter parameters for uppercase,
  delimiter, prefix, and suffix.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a description of this `],
 				[/* inline code block */ 'i', `HexFormat`]
@@ -731,7 +731,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', `the delimiter, non-null, may be empty`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of this `],
 				[/* inline code block */ 'i', `HexFormat`],
@@ -747,8 +747,8 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* inline code block */ 'i', `"0-9", "a-f"`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of this `],
 				[/* inline code block */ 'i', `HexFormat`],
@@ -766,7 +766,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', `a prefix, non-null, may be empty`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of this `],
 				[/* inline code block */ 'i', `HexFormat`],
@@ -784,7 +784,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', `a suffix, non-null, may be empty`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of this `],
 				[/* inline code block */ 'i', `HexFormat`],
@@ -800,8 +800,8 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* inline code block */ 'i', `"0-9", "A-F"`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of this `],
 				[/* inline code block */ 'i', `HexFormat`],
@@ -844,7 +844,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', `a codepoint`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is valid a hexadecimal character,
@@ -994,8 +994,8 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `
  return copies of formatters with new parameters.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hexadecimal formatter with no delimiter and lowercase characters`]
 			]
@@ -1024,7 +1024,7 @@ DocsCollector.collect('java.util.HexFormat', [
 					[/* text */ 't', `a delimiter, non-null, may be empty`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* reference */ 'r', `java.util.HexFormat`, `HexFormat`],
@@ -1101,4 +1101,5 @@ DocsCollector.collect('java.util.HexFormat', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -1047,7 +1047,7 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this Locale is equal to the specified object.`]
 			]
@@ -1062,8 +1062,8 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `extensions`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this `],
@@ -1096,8 +1096,8 @@ DocsCollector.collect('java.util.Locale', [
  this function falls back on the English name, and uses the ISO code as a last-resort
  value.  If the locale doesn't specify a country, this function returns the empty string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The name of the country appropriate to the locale.`]
 			]
@@ -1127,8 +1127,8 @@ DocsCollector.collect('java.util.Locale', [
  this function falls back on the English name, and uses the ISO code as a last-resort
  value.  If the locale doesn't specify a language, this function returns the empty string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The name of the display language.`]
 			]
@@ -1169,8 +1169,8 @@ DocsCollector.collect('java.util.Locale', [
  be localized depending on the locale. If the language, script, country,
  and variant fields are all empty, this function returns the empty string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The name of the locale appropriate to display.`]
 			]
@@ -1184,8 +1184,8 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', ` locale.  If the locale
  doesn't specify a variant code, this function returns the empty string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The name of the display variant code appropriate to the locale.`]
 			]
@@ -1265,8 +1265,8 @@ DocsCollector.collect('java.util.Locale', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string representation of the Locale, for debugging.`]
 			]
@@ -1277,8 +1277,8 @@ DocsCollector.collect('java.util.Locale', [
  Since Locales are often used in hashtables, caches the value
  for speed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -1287,8 +1287,8 @@ DocsCollector.collect('java.util.Locale', [
 			[/* method description */
 				[/* text */ 't', `Overrides Cloneable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -1299,8 +1299,8 @@ DocsCollector.collect('java.util.Locale', [
  either be the empty string, an uppercase ISO 3166 2-letter code,
  or a UN M.49 3-digit code.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The country/region code, or the empty string if none is defined.`]
 			]
@@ -1429,8 +1429,8 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', ` locale.  Returns
  the empty string if this locale doesn't specify a script code.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the display name of the script code for the current default
      `],
@@ -1524,7 +1524,7 @@ DocsCollector.collect('java.util.Locale', [
  `],
 				[/* block */ 'b', `The ISO 3166-1 codes can be found on-line.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
 					[/* text */ 't', `Throws MissingResourceException if the
@@ -1546,7 +1546,7 @@ DocsCollector.collect('java.util.Locale', [
  language, the language is returned as is.  If the locale does
  not specify a language the empty string is returned.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
 					[/* text */ 't', `Throws MissingResourceException if
@@ -1561,8 +1561,8 @@ DocsCollector.collect('java.util.Locale', [
 			[/* method description */
 				[/* text */ 't', `Returns the language code of this Locale.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The language code, or the empty string if none is defined.`]
 			]
@@ -1574,8 +1574,8 @@ DocsCollector.collect('java.util.Locale', [
  code. The first letter is uppercase and the rest are
  lowercase, for example, 'Latn', 'Cyrl'.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The script code, or the empty string if none is defined.`]
 			]
@@ -1612,8 +1612,8 @@ DocsCollector.collect('java.util.Locale', [
 			[/* method description */
 				[/* text */ 't', `Returns the variant code for this locale.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The variant code, or the empty string if none is defined.`]
 			]
@@ -1716,8 +1716,8 @@ DocsCollector.collect('java.util.Locale', [
  in the IANA Language Subtag Registry.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a BCP47 language tag representing the locale`]
 			]
@@ -1735,8 +1735,8 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `
  is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of this `],
 				[/* inline code block */ 'i', `Locale`],
@@ -1754,8 +1754,8 @@ DocsCollector.collect('java.util.Locale', [
  empty set if it has no extensions. The returned set is unmodifiable.
  The keys will all be lower-case.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The set of extension keys, or the empty set if this locale has
  no extensions.`]
@@ -1767,8 +1767,8 @@ DocsCollector.collect('java.util.Locale', [
  this locale, or the empty set if it has no attributes. The
  returned set is unmodifiable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The set of attributes.`]
 			]
@@ -1778,8 +1778,8 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Returns the set of Unicode locale keys defined by this locale, or the empty set if
  this locale has none.  The returned set is immutable.  Keys are all lower case.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The set of Unicode locale keys, or the empty set if this locale has
  no Unicode locale keywords.`]
@@ -1861,8 +1861,8 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An array of ISO 3166 two-letter country codes.`]
 			]
@@ -1889,8 +1889,8 @@ DocsCollector.collect('java.util.Locale', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An array of ISO 639 two-letter language codes.`]
 			]
@@ -2515,8 +2515,8 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', ` method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the default locale for this instance of the Java Virtual Machine`]
 			]
@@ -2600,8 +2600,8 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Locale.US`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An array of installed locales.`]
 			]
@@ -2722,4 +2722,5 @@ DocsCollector.collect('java.util.Locale', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

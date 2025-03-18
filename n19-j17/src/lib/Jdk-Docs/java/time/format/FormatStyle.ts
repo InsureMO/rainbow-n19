@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.time.format.FormatStyle', [
@@ -15,8 +14,8 @@ DocsCollector.collect('java.time.format.FormatStyle', [
 			[/* text */ 't', ` for usage.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -49,11 +48,37 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'FULL', [
+			[/* enum value description */
+				[/* text */ 't', `Full text style, with the most detail.
+ For example, the format might be 'Tuesday, April 12, 1952 AD' or '3:30:42pm PST'.`]
+			],
+		]],
+		[/* enum value */ 'LONG', [
+			[/* enum value description */
+				[/* text */ 't', `Long text style, with lots of detail.
+ For example, the format might be 'January 12, 1952'.`]
+			],
+		]],
+		[/* enum value */ 'MEDIUM', [
+			[/* enum value description */
+				[/* text */ 't', `Medium text style, with some detail.
+ For example, the format might be 'Jan 12, 1952'.`]
+			],
+		]],
+		[/* enum value */ 'SHORT', [
+			[/* enum value description */
+				[/* text */ 't', `Short text style, typically numeric.
+ For example, the format might be '12.13.52' or '3:30pm'.`]
+			],
 		]]
 	],
 ]);

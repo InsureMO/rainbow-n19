@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.reflect.InvocationTargetException', [
 		[/* text */ 't', `InvocationTargetException is a checked exception that wraps
  an exception thrown by an invoked method or constructor.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.reflect.InvocationTargetException', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` as the target exception.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.Throwable)', [
@@ -55,8 +55,8 @@ DocsCollector.collect('java.lang.reflect.InvocationTargetException', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the cause of this exception.`]
 			]
@@ -65,11 +65,12 @@ DocsCollector.collect('java.lang.reflect.InvocationTargetException', [
 			[/* method description */
 				[/* text */ 't', `Get the thrown target exception.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the thrown target exception (cause of this exception).`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

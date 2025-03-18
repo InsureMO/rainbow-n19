@@ -183,8 +183,8 @@ DocsCollector.collect('java.util.SortedMap', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'values()', [
 			[/* method description */
@@ -220,8 +220,8 @@ DocsCollector.collect('java.util.SortedMap', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collection view of the values contained in this map,
          sorted in ascending key order`]
@@ -236,8 +236,8 @@ DocsCollector.collect('java.util.SortedMap', [
 				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', ` of its keys.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator used to order the keys in this map,
          or `],
@@ -282,8 +282,8 @@ DocsCollector.collect('java.util.SortedMap', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the mappings contained in this map,
          sorted in ascending key order`]
@@ -322,8 +322,8 @@ DocsCollector.collect('java.util.SortedMap', [
 				[/* text */ 't', `
  operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the keys contained in this map, sorted in
          ascending order`]
@@ -536,7 +536,7 @@ DocsCollector.collect('java.util.SortedMap', [
 			[/* method description */
 				[/* text */ 't', `Returns the first (lowest) key currently in this map.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this map is empty`]
@@ -550,7 +550,7 @@ DocsCollector.collect('java.util.SortedMap', [
 			[/* method description */
 				[/* text */ 't', `Returns the last (highest) key currently in this map.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this map is empty`]
@@ -561,4 +561,5 @@ DocsCollector.collect('java.util.SortedMap', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

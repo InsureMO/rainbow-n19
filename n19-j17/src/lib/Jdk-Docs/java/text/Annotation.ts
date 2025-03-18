@@ -32,7 +32,7 @@ DocsCollector.collect('java.text.Annotation', [
  and indicates to text containers that the attribute should be discarded if
  the underlying text is modified.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Object)', [
 			[/* constructor description */
@@ -52,8 +52,8 @@ DocsCollector.collect('java.text.Annotation', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the attribute, which may be null.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the attribute`]
 			]
@@ -62,8 +62,8 @@ DocsCollector.collect('java.text.Annotation', [
 			[/* method description */
 				[/* text */ 't', `Returns the String representation of this Annotation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `String`],
@@ -72,4 +72,5 @@ DocsCollector.collect('java.text.Annotation', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

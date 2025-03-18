@@ -5,8 +5,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 	[/* class description */
 		[/* block */ 'b', ` A service that a module provides one or more implementations of. `]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -40,7 +40,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 					[/* text */ 't', `the object to which this object is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a
@@ -81,7 +81,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 					[/* text */ 't', ` to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A negative integer, zero, or a positive integer if this
          `],
@@ -105,8 +105,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 					[/* text */ 't', ` method. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hash-code value for this module provides`]
 			]
@@ -115,8 +115,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 			[/* method description */
 				[/* text */ 't', `Returns the fully qualified class name of the service type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The fully qualified class name of the service type`]
 			]
@@ -127,8 +127,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 				[/* inline code block */ 'i', `Provides`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string describing this `],
 				[/* inline code block */ 'i', `Provides`]
@@ -139,12 +139,13 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 				[/* text */ 't', `Returns the list of the fully qualified class names of the providers
  or provider factories.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A non-empty and unmodifiable list of the fully qualified class
          names of the providers or provider factories`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

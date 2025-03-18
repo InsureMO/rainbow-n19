@@ -32,13 +32,13 @@ DocsCollector.collect('java.lang.InheritableThreadLocal', [
  thread-local variables.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an inheritable thread local variable.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -59,10 +59,11 @@ DocsCollector.collect('java.lang.InheritableThreadLocal', [
 					[/* text */ 't', `the parent thread's value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the child thread's initial value`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

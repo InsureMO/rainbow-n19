@@ -7,8 +7,8 @@ DocsCollector.collect('java.lang.reflect.GenericArrayType', [
 		[/* text */ 't', ` represents an array type whose component
  type is either a parameterized type or a type variable.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getGenericComponentType()', [
 			[/* method description */
@@ -25,7 +25,7 @@ DocsCollector.collect('java.lang.reflect.GenericArrayType', [
 				[/* text */ 't', ` for the
  creation process for type variables.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
 					[/* text */ 't', `if the underlying array type's component
@@ -45,4 +45,5 @@ DocsCollector.collect('java.lang.reflect.GenericArrayType', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

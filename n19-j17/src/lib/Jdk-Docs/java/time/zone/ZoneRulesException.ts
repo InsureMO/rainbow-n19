@@ -9,7 +9,7 @@ DocsCollector.collect('java.time.zone.ZoneRulesException', [
  This exception is used to indicate a problems with the configured
  time-zone rules.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -37,5 +37,6 @@ DocsCollector.collect('java.time.zone.ZoneRulesException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

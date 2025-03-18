@@ -82,6 +82,7 @@ DocsCollector.collect('java.util.FormattableFlags', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -10,8 +10,8 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 		[/* reference */ 'r', `java.lang.invoke.MethodType`, `MethodType`],
 		[/* text */ 't', ` constant.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -29,7 +29,7 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 					[/* text */ 't', `the other object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `whether this descriptor is equal to the other object`]
 			]
@@ -41,8 +41,8 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of parameters`]
 			]
@@ -79,8 +79,8 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
@@ -91,8 +91,8 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns the parameter types as an array.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of `],
 				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
@@ -246,8 +246,8 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 				[/* reference */ 'r', `java.util.List`, `List`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* reference */ 'r', `java.util.List`, `List`],
@@ -260,8 +260,8 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns the method type descriptor string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the method type descriptor string`]
 			]
@@ -271,8 +271,8 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 				[/* text */ 't', `Returns a human-readable descriptor for this method type, using the
  canonical names for parameter and return types.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the human-readable descriptor for this method type`]
 			]
@@ -345,4 +345,5 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

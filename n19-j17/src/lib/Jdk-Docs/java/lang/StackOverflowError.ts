@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.StackOverflowError', [
 		[/* text */ 't', `Thrown when a stack overflow occurs because an application
  recurses too deeply.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.StackOverflowError', [
 				[/* inline code block */ 'i', `StackOverflowError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -32,5 +32,6 @@ DocsCollector.collect('java.lang.StackOverflowError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

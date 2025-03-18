@@ -176,7 +176,7 @@ DocsCollector.collect('java.util.Properties', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an empty property list with no default values.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -235,7 +235,7 @@ DocsCollector.collect('java.util.Properties', [
 					[/* text */ 't', `the property key.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value in this property list with the specified key value.`]
 			]
@@ -255,7 +255,7 @@ DocsCollector.collect('java.util.Properties', [
 					[/* text */ 't', `a default value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value in this property list with the specified key value.`]
 			]
@@ -268,7 +268,7 @@ DocsCollector.collect('java.util.Properties', [
  of the same name has not already been found from the main
  properties list.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if any key in this property list
@@ -305,8 +305,8 @@ DocsCollector.collect('java.util.Properties', [
  returned set.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable set of keys in this property list where
           the key and its corresponding value are strings,
@@ -354,7 +354,7 @@ DocsCollector.collect('java.util.Properties', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous value of the specified key in this property
              list, or `],
@@ -1286,4 +1286,5 @@ DocsCollector.collect('java.util.Properties', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -146,7 +146,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -166,7 +166,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
  permission to ensure it's ok to enable subclassing.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its
@@ -398,7 +398,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 				[/* text */ 't', `Drain any buffered data in ObjectOutputStream.  Similar to flush but
  does not propagate the flush to the underlying stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if I/O errors occur while writing to the underlying
@@ -474,7 +474,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
  prepend their own header to the stream.  It writes the magic number and
  version to the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if I/O errors occur while writing to the underlying
@@ -526,7 +526,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
  the stream.  The fields will be written to the stream when writeFields
  method is called.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if I/O errors occur`]
@@ -542,7 +542,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 				[/* text */ 't', `Closes the stream. This method must be called to release any resources
  associated with the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -557,7 +557,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
  class being serialized. It will throw the NotActiveException if it is
  called otherwise.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if I/O errors occur while writing to the underlying
@@ -572,7 +572,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 				[/* text */ 't', `Flushes the stream. This will write any buffered output bytes and flush
  through to the underlying stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -589,7 +589,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
  written to the stream will not be referred to as already being in the
  stream.  They will be written to the stream again.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if reset() is invoked while serializing an object.`]
@@ -792,7 +792,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Write the buffered fields to the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if I/O errors occur while writing to the underlying
@@ -956,4 +956,5 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

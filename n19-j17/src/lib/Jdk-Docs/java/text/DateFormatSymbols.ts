@@ -98,7 +98,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* text */ 't', ` for date-time formatting for additional locales.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -124,7 +124,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
 					[/* text */ 't', `if the resources for the default locale cannot be
@@ -169,7 +169,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -183,8 +183,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `Override hashCode.
  Generates a hash code for the DateFormatSymbols object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -193,8 +193,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Overrides Cloneable`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -203,8 +203,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets localized date-time pattern characters. For example: 'u', 't', etc.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the localized date-time pattern characters.`]
 			]
@@ -213,8 +213,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets ampm strings. For example: "AM" and "PM".`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ampm strings.`]
 			]
@@ -223,8 +223,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets era strings. For example: "AD" and "BC".`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the era strings.`]
 			]
@@ -264,8 +264,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', ` for more details.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month strings.`]
 			]
@@ -305,8 +305,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', ` for more details.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the short month strings.`]
 			]
@@ -315,8 +315,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets short weekday strings. For example: "Sun", "Mon", etc.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the short weekday strings. Use
  `],
@@ -332,8 +332,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets weekday strings. For example: "Sunday", "Monday", etc.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the weekday strings. Use
  `],
@@ -433,8 +433,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  implementations.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the time zone strings.`]
 			]
@@ -460,8 +460,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `DateFormatSymbols`],
@@ -520,8 +520,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An array of locales for which localized
          `],
@@ -538,7 +538,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', `the new ampm strings.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setEras(java.lang.String[])', [
@@ -550,7 +550,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', `the new era strings.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setLocalPatternChars(java.lang.String)', [
@@ -563,7 +563,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  pattern characters.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMonths(java.lang.String[])', [
@@ -581,7 +581,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', `, etc.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setShortMonths(java.lang.String[])', [
@@ -599,7 +599,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', `, etc.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setShortWeekdays(java.lang.String[])', [
@@ -617,7 +617,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', `, etc.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setWeekdays(java.lang.String[])', [
@@ -635,7 +635,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', `, etc.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setZoneStrings(java.lang.String[][])', [
@@ -720,4 +720,5 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

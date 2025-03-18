@@ -18,7 +18,7 @@ DocsCollector.collect('java.text.AttributedString', [
  by clients or storage.  They are always passed by reference, and not
  cloned.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -163,8 +163,8 @@ DocsCollector.collect('java.text.AttributedString', [
 				[/* text */ 't', `Creates an AttributedCharacterIterator instance that provides access to the entire contents of
  this string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An iterator providing access to the text and its attributes.`]
 			]
@@ -183,7 +183,7 @@ DocsCollector.collect('java.text.AttributedString', [
 					[/* text */ 't', `a list of attributes that the client is interested in`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator providing access to the entire text and its selected attributes`]
 			]
@@ -309,4 +309,5 @@ DocsCollector.collect('java.text.AttributedString', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

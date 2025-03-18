@@ -72,7 +72,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 		[/* block */ 'b', ` All of the methods in this class are safe for use by multiple concurrent
  threads.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -84,7 +84,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
  loading of other installed providers. If circular loading of installed
  providers is detected then an unspecified error is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager has been installed and it denies
@@ -157,7 +157,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 					[/* text */ 't', `options indicating how symbolic links are handled`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a file attribute view of the specified type, or `],
 				[/* inline code block */ 'i', `null`],
@@ -240,8 +240,8 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Returns the URI scheme that identifies this provider.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The URI scheme`]
 			]
@@ -1445,7 +1445,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 					[/* text */ 't', ` class.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.ServiceConfigurationError', [/* throw description */
 					[/* text */ 't', `When an error occurs while loading a service provider`]
@@ -1563,4 +1563,5 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

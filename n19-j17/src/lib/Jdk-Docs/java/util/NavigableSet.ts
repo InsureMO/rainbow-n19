@@ -120,8 +120,8 @@ DocsCollector.collect('java.util.NavigableSet', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'ceiling(java.lang.Object)', [
 			[/* method description */
@@ -254,8 +254,8 @@ DocsCollector.collect('java.util.NavigableSet', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this set is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first element, or `],
 				[/* inline code block */ 'i', `null`],
@@ -269,8 +269,8 @@ DocsCollector.collect('java.util.NavigableSet', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this set is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the last element, or `],
 				[/* inline code block */ 'i', `null`],
@@ -284,8 +284,8 @@ DocsCollector.collect('java.util.NavigableSet', [
 				[/* inline code block */ 'i', `descendingSet().iterator()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this set, in descending order`]
 			]
@@ -294,8 +294,8 @@ DocsCollector.collect('java.util.NavigableSet', [
 			[/* method description */
 				[/* text */ 't', `Returns an iterator over the elements in this set, in ascending order.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this set, in ascending order`]
 			]
@@ -328,8 +328,8 @@ DocsCollector.collect('java.util.NavigableSet', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reverse order view of this set`]
 			]
@@ -799,4 +799,5 @@ DocsCollector.collect('java.util.NavigableSet', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

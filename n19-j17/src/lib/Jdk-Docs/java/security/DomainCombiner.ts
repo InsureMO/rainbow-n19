@@ -2,9 +2,9 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.security.DomainCombiner', [
-	/* class description */ UDF,
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* class description */,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'combine(java.security.ProtectionDomain[],java.security.ProtectionDomain[])', [
 			[/* method description */
@@ -43,7 +43,7 @@ DocsCollector.collect('java.security.DomainCombiner', [
           if there are no inherited ProtectionDomains.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new array consisting of the updated ProtectionDomains,
           or `],
@@ -52,4 +52,5 @@ DocsCollector.collect('java.security.DomainCombiner', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

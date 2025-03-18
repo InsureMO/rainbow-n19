@@ -16,13 +16,13 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 			[/* text */ 't', ` for more details.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an instance.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -39,7 +39,7 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other chronology`]
 			]
@@ -62,7 +62,7 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 					[/* text */ 't', `the other chronology to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
 			]
@@ -74,8 +74,8 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 				[/* block */ 'b', `
  The hash code should be based on the entire state of the object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -86,8 +86,8 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', `, using the chronology ID.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this chronology, not null`]
 			]
@@ -318,4 +318,5 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

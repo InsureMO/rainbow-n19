@@ -2199,7 +2199,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'parse(java.lang.CharSequence,java.time.temporal.TemporalQuery)', [
 			[/* method description */
@@ -2264,8 +2264,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			[/* method description */
 				[/* text */ 't', `Returns a description of the underlying formatters.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a description of this formatter, not null`]
 			]
@@ -2302,8 +2302,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The format does not support attributing of the returned format string.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this formatter as a classic format instance, not null`]
 			]
@@ -2347,7 +2347,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the query defining the type to parse to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this formatter as a classic format instance, not null`]
 			]
@@ -2365,8 +2365,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', ` for more details on overriding.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the override chronology of this formatter, null if no override`]
 			]
@@ -2408,7 +2408,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the locale, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a formatter based on this formatter with localized values of
       the calendar, decimal style and/or timezone, that supersede values in this
@@ -2473,7 +2473,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the new chronology, null if no override`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a formatter based on this formatter with the requested override chronology, not null`]
 			]
@@ -2490,7 +2490,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the new DecimalStyle, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a formatter based on this formatter with the requested DecimalStyle, not null`]
 			]
@@ -2523,7 +2523,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the new locale, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a formatter based on this formatter with the requested locale, not null`]
 			]
@@ -2590,7 +2590,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the new set of resolver fields, null if no fields`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a formatter based on this formatter with the requested resolver style, not null`]
 			]
@@ -2657,7 +2657,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the new set of resolver fields, null if no fields`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a formatter based on this formatter with the requested resolver style, not null`]
 			]
@@ -2695,7 +2695,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the new resolver style, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a formatter based on this formatter with the requested resolver style, not null`]
 			]
@@ -2759,7 +2759,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the new override zone, null if no override`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a formatter based on this formatter with the requested override zone, not null`]
 			]
@@ -2768,8 +2768,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			[/* method description */
 				[/* text */ 't', `Gets the DecimalStyle to be used during formatting.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the locale of this formatter, not null`]
 			]
@@ -2790,8 +2790,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', ` for more details.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the resolver style of this formatter, not null`]
 			]
@@ -3066,8 +3066,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', ` for more details on overriding.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the override zone of this formatter, null if no override`]
 			]
@@ -3080,8 +3080,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  This is used to lookup any part of the formatter needing specific
  localization, such as the text or localized pattern.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the locale of this formatter, not null`]
 			]
@@ -3100,8 +3100,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', ` for more details.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the immutable set of resolver fields of this formatter, null if no fields`]
 			]
@@ -3154,8 +3154,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a query that provides access to whether a leap-second was parsed`]
 			]
@@ -3247,8 +3247,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a query that provides access to the excess days that were parsed`]
 			]
@@ -3296,7 +3296,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the formatter style to obtain, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the date formatter, not null`]
 			]
@@ -3357,7 +3357,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the formatter style to obtain, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the date-time formatter, not null`]
 			]
@@ -3421,7 +3421,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the time formatter style to obtain, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the date, time or date-time formatter, not null`]
 			]
@@ -3482,7 +3482,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `the formatter style to obtain, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the time formatter, not null`]
 			]
@@ -3639,4 +3639,5 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

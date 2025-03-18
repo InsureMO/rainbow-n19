@@ -83,7 +83,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
 			[/* method description */
@@ -146,7 +146,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other date-time`]
 			]
@@ -185,7 +185,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the other date-time to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this date-time is after the specified date-time`]
 			]
@@ -224,7 +224,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the other date-time to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this date-time is before the specified date-time`]
 			]
@@ -263,7 +263,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the other date-time to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this date-time is equal to the specified date-time`]
 			]
@@ -461,7 +461,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this date-time, false if not`]
 			]
@@ -591,7 +591,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the unit to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the unit can be added/subtracted, false if not`]
 			]
@@ -625,7 +625,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the other date-time to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
 			]
@@ -720,8 +720,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', ` value for the day-of-month.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-month, from 1 to 31`]
 			]
@@ -737,8 +737,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', ` value for the day-of-year.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-year, from 1 to 365, or 366 in a leap year`]
 			]
@@ -747,8 +747,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
 			[/* method description */
 				[/* text */ 't', `Gets the hour-of-day field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hour-of-day, from 0 to 23`]
 			]
@@ -757,8 +757,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
 			[/* method description */
 				[/* text */ 't', `Gets the minute-of-hour field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minute-of-hour, from 0 to 59`]
 			]
@@ -780,8 +780,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, from 1 to 12`]
 			]
@@ -790,8 +790,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
 			[/* method description */
 				[/* text */ 't', `Gets the nano-of-second field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the nano-of-second, from 0 to 999,999,999`]
 			]
@@ -800,8 +800,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
 			[/* method description */
 				[/* text */ 't', `Gets the second-of-minute field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the second-of-minute, from 0 to 59`]
 			]
@@ -827,8 +827,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the year, from MIN_YEAR to MAX_YEAR`]
 			]
@@ -837,8 +837,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this date-time.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -897,8 +897,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
  the time where the omitted parts are implied to be zero.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this date-time, not null`]
 			]
@@ -933,8 +933,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
  This includes textual names of the values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-week, not null`]
 			]
@@ -953,8 +953,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
  as this date-time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the date part of this date-time, not null`]
 			]
@@ -2152,8 +2152,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
  nanosecond as this date-time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the time part of this date-time, not null`]
 			]
@@ -2180,8 +2180,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, not null`]
 			]
@@ -2205,7 +2205,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the offset to combine with, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset date-time formed from this date-time and the specified offset, not null`]
 			]
@@ -2376,7 +2376,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the time-zone to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the zoned date-time formed from this date-time, not null`]
 			]
@@ -2653,8 +2653,8 @@ DocsCollector.collect('java.time.LocalDateTime', [
  Using this method will prevent the ability to use an alternate clock for testing
  because the clock is hard-coded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date-time using the system clock and default time-zone, not null`]
 			]
@@ -2677,7 +2677,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the clock to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date-time, not null`]
 			]
@@ -2703,7 +2703,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the zone ID to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date-time using the system clock, not null`]
 			]
@@ -3002,7 +3002,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `the local time, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the local date-time, not null`]
 			]
@@ -3132,4 +3132,5 @@ DocsCollector.collect('java.time.LocalDateTime', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

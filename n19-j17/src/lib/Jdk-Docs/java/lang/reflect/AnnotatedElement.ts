@@ -632,8 +632,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
@@ -672,8 +672,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
  The caller of this method is free to modify the returned array; it will
  have no effect on the arrays returned to other callers.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations present on this element`]
 			]
@@ -693,8 +693,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
  The caller of this method is free to modify the returned array; it will
  have no effect on the arrays returned to other callers.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations directly present on this element`]
 			]
@@ -844,4 +844,5 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

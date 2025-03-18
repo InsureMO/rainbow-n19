@@ -101,8 +101,8 @@ DocsCollector.collect('java.util.Currency', [
  point numbers and their operations.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getDefaultFractionDigits()', [
 			[/* method description */
@@ -114,8 +114,8 @@ DocsCollector.collect('java.util.Currency', [
  In the case of pseudo-currencies, such as IMF Special Drawing Rights,
  -1 is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the default number of fraction digits used with this currency`]
 			]
@@ -124,8 +124,8 @@ DocsCollector.collect('java.util.Currency', [
 			[/* method description */
 				[/* text */ 't', `Returns the ISO 4217 numeric code of this currency.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ISO 4217 numeric code of this currency`]
 			]
@@ -134,8 +134,8 @@ DocsCollector.collect('java.util.Currency', [
 			[/* method description */
 				[/* text */ 't', `Gets the ISO 4217 currency code of this currency.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ISO 4217 currency code of this currency.`]
 			]
@@ -157,8 +157,8 @@ DocsCollector.collect('java.util.Currency', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the display name of this currency for the default
      `],
@@ -203,8 +203,8 @@ DocsCollector.collect('java.util.Currency', [
  e.g. a numeric value of 32 would be returned as "032",
  and a numeric value of 6 would be returned as "006".`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the 3 digit ISO 4217 numeric code of this currency as a `],
 				[/* inline code block */ 'i', `String`]
@@ -241,8 +241,8 @@ DocsCollector.collect('java.util.Currency', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the symbol of this currency for the default
      `],
@@ -290,8 +290,8 @@ DocsCollector.collect('java.util.Currency', [
 			[/* method description */
 				[/* text */ 't', `Returns the ISO 4217 currency code of this currency.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ISO 4217 currency code of this currency`]
 			]
@@ -398,12 +398,13 @@ DocsCollector.collect('java.util.Currency', [
  that represent obsolete ISO 4217 codes.  The set can be modified
  without affecting the available currencies in the runtime.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the set of available currencies.  If there is no currency
     available in the runtime, the returned set is empty.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

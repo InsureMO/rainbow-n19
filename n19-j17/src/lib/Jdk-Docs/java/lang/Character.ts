@@ -818,7 +818,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the object to compare with.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -833,8 +833,8 @@ DocsCollector.collect('java.lang.Character', [
 				[/* inline code block */ 'i', `Character`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the primitive `],
 				[/* inline code block */ 'i', `char`],
@@ -855,7 +855,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', ` to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -894,8 +894,8 @@ DocsCollector.collect('java.lang.Character', [
 				[/* inline code block */ 'i', `charValue()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this `],
 				[/* inline code block */ 'i', `Character`]
@@ -917,8 +917,8 @@ DocsCollector.collect('java.lang.Character', [
 				[/* inline code block */ 'i', `Character`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this object.`]
 			]
@@ -930,8 +930,8 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -1001,7 +1001,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a Unicode alphabet
@@ -1025,7 +1025,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified code point is between
@@ -1072,7 +1072,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character has a defined meaning
@@ -1101,7 +1101,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character has a defined meaning
@@ -1196,7 +1196,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a digit;
@@ -1279,7 +1279,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a digit;
@@ -1317,7 +1317,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', ` value to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the `],
@@ -1402,7 +1402,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is an ignorable control
@@ -1467,7 +1467,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is an ignorable control
@@ -1488,7 +1488,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a Unicode ideograph
@@ -1530,7 +1530,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is an ISO control character;
@@ -1560,7 +1560,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is an ISO control character;
@@ -1631,7 +1631,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character may be part of a
@@ -1689,7 +1689,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character may be part of a
@@ -1761,7 +1761,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character may start a Java identifier;
@@ -1819,7 +1819,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character may start a Java identifier;
@@ -1878,7 +1878,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character may start a Java
@@ -1936,7 +1936,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character may be part of a
@@ -2013,7 +2013,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a letter;
@@ -2078,7 +2078,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a letter;
@@ -2122,7 +2122,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a letter or digit;
@@ -2154,7 +2154,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a letter or digit;
@@ -2212,7 +2212,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is lowercase;
@@ -2259,7 +2259,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is lowercase;
@@ -2297,7 +2297,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', ` value to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the `],
@@ -2347,7 +2347,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', ` for which the mirrored property is requested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the char is mirrored, `],
@@ -2378,7 +2378,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is mirrored, `],
@@ -2477,7 +2477,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is ISO-LATIN-1 white
@@ -2533,7 +2533,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a space character;
@@ -2577,7 +2577,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a space character;
@@ -2598,7 +2598,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified code point is between
@@ -2650,7 +2650,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', ` value to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the `],
@@ -2695,7 +2695,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the low-surrogate code value to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified high and
@@ -2779,7 +2779,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is titlecase;
@@ -2850,7 +2850,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is titlecase;
@@ -2948,7 +2948,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character may be part of a
@@ -3034,7 +3034,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character may be part of a
@@ -3116,7 +3116,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character may start a Unicode
@@ -3187,7 +3187,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character may start a Unicode
@@ -3244,7 +3244,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is uppercase;
@@ -3289,7 +3289,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is uppercase;
@@ -3310,7 +3310,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the Unicode code point to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified code point value is between
@@ -3425,7 +3425,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a Java whitespace
@@ -3522,7 +3522,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is a Java whitespace
@@ -3562,7 +3562,7 @@ DocsCollector.collect('java.lang.Character', [
             is requested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the directionality property of the `],
 				[/* inline code block */ 'i', `char`],
@@ -3584,7 +3584,7 @@ DocsCollector.collect('java.lang.Character', [
           the directionality property is requested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the directionality property of the character.`]
 			]
@@ -3640,7 +3640,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the radix.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `char`],
@@ -3696,7 +3696,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `a supplementary character (Unicode code point)`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the leading surrogate code unit used to represent the
           character in the UTF-16 encoding`]
@@ -3750,7 +3750,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `a supplementary character (Unicode code point)`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the trailing surrogate code unit used to represent the
           character in the UTF-16 encoding`]
@@ -3770,7 +3770,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', ` of which to reverse the byte order.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value obtained by reversing (or, equivalently, swapping)
      the bytes in the specified `],
@@ -3832,7 +3832,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lowercase equivalent of the character, if any;
           otherwise, the character itself.`]
@@ -3884,7 +3884,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the titlecase equivalent of the character, if any;
           otherwise, the character itself.`]
@@ -3944,7 +3944,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the uppercase equivalent of the character, if any;
           otherwise, the character itself.`]
@@ -4014,7 +4014,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `2 if the character is a valid supplementary character; 1 otherwise.`]
 			]
@@ -4620,7 +4620,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', ` to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -4766,7 +4766,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the radix.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by the character in the
           specified radix.`]
@@ -4885,7 +4885,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the radix.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by the character in the
           specified radix.`]
@@ -4956,7 +4956,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value of the character, as a nonnegative `],
 				[/* inline code block */ 'i', `int`],
@@ -5023,7 +5023,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value of the character, as a nonnegative `],
 				[/* inline code block */ 'i', `int`],
@@ -5056,7 +5056,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a value of type `],
 				[/* inline code block */ 'i', `int`],
@@ -5073,7 +5073,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a value of type `],
 				[/* inline code block */ 'i', `int`],
@@ -5097,7 +5097,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', ` for which to return a hash code.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for a `],
 				[/* inline code block */ 'i', `char`],
@@ -5369,7 +5369,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the low-surrogate code unit`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the supplementary code point composed from the
          specified surrogate pair.`]
@@ -5418,7 +5418,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lowercase equivalent of the character (Unicode code
           point), if any; otherwise, the character itself.`]
@@ -5452,7 +5452,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the titlecase equivalent of the character, if any;
           otherwise, the character itself.`]
@@ -5501,7 +5501,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `the character (Unicode code point) to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the uppercase equivalent of the character, if any;
           otherwise, the character itself.`]
@@ -5537,7 +5537,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `a char value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Character`],
@@ -5610,7 +5610,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', ` to be converted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of the specified `],
 				[/* inline code block */ 'i', `char`]
@@ -5649,4 +5649,5 @@ DocsCollector.collect('java.lang.Character', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -529,7 +529,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 					[/* text */ 't', ` object to be compared with.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `True if the given `],
 				[/* inline code block */ 'i', `obj`],
@@ -550,7 +550,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 					[/* text */ 't', `the TimeZone object to be compared with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the given zone is a SimpleTimeZone and has the
@@ -566,7 +566,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 					[/* text */ 't', `the given Date.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if daylight saving time is in effective at the
  given date; false otherwise.`]
@@ -583,8 +583,8 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* reference */ 'r', `#useDaylightTime()`, `useDaylightTime()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this `],
@@ -599,8 +599,8 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 			[/* method description */
 				[/* text */ 't', `Queries if this time zone uses daylight saving time.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this time zone uses daylight saving time;
  false otherwise.`]
@@ -611,8 +611,8 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* text */ 't', `Returns the amount of time in milliseconds that the clock is
  advanced during daylight saving time.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of milliseconds the time is advanced with
  respect to standard time when the daylight saving rules are in
@@ -700,7 +700,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 					[/* text */ 't', `the time at which the time zone offset is found`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the amount of time in milliseconds to add to UTC to get
  local time.`]
@@ -710,8 +710,8 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 			[/* method description */
 				[/* text */ 't', `Gets the GMT offset for this time zone.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the GMT offset value in milliseconds`]
 			]
@@ -720,8 +720,8 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 			[/* method description */
 				[/* text */ 't', `Generates the hash code for the SimpleDateFormat object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code for this object`]
 			]
@@ -732,8 +732,8 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* inline code block */ 'i', `SimpleTimeZone`],
 				[/* text */ 't', ` instance.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -742,8 +742,8 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of this time zone.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this time zone.`]
 			]
@@ -760,7 +760,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
  are in effect. A positive number, typically one hour (3600000).`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setEndRule(int,int,int)', [
@@ -916,7 +916,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 					[/* text */ 't', `the given base time zone offset to GMT.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setStartRule(int,int,int)', [
@@ -1073,8 +1073,9 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 					[/* text */ 't', `The daylight saving starting year.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

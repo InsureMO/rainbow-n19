@@ -32,13 +32,13 @@ DocsCollector.collect('java.lang.AssertionError', [
 		[/* text */ 't', `.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an AssertionError with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(boolean)', [
@@ -220,5 +220,6 @@ DocsCollector.collect('java.lang.AssertionError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

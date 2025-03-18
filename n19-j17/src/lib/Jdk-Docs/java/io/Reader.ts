@@ -27,7 +27,7 @@ DocsCollector.collect('java.io.Reader', [
 				[/* text */ 't', `Creates a new character-stream reader whose critical sections will
  synchronize on the reader itself.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.Object)', [
@@ -106,7 +106,7 @@ DocsCollector.collect('java.io.Reader', [
  mark(), reset(), or skip() invocations will throw an IOException.
  Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -120,8 +120,8 @@ DocsCollector.collect('java.io.Reader', [
  implementation always returns false. Subclasses should override this
  method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
 			]
@@ -130,7 +130,7 @@ DocsCollector.collect('java.io.Reader', [
 			[/* method description */
 				[/* text */ 't', `Tells whether this stream is ready to be read.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -151,7 +151,7 @@ DocsCollector.collect('java.io.Reader', [
 				[/* block */ 'b', ` Subclasses that intend to support efficient single-character input
  should override this method.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -365,8 +365,8 @@ DocsCollector.collect('java.io.Reader', [
 					[/* text */ 't', ` is not specified.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Reader`],
@@ -404,7 +404,7 @@ DocsCollector.collect('java.io.Reader', [
  character-input streams support the reset() operation, and some support
  reset() without supporting mark().`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If the stream has not been marked,
@@ -416,4 +416,5 @@ DocsCollector.collect('java.io.Reader', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

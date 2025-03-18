@@ -42,8 +42,8 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
  Applications should treat the data provided as representing the best information
  available to the implementation of this rule.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -62,7 +62,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 					[/* text */ 't', `the other rules, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this rules is the same as that specified`]
 			]
@@ -92,7 +92,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
   may be ignored if the rules have a single offset for all instants`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the standard offset, not null`]
 			]
@@ -101,8 +101,8 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 			[/* method description */
 				[/* text */ 't', `Checks of the zone rules are fixed, such that the offset never varies.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the time-zone is fixed and the offset never changes`]
 			]
@@ -132,7 +132,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 					[/* text */ 't', `the offset to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the offset date-time is valid for these rules`]
 			]
@@ -143,8 +143,8 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 				[/* inline code block */ 'i', `#equals`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code`]
 			]
@@ -153,8 +153,8 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string for debugging, not null`]
 			]
@@ -187,7 +187,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
   may be ignored if the rules have a single offset for all instants`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the difference between the standard and actual offset, not null`]
 			]
@@ -239,7 +239,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
   may be ignored if the rules have a single offset for all instants`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset transition, null if the local date-time is not in transition`]
 			]
@@ -259,7 +259,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
   may be ignored if the rules have a single offset for all instants`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next transition after the specified instant, null if this is after the last transition`]
 			]
@@ -279,7 +279,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
   may be ignored if the rules have a single offset for all instants`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous transition before the specified instant, null if this is before the first transition`]
 			]
@@ -299,7 +299,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
   may be ignored if the rules have a single offset for all instants`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset, not null`]
 			]
@@ -346,7 +346,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
   may be ignored if the rules have a single offset for all instants`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the best available offset for the local date-time, not null`]
 			]
@@ -367,7 +367,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
   may be ignored if the rules have a single offset for all instants`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the standard offset, not null`]
 			]
@@ -389,8 +389,8 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
  The list will be empty for fixed offset rules and for any time-zone where there has
  only ever been a single offset. The list will also be empty if the transition rules are unknown.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an immutable list of fully defined transitions, not null`]
 			]
@@ -429,8 +429,8 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
  The list will be empty for fixed offset rules and for any time-zone where there is no
  daylight saving time. The list will also be empty if the transition rules are unknown.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an immutable list of transition rules, not null`]
 			]
@@ -492,7 +492,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
   may be ignored if the rules have a single offset for all instants`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the list of valid offsets, may be immutable, not null`]
 			]
@@ -506,7 +506,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 					[/* text */ 't', `the offset this fixed zone rules is based on, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the zone rules, not null`]
 			]
@@ -532,10 +532,11 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 					[/* text */ 't', `the recurring last rules, size 16 or less, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the zone rules, not null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

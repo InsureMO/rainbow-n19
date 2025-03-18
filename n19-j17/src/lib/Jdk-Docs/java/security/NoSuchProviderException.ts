@@ -6,7 +6,7 @@ DocsCollector.collect('java.security.NoSuchProviderException', [
 		[/* text */ 't', `This exception is thrown when a particular security provider is
  requested but is not available in the environment.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -14,7 +14,7 @@ DocsCollector.collect('java.security.NoSuchProviderException', [
  detail message is a String that describes this particular
  exception.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -31,5 +31,6 @@ DocsCollector.collect('java.security.NoSuchProviderException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -16,8 +16,8 @@ DocsCollector.collect('java.util.Spliterators', [
 		[/* reference */ 'r', `java.util.Spliterator.OfDouble`, `Spliterator.OfDouble`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'iterator(java.util.Spliterator)', [
 			[/* method description */
@@ -68,8 +68,8 @@ DocsCollector.collect('java.util.Spliterators', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An empty spliterator`]
 			]
@@ -481,8 +481,8 @@ DocsCollector.collect('java.util.Spliterators', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An empty spliterator`]
 			]
@@ -771,8 +771,8 @@ DocsCollector.collect('java.util.Spliterators', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An empty spliterator`]
 			]
@@ -1048,8 +1048,8 @@ DocsCollector.collect('java.util.Spliterators', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An empty spliterator`]
 			]
@@ -1319,4 +1319,5 @@ DocsCollector.collect('java.util.Spliterators', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -11,13 +11,13 @@ DocsCollector.collect('java.lang.Object', [
 		[/* text */ 't', ` as a superclass. All objects,
  including arrays, implement the methods of this class.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new object.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -91,7 +91,7 @@ DocsCollector.collect('java.lang.Object', [
  need to be modified.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.CloneNotSupportedException', [/* throw description */
 					[/* text */ 't', `if the object's class does not
@@ -195,7 +195,7 @@ DocsCollector.collect('java.lang.Object', [
  ignored.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.Throwable', [/* throw description */
 					[/* text */ 't', `the `],
@@ -336,7 +336,7 @@ DocsCollector.collect('java.lang.Object', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -383,8 +383,8 @@ DocsCollector.collect('java.lang.Object', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The `],
 				[/* inline code block */ 'i', `Class`],
@@ -439,7 +439,7 @@ DocsCollector.collect('java.lang.Object', [
 				[/* block */ 'b', `
  Only one thread at a time can own an object's monitor.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalMonitorStateException', [/* throw description */
 					[/* text */ 't', `if the current thread is not
@@ -474,7 +474,7 @@ DocsCollector.collect('java.lang.Object', [
  a monitor.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalMonitorStateException', [/* throw description */
 					[/* text */ 't', `if the current thread is not
@@ -549,7 +549,7 @@ DocsCollector.collect('java.lang.Object', [
  for details.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalMonitorStateException', [/* throw description */
 					[/* text */ 't', `if the current thread is not
@@ -747,8 +747,8 @@ DocsCollector.collect('java.lang.Object', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of the object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
@@ -809,11 +809,12 @@ DocsCollector.collect('java.lang.Object', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

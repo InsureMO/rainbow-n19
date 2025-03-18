@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.invoke.WrongMethodTypeException', [
  of the type mismatch, at method handle construction time,
  instead of when the mismatched method handle is called.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -23,7 +23,7 @@ DocsCollector.collect('java.lang.invoke.WrongMethodTypeException', [
 				[/* inline code block */ 'i', `WrongMethodTypeException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -41,5 +41,6 @@ DocsCollector.collect('java.lang.invoke.WrongMethodTypeException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

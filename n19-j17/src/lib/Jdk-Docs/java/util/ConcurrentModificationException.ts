@@ -48,14 +48,14 @@ DocsCollector.collect('java.util.ConcurrentModificationException', [
  should be used only to detect bugs.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a ConcurrentModificationException with no
  detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -133,5 +133,6 @@ DocsCollector.collect('java.util.ConcurrentModificationException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

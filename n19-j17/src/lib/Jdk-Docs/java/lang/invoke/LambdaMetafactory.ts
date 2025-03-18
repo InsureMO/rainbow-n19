@@ -399,7 +399,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'altMetafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...)', [
 			[/* method description */
@@ -894,4 +894,5 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

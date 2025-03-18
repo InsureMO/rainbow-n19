@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.lang.invoke.VarHandle$AccessMode', [
@@ -6,8 +5,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle$AccessMode', [
 		[/* text */ 't', `The set of access modes that specify how a variable, referenced by a
  VarHandle, is accessed.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'methodName()', [
 			[/* method description */
@@ -18,8 +17,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle$AccessMode', [
 				[/* inline code block */ 'i', `AccessMode`],
 				[/* text */ 't', ` value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the signature-polymorphic method name`]
 			]
@@ -87,11 +86,261 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'GET', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#get(java.lang.Object...)`, `VarHandle.get`]
+			],
+		]],
+		[/* enum value */ 'SET', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#set(java.lang.Object...)`, `VarHandle.set`]
+			],
+		]],
+		[/* enum value */ 'GET_VOLATILE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getVolatile(java.lang.Object...)`, `VarHandle.getVolatile`]
+			],
+		]],
+		[/* enum value */ 'SET_VOLATILE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#setVolatile(java.lang.Object...)`, `VarHandle.setVolatile`]
+			],
+		]],
+		[/* enum value */ 'GET_ACQUIRE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAcquire(java.lang.Object...)`, `VarHandle.getAcquire`]
+			],
+		]],
+		[/* enum value */ 'SET_RELEASE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#setRelease(java.lang.Object...)`, `VarHandle.setRelease`]
+			],
+		]],
+		[/* enum value */ 'GET_OPAQUE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getOpaque(java.lang.Object...)`, `VarHandle.getOpaque`]
+			],
+		]],
+		[/* enum value */ 'SET_OPAQUE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#setOpaque(java.lang.Object...)`, `VarHandle.setOpaque`]
+			],
+		]],
+		[/* enum value */ 'COMPARE_AND_SET', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#compareAndSet(java.lang.Object...)`, `VarHandle.compareAndSet`]
+			],
+		]],
+		[/* enum value */ 'COMPARE_AND_EXCHANGE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#compareAndExchange(java.lang.Object...)`, `VarHandle.compareAndExchange`]
+			],
+		]],
+		[/* enum value */ 'COMPARE_AND_EXCHANGE_ACQUIRE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#compareAndExchangeAcquire(java.lang.Object...)`, `VarHandle.compareAndExchangeAcquire`]
+			],
+		]],
+		[/* enum value */ 'COMPARE_AND_EXCHANGE_RELEASE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#compareAndExchangeRelease(java.lang.Object...)`, `VarHandle.compareAndExchangeRelease`]
+			],
+		]],
+		[/* enum value */ 'WEAK_COMPARE_AND_SET_PLAIN', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#weakCompareAndSetPlain(java.lang.Object...)`, `VarHandle.weakCompareAndSetPlain`]
+			],
+		]],
+		[/* enum value */ 'WEAK_COMPARE_AND_SET', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#weakCompareAndSet(java.lang.Object...)`, `VarHandle.weakCompareAndSet`]
+			],
+		]],
+		[/* enum value */ 'WEAK_COMPARE_AND_SET_ACQUIRE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#weakCompareAndSetAcquire(java.lang.Object...)`, `VarHandle.weakCompareAndSetAcquire`]
+			],
+		]],
+		[/* enum value */ 'WEAK_COMPARE_AND_SET_RELEASE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#weakCompareAndSetRelease(java.lang.Object...)`, `VarHandle.weakCompareAndSetRelease`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_SET', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndSet(java.lang.Object...)`, `VarHandle.getAndSet`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_SET_ACQUIRE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndSetAcquire(java.lang.Object...)`, `VarHandle.getAndSetAcquire`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_SET_RELEASE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndSetRelease(java.lang.Object...)`, `VarHandle.getAndSetRelease`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_ADD', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndAdd(java.lang.Object...)`, `VarHandle.getAndAdd`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_ADD_ACQUIRE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndAddAcquire(java.lang.Object...)`, `VarHandle.getAndAddAcquire`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_ADD_RELEASE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndAddRelease(java.lang.Object...)`, `VarHandle.getAndAddRelease`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_BITWISE_OR', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndBitwiseOr(java.lang.Object...)`, `VarHandle.getAndBitwiseOr`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_BITWISE_OR_RELEASE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndBitwiseOrRelease(java.lang.Object...)`, `VarHandle.getAndBitwiseOrRelease`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_BITWISE_OR_ACQUIRE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndBitwiseOrAcquire(java.lang.Object...)`, `VarHandle.getAndBitwiseOrAcquire`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_BITWISE_AND', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndBitwiseAnd(java.lang.Object...)`, `VarHandle.getAndBitwiseAnd`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_BITWISE_AND_RELEASE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndBitwiseAndRelease(java.lang.Object...)`, `VarHandle.getAndBitwiseAndRelease`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_BITWISE_AND_ACQUIRE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndBitwiseAndAcquire(java.lang.Object...)`, `VarHandle.getAndBitwiseAndAcquire`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_BITWISE_XOR', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndBitwiseXor(java.lang.Object...)`, `VarHandle.getAndBitwiseXor`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_BITWISE_XOR_RELEASE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndBitwiseXorRelease(java.lang.Object...)`, `VarHandle.getAndBitwiseXorRelease`]
+			],
+		]],
+		[/* enum value */ 'GET_AND_BITWISE_XOR_ACQUIRE', [
+			[/* enum value description */
+				[/* text */ 't', `The access mode whose access is specified by the corresponding
+ method
+ `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle#getAndBitwiseXorAcquire(java.lang.Object...)`, `VarHandle.getAndBitwiseXorAcquire`]
+			],
 		]]
 	],
 ]);

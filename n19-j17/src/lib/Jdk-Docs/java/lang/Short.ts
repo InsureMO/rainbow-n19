@@ -173,7 +173,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* text */ 't', `the object to compare with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -191,8 +191,8 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', ` after
  a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -209,8 +209,8 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', `
  after a widening primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -227,8 +227,8 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', `
  after a widening primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -249,7 +249,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* text */ 't', ` to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -287,8 +287,8 @@ DocsCollector.collect('java.lang.Short', [
 				[/* inline code block */ 'i', `intValue()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this `],
 				[/* inline code block */ 'i', `Short`]
@@ -303,8 +303,8 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', ` after
  a widening primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -328,8 +328,8 @@ DocsCollector.collect('java.lang.Short', [
 				[/* reference */ 'r', `#toString(short)`, `toString(short)`],
 				[/* text */ 't', ` method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the value of this object in
           base 10.`]
@@ -342,8 +342,8 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -361,8 +361,8 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', ` after
  a widening primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -379,8 +379,8 @@ DocsCollector.collect('java.lang.Short', [
 				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -410,7 +410,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* text */ 't', ` to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -447,7 +447,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* text */ 't', ` to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -481,7 +481,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* text */ 't', `the value to hash`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for a `],
 				[/* inline code block */ 'i', `short`],
@@ -523,7 +523,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* inline code block */ 'i', `int`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the argument converted to `],
 				[/* inline code block */ 'i', `int`],
@@ -842,7 +842,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* text */ 't', `a short value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Short`],
@@ -867,7 +867,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* text */ 't', ` to be converted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of the specified `],
 				[/* inline code block */ 'i', `short`]
@@ -908,7 +908,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* inline code block */ 'i', `long`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the argument converted to `],
 				[/* inline code block */ 'i', `long`],
@@ -1087,7 +1087,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* text */ 't', `the value whose bytes are to be reversed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value obtained by reversing (or, equivalently, swapping)
      the bytes in the specified `],
@@ -1096,4 +1096,5 @@ DocsCollector.collect('java.lang.Short', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

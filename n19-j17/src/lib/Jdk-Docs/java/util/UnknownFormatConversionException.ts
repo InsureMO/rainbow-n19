@@ -15,7 +15,7 @@ DocsCollector.collect('java.util.UnknownFormatConversionException', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -34,12 +34,13 @@ DocsCollector.collect('java.util.UnknownFormatConversionException', [
 			[/* method description */
 				[/* text */ 't', `Returns the unknown conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The unknown conversion.`]
 			]
 		]],
 		[/* method */ 'getMessage()', UDF]
 	],
+	/* enum values */ UDF
 ]);

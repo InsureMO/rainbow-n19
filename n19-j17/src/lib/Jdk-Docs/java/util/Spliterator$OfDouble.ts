@@ -7,8 +7,8 @@ DocsCollector.collect('java.util.Spliterator$OfDouble', [
 		[/* inline code block */ 'i', `double`],
 		[/* text */ 't', ` values.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'tryAdvance(java.util.function.DoubleConsumer)', UDF],
 		[/* method */ 'trySplit()', UDF],
@@ -35,7 +35,7 @@ DocsCollector.collect('java.util.Spliterator$OfDouble', [
 					[/* text */ 't', `The action`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` if no remaining elements existed
@@ -63,9 +63,10 @@ DocsCollector.collect('java.util.Spliterator$OfDouble', [
 					[/* text */ 't', `The action`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEachRemaining(java.util.function.DoubleConsumer)', UDF]
 	],
+	/* enum values */ UDF
 ]);

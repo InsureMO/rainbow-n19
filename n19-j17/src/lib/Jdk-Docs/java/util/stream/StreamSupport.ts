@@ -14,8 +14,8 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
 			[/* text */ 't', ` classes.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'stream(java.util.function.Supplier,int,boolean)', [
 			[/* method description */
@@ -95,7 +95,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
         stream.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential or parallel `],
 				[/* inline code block */ 'i', `Stream`]
@@ -151,7 +151,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
         stream.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential or parallel `],
 				[/* inline code block */ 'i', `Stream`]
@@ -235,7 +235,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
         stream.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential or parallel `],
 				[/* inline code block */ 'i', `DoubleStream`]
@@ -291,7 +291,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
         stream.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential or parallel `],
 				[/* inline code block */ 'i', `DoubleStream`]
@@ -375,7 +375,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
         stream.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential or parallel `],
 				[/* inline code block */ 'i', `IntStream`]
@@ -431,7 +431,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
         stream.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential or parallel `],
 				[/* inline code block */ 'i', `IntStream`]
@@ -515,7 +515,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
         stream.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential or parallel `],
 				[/* inline code block */ 'i', `LongStream`]
@@ -571,11 +571,12 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
         stream.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential or parallel `],
 				[/* inline code block */ 'i', `LongStream`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

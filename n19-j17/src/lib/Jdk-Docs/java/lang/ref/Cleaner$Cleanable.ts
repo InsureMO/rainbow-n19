@@ -9,8 +9,8 @@ DocsCollector.collect('java.lang.ref.Cleaner$Cleanable', [
 		[/* inline code block */ 'i', `Cleaner`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'clean()', [
 			[/* method description */
@@ -20,9 +20,10 @@ DocsCollector.collect('java.lang.ref.Cleaner$Cleanable', [
 				[/* inline code block */ 'i', `clean`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -111,15 +111,15 @@ DocsCollector.collect('java.security.Key', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getEncoded()', [
 			[/* method description */
 				[/* text */ 't', `Returns the key in its primary encoding format, or null
  if this key does not support encoding.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the encoded key, or null if the key does not support
  encoding.`]
@@ -135,8 +135,8 @@ DocsCollector.collect('java.security.Key', [
 				[/* text */ 't', `
  for information about standard key algorithm names.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the algorithm associated with this key.`]
 			]
@@ -165,11 +165,12 @@ DocsCollector.collect('java.security.Key', [
 				[/* inline code block */ 'i', `"PKCS#8"`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the primary encoding format of the key.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

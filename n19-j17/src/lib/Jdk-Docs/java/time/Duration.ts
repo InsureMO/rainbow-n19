@@ -78,7 +78,7 @@ DocsCollector.collect('java.time.Duration', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -94,7 +94,7 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `the other duration, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the other duration is equal to this one`]
 			]
@@ -112,8 +112,8 @@ DocsCollector.collect('java.time.Duration', [
  This method checks whether the length is less than zero.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this duration has a total length less than zero`]
 			]
@@ -131,8 +131,8 @@ DocsCollector.collect('java.time.Duration', [
  This method checks whether the length is zero.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this duration has a total length equal to zero`]
 			]
@@ -156,7 +156,7 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `the other duration to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
 			]
@@ -184,8 +184,8 @@ DocsCollector.collect('java.time.Duration', [
  A duration of -1 nanosecond is stored as -1 seconds plus 999,999,999 nanoseconds.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the nanoseconds within the second part of the length of the duration, from 0 to 999,999,999`]
 			]
@@ -194,8 +194,8 @@ DocsCollector.collect('java.time.Duration', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this duration.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -216,8 +216,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of hours part in the duration, may be negative`]
 			]
@@ -242,8 +242,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of milliseconds part of the duration.`]
 			]
@@ -264,8 +264,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of minutes parts in the duration, may be negative`]
 			]
@@ -289,8 +289,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the nanoseconds within the second part of the length of the duration, from 0 to 999,999,999`]
 			]
@@ -311,8 +311,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of seconds parts in the duration, may be negative`]
 			]
@@ -350,8 +350,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* text */ 't', `.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an ISO-8601 representation of this duration, not null`]
 			]
@@ -373,7 +373,7 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs`]
@@ -657,7 +657,7 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs`]
@@ -972,7 +972,7 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `the seconds to represent, may be negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Duration`],
@@ -1096,8 +1096,8 @@ DocsCollector.collect('java.time.Duration', [
  to access the entire state of the duration.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a list containing the seconds and nanos units, not null`]
 			]
@@ -1183,8 +1183,8 @@ DocsCollector.collect('java.time.Duration', [
  A duration of -1 nanosecond is stored as -1 seconds plus 999,999,999 nanoseconds.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the whole seconds part of the length of the duration, positive or negative`]
 			]
@@ -1201,8 +1201,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of days in the duration, may be negative`]
 			]
@@ -1219,8 +1219,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of days in the duration, may be negative`]
 			]
@@ -1236,8 +1236,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of hours in the duration, may be negative`]
 			]
@@ -1259,7 +1259,7 @@ DocsCollector.collect('java.time.Duration', [
  will drop any excess precision information as though the amount in nanoseconds
  was subject to integer division by one million.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs`]
@@ -1280,8 +1280,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of minutes in the duration, may be negative`]
 			]
@@ -1300,7 +1300,7 @@ DocsCollector.collect('java.time.Duration', [
  exception is thrown.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs`]
@@ -1320,8 +1320,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the whole seconds part of the length of the duration, positive or negative`]
 			]
@@ -1554,7 +1554,7 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `the number of milliseconds, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Duration`],
@@ -1603,7 +1603,7 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `the number of nanoseconds, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Duration`],
@@ -1624,7 +1624,7 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `the number of seconds, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Duration`],
@@ -1747,4 +1747,5 @@ DocsCollector.collect('java.time.Duration', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -55,8 +55,8 @@ DocsCollector.collect('java.util.Base64$Decoder', [
      to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'decode(byte[])', [
 			[/* method description */
@@ -185,7 +185,7 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 					[/* text */ 't', `the input stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the input stream for decoding the specified Base64 encoded
           byte stream`]
@@ -230,4 +230,5 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

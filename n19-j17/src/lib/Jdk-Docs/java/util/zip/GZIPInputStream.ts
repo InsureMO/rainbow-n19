@@ -130,7 +130,7 @@ DocsCollector.collect('java.util.zip.GZIPInputStream', [
 				[/* text */ 't', `Closes this input stream and releases any system resources associated
  with the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -139,4 +139,5 @@ DocsCollector.collect('java.util.zip.GZIPInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

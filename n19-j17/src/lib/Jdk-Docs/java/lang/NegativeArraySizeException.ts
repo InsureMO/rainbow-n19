@@ -5,7 +5,7 @@ DocsCollector.collect('java.lang.NegativeArraySizeException', [
 	[/* class description */
 		[/* text */ 't', `Thrown if an application tries to create an array with negative size.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.NegativeArraySizeException', [
 				[/* text */ 't', ` with no
  detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -32,5 +32,6 @@ DocsCollector.collect('java.lang.NegativeArraySizeException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

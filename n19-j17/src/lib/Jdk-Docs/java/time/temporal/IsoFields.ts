@@ -391,6 +391,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

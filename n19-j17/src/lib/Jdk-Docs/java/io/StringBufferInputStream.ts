@@ -2,7 +2,7 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.io.StringBufferInputStream', [
-	/* class description */ UDF,
+	/* class description */,
 	[/* fields */
 		[/* field */ 'buffer', [
 			[/* field description */
@@ -39,8 +39,8 @@ DocsCollector.collect('java.io.StringBufferInputStream', [
 				[/* text */ 't', `Returns the number of bytes that can be read from the input
  stream without blocking.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of `],
 				[/* inline code block */ 'i', `count - pos`],
@@ -75,8 +75,8 @@ DocsCollector.collect('java.io.StringBufferInputStream', [
  low eight bits of the next character in this input stream's buffer.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next byte of data, or `],
 				[/* inline code block */ 'i', `-1`],
@@ -114,7 +114,7 @@ DocsCollector.collect('java.io.StringBufferInputStream', [
 					[/* text */ 't', `the maximum number of bytes read.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total number of bytes read into the buffer, or
              `],
@@ -135,7 +135,7 @@ DocsCollector.collect('java.io.StringBufferInputStream', [
 					[/* text */ 't', `the number of bytes to be skipped.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the actual number of bytes skipped.`]
 			]
@@ -145,9 +145,10 @@ DocsCollector.collect('java.io.StringBufferInputStream', [
 				[/* text */ 't', `Resets the input stream to begin reading from the first character
  of this input stream's underlying buffer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

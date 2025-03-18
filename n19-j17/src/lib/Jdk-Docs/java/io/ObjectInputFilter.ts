@@ -392,8 +392,8 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'checkInput(java.io.ObjectInputFilter.FilterInfo)', [
 			[/* method description */
@@ -432,7 +432,7 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 					[/* reference */ 'r', `java.io.ObjectInputStream`, `ObjectInputStream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* reference */ 'r', `java.io.ObjectInputFilter.Status#ALLOWED`, `Status.ALLOWED`],
 				[/* text */ 't', ` if accepted,
@@ -520,7 +520,7 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 					[/* inline code block */ 'i', `false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a filter that returns `],
 				[/* inline code block */ 'i', `ALLOWED`],
@@ -616,7 +616,7 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* reference */ 'r', `java.io.ObjectInputFilter`, `ObjectInputFilter`],
@@ -693,7 +693,7 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 					[/* inline code block */ 'i', `false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `returns a filter that returns `],
 				[/* inline code block */ 'i', `REJECTED`],
@@ -730,7 +730,7 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 					[/* text */ 't', `a filter`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* reference */ 'r', `java.io.ObjectInputFilter`, `ObjectInputFilter`],
@@ -744,4 +744,5 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

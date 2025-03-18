@@ -570,7 +570,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -634,8 +634,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
  override this method for faster handling.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Set`],
@@ -657,15 +657,15 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* text */ 't', `this bundle's parent bundle.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getKeys()', [
 			[/* method description */
 				[/* text */ 't', `Returns an enumeration of the keys.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Enumeration`],
@@ -830,8 +830,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', ` method
  when the resource bundle was loaded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The base name of the resource bundle, as provided to and expected
  by the `],
@@ -845,8 +845,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
  call to getBundle() to determine whether the resource bundle returned really
  corresponds to the requested locale or is a fallback.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the locale of this resource bundle`]
 			]
@@ -860,8 +860,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* inline code block */ 'i', `ResourceBundle`],
 				[/* text */ 't', ` and its parent bundles.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Set`],
@@ -1091,8 +1091,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `Removes all resource bundles from the cache that have been loaded
  by the caller's module.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'clearCache(java.lang.ClassLoader)', [
@@ -2108,4 +2108,5 @@ DocsCollector.collect('java.util.ResourceBundle', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

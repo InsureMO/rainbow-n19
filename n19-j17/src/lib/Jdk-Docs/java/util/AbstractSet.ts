@@ -42,14 +42,14 @@ DocsCollector.collect('java.util.AbstractSet', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -87,7 +87,7 @@ DocsCollector.collect('java.util.AbstractSet', [
 					[/* text */ 't', `object to be compared for equality with this set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this set`]
@@ -201,11 +201,12 @@ DocsCollector.collect('java.util.AbstractSet', [
  the results.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this set`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

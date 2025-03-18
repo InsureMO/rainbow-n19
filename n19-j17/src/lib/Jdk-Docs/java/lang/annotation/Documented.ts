@@ -52,7 +52,8 @@ DocsCollector.collect('java.lang.annotation.Documented', [
 		[/* inline code block */ 'i', `Documented`],
 		[/* text */ 't', ` will not be displayed.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -18,8 +18,8 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
  `],
 		[/* block */ 'b', ` Instances of this class are immutable.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -46,7 +46,7 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 					[/* text */ 't', `the object to compare with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a `],
@@ -67,7 +67,7 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 					[/* text */ 't', ` to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `0`],
 				[/* text */ 't', ` if this `],
@@ -99,8 +99,8 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 					[/* text */ 't', ` method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash-code value`]
 			]
@@ -157,8 +157,8 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 					[/* text */ 't', `".`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of this file time`]
 			]
@@ -202,8 +202,8 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an instant representing the same point on the time-line as
           this `],
@@ -231,7 +231,7 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 					[/* text */ 't', `the unit of granularity for the return value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `value in the given unit of granularity, since the epoch
           since the epoch (1970-01-01T00:00:00Z); can be negative`]
@@ -252,8 +252,8 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
  if positive.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value in milliseconds, since the epoch (1970-01-01T00:00:00Z)`]
 			]
@@ -272,7 +272,7 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 					[/* text */ 't', `the instant to convert`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `FileTime`],
@@ -296,7 +296,7 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 					[/* text */ 't', `the unit of granularity to interpret the value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `FileTime`],
@@ -315,7 +315,7 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
           (1970-01-01T00:00:00Z); can be negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `FileTime`],
@@ -323,4 +323,5 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

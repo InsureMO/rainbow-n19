@@ -5,7 +5,7 @@ DocsCollector.collect('java.lang.SecurityException', [
 	[/* class description */
 		[/* text */ 't', `Thrown by the security manager to indicate a security violation.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -13,7 +13,7 @@ DocsCollector.collect('java.lang.SecurityException', [
 				[/* inline code block */ 'i', `SecurityException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -83,5 +83,6 @@ DocsCollector.collect('java.lang.SecurityException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

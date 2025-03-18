@@ -10,8 +10,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
 
  Interfaces are normally known by names such as "le0".`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -40,7 +40,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
 					[/* text */ 't', `the object to compare against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -53,7 +53,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
 			[/* method description */
 				[/* text */ 't', `Returns whether a network interface is a loopback interface.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -70,7 +70,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
  A typical point to point interface would be a PPP connection through
  a modem.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -86,7 +86,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
 			[/* method description */
 				[/* text */ 't', `Returns whether a network interface is up and running.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -108,8 +108,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
  can be several virtual interfaces attached to a single physical
  interface.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this interface is a virtual interface.`]
@@ -119,7 +119,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
 			[/* method description */
 				[/* text */ 't', `Returns whether a network interface supports multicasting or not.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -139,7 +139,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
 				[/* reference */ 'r', `java.net.NetPermission`, `NetPermission`],
 				[/* text */ 't', `("getNetworkInformation").`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -163,8 +163,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
  and interfaces with the same name can have different indexes on different
  machines.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of this network interface or `],
 				[/* inline code block */ 'i', `-1`],
@@ -176,7 +176,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
 			[/* method description */
 				[/* text */ 't', `Returns the Maximum Transmission Unit (MTU) of this interface.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -193,8 +193,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
  A display name is a human readable String describing the network
  device.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a non-empty string representing the display name of this network
          interface, or null if no display name is available.`]
@@ -204,8 +204,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
 			[/* method description */
 				[/* text */ 't', `Get the name of this network interface.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this network interface`]
 			]
@@ -219,8 +219,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
 				[/* text */ 't', ` if it is a physical
  (non virtual) interface or has no parent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The `],
 				[/* inline code block */ 'i', `NetworkInterface`],
@@ -248,8 +248,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
  InetAddresses are returned.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an Enumeration object with all or a subset of the InetAddresses
  bound to this network interface`]
@@ -263,8 +263,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
 				[/* block */ 'b', `
  For instance eth0:1 will be a subinterface to eth0.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an Enumeration object with all of the subinterfaces
  of this network interface`]
@@ -289,8 +289,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
  a SecurityException will be returned in the List.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `List`],
@@ -319,8 +319,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
  InetAddresses are returned.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a Stream object with all or a subset of the InetAddresses
  bound to this network interface`]
@@ -331,8 +331,8 @@ DocsCollector.collect('java.net.NetworkInterface', [
 				[/* text */ 't', `Get a Stream of all subinterfaces (also known as virtual
  interfaces) attached to this network interface.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a Stream object with all of the subinterfaces
  of this network interface`]
@@ -440,7 +440,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
  a loopback interface that only supports communication between entities on
  this machine.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs,
@@ -463,7 +463,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
  loopback interface that only supports communication between entities on
  this machine.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs,
@@ -476,4 +476,5 @@ DocsCollector.collect('java.net.NetworkInterface', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -71,7 +71,7 @@ DocsCollector.collect('java.io.BufferedOutputStream', [
 				[/* text */ 't', `Flushes this buffered output stream. This forces any buffered
  output bytes to be written out to the underlying output stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -135,4 +135,5 @@ DocsCollector.collect('java.io.BufferedOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

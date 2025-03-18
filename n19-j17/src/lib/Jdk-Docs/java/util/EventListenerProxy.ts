@@ -40,7 +40,7 @@ DocsCollector.collect('java.util.EventListenerProxy', [
  If the calling method is interested in retrieving the named property
  then it would have to test the element to see if it is a proxy class.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.util.EventListener)', [
 			[/* constructor description */
@@ -59,11 +59,12 @@ DocsCollector.collect('java.util.EventListenerProxy', [
 			[/* method description */
 				[/* text */ 't', `Returns the listener associated with the proxy.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the listener associated with the proxy`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

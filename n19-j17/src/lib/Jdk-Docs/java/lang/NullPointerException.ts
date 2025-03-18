@@ -61,7 +61,7 @@ DocsCollector.collect('java.lang.NullPointerException', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -69,7 +69,7 @@ DocsCollector.collect('java.lang.NullPointerException', [
 				[/* inline code block */ 'i', `NullPointerException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -101,8 +101,8 @@ DocsCollector.collect('java.lang.NullPointerException', [
 					[/* text */ 't', ` is returned.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the detail message string, which may be `],
 				[/* inline code block */ 'i', `null`],
@@ -111,4 +111,5 @@ DocsCollector.collect('java.lang.NullPointerException', [
 		]],
 		[/* method */ 'fillInStackTrace()', UDF]
 	],
+	/* enum values */ UDF
 ]);

@@ -254,8 +254,8 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 			[/* method description */
 				[/* text */ 't', `Return the current line number.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current line number of this stream tokenizer.`]
 			]
@@ -280,7 +280,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
  calling nextToken to parse successive tokens until TT_EOF
  is returned.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -307,8 +307,8 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the token`]
 			]
@@ -327,7 +327,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 					[/* text */ 't', `the character.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'eolIsSignificant(boolean)', [
@@ -376,7 +376,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
                  end-of-line characters are white space.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'lowerCaseMode(boolean)', [
@@ -416,7 +416,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
                be lowercased.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'ordinaryChar(int)', [
@@ -448,7 +448,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 					[/* text */ 't', `the character.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'ordinaryChars(int,int)', [
@@ -473,7 +473,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 					[/* text */ 't', `the high end of the range.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'parseNumbers()', [
@@ -506,8 +506,8 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 					[/* text */ 't', ` field.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'pushBack()', [
@@ -525,8 +525,8 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 				[/* inline code block */ 'i', `sval`],
 				[/* text */ 't', ` field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'quoteChar(int)', [
@@ -571,7 +571,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 					[/* text */ 't', `the character.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'resetSyntax()', [
@@ -582,8 +582,8 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 				[/* text */ 't', ` method
  for more information on a character being ordinary.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'slashSlashComments(boolean)', [
@@ -614,7 +614,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
                  C++-style comments.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'slashStarComments(boolean)', [
@@ -646,7 +646,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
                  C-style comments.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'whitespaceChars(int,int)', [
@@ -672,7 +672,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 					[/* text */ 't', `the high end of the range.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'wordChars(int,int)', [
@@ -694,8 +694,9 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 					[/* text */ 't', `the high end of the range.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

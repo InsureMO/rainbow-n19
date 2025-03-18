@@ -183,8 +183,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -199,7 +199,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 					[/* text */ 't', `object to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -215,8 +215,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `void`],
 				[/* text */ 't', ` counts as a primitive.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if any of the types are primitives`]
 			]
@@ -232,8 +232,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* text */ 't', ` counts as a wrapper,
  if it occurs as a return type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if any of the types are wrappers`]
 			]
@@ -245,8 +245,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
  whose elements are the return type followed by the
  parameter types.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this method type`]
 			]
@@ -255,8 +255,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of parameter types in this method type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of parameter types`]
 			]
@@ -269,8 +269,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `void.class`],
 				[/* text */ 't', ` is returned instead.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the last parameter type if any, else `],
 				[/* inline code block */ 'i', `void.class`]
@@ -301,8 +301,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Returns the return type of this method type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the return type`]
 			]
@@ -312,8 +312,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* text */ 't', `Presents the parameter types as an array (a convenience method).
  Changes to the array will not result in changes to the type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the parameter types (as a fresh copy if necessary)`]
 			]
@@ -492,8 +492,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `void`],
 				[/* text */ 't', `) will remain unchanged.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a version of the original type with all reference types replaced`]
 			]
@@ -513,8 +513,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `type.generic()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a version of the original type with all types replaced`]
 			]
@@ -614,8 +614,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `void`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a version of the original type with all wrapper types replaced`]
 			]
@@ -639,8 +639,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `type.generic()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a version of the original type with all primitive types replaced`]
 			]
@@ -693,8 +693,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
  can be produced from the result string.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the descriptor string for this method type`]
 			]
@@ -728,8 +728,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
  because the latter requires a suitable class loader argument.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the descriptor string for this method type`]
 			]
@@ -752,8 +752,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
@@ -763,8 +763,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* text */ 't', `Presents the parameter types as a list (a convenience method).
  The list will be immutable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the parameter types (as an immutable list)`]
 			]
@@ -776,8 +776,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -1115,4 +1115,5 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

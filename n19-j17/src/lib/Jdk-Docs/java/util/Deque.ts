@@ -342,8 +342,8 @@ DocsCollector.collect('java.util.Deque', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'add(java.lang.Object)', [
 			[/* method description */
@@ -753,7 +753,7 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -772,7 +772,7 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', ` only in that it
  throws an exception if this deque is empty.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -790,7 +790,7 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', ` only in that it
  throws an exception if this deque is empty.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -815,8 +815,8 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of the queue represented by this deque, or
          `],
@@ -831,8 +831,8 @@ DocsCollector.collect('java.util.Deque', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this deque is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of this deque, or `],
 				[/* inline code block */ 'i', `null`],
@@ -846,8 +846,8 @@ DocsCollector.collect('java.util.Deque', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this deque is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the tail of this deque, or `],
 				[/* inline code block */ 'i', `null`],
@@ -869,8 +869,8 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first element of this deque, or `],
 				[/* inline code block */ 'i', `null`],
@@ -885,8 +885,8 @@ DocsCollector.collect('java.util.Deque', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this deque is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of this deque, or `],
 				[/* inline code block */ 'i', `null`],
@@ -900,8 +900,8 @@ DocsCollector.collect('java.util.Deque', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this deque is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the tail of this deque, or `],
 				[/* inline code block */ 'i', `null`],
@@ -920,7 +920,7 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -947,7 +947,7 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -965,7 +965,7 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', ` only in that it throws an
  exception if this deque is empty.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -983,7 +983,7 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', ` only in that it throws an
  exception if this deque is empty.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -997,8 +997,8 @@ DocsCollector.collect('java.util.Deque', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of elements in this deque.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in this deque`]
 			]
@@ -1009,8 +1009,8 @@ DocsCollector.collect('java.util.Deque', [
  sequential order.  The elements will be returned in order from
  last (tail) to first (head).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this deque in reverse
  sequence`]
@@ -1021,8 +1021,8 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', `Returns an iterator over the elements in this deque in proper sequence.
  The elements will be returned in order from first (head) to last (tail).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this deque in proper sequence`]
 			]
@@ -1150,4 +1150,5 @@ DocsCollector.collect('java.util.Deque', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

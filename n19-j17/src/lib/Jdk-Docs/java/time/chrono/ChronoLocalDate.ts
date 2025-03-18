@@ -253,8 +253,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
  if read-write access is required.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -278,7 +278,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other date`]
 			]
@@ -287,8 +287,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this date.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -300,8 +300,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', `
  This returns the length of the month in days.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of the month in days`]
 			]
@@ -315,8 +315,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', `
  The output will include the full local date.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the formatted date, not null`]
 			]
@@ -335,8 +335,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', ` are defined by the chronology.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the chronology, not null`]
 			]
@@ -579,7 +579,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `the other date to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is after the specified date`]
 			]
@@ -609,7 +609,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `the other date to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is before the specified date`]
 			]
@@ -639,7 +639,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `the other date to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the underlying date is equal to the specified date`]
 			]
@@ -660,8 +660,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this date is in a leap year, false otherwise`]
 			]
@@ -711,7 +711,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field can be queried, false if not`]
 			]
@@ -760,7 +760,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `the unit to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the unit can be added/subtracted, false if not`]
 			]
@@ -821,7 +821,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `the other date to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
 			]
@@ -840,8 +840,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', ` and returns 365 or 366.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of the year in days`]
 			]
@@ -1168,7 +1168,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `the local time to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the local date-time formed from this date and the specified time, not null`]
 			]
@@ -1204,8 +1204,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the chronology specific era constant applicable at this date, not null`]
 			]
@@ -1283,8 +1283,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', ` field.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Epoch Day equivalent to this date`]
 			]
@@ -1360,11 +1360,12 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
  The underlying comparison is equivalent to comparing the epoch-day.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares in time-line order ignoring the chronology`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.IllegalAccessException', [
  executing method does not have access to the definition of
  the specified class, field, method or constructor.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -18,7 +18,7 @@ DocsCollector.collect('java.lang.IllegalAccessException', [
 				[/* text */ 't', ` without a
  detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -35,5 +35,6 @@ DocsCollector.collect('java.lang.IllegalAccessException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

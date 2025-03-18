@@ -45,8 +45,8 @@ DocsCollector.collect('java.util.random.RandomGenerator$SplittableGenerator', [
  security-sensitive applications.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'split()', [
 			[/* method description */
@@ -62,8 +62,8 @@ DocsCollector.collect('java.util.random.RandomGenerator$SplittableGenerator', [
 				[/* block */ 'b', ` This pseudorandom number generator may be used as a source of
  pseudorandom bits used to initialize the state of the new one.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new object that implements the `],
 				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
@@ -218,8 +218,8 @@ DocsCollector.collect('java.util.random.RandomGenerator$SplittableGenerator', [
 				[/* block */ 'b', ` This pseudorandom number generator may be used as a source of
  pseudorandom bits used to initialize the state the new ones.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of `],
 				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`, `RandomGenerator.SplittableGenerator`],
@@ -235,8 +235,8 @@ DocsCollector.collect('java.util.random.RandomGenerator$SplittableGenerator', [
  interface. Ideally the generators in the stream will appear to be
  statistically independent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of objects that implement the `],
 				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
@@ -305,4 +305,5 @@ DocsCollector.collect('java.util.random.RandomGenerator$SplittableGenerator', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

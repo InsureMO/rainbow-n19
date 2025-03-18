@@ -236,15 +236,15 @@ DocsCollector.collect('java.util.stream.Collector', [
 		[/* text */ 't', `).`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accumulator()', [
 			[/* method description */
 				[/* text */ 't', `A function that folds a value into a mutable result container.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a function which folds a value into a mutable result container`]
 			]
@@ -255,8 +255,8 @@ DocsCollector.collect('java.util.stream.Collector', [
  combiner function may fold state from one argument into the other and
  return that, or may return a new result container.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a function which combines two partial results into a combined
  result`]
@@ -284,8 +284,8 @@ DocsCollector.collect('java.util.stream.Collector', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a function which transforms the intermediate result to the final
  result`]
@@ -295,8 +295,8 @@ DocsCollector.collect('java.util.stream.Collector', [
 			[/* method description */
 				[/* text */ 't', `A function that creates and returns a new mutable result container.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a function which returns a new, mutable result container`]
 			]
@@ -310,8 +310,8 @@ DocsCollector.collect('java.util.stream.Collector', [
 				[/* text */ 't', ` indicating
  the characteristics of this Collector.  This set should be immutable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an immutable set of collector characteristics`]
 			]
@@ -404,4 +404,5 @@ DocsCollector.collect('java.util.stream.Collector', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

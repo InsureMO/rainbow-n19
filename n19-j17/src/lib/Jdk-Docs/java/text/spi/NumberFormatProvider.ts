@@ -9,14 +9,14 @@ DocsCollector.collect('java.text.spi.NumberFormatProvider', [
 		[/* reference */ 'r', `java.text.NumberFormat`, `NumberFormat`],
 		[/* text */ 't', ` class.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -207,4 +207,5 @@ DocsCollector.collect('java.text.spi.NumberFormatProvider', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -20,7 +20,7 @@ DocsCollector.collect('java.io.FileNotFoundException', [
  example when an attempt is made to open a read-only file for writing.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -31,7 +31,7 @@ DocsCollector.collect('java.io.FileNotFoundException', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` as its error detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -58,5 +58,6 @@ DocsCollector.collect('java.io.FileNotFoundException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

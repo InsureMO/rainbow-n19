@@ -58,8 +58,8 @@ DocsCollector.collect('java.lang.Module', [
  be thrown. `]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
@@ -81,7 +81,7 @@ DocsCollector.collect('java.lang.Module', [
         annotation type`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this element's annotation for the specified annotation type if
      present on this element, else null`]
@@ -103,7 +103,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* text */ 't', `The other module`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this module reads `],
@@ -123,7 +123,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* text */ 't', `The service type`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this module uses service type `],
@@ -160,7 +160,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* text */ 't', `The package name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this module exports the package unconditionally`]
@@ -203,7 +203,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* text */ 't', `The other module`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this module exports the package to at least the
@@ -216,8 +216,8 @@ DocsCollector.collect('java.lang.Module', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this module is a named module.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is a named module`]
@@ -255,7 +255,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* text */ 't', `The package name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this module has `],
@@ -301,7 +301,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* text */ 't', `The other module`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this module has `],
@@ -431,8 +431,8 @@ DocsCollector.collect('java.lang.Module', [
 				[/* block */ 'b', ` Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations present on this element`]
 			]
@@ -457,8 +457,8 @@ DocsCollector.collect('java.lang.Module', [
 				[/* block */ 'b', ` Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations directly present on this element`]
 			]
@@ -481,7 +481,7 @@ DocsCollector.collect('java.lang.Module', [
  class loader. `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If denied by the security manager`]
@@ -637,8 +637,8 @@ DocsCollector.collect('java.lang.Module', [
 				[/* text */ 't', ` if this
  module is an unnamed module.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The module descriptor for this module`]
 			]
@@ -664,8 +664,8 @@ DocsCollector.collect('java.lang.Module', [
  not be in a module layer. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The module layer that contains this module`]
 			]
@@ -677,8 +677,8 @@ DocsCollector.collect('java.lang.Module', [
 				[/* text */ 't', ` if this module is an unnamed
  module.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The module name`]
 			]
@@ -695,8 +695,8 @@ DocsCollector.collect('java.lang.Module', [
 				[/* text */ 't', `, followed by a space, and then an
  implementation specific string that identifies the unnamed module.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string representation of this module`]
 			]
@@ -719,11 +719,12 @@ DocsCollector.collect('java.lang.Module', [
  in the unnamed module.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the set of the package names of the packages in this module`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

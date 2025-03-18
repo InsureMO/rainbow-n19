@@ -241,8 +241,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* text */ 't', ` method.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'toArray(java.util.function.IntFunction)', [
 			[/* method description */
@@ -338,7 +338,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', ` describing the reduction`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
 			]
@@ -375,7 +375,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                of new values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -403,7 +403,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -481,7 +481,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                     first result container.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
 			]
@@ -572,7 +572,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                     compatible with the accumulator function`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
 			]
@@ -604,7 +604,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                   predicate to apply to elements of this stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if either all elements of the stream match the
@@ -639,7 +639,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                   predicate to apply to elements of this stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if any elements of the stream match the provided
@@ -674,7 +674,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                   predicate to apply to elements of this stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if either no elements of the stream match the
@@ -693,8 +693,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
 				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
@@ -730,7 +730,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', ` instead.)`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the element selected is null`]
@@ -762,7 +762,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the element selected is null`]
@@ -972,7 +972,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                of new values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1002,7 +1002,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1041,7 +1041,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                of new values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1071,7 +1071,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1110,7 +1110,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                of new values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1140,7 +1140,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1165,8 +1165,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1195,7 +1195,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                   should be included`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1257,7 +1257,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                  they are consumed from the stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1318,8 +1318,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1355,7 +1355,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', ` to be used to compare stream elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1380,8 +1380,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the count of elements in this stream`]
 			]
@@ -1453,7 +1453,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                     function for combining two values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
 			]
@@ -1479,7 +1479,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEachOrdered(java.util.function.Consumer)', [
@@ -1512,7 +1512,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'mapMulti(java.util.function.BiConsumer)', [
@@ -1552,7 +1552,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                function that generates replacement elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1588,8 +1588,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a List containing the stream elements`]
 			]
@@ -1634,7 +1634,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                function that generates replacement elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1679,7 +1679,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                function that generates replacement elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1724,7 +1724,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                function that generates replacement elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1776,7 +1776,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                   prefix of elements.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1827,7 +1827,7 @@ DocsCollector.collect('java.util.stream.Stream', [
                   prefix of elements.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1838,8 +1838,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 				[/* inline code block */ 'i', `Stream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream builder`]
 			]
@@ -1866,7 +1866,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `the second stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the concatenation of the two input streams`]
 			]
@@ -1877,8 +1877,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 				[/* inline code block */ 'i', `Stream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty sequential stream`]
 			]
@@ -1898,7 +1898,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', ` of generated elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new infinite sequential unordered `],
 				[/* inline code block */ 'i', `Stream`]
@@ -1990,7 +1990,7 @@ DocsCollector.collect('java.util.stream.Stream', [
              a new element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential `],
 				[/* inline code block */ 'i', `Stream`]
@@ -2063,7 +2063,7 @@ DocsCollector.collect('java.util.stream.Stream', [
           a new element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential `],
 				[/* inline code block */ 'i', `Stream`]
@@ -2080,7 +2080,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `the single element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a singleton sequential stream`]
 			]
@@ -2100,11 +2100,12 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `the single element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream with a single element if the specified element
          is non-null, otherwise an empty stream`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -34,7 +34,7 @@ DocsCollector.collect('java.lang.reflect.MalformedParametersException', [
  information.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -43,7 +43,7 @@ DocsCollector.collect('java.lang.reflect.MalformedParametersException', [
 				[/* text */ 't', ` with an empty
  reason.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -60,5 +60,6 @@ DocsCollector.collect('java.lang.reflect.MalformedParametersException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

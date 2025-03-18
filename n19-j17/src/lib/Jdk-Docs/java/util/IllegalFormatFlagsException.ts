@@ -15,7 +15,7 @@ DocsCollector.collect('java.util.IllegalFormatFlagsException', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -34,12 +34,13 @@ DocsCollector.collect('java.util.IllegalFormatFlagsException', [
 			[/* method description */
 				[/* text */ 't', `Returns the set of flags which contains an illegal combination.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The flags`]
 			]
 		]],
 		[/* method */ 'getMessage()', UDF]
 	],
+	/* enum values */ UDF
 ]);

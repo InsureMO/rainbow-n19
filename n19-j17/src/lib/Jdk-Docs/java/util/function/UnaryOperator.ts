@@ -19,18 +19,19 @@ DocsCollector.collect('java.util.function.UnaryOperator', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'identity()', [
 			[/* method description */
 				[/* text */ 't', `Returns a unary operator that always returns its input argument.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a unary operator that always returns its input argument`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

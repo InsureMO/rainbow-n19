@@ -90,13 +90,13 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an empty list.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.util.Collection)', [
@@ -210,7 +210,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `element to be appended to this list`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
@@ -296,7 +296,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `element whose presence in this list is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this list contains the specified element`]
@@ -311,7 +311,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `the element to add`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
@@ -328,7 +328,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `the element to insert`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
@@ -345,7 +345,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `the element to insert`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
@@ -375,7 +375,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `element to be removed from this list, if present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this list contained the specified element`]
@@ -392,7 +392,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `element to be removed from this list, if present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the list contained the specified element`]
@@ -409,7 +409,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `element to be removed from this list, if present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the list contained the specified element`]
@@ -419,7 +419,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* method description */
 				[/* text */ 't', `Retrieves, but does not remove, the head (first element) of this list.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this list is empty`]
@@ -454,7 +454,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* method description */
 				[/* text */ 't', `Returns the first element in this list.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this list is empty`]
@@ -468,7 +468,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* method description */
 				[/* text */ 't', `Returns the last element in this list.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this list is empty`]
@@ -482,8 +482,8 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* method description */
 				[/* text */ 't', `Retrieves, but does not remove, the head (first element) of this list.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of this list, or `],
 				[/* inline code block */ 'i', `null`],
@@ -497,8 +497,8 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this list is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first element of this list, or `],
 				[/* inline code block */ 'i', `null`],
@@ -513,8 +513,8 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this list is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the last element of this list, or `],
 				[/* inline code block */ 'i', `null`],
@@ -526,8 +526,8 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* method description */
 				[/* text */ 't', `Retrieves and removes the head (first element) of this list.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of this list, or `],
 				[/* inline code block */ 'i', `null`],
@@ -541,8 +541,8 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this list is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first element of this list, or `],
 				[/* inline code block */ 'i', `null`],
@@ -557,8 +557,8 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this list is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the last element of this list, or `],
 				[/* inline code block */ 'i', `null`],
@@ -578,7 +578,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this list is empty`]
@@ -593,7 +593,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* method description */
 				[/* text */ 't', `Retrieves and removes the head (first element) of this list.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this list is empty`]
@@ -630,7 +630,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* method description */
 				[/* text */ 't', `Removes and returns the first element from this list.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this list is empty`]
@@ -644,7 +644,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* method description */
 				[/* text */ 't', `Removes and returns the last element from this list.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this list is empty`]
@@ -696,7 +696,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `element to search for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first occurrence of the specified element in
          this list, or -1 if this list does not contain the element`]
@@ -719,7 +719,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `element to search for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the last occurrence of the specified element in
          this list, or -1 if this list does not contain the element`]
@@ -729,8 +729,8 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of elements in this list.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in this list`]
 			]
@@ -742,8 +742,8 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* text */ 't', `. (The elements
  themselves are not cloned.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a shallow copy of this `],
 				[/* inline code block */ 'i', `LinkedList`],
@@ -764,8 +764,8 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
  APIs.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing all of the elements in this list
          in proper sequence`]
@@ -777,8 +777,8 @@ DocsCollector.collect('java.util.LinkedList', [
  sequential order.  The elements will be returned in order from
  last (tail) to first (head).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this deque in reverse
  sequence`]
@@ -858,8 +858,8 @@ DocsCollector.collect('java.util.LinkedList', [
  the reporting of additional characteristic values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -899,7 +899,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `the element to add`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'addLast(java.lang.Object)', [
@@ -918,7 +918,7 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `the element to add`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'clear()', [
@@ -926,8 +926,8 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* text */ 't', `Removes all of the elements from this list.
  The list will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'push(java.lang.Object)', [
@@ -947,8 +947,9 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `the element to push`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

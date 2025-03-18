@@ -86,8 +86,8 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'chronology()', [
 			[/* method description */
@@ -226,8 +226,8 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
  exception if a chronology cannot be obtained.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a query that can obtain the chronology of a temporal, not null`]
 			]
@@ -275,8 +275,8 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
  query will return null.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a query that can obtain the date of a temporal, not null`]
 			]
@@ -324,8 +324,8 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
  query will return null.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a query that can obtain the time of a temporal, not null`]
 			]
@@ -468,8 +468,8 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 					[/* new line */ 'n']
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a query that can obtain the precision of a temporal, not null`]
 			]
@@ -526,8 +526,8 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
  exception if a zone cannot be obtained.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a query that can obtain the zone ID or offset of a temporal, not null`]
 			]
@@ -659,8 +659,8 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 					[/* new line */ 'n']
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a query that can obtain the zone ID of a temporal, not null`]
 			]
@@ -708,11 +708,12 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
  query will return null.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a query that can obtain the offset of a temporal, not null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

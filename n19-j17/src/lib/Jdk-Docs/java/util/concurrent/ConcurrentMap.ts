@@ -53,8 +53,8 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'remove(java.lang.Object,java.lang.Object)', [
 			[/* method description */
@@ -700,4 +700,5 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -319,7 +319,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -352,7 +352,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 					[/* text */ 't', `the table-based collation object to be compared with this.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the current table-based collation object is the same
  as the table-based collation object obj; false otherwise.`]
@@ -362,8 +362,8 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 			[/* method description */
 				[/* text */ 't', `Generates the hash code for the table-based collation object`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -372,8 +372,8 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 			[/* method description */
 				[/* text */ 't', `Standard override; no change in semantics.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -382,8 +382,8 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 			[/* method description */
 				[/* text */ 't', `Gets the table-based rules for the collation object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `returns the collation rules that the table collation object
  was created from.`]
@@ -398,7 +398,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 					[/* text */ 't', `the string to be collated`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `CollationElementIterator`],
@@ -414,7 +414,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 					[/* text */ 't', `the character iterator to be collated`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `CollationElementIterator`],
@@ -462,11 +462,12 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 					[/* text */ 't', `the string to be transformed into a collation key.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the CollationKey for the given String based on this Collator's collation
  rules. If the source String is null, a null CollationKey is returned.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -48,7 +48,7 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
  maximum, sum, and average of their ages.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -60,7 +60,7 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 				[/* text */ 't', ` max and zero
  average.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(long,long,long,long)', [
@@ -129,8 +129,8 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 				[/* text */ 't', `Returns the arithmetic mean of values recorded, or zero if no values have been
  recorded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The arithmetic mean of values, or zero if none`]
 			]
@@ -139,8 +139,8 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 			[/* method description */
 				[/* text */ 't', `Returns the count of values recorded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the count of values`]
 			]
@@ -152,8 +152,8 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 				[/* text */ 't', ` if no
  values have been recorded`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum value, or `],
 				[/* inline code block */ 'i', `Long.MIN_VALUE`],
@@ -167,8 +167,8 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 				[/* text */ 't', ` if no
  values have been recorded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum value, or `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
@@ -180,8 +180,8 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 				[/* text */ 't', `Returns the sum of values recorded, or zero if no values have been
  recorded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sum of values, or zero if none`]
 			]
@@ -192,8 +192,8 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
  debugging. The exact presentation format is unspecified and may vary
  between implementations and versions.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
@@ -209,7 +209,7 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 					[/* text */ 't', `the input value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'accept(long)', [
@@ -223,7 +223,7 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 					[/* text */ 't', `the input value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'combine(java.util.LongSummaryStatistics)', [
@@ -249,4 +249,5 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

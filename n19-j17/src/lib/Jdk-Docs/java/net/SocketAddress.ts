@@ -11,15 +11,16 @@ DocsCollector.collect('java.net.SocketAddress', [
  It provides an immutable object used by sockets for binding, connecting, or
  as returned values.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor for subclasses to call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -11,18 +11,19 @@ DocsCollector.collect('java.nio.file.attribute.AttributeView', [
  supported by the view. A specific attribute view will typically define
  type-safe methods to read or update the attributes that it supports.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'name()', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the attribute view.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the attribute view`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

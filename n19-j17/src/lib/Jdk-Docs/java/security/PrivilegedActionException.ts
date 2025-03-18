@@ -20,7 +20,7 @@ DocsCollector.collect('java.security.PrivilegedActionException', [
 		[/* text */ 't', ` is a "wrapper"
  for an exception thrown by a privileged action.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Exception)', [
 			[/* constructor description */
@@ -43,8 +43,8 @@ DocsCollector.collect('java.security.PrivilegedActionException', [
 				[/* inline code block */ 'i', `PrivilegedActionException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the exception thrown by the privileged computation that
          resulted in this `],
@@ -54,4 +54,5 @@ DocsCollector.collect('java.security.PrivilegedActionException', [
 		]],
 		[/* method */ 'toString()', UDF]
 	],
+	/* enum values */ UDF
 ]);

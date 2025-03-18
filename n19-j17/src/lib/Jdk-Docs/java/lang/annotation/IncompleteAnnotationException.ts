@@ -11,7 +11,7 @@ DocsCollector.collect('java.lang.annotation.IncompleteAnnotationException', [
 		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`, `API used to read annotations reflectively`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Class,java.lang.String)', [
 			[/* constructor description */
@@ -40,8 +40,8 @@ DocsCollector.collect('java.lang.annotation.IncompleteAnnotationException', [
 				[/* text */ 't', `Returns the Class object for the annotation interface with the
  missing element.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Class object for the annotation interface with the
      missing element`]
@@ -51,11 +51,12 @@ DocsCollector.collect('java.lang.annotation.IncompleteAnnotationException', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the missing element.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the missing element`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

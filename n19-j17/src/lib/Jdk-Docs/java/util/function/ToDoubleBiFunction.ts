@@ -21,8 +21,8 @@ DocsCollector.collect('java.util.function.ToDoubleBiFunction', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'applyAsDouble(java.lang.Object,java.lang.Object)', [
 			[/* method description */
@@ -36,10 +36,11 @@ DocsCollector.collect('java.util.function.ToDoubleBiFunction', [
 					[/* text */ 't', `the second function argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the function result`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

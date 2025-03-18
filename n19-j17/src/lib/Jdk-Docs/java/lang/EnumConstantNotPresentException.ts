@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.EnumConstantNotPresentException', [
 		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`, `API used to read annotations reflectively`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Class,java.lang.String)', [
 			[/* constructor description */
@@ -34,8 +34,8 @@ DocsCollector.collect('java.lang.EnumConstantNotPresentException', [
 			[/* method description */
 				[/* text */ 't', `Returns the type of the missing enum constant.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the type of the missing enum constant`]
 			]
@@ -44,11 +44,12 @@ DocsCollector.collect('java.lang.EnumConstantNotPresentException', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the missing enum constant.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the missing enum constant`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

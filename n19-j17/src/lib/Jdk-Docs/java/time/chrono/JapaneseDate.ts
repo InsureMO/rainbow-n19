@@ -64,8 +64,8 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 			[/* text */ 't', ` method should be used for comparisons.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -96,7 +96,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other date`]
 			]
@@ -196,7 +196,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this date, false if not`]
 			]
@@ -222,7 +222,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `the local time to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the local date-time formed from this date and the specified time, not null`]
 			]
@@ -231,8 +231,8 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this date.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code based only on the Chronology and the date`]
 			]
@@ -245,8 +245,8 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
  This returns the length of the month in days.
  Month lengths match those of the ISO calendar system.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of the month in days`]
 			]
@@ -290,7 +290,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `the end date, exclusive, which may be in any chronology, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period between this date and the end date, not null`]
 			]
@@ -309,8 +309,8 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', ` are defined by the chronology.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Japanese chronology, not null`]
 			]
@@ -398,7 +398,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `the unit of the amount to subtract, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object of the same type with the specified period subtracted, not null`]
 			]
@@ -486,7 +486,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `the unit of the amount to add, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object of the same type with the specified period added, not null`]
 			]
@@ -564,7 +564,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `the new value of the field in the result`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object of the same type with the specified field set, not null`]
 			]
@@ -580,8 +580,8 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the era applicable at this date, not null`]
 			]
@@ -606,7 +606,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `the field to get, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value for the field`]
 			]
@@ -680,8 +680,8 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
  Using this method will prevent the ability to use an alternate clock for testing
  because the clock is hard-coded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date using the system clock and default time-zone, not null`]
 			]
@@ -738,7 +738,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `the zone ID to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date using the system clock, not null`]
 			]
@@ -836,4 +836,5 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

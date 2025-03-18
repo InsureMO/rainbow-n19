@@ -6,7 +6,7 @@ DocsCollector.collect('java.util.ServiceConfigurationError', [
 		[/* text */ 't', `Error thrown when something goes wrong while locating, loading, or
  instantiating a service provider.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -41,5 +41,6 @@ DocsCollector.collect('java.util.ServiceConfigurationError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

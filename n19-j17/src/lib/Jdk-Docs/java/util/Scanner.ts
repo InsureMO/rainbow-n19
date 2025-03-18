@@ -752,7 +752,7 @@ DocsCollector.collect('java.util.Scanner', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Whitespace is not significant in the above regular expressions.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.File)', [
 			[/* constructor description */
@@ -1058,7 +1058,7 @@ DocsCollector.collect('java.util.Scanner', [
  This method may block while waiting for input to scan.
  The scanner does not advance past any input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1132,7 +1132,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', ` method. The scanner does not advance past any
  input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1155,7 +1155,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', ` method. The scanner does not advance past any
  input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1217,7 +1217,7 @@ DocsCollector.collect('java.util.Scanner', [
  created from the string "true|false".  The scanner does not
  advance past the input that matched.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1236,7 +1236,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* reference */ 'r', `#nextByte()`, `nextByte()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1294,7 +1294,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `
  method. The scanner does not advance past any input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1313,7 +1313,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `
  method. The scanner does not advance past any input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1332,7 +1332,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* reference */ 'r', `#nextInt()`, `nextInt()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1388,7 +1388,7 @@ DocsCollector.collect('java.util.Scanner', [
  This method may block while waiting for input. The scanner does not
  advance past any input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1406,7 +1406,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* reference */ 'r', `#nextLong()`, `nextLong()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1464,7 +1464,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* reference */ 'r', `#nextShort()`, `nextShort()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -1524,7 +1524,7 @@ DocsCollector.collect('java.util.Scanner', [
  If the match is successful, the scanner advances past the input that
  matched.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
 					[/* text */ 't', `if the next token is not a valid boolean`]
@@ -1560,7 +1560,7 @@ DocsCollector.collect('java.util.Scanner', [
  is the default radix of this scanner.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
 					[/* text */ 't', `if the next token does not match the `],
@@ -1692,7 +1692,7 @@ DocsCollector.collect('java.util.Scanner', [
  appropriate.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
 					[/* text */ 't', `if the next token does not match the `],
@@ -1750,7 +1750,7 @@ DocsCollector.collect('java.util.Scanner', [
  appropriate.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
 					[/* text */ 't', `if the next token does not match the `],
@@ -1791,7 +1791,7 @@ DocsCollector.collect('java.util.Scanner', [
  is the default radix of this scanner.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
 					[/* text */ 't', `if the next token does not match the `],
@@ -1899,8 +1899,8 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', ` above.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the default radix of this scanner`]
 			]
@@ -1919,8 +1919,8 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if no such exception exists.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the last exception thrown by this scanner's readable`]
 			]
@@ -2097,7 +2097,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if no more tokens are available`]
@@ -2187,7 +2187,7 @@ DocsCollector.collect('java.util.Scanner', [
  for a line separator, it may buffer all of the input searching for
  the line to skip if no line separators are present.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if no line was found`]
@@ -2212,8 +2212,8 @@ DocsCollector.collect('java.util.Scanner', [
  that may be useful for debugging. The exact format is unspecified.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string representation of this scanner`]
 			]
@@ -2242,7 +2242,7 @@ DocsCollector.collect('java.util.Scanner', [
  constructor.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
 					[/* text */ 't', `if the next token does not match the `],
@@ -2283,7 +2283,7 @@ DocsCollector.collect('java.util.Scanner', [
  is the default radix of this scanner.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
 					[/* text */ 't', `if the next token does not match the `],
@@ -2381,8 +2381,8 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', ` above.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this scanner's locale`]
 			]
@@ -2425,7 +2425,7 @@ DocsCollector.collect('java.util.Scanner', [
  methods will make a match available if they succeed.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If no match result is available`]
@@ -2444,8 +2444,8 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', ` is currently
  using to match delimiters.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this scanner's delimiting pattern.`]
 			]
@@ -2488,8 +2488,8 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this scanner`]
 			]
@@ -2606,7 +2606,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `A string specifying a delimiting pattern`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this scanner`]
 			]
@@ -2620,7 +2620,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `A delimiting pattern`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this scanner`]
 			]
@@ -2653,7 +2653,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `A string specifying the locale to use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this scanner`]
 			]
@@ -2764,7 +2764,7 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', `This method might block waiting for more input.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
@@ -2906,7 +2906,7 @@ DocsCollector.collect('java.util.Scanner', [
  is the default radix of this scanner.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
 					[/* text */ 't', `if the next token does not match the `],
@@ -3021,7 +3021,7 @@ DocsCollector.collect('java.util.Scanner', [
  is the default radix of this scanner.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
 					[/* text */ 't', `if the next token does not match the `],
@@ -3142,8 +3142,8 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'remove()', [
@@ -3153,7 +3153,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* inline code block */ 'i', `Iterator`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if this method is invoked.`]
@@ -3162,4 +3162,5 @@ DocsCollector.collect('java.util.Scanner', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

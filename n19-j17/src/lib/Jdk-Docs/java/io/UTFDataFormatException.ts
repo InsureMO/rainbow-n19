@@ -17,7 +17,7 @@ DocsCollector.collect('java.io.UTFDataFormatException', [
  class description for the format in
  which modified UTF-8 strings are read and written.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -28,7 +28,7 @@ DocsCollector.collect('java.io.UTFDataFormatException', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` as its error detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -55,5 +55,6 @@ DocsCollector.collect('java.io.UTFDataFormatException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -11,7 +11,7 @@ DocsCollector.collect('java.io.EOFException', [
  stream. Note that many other input operations return a special value on
  end of stream rather than throwing an exception.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -22,7 +22,7 @@ DocsCollector.collect('java.io.EOFException', [
 				[/* text */ 't', `
  as its error detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -48,5 +48,6 @@ DocsCollector.collect('java.io.EOFException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

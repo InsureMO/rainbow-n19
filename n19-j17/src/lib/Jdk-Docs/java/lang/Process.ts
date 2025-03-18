@@ -129,13 +129,13 @@ DocsCollector.collect('java.lang.Process', [
  easiest and most efficient.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Default constructor for Process.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -144,7 +144,7 @@ DocsCollector.collect('java.lang.Process', [
 			[/* method description */
 				[/* text */ 't', `Returns the exit value for the process.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
 					[/* text */ 't', `if the process represented
@@ -174,7 +174,7 @@ DocsCollector.collect('java.lang.Process', [
  terminated, the calling thread will be blocked until the
  process exits.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
 					[/* text */ 't', `if the current thread is
@@ -220,8 +220,8 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the input stream connected to the error output of
          the process`]
@@ -258,8 +258,8 @@ DocsCollector.collect('java.lang.Process', [
  merged standard output and the standard error of the process.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the input stream connected to the normal output of the
          process`]
@@ -285,8 +285,8 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the output stream connected to the normal input of the
          process`]
@@ -319,8 +319,8 @@ DocsCollector.collect('java.lang.Process', [
  when the process has terminated.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'isAlive()', [
@@ -330,8 +330,8 @@ DocsCollector.collect('java.lang.Process', [
 				[/* text */ 't', ` is
  alive.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the process represented by this
@@ -372,7 +372,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', ` depending on the platform implementation.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the Process implementation
@@ -475,8 +475,8 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', ` is used.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
@@ -599,8 +599,8 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', ` is used.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
@@ -729,8 +729,8 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', ` is used.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `BufferedWriter`],
@@ -853,8 +853,8 @@ DocsCollector.collect('java.lang.Process', [
  the process.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `Process`],
@@ -883,7 +883,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `RuntimePermission("manageProcess")`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the Process implementation
@@ -910,7 +910,7 @@ DocsCollector.collect('java.lang.Process', [
  that return information about the process if it is available.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the Process implementation
@@ -964,8 +964,8 @@ DocsCollector.collect('java.lang.Process', [
  for process exit.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new `],
 				[/* inline code block */ 'i', `CompletableFuture<Process>`],
@@ -988,7 +988,7 @@ DocsCollector.collect('java.lang.Process', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the Process implementation
@@ -1021,7 +1021,7 @@ DocsCollector.collect('java.lang.Process', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the Process implementation
@@ -1043,7 +1043,7 @@ DocsCollector.collect('java.lang.Process', [
  The native process ID is an identification number that the operating
  system assigns to the process.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the Process implementation
@@ -1055,4 +1055,5 @@ DocsCollector.collect('java.lang.Process', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

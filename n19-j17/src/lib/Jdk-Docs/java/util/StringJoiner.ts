@@ -42,7 +42,7 @@ DocsCollector.collect('java.util.StringJoiner', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.CharSequence)', [
 			[/* constructor description */
@@ -160,8 +160,8 @@ DocsCollector.collect('java.util.StringJoiner', [
 				[/* inline code block */ 'i', `toString().length()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of the current value of `],
 				[/* inline code block */ 'i', `StringJoiner`]
@@ -184,8 +184,8 @@ DocsCollector.collect('java.util.StringJoiner', [
 				[/* inline code block */ 'i', `emptyValue`],
 				[/* text */ 't', ` characters are returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of this `],
 				[/* inline code block */ 'i', `StringJoiner`]
@@ -212,7 +212,7 @@ DocsCollector.collect('java.util.StringJoiner', [
 					[/* text */ 't', `The element to add`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this `],
 				[/* inline code block */ 'i', `StringJoiner`]
@@ -316,4 +316,5 @@ DocsCollector.collect('java.util.StringJoiner', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -74,7 +74,7 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
 			[/* method description */
 				[/* text */ 't', `Resolves instances being deserialized to the predefined constants.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.InvalidObjectException', [/* throw description */
 					[/* text */ 't', `if the object to resolve is not
@@ -92,8 +92,8 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the attribute.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of `],
 				[/* inline code block */ 'i', `Attribute`]
@@ -116,7 +116,7 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -132,8 +132,8 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `, but is also final.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -148,11 +148,12 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
 				[/* inline code block */ 'i', `")"`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

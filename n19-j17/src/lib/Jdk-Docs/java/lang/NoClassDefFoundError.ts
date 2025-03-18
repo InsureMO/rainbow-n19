@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.NoClassDefFoundError', [
  executing class was compiled, but the definition can no longer be
  found.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -25,7 +25,7 @@ DocsCollector.collect('java.lang.NoClassDefFoundError', [
 				[/* inline code block */ 'i', `NoClassDefFoundError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -43,5 +43,6 @@ DocsCollector.collect('java.lang.NoClassDefFoundError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

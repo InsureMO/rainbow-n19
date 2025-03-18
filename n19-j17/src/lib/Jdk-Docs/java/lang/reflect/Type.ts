@@ -7,19 +7,20 @@ DocsCollector.collect('java.lang.reflect.Type', [
  programming language. These include raw types, parameterized types,
  array types, type variables and primitive types.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getTypeName()', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this type, including information
  about any type parameters.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string describing this type`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

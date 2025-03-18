@@ -75,7 +75,7 @@ DocsCollector.collect('java.text.FieldPosition', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
@@ -166,7 +166,7 @@ DocsCollector.collect('java.text.FieldPosition', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -179,8 +179,8 @@ DocsCollector.collect('java.text.FieldPosition', [
 			[/* method description */
 				[/* text */ 't', `Retrieves the index of the first character in the requested field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the begin index`]
 			]
@@ -190,8 +190,8 @@ DocsCollector.collect('java.text.FieldPosition', [
 				[/* text */ 't', `Retrieves the index of the character following the last character in the
  requested field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the end index`]
 			]
@@ -200,8 +200,8 @@ DocsCollector.collect('java.text.FieldPosition', [
 			[/* method description */
 				[/* text */ 't', `Retrieves the field identifier.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the field identifier`]
 			]
@@ -210,8 +210,8 @@ DocsCollector.collect('java.text.FieldPosition', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code for this FieldPosition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object`]
 			]
@@ -220,8 +220,8 @@ DocsCollector.collect('java.text.FieldPosition', [
 			[/* method description */
 				[/* text */ 't', `Return a string representation of this FieldPosition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this object`]
 			]
@@ -234,8 +234,8 @@ DocsCollector.collect('java.text.FieldPosition', [
 				[/* text */ 't', ` subclasses. May return null if
  the field is specified only by an integer field ID.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `Identifier for the field`]
 			]
@@ -249,7 +249,7 @@ DocsCollector.collect('java.text.FieldPosition', [
 					[/* text */ 't', `the begin index`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setEndIndex(int)', [
@@ -261,8 +261,9 @@ DocsCollector.collect('java.text.FieldPosition', [
 					[/* text */ 't', `the end index`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

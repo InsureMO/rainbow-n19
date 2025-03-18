@@ -430,7 +430,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* reference */ 'r', `java.math.RoundingMode#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.text.DecimalFormatSymbols,java.lang.String[])', [
 			[/* constructor description */
@@ -579,7 +579,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `the object to compare with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other `],
 				[/* inline code block */ 'i', `CompactNumberFormat`]
@@ -599,8 +599,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* text */ 't', `.
  The grouping separator is locale dependent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if grouping is used;
@@ -618,8 +618,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `. The default value is false.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the parse method returns BigDecimal;
@@ -649,8 +649,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  (thousand)) and the fractional part would be skipped.
  The exact format accepted by the parse operation is locale dependent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if compact numbers should be parsed as integers
@@ -750,8 +750,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 				[/* text */ 't', `, the grouping size is 3.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the grouping size`]
 			]
@@ -762,8 +762,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `CompactNumberFormat`],
 				[/* text */ 't', ` instance.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `hash code for this `],
 				[/* inline code block */ 'i', `CompactNumberFormat`]
@@ -1073,8 +1073,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `CompactNumberFormat`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `RoundingMode`],
@@ -1145,8 +1145,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* text */ 't', `
  instance.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance`]
 			]
@@ -1192,7 +1192,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', ` otherwise`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMaximumFractionDigits(int)', [
@@ -1210,7 +1210,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `the maximum number of fraction digits to be shown`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMaximumIntegerDigits(int)', [
@@ -1228,7 +1228,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `the maximum number of integer digits to be shown`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMinimumFractionDigits(int)', [
@@ -1246,7 +1246,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `the minimum number of fraction digits to be shown`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMinimumIntegerDigits(int)', [
@@ -1264,7 +1264,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `the minimum number of integer digits to be shown`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setParseBigDecimal(boolean)', [
@@ -1286,7 +1286,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', ` otherwise`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setParseIntegerOnly(boolean)', [
@@ -1304,7 +1304,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', ` otherwise`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
@@ -1334,4 +1334,5 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -1,12 +1,11 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.nio.file.LinkOption', [
 	[/* class description */
 		[/* text */ 't', `Defines the options as to how symbolic links are handled.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -39,11 +38,18 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'NOFOLLOW_LINKS', [
+			[/* enum value description */
+				[/* text */ 't', `Do not follow symbolic links.`]
+			],
 		]]
 	],
 ]);

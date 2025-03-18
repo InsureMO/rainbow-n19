@@ -137,8 +137,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
 		[/* block */ 'b', ` Instances of this class are not safe for use by multiple concurrent
  threads. `]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'find()', [
 			[/* method description */
@@ -163,8 +163,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', ` methods.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, a subsequence of the input
@@ -238,8 +238,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				]],
 				[/* block */ 'b', ` By default, a matcher uses anchoring region boundaries.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` iff this matcher is using anchoring bounds,
@@ -278,8 +278,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				]],
 				[/* block */ 'b', ` By default, a matcher uses opaque region boundaries.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` iff this matcher is using transparent bounds,
@@ -297,8 +297,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* block */ 'b', `When this method returns true, then it is possible that more input
  would have changed the result of the last search.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true iff the end of input was hit in the last match; false
           otherwise`]
@@ -330,8 +330,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', ` methods.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, a prefix of the input
@@ -354,8 +354,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', ` methods.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the entire region sequence
@@ -374,8 +374,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
  match won't be lost. If a match was not found, then requireEnd has no
  meaning.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true iff more input could change a positive match into a
           negative one.`]
@@ -385,7 +385,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* method description */
 				[/* text */ 't', `Returns the offset after the last character matched.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If no match has yet been attempted,
@@ -483,8 +483,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
  returned by this method is guaranteed to be a valid group index for
  this matcher.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The number of capturing groups in this matcher's pattern`]
 			]
@@ -500,8 +500,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* reference */ 'r', `#regionEnd()`, `regionEnd`],
 				[/* text */ 't', ` (exclusive).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ending point of this matcher's region`]
 			]
@@ -517,8 +517,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* reference */ 'r', `#regionEnd()`, `regionEnd`],
 				[/* text */ 't', ` (exclusive).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The starting point of this matcher's region`]
 			]
@@ -527,7 +527,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* method description */
 				[/* text */ 't', `Returns the start index of the previous match.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If no match has yet been attempted,
@@ -651,7 +651,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  successfully matches the empty string in the input.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If no match has yet been attempted,
@@ -851,7 +851,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `The replacement string`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string constructed by replacing each matching subsequence
           by the replacement string, substituting captured subsequences
@@ -1010,7 +1010,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `The replacement string`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string constructed by replacing the first matching
           subsequence by the replacement string, substituting captured
@@ -1121,8 +1121,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
  that may be useful for debugging. The exact format is unspecified.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string representation of this matcher`]
 			]
@@ -1146,7 +1146,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `The target string buffer`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The target string buffer`]
 			]
@@ -1170,7 +1170,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `The target string builder`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The target string builder`]
 			]
@@ -1525,8 +1525,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
  default region, which is its entire character sequence. The anchoring
  and transparency of this matcher's region boundaries are unaffected.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This matcher`]
 			]
@@ -1547,7 +1547,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `The new input character sequence`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This matcher`]
 			]
@@ -1588,7 +1588,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `a boolean indicating whether or not to use anchoring bounds.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this matcher`]
 			]
@@ -1664,7 +1664,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
          regions`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this matcher`]
 			]
@@ -1677,8 +1677,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
  The result is unaffected by subsequent operations performed upon this
  matcher.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `MatchResult`],
@@ -1689,8 +1689,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* method description */
 				[/* text */ 't', `Returns the pattern that is interpreted by this matcher.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The pattern for which this matcher was created`]
 			]
@@ -1733,8 +1733,8 @@ DocsCollector.collect('java.util.regex.Matcher', [
  modification is detected.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a sequential stream of match results.`]
 			]
@@ -1772,10 +1772,11 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `The string to be literalized`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A literal string replacement`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

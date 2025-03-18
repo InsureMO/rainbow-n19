@@ -6,7 +6,7 @@ DocsCollector.collect('java.security.cert.CertificateEncodingException', [
 		[/* text */ 't', `Certificate Encoding Exception. This is thrown whenever an error
  occurs while attempting to encode a certificate.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -14,7 +14,7 @@ DocsCollector.collect('java.security.cert.CertificateEncodingException', [
  detail message is a String that describes this particular
  exception.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -84,5 +84,6 @@ DocsCollector.collect('java.security.cert.CertificateEncodingException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

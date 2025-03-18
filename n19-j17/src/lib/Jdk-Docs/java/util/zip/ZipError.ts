@@ -5,7 +5,7 @@ DocsCollector.collect('java.util.zip.ZipError', [
 	[/* class description */
 		[/* text */ 't', `Signals that an unrecoverable error has occurred.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -21,5 +21,6 @@ DocsCollector.collect('java.util.zip.ZipError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

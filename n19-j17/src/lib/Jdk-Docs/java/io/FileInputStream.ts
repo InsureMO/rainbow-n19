@@ -19,7 +19,7 @@ DocsCollector.collect('java.io.FileInputStream', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.File)', [
 			[/* constructor description */
@@ -214,7 +214,7 @@ DocsCollector.collect('java.io.FileInputStream', [
 				[/* inline code block */ 'i', `FileInputStream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -238,7 +238,7 @@ DocsCollector.collect('java.io.FileInputStream', [
  blocked when it is merely slow, for example when reading large
  files over slow networks.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this file input stream has been closed by calling
@@ -257,7 +257,7 @@ DocsCollector.collect('java.io.FileInputStream', [
 				[/* text */ 't', `Reads a byte of data from this input stream. This method blocks
  if no input is yet available.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -371,8 +371,8 @@ DocsCollector.collect('java.io.FileInputStream', [
  file position.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the file channel associated with this file input stream`]
 			]
@@ -435,7 +435,7 @@ DocsCollector.collect('java.io.FileInputStream', [
 				[/* block */ 'b', ` If this stream has an associated channel then the channel is closed
  as well.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -444,4 +444,5 @@ DocsCollector.collect('java.io.FileInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

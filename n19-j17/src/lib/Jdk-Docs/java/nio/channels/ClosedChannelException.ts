@@ -9,15 +9,16 @@ DocsCollector.collect('java.nio.channels.ClosedChannelException', [
  the channel is completely closed.  A socket channel whose write half has
  been shut down, for example, may still be open for reading.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an instance of this class.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

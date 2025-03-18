@@ -12,7 +12,7 @@ DocsCollector.collect('java.util.concurrent.TimeoutException', [
 		[/* text */ 't', ` should be
  declared and thrown.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -21,7 +21,7 @@ DocsCollector.collect('java.util.concurrent.TimeoutException', [
 				[/* text */ 't', ` with no specified detail
  message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -39,5 +39,6 @@ DocsCollector.collect('java.util.concurrent.TimeoutException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

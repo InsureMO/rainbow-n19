@@ -2,8 +2,8 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.io.LineNumberInputStream', [
-	/* class description */ UDF,
-	/* fields */ UDF,
+	/* class description */,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.InputStream)', [
 			[/* constructor description */
@@ -54,7 +54,7 @@ DocsCollector.collect('java.io.LineNumberInputStream', [
 					[/* text */ 't', ` characters.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -69,8 +69,8 @@ DocsCollector.collect('java.io.LineNumberInputStream', [
 			[/* method description */
 				[/* text */ 't', `Returns the current line number.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current line number.`]
 			]
@@ -110,7 +110,7 @@ DocsCollector.collect('java.io.LineNumberInputStream', [
  converted into a single newline character.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -239,7 +239,7 @@ DocsCollector.collect('java.io.LineNumberInputStream', [
                       the mark position becomes invalid.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
@@ -276,7 +276,7 @@ DocsCollector.collect('java.io.LineNumberInputStream', [
  which, if it happens within readlimit bytes, allows the outer
  code to reset the stream and try another parser.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -293,8 +293,9 @@ DocsCollector.collect('java.io.LineNumberInputStream', [
 					[/* text */ 't', `the new line number.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

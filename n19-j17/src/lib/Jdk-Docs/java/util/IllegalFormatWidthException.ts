@@ -14,7 +14,7 @@ DocsCollector.collect('java.util.IllegalFormatWidthException', [
 		[/* inline code block */ 'i', `Integer.MIN_VALUE`],
 		[/* text */ 't', ` will be used in the exception.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
@@ -38,12 +38,13 @@ DocsCollector.collect('java.util.IllegalFormatWidthException', [
 				[/* inline code block */ 'i', `Integer.MIN_VALUE`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The width`]
 			]
 		]],
 		[/* method */ 'getMessage()', UDF]
 	],
+	/* enum values */ UDF
 ]);

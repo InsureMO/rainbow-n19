@@ -19,7 +19,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
  and their behavior should not rely on object identity.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.constant.DirectMethodHandleDesc,java.lang.String,java.lang.constant.ClassDesc,java.lang.constant.ConstantDesc...)', [
 			[/* constructor description */
@@ -96,7 +96,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 					[/* inline code block */ 'i', `DynamicConstantDesc`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified `],
@@ -165,8 +165,8 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 					[/* block */ 'b', '']
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -182,8 +182,8 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				[/* inline code block */ 'i', `LDC`],
 				[/* text */ 't', ` for this constant.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the constant type`]
 			]
@@ -192,8 +192,8 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns the bootstrap arguments for this constant.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the bootstrap arguments`]
 			]
@@ -205,8 +205,8 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				[/* text */ 't', ` describing the bootstrap method for
  this constant.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the bootstrap method`]
 			]
@@ -220,8 +220,8 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				[/* inline code block */ 'i', `LDC`],
 				[/* text */ 't', ` for this constant.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the constant name`]
 			]
@@ -232,8 +232,8 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
  including the bootstrap method, the constant name and type, and
  the static bootstrap arguments.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A compact textual description of this call site descriptor`]
 			]
@@ -244,8 +244,8 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				[/* reference */ 'r', `java.util.List`, `List`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* reference */ 'r', `java.util.List`, `List`],
@@ -484,4 +484,5 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -1,12 +1,11 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.lang.module.ModuleDescriptor$Modifier', [
 	[/* class description */
 		[/* text */ 't', `A modifier on a module.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -39,11 +38,35 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'OPEN', [
+			[/* enum value description */
+				[/* text */ 't', `An open module. An open module does not declare any open packages
+ but the resulting module is treated as if all packages are open.`]
+			],
+		]],
+		[/* enum value */ 'AUTOMATIC', [
+			[/* enum value description */
+				[/* text */ 't', `An automatic module. An automatic module is treated as if it exports
+ and opens all packages.`]
+			],
+		]],
+		[/* enum value */ 'SYNTHETIC', [
+			[/* enum value description */
+				[/* text */ 't', `The module was not explicitly or implicitly declared.`]
+			],
+		]],
+		[/* enum value */ 'MANDATED', [
+			[/* enum value description */
+				[/* text */ 't', `The module was implicitly declared.`]
+			],
 		]]
 	],
 ]);

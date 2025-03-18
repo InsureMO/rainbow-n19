@@ -152,13 +152,13 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* text */ 't', ` objects associated with the file system to be closed.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Initializes a new instance of this class.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -170,8 +170,8 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  `],
 				[/* block */ 'b', ` File systems created by the default provider are always open.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this file system is open`]
@@ -182,8 +182,8 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				[/* text */ 't', `Tells whether or not this file system allows only read-only access to
  its file stores.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this file system provides
@@ -234,8 +234,8 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An object to iterate over the backing file stores`]
 			]
@@ -266,8 +266,8 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  are done when the iterator is obtained or during iteration.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An object to iterate over the root directories`]
 			]
@@ -296,8 +296,8 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The name separator`]
 			]
@@ -319,7 +319,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `If this `],
@@ -808,8 +808,8 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* method description */
 				[/* text */ 't', `Returns the provider that created this file system.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The provider that created this file system.`]
 			]
@@ -826,7 +826,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				[/* block */ 'b', ` This method constructs a new watch service that may be used to watch
  registered objects for changes and events.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `If this `],
@@ -873,8 +873,8 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  file attribute view.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An unmodifiable set of the names of the supported file attribute
           views`]
@@ -910,7 +910,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  system cannot be closed.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -922,4 +922,5 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

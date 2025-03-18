@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.ReflectiveOperationException', [
 		[/* text */ 't', `Common superclass of exceptions thrown by reflective operations in
  core reflection.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -18,7 +18,7 @@ DocsCollector.collect('java.lang.ReflectiveOperationException', [
 				[/* reference */ 'r', `java.lang.Throwable#initCause(java.lang.Throwable)`, `Throwable.initCause(java.lang.Throwable)`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -100,5 +100,6 @@ DocsCollector.collect('java.lang.ReflectiveOperationException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

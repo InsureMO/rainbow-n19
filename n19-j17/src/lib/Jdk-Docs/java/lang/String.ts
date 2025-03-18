@@ -155,7 +155,7 @@ DocsCollector.collect('java.lang.String', [
  an empty character sequence.  Note that use of this constructor is
  unnecessary since Strings are immutable.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(byte[])', [
@@ -693,7 +693,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `a function to apply`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of applying the function to this string`]
 			]
@@ -708,7 +708,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the sequence to search for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this string contains `],
 				[/* inline code block */ 'i', `s`],
@@ -748,7 +748,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` against`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this `],
@@ -793,7 +793,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` against`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this `],
@@ -816,7 +816,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the suffix.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character sequence represented by the
@@ -861,7 +861,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` against`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the given object represents a `],
@@ -926,7 +926,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` against`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the argument is not `],
@@ -951,8 +951,8 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the string is empty or contains only
@@ -973,8 +973,8 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `0`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -1164,7 +1164,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` value) to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified subregion of this string
@@ -1280,7 +1280,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the number of characters to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified subregion of this string
@@ -1299,7 +1299,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the prefix.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character sequence represented by the
@@ -1332,7 +1332,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `where to begin looking in this string.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character sequence represented by the
@@ -1373,8 +1373,8 @@ DocsCollector.collect('java.lang.String', [
  over the encoding process is required.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The resultant byte array`]
 			]
@@ -1439,7 +1439,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `String`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The resultant byte array`]
 			]
@@ -1506,8 +1506,8 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Converts this string to a new character array.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a newly allocated character array whose length is the length
           of this string and whose contents are initialized to contain
@@ -1768,7 +1768,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -1814,7 +1814,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a negative integer, zero, or a positive integer as the
           specified String is greater than, equal to, or less
@@ -1848,8 +1848,8 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', ` indicates exponentiation.
  (The hash value of the empty string is zero.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -1907,7 +1907,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `a character (Unicode code point).`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first occurrence of the character in the
           character sequence represented by this object, or
@@ -2013,7 +2013,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the index to start the search from.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first occurrence of the character in the
           character sequence represented by this object that is greater
@@ -2053,7 +2053,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the substring to search for.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first occurrence of the specified substring,
           or `],
@@ -2093,7 +2093,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the index from which to start the search.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first occurrence of the specified substring,
           starting at the specified index,
@@ -2152,7 +2152,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `a character (Unicode code point).`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the last occurrence of the character in the
           character sequence represented by this object, or
@@ -2238,7 +2238,7 @@ DocsCollector.collect('java.lang.String', [
           -1 is returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the last occurrence of the character in the
           character sequence represented by this object that is less
@@ -2281,7 +2281,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the substring to search for.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the last occurrence of the specified substring,
           or `],
@@ -2321,7 +2321,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the index to start the search from.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the last occurrence of the specified substring,
           searching backward from the specified index,
@@ -2337,8 +2337,8 @@ DocsCollector.collect('java.lang.String', [
 				[/* reference */ 'r', `java.lang.Character#unicode`, `Unicode code units`],
 				[/* text */ 't', ` in the string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of the sequence of characters represented by this
           object.`]
@@ -2495,7 +2495,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string that represents the concatenation of this object's
           characters followed by the string argument's characters.`]
@@ -2511,7 +2511,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `Arguments referenced by the format specifiers in this string.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A formatted string`]
 			]
@@ -2584,7 +2584,7 @@ DocsCollector.collect('java.lang.String', [
            to add or remove`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `string with indentation adjusted and line endings normalized`]
 			]
@@ -2679,7 +2679,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the new character.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string derived from this string by replacing every
           occurrence of `],
@@ -2705,7 +2705,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `The replacement sequence of char values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The resulting string`]
 			]
@@ -2862,7 +2862,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `ignored`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* reference */ 'r', `java.lang.String`, `String`],
@@ -2910,8 +2910,8 @@ DocsCollector.collect('java.lang.String', [
  the beginning and end of a string.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string whose value is this string, with all leading
           and trailing white space removed`]
@@ -3048,8 +3048,8 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` (U+000A) to separate lines.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `string with incidental indentation removed and line
          terminators normalized`]
@@ -3092,8 +3092,8 @@ DocsCollector.collect('java.lang.String', [
  the beginning of a string.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string whose value is this string, with all leading white
           space removed`]
@@ -3136,8 +3136,8 @@ DocsCollector.collect('java.lang.String', [
  the end of a string.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string whose value is this string, with all trailing white
           space removed`]
@@ -3266,8 +3266,8 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `String`],
@@ -3380,7 +3380,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `use the case transformation rules for this locale`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `String`],
@@ -3391,8 +3391,8 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `This object (which is already a string!) is itself returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string itself.`]
 			]
@@ -3429,8 +3429,8 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `String`],
@@ -3541,7 +3541,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `use the case transformation rules for this locale`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `String`],
@@ -3697,7 +3697,7 @@ DocsCollector.collect('java.lang.String', [
 				],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `when an escape sequence is malformed.`]
@@ -3768,8 +3768,8 @@ DocsCollector.collect('java.lang.String', [
  This method may be used to trim space (as defined above) from
  the beginning and end of a string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string whose value is this string, with all leading
           and trailing space removed, or this string if it
@@ -4055,8 +4055,8 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance, which is the instance itself.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -4076,8 +4076,8 @@ DocsCollector.collect('java.lang.String', [
 				[/* reference */ 'r', `java.lang.Character#unicode`, `surrogate code point`],
 				[/* text */ 't', ` is passed through uninterpreted.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an IntStream of char values from this sequence`]
 			]
@@ -4094,8 +4094,8 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` values which are then passed to the stream.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an IntStream of Unicode code points from this sequence`]
 			]
@@ -4136,8 +4136,8 @@ DocsCollector.collect('java.lang.String', [
  The stream returned by this method contains the lines from
  this string in the order in which they occur.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the stream of lines extracted from this string`]
 			]
@@ -4201,8 +4201,8 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string that has the same contents as this string, but is
           guaranteed to be from a pool of unique strings.`]
@@ -4219,7 +4219,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the character array.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `String`],
@@ -4514,7 +4514,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `if the argument is `],
 				[/* inline code block */ 'i', `true`],
@@ -4541,7 +4541,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string of length `],
 				[/* inline code block */ 'i', `1`],
@@ -4565,7 +4565,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `the character array.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `String`],
@@ -4648,7 +4648,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a  string representation of the `],
 				[/* inline code block */ 'i', `double`],
@@ -4676,7 +4676,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the `],
 				[/* inline code block */ 'i', `float`],
@@ -4704,7 +4704,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the `],
 				[/* inline code block */ 'i', `int`],
@@ -4724,7 +4724,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `if the argument is `],
 				[/* inline code block */ 'i', `null`],
@@ -4758,7 +4758,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the `],
 				[/* inline code block */ 'i', `long`],
@@ -4943,4 +4943,5 @@ DocsCollector.collect('java.lang.String', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

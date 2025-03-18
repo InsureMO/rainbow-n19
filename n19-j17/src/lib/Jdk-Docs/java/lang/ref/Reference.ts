@@ -8,8 +8,8 @@ DocsCollector.collect('java.lang.ref.Reference', [
  implemented in close cooperation with the garbage collector, this class may
  not be subclassed directly.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'clone()', [
 			[/* method description */
@@ -22,7 +22,7 @@ DocsCollector.collect('java.lang.ref.Reference', [
 				[/* inline code block */ 'i', `Reference`],
 				[/* text */ 't', ` instead.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.CloneNotSupportedException', [/* throw description */
 					[/* text */ 't', `always`]
@@ -41,8 +41,8 @@ DocsCollector.collect('java.lang.ref.Reference', [
 				[/* block */ 'b', ` This method is invoked only by Java code; when the garbage collector
  enqueues references it does so directly, without invoking this method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this reference object was successfully
@@ -82,8 +82,8 @@ DocsCollector.collect('java.lang.ref.Reference', [
 				[/* text */ 't', ` if this reference object has been cleared
  but not enqueued due to the race condition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this reference object is
@@ -109,7 +109,7 @@ DocsCollector.collect('java.lang.ref.Reference', [
 					[/* text */ 't', `the object to compare with this reference object's referent`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -161,7 +161,7 @@ DocsCollector.collect('java.lang.ref.Reference', [
 					[/* text */ 't', `, this method has no effect.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'get()', [
@@ -172,8 +172,8 @@ DocsCollector.collect('java.lang.ref.Reference', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The object to which this reference refers, or
            `],
@@ -190,9 +190,10 @@ DocsCollector.collect('java.lang.ref.Reference', [
 				[/* block */ 'b', ` This method is invoked only by Java code; when the garbage collector
  clears references it does so directly, without invoking this method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -24,7 +24,8 @@ DocsCollector.collect('java.lang.Override', [
 			]]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

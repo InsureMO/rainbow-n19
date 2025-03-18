@@ -401,8 +401,8 @@ DocsCollector.collect('java.util.Collection', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'toArray(java.lang.Object[])', [
 			[/* method description */
@@ -729,7 +729,7 @@ DocsCollector.collect('java.util.Collection', [
 					[/* text */ 't', `object to be compared for equality with this collection`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this
@@ -742,8 +742,8 @@ DocsCollector.collect('java.util.Collection', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this collection contains no elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this collection contains no elements`]
@@ -907,8 +907,8 @@ DocsCollector.collect('java.util.Collection', [
 				[/* inline code block */ 'i', `c1.hashCode()==c2.hashCode()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this collection`]
 			]
@@ -923,8 +923,8 @@ DocsCollector.collect('java.util.Collection', [
 				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in this collection`]
 			]
@@ -946,8 +946,8 @@ DocsCollector.collect('java.util.Collection', [
  allocate a new array even if this collection is backed by an array).
  The caller is thus free to modify the returned array.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
 				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
@@ -963,8 +963,8 @@ DocsCollector.collect('java.util.Collection', [
  (unless this collection is an instance of some class that provides a
  guarantee).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Iterator`],
@@ -976,7 +976,7 @@ DocsCollector.collect('java.util.Collection', [
 				[/* text */ 't', `Removes all of the elements from this collection (optional operation).
  The collection will be empty after this method returns.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -1111,8 +1111,8 @@ DocsCollector.collect('java.util.Collection', [
  operation.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -1144,8 +1144,8 @@ DocsCollector.collect('java.util.Collection', [
  for details.)`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a possibly parallel `],
 				[/* inline code block */ 'i', `Stream`],
@@ -1177,8 +1177,8 @@ DocsCollector.collect('java.util.Collection', [
  for details.)`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a sequential `],
 				[/* inline code block */ 'i', `Stream`],
@@ -1186,4 +1186,5 @@ DocsCollector.collect('java.util.Collection', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

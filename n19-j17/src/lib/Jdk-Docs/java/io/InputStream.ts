@@ -14,13 +14,13 @@ DocsCollector.collect('java.io.InputStream', [
  must always provide a method that returns the next byte of input.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor for subclasses to call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -45,7 +45,7 @@ DocsCollector.collect('java.io.InputStream', [
  `],
 				[/* block */ 'b', ` A subclass must provide an implementation of this method.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -80,8 +80,8 @@ DocsCollector.collect('java.io.InputStream', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this stream instance supports the mark
@@ -121,7 +121,7 @@ DocsCollector.collect('java.io.InputStream', [
  It is strongly recommended that the stream be promptly closed if an I/O
  error occurs.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -258,7 +258,7 @@ DocsCollector.collect('java.io.InputStream', [
 				]],
 				[/* block */ 'b', ` This method should be overridden by subclasses.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -820,8 +820,8 @@ DocsCollector.collect('java.io.InputStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `InputStream`],
@@ -889,7 +889,7 @@ DocsCollector.collect('java.io.InputStream', [
                       the mark position becomes invalid.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
@@ -1008,7 +1008,7 @@ DocsCollector.collect('java.io.InputStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this stream has not been marked or if the
@@ -1032,7 +1032,7 @@ DocsCollector.collect('java.io.InputStream', [
  nothing.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -1091,4 +1091,5 @@ DocsCollector.collect('java.io.InputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -800,7 +800,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  If multiple threads access a format concurrently, it must be synchronized
  externally.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -877,7 +877,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -1157,8 +1157,8 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* method description */
 				[/* text */ 't', `Generates a hash code for the message format object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -1167,8 +1167,8 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* method description */
 				[/* text */ 't', `Creates and returns a copy of this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -1336,8 +1336,8 @@ DocsCollector.collect('java.text.MessageFormat', [
  The string is constructed from internal information and therefore
  does not necessarily equal the previously applied pattern.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a pattern representing the current state of the message format`]
 			]
@@ -1459,8 +1459,8 @@ DocsCollector.collect('java.text.MessageFormat', [
 					[/* text */ 't', ` methods.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the formats used for the format elements in the pattern`]
 			]
@@ -1494,8 +1494,8 @@ DocsCollector.collect('java.text.MessageFormat', [
  is not used for any format element in the pattern string, then
  null is returned in the array.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the formats used for the arguments within the pattern`]
 			]
@@ -1504,8 +1504,8 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the locale that's used when creating or comparing subformats.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the locale used when creating or comparing subformats`]
 			]
@@ -1646,7 +1646,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 					[/* text */ 't', `the new format to use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setFormats(java.text.Format[])', [
@@ -1793,8 +1793,9 @@ DocsCollector.collect('java.text.MessageFormat', [
 					[/* text */ 't', `the locale to be used when creating or comparing subformats`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

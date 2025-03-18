@@ -21,13 +21,13 @@ DocsCollector.collect('java.util.TimerTask', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new timer task.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -36,8 +36,8 @@ DocsCollector.collect('java.util.TimerTask', [
 			[/* method description */
 				[/* text */ 't', `The action to be performed by this timer task.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'cancel()', [
@@ -61,8 +61,8 @@ DocsCollector.collect('java.util.TimerTask', [
 				[/* block */ 'b', `This method may be called repeatedly; the second and subsequent
  calls have no effect.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this task is scheduled for one-time execution and has
          not yet run, or this task is scheduled for repeated execution.
@@ -110,8 +110,8 @@ DocsCollector.collect('java.util.TimerTask', [
  significant.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the time at which the most recent execution of this task was
          scheduled to occur, in the format returned by Date.getTime().
@@ -120,4 +120,5 @@ DocsCollector.collect('java.util.TimerTask', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

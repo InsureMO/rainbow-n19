@@ -5,13 +5,13 @@ DocsCollector.collect('java.lang.IllegalCallerException', [
 	[/* class description */
 		[/* text */ 't', `Thrown to indicate that a method has been called by an inappropriate caller.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an IllegalCallerException with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -59,5 +59,6 @@ DocsCollector.collect('java.lang.IllegalCallerException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

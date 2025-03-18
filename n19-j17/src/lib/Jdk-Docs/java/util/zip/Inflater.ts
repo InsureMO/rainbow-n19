@@ -66,13 +66,13 @@ DocsCollector.collect('java.util.zip.Inflater', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new decompressor.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(boolean)', [
@@ -100,8 +100,8 @@ DocsCollector.collect('java.util.zip.Inflater', [
 				[/* text */ 't', `Returns true if the end of the compressed data stream has been
  reached.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the end of the compressed data stream has been
  reached`]
@@ -111,8 +111,8 @@ DocsCollector.collect('java.util.zip.Inflater', [
 			[/* method description */
 				[/* text */ 't', `Returns true if a preset dictionary is needed for decompression.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if a preset dictionary is needed for decompression`]
 			]
@@ -125,8 +125,8 @@ DocsCollector.collect('java.util.zip.Inflater', [
 				[/* text */ 't', ` methods should be
  called in order to provide more input.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if no data remains in the input buffer`]
 			]
@@ -135,8 +135,8 @@ DocsCollector.collect('java.util.zip.Inflater', [
 			[/* method description */
 				[/* text */ 't', `Returns the ADLER-32 value of the uncompressed data.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ADLER-32 value of the uncompressed data`]
 			]
@@ -147,8 +147,8 @@ DocsCollector.collect('java.util.zip.Inflater', [
  This can be used to find out what bytes still remain in the input
  buffer after decompression has finished.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total number of bytes remaining in the input buffer`]
 			]
@@ -166,8 +166,8 @@ DocsCollector.collect('java.util.zip.Inflater', [
  the preferred means of obtaining this information.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total number of compressed bytes input so far`]
 			]
@@ -185,8 +185,8 @@ DocsCollector.collect('java.util.zip.Inflater', [
  the preferred means of obtaining this information.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total number of uncompressed bytes output so far`]
 			]
@@ -384,8 +384,8 @@ DocsCollector.collect('java.util.zip.Inflater', [
 			[/* method description */
 				[/* text */ 't', `Returns the total number of compressed bytes input so far.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total (non-negative) number of compressed bytes input so far`]
 			]
@@ -394,8 +394,8 @@ DocsCollector.collect('java.util.zip.Inflater', [
 			[/* method description */
 				[/* text */ 't', `Returns the total number of uncompressed bytes output so far.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total (non-negative) number of uncompressed bytes output so far`]
 			]
@@ -408,16 +408,16 @@ DocsCollector.collect('java.util.zip.Inflater', [
  being used. Once this method is called, the behavior of the
  Inflater object is undefined.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
 			[/* method description */
 				[/* text */ 't', `Resets inflater so that a new set of input data can be processed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDictionary(byte[])', [
@@ -432,7 +432,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* text */ 't', `the dictionary data bytes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDictionary(byte[],int,int)', [
@@ -453,7 +453,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* text */ 't', `the length of the data`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDictionary(java.nio.ByteBuffer)', [
@@ -472,7 +472,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* text */ 't', `the dictionary data bytes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setInput(byte[])', [
@@ -495,7 +495,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* text */ 't', `the input data bytes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setInput(byte[],int,int)', [
@@ -524,7 +524,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* text */ 't', `the length of the input data`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setInput(java.nio.ByteBuffer)', [
@@ -560,8 +560,9 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* text */ 't', `the input data bytes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

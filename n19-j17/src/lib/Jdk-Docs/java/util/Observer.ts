@@ -2,9 +2,9 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.util.Observer', [
-	/* class description */ UDF,
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* class description */,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'update(java.util.Observable,java.lang.Object)', [
 			[/* method description */
@@ -28,8 +28,9 @@ DocsCollector.collect('java.util.Observer', [
                  method.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

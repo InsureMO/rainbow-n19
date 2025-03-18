@@ -10,7 +10,7 @@ DocsCollector.collect('java.lang.ExceptionInInitializerError', [
  exception occurred during evaluation of a static initializer or the
  initializer for a static variable.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -23,7 +23,7 @@ DocsCollector.collect('java.lang.ExceptionInInitializerError', [
  throwable object.
  A detail message is a String that describes this particular exception.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -74,8 +74,8 @@ DocsCollector.collect('java.lang.ExceptionInInitializerError', [
 				[/* text */ 't', `Returns the exception that occurred during a static initialization that
  caused this error to be created.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the saved throwable object of this
          `],
@@ -90,4 +90,5 @@ DocsCollector.collect('java.lang.ExceptionInInitializerError', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

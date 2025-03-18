@@ -8,8 +8,8 @@ DocsCollector.collect('java.lang.Iterable', [
 		[/* inline code block */ 'i', `for`],
 		[/* text */ 't', ` statement (sometimes called the "for-each loop" statement).`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'iterator()', [
 			[/* method description */
@@ -17,8 +17,8 @@ DocsCollector.collect('java.lang.Iterable', [
 				[/* inline code block */ 'i', `T`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an Iterator.`]
 			]
@@ -32,8 +32,8 @@ DocsCollector.collect('java.lang.Iterable', [
 				[/* inline code block */ 'i', `Iterable`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -71,4 +71,5 @@ DocsCollector.collect('java.lang.Iterable', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

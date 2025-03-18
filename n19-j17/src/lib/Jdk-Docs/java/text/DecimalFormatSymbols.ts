@@ -29,7 +29,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
  the symbols are overridden for the designated region.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -55,7 +55,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.util.Locale)', [
@@ -109,7 +109,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -122,8 +122,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets the character used for decimal sign. Different for French, etc.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character used for decimal sign`]
 			]
@@ -132,8 +132,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets the character used for a digit in a pattern.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character used for a digit in a pattern`]
 			]
@@ -142,8 +142,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets the character used for grouping separator. Different for French, etc.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the grouping separator`]
 			]
@@ -154,8 +154,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
  negative format is specified, one is formed by prefixing
  minusSign to the positive format.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character representing minus sign`]
 			]
@@ -164,8 +164,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Returns the monetary decimal separator.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the monetary decimal separator`]
 			]
@@ -178,8 +178,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* text */ 't', ` in some locales,
  e.g, German in Austria.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the monetary grouping separator`]
 			]
@@ -189,8 +189,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* text */ 't', `Gets the character used to separate positive and negative subpatterns
  in a pattern.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the pattern separator`]
 			]
@@ -199,8 +199,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets the character used for percent sign. Different for Arabic, etc.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character used for percent sign`]
 			]
@@ -209,8 +209,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets the character used for per mille sign. Different for Arabic, etc.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character used for per mille sign`]
 			]
@@ -219,8 +219,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets the character used for zero. Different for Arabic, etc.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character used for zero`]
 			]
@@ -229,8 +229,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Override hashCode.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -239,8 +239,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Standard override.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -250,8 +250,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* text */ 't', `Returns the currency symbol for the currency of these
  DecimalFormatSymbols in their locale.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the currency symbol`]
 			]
@@ -261,8 +261,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* text */ 't', `Returns the string used to separate the mantissa from the exponent.
  Examples: "x10^" for 1.23x10^4, "E" for 1.23E4.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the exponent separator string`]
 			]
@@ -272,8 +272,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* text */ 't', `Gets the string used to represent infinity. Almost always left
  unchanged.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representing infinity`]
 			]
@@ -283,8 +283,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* text */ 't', `Returns the ISO 4217 currency code of the currency of these
  DecimalFormatSymbols.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the currency code`]
 			]
@@ -294,8 +294,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* text */ 't', `Gets the string used to represent "not a number". Almost always left
  unchanged.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representing "not a number"`]
 			]
@@ -306,8 +306,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
  currency symbol attribute was previously set to a value that's not
  a valid ISO 4217 currency code.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the currency used, or null`]
 			]
@@ -333,8 +333,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `DecimalFormatSymbols`],
@@ -405,8 +405,8 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of locales for which localized
          `],
@@ -445,7 +445,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the currency symbol`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDecimalSeparator(char)', [
@@ -457,7 +457,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the character used for decimal sign`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDigit(char)', [
@@ -469,7 +469,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the character used for a digit in a pattern`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setExponentSeparator(java.lang.String)', [
@@ -500,7 +500,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the grouping separator`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setInfinity(java.lang.String)', [
@@ -513,7 +513,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the string representing infinity`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setInternationalCurrencySymbol(java.lang.String)', [
@@ -535,7 +535,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the currency code`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMinusSign(char)', [
@@ -549,7 +549,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the character representing minus sign`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMonetaryDecimalSeparator(char)', [
@@ -561,7 +561,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the monetary decimal separator`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMonetaryGroupingSeparator(char)', [
@@ -577,7 +577,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the monetary grouping separator`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setNaN(java.lang.String)', [
@@ -590,7 +590,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the string representing "not a number"`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setPatternSeparator(char)', [
@@ -603,7 +603,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the pattern separator`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setPercent(char)', [
@@ -615,7 +615,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the character used for percent sign`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setPerMill(char)', [
@@ -627,7 +627,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the character used for per mille sign`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setZeroDigit(char)', [
@@ -639,8 +639,9 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 					[/* text */ 't', `the character used for zero`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

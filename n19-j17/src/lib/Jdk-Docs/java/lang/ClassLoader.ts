@@ -290,7 +290,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -309,7 +309,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
  a security exception.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
@@ -885,7 +885,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', ` of the class`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The `],
 				[/* inline code block */ 'i', `Class`],
@@ -983,7 +983,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', `The signers for the class`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'findClass(java.lang.String)', [
@@ -1041,7 +1041,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', ` of the class`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The resulting `],
 				[/* inline code block */ 'i', `Class`],
@@ -1315,8 +1315,8 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* text */ 't', ` object of the same package name, each
  defined by a different class loader in the class loader hierarchy.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The array of `],
 				[/* inline code block */ 'i', `Package`],
@@ -1341,7 +1341,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', `The library name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The absolute path of the native library`]
 			]
@@ -1373,7 +1373,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', `The resource name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `URL`],
 				[/* text */ 't', ` object for reading the resource; `],
@@ -1482,8 +1482,8 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this class loader is parallel capable,
@@ -1503,7 +1503,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* text */ 't', ` in such implementations if this class loader's
  parent is the bootstrap class loader.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present, and the caller's class loader
@@ -1527,8 +1527,8 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* inline code block */ 'i', `Module`],
 				[/* text */ 't', ` for this class loader.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The unnamed Module for this class loader`]
 			]
@@ -1576,8 +1576,8 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* text */ 't', `s
  of the same name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The array of `],
 				[/* inline code block */ 'i', `Package`],
@@ -1673,8 +1673,8 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* text */ 't', ` if
  this class loader is not named.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `name of this class loader; or `],
 				[/* inline code block */ 'i', `null`],
@@ -1895,7 +1895,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', `The resource name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An input stream for reading the resource; `],
 				[/* inline code block */ 'i', `null`],
@@ -1913,7 +1913,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* text */ 't', ` are visible to
  the platform class loader.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present, and the caller's class loader is
@@ -1980,7 +1980,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', ` is thrown.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present, and the caller's class loader
@@ -2045,7 +2045,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', `The resource name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A `],
 				[/* reference */ 'r', `java.net.URL`, `URL`],
@@ -2123,8 +2123,8 @@ DocsCollector.collect('java.lang.ClassLoader', [
  provided so that class loaders can be made to ignore any command line or
  persistent assertion status settings and "start with a clean slate."`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setClassAssertionStatus(java.lang.String,boolean)', [
@@ -2155,7 +2155,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
          class is to have assertions disabled.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDefaultAssertionStatus(boolean)', [
@@ -2181,7 +2181,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
          if they will have assertions disabled by default.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setPackageAssertionStatus(java.lang.String,boolean)', [
@@ -2261,8 +2261,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
          have assertions disabled by default.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

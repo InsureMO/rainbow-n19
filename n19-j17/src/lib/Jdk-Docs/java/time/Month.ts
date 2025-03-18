@@ -1,4 +1,3 @@
-import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.time.Month', [
@@ -43,8 +42,8 @@ DocsCollector.collect('java.time.Month', [
  As such, this enum may be used by any calendar system that has the month-of-year
  concept defined exactly equivalent to the ISO-8601 calendar system.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
 			[/* method description */
@@ -133,7 +132,7 @@ DocsCollector.collect('java.time.Month', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this month-of-year, false if not`]
 			]
@@ -151,7 +150,7 @@ DocsCollector.collect('java.time.Month', [
 					[/* text */ 't', `true if the length is required for a leap year`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day of year corresponding to the first day of this month, from 1 to 336`]
 			]
@@ -228,8 +227,8 @@ DocsCollector.collect('java.time.Month', [
  The values are numbered following the ISO-8601 standard,
  from 1 (January) to 12 (December).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, from 1 (January) to 12 (December)`]
 			]
@@ -251,7 +250,7 @@ DocsCollector.collect('java.time.Month', [
 					[/* text */ 't', `true if the length is required for a leap year`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of this month in days, from 28 to 31`]
 			]
@@ -265,8 +264,8 @@ DocsCollector.collect('java.time.Month', [
  April, June, September and November have 30 days.
  All other months have 31 days.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum length of this month in days, from 29 to 31`]
 			]
@@ -280,8 +279,8 @@ DocsCollector.collect('java.time.Month', [
  April, June, September and November have 30 days.
  All other months have 31 days.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum length of this month in days, from 28 to 31`]
 			]
@@ -310,7 +309,7 @@ DocsCollector.collect('java.time.Month', [
 					[/* text */ 't', `the locale to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the text value of the month-of-year, not null`]
 			]
@@ -327,8 +326,8 @@ DocsCollector.collect('java.time.Month', [
  July, August and September return July.
  October, November and December return October.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first month of the quarter corresponding to this month, not null`]
 			]
@@ -349,7 +348,7 @@ DocsCollector.collect('java.time.Month', [
 					[/* text */ 't', `the months to subtract, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the resulting month, not null`]
 			]
@@ -370,7 +369,7 @@ DocsCollector.collect('java.time.Month', [
 					[/* text */ 't', `the months to add, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the resulting month, not null`]
 			]
@@ -675,11 +674,109 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'JANUARY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of January with 31 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `1`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'FEBRUARY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of February with 28 days, or 29 in a leap year.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `2`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'MARCH', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of March with 31 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `3`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'APRIL', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of April with 30 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `4`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'MAY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of May with 31 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `5`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'JUNE', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of June with 30 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `6`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'JULY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of July with 31 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `7`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'AUGUST', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of August with 31 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `8`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'SEPTEMBER', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of September with 30 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `9`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'OCTOBER', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of October with 31 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `10`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'NOVEMBER', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of November with 30 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `11`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'DECEMBER', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the month of December with 31 days.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `12`],
+				[/* text */ 't', `.`]
+			],
 		]]
 	],
 ]);

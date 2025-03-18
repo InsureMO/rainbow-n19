@@ -30,8 +30,8 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  specification of streams, stream operations, stream pipelines, and
  parallelism, which governs the behavior of all stream types.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isParallel()', [
 			[/* method description */
@@ -39,8 +39,8 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  would execute in parallel.  Calling this method after invoking an
  terminal stream operation method may yield unpredictable results.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this stream would execute in parallel if executed`]
@@ -57,8 +57,8 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the element iterator for this stream`]
 			]
@@ -83,8 +83,8 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  example, it may be too expensive to compute the entire set for some or
  all possible stream pipelines.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the element spliterator for this stream`]
 			]
@@ -118,7 +118,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 					[/* text */ 't', `A task to execute when the stream is closed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream with a handler that is run if the stream is closed`]
 			]
@@ -136,8 +136,8 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a parallel stream`]
 			]
@@ -155,8 +155,8 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a sequential stream`]
 			]
@@ -177,8 +177,8 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unordered stream`]
 			]
@@ -188,9 +188,10 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 				[/* text */ 't', `Closes this stream, causing all close handlers for this stream pipeline
  to be called.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

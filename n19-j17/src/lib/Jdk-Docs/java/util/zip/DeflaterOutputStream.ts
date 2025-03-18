@@ -173,7 +173,7 @@ DocsCollector.collect('java.util.zip.DeflaterOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Writes next block of compressed data to the output stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -186,7 +186,7 @@ DocsCollector.collect('java.util.zip.DeflaterOutputStream', [
 				[/* text */ 't', `Writes remaining compressed data to the output stream and closes the
  underlying stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -200,7 +200,7 @@ DocsCollector.collect('java.util.zip.DeflaterOutputStream', [
  the underlying stream. Use this method when applying multiple filters
  in succession to the same output stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -229,7 +229,7 @@ DocsCollector.collect('java.util.zip.DeflaterOutputStream', [
 				[/* inline code block */ 'i', `compressor`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -278,4 +278,5 @@ DocsCollector.collect('java.util.zip.DeflaterOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

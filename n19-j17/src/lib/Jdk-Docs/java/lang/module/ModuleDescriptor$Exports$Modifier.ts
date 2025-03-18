@@ -1,12 +1,11 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports$Modifier', [
 	[/* class description */
 		[/* text */ 't', `A modifier on an exported package.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -39,11 +38,25 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'SYNTHETIC', [
+			[/* enum value description */
+				[/* text */ 't', `The export was not explicitly or implicitly declared in the
+ source of the module declaration.`]
+			],
+		]],
+		[/* enum value */ 'MANDATED', [
+			[/* enum value description */
+				[/* text */ 't', `The export was implicitly declared in the source of the module
+ declaration.`]
+			],
 		]]
 	],
 ]);

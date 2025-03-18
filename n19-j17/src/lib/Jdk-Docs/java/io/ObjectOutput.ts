@@ -7,8 +7,8 @@ DocsCollector.collect('java.io.ObjectOutput', [
  DataOutput includes methods for output of primitive types, ObjectOutput
  extends that interface to include objects, arrays, and Strings.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'close()', [
 			[/* method description */
@@ -16,7 +16,7 @@ DocsCollector.collect('java.io.ObjectOutput', [
  to release any resources associated with the
  stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -29,7 +29,7 @@ DocsCollector.collect('java.io.ObjectOutput', [
 				[/* text */ 't', `Flushes the stream. This will write any buffered
  output bytes.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -112,4 +112,5 @@ DocsCollector.collect('java.io.ObjectOutput', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

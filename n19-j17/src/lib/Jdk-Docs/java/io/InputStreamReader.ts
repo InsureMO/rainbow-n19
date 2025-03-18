@@ -29,7 +29,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
  `],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.InputStream)', [
 			[/* constructor description */
@@ -101,7 +101,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
  ready if its input buffer is not empty, or if bytes are available to be
  read from the underlying byte stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -117,7 +117,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
 			[/* method description */
 				[/* text */ 't', `Reads a single character.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -205,8 +205,8 @@ DocsCollector.collect('java.io.InputStreamReader', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The historical name of this encoding, or
          `],
@@ -221,7 +221,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
  mark(), reset(), or skip() invocations will throw an IOException.
  Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -230,4 +230,5 @@ DocsCollector.collect('java.io.InputStreamReader', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -261,7 +261,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -270,7 +270,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 				[/* text */ 't', ` instance
  with the default initial capacity (16) and load factor (0.75).`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -441,7 +441,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
            entry, the eldest entry is also the newest.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the eldest entry should be removed
@@ -462,7 +462,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 					[/* text */ 't', `value whose presence in this map is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map maps one or more keys to the
@@ -508,8 +508,8 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 				[/* inline code block */ 'i', `HashMap`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a view of the values contained in this map`]
 			]
@@ -556,8 +556,8 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 				[/* inline code block */ 'i', `HashMap`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the mappings contained in this map`]
 			]
@@ -601,8 +601,8 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 				[/* inline code block */ 'i', `HashMap`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the keys contained in this map`]
 			]
@@ -653,7 +653,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 					[/* text */ 't', `the key whose associated value is to be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value to which the specified key is mapped, or
          `],
@@ -667,11 +667,12 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 				[/* text */ 't', `Removes all of the mappings from this map.
  The map will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
 		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF]
 	],
+	/* enum values */ UDF
 ]);

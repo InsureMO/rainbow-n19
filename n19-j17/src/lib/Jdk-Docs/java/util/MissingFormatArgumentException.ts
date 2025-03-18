@@ -17,7 +17,7 @@ DocsCollector.collect('java.util.MissingFormatArgumentException', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -37,12 +37,13 @@ DocsCollector.collect('java.util.MissingFormatArgumentException', [
 			[/* method description */
 				[/* text */ 't', `Returns the unmatched format specifier.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The unmatched format specifier`]
 			]
 		]],
 		[/* method */ 'getMessage()', UDF]
 	],
+	/* enum values */ UDF
 ]);

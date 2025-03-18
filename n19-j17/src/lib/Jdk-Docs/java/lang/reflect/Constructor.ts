@@ -18,8 +18,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 			[/* text */ 't', ` if a narrowing conversion would occur.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
@@ -64,7 +64,7 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -82,8 +82,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this executable is a synthetic
  construct as defined by
@@ -101,8 +101,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this executable was declared to take a
@@ -118,8 +118,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* text */ 't', ` for
  the executable represented by this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Java language `],
 				[/* reference */ 'r', `java.lang.reflect.Modifier`, `modifiers`],
@@ -133,8 +133,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
  declared or implicitly declared or neither) for the executable
  represented by this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The number of formal parameters for the executable this
  object represents`]
@@ -148,8 +148,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
  the same as the hashcode for the underlying constructor's
  declaring class name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -173,8 +173,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* block */ 'b', ` Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations directly present on this element`]
 			]
@@ -213,8 +213,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* block */ 'b', `Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of arrays that represent the annotations on
     the formal and implicit parameters, in declaration order, of
@@ -232,8 +232,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* inline code block */ 'i', `throws`],
 				[/* text */ 't', ` clause.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the exception types declared as being thrown by the
  executable this object represents`]
@@ -251,8 +251,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
  may have an implicitly declared parameter in addition to
  explicitly declared ones.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the parameter types for the executable this object
  represents`]
@@ -265,8 +265,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* text */ 't', ` object representing the class that
  declares the constructor represented by this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object representing the declaring class of the
  underlying member`]
@@ -306,8 +306,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
  represents a constructor of a top level, static member, local, or
  anonymous class, then the return value is null.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object representing the receiver type of the method or
  constructor represented by this `],
@@ -341,8 +341,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* text */ 't', ` object represents the use of a type to specify the return
  type of the method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object representing the return type of the method
  or constructor represented by this `],
@@ -364,7 +364,7 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* block */ 'b', `If an exception type is a type variable or a parameterized
  type, it is created. Otherwise, it is resolved.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
 					[/* text */ 't', `if the generic method signature does not conform to the format
@@ -423,7 +423,7 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* block */ 'b', `If a formal parameter type is a type variable or a parameterized
  type, it is created. Otherwise, it is resolved.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
 					[/* text */ 't', `if the generic method signature does not conform to the format
@@ -461,7 +461,7 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
  array of length 0 if the underlying generic declaration declares no type
  variables.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
 					[/* text */ 't', `if the generic
@@ -483,8 +483,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* text */ 't', `Returns the name of this constructor, as a string.  This is
  the binary name of the constructor's declaring class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the simple name of the underlying member`]
 			]
@@ -536,8 +536,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
  constructor has default (package) access.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string describing this `],
 				[/* inline code block */ 'i', `Constructor`],
@@ -584,8 +584,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
  constructor has default (package) access.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string describing this `],
 				[/* inline code block */ 'i', `Constructor`]
@@ -868,4 +868,5 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

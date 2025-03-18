@@ -40,8 +40,8 @@ DocsCollector.collect('java.lang.CharSequence', [
  a map. `]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'charAt(int)', [
 			[/* method description */
@@ -96,8 +96,8 @@ DocsCollector.collect('java.lang.CharSequence', [
 				[/* inline code block */ 'i', `char`],
 				[/* text */ 't', `s in the sequence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of `],
 				[/* inline code block */ 'i', `char`],
@@ -163,8 +163,8 @@ DocsCollector.collect('java.lang.CharSequence', [
  order as this sequence.  The length of the string will be the length of
  this sequence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string consisting of exactly this sequence of characters`]
 			]
@@ -175,8 +175,8 @@ DocsCollector.collect('java.lang.CharSequence', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this character sequence is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -210,8 +210,8 @@ DocsCollector.collect('java.lang.CharSequence', [
  undefined.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an IntStream of char values from this sequence`]
 			]
@@ -239,8 +239,8 @@ DocsCollector.collect('java.lang.CharSequence', [
  undefined.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an IntStream of Unicode code points from this sequence`]
 			]
@@ -297,7 +297,7 @@ DocsCollector.collect('java.lang.CharSequence', [
 					[/* inline code block */ 'i', `CharSequence`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -315,4 +315,5 @@ DocsCollector.collect('java.lang.CharSequence', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -40,8 +40,8 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
  Otherwise, the method call is re-dispatched to the matching method in this interface.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'addTo(java.time.temporal.Temporal,long)', [
 			[/* method description */
@@ -130,8 +130,8 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
  to return false, such as when representing a unit like 36 hours.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this unit is a component of a date`]
 			]
@@ -147,8 +147,8 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
  This method returns true if the duration is an estimate and false if it is
  accurate. Note that accurate/estimated ignores leap seconds.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the duration is estimated, false if accurate`]
 			]
@@ -172,8 +172,8 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
  to return false, such as when representing a unit like 36 hours.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this unit is a component of a time`]
 			]
@@ -185,8 +185,8 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 				[/* block */ 'b', `
  This should be in the plural and upper-first camel case, such as 'Days' or 'Minutes'.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this unit, not null`]
 			]
@@ -214,8 +214,8 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the duration of this unit, which may be an estimate, not null`]
 			]
@@ -332,10 +332,11 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 					[/* text */ 't', `the temporal object to check, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the unit is supported`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

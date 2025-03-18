@@ -329,7 +329,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -346,7 +346,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 					[/* text */ 't', `the other rules to compare to, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the specified rules`]
 			]
@@ -361,8 +361,8 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  For example, the ISO-8601 requires 4 days (more than half a week) to
  be present before counting the first week.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimal number of days in the first week of a month or year, from 1 to 7`]
 			]
@@ -373,8 +373,8 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* inline code block */ 'i', `WeekFields`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -385,8 +385,8 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* inline code block */ 'i', `WeekFields`],
 				[/* text */ 't', ` instance.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation, not null`]
 			]
@@ -404,8 +404,8 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 					[/* text */ 't', ` enum.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first day-of-week, not null`]
 			]
@@ -444,8 +444,8 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  Other fields in this class build dates using the standardized day-of-week.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a field providing access to the day-of-week with localized numbering, not null`]
 			]
@@ -520,8 +520,8 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  Finally, adjust to the correct day-of-week within the localized week.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a field providing access to the week-based-year, not null`]
 			]
@@ -613,8 +613,8 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  Finally, adjust to the correct day-of-week within the localized week.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a field providing access to the week-of-month, not null`]
 			]
@@ -710,8 +710,8 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  Finally, adjust to the correct day-of-week within the localized week.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a field providing access to the week-of-week-based-year, not null`]
 			]
@@ -802,8 +802,8 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  Finally, adjust to the correct day-of-week within the localized week.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a field providing access to the week-of-year, not null`]
 			]
@@ -877,10 +877,11 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 					[/* text */ 't', `the locale to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the week-definition, not null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

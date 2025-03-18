@@ -5,14 +5,14 @@ DocsCollector.collect('java.security.cert.CertificateException', [
 	[/* class description */
 		[/* text */ 't', `This exception indicates one of a variety of certificate problems.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a certificate exception with no detail message. A detail
  message is a String that describes this particular exception.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -81,5 +81,6 @@ DocsCollector.collect('java.security.cert.CertificateException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

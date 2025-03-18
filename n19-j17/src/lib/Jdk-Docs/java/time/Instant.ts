@@ -228,7 +228,7 @@ DocsCollector.collect('java.time.Instant', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
 			[/* method description */
@@ -284,7 +284,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `the other instant, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the other instant is equal to this one`]
 			]
@@ -404,7 +404,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this instant, false if not`]
 			]
@@ -499,7 +499,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `the unit to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the unit can be added/subtracted, false if not`]
 			]
@@ -615,8 +615,8 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the nanoseconds within the second, always positive, never exceeds 999,999,999`]
 			]
@@ -625,8 +625,8 @@ DocsCollector.collect('java.time.Instant', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code for this instant.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -642,8 +642,8 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an ISO-8601 representation of this instant, not null`]
 			]
@@ -1556,8 +1556,8 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the seconds from the epoch of 1970-01-01T00:00:00Z`]
 			]
@@ -1641,7 +1641,7 @@ DocsCollector.collect('java.time.Instant', [
  will drop any excess precision information as though the amount in nanoseconds
  was subject to integer division by one million.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs`]
@@ -1840,8 +1840,8 @@ DocsCollector.collect('java.time.Instant', [
  Using this method will prevent the ability to use an alternate time-source for
  testing because the clock is effectively hard-coded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current instant using the system clock, not null`]
 			]
@@ -1866,7 +1866,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `the clock to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current instant, not null`]
 			]
@@ -1990,4 +1990,5 @@ DocsCollector.collect('java.time.Instant', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

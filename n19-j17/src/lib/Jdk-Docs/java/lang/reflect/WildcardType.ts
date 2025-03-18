@@ -12,8 +12,8 @@ DocsCollector.collect('java.lang.reflect.WildcardType', [
 		[/* inline code block */ 'i', `? super Integer`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getLowerBounds()', [
 			[/* method description */
@@ -43,7 +43,7 @@ DocsCollector.collect('java.lang.reflect.WildcardType', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
 					[/* text */ 't', `if any of the
@@ -87,7 +87,7 @@ DocsCollector.collect('java.lang.reflect.WildcardType', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
 					[/* text */ 't', `if any of the
@@ -105,4 +105,5 @@ DocsCollector.collect('java.lang.reflect.WildcardType', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

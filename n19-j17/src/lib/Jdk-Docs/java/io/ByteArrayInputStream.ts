@@ -173,8 +173,8 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this stream instance supports the mark
@@ -283,7 +283,7 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
 					[/* text */ 't', `the maximum number of bytes to read`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the actual number of bytes read into the buffer`]
 			]
@@ -321,8 +321,8 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
  error occurs.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a byte array containing the bytes read from this input stream`]
 			]
@@ -340,8 +340,8 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
  which is the number of bytes remaining to be read from the input buffer.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of remaining bytes that can be read (or skipped
           over) from this input stream without blocking.`]
@@ -371,8 +371,8 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
  cannot block.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next byte of data, or `],
 				[/* inline code block */ 'i', `-1`],
@@ -515,7 +515,7 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
 					[/* text */ 't', `the number of bytes to be skipped.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the actual number of bytes skipped.`]
 			]
@@ -527,8 +527,8 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
  is 0 unless another position was marked or an offset was specified
  in the constructor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'close()', [
@@ -541,7 +541,7 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
 				[/* inline code block */ 'i', `IOException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -575,8 +575,9 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
                       the mark position becomes invalid.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

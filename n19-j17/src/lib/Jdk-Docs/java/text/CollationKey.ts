@@ -117,7 +117,7 @@ DocsCollector.collect('java.text.CollationKey', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -145,8 +145,8 @@ DocsCollector.collect('java.text.CollationKey', [
  for each of those keys to obtain the same result.  Byte arrays are
  organized most significant byte first.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a byte array representation of the CollationKey`]
 			]
@@ -164,7 +164,7 @@ DocsCollector.collect('java.text.CollationKey', [
 					[/* text */ 't', `target CollationKey`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `Returns an integer value. Value is less than zero if this is less
  than target, value is zero if this and target are equal and value is greater than
@@ -175,11 +175,12 @@ DocsCollector.collect('java.text.CollationKey', [
 			[/* method description */
 				[/* text */ 't', `Returns the String that this CollationKey represents.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the source string of this CollationKey`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -20,7 +20,7 @@ DocsCollector.collect('java.nio.ByteOrder', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'toString()', [
 			[/* method description */
@@ -41,8 +41,8 @@ DocsCollector.collect('java.nio.ByteOrder', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The specified string`]
 			]
@@ -57,12 +57,13 @@ DocsCollector.collect('java.nio.ByteOrder', [
  Native code libraries are often more efficient when such buffers are
  used.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The native byte order of the hardware upon which this Java
           virtual machine is running`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

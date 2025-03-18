@@ -33,7 +33,7 @@ DocsCollector.collect('java.io.BufferedReader', [
 		[/* block */ 'b', ` Programs that use DataInputStreams for textual input can be localized by
  replacing each DataInputStream with an appropriate BufferedReader.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.Reader)', [
 			[/* constructor description */
@@ -73,8 +73,8 @@ DocsCollector.collect('java.io.BufferedReader', [
 			[/* method description */
 				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
 			]
@@ -85,7 +85,7 @@ DocsCollector.collect('java.io.BufferedReader', [
  stream is ready if the buffer is not empty, or if the underlying
  character stream is ready.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -101,7 +101,7 @@ DocsCollector.collect('java.io.BufferedReader', [
 			[/* method description */
 				[/* text */ 't', `Reads a single character.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -233,7 +233,7 @@ DocsCollector.collect('java.io.BufferedReader', [
  followed immediately by a line feed, or by reaching the end-of-file
  (EOF).`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -288,8 +288,8 @@ DocsCollector.collect('java.io.BufferedReader', [
  closed, will cause an UncheckedIOException to be thrown.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Stream<String>`],
@@ -306,7 +306,7 @@ DocsCollector.collect('java.io.BufferedReader', [
  mark(), reset(), or skip() invocations will throw an IOException.
  Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -346,7 +346,7 @@ DocsCollector.collect('java.io.BufferedReader', [
 			[/* method description */
 				[/* text */ 't', `Resets the stream to the most recent mark.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If the stream has never been marked,
@@ -356,4 +356,5 @@ DocsCollector.collect('java.io.BufferedReader', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

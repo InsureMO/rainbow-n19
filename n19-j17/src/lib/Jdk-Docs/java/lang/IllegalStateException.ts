@@ -8,14 +8,14 @@ DocsCollector.collect('java.lang.IllegalStateException', [
  Java application is not in an appropriate state for the requested
  operation.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an IllegalStateException with no detail message.
  A detail message is a String that describes this particular exception.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -96,5 +96,6 @@ DocsCollector.collect('java.lang.IllegalStateException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

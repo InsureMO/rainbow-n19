@@ -7,8 +7,8 @@ DocsCollector.collect('java.util.PrimitiveIterator$OfDouble', [
 		[/* inline code block */ 'i', `double`],
 		[/* text */ 't', ` values.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'nextDouble()', [
 			[/* method description */
@@ -16,7 +16,7 @@ DocsCollector.collect('java.util.PrimitiveIterator$OfDouble', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', ` element in the iteration.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if the iteration has no more elements`]
@@ -32,8 +32,8 @@ DocsCollector.collect('java.util.PrimitiveIterator$OfDouble', [
 			[/* method description */
 				[/* text */ 't', `Returns the next element in the iteration.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next element in the iteration`]
 			]
@@ -66,7 +66,7 @@ DocsCollector.collect('java.util.PrimitiveIterator$OfDouble', [
 					[/* text */ 't', `The action to be performed for each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEachRemaining(java.util.function.DoubleConsumer)', [
@@ -97,8 +97,9 @@ DocsCollector.collect('java.util.PrimitiveIterator$OfDouble', [
 					[/* text */ 't', `The action to be performed for each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

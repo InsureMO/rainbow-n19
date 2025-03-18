@@ -77,8 +77,8 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
  include constant static arguments as well.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'makeConcat(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType)', [
 			[/* method description */
@@ -419,4 +419,5 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

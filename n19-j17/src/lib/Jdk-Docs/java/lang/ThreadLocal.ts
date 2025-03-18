@@ -59,13 +59,13 @@ DocsCollector.collect('java.lang.ThreadLocal', [
  references to these copies exist).`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a thread local variable.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -106,8 +106,8 @@ DocsCollector.collect('java.lang.ThreadLocal', [
  anonymous inner class will be used.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the initial value for this thread-local`]
 			]
@@ -144,8 +144,8 @@ DocsCollector.collect('java.lang.ThreadLocal', [
 				[/* reference */ 'r', `#initialValue()`, `initialValue()`],
 				[/* text */ 't', ` method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current thread's value of this thread-local`]
 			]
@@ -168,8 +168,8 @@ DocsCollector.collect('java.lang.ThreadLocal', [
 				[/* inline code block */ 'i', `initialValue`],
 				[/* text */ 't', ` method in the current thread.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'set(java.lang.Object)', [
@@ -187,8 +187,9 @@ DocsCollector.collect('java.lang.ThreadLocal', [
         this thread-local.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

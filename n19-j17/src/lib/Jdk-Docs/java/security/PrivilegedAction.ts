@@ -16,8 +16,8 @@ DocsCollector.collect('java.security.PrivilegedAction', [
 		[/* text */ 't', `
  instead.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'run()', [
 			[/* method description */
@@ -26,8 +26,8 @@ DocsCollector.collect('java.security.PrivilegedAction', [
 				[/* inline code block */ 'i', `AccessController.doPrivileged`],
 				[/* text */ 't', ` after enabling privileges.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a class-dependent value that may represent the results of the
          computation. Each class that implements
@@ -38,4 +38,5 @@ DocsCollector.collect('java.security.PrivilegedAction', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

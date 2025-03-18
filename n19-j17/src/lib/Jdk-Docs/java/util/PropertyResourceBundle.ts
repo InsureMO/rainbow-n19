@@ -89,7 +89,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.InputStream)', [
 			[/* constructor description */
@@ -203,8 +203,8 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 				[/* inline code block */ 'i', `ResourceBundle`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Set`],
@@ -224,7 +224,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 					[/* text */ 't', `the key for the desired object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the object for the given key, or null`]
 			]
@@ -238,8 +238,8 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 				[/* inline code block */ 'i', `ResourceBundle`],
 				[/* text */ 't', ` and its parent bundles.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Enumeration`],
@@ -250,4 +250,5 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

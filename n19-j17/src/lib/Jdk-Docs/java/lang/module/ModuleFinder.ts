@@ -85,8 +85,8 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 			[/* text */ 't', ` is not required to be thread safe. `]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'find(java.lang.String)', [
 			[/* method description */
@@ -151,7 +151,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  to find that module. `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.module.FindException', [/* throw description */
 					[/* text */ 't', `If an error occurs finding all modules`]
@@ -203,7 +203,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* text */ 't', `The array of module finders`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A `],
 				[/* inline code block */ 'i', `ModuleFinder`],
@@ -490,7 +490,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
         or paths to packaged or exploded modules`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A `],
 				[/* inline code block */ 'i', `ModuleFinder`],
@@ -519,7 +519,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  to access the system modules. `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If denied by the security manager`]
@@ -532,4 +532,5 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

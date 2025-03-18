@@ -5829,7 +5829,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -5854,7 +5854,7 @@ DocsCollector.collect('java.util.Formatter', [
  virtual machine.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.io.File)', [
@@ -6504,8 +6504,8 @@ DocsCollector.collect('java.util.Formatter', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The last exception thrown by the Appendable or `],
 				[/* inline code block */ 'i', `null`],
@@ -6517,7 +6517,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* method description */
 				[/* text */ 't', `Returns the destination for the output.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
 					[/* text */ 't', `If this formatter has been closed by invoking its `],
@@ -6572,7 +6572,7 @@ DocsCollector.collect('java.util.Formatter', [
  data is discarded.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
 					[/* text */ 't', `If this formatter has been closed by invoking its `],
@@ -6695,7 +6695,7 @@ DocsCollector.collect('java.util.Formatter', [
  for this object which has a locale argument does not change this value.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
 					[/* text */ 't', `If this formatter has been closed by invoking its `],
@@ -6732,8 +6732,8 @@ DocsCollector.collect('java.util.Formatter', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'flush()', [
@@ -6748,7 +6748,7 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* block */ 'b', ` Flushing a formatter writes any buffered output in the destination
  to the underlying stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
 					[/* text */ 't', `If this formatter has been closed by invoking its `],
@@ -6759,4 +6759,5 @@ DocsCollector.collect('java.util.Formatter', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

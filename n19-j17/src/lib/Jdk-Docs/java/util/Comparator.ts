@@ -194,8 +194,8 @@ DocsCollector.collect('java.util.Comparator', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -242,7 +242,7 @@ DocsCollector.collect('java.util.Comparator', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` only if the specified object is also
@@ -377,8 +377,8 @@ DocsCollector.collect('java.util.Comparator', [
 				[/* text */ 't', `Returns a comparator that imposes the reverse ordering of this
  comparator.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that imposes the reverse ordering of this
          comparator.`]
@@ -504,8 +504,8 @@ DocsCollector.collect('java.util.Comparator', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that imposes the `],
 				[/* text */ 't', `natural ordering`],
@@ -530,8 +530,8 @@ DocsCollector.collect('java.util.Comparator', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that imposes the reverse of the `],
 				[/* text */ 't', `natural
@@ -725,7 +725,7 @@ DocsCollector.collect('java.util.Comparator', [
 					[/* text */ 't', ` for comparing non-null values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that considers `],
 				[/* inline code block */ 'i', `null`],
@@ -763,7 +763,7 @@ DocsCollector.collect('java.util.Comparator', [
 					[/* text */ 't', ` for comparing non-null values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that considers `],
 				[/* inline code block */ 'i', `null`],
@@ -775,4 +775,5 @@ DocsCollector.collect('java.util.Comparator', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

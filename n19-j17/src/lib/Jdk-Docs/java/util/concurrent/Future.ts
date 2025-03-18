@@ -82,8 +82,8 @@ DocsCollector.collect('java.util.concurrent.Future', [
 			[/* text */ 't', ` in another thread.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'cancel(boolean)', [
 			[/* method description */
@@ -118,7 +118,7 @@ DocsCollector.collect('java.util.concurrent.Future', [
  allowed to complete`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` if the task could not be cancelled,
@@ -139,8 +139,8 @@ DocsCollector.collect('java.util.concurrent.Future', [
 				[/* text */ 't', ` if this task was cancelled before it completed
  normally.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this task was cancelled before it completed`]
@@ -158,8 +158,8 @@ DocsCollector.collect('java.util.concurrent.Future', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this task completed`]
@@ -170,7 +170,7 @@ DocsCollector.collect('java.util.concurrent.Future', [
 				[/* text */ 't', `Waits if necessary for the computation to complete, and then
  retrieves its result.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.concurrent.CancellationException', [/* throw description */
 					[/* text */ 't', `if the computation was cancelled`]
@@ -222,4 +222,5 @@ DocsCollector.collect('java.util.concurrent.Future', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

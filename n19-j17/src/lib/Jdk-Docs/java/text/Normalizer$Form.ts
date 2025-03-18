@@ -1,4 +1,3 @@
-import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.text.Normalizer$Form', [
@@ -10,8 +9,8 @@ DocsCollector.collect('java.text.Normalizer$Form', [
 		[/* text */ 't', `
  and two methods to access them.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -44,11 +43,33 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'NFD', [
+			[/* enum value description */
+				[/* text */ 't', `Canonical decomposition.`]
+			],
+		]],
+		[/* enum value */ 'NFC', [
+			[/* enum value description */
+				[/* text */ 't', `Canonical decomposition, followed by canonical composition.`]
+			],
+		]],
+		[/* enum value */ 'NFKD', [
+			[/* enum value description */
+				[/* text */ 't', `Compatibility decomposition.`]
+			],
+		]],
+		[/* enum value */ 'NFKC', [
+			[/* enum value description */
+				[/* text */ 't', `Compatibility decomposition, followed by canonical composition.`]
+			],
 		]]
 	],
 ]);

@@ -46,8 +46,8 @@ DocsCollector.collect('java.util.OptionalInt', [
  occur. For example, in a future release, synchronization may fail.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'orElseThrow(java.util.function.Supplier)', [
 			[/* method description */
@@ -103,7 +103,7 @@ DocsCollector.collect('java.util.OptionalInt', [
 					[/* text */ 't', `an object to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the other object is "equal to" this object
@@ -120,8 +120,8 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if a value is not present, otherwise `],
@@ -136,8 +136,8 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if a value is present, otherwise `],
@@ -151,7 +151,7 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* inline code block */ 'i', `NoSuchElementException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if no value is present`]
@@ -169,8 +169,8 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* text */ 't', `
  (zero) if no value is present.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `hash code value of the present value or `],
 				[/* inline code block */ 'i', `0`],
@@ -190,7 +190,7 @@ DocsCollector.collect('java.util.OptionalInt', [
 					[/* text */ 't', `the value to be returned, if no value is present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value, if present, otherwise `],
 				[/* inline code block */ 'i', `other`]
@@ -225,7 +225,7 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* inline code block */ 'i', `NoSuchElementException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if no value is present`]
@@ -244,8 +244,8 @@ DocsCollector.collect('java.util.OptionalInt', [
  suitable for debugging.  The exact presentation format is unspecified and
  may vary between implementations and versions.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of this instance`]
 			]
@@ -259,8 +259,8 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* inline code block */ 'i', `IntStream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the optional value as an `],
 				[/* inline code block */ 'i', `IntStream`]
@@ -275,8 +275,8 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* inline code block */ 'i', `OptionalInt`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty `],
 				[/* inline code block */ 'i', `OptionalInt`]
@@ -293,7 +293,7 @@ DocsCollector.collect('java.util.OptionalInt', [
 					[/* text */ 't', `the value to describe`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalInt`],
@@ -347,4 +347,5 @@ DocsCollector.collect('java.util.OptionalInt', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

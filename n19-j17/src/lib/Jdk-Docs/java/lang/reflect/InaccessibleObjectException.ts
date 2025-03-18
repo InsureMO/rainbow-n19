@@ -5,7 +5,7 @@ DocsCollector.collect('java.lang.reflect.InaccessibleObjectException', [
 	[/* class description */
 		[/* text */ 't', `Thrown when Java language access checks cannot be suppressed.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -13,7 +13,7 @@ DocsCollector.collect('java.lang.reflect.InaccessibleObjectException', [
 				[/* inline code block */ 'i', `InaccessibleObjectException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -31,5 +31,6 @@ DocsCollector.collect('java.lang.reflect.InaccessibleObjectException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

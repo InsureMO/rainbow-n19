@@ -1,4 +1,3 @@
-import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.text.NumberFormat$Style', [
@@ -15,8 +14,8 @@ DocsCollector.collect('java.text.NumberFormat$Style', [
 			[/* text */ 't', ` instance.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -49,11 +48,27 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'SHORT', [
+			[/* enum value description */
+				[/* text */ 't', `The `],
+				[/* inline code block */ 'i', `SHORT`],
+				[/* text */ 't', ` number format style.`]
+			],
+		]],
+		[/* enum value */ 'LONG', [
+			[/* enum value description */
+				[/* text */ 't', `The `],
+				[/* inline code block */ 'i', `LONG`],
+				[/* text */ 't', ` number format style.`]
+			],
 		]]
 	],
 ]);

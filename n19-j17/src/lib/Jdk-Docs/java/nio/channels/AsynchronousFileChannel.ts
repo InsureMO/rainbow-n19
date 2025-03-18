@@ -132,13 +132,13 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  and are therefore unspecified.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Initializes a new instance of this class.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -651,7 +651,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 			[/* method description */
 				[/* text */ 't', `Returns the current size of this channel's file.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
@@ -802,7 +802,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
@@ -861,7 +861,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
 					[/* text */ 't', `If a lock is already held by this Java virtual machine, or there
@@ -1210,4 +1210,5 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

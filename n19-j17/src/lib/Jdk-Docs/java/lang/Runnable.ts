@@ -54,8 +54,8 @@ DocsCollector.collect('java.lang.Runnable', [
  behavior of the class.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'run()', [
 			[/* method description */
@@ -76,9 +76,10 @@ DocsCollector.collect('java.lang.Runnable', [
  take any action whatsoever.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

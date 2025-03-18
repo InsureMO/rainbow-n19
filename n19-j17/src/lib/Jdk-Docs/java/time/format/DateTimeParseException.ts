@@ -8,7 +8,7 @@ DocsCollector.collect('java.time.format.DateTimeParseException', [
 		[/* block */ 'b', `
  This exception includes the text being parsed and the error index.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.CharSequence,int)', [
 			[/* constructor description */
@@ -53,8 +53,8 @@ DocsCollector.collect('java.time.format.DateTimeParseException', [
 			[/* method description */
 				[/* text */ 't', `Returns the index where the error was found.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index in the parsed string that was invalid, should be a valid index`]
 			]
@@ -63,11 +63,12 @@ DocsCollector.collect('java.time.format.DateTimeParseException', [
 			[/* method description */
 				[/* text */ 't', `Returns the string that was being parsed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string that was being parsed, should not be null.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -51,7 +51,7 @@ DocsCollector.collect('java.io.FileDescriptor', [
 				[/* text */ 't', `Constructs an (invalid) FileDescriptor object.
  The fd or handle is set later.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -60,8 +60,8 @@ DocsCollector.collect('java.io.FileDescriptor', [
 			[/* method description */
 				[/* text */ 't', `Tests if this file descriptor object is valid.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the file descriptor object represents a
@@ -94,7 +94,7 @@ DocsCollector.collect('java.io.FileDescriptor', [
  be flushed into the FileDescriptor (for example, by invoking
  OutputStream.flush) before that data will be affected by sync.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.SyncFailedException', [/* throw description */
 					[/* text */ 't', `Thrown when the buffers cannot be flushed,
@@ -105,4 +105,5 @@ DocsCollector.collect('java.io.FileDescriptor', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

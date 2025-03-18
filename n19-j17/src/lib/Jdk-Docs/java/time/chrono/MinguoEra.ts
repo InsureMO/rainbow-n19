@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.time.chrono.MinguoEra', [
@@ -103,8 +102,8 @@ DocsCollector.collect('java.time.chrono.MinguoEra', [
 			[/* text */ 't', ` instead.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getValue()', [
 			[/* method description */
@@ -115,8 +114,8 @@ DocsCollector.collect('java.time.chrono.MinguoEra', [
 				[/* block */ 'b', `
  The era BEFORE_ROC has the value 0, while the era ROC has the value 1.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the era value, from 0 (BEFORE_ROC) to 1 (ROC)`]
 			]
@@ -145,7 +144,7 @@ DocsCollector.collect('java.time.chrono.MinguoEra', [
 					[/* text */ 't', `the locale to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the text value of the era, not null`]
 			]
@@ -213,11 +212,25 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'BEFORE_ROC', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the era before the current one, 'Before Republic of China Era',
+ which has the numeric value 0.`]
+			],
+		]],
+		[/* enum value */ 'ROC', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the current era, 'Republic of China Era',
+ which has the numeric value 1.`]
+			],
 		]]
 	],
 ]);

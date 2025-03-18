@@ -8,8 +8,8 @@ DocsCollector.collect('java.net.InterfaceAddress', [
  an IPv4 one. An IP address and a network prefix length in the case
  of IPv6 address.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -36,7 +36,7 @@ DocsCollector.collect('java.net.InterfaceAddress', [
 					[/* text */ 't', `the object to compare against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -49,8 +49,8 @@ DocsCollector.collect('java.net.InterfaceAddress', [
 			[/* method description */
 				[/* text */ 't', `Returns a hashcode for this Interface address.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this Interface address.`]
 			]
@@ -62,8 +62,8 @@ DocsCollector.collect('java.net.InterfaceAddress', [
 				[/* text */ 't', `. The
  string returned is of the form: InetAddress / prefix length [ broadcast address ].`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this Interface address.`]
 			]
@@ -74,8 +74,8 @@ DocsCollector.collect('java.net.InterfaceAddress', [
 				[/* inline code block */ 'i', `InetAddress`],
 				[/* text */ 't', ` for this address.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `InetAddress`],
@@ -97,8 +97,8 @@ DocsCollector.collect('java.net.InterfaceAddress', [
 					[/* text */ 't', ` will be returned.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `InetAddress`],
@@ -117,8 +117,8 @@ DocsCollector.collect('java.net.InterfaceAddress', [
 				[/* block */ 'b', `
  Typical IPv6 values would be 128 (::1/128) or 10 (fe80::203:baff:fe27:1243/10)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `short`],
@@ -127,4 +127,5 @@ DocsCollector.collect('java.net.InterfaceAddress', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

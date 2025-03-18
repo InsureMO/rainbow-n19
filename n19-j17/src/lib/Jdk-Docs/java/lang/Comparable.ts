@@ -186,8 +186,8 @@ DocsCollector.collect('java.lang.Comparable', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'compareTo(java.lang.Object)', [
 			[/* method description */
@@ -254,4 +254,5 @@ DocsCollector.collect('java.lang.Comparable', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

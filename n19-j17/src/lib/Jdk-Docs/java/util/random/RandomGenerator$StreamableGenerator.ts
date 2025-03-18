@@ -69,8 +69,8 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
  security-sensitive applications.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'rngs()', [
 			[/* method description */
@@ -84,8 +84,8 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 				[/* text */ 't', `algorithm`],
 				[/* text */ 't', ` as this generator.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of objects that implement the `],
 				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
@@ -155,4 +155,5 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -5,13 +5,13 @@ DocsCollector.collect('java.io.ObjectStreamException', [
 	[/* class description */
 		[/* text */ 't', `Superclass of all exceptions specific to Object Stream classes.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Create an ObjectStreamException.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -26,5 +26,6 @@ DocsCollector.collect('java.io.ObjectStreamException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

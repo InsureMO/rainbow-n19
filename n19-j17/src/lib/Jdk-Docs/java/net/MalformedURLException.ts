@@ -7,7 +7,7 @@ DocsCollector.collect('java.net.MalformedURLException', [
  legal protocol could be found in a specification string or the
  string could not be parsed.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -15,7 +15,7 @@ DocsCollector.collect('java.net.MalformedURLException', [
 				[/* inline code block */ 'i', `MalformedURLException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -33,5 +33,6 @@ DocsCollector.collect('java.net.MalformedURLException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

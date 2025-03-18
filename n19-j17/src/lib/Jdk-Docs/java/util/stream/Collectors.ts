@@ -49,8 +49,8 @@ DocsCollector.collect('java.util.stream.Collectors', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'collectingAndThen(java.util.stream.Collector,java.util.function.Function)', [
 			[/* method description */
@@ -76,7 +76,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a function to be applied to the final result of the downstream collector`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collector which performs the action of the downstream collector,
  followed by an additional finishing step`]
@@ -103,7 +103,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
  predicate`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collector which applies the predicate to the input elements
  and provides matching elements to the downstream collector`]
@@ -129,7 +129,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
                           into which the results will be inserted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -183,7 +183,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
                    reduction`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -264,7 +264,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
                    into which the results will be inserted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a concurrent, unordered `],
 				[/* inline code block */ 'i', `Collector`],
@@ -342,7 +342,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', ` implementing the downstream reduction`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a concurrent, unordered `],
 				[/* inline code block */ 'i', `Collector`],
@@ -409,7 +409,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', ` implementing the downstream reduction`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -479,7 +479,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
                    into which the results will be inserted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -538,7 +538,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
                    into which the results will be inserted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a concurrent, unordered `],
 				[/* inline code block */ 'i', `Collector`],
@@ -594,7 +594,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
                    into which the results will be inserted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -648,7 +648,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `the mapping function to produce values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a concurrent, unordered `],
 				[/* inline code block */ 'i', `Collector`],
@@ -701,7 +701,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* reference */ 'r', `java.util.Map#merge(K,V,java.util.function.BiFunction)`, `Map.merge(Object, Object, BiFunction)`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a concurrent, unordered `],
 				[/* inline code block */ 'i', `Collector`],
@@ -755,7 +755,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a mapping function to produce values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -808,7 +808,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* reference */ 'r', `java.util.Map#merge(K,V,java.util.function.BiFunction)`, `Map.merge(Object, Object, BiFunction)`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -992,7 +992,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a classifier function mapping input elements to keys`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a concurrent, unordered `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1042,7 +1042,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `the classifier function mapping input elements to keys`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1100,7 +1100,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `the function which merges two results into the single one`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1140,7 +1140,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
  stream returned by mapper`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collector which applies the mapping function to the input
  elements and provides the flat mapped results to the downstream collector`]
@@ -1166,7 +1166,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a collector which will accept mapped values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collector which applies the mapping function to the input
  elements and provides the mapped results to the downstream collector`]
@@ -1200,7 +1200,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', ` used to reduce the mapped values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1236,7 +1236,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a function extracting the property to be averaged`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1257,7 +1257,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a function extracting the property to be averaged`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1278,7 +1278,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a function extracting the property to be averaged`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1315,7 +1315,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a function extracting the property to be summed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1335,7 +1335,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a function extracting the property to be summed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1352,8 +1352,8 @@ DocsCollector.collect('java.util.stream.Collectors', [
  counts the number of input elements.  If no elements are present, the
  result is 0.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1373,7 +1373,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a function extracting the property to be summed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1395,7 +1395,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a mapping function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1417,7 +1417,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a mapping function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1441,8 +1441,8 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* reference */ 'r', `#toCollection(java.util.function.Supplier)`, `toCollection(Supplier)`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1465,8 +1465,8 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `NullPointerException`],
 				[/* text */ 't', ` if it is presented with a null value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1491,7 +1491,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `the mapping function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1531,7 +1531,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a predicate used for classifying input elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1556,7 +1556,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', ` for comparing elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1581,7 +1581,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', ` for comparing elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1607,7 +1607,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', ` used to reduce the input elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1640,8 +1640,8 @@ DocsCollector.collect('java.util.stream.Collectors', [
  Collector.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1672,8 +1672,8 @@ DocsCollector.collect('java.util.stream.Collectors', [
  Collector.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1703,7 +1703,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', ` used to reduce the input elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1719,8 +1719,8 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', `, in encounter order.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1742,7 +1742,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `the delimiter to be used between each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1771,7 +1771,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
                 of the joined result`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A `],
 				[/* inline code block */ 'i', `Collector`],
@@ -1780,4 +1780,5 @@ DocsCollector.collect('java.util.stream.Collectors', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

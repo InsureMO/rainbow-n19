@@ -23,7 +23,7 @@ DocsCollector.collect('java.lang.BootstrapMethodError', [
  or for a dynamic constant the bootstrap method has failed to provide a
  constant value of the required type.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -31,7 +31,7 @@ DocsCollector.collect('java.lang.BootstrapMethodError', [
 				[/* inline code block */ 'i', `BootstrapMethodError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -84,5 +84,6 @@ DocsCollector.collect('java.lang.BootstrapMethodError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

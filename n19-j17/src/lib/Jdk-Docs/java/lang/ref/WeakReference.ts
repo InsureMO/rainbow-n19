@@ -21,7 +21,7 @@ DocsCollector.collect('java.lang.ref.WeakReference', [
  registered with reference queues.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Object)', [
 			[/* constructor description */
@@ -54,5 +54,6 @@ DocsCollector.collect('java.lang.ref.WeakReference', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

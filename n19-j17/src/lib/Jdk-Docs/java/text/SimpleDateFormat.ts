@@ -1193,7 +1193,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
  If multiple threads access a format concurrently, it must be synchronized
  externally.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -1212,7 +1212,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', `
  class.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -1322,7 +1322,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the given object is equal to this
  `],
@@ -1335,8 +1335,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* inline code block */ 'i', `SimpleDateFormat`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this `],
 				[/* inline code block */ 'i', `SimpleDateFormat`],
@@ -1350,8 +1350,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', `. This also
  clones the format's date format symbols.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this `],
 				[/* inline code block */ 'i', `SimpleDateFormat`]
@@ -1361,8 +1361,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a localized pattern string describing this date format.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a localized pattern string describing this date format.`]
 			]
@@ -1371,8 +1371,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a pattern string describing this date format.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a pattern string describing this date format.`]
 			]
@@ -1484,8 +1484,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets a copy of the date and time format symbols of this date format.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the date and time format symbols of this date format`]
 			]
@@ -1495,8 +1495,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', `Returns the beginning date of the 100-year period 2-digit years are interpreted
  as being within.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the start of the 100-year period into which two digit years are
  parsed`]
@@ -1677,4 +1677,5 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

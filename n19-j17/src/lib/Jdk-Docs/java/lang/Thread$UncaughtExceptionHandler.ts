@@ -39,8 +39,8 @@ DocsCollector.collect('java.lang.Thread$UncaughtExceptionHandler', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'uncaughtException(java.lang.Thread,java.lang.Throwable)', [
 			[/* method description */
@@ -58,8 +58,9 @@ DocsCollector.collect('java.lang.Thread$UncaughtExceptionHandler', [
 					[/* text */ 't', `the exception`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

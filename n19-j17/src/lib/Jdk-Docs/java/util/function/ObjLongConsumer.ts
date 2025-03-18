@@ -27,8 +27,8 @@ DocsCollector.collect('java.util.function.ObjLongConsumer', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accept(java.lang.Object,long)', [
 			[/* method description */
@@ -42,8 +42,9 @@ DocsCollector.collect('java.util.function.ObjLongConsumer', [
 					[/* text */ 't', `the second input argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

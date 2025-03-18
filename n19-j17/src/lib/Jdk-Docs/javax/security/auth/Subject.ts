@@ -123,7 +123,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -165,7 +165,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(boolean,java.util.Set,java.util.Set,java.util.Set)', [
@@ -502,8 +502,8 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* inline code block */ 'i', `Subject`],
 				[/* text */ 't', ` is read-only.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this `],
 				[/* inline code block */ 'i', `Subject`],
@@ -516,7 +516,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* inline code block */ 'i', `Subject`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager is installed and the
@@ -538,8 +538,8 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* inline code block */ 'i', `Subject`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the String representation of this `],
 				[/* inline code block */ 'i', `Subject`],
@@ -601,8 +601,8 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Set`],
@@ -648,8 +648,8 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', ` will be thrown.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Set`],
@@ -704,8 +704,8 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', ` will be thrown.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `Set`],
@@ -1165,7 +1165,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
  it can not be reset to being writable again.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager is installed and the
@@ -1181,4 +1181,5 @@ DocsCollector.collect('javax.security.auth.Subject', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -67,14 +67,14 @@ DocsCollector.collect('java.util.AbstractCollection', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -135,8 +135,8 @@ DocsCollector.collect('java.util.AbstractCollection', [
 			[/* method description */
 				[/* text */ 't', `Returns an iterator over the elements contained in this collection.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements contained in this collection`]
 			]
@@ -342,8 +342,8 @@ DocsCollector.collect('java.util.AbstractCollection', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this collection contains no elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this collection contains no elements`]
@@ -499,8 +499,8 @@ DocsCollector.collect('java.util.AbstractCollection', [
  allocate a new array even if this collection is backed by an array).
  The caller is thus free to modify the returned array.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
 				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
@@ -524,8 +524,8 @@ DocsCollector.collect('java.util.AbstractCollection', [
 				[/* reference */ 'r', `java.lang.String#valueOf(java.lang.Object)`, `String.valueOf(Object)`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this collection`]
 			]
@@ -535,7 +535,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
 				[/* text */ 't', `Removes all of the elements from this collection (optional operation).
  The collection will be empty after this method returns.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -547,4 +547,5 @@ DocsCollector.collect('java.util.AbstractCollection', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

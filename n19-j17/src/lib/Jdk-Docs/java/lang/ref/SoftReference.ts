@@ -43,7 +43,7 @@ DocsCollector.collect('java.lang.ref.SoftReference', [
  strong referents to those entries, leaving the remaining entries to be
  discarded at the discretion of the garbage collector.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Object)', [
 			[/* constructor description */
@@ -85,8 +85,8 @@ DocsCollector.collect('java.lang.ref.SoftReference', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The object to which this reference refers, or
            `],
@@ -95,4 +95,5 @@ DocsCollector.collect('java.lang.ref.SoftReference', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -46,8 +46,8 @@ DocsCollector.collect('java.io.FilterReader', [
 			[/* method description */
 				[/* text */ 't', `Tells whether this stream supports the mark() operation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
 			]
@@ -56,7 +56,7 @@ DocsCollector.collect('java.io.FilterReader', [
 			[/* method description */
 				[/* text */ 't', `Tells whether this stream is ready to be read.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -72,7 +72,7 @@ DocsCollector.collect('java.io.FilterReader', [
 			[/* method description */
 				[/* text */ 't', `Reads a single character.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -180,7 +180,7 @@ DocsCollector.collect('java.io.FilterReader', [
  mark(), reset(), or skip() invocations will throw an IOException.
  Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -211,7 +211,7 @@ DocsCollector.collect('java.io.FilterReader', [
 			[/* method description */
 				[/* text */ 't', `Resets the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -220,4 +220,5 @@ DocsCollector.collect('java.io.FilterReader', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

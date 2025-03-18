@@ -316,7 +316,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of entries in the ZIP file.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the zip file has been closed`]
@@ -360,7 +360,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 			[/* method description */
 				[/* text */ 't', `Returns the zip file comment, or null if none.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the zip file has been closed`]
@@ -374,8 +374,8 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 			[/* method description */
 				[/* text */ 't', `Returns the path name of the ZIP file.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the path name of the ZIP file`]
 			]
@@ -384,7 +384,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 			[/* method description */
 				[/* text */ 't', `Returns an enumeration of the ZIP file entries.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the zip file has been closed`]
@@ -405,7 +405,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 				[/* text */ 't', ` in the order they appear in
  the central directory of the ZIP file.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the zip file has been closed`]
@@ -448,7 +448,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 					[/* text */ 't', ` method.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -457,4 +457,5 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

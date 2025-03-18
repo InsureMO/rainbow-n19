@@ -13,7 +13,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  group, but not to access information about its thread group's
  parent thread group or any other thread groups.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -85,7 +85,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 					[/* text */ 't', `boolean to allow or disallow suspension`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true on success`]
 			]
@@ -96,8 +96,8 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  daemon thread group is automatically destroyed when its last
  thread is stopped or its last thread group is destroyed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this thread group is a daemon thread group;
@@ -116,7 +116,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 					[/* text */ 't', `a thread group.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this thread group is the thread group
@@ -132,8 +132,8 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  part of this group cannot have a higher priority than the maximum
  priority.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum priority that a thread in this thread group
           can have.`]
@@ -143,8 +143,8 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of this thread group.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this thread group.`]
 			]
@@ -164,7 +164,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  called with no arguments; this may result in a security exception.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread cannot modify
@@ -194,7 +194,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread is not allowed to
@@ -217,7 +217,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  called with no arguments; this may result in a security exception.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
 					[/* text */ 't', `if the thread group is not
@@ -250,7 +250,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  threads in this thread group and in all of its subgroups.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread is not allowed
@@ -280,7 +280,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  threads in this thread group and in all of its sub groups.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread is not allowed to
@@ -400,7 +400,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  threads in this thread group and in all of its subgroups.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread is not allowed
@@ -430,7 +430,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  threads in this thread group and in all of its subgroups.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread is not allowed
@@ -453,8 +453,8 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  system threads. This method is intended primarily for debugging
  and monitoring purposes.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an estimate of the number of active threads in this thread
           group and in any other thread group that has this thread
@@ -473,8 +473,8 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  internal data structures. This method is intended primarily for
  debugging and monitoring purposes.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of active thread groups with this thread group as
           an ancestor`]
@@ -670,8 +670,8 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of this Thread group.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this thread group.`]
 			]
@@ -680,8 +680,8 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			[/* method description */
 				[/* text */ 't', `Tests if this thread group has been destroyed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this object is destroyed`]
 			]
@@ -691,8 +691,8 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 				[/* text */ 't', `Prints information about this thread group to the standard
  output. This method is useful only for debugging.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'uncaughtException(java.lang.Thread,java.lang.Throwable)', [
@@ -776,8 +776,9 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 					[/* text */ 't', `the uncaught exception.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

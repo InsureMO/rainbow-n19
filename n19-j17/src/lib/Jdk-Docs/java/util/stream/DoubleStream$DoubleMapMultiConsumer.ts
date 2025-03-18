@@ -22,8 +22,8 @@ DocsCollector.collect('java.util.stream.DoubleStream$DoubleMapMultiConsumer', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accept(double,java.util.function.DoubleConsumer)', [
 			[/* method description */
@@ -44,8 +44,9 @@ DocsCollector.collect('java.util.stream.DoubleStream$DoubleMapMultiConsumer', [
 					[/* text */ 't', ` accepting the mapped values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

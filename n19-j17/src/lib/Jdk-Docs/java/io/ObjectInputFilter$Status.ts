@@ -1,4 +1,3 @@
-import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.io.ObjectInputFilter$Status', [
@@ -6,8 +5,8 @@ DocsCollector.collect('java.io.ObjectInputFilter$Status', [
 		[/* text */ 't', `The status of a check on the class, array length, number of references,
  depth, and stream size.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -40,11 +39,28 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'UNDECIDED', [
+			[/* enum value description */
+				[/* text */ 't', `The status is undecided, not allowed and not rejected.`]
+			],
+		]],
+		[/* enum value */ 'ALLOWED', [
+			[/* enum value description */
+				[/* text */ 't', `The status is allowed.`]
+			],
+		]],
+		[/* enum value */ 'REJECTED', [
+			[/* enum value description */
+				[/* text */ 't', `The status is rejected.`]
+			],
 		]]
 	],
 ]);

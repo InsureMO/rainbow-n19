@@ -15,7 +15,7 @@ DocsCollector.collect('java.util.MissingFormatWidthException', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -35,12 +35,13 @@ DocsCollector.collect('java.util.MissingFormatWidthException', [
 			[/* method description */
 				[/* text */ 't', `Returns the format specifier which does not have a width.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The format specifier which does not have a width`]
 			]
 		]],
 		[/* method */ 'getMessage()', UDF]
 	],
+	/* enum values */ UDF
 ]);

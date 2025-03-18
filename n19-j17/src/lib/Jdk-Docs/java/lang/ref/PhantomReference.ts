@@ -34,7 +34,7 @@ DocsCollector.collect('java.lang.ref.PhantomReference', [
  whether some object is the referent of a phantom reference.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Object,java.lang.ref.ReferenceQueue)', [
 			[/* constructor description */
@@ -72,11 +72,12 @@ DocsCollector.collect('java.lang.ref.PhantomReference', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

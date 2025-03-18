@@ -20,8 +20,8 @@ DocsCollector.collect('java.util.function.BinaryOperator', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'maxBy(java.util.Comparator)', [
 			[/* method description */
@@ -82,4 +82,5 @@ DocsCollector.collect('java.util.function.BinaryOperator', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -38,7 +38,7 @@ DocsCollector.collect('java.lang.ClassNotFoundException', [
 		[/* block */ 'b', `
  but no definition for the class with the specified name could be found.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -46,7 +46,7 @@ DocsCollector.collect('java.lang.ClassNotFoundException', [
 				[/* inline code block */ 'i', `ClassNotFoundException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -90,8 +90,8 @@ DocsCollector.collect('java.lang.ClassNotFoundException', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `Exception`],
@@ -99,4 +99,5 @@ DocsCollector.collect('java.lang.ClassNotFoundException', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

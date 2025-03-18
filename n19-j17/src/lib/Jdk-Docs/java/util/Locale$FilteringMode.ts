@@ -1,4 +1,3 @@
-import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.util.Locale$FilteringMode', [
@@ -203,8 +202,8 @@ DocsCollector.collect('java.util.Locale$FilteringMode', [
 		],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -237,11 +236,70 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'AUTOSELECT_FILTERING', [
+			[/* enum value description */
+				[/* text */ 't', `Specifies automatic filtering mode based on the given Language
+ Priority List consisting of language ranges. If all of the ranges
+ are basic, basic filtering is selected. Otherwise, extended
+ filtering is selected.`]
+			],
+		]],
+		[/* enum value */ 'EXTENDED_FILTERING', [
+			[/* enum value description */
+				[/* text */ 't', `Specifies extended filtering.`]
+			],
+		]],
+		[/* enum value */ 'IGNORE_EXTENDED_RANGES', [
+			[/* enum value description */
+				[/* text */ 't', `Specifies basic filtering: Note that any extended language ranges
+ included in the given Language Priority List are ignored.`]
+			],
+		]],
+		[/* enum value */ 'MAP_EXTENDED_RANGES', [
+			[/* enum value description */
+				[/* text */ 't', `Specifies basic filtering: If any extended language ranges are
+ included in the given Language Priority List, they are mapped to the
+ basic language range. Specifically, a language range starting with a
+ subtag `],
+				[/* inline code block */ 'i', `"*"`],
+				[/* text */ 't', ` is treated as a language range `],
+				[/* inline code block */ 'i', `"*"`],
+				[/* text */ 't', `. For
+ example, `],
+				[/* inline code block */ 'i', `"*-US"`],
+				[/* text */ 't', ` is treated as `],
+				[/* inline code block */ 'i', `"*"`],
+				[/* text */ 't', `. If `],
+				[/* inline code block */ 'i', `"*"`],
+				[/* text */ 't', ` is
+ not the first subtag, `],
+				[/* inline code block */ 'i', `"*"`],
+				[/* text */ 't', ` and extra `],
+				[/* inline code block */ 'i', `"-"`],
+				[/* text */ 't', ` are removed.
+ For example, `],
+				[/* inline code block */ 'i', `"ja-*-JP"`],
+				[/* text */ 't', ` is mapped to `],
+				[/* inline code block */ 'i', `"ja-JP"`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'REJECT_EXTENDED_RANGES', [
+			[/* enum value description */
+				[/* text */ 't', `Specifies basic filtering: If any extended language ranges are
+ included in the given Language Priority List, the list is rejected
+ and the filtering method throws `],
+				[/* reference */ 'r', `java.lang.IllegalArgumentException`, `IllegalArgumentException`],
+				[/* text */ 't', `.`]
+			],
 		]]
 	],
 ]);

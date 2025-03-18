@@ -25,8 +25,8 @@ DocsCollector.collect('java.util.function.IntUnaryOperator', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'applyAsInt(int)', [
 			[/* method description */
@@ -37,7 +37,7 @@ DocsCollector.collect('java.util.function.IntUnaryOperator', [
 					[/* text */ 't', `the operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the operator result`]
 			]
@@ -98,11 +98,12 @@ DocsCollector.collect('java.util.function.IntUnaryOperator', [
 			[/* method description */
 				[/* text */ 't', `Returns a unary operator that always returns its input argument.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a unary operator that always returns its input argument`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

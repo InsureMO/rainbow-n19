@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.UnknownError', [
 		[/* text */ 't', `Thrown when an unknown but serious exception has occurred in the
  Java Virtual Machine.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.UnknownError', [
 				[/* inline code block */ 'i', `UnknownError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -32,5 +32,6 @@ DocsCollector.collect('java.lang.UnknownError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

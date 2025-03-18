@@ -17,7 +17,7 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 		[/* inline code block */ 'i', `String`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -78,7 +78,7 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 					[/* text */ 't', `the StringCharacterIterator object to be compared with.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the given obj is the same as this
  StringCharacterIterator object; false otherwise.`]
@@ -88,8 +88,8 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 			[/* method description */
 				[/* text */ 't', `Implements CharacterIterator.current() for String.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character at the current position or DONE if the current
  position is off the end of the text.`]
@@ -99,8 +99,8 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 			[/* method description */
 				[/* text */ 't', `Implements CharacterIterator.first() for String.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first character in the text, or DONE if the text is empty`]
 			]
@@ -109,8 +109,8 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 			[/* method description */
 				[/* text */ 't', `Implements CharacterIterator.last() for String.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the last character in the text, or DONE if the text is empty`]
 			]
@@ -119,8 +119,8 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 			[/* method description */
 				[/* text */ 't', `Implements CharacterIterator.next() for String.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character at the new position or DONE if the new
  position is off the end of the text range.`]
@@ -130,8 +130,8 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 			[/* method description */
 				[/* text */ 't', `Implements CharacterIterator.previous() for String.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character at the new position or DONE if the current
  position is equal to getBeginIndex().`]
@@ -148,7 +148,7 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
  if an invalid value is supplied.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character at the specified position or DONE if the specified position is equal to getEndIndex()`]
 			]
@@ -157,8 +157,8 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 			[/* method description */
 				[/* text */ 't', `Implements CharacterIterator.getBeginIndex() for String.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index at which the text begins.`]
 			]
@@ -167,8 +167,8 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 			[/* method description */
 				[/* text */ 't', `Implements CharacterIterator.getEndIndex() for String.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index after the last character in the text`]
 			]
@@ -177,8 +177,8 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 			[/* method description */
 				[/* text */ 't', `Implements CharacterIterator.getIndex() for String.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current index.`]
 			]
@@ -187,8 +187,8 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 			[/* method description */
 				[/* text */ 't', `Computes a hashcode for this iterator.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A hash code`]
 			]
@@ -197,8 +197,8 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 			[/* method description */
 				[/* text */ 't', `Creates a copy of this iterator.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A copy of this`]
 			]
@@ -215,8 +215,9 @@ DocsCollector.collect('java.text.StringCharacterIterator', [
 					[/* text */ 't', `The String to be iterated over`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

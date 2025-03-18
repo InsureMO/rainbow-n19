@@ -158,7 +158,7 @@ DocsCollector.collect('java.util.AbstractList', [
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -202,7 +202,7 @@ DocsCollector.collect('java.util.AbstractList', [
 					[/* text */ 't', `index after last element to be removed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'get(int)', [
@@ -350,7 +350,7 @@ DocsCollector.collect('java.util.AbstractList', [
 					[/* text */ 't', `the object to be compared for equality with this list`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this list`]
@@ -433,8 +433,8 @@ DocsCollector.collect('java.util.AbstractList', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code value for this list.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this list`]
 			]
@@ -519,8 +519,8 @@ DocsCollector.collect('java.util.AbstractList', [
 			[/* method description */
 				[/* text */ 't', `Returns an iterator over the elements in this list in proper sequence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this list in proper sequence`]
 			]
@@ -605,8 +605,8 @@ DocsCollector.collect('java.util.AbstractList', [
 				[/* text */ 't', `Returns a list iterator over the elements in this list (in proper
  sequence).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a list iterator over the elements in this list (in proper
          sequence)`]
@@ -694,7 +694,7 @@ DocsCollector.collect('java.util.AbstractList', [
 				[/* text */ 't', `Removes all of the elements from this list (optional operation).
  The list will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -706,4 +706,5 @@ DocsCollector.collect('java.util.AbstractList', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

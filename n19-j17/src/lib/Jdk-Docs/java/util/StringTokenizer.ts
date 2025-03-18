@@ -140,7 +140,7 @@ DocsCollector.collect('java.util.StringTokenizer', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -275,8 +275,8 @@ DocsCollector.collect('java.util.StringTokenizer', [
 				[/* inline code block */ 'i', `Enumeration`],
 				[/* text */ 't', ` interface.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if there are more tokens;
@@ -295,8 +295,8 @@ DocsCollector.collect('java.util.StringTokenizer', [
 				[/* inline code block */ 'i', `nextToken`],
 				[/* text */ 't', ` with no argument will successfully return a token.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if there is at least one token
@@ -314,8 +314,8 @@ DocsCollector.collect('java.util.StringTokenizer', [
 				[/* text */ 't', ` method can be called before it generates an
  exception. The current position is not advanced.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of tokens remaining in the string using the current
           delimiter set.`]
@@ -336,7 +336,7 @@ DocsCollector.collect('java.util.StringTokenizer', [
 				[/* inline code block */ 'i', `Enumeration`],
 				[/* text */ 't', ` interface.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if there are no more tokens in this
@@ -351,7 +351,7 @@ DocsCollector.collect('java.util.StringTokenizer', [
 			[/* method description */
 				[/* text */ 't', `Returns the next token from this string tokenizer.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if there are no more tokens in this
@@ -396,4 +396,5 @@ DocsCollector.collect('java.util.StringTokenizer', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -9,8 +9,8 @@ DocsCollector.collect('java.io.Closeable', [
  The close method is invoked to release resources that the object is
  holding (such as open files).`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'close()', [
 			[/* method description */
@@ -35,7 +35,7 @@ DocsCollector.collect('java.io.Closeable', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -44,4 +44,5 @@ DocsCollector.collect('java.io.Closeable', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

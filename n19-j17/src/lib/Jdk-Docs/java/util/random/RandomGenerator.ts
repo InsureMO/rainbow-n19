@@ -143,8 +143,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 		[/* block */ 'b', `Unless explicit stated otherwise, the use of null for any method argument
  will cause a NullPointerException.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'nextLong()', [
 			[/* method description */
@@ -152,8 +152,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', ` value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a pseudorandomly chosen `],
 				[/* inline code block */ 'i', `long`],
@@ -165,8 +165,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* text */ 't', `Return true if the implementation of RandomGenerator (algorithm) has been
  marked for deprecation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the implementation of RandomGenerator (algorithm) has been
          marked for deprecation`]
@@ -189,8 +189,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
  low-order bits.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a pseudorandomly chosen `],
 				[/* inline code block */ 'i', `boolean`],
@@ -204,8 +204,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* text */ 't', ` value between zero (inclusive) and
  one (exclusive).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a pseudorandom `],
 				[/* inline code block */ 'i', `double`],
@@ -284,8 +284,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* text */ 't', ` value pseudorandomly chosen from
  an exponential distribution whose mean is 1.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a nonnegative `],
 				[/* inline code block */ 'i', `double`],
@@ -300,8 +300,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* text */ 't', ` value pseudorandomly chosen from a Gaussian
  (normal) distribution whose mean is 0 and whose standard deviation is 1.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `double`],
@@ -347,8 +347,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* text */ 't', ` value between zero (inclusive) and
  one (exclusive).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a pseudorandom `],
 				[/* inline code block */ 'i', `float`],
@@ -425,8 +425,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a pseudorandomly chosen `],
 				[/* inline code block */ 'i', `int`],
@@ -498,8 +498,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', ` values.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of pseudorandomly chosen `],
 				[/* inline code block */ 'i', `double`],
@@ -624,8 +624,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` values.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of pseudorandomly chosen `],
 				[/* inline code block */ 'i', `int`],
@@ -739,8 +739,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', ` values.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of pseudorandomly chosen `],
 				[/* inline code block */ 'i', `long`],
@@ -933,8 +933,8 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* text */ 't', `
  whose state bits are greater than or equal 64.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`]
@@ -972,4 +972,5 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

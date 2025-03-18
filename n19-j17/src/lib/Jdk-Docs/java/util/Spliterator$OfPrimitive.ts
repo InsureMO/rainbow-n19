@@ -5,8 +5,8 @@ DocsCollector.collect('java.util.Spliterator$OfPrimitive', [
 	[/* class description */
 		[/* text */ 't', `A Spliterator specialized for primitive values.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'tryAdvance(java.lang.Object)', [
 			[/* method description */
@@ -72,4 +72,5 @@ DocsCollector.collect('java.util.Spliterator$OfPrimitive', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

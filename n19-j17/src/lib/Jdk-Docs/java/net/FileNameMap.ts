@@ -6,8 +6,8 @@ DocsCollector.collect('java.net.FileNameMap', [
 		[/* text */ 't', `A simple interface which provides a mechanism to map
  between a file name and a MIME type string.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getContentTypeFor(java.lang.String)', [
 			[/* method description */
@@ -18,7 +18,7 @@ DocsCollector.collect('java.net.FileNameMap', [
 					[/* text */ 't', `the specified file name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `String`],
@@ -27,4 +27,5 @@ DocsCollector.collect('java.net.FileNameMap', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

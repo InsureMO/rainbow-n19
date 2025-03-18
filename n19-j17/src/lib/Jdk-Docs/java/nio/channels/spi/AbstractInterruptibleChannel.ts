@@ -80,13 +80,13 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
  other threads that might be attempting to close the channel.  `]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Initializes a new instance of this class.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -111,7 +111,7 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
  immediately, either by throwing an exception or by returning normally.
  `]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs while closing the channel`]
@@ -139,8 +139,8 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
  closing and interruption for this channel.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'end(boolean)', [
@@ -185,8 +185,8 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 			[/* method description */
 				[/* block */ 'b', `Tells whether or not this channel is open.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this channel is open`]
@@ -206,7 +206,7 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
  complete the close operation.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -215,4 +215,5 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

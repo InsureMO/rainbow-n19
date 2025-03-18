@@ -20,7 +20,7 @@ DocsCollector.collect('java.lang.reflect.Member', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isSynthetic()', [
 			[/* method description */
@@ -31,8 +31,8 @@ DocsCollector.collect('java.lang.reflect.Member', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this member was introduced by
  the compiler.`]
@@ -45,8 +45,8 @@ DocsCollector.collect('java.lang.reflect.Member', [
  Modifier class should be used to decode the modifiers in
  the integer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Java language modifiers for the underlying member`]
 			]
@@ -56,8 +56,8 @@ DocsCollector.collect('java.lang.reflect.Member', [
 				[/* text */ 't', `Returns the Class object representing the class or interface
  that declares the member or constructor represented by this Member.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object representing the declaring class of the
  underlying member`]
@@ -68,11 +68,12 @@ DocsCollector.collect('java.lang.reflect.Member', [
 				[/* text */ 't', `Returns the simple name of the underlying member or constructor
  represented by this Member.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the simple name of the underlying member`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

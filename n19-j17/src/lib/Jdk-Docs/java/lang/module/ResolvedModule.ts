@@ -21,8 +21,8 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
  module's content.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -55,7 +55,7 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 					[/* text */ 't', `the object to which this object is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a module
@@ -74,8 +74,8 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 					[/* text */ 't', ` method. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hash-code value for this resolved module`]
 			]
@@ -84,8 +84,8 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 			[/* method description */
 				[/* text */ 't', `Returns the configuration that this resolved module is in.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The configuration that this resolved module is in`]
 			]
@@ -94,8 +94,8 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 			[/* method description */
 				[/* text */ 't', `Returns the reference to the module's content.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The reference to the module's content`]
 			]
@@ -111,8 +111,8 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 					[/* inline code block */ 'i', `reference().descriptor().name()`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The module name`]
 			]
@@ -121,8 +121,8 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this resolved module.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string describing this resolved module`]
 			]
@@ -131,12 +131,13 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 			[/* method description */
 				[/* text */ 't', `Returns the set of resolved modules that this resolved module reads.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of resolved modules that
          this resolved module reads`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

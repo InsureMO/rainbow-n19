@@ -140,8 +140,8 @@ DocsCollector.collect('java.text.Bidi', [
 			[/* method description */
 				[/* text */ 't', `Return true if the base direction is left-to-right.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the base direction is left-to-right`]
 			]
@@ -150,8 +150,8 @@ DocsCollector.collect('java.text.Bidi', [
 			[/* method description */
 				[/* text */ 't', `Return true if the line is all left-to-right text and the base direction is left-to-right.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the line is all left-to-right text and the base direction is left-to-right`]
 			]
@@ -161,8 +161,8 @@ DocsCollector.collect('java.text.Bidi', [
 				[/* text */ 't', `Return true if the line is not left-to-right or right-to-left.  This means it either has mixed runs of left-to-right
  and right-to-left text, or the base direction differs from the direction of the only run of text.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the line is not left-to-right or right-to-left.`]
 			]
@@ -171,8 +171,8 @@ DocsCollector.collect('java.text.Bidi', [
 			[/* method description */
 				[/* text */ 't', `Return true if the line is all right-to-left text, and the base direction is right-to-left.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the line is all right-to-left text, and the base direction is right-to-left`]
 			]
@@ -181,8 +181,8 @@ DocsCollector.collect('java.text.Bidi', [
 			[/* method description */
 				[/* text */ 't', `Return the base level (0 if left-to-right, 1 if right-to-left).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the base level`]
 			]
@@ -191,8 +191,8 @@ DocsCollector.collect('java.text.Bidi', [
 			[/* method description */
 				[/* text */ 't', `Return the length of text in the line.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of text in the line`]
 			]
@@ -208,7 +208,7 @@ DocsCollector.collect('java.text.Bidi', [
 					[/* text */ 't', `the index of the character for which to return the level`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the resolved level of the character at offset`]
 			]
@@ -217,8 +217,8 @@ DocsCollector.collect('java.text.Bidi', [
 			[/* method description */
 				[/* text */ 't', `Return the number of level runs.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of level runs`]
 			]
@@ -233,7 +233,7 @@ DocsCollector.collect('java.text.Bidi', [
 					[/* inline code block */ 'i', `getRunCount()`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the level of the run`]
 			]
@@ -250,7 +250,7 @@ DocsCollector.collect('java.text.Bidi', [
 					[/* inline code block */ 'i', `getRunCount()`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `limit the limit of the run`]
 			]
@@ -266,7 +266,7 @@ DocsCollector.collect('java.text.Bidi', [
 					[/* inline code block */ 'i', `getRunCount()`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the start of the run`]
 			]
@@ -275,8 +275,8 @@ DocsCollector.collect('java.text.Bidi', [
 			[/* method description */
 				[/* text */ 't', `Display the bidi internal state, used in debugging.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
@@ -295,7 +295,7 @@ DocsCollector.collect('java.text.Bidi', [
 					[/* text */ 't', `the offset from the start of the paragraph to the limit of the line.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Bidi`],
@@ -320,7 +320,7 @@ DocsCollector.collect('java.text.Bidi', [
 					[/* text */ 't', `the limit of the range of characters to test`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the range of characters requires bidi analysis`]
 			]
@@ -361,8 +361,9 @@ DocsCollector.collect('java.text.Bidi', [
 					[/* text */ 't', `the number of objects to reorder`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

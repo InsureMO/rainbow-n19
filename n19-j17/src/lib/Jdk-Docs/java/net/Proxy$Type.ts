@@ -1,12 +1,11 @@
-import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.net.Proxy$Type', [
 	[/* class description */
 		[/* text */ 't', `Represents the proxy type.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -39,11 +38,28 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'DIRECT', [
+			[/* enum value description */
+				[/* text */ 't', `Represents a direct connection, or the absence of a proxy.`]
+			],
+		]],
+		[/* enum value */ 'HTTP', [
+			[/* enum value description */
+				[/* text */ 't', `Represents proxy for high level protocols such as HTTP or FTP.`]
+			],
+		]],
+		[/* enum value */ 'SOCKS', [
+			[/* enum value description */
+				[/* text */ 't', `Represents a SOCKS (V4 or V5) proxy.`]
+			],
 		]]
 	],
 ]);

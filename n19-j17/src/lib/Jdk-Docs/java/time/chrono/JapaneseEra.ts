@@ -70,7 +70,7 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getValue()', [
 			[/* method description */
@@ -93,8 +93,8 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
 					[/* text */ 't', `)).`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the era value`]
 			]
@@ -123,7 +123,7 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
 					[/* text */ 't', `the locale to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the text value of the era, not null`]
 			]
@@ -299,11 +299,12 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of JapaneseEras`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

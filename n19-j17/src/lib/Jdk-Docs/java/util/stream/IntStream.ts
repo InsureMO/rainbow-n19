@@ -41,8 +41,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
  parallelism.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'collect(java.util.function.Supplier,java.util.function.ObjIntConsumer,java.util.function.BiConsumer)', [
 			[/* method description */
@@ -117,7 +117,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                     first result container.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
 			]
@@ -147,7 +147,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -179,7 +179,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                   predicate to apply to elements of this stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if either all elements of the stream match the
@@ -214,7 +214,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                   predicate to apply to elements of this stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if any elements of the stream match the provided
@@ -249,7 +249,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                   predicate to apply to elements of this stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if either no elements of the stream match the
@@ -324,7 +324,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
            function for combining two values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
 			]
@@ -349,8 +349,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sum of elements in this stream`]
 			]
@@ -366,8 +366,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the elements of this stream`]
 			]
@@ -389,8 +389,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `IntSummaryStatistics`],
@@ -416,8 +416,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalDouble`],
@@ -452,8 +452,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', ` instead.)`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalInt`],
@@ -480,8 +480,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalInt`],
@@ -514,8 +514,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalInt`],
@@ -548,8 +548,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalInt`],
@@ -621,7 +621,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
            function for combining two values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
 			]
@@ -644,8 +644,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `DoubleStream`],
@@ -679,7 +679,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -695,8 +695,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -725,7 +725,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                   should be included`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -764,7 +764,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', ` of new values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -822,7 +822,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -855,7 +855,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                they are consumed from the stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -907,8 +907,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -929,8 +929,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `LongStream`],
@@ -964,7 +964,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -985,8 +985,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Stream`],
@@ -1015,8 +1015,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the count of elements in this stream`]
 			]
@@ -1042,7 +1042,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEachOrdered(java.util.function.IntConsumer)', [
@@ -1065,7 +1065,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'dropWhile(java.util.function.IntPredicate)', [
@@ -1115,7 +1115,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                   prefix of elements.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1157,7 +1157,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                function that generates replacement elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1208,7 +1208,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
                   prefix of elements.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1235,7 +1235,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `the second stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the concatenation of the two input streams`]
 			]
@@ -1246,8 +1246,8 @@ DocsCollector.collect('java.util.stream.IntStream', [
 				[/* inline code block */ 'i', `IntStream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty sequential stream`]
 			]
@@ -1267,7 +1267,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', ` for generated elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new infinite sequential unordered `],
 				[/* inline code block */ 'i', `IntStream`]
@@ -1359,7 +1359,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
              a new element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential `],
 				[/* inline code block */ 'i', `IntStream`]
@@ -1432,7 +1432,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
           a new element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential `],
 				[/* inline code block */ 'i', `IntStream`]
@@ -1449,7 +1449,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `the single element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a singleton sequential stream`]
 			]
@@ -1463,7 +1463,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `the elements of the new stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1490,7 +1490,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `the exclusive upper bound`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a sequential `],
 				[/* inline code block */ 'i', `IntStream`],
@@ -1522,7 +1522,7 @@ DocsCollector.collect('java.util.stream.IntStream', [
 					[/* text */ 't', `the inclusive upper bound`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a sequential `],
 				[/* inline code block */ 'i', `IntStream`],
@@ -1538,11 +1538,12 @@ DocsCollector.collect('java.util.stream.IntStream', [
 				[/* inline code block */ 'i', `IntStream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream builder`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

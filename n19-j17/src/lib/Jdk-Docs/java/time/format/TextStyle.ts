@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.time.format.TextStyle', [
@@ -22,15 +21,15 @@ DocsCollector.collect('java.time.format.TextStyle', [
  For example, the word used for a month when used alone in a date picker is different
  to the word used for month in association with a day and year in a date.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isStandalone()', [
 			[/* method description */
 				[/* text */ 't', `Returns true if the Style is a stand-alone style.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the style is a stand-alone style.`]
 			]
@@ -39,8 +38,8 @@ DocsCollector.collect('java.time.format.TextStyle', [
 			[/* method description */
 				[/* text */ 't', `Returns the normal style with the same size.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the normal style with the same size`]
 			]
@@ -49,8 +48,8 @@ DocsCollector.collect('java.time.format.TextStyle', [
 			[/* method description */
 				[/* text */ 't', `Returns the stand-alone style with the same size.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the stand-alone style with the same size`]
 			]
@@ -86,11 +85,49 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'FULL', [
+			[/* enum value description */
+				[/* text */ 't', `Full text, typically the full description.
+ For example, day-of-week Monday might output "Monday".`]
+			],
+		]],
+		[/* enum value */ 'FULL_STANDALONE', [
+			[/* enum value description */
+				[/* text */ 't', `Full text for stand-alone use, typically the full description.
+ For example, day-of-week Monday might output "Monday".`]
+			],
+		]],
+		[/* enum value */ 'SHORT', [
+			[/* enum value description */
+				[/* text */ 't', `Short text, typically an abbreviation.
+ For example, day-of-week Monday might output "Mon".`]
+			],
+		]],
+		[/* enum value */ 'SHORT_STANDALONE', [
+			[/* enum value description */
+				[/* text */ 't', `Short text for stand-alone use, typically an abbreviation.
+ For example, day-of-week Monday might output "Mon".`]
+			],
+		]],
+		[/* enum value */ 'NARROW', [
+			[/* enum value description */
+				[/* text */ 't', `Narrow text, typically a single letter.
+ For example, day-of-week Monday might output "M".`]
+			],
+		]],
+		[/* enum value */ 'NARROW_STANDALONE', [
+			[/* enum value description */
+				[/* text */ 't', `Narrow text for stand-alone use, typically a single letter.
+ For example, day-of-week Monday might output "M".`]
+			],
 		]]
 	],
 ]);

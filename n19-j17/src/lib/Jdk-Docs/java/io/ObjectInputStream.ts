@@ -258,7 +258,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* text */ 't', ` for additional information.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -291,7 +291,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
  permission to ensure it's ok to enable subclassing.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its
@@ -417,7 +417,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
  this method reads class descriptors according to the format defined in
  the Object Serialization specification.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -651,7 +651,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
  The subclass is expected to provide an override method with the modifier
  "final".`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
 					[/* text */ 't', `Class definition of a serialized object
@@ -717,7 +717,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
  verify their own stream headers. It reads and verifies the magic number
  and version number.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if there are I/O errors while reading from the
@@ -735,7 +735,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads in a boolean.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `If end of file is reached.`]
@@ -752,7 +752,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads an 8 bit byte.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `If end of file is reached.`]
@@ -769,7 +769,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads a 16 bit char.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `If end of file is reached.`]
@@ -786,7 +786,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads a 64 bit double.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `If end of file is reached.`]
@@ -813,8 +813,8 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* reference */ 'r', `#setObjectInputFilter(java.io.ObjectInputFilter)`, `setObjectInputFilter`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the deserialization filter for the stream; may be null`]
 			]
@@ -853,7 +853,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
  the InputStream and leave it in an indeterminate state; it is up to the
  caller to ignore or recover the stream state.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
 					[/* text */ 't', `Class of a serialized object cannot be
@@ -997,7 +997,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads a 32 bit float.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `If end of file is reached.`]
@@ -1014,7 +1014,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of bytes that can be read without blocking.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if there are I/O errors while reading from the
@@ -1030,7 +1030,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads a byte of data. This method will block if no input is available.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -1092,7 +1092,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads a 32 bit int.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `If end of file is reached.`]
@@ -1109,7 +1109,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads an unsigned 8 bit byte.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `If end of file is reached.`]
@@ -1126,7 +1126,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads an unsigned 16 bit short.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `If end of file is reached.`]
@@ -1162,7 +1162,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* text */ 't', `Reads the persistent fields from the stream and makes them available by
  name.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
 					[/* text */ 't', `if the class of a serialized object
@@ -1234,7 +1234,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
  instantiate such a subclass without this permission will cause a
  SecurityException to be thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
 					[/* text */ 't', `if class of an object to deserialize
@@ -1263,7 +1263,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads in a line that has been terminated by a \\n, \\r, \\r\\n or EOF.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if there are I/O errors while reading from the
@@ -1283,7 +1283,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* text */ 't', `
  format.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if there are I/O errors while reading from the
@@ -1303,7 +1303,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads a 64 bit long.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `If end of file is reached.`]
@@ -1320,7 +1320,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads a 16 bit short.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `If end of file is reached.`]
@@ -1338,7 +1338,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* text */ 't', `Closes the input stream. Must be called to release any resources
  associated with the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -1353,7 +1353,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
  class being deserialized. It will throw the NotActiveException if it is
  called otherwise.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
 					[/* text */ 't', `if the class of a serialized object
@@ -1472,4 +1472,5 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -5,8 +5,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 	[/* class description */
 		[/* block */ 'b', ` A dependence upon a module. `]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -38,7 +38,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 					[/* text */ 't', `the object to which this object is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a module
@@ -76,7 +76,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 					[/* text */ 't', `The module dependence to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A negative integer, zero, or a positive integer if this module
          dependence is less than, equal to, or greater than the given
@@ -96,8 +96,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 					[/* text */ 't', ` method. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hash-code value for this module dependence`]
 			]
@@ -106,8 +106,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 			[/* method description */
 				[/* text */ 't', `Return the module name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The module name`]
 			]
@@ -116,8 +116,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this module dependence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string describing this module dependence`]
 			]
@@ -126,8 +126,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 			[/* method description */
 				[/* text */ 't', `Returns the version of the module if recorded at compile-time.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The version of the module if recorded at compile-time,
          or an empty `],
@@ -142,8 +142,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 				[/* text */ 't', `Returns the string with the possibly-unparseable version of the module
  if recorded at compile-time.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string containing the version of the module if recorded
          at compile-time, or an empty `],
@@ -156,11 +156,12 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 			[/* method description */
 				[/* text */ 't', `Returns the set of modifiers.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of modifiers`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

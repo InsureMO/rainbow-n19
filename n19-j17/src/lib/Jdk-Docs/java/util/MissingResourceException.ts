@@ -5,7 +5,7 @@ DocsCollector.collect('java.util.MissingResourceException', [
 	[/* class description */
 		[/* text */ 't', `Signals that a resource is missing.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.String,java.lang.String)', [
 			[/* constructor description */
@@ -31,8 +31,8 @@ DocsCollector.collect('java.util.MissingResourceException', [
 			[/* method description */
 				[/* text */ 't', `Gets parameter passed by constructor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the resource class`]
 			]
@@ -41,11 +41,12 @@ DocsCollector.collect('java.util.MissingResourceException', [
 			[/* method description */
 				[/* text */ 't', `Gets parameter passed by constructor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the key for the missing resource`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

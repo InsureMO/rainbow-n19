@@ -47,7 +47,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isLeapYear(long)', [
 			[/* method description */
@@ -74,7 +74,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 					[/* text */ 't', `the ISO proleptic year to check`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the year is leap, false otherwise`]
 			]
@@ -105,7 +105,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 					[/* text */ 't', `the chronology year-of-era`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the proleptic-year`]
 			]
@@ -131,8 +131,8 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 					[/* text */ 't', ` with the key 'ca'.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the calendar system type - 'iso8601'`]
 			]
@@ -153,8 +153,8 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the chronology ID - 'ISO'`]
 			]
@@ -185,7 +185,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 					[/* text */ 't', `the era value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the calendar system era, not null`]
 			]
@@ -322,7 +322,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
  Using this method will prevent the ability to use an alternate clock for testing
  because the clock is hard-coded.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
 					[/* text */ 't', `if unable to create the date`]
@@ -711,7 +711,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 					[/* text */ 't', `the number of years, may be negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ISO period, not null`]
 			]
@@ -743,7 +743,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 					[/* text */ 't', `the field to get the range for, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the range of valid values for the field, not null`]
 			]
@@ -814,8 +814,8 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
  list must be returned.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the list of eras for the chronology, may be immutable, not null`]
 			]
@@ -862,4 +862,5 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

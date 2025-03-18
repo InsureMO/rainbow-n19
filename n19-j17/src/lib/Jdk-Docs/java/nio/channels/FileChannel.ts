@@ -202,13 +202,13 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  therefore unspecified.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Initializes a new instance of this class.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -878,7 +878,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* method description */
 				[/* text */ 't', `Returns this channel's file position.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
@@ -955,7 +955,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* method description */
 				[/* text */ 't', `Returns the current size of this channel's file.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
@@ -1294,7 +1294,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
@@ -1344,7 +1344,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
@@ -1776,4 +1776,5 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

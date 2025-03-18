@@ -7,8 +7,8 @@ DocsCollector.collect('java.security.Principal', [
  can be used to represent any entity, such as an individual, a
  corporation, and a login id.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -21,7 +21,7 @@ DocsCollector.collect('java.security.Principal', [
 					[/* text */ 't', `principal to compare with.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the principal passed in is the same as that
  encapsulated by this principal, and false otherwise.`]
@@ -31,8 +31,8 @@ DocsCollector.collect('java.security.Principal', [
 			[/* method description */
 				[/* text */ 't', `Returns a hashcode for this principal.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hashcode for this principal.`]
 			]
@@ -41,8 +41,8 @@ DocsCollector.collect('java.security.Principal', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of this principal.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this principal.`]
 			]
@@ -51,8 +51,8 @@ DocsCollector.collect('java.security.Principal', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of this principal.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this principal.`]
 			]
@@ -67,7 +67,7 @@ DocsCollector.collect('java.security.Principal', [
 					[/* inline code block */ 'i', `Subject`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if `],
 				[/* inline code block */ 'i', `subject`],
@@ -76,4 +76,5 @@ DocsCollector.collect('java.security.Principal', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

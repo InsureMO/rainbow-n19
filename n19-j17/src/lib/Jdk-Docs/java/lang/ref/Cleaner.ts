@@ -74,8 +74,8 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'register(java.lang.Object,java.lang.Runnable)', [
 			[/* method description */
@@ -96,7 +96,7 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 					[/* text */ 't', ` to invoke when the object becomes phantom reachable`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Cleanable`],
@@ -132,7 +132,7 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
  The cleaner terminates when it is phantom reachable and all of the
  registered cleaning actions are complete.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread is not allowed to
@@ -201,4 +201,5 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

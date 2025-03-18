@@ -94,7 +94,7 @@ DocsCollector.collect('java.util.SplittableRandom', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -103,7 +103,7 @@ DocsCollector.collect('java.util.SplittableRandom', [
  of those of any other instances in the current program; and
  may, and typically does, vary across program invocations.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(long)', [
@@ -137,8 +137,8 @@ DocsCollector.collect('java.util.SplittableRandom', [
  entire set of generators constructed by such recursive
  splitting.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new SplittableRandom instance`]
 			]
@@ -183,8 +183,8 @@ DocsCollector.collect('java.util.SplittableRandom', [
 				[/* text */ 't', ` values from this generator and/or one split from it; each value
  is between zero (inclusive) and one (exclusive).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of pseudorandom `],
 				[/* inline code block */ 'i', `double`],
@@ -299,8 +299,8 @@ DocsCollector.collect('java.util.SplittableRandom', [
 				[/* text */ 't', `
  values from this generator and/or one split from it.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of pseudorandom `],
 				[/* inline code block */ 'i', `int`],
@@ -414,8 +414,8 @@ DocsCollector.collect('java.util.SplittableRandom', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', ` values from this generator and/or one split from it.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of pseudorandom `],
 				[/* inline code block */ 'i', `long`],
@@ -535,8 +535,8 @@ DocsCollector.collect('java.util.SplittableRandom', [
 				[/* block */ 'b', ` This pseudorandom number generator may be used as a source of
  pseudorandom bits used to initialize the state the new ones.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of `],
 				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`, `RandomGenerator.SplittableGenerator`],
@@ -651,8 +651,8 @@ DocsCollector.collect('java.util.SplittableRandom', [
 					[/* text */ 't', ` value.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a pseudorandomly chosen `],
 				[/* inline code block */ 'i', `long`],
@@ -678,4 +678,5 @@ DocsCollector.collect('java.util.SplittableRandom', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

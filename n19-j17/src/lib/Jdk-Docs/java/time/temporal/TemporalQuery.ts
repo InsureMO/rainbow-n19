@@ -58,8 +58,8 @@ DocsCollector.collect('java.time.temporal.TemporalQuery', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'queryFrom(java.time.temporal.TemporalAccessor)', [
 			[/* method description */
@@ -109,4 +109,5 @@ DocsCollector.collect('java.time.temporal.TemporalQuery', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

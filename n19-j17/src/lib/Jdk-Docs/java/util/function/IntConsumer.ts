@@ -26,8 +26,8 @@ DocsCollector.collect('java.util.function.IntConsumer', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accept(int)', [
 			[/* method description */
@@ -38,7 +38,7 @@ DocsCollector.collect('java.util.function.IntConsumer', [
 					[/* text */ 't', `the input argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'andThen(java.util.function.IntConsumer)', [
@@ -77,4 +77,5 @@ DocsCollector.collect('java.util.function.IntConsumer', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

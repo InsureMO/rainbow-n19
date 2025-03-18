@@ -255,7 +255,7 @@ DocsCollector.collect('java.text.Collator', [
  protected so subclasses can get access to it. Users typically create
  a Collator sub-class by calling the factory method getInstance.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -282,7 +282,7 @@ DocsCollector.collect('java.text.Collator', [
 					[/* text */ 't', `the target string.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `Returns an integer value. Value is less than zero if source is less than
  target, value is zero if source and target are equal, value is greater than zero
@@ -293,8 +293,8 @@ DocsCollector.collect('java.text.Collator', [
 			[/* method description */
 				[/* text */ 't', `Generates the hash code for this Collator.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -311,7 +311,7 @@ DocsCollector.collect('java.text.Collator', [
 					[/* text */ 't', `the string to be transformed into a collation key.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the CollationKey for the given String based on this Collator's collation
  rules. If the source String is null, a null CollationKey is returned.`]
@@ -326,7 +326,7 @@ DocsCollector.collect('java.text.Collator', [
 					[/* text */ 't', `the Collator to be compared with this.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this Collator is the same as that Collator;
  false otherwise.`]
@@ -345,7 +345,7 @@ DocsCollector.collect('java.text.Collator', [
 					[/* text */ 't', `the target string to be compared with.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the strings are equal according to the collation
  rules.  false, otherwise.`]
@@ -388,8 +388,8 @@ DocsCollector.collect('java.text.Collator', [
 			[/* method description */
 				[/* text */ 't', `Overrides Cloneable`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -403,7 +403,7 @@ DocsCollector.collect('java.text.Collator', [
 					[/* text */ 't', `the desired locale.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Collator for the desired locale.`]
 			]
@@ -413,8 +413,8 @@ DocsCollector.collect('java.text.Collator', [
 				[/* text */ 't', `Gets the Collator for the current default locale.
  The default locale is determined by java.util.Locale.getDefault.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Collator for the default locale.(for example, en_US)`]
 			]
@@ -436,8 +436,8 @@ DocsCollector.collect('java.text.Collator', [
 				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An array of locales for which localized
          `],
@@ -467,8 +467,8 @@ DocsCollector.collect('java.text.Collator', [
  of their meaning.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the decomposition mode`]
 			]
@@ -479,8 +479,8 @@ DocsCollector.collect('java.text.Collator', [
  the minimum level of difference considered significant during comparison.
  See the Collator class description for an example of use.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this Collator's current strength property.`]
 			]
@@ -523,4 +523,5 @@ DocsCollector.collect('java.text.Collator', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

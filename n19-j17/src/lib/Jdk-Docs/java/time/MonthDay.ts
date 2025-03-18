@@ -75,8 +75,8 @@ DocsCollector.collect('java.time.MonthDay', [
 			[/* text */ 't', ` method should be used for comparisons.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
 			[/* method description */
@@ -132,7 +132,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other month-day`]
 			]
@@ -146,7 +146,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `the other month-day to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is after the specified month-day`]
 			]
@@ -160,7 +160,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `the other month-day to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this point is before the specified month-day`]
 			]
@@ -225,7 +225,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this month-day, false if not`]
 			]
@@ -243,7 +243,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `the year to validate`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the year is valid for this month-day`]
 			]
@@ -265,7 +265,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `the other month-day to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
 			]
@@ -346,8 +346,8 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', ` value for the day-of-month.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-month, from 1 to 31`]
 			]
@@ -369,8 +369,8 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, from 1 to 12`]
 			]
@@ -379,8 +379,8 @@ DocsCollector.collect('java.time.MonthDay', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this month-day.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -421,8 +421,8 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `:`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this month-day, not null`]
 			]
@@ -483,8 +483,8 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, not null`]
 			]
@@ -508,7 +508,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `the month-of-year to set in the returned month-day, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `MonthDay`],
@@ -825,8 +825,8 @@ DocsCollector.collect('java.time.MonthDay', [
  Using this method will prevent the ability to use an alternate clock for testing
  because the clock is hard-coded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current month-day using the system clock and default time-zone, not null`]
 			]
@@ -849,7 +849,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `the clock to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current month-day, not null`]
 			]
@@ -875,7 +875,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `the zone ID to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current month-day using the system clock, not null`]
 			]
@@ -1003,4 +1003,5 @@ DocsCollector.collect('java.time.MonthDay', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -17,15 +17,15 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
  `],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isDirectory()', [
 			[/* method description */
 				[/* text */ 't', `Tells whether the file is a directory.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the file is a directory`]
@@ -36,8 +36,8 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 				[/* text */ 't', `Tells whether the file is something other than a regular file, directory,
  or symbolic link.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the file something other than a regular file,
@@ -48,8 +48,8 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 			[/* method description */
 				[/* text */ 't', `Tells whether the file is a regular file with opaque content.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the file is a regular file with opaque content`]
@@ -59,8 +59,8 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 			[/* method description */
 				[/* text */ 't', `Tells whether the file is a symbolic link.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the file is a symbolic link`]
@@ -102,8 +102,8 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 					[/* text */ 't', ` file keys, then their file keys are equal.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object that uniquely identifies the given file, or `],
 				[/* inline code block */ 'i', `null`]
@@ -126,8 +126,8 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
  representing the epoch (1970-01-01T00:00:00Z).`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `FileTime`],
@@ -150,8 +150,8 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
  representing the epoch (1970-01-01T00:00:00Z).`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `FileTime`],
@@ -172,8 +172,8 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
  representing the epoch (1970-01-01T00:00:00Z).`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `FileTime`],
@@ -190,11 +190,12 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 				[/* text */ 't', ` files is implementation specific and
  therefore unspecified.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the file size, in bytes`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

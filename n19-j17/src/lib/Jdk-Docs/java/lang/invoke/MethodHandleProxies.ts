@@ -6,8 +6,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 		[/* text */ 't', `This class consists exclusively of static methods that help adapt
  method handles to other JVM types, such as interfaces.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'asInterfaceInstance(java.lang.Class,java.lang.invoke.MethodHandle)', [
 			[/* method description */
@@ -194,7 +194,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 					[/* text */ 't', `any reference`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the reference is not null and points to an object produced by `],
 				[/* inline code block */ 'i', `asInterfaceInstance`]
@@ -254,4 +254,5 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

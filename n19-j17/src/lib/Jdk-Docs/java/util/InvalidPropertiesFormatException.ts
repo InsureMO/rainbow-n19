@@ -15,7 +15,7 @@ DocsCollector.collect('java.util.InvalidPropertiesFormatException', [
  interface from Exception, it is not intended to be Serializable. Appropriate
  serialization methods are implemented to throw NotSerializableException.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -48,5 +48,6 @@ DocsCollector.collect('java.util.InvalidPropertiesFormatException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

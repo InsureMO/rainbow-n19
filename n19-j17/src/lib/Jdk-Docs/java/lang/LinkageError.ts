@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.LinkageError', [
  some dependency on another class; however, the latter class has
  incompatibly changed after the compilation of the former class.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.LinkageError', [
 				[/* inline code block */ 'i', `LinkageError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -53,5 +53,6 @@ DocsCollector.collect('java.lang.LinkageError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

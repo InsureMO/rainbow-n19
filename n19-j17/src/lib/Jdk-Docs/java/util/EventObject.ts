@@ -40,8 +40,8 @@ DocsCollector.collect('java.util.EventObject', [
 			[/* method description */
 				[/* text */ 't', `The object on which the Event initially occurred.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the object on which the Event initially occurred`]
 			]
@@ -50,11 +50,12 @@ DocsCollector.collect('java.util.EventObject', [
 			[/* method description */
 				[/* text */ 't', `Returns a String representation of this EventObject.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a String representation of this EventObject`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

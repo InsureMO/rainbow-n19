@@ -52,8 +52,8 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 			[/* text */ 't', ` method should be used for comparisons.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -84,7 +84,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other date and the Chronologies are equal`]
 			]
@@ -93,8 +93,8 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 			[/* method description */
 				[/* text */ 't', `Checks if the year is a leap year, according to the Hijrah calendar system rules.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this date is in a leap year`]
 			]
@@ -120,7 +120,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `the local time to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the local date-time formed from this date and the specified time, not null`]
 			]
@@ -129,8 +129,8 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this date.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code based only on the Chronology and the date`]
 			]
@@ -143,8 +143,8 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
  This returns the length of the month in days.
  Month lengths in the Hijrah calendar system vary between 29 and 30 days.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of the month in days`]
 			]
@@ -158,8 +158,8 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
  A Hijrah calendar system year is typically shorter than
  that of the ISO calendar system.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of the year in days`]
 			]
@@ -202,7 +202,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `the end date, exclusive, which may be in any chronology, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period between this date and the end date, not null`]
 			]
@@ -221,8 +221,8 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', ` are defined by the chronology.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Hijrah chronology, not null`]
 			]
@@ -310,7 +310,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `the unit of the amount to subtract, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object of the same type with the specified period subtracted, not null`]
 			]
@@ -398,7 +398,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `the unit of the amount to add, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object of the same type with the specified period added, not null`]
 			]
@@ -477,7 +477,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `the new value of the field in the result`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object of the same type with the specified field set, not null`]
 			]
@@ -498,7 +498,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `the new HijrahChonology, non-null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a HijrahDate with the requested HijrahChronology, non-null`]
 			]
@@ -515,8 +515,8 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the era applicable at this date, not null`]
 			]
@@ -541,7 +541,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `the field to get, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value for the field`]
 			]
@@ -616,8 +616,8 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
  Using this method will prevent the ability to use an alternate clock for testing
  because the clock is hard-coded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date using the system clock and default time-zone, not null`]
 			]
@@ -676,7 +676,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `the zone ID to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date using the system clock, not null`]
 			]
@@ -718,4 +718,5 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

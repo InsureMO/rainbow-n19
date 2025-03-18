@@ -7,13 +7,13 @@ DocsCollector.collect('java.io.NotSerializableException', [
  The serialization runtime or the class of the instance can throw
  this exception. The argument should be the name of the class.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a NotSerializableException object.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -28,5 +28,6 @@ DocsCollector.collect('java.io.NotSerializableException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

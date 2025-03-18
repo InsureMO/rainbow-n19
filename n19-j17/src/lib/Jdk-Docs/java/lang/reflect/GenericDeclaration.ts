@@ -5,8 +5,8 @@ DocsCollector.collect('java.lang.reflect.GenericDeclaration', [
 	[/* class description */
 		[/* text */ 't', `A common interface for all entities that declare type variables.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getTypeParameters()', [
 			[/* method description */
@@ -20,7 +20,7 @@ DocsCollector.collect('java.lang.reflect.GenericDeclaration', [
  object, in declaration order.  Returns an array of length 0 if
  the underlying generic declaration declares no type variables.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
 					[/* text */ 't', `if the generic
@@ -38,4 +38,5 @@ DocsCollector.collect('java.lang.reflect.GenericDeclaration', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

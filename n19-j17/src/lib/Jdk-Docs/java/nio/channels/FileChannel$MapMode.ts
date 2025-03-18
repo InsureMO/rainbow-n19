@@ -22,17 +22,18 @@ DocsCollector.collect('java.nio.channels.FileChannel$MapMode', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this file-mapping mode.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A descriptive string`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

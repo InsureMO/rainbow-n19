@@ -148,13 +148,13 @@ DocsCollector.collect('java.util.ArrayList', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an empty list with an initial capacity of ten.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -284,7 +284,7 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `element to be appended to this list`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
@@ -371,7 +371,7 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `element whose presence in this list is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this list contains the specified element`]
@@ -403,7 +403,7 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `the object to be compared for equality with this list`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this list`]
@@ -415,8 +415,8 @@ DocsCollector.collect('java.util.ArrayList', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this list contains no elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this list contains no elements`]
@@ -444,7 +444,7 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `element to be removed from this list, if present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this list contained the specified element`]
@@ -612,8 +612,8 @@ DocsCollector.collect('java.util.ArrayList', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code value for this list.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this list`]
 			]
@@ -635,7 +635,7 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `element to search for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first occurrence of the specified element in
          this list, or -1 if this list does not contain the element`]
@@ -658,7 +658,7 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `element to search for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the last occurrence of the specified element in
          this list, or -1 if this list does not contain the element`]
@@ -668,8 +668,8 @@ DocsCollector.collect('java.util.ArrayList', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of elements in this list.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in this list`]
 			]
@@ -681,8 +681,8 @@ DocsCollector.collect('java.util.ArrayList', [
 				[/* text */ 't', ` instance.  (The
  elements themselves are not copied.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this `],
 				[/* inline code block */ 'i', `ArrayList`],
@@ -703,8 +703,8 @@ DocsCollector.collect('java.util.ArrayList', [
 				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
  APIs.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing all of the elements in this list in
          proper sequence`]
@@ -721,8 +721,8 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this list in proper sequence`]
 			]
@@ -812,8 +812,8 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a list iterator over the elements in this list (in proper
          sequence)`]
@@ -888,8 +888,8 @@ DocsCollector.collect('java.util.ArrayList', [
  characteristic values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -925,8 +925,8 @@ DocsCollector.collect('java.util.ArrayList', [
 				[/* text */ 't', `Removes all of the elements from this list.  The list will
  be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'ensureCapacity(int)', [
@@ -942,7 +942,7 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `the desired minimum capacity`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEach(java.util.function.Consumer)', [
@@ -986,9 +986,10 @@ DocsCollector.collect('java.util.ArrayList', [
 				[/* inline code block */ 'i', `ArrayList`],
 				[/* text */ 't', ` instance.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

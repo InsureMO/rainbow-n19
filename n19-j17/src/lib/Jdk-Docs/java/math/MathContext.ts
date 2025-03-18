@@ -208,7 +208,7 @@ DocsCollector.collect('java.math.MathContext', [
          be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the specified `],
@@ -227,8 +227,8 @@ DocsCollector.collect('java.math.MathContext', [
 				[/* text */ 't', ` setting.
  This value is always non-negative.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `int`],
@@ -244,8 +244,8 @@ DocsCollector.collect('java.math.MathContext', [
 				[/* inline code block */ 'i', `MathContext`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `hash code for this `],
 				[/* inline code block */ 'i', `MathContext`]
@@ -313,8 +313,8 @@ DocsCollector.collect('java.math.MathContext', [
  this class.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `String`],
@@ -350,8 +350,8 @@ DocsCollector.collect('java.math.MathContext', [
 				[/* reference */ 'r', `java.math.RoundingMode#UP`, `RoundingMode.UP`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `RoundingMode`],
@@ -362,4 +362,5 @@ DocsCollector.collect('java.math.MathContext', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

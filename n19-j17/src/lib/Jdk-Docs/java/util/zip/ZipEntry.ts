@@ -60,8 +60,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 				[/* text */ 't', `Returns true if this is a directory entry. A directory entry is
  defined to be one whose name ends with a '/'.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is a directory entry`]
 			]
@@ -70,8 +70,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 			[/* method description */
 				[/* text */ 't', `Returns the extra field data for the entry.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the extra field data for the entry, or null if none`]
 			]
@@ -80,8 +80,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 			[/* method description */
 				[/* text */ 't', `Returns the compression method of the entry.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the compression method of the entry, or -1 if not specified`]
 			]
@@ -90,8 +90,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code value for this entry.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -100,8 +100,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 			[/* method description */
 				[/* text */ 't', `Returns a copy of this entry.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -110,8 +110,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 			[/* method description */
 				[/* text */ 't', `Returns the comment string for the entry.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comment string for the entry, or null if none`]
 			]
@@ -120,8 +120,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the entry.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the entry`]
 			]
@@ -130,8 +130,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of the ZIP entry.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
@@ -149,8 +149,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
  or ZIP file formatted stream.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the creation time of the entry, null if not specified`]
 			]
@@ -168,8 +168,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
  or ZIP file formatted stream.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The last access time of the entry, null if not specified`]
 			]
@@ -194,8 +194,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
  the standard MS-DOS formatted date and time to the epoch time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The last modification time of the entry, null if not specified`]
 			]
@@ -225,8 +225,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
  is used to convert the UTC time to local date-time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The last modification time of the entry in local date-time`]
 			]
@@ -331,8 +331,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 				[/* block */ 'b', ` In the case of a stored entry, the compressed size will be the same
  as the uncompressed size of the entry.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the size of the compressed entry data, or -1 if not known`]
 			]
@@ -341,8 +341,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 			[/* method description */
 				[/* text */ 't', `Returns the CRC-32 checksum of the uncompressed entry data.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the CRC-32 checksum of the uncompressed entry data, or -1 if
  not known`]
@@ -352,8 +352,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 			[/* method description */
 				[/* text */ 't', `Returns the uncompressed size of the entry data.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the uncompressed size of the entry data, or -1 if not known`]
 			]
@@ -375,8 +375,8 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
  epoch time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The last modification time of the entry in milliseconds
           since the epoch, or -1 if not specified`]
@@ -396,7 +396,7 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 					[/* text */ 't', `the comment string`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setCompressedSize(long)', [
@@ -408,7 +408,7 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 					[/* text */ 't', `the compressed size to set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setCrc(long)', [
@@ -525,7 +525,7 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
          since the epoch`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setTimeLocal(java.time.LocalDateTime)', [
@@ -568,8 +568,9 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 					[/* text */ 't', `The last modification time of the entry in local date-time`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

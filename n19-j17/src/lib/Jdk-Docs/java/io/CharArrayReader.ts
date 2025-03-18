@@ -92,8 +92,8 @@ DocsCollector.collect('java.io.CharArrayReader', [
 			[/* method description */
 				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
 			]
@@ -103,7 +103,7 @@ DocsCollector.collect('java.io.CharArrayReader', [
 				[/* text */ 't', `Tells whether this stream is ready to be read.  Character-array readers
  are always ready to be read.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -119,7 +119,7 @@ DocsCollector.collect('java.io.CharArrayReader', [
 			[/* method description */
 				[/* text */ 't', `Reads a single character.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -232,8 +232,8 @@ DocsCollector.collect('java.io.CharArrayReader', [
  Closing a previously closed stream has no effect. This method will block
  while there is another thread blocking on the reader.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'mark(int)', [
@@ -262,7 +262,7 @@ DocsCollector.collect('java.io.CharArrayReader', [
 				[/* text */ 't', `Resets the stream to the most recent mark, or to the beginning if it has
  never been marked.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -271,4 +271,5 @@ DocsCollector.collect('java.io.CharArrayReader', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

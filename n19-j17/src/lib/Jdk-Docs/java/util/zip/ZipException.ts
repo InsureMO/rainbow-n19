@@ -5,7 +5,7 @@ DocsCollector.collect('java.util.zip.ZipException', [
 	[/* class description */
 		[/* text */ 't', `Signals that a Zip exception of some sort has occurred.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -16,7 +16,7 @@ DocsCollector.collect('java.util.zip.ZipException', [
 				[/* text */ 't', `
  as its error detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -34,5 +34,6 @@ DocsCollector.collect('java.util.zip.ZipException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

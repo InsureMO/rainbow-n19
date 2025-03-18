@@ -81,7 +81,7 @@ DocsCollector.collect('java.util.Random', [
  by security-sensitive applications.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -89,7 +89,7 @@ DocsCollector.collect('java.util.Random', [
  the seed of the random number generator to a value very likely
  to be distinct from any other invocation of this constructor.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(long)', [
@@ -170,7 +170,7 @@ DocsCollector.collect('java.util.Random', [
 					[/* text */ 't', `random bits`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next pseudorandom value from this random number
          generator's sequence`]
@@ -195,8 +195,8 @@ DocsCollector.collect('java.util.Random', [
 				[/* text */ 't', ` are produced with
  (approximately) equal probability.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next pseudorandom, uniformly distributed
          `],
@@ -233,8 +233,8 @@ DocsCollector.collect('java.util.Random', [
  pseudorandomly generated and returned.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next pseudorandom, uniformly distributed `],
 				[/* inline code block */ 'i', `double`],
@@ -290,8 +290,8 @@ DocsCollector.collect('java.util.Random', [
  produced with (approximately) equal probability.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next pseudorandom, uniformly distributed `],
 				[/* inline code block */ 'i', `float`],
@@ -322,8 +322,8 @@ DocsCollector.collect('java.util.Random', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` values are produced with (approximately) equal probability.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next pseudorandom, uniformly distributed `],
 				[/* inline code block */ 'i', `int`],
@@ -388,8 +388,8 @@ DocsCollector.collect('java.util.Random', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of pseudorandom `],
 				[/* inline code block */ 'i', `double`],
@@ -568,8 +568,8 @@ DocsCollector.collect('java.util.Random', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of pseudorandom `],
 				[/* inline code block */ 'i', `int`],
@@ -754,8 +754,8 @@ DocsCollector.collect('java.util.Random', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of pseudorandom `],
 				[/* inline code block */ 'i', `long`],
@@ -946,8 +946,8 @@ DocsCollector.collect('java.util.Random', [
 				[/* text */ 't', ` value is
  pseudorandomly generated and returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next pseudorandom, uniformly distributed `],
 				[/* inline code block */ 'i', `long`],
@@ -983,8 +983,8 @@ DocsCollector.collect('java.util.Random', [
 					[/* text */ 't', `, is pseudorandomly generated and returned.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next pseudorandom, Gaussian ("normally") distributed
          `],
@@ -1047,7 +1047,7 @@ DocsCollector.collect('java.util.Random', [
 					[/* text */ 't', `the initial seed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'nextBytes(byte[])', [
@@ -1069,4 +1069,5 @@ DocsCollector.collect('java.util.Random', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -5,13 +5,13 @@ DocsCollector.collect('java.io.CharConversionException', [
 	[/* class description */
 		[/* text */ 't', `Base class for character conversion exceptions.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `This provides no detailed message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -26,5 +26,6 @@ DocsCollector.collect('java.io.CharConversionException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -203,13 +203,13 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
  require implementations of the locale sensitive services must explicitly specify
  "SPI" in order for the Java runtime to load them from the classpath.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Initializes a new locale service provider.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager has been installed and it denies
@@ -239,8 +239,8 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
 					[/* text */ 't', ` objects only differing in their extensions.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An array of all locales for which this locale service provider
  can provide localized objects or names.`]
@@ -320,4 +320,5 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

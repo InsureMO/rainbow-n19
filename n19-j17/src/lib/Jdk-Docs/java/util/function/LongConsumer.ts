@@ -26,8 +26,8 @@ DocsCollector.collect('java.util.function.LongConsumer', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accept(long)', [
 			[/* method description */
@@ -38,7 +38,7 @@ DocsCollector.collect('java.util.function.LongConsumer', [
 					[/* text */ 't', `the input argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'andThen(java.util.function.LongConsumer)', [
@@ -77,4 +77,5 @@ DocsCollector.collect('java.util.function.LongConsumer', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

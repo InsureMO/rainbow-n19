@@ -12,15 +12,15 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
 		[/* text */ 't', ` allowing explicit tests
  and actions if the value is available.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'command()', [
 			[/* method description */
 				[/* text */ 't', `Returns the executable pathname of the process.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Optional<String>`],
@@ -44,8 +44,8 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
  best-effort, platform dependent representation of the command line.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Optional<String>`],
@@ -57,8 +57,8 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
 			[/* method description */
 				[/* text */ 't', `Return the user of the process.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Optional<String>`],
@@ -69,8 +69,8 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
 			[/* method description */
 				[/* text */ 't', `Returns an array of Strings of the arguments of the process.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Optional<String[]>`],
@@ -81,8 +81,8 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
 			[/* method description */
 				[/* text */ 't', `Returns the total cputime accumulated of the process.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Optional<Duration>`],
@@ -93,8 +93,8 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
 			[/* method description */
 				[/* text */ 't', `Returns the start time of the process.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Optional<Instant>`],
@@ -102,4 +102,5 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

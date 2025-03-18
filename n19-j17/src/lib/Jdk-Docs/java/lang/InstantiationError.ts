@@ -13,7 +13,7 @@ DocsCollector.collect('java.lang.InstantiationError', [
  only occur at run time if the definition of a class has
  incompatibly changed.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -21,7 +21,7 @@ DocsCollector.collect('java.lang.InstantiationError', [
 				[/* inline code block */ 'i', `InstantiationError`],
 				[/* text */ 't', ` with no detail  message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -39,5 +39,6 @@ DocsCollector.collect('java.lang.InstantiationError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -205,14 +205,14 @@ DocsCollector.collect('java.text.Format', [
  If multiple threads access a format concurrently, it must be synchronized
  externally.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -351,8 +351,8 @@ DocsCollector.collect('java.text.Format', [
 			[/* method description */
 				[/* text */ 't', `Creates and returns a copy of this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -442,4 +442,5 @@ DocsCollector.collect('java.text.Format', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

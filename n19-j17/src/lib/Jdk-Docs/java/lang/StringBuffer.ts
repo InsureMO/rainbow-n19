@@ -128,14 +128,14 @@ DocsCollector.collect('java.lang.StringBuffer', [
  it performs no synchronization.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a string buffer with no characters in it and an
  initial capacity of 16 characters.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -224,7 +224,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `the substring to search for.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first occurrence of the specified substring,
           or `],
@@ -263,7 +263,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `the substring to search for.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the last occurrence of the specified substring,
           or `],
@@ -648,8 +648,8 @@ DocsCollector.collect('java.lang.StringBuffer', [
  that can be stored (including already written characters), beyond which
  an allocation will occur.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current capacity`]
 			]
@@ -842,7 +842,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', ` to be compared with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -897,7 +897,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `the index from which to start the search.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first occurrence of the specified substring,
           starting at the specified index,
@@ -938,7 +938,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `the index to start the search from.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the last occurrence of the specified substring,
           searching backward from the specified index,
@@ -951,8 +951,8 @@ DocsCollector.collect('java.lang.StringBuffer', [
 			[/* method description */
 				[/* text */ 't', `Returns the length (character count).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of the sequence of characters currently
           represented by this object`]
@@ -1153,8 +1153,8 @@ DocsCollector.collect('java.lang.StringBuffer', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this sequence of characters.`]
 			]
@@ -1185,7 +1185,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1224,7 +1224,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1258,7 +1258,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `the characters to be appended.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1354,7 +1354,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1385,7 +1385,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1416,7 +1416,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1470,7 +1470,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', ` to append.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1594,7 +1594,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1650,7 +1650,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `a string.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1730,7 +1730,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', ` to append.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1761,7 +1761,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -1802,7 +1802,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `a Unicode code point`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -2472,8 +2472,8 @@ DocsCollector.collect('java.lang.StringBuffer', [
  "\\uDC00\\uD800" produces "\\uD800\\uDC00" which is
  a valid surrogate pair.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this object.`]
 			]
@@ -2512,7 +2512,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `the minimum desired capacity.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getChars(int,int,char[],int)', [
@@ -2720,9 +2720,10 @@ DocsCollector.collect('java.lang.StringBuffer', [
 				[/* reference */ 'r', `#capacity()`, `capacity()`],
 				[/* text */ 't', ` method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

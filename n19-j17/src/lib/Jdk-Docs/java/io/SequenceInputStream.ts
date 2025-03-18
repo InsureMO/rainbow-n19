@@ -14,7 +14,7 @@ DocsCollector.collect('java.io.SequenceInputStream', [
  and so on, until end of file is reached
  on the last of the contained input streams.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.InputStream,java.io.InputStream)', [
 			[/* constructor description */
@@ -93,7 +93,7 @@ DocsCollector.collect('java.io.SequenceInputStream', [
  input stream and returns the result.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -138,7 +138,7 @@ DocsCollector.collect('java.io.SequenceInputStream', [
  substream.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -241,7 +241,7 @@ DocsCollector.collect('java.io.SequenceInputStream', [
 					[/* text */ 't', ` method returns.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -250,4 +250,5 @@ DocsCollector.collect('java.io.SequenceInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -23,6 +23,7 @@ DocsCollector.collect('java.security.PublicKey', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

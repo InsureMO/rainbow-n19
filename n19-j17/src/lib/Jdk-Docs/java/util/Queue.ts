@@ -220,8 +220,8 @@ DocsCollector.collect('java.util.Queue', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'add(java.lang.Object)', [
 			[/* method description */
@@ -308,7 +308,7 @@ DocsCollector.collect('java.util.Queue', [
 				[/* text */ 't', ` only in that it throws an exception
  if this queue is empty.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this queue is empty`]
@@ -325,8 +325,8 @@ DocsCollector.collect('java.util.Queue', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this queue is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of this queue, or `],
 				[/* inline code block */ 'i', `null`],
@@ -340,8 +340,8 @@ DocsCollector.collect('java.util.Queue', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this queue is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of this queue, or `],
 				[/* inline code block */ 'i', `null`],
@@ -356,7 +356,7 @@ DocsCollector.collect('java.util.Queue', [
 				[/* text */ 't', ` only in that it throws an exception if
  this queue is empty.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this queue is empty`]
@@ -367,4 +367,5 @@ DocsCollector.collect('java.util.Queue', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

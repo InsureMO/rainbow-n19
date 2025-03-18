@@ -21,8 +21,8 @@ DocsCollector.collect('java.lang.reflect.TypeVariable', [
  As a consequence, users of type variables must not rely on the identity
  of instances of classes implementing this interface.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getGenericDeclaration()', [
 			[/* method description */
@@ -31,8 +31,8 @@ DocsCollector.collect('java.lang.reflect.TypeVariable', [
 				[/* text */ 't', ` object representing the
  generic declaration declared for this type variable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the generic declaration declared for this type variable.`]
 			]
@@ -48,8 +48,8 @@ DocsCollector.collect('java.lang.reflect.TypeVariable', [
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of objects representing the upper bound(s) of the type variable`]
 			]
@@ -79,7 +79,7 @@ DocsCollector.collect('java.lang.reflect.TypeVariable', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
 					[/* text */ 't', `if any of the
@@ -102,11 +102,12 @@ DocsCollector.collect('java.lang.reflect.TypeVariable', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of this type variable, as it occurs in the source code.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this type variable, as it appears in the source code`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

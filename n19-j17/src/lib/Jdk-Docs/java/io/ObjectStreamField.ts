@@ -6,7 +6,7 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 		[/* text */ 't', `A description of a Serializable field from a Serializable class.  An array
  of ObjectStreamFields is used to declare the Serializable fields of a class.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.Class)', [
 			[/* constructor description */
@@ -64,15 +64,15 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 					[/* text */ 't', `the offset of the field`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'isPrimitive()', [
 			[/* method description */
 				[/* text */ 't', `Return true if this field has a primitive type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this field corresponds to a primitive type`]
 			]
@@ -82,8 +82,8 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 				[/* text */ 't', `Returns boolean value indicating whether or not the serializable field
  represented by this ObjectStreamField instance is unshared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this field is unshared`]
@@ -107,8 +107,8 @@ DocsCollector.collect('java.io.ObjectStreamField', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the typecode of the serializable field`]
 			]
@@ -127,7 +127,7 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 					[/* text */ 't', `the object to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a negative integer, zero, or a positive integer as this object
           is less than, equal to, or greater than the specified object.`]
@@ -137,8 +137,8 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 			[/* method description */
 				[/* text */ 't', `Offset of field within instance data.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset of this field`]
 			]
@@ -158,8 +158,8 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 				[/* text */ 't', ` object for the type of the field is
  returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Class`],
@@ -171,8 +171,8 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 			[/* method description */
 				[/* text */ 't', `Get the name of this field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `String`],
@@ -184,8 +184,8 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 			[/* method description */
 				[/* text */ 't', `Return the JVM type signature.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `null if this field has a primitive type.`]
 			]
@@ -194,11 +194,12 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 			[/* method description */
 				[/* text */ 't', `Return a string that describes this field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

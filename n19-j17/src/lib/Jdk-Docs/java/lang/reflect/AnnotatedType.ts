@@ -17,8 +17,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedType', [
 		[/* text */ 't', `) as the entity being
  potentially annotated is a type.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
@@ -63,8 +63,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedType', [
 				[/* block */ 'b', `Note that any annotations returned by this method are type
  annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations present on this element`]
 			]
@@ -87,8 +87,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedType', [
 				[/* block */ 'b', `Note that any annotations returned by this method are type
  annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations directly present on this element`]
 			]
@@ -97,8 +97,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedType', [
 			[/* method description */
 				[/* text */ 't', `Returns the underlying type that this annotated type represents.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the type this annotated type represents`]
 			]
@@ -141,7 +141,7 @@ DocsCollector.collect('java.lang.reflect.AnnotatedType', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
 					[/* text */ 't', `if the owner type
@@ -162,4 +162,5 @@ DocsCollector.collect('java.lang.reflect.AnnotatedType', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

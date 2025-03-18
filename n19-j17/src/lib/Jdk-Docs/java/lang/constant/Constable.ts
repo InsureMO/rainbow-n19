@@ -101,8 +101,8 @@ DocsCollector.collect('java.lang.constant.Constable', [
  combinators.)`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'describeConstable()', [
 			[/* method description */
@@ -114,8 +114,8 @@ DocsCollector.collect('java.lang.constant.Constable', [
 				[/* text */ 't', `
  if one cannot be constructed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -126,4 +126,5 @@ DocsCollector.collect('java.lang.constant.Constable', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

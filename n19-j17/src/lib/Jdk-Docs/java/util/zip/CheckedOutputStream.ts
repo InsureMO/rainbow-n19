@@ -7,7 +7,7 @@ DocsCollector.collect('java.util.zip.CheckedOutputStream', [
  written. The checksum can then be used to verify the integrity of
  the output data.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.OutputStream,java.util.zip.Checksum)', [
 			[/* constructor description */
@@ -29,8 +29,8 @@ DocsCollector.collect('java.util.zip.CheckedOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Returns the Checksum for this output stream.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Checksum`]
 			]
@@ -75,4 +75,5 @@ DocsCollector.collect('java.util.zip.CheckedOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

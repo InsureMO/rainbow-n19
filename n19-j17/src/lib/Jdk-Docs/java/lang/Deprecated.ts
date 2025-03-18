@@ -60,7 +60,8 @@ DocsCollector.collect('java.lang.Deprecated', [
  element was annotated, there was no specific intent to remove it.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

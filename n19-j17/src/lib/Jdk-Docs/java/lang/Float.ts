@@ -294,7 +294,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `the object to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -314,8 +314,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the value represented by this object is
@@ -336,8 +336,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the value represented by this object is
@@ -355,8 +355,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', ` after
  a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `float`],
@@ -374,8 +374,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', `
  after a widening primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `float`],
@@ -392,8 +392,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* inline code block */ 'i', `Float`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `float`],
@@ -468,7 +468,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', ` to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -513,8 +513,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', `
  object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -528,8 +528,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', ` after
  a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `float`],
@@ -550,7 +550,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `ignored`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* reference */ 'r', `java.lang.Float`, `Float`],
@@ -572,8 +572,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* inline code block */ 'i', `toString`],
 				[/* text */ 't', ` of one argument.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `String`],
@@ -587,8 +587,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance, which is the instance itself.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -606,8 +606,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', ` after a
  narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `float`],
@@ -625,8 +625,8 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', `
  after a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `float`],
@@ -652,7 +652,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', ` value to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the argument is a finite
@@ -675,7 +675,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `the value to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the argument is positive infinity or
@@ -698,7 +698,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `the value to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the argument is NaN;
@@ -724,7 +724,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the greater of `],
 				[/* inline code block */ 'i', `a`],
@@ -749,7 +749,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the smaller of `],
 				[/* inline code block */ 'i', `a`],
@@ -808,7 +808,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sum of `],
 				[/* inline code block */ 'i', `a`],
@@ -839,7 +839,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', ` to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -932,7 +932,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `a floating-point number.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the bits that represent the floating-point number.`]
 			]
@@ -951,7 +951,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `the value to hash`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for a `],
 				[/* inline code block */ 'i', `float`],
@@ -981,7 +981,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `a float value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Float`],
@@ -1573,7 +1573,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', ` to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hex string representation of the argument.`]
 			]
@@ -1778,7 +1778,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `the float to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the argument.`]
 			]
@@ -1910,7 +1910,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `an integer.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `float`],
@@ -1988,10 +1988,11 @@ DocsCollector.collect('java.lang.Float', [
 					[/* text */ 't', `a floating-point number.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the bits that represent the floating-point number.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

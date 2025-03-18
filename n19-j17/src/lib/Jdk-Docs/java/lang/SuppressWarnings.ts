@@ -22,7 +22,8 @@ DocsCollector.collect('java.lang.SuppressWarnings', [
  suppress a warning in a particular method, you should annotate that
  method rather than its class.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -5,7 +5,7 @@ DocsCollector.collect('java.io.SyncFailedException', [
 	[/* class description */
 		[/* text */ 't', `Signals that a sync operation has failed.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -20,5 +20,6 @@ DocsCollector.collect('java.io.SyncFailedException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -72,7 +72,7 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* inline code block */ 'i', `PipedOutputStream`],
 				[/* text */ 't', ` before being used.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -192,7 +192,7 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* text */ 't', `Returns the number of bytes that can be read from this input
  stream without blocking.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -228,7 +228,7 @@ DocsCollector.collect('java.io.PipedInputStream', [
  This method blocks until input data is available, the end of the
  stream is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is
@@ -322,7 +322,7 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* text */ 't', `Closes this piped input stream and releases any system resources
  associated with the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -389,4 +389,5 @@ DocsCollector.collect('java.io.PipedInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

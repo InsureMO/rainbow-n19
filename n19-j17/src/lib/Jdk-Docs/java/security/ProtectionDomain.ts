@@ -15,7 +15,7 @@ DocsCollector.collect('java.security.ProtectionDomain', [
  mapped to a set of permissions by the current Policy whenever a permission
  is checked.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.security.CodeSource,java.security.PermissionCollection)', [
 			[/* constructor description */
@@ -132,7 +132,7 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 					[/* text */ 't', `the Permission object to check.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if `],
 				[/* inline code block */ 'i', `perm`],
@@ -147,8 +147,8 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 				[/* text */ 't', ` at the time of
  permission checking.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this domain contains only static permissions.`]
 			]
@@ -157,8 +157,8 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 			[/* method description */
 				[/* text */ 't', `Returns the ClassLoader of this domain.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ClassLoader of this domain which may be null.`]
 			]
@@ -167,8 +167,8 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 			[/* method description */
 				[/* text */ 't', `Returns the CodeSource of this domain.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the CodeSource of this domain which may be null.`]
 			]
@@ -177,8 +177,8 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 			[/* method description */
 				[/* text */ 't', `Returns the static permissions granted to this domain.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the static set of permissions for this domain which may be null.`]
 			]
@@ -187,8 +187,8 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 			[/* method description */
 				[/* text */ 't', `Returns an array of principals for this domain.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a non-null array of principals for this domain.
  Returns a new array each time this method is called.`]
@@ -198,11 +198,12 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 			[/* method description */
 				[/* text */ 't', `Convert a ProtectionDomain to a String.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

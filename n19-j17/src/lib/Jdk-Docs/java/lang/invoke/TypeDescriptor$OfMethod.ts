@@ -12,8 +12,8 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfMethod', [
 		[/* text */ 't', `;
  otherwise they cannot be described nominally.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'parameterType(int)', [
 			[/* method description */
@@ -40,8 +40,8 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfMethod', [
 				[/* text */ 't', `Return a field descriptor describing the return type of the method type described
  by this descriptor`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a field descriptor for the return type`]
 			]
@@ -51,8 +51,8 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfMethod', [
 				[/* text */ 't', `Return an array of field descriptors for the parameter types of the method type
  described by this descriptor`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `field descriptors for the parameter types`]
 			]
@@ -61,8 +61,8 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfMethod', [
 			[/* method description */
 				[/* text */ 't', `Return the number of parameters in the method type`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of parameters`]
 			]
@@ -72,8 +72,8 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfMethod', [
 				[/* text */ 't', `Return an immutable list of field descriptors for the parameter types of the method type
  described by this descriptor`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `field descriptors for the parameter types`]
 			]
@@ -160,4 +160,5 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfMethod', [
 		]],
 		[/* method */ 'insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField...)', UDF]
 	],
+	/* enum values */ UDF
 ]);

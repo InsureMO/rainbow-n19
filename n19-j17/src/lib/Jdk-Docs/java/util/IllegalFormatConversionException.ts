@@ -16,7 +16,7 @@ DocsCollector.collect('java.util.IllegalFormatConversionException', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(char,java.lang.Class)', [
 			[/* constructor description */
@@ -39,8 +39,8 @@ DocsCollector.collect('java.util.IllegalFormatConversionException', [
 			[/* method description */
 				[/* text */ 't', `Returns the inapplicable conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The inapplicable conversion`]
 			]
@@ -49,12 +49,13 @@ DocsCollector.collect('java.util.IllegalFormatConversionException', [
 			[/* method description */
 				[/* text */ 't', `Returns the class of the mismatched argument.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The class of the mismatched argument`]
 			]
 		]],
 		[/* method */ 'getMessage()', UDF]
 	],
+	/* enum values */ UDF
 ]);

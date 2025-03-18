@@ -148,7 +148,7 @@ DocsCollector.collect('java.util.Date', [
  not fall within the indicated ranges; for example, a date may be
  specified as January 32 and is interpreted as meaning February 1.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -158,7 +158,7 @@ DocsCollector.collect('java.util.Date', [
  it represents the time at which it was allocated, measured to the
  nearest millisecond.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int,int,int)', [
@@ -401,7 +401,7 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `the object to compare with.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -457,8 +457,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', ` object, as
  interpreted in the local time zone.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day of the month represented by this date.`]
 			]
@@ -489,8 +489,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', ` object,
  as interpreted in the local time zone.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day of the week represented by this date.`]
 			]
@@ -511,8 +511,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', `
  object, as interpreted in the local time zone.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hour represented by this date.`]
 			]
@@ -527,8 +527,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* inline code block */ 'i', `59`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of minutes past the hour represented by this date.`]
 			]
@@ -548,8 +548,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* inline code block */ 'i', `0`],
 				[/* text */ 't', ` representing January.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month represented by this date.`]
 			]
@@ -569,8 +569,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', ` can only occur on those
  Java Virtual Machines that take leap seconds into account.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of seconds past the minute represented by this date.`]
 			]
@@ -614,8 +614,8 @@ DocsCollector.collect('java.util.Date', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the time-zone offset, in minutes, for the current time zone.`]
 			]
@@ -629,8 +629,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', ` object, as interpreted in the local
  time zone.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the year represented by this date, minus 1900.`]
 			]
@@ -652,8 +652,8 @@ DocsCollector.collect('java.util.Date', [
 					]]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -662,8 +662,8 @@ DocsCollector.collect('java.util.Date', [
 			[/* method description */
 				[/* text */ 't', `Return a copy of this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -745,8 +745,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* block */ 'b', `
  The result does not depend on the local time zone.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this date, using the Internet GMT
           conventions.`]
@@ -767,8 +767,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', `
  function of ISO C.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this date, using the locale
           conventions.`]
@@ -863,8 +863,8 @@ DocsCollector.collect('java.util.Date', [
 					]]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this date.`]
 			]
@@ -887,8 +887,8 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an instant representing the same point on the time-line as
   this `],
@@ -903,8 +903,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* inline code block */ 'i', `Date`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of milliseconds since January 1, 1970, 00:00:00 GMT
           represented by this date.`]
@@ -1212,7 +1212,7 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `a string to be parsed as a date.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of milliseconds since January 1, 1970, 00:00:00 GMT
           represented by the string argument.`]
@@ -1251,7 +1251,7 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `the seconds between 0-59.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of milliseconds since January 1, 1970, 00:00:00 GMT for
           the date and time specified by the arguments.`]
@@ -1277,7 +1277,7 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `the day of the month value between 1-31.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setHours(int)', [
@@ -1297,7 +1297,7 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `the hour value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMinutes(int)', [
@@ -1317,7 +1317,7 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `the value of the minutes.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMonth(int)', [
@@ -1337,7 +1337,7 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `the month value between 0-11.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setSeconds(int)', [
@@ -1357,7 +1357,7 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `the seconds value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setTime(long)', [
@@ -1374,7 +1374,7 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `the number of milliseconds.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setYear(int)', [
@@ -1397,8 +1397,9 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', `the year value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

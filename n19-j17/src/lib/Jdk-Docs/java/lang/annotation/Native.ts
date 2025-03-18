@@ -10,7 +10,8 @@ DocsCollector.collect('java.lang.annotation.Native', [
  header files to determine whether a header file is required, and
  if so, what declarations it should contain.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

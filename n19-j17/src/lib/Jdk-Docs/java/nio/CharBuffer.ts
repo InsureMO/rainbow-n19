@@ -262,15 +262,15 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isDirect()', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this char buffer is direct.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this buffer is direct`]
@@ -283,7 +283,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				[/* text */ 't', ` method.  Reads the char at this buffer's
  current position, and then increments the position.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.BufferUnderflowException', [/* throw description */
 					[/* text */ 't', `If the buffer's current position is not smaller than its limit`]
@@ -335,8 +335,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
  byte buffer at the moment that the view is created.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer's byte order`]
 			]
@@ -370,8 +370,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', ` method.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new, read-only char buffer`]
 			]
@@ -423,7 +423,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
  method. `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
 					[/* text */ 't', `If this buffer is read-only`]
@@ -454,8 +454,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
  The new buffer will be direct if, and only if, this buffer is direct, and
  it will be read-only if, and only if, this buffer is read-only.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new char buffer`]
 			]
@@ -547,8 +547,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
  The new buffer will be direct if, and only if, this buffer is direct, and
  it will be read-only if, and only if, this buffer is read-only.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new char buffer`]
 			]
@@ -713,7 +713,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', `The object to which this buffer is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this buffer is equal to the
@@ -738,8 +738,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this buffer
@@ -752,8 +752,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this character buffer is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if there are `],
@@ -808,7 +808,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
  array.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
 					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
@@ -849,7 +849,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
  array.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
 					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
@@ -877,8 +877,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', `. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The length of this character buffer`]
 			]
@@ -909,8 +909,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
  is named as if it did because it will most often be used in situations
  in which that might as well be the case. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -950,8 +950,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
  one place to another.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -968,7 +968,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
          and no larger than this buffer's capacity`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -977,8 +977,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Sets this buffer's mark at its position.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -994,7 +994,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
          and no larger than the current limit`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -1084,8 +1084,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				[/* block */ 'b', ` Invoking this method neither changes nor discards the mark's
  value. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -1112,8 +1112,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -1152,7 +1152,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', `the object to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A negative integer, zero, or a positive integer as this buffer
           is less than, equal to, or greater than the given buffer`]
@@ -1180,8 +1180,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
  to use buffers as keys in hash maps or similar data structures unless it
  is known that their contents will not change.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The current hash code of this buffer`]
 			]
@@ -1213,7 +1213,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', `The byte buffer to be tested for a mismatch with this buffer`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The relative index of the first mismatch between this and the
           given buffer, otherwise -1 if no mismatch.`]
@@ -1258,8 +1258,8 @@ DocsCollector.collect('java.nio.CharBuffer', [
  change the buffer's position. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The specified string`]
 			]
@@ -2248,7 +2248,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', `The array that will back this buffer`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new char buffer`]
 			]
@@ -2343,7 +2343,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
          be created`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new character buffer`]
 			]
@@ -2404,4 +2404,5 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

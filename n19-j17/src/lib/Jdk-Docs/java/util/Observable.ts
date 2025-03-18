@@ -2,14 +2,14 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.util.Observable', [
-	/* class description */ UDF,
-	/* fields */ UDF,
+	/* class description */,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Construct an Observable with zero Observers.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -28,8 +28,8 @@ DocsCollector.collect('java.util.Observable', [
 				[/* inline code block */ 'i', `notifyObservers`],
 				[/* text */ 't', ` methods.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setChanged()', [
@@ -43,16 +43,16 @@ DocsCollector.collect('java.util.Observable', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'hasChanged()', [
 			[/* method description */
 				[/* text */ 't', `Tests if this object has changed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the `],
@@ -73,8 +73,8 @@ DocsCollector.collect('java.util.Observable', [
 				[/* inline code block */ 'i', `Observable`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of observers of this object.`]
 			]
@@ -110,15 +110,15 @@ DocsCollector.collect('java.util.Observable', [
 					[/* text */ 't', `the observer to be deleted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'deleteObservers()', [
 			[/* method description */
 				[/* text */ 't', `Clears the observer list so that this object no longer has any observers.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'notifyObservers()', [
@@ -148,8 +148,8 @@ DocsCollector.collect('java.util.Observable', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'notifyObservers(java.lang.Object)', [
@@ -178,8 +178,9 @@ DocsCollector.collect('java.util.Observable', [
 					[/* text */ 't', `any object.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

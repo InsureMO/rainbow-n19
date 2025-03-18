@@ -53,8 +53,8 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 		[/* text */ 't', `.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'toChronoUnit()', [
 			[/* method description */
@@ -64,8 +64,8 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 				[/* inline code block */ 'i', `ChronoUnit`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the converted equivalent ChronoUnit`]
 			]
@@ -152,7 +152,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 					[/* text */ 't', ` argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the converted duration in this unit,
  or `],
@@ -175,7 +175,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 					[/* text */ 't', `the duration`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the converted duration`]
 			]
@@ -192,7 +192,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 					[/* text */ 't', `the duration`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the converted duration,
  or `],
@@ -215,7 +215,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 					[/* text */ 't', `the duration`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the converted duration,
  or `],
@@ -238,7 +238,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 					[/* text */ 't', `the duration`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the converted duration,
  or `],
@@ -261,7 +261,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 					[/* text */ 't', `the duration`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the converted duration,
  or `],
@@ -284,7 +284,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 					[/* text */ 't', `the duration`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the converted duration,
  or `],
@@ -307,7 +307,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 					[/* text */ 't', `the duration`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the converted duration,
  or `],
@@ -379,8 +379,8 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
@@ -488,6 +488,43 @@ the order they are declared.`]
 				]]
 			],
 			/* return */ UDF
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'NANOSECONDS', [
+			[/* enum value description */
+				[/* text */ 't', `Time unit representing one thousandth of a microsecond.`]
+			],
+		]],
+		[/* enum value */ 'MICROSECONDS', [
+			[/* enum value description */
+				[/* text */ 't', `Time unit representing one thousandth of a millisecond.`]
+			],
+		]],
+		[/* enum value */ 'MILLISECONDS', [
+			[/* enum value description */
+				[/* text */ 't', `Time unit representing one thousandth of a second.`]
+			],
+		]],
+		[/* enum value */ 'SECONDS', [
+			[/* enum value description */
+				[/* text */ 't', `Time unit representing one second.`]
+			],
+		]],
+		[/* enum value */ 'MINUTES', [
+			[/* enum value description */
+				[/* text */ 't', `Time unit representing sixty seconds.`]
+			],
+		]],
+		[/* enum value */ 'HOURS', [
+			[/* enum value description */
+				[/* text */ 't', `Time unit representing sixty minutes.`]
+			],
+		]],
+		[/* enum value */ 'DAYS', [
+			[/* enum value description */
+				[/* text */ 't', `Time unit representing twenty four hours.`]
+			],
 		]]
 	],
 ]);

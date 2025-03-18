@@ -9,7 +9,7 @@ DocsCollector.collect('java.util.InputMismatchException', [
  retrieved does not match the pattern for the expected type, or
  that the token is out of range for the expected type.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -20,7 +20,7 @@ DocsCollector.collect('java.util.InputMismatchException', [
 				[/* text */ 't', `
  as its error message string.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -43,5 +43,6 @@ DocsCollector.collect('java.util.InputMismatchException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

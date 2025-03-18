@@ -108,13 +108,13 @@ DocsCollector.collect('java.security.PermissionCollection', [
  performed while enumerating over that collection.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor for subclasses to call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -129,7 +129,7 @@ DocsCollector.collect('java.security.PermissionCollection', [
 					[/* text */ 't', `the Permission object to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if "permission" is implied by the  permissions in
  the collection, false if not.`]
@@ -139,8 +139,8 @@ DocsCollector.collect('java.security.PermissionCollection', [
 			[/* method description */
 				[/* text */ 't', `Returns an enumeration of all the Permission objects in the collection.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an enumeration of all the Permissions.`]
 			]
@@ -185,8 +185,8 @@ DocsCollector.collect('java.security.PermissionCollection', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this PermissionCollection object is marked as readonly,
  false otherwise.`]
@@ -216,8 +216,8 @@ DocsCollector.collect('java.security.PermissionCollection', [
  hashcode, thus enabling clients to differentiate different
  PermissionCollections object, even if they contain the same permissions.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `information about this PermissionCollection object,
          as described above.`]
@@ -236,8 +236,8 @@ DocsCollector.collect('java.security.PermissionCollection', [
  terminal stream operation is undefined.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of all the Permissions.`]
 			]
@@ -251,9 +251,10 @@ DocsCollector.collect('java.security.PermissionCollection', [
 				[/* inline code block */ 'i', `add`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

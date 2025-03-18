@@ -8,8 +8,8 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 		[/* text */ 't', ` provides information about, and dynamic access to, a
  component of a record class.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
@@ -54,8 +54,8 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 				[/* block */ 'b', `Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations present on this element`]
 			]
@@ -78,8 +78,8 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 				[/* block */ 'b', `Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations directly present on this element`]
 			]
@@ -88,8 +88,8 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 			[/* method description */
 				[/* text */ 't', `Returns the record class which declares this record component.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The record class declaring this record component.`]
 			]
@@ -101,8 +101,8 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 				[/* text */ 't', ` that identifies the declared type for this
  record component.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Class`],
@@ -117,8 +117,8 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 				[/* text */ 't', ` object that represents the use of a type to specify
  the declared type of this record component.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object representing the declared type of this record component`]
 			]
@@ -130,8 +130,8 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 				[/* text */ 't', ` that represents the accessor for this record
  component.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Method`],
@@ -159,7 +159,7 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 				[/* block */ 'b', `If the type of the underlying record component is a type variable or a
  parameterized type, it is created. Otherwise, it is resolved.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
 					[/* text */ 't', `if the generic record component
@@ -192,8 +192,8 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 				[/* text */ 't', ` that describes the generic type signature for
  this record component.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `String`],
@@ -205,8 +205,8 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of this record component.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this record component`]
 			]
@@ -222,11 +222,12 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
     int age
  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string describing this record component`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

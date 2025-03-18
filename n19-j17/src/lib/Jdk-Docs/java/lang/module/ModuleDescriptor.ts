@@ -71,8 +71,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
  multiple concurrent threads.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -102,7 +102,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', `the object to which this object is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a module
@@ -127,8 +127,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', ` modifier. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is an automatic module`]
@@ -152,8 +152,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', ` modifier. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is an open module`]
@@ -198,7 +198,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', `The module descriptor to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A negative integer, zero, or a positive integer if this module
          descriptor is less than, equal to, or greater than the given
@@ -217,8 +217,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', ` method. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hash-code value for this module descriptor`]
 			]
@@ -227,8 +227,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 			[/* method description */
 				[/* block */ 'b', ` Returns the module name. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The module name`]
 			]
@@ -238,8 +238,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* block */ 'b', ` Returns a string containing the module name and, if present, its
  version. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string containing the module name and, if present, its
          version`]
@@ -249,8 +249,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 			[/* method description */
 				[/* block */ 'b', ` Returns a string describing the module. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string describing the module`]
 			]
@@ -259,8 +259,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 			[/* method description */
 				[/* block */ 'b', ` Returns the module version. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This module's version, or an empty `],
 				[/* inline code block */ 'i', `Optional`],
@@ -274,8 +274,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 			[/* method description */
 				[/* block */ 'b', ` Returns the module main class. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The fully qualified class name of the module's main class`]
 			]
@@ -285,8 +285,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* block */ 'b', ` Returns the string with the possibly-unparseable version of the
  module. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string containing the version of the module or an empty
          `],
@@ -308,8 +308,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* block */ 'b', ` If this module is an automatic module then the set of exports
  is empty. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of exported packages`]
 			]
@@ -318,8 +318,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 			[/* method description */
 				[/* block */ 'b', ` Returns the set of module modifiers. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of modifiers`]
 			]
@@ -338,8 +338,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* block */ 'b', ` If this module is an open module or an automatic module then the
  set of open packages is empty. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of open packages`]
 			]
@@ -353,8 +353,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
  services that the module provides. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The possibly-empty unmodifiable set of the services that this
          module provides`]
@@ -384,8 +384,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', `". `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of `],
 				[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Requires`, `ModuleDescriptor.Requires`],
@@ -401,8 +401,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
  as the packages of any service providers, and the package for the main
  class. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of the packages in the module`]
 			]
@@ -416,8 +416,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* block */ 'b', ` If this module is an automatic module then the set of service
  dependences is empty. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of the fully qualified class
           names of the service types used`]
@@ -743,4 +743,5 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

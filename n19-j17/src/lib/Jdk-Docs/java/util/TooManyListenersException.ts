@@ -23,14 +23,14 @@ DocsCollector.collect('java.util.TooManyListenersException', [
  concurrently.
  `]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a TooManyListenersException with no detail message.
  A detail message is a String that describes this particular exception.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -46,5 +46,6 @@ DocsCollector.collect('java.util.TooManyListenersException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

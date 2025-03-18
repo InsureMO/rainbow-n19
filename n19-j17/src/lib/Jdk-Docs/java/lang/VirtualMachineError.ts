@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.VirtualMachineError', [
 		[/* text */ 't', `Thrown to indicate that the Java Virtual Machine is broken or has
  run out of resources necessary for it to continue operating.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.VirtualMachineError', [
 				[/* inline code block */ 'i', `VirtualMachineError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -94,5 +94,6 @@ DocsCollector.collect('java.lang.VirtualMachineError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

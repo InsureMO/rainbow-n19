@@ -8,8 +8,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedParameterizedType', [
  of a parameterized type, whose type arguments may themselves represent
  annotated uses of types.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotatedOwnerType()', [
 			[/* method description */
@@ -32,7 +32,7 @@ DocsCollector.collect('java.lang.reflect.AnnotatedParameterizedType', [
      a primitive type, or void.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
 					[/* text */ 't', `if the owner type
@@ -61,11 +61,12 @@ DocsCollector.collect('java.lang.reflect.AnnotatedParameterizedType', [
  if this annotated type represents a non-parameterized type nested within
  a parameterized type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the potentially annotated actual type arguments of this parameterized type`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

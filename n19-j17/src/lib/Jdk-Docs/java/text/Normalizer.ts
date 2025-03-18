@@ -87,8 +87,8 @@ DocsCollector.collect('java.text.Normalizer', [
  character encodings the Unicode text needs to be normalized to NFC.
  For more usage examples, see the Unicode Standard Annex.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isNormalized(java.lang.CharSequence,java.text.Normalizer.Form)', [
 			[/* method description */
@@ -168,4 +168,5 @@ DocsCollector.collect('java.text.Normalizer', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

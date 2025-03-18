@@ -44,13 +44,13 @@ DocsCollector.collect('java.lang.Number', [
 		[/* text */ 't', ` implementation for
  conversion details.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor for subclasses to call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -61,8 +61,8 @@ DocsCollector.collect('java.lang.Number', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -76,8 +76,8 @@ DocsCollector.collect('java.lang.Number', [
 				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -91,8 +91,8 @@ DocsCollector.collect('java.lang.Number', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -106,8 +106,8 @@ DocsCollector.collect('java.lang.Number', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -121,8 +121,8 @@ DocsCollector.collect('java.lang.Number', [
 				[/* inline code block */ 'i', `byte`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -136,8 +136,8 @@ DocsCollector.collect('java.lang.Number', [
 				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -146,4 +146,5 @@ DocsCollector.collect('java.lang.Number', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -74,8 +74,8 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 			[/* text */ 't', ` if access is denied by the security manager. `]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'find(java.lang.String)', [
 			[/* method description */
@@ -136,7 +136,7 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 				[/* block */ 'b', ` The behavior of the stream when used after the module reader is
  closed is implementation specific and therefore not specified. `]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs or the module reader is closed`]
@@ -162,7 +162,7 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
  thread is reading a resource and another thread invokes the close method,
  then the second thread may block until the read operation is complete. `]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -258,8 +258,9 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 					[/* text */ 't', `The byte buffer to release`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

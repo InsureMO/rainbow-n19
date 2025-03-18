@@ -27,7 +27,7 @@ DocsCollector.collect('java.io.FileOutputStream', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.File)', [
 			[/* constructor description */
@@ -306,7 +306,7 @@ DocsCollector.collect('java.io.FileOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Returns the file descriptor associated with this stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -341,8 +341,8 @@ DocsCollector.collect('java.io.FileOutputStream', [
  writing, will change this stream's file position.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the file channel associated with this file output stream`]
 			]
@@ -357,7 +357,7 @@ DocsCollector.collect('java.io.FileOutputStream', [
 				[/* block */ 'b', ` If this stream has an associated channel then the channel is closed
  as well.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -433,4 +433,5 @@ DocsCollector.collect('java.io.FileOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

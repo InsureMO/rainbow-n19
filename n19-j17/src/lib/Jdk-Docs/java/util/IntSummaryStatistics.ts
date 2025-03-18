@@ -48,7 +48,7 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
  maximum, sum, and average of their number of dependents.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -60,7 +60,7 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
 				[/* text */ 't', ` max and zero
  average.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(long,int,int,long)', [
@@ -129,8 +129,8 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
 				[/* text */ 't', `Returns the arithmetic mean of values recorded, or zero if no values have been
  recorded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the arithmetic mean of values, or zero if none`]
 			]
@@ -142,8 +142,8 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
 				[/* text */ 't', ` if no
  values have been recorded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum value, or `],
 				[/* inline code block */ 'i', `Integer.MIN_VALUE`],
@@ -157,8 +157,8 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
 				[/* text */ 't', ` if no
  values have been recorded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum value, or `],
 				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
@@ -169,8 +169,8 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
 			[/* method description */
 				[/* text */ 't', `Returns the count of values recorded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the count of values`]
 			]
@@ -180,8 +180,8 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
 				[/* text */ 't', `Returns the sum of values recorded, or zero if no values have been
  recorded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sum of values, or zero if none`]
 			]
@@ -192,8 +192,8 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
  debugging. The exact presentation format is unspecified and may vary
  between implementations and versions.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
@@ -207,7 +207,7 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
 					[/* text */ 't', `the input value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'combine(java.util.IntSummaryStatistics)', [
@@ -232,4 +232,5 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -40,7 +40,7 @@ DocsCollector.collect('java.lang.reflect.UndeclaredThrowableException', [
  that wraps a checked exception.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Throwable)', [
 			[/* constructor description */
@@ -92,11 +92,12 @@ DocsCollector.collect('java.lang.reflect.UndeclaredThrowableException', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the undeclared checked exception that was thrown`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -9,7 +9,7 @@ DocsCollector.collect('java.time.DateTimeException', [
  This exception is used to indicate problems with creating, querying
  and manipulating date-time objects.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -37,5 +37,6 @@ DocsCollector.collect('java.time.DateTimeException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

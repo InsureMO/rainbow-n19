@@ -87,7 +87,7 @@ DocsCollector.collect('java.io.SerializablePermission', [
 		],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -145,5 +145,6 @@ DocsCollector.collect('java.io.SerializablePermission', [
 			]
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

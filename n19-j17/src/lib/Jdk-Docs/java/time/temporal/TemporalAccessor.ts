@@ -71,8 +71,8 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 			[/* text */ 't', ` for a fuller discussion of the issues.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isSupported(java.time.temporal.TemporalField)', [
 			[/* method description */
@@ -94,7 +94,7 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this date-time can be queried for the field, false if not`]
 			]
@@ -248,4 +248,5 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

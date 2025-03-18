@@ -5,7 +5,7 @@ DocsCollector.collect('java.net.UnknownHostException', [
 	[/* class description */
 		[/* text */ 't', `Thrown to indicate that the IP address of a host could not be determined.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -14,7 +14,7 @@ DocsCollector.collect('java.net.UnknownHostException', [
 				[/* text */ 't', ` with no detail
  message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -32,5 +32,6 @@ DocsCollector.collect('java.net.UnknownHostException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

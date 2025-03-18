@@ -21,15 +21,15 @@ DocsCollector.collect('java.lang.ModuleLayer$Controller', [
 			[/* text */ 't', ` to be thrown. `]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'layer()', [
 			[/* method description */
 				[/* text */ 't', `Returns the layer that this object controls.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the module layer`]
 			]
@@ -142,4 +142,5 @@ DocsCollector.collect('java.lang.ModuleLayer$Controller', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

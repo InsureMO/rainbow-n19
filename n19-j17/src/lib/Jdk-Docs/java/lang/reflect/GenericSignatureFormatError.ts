@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.reflect.GenericSignatureFormatError', [
  encountered by a reflective method that needs to interpret the generic
  signature information for a class or interface, method or constructor.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.reflect.GenericSignatureFormatError', [
 				[/* inline code block */ 'i', `GenericSignatureFormatError`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -34,5 +34,6 @@ DocsCollector.collect('java.lang.reflect.GenericSignatureFormatError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

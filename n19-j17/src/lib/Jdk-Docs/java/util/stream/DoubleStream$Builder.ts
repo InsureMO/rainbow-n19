@@ -19,8 +19,8 @@ DocsCollector.collect('java.util.stream.DoubleStream$Builder', [
  stream builder, in the order they were added.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'build()', [
 			[/* method description */
@@ -31,7 +31,7 @@ DocsCollector.collect('java.util.stream.DoubleStream$Builder', [
  attempts to operate on the builder after it has entered the built
  state.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the builder has already transitioned
@@ -80,4 +80,5 @@ DocsCollector.collect('java.util.stream.DoubleStream$Builder', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -12,7 +12,7 @@ DocsCollector.collect('java.lang.StringIndexOutOfBoundsException', [
 		[/* text */ 't', ` method, this exception also is thrown when the
  index is equal to the size of the string.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -21,7 +21,7 @@ DocsCollector.collect('java.lang.StringIndexOutOfBoundsException', [
 				[/* text */ 't', ` with no detail
  message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -57,5 +57,6 @@ DocsCollector.collect('java.lang.StringIndexOutOfBoundsException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -5,8 +5,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
 	[/* class description */
 		[/* block */ 'b', ` A package exported by a module, may be qualified or unqualified. `]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -37,7 +37,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
 					[/* text */ 't', `the object to which this object is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a module
@@ -50,8 +50,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is a qualified export.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is a qualified export`]
@@ -85,7 +85,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
 					[/* text */ 't', `The module export to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A negative integer, zero, or a positive integer if this module
          export is less than, equal to, or greater than the given
@@ -106,8 +106,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
 					[/* text */ 't', ` method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hash-code value for this module export`]
 			]
@@ -116,8 +116,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
 			[/* method description */
 				[/* text */ 't', `Returns the package name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The package name`]
 			]
@@ -126,8 +126,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing the exported package.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string describing the exported package`]
 			]
@@ -136,8 +136,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
 			[/* method description */
 				[/* text */ 't', `Returns the set of modifiers.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of modifiers`]
 			]
@@ -148,12 +148,13 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
  of the module names to which the package is exported. For an
  unqualified export, returns an empty set.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The set of target module names or for an unqualified
          export, an empty set`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

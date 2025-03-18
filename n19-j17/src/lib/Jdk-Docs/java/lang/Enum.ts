@@ -36,7 +36,7 @@ DocsCollector.collect('java.lang.Enum', [
 			[/* text */ 't', ` implementations are available.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,int)', [
 			[/* constructor description */
@@ -65,7 +65,7 @@ DocsCollector.collect('java.lang.Enum', [
  are never cloned, which is necessary to preserve their "singleton"
  status.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.CloneNotSupportedException', [/* throw description */
 					[/* text */ 't', `if the object's class does not
@@ -87,8 +87,8 @@ DocsCollector.collect('java.lang.Enum', [
 			[/* method description */
 				[/* text */ 't', `enum classes cannot have finalize methods.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
@@ -101,7 +101,7 @@ DocsCollector.collect('java.lang.Enum', [
 					[/* text */ 't', `the object to be compared for equality with this object.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the specified object is equal to this
           enum constant.`]
@@ -122,7 +122,7 @@ DocsCollector.collect('java.lang.Enum', [
 					[/* text */ 't', `the object to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a negative integer, zero, or a positive integer as this object
           is less than, equal to, or greater than the specified object.`]
@@ -132,8 +132,8 @@ DocsCollector.collect('java.lang.Enum', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code for this enum constant.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code for this enum constant.`]
 			]
@@ -152,8 +152,8 @@ DocsCollector.collect('java.lang.Enum', [
 				[/* reference */ 'r', `java.util.EnumMap`, `EnumMap`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ordinal of this enumeration constant`]
 			]
@@ -170,8 +170,8 @@ DocsCollector.collect('java.lang.Enum', [
 				[/* text */ 't', ` method for enum constants with
  constant-specific class bodies.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Class object corresponding to this enum constant's
      enum type`]
@@ -192,8 +192,8 @@ DocsCollector.collect('java.lang.Enum', [
  use in specialized situations where correctness depends on getting the
  exact name, which will not vary from release to release.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this enum constant`]
 			]
@@ -207,8 +207,8 @@ DocsCollector.collect('java.lang.Enum', [
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -225,8 +225,8 @@ DocsCollector.collect('java.lang.Enum', [
  isn't necessary or desirable.  An enum class should override this
  method when a more "programmer-friendly" string form exists.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this enum constant`]
 			]
@@ -287,4 +287,5 @@ DocsCollector.collect('java.lang.Enum', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

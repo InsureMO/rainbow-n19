@@ -8,7 +8,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatException', [
 		[/* text */ 't', ` when linkage
  invariants are violated.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -36,5 +36,6 @@ DocsCollector.collect('java.lang.invoke.StringConcatException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

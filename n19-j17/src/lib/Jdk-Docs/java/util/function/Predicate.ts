@@ -15,8 +15,8 @@ DocsCollector.collect('java.util.function.Predicate', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'test(java.lang.Object)', [
 			[/* method description */
@@ -27,7 +27,7 @@ DocsCollector.collect('java.util.function.Predicate', [
 					[/* text */ 't', `the input argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the input argument matches the predicate,
@@ -78,8 +78,8 @@ DocsCollector.collect('java.util.function.Predicate', [
 				[/* text */ 't', `Returns a predicate that represents the logical negation of this
  predicate.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a predicate that represents the logical negation of this
  predicate`]
@@ -137,7 +137,7 @@ DocsCollector.collect('java.util.function.Predicate', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a predicate that tests if two arguments are equal according
  to `],
@@ -168,4 +168,5 @@ DocsCollector.collect('java.util.function.Predicate', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

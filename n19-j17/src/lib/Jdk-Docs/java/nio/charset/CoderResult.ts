@@ -117,14 +117,14 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isError()', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this object describes an error condition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this object denotes either a
@@ -135,8 +135,8 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this object describes a malformed-input error.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this object denotes a
@@ -147,8 +147,8 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this object describes an overflow condition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this object denotes overflow`]
@@ -158,8 +158,8 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this object describes an underflow condition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this object denotes underflow`]
@@ -170,8 +170,8 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 				[/* text */ 't', `Tells whether or not this object describes an unmappable-character
  error.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this object denotes an
@@ -185,7 +185,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `If this object does not describe an error condition, that is,
@@ -203,8 +203,8 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this coder result.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A descriptive string`]
 			]
@@ -219,7 +219,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 					[/* text */ 't', `The given length`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The requested coder-result object`]
 			]
@@ -234,7 +234,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 					[/* text */ 't', `The given length`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The requested coder-result object`]
 			]
@@ -243,7 +243,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 			[/* method description */
 				[/* text */ 't', `Throws an exception appropriate to the result described by this object.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.BufferUnderflowException', [/* throw description */
 					[/* text */ 't', `If this object is `],
@@ -266,4 +266,5 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

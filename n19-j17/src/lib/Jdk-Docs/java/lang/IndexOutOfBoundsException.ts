@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.IndexOutOfBoundsException', [
 		[/* block */ 'b', `
  Applications can subclass this class to indicate similar exceptions.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.IndexOutOfBoundsException', [
 				[/* inline code block */ 'i', `IndexOutOfBoundsException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -71,5 +71,6 @@ DocsCollector.collect('java.lang.IndexOutOfBoundsException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -188,7 +188,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the object to compare with.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -206,8 +206,8 @@ DocsCollector.collect('java.lang.Long', [
 				[/* text */ 't', ` after
  a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -224,8 +224,8 @@ DocsCollector.collect('java.lang.Long', [
 				[/* text */ 't', `
  after a widening primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -242,8 +242,8 @@ DocsCollector.collect('java.lang.Long', [
 				[/* text */ 't', ` after
  a widening primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -264,7 +264,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', ` to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -315,8 +315,8 @@ DocsCollector.collect('java.lang.Long', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -330,8 +330,8 @@ DocsCollector.collect('java.lang.Long', [
 				[/* text */ 't', ` after
  a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -351,7 +351,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `ignored`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* reference */ 'r', `java.lang.Long`, `Long`],
@@ -374,8 +374,8 @@ DocsCollector.collect('java.lang.Long', [
 				[/* reference */ 'r', `#toString(long)`, `toString(long)`],
 				[/* text */ 't', ` method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the value of this object in
           base 10.`]
@@ -388,8 +388,8 @@ DocsCollector.collect('java.lang.Long', [
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance, which is the instance itself.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -407,8 +407,8 @@ DocsCollector.collect('java.lang.Long', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', ` value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -425,8 +425,8 @@ DocsCollector.collect('java.lang.Long', [
 				[/* text */ 't', ` after
  a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
@@ -449,7 +449,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value whose bits are to be counted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of one-bits in the two's complement binary
      representation of the specified `],
@@ -479,7 +479,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', ` to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -516,7 +516,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', ` to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -550,7 +550,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value to hash`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for a `],
 				[/* inline code block */ 'i', `long`],
@@ -600,7 +600,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value whose number of leading zeros is to be computed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of zero bits preceding the highest-order
      ("leftmost") one-bit in the two's complement binary representation
@@ -625,7 +625,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value whose number of trailing zeros is to be computed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of zero bits following the lowest-order ("rightmost")
      one-bit in the two's complement binary representation of the
@@ -648,7 +648,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value whose signum is to be computed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the signum function of the specified `],
 				[/* inline code block */ 'i', `long`],
@@ -1228,7 +1228,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `a long value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Long`],
@@ -1297,7 +1297,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', ` to be converted to a string.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of the unsigned `],
 				[/* inline code block */ 'i', `long`],
@@ -1393,7 +1393,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', ` to be converted to a string.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of the unsigned `],
 				[/* inline code block */ 'i', `long`],
@@ -1472,7 +1472,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', ` to be converted to a string.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of the unsigned `],
 				[/* inline code block */ 'i', `long`],
@@ -1500,7 +1500,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', ` to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the argument in base 10.`]
 			]
@@ -1609,7 +1609,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the radix to use in the string representation.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the argument in the specified radix.`]
 			]
@@ -1630,7 +1630,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `an integer to be converted to an unsigned string.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unsigned string representation of the argument.`]
 			]
@@ -1686,7 +1686,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the radix to use in the string representation.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unsigned string representation of the argument in the specified radix.`]
 			]
@@ -1715,7 +1715,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value doing the dividing`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the unsigned quotient of the first argument divided by
  the second argument`]
@@ -1738,7 +1738,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value whose highest one bit is to be computed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `long`],
@@ -1764,7 +1764,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value whose lowest one bit is to be computed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `long`],
@@ -1790,7 +1790,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the greater of `],
 				[/* inline code block */ 'i', `a`],
@@ -1815,7 +1815,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the smaller of `],
 				[/* inline code block */ 'i', `a`],
@@ -2389,7 +2389,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value doing the dividing`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the unsigned remainder of the first argument divided by
  the second argument`]
@@ -2408,7 +2408,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value to be reversed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value obtained by reversing order of the bits in the
      specified `],
@@ -2428,7 +2428,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the value whose bytes are to be reversed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value obtained by reversing the bytes in the specified
      `],
@@ -2465,7 +2465,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the number of bit positions to rotate left`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value obtained by rotating the two's complement binary
      representation of the specified `],
@@ -2503,7 +2503,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the number of bit positions to rotate right`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value obtained by rotating the two's complement binary
      representation of the specified `],
@@ -2526,7 +2526,7 @@ DocsCollector.collect('java.lang.Long', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sum of `],
 				[/* inline code block */ 'i', `a`],
@@ -2535,4 +2535,5 @@ DocsCollector.collect('java.lang.Long', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -114,8 +114,8 @@ DocsCollector.collect('java.util.Formattable', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'formatTo(java.util.Formatter,int,int,int)', [
 			[/* method description */
@@ -204,4 +204,5 @@ DocsCollector.collect('java.util.Formattable', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

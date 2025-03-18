@@ -8,7 +8,8 @@ DocsCollector.collect('java.nio.file.attribute.FileStoreAttributeView', [
 		[/* reference */ 'r', `java.nio.file.FileStore`, `FileStore`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -148,8 +148,8 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
  the channel remains open.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'close()', [
 			[/* method description */
@@ -174,7 +174,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 					[/* text */ 't', ` interface.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -183,4 +183,5 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

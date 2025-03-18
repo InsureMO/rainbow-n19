@@ -112,13 +112,13 @@ DocsCollector.collect('java.net.ContentHandler', [
  a classloader that is outside of the delegation chain of the caller,
  the JVM will need the RuntimePermission "getClassLoader".`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor for subclasses to call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -181,4 +181,5 @@ DocsCollector.collect('java.net.ContentHandler', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

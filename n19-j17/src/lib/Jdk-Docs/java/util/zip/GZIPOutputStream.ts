@@ -155,7 +155,7 @@ DocsCollector.collect('java.util.zip.GZIPOutputStream', [
  the underlying stream. Use this method when applying multiple filters
  in succession to the same output stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -164,4 +164,5 @@ DocsCollector.collect('java.util.zip.GZIPOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

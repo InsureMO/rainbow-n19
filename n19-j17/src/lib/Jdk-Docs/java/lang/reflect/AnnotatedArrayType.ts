@@ -8,15 +8,15 @@ DocsCollector.collect('java.lang.reflect.AnnotatedArrayType', [
  array type, whose component type may itself represent the annotated use of a
  type.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotatedGenericComponentType()', [
 			[/* method description */
 				[/* text */ 't', `Returns the potentially annotated generic component type of this array type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the potentially annotated generic component type of this array type`]
 			]
@@ -43,11 +43,12 @@ DocsCollector.collect('java.lang.reflect.AnnotatedArrayType', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

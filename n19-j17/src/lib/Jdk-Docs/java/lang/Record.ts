@@ -71,13 +71,13 @@ DocsCollector.collect('java.lang.Record', [
 		[/* text */ 't', `.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor for record classes to call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -104,7 +104,7 @@ DocsCollector.collect('java.lang.Record', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this record is equal to the
@@ -125,8 +125,8 @@ DocsCollector.collect('java.lang.Record', [
 				[/* text */ 't', `, so that any two records
  created from the same components must have the same hash code.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this record.`]
 			]
@@ -156,11 +156,12 @@ DocsCollector.collect('java.lang.Record', [
  to produce equal strings for themselves.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

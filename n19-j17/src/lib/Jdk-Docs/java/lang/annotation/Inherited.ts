@@ -20,7 +20,8 @@ DocsCollector.collect('java.lang.annotation.Inherited', [
  from superclasses; annotations on implemented interfaces have no
  effect.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

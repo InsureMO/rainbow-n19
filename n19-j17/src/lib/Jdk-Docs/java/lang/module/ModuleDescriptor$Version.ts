@@ -87,8 +87,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
  pre-release versions; otherwise, the result of comparing them is the
  result of comparing their build versions.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -118,7 +118,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
 					[/* text */ 't', `the object to which this object is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a module
@@ -135,7 +135,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
 					[/* text */ 't', `The module version to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A negative integer, zero, or a positive integer as this
          module version is less than, equal to, or greater than the
@@ -154,8 +154,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
 					[/* text */ 't', ` method. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hash-code value for this module version`]
 			]
@@ -164,8 +164,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
 			[/* method description */
 				[/* text */ 't', `Returns the string from which this version was parsed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string from which this version was parsed.`]
 			]
@@ -195,4 +195,5 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -145,8 +145,8 @@ DocsCollector.collect('java.util.NavigableMap', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'ceilingEntry(java.lang.Object)', [
 			[/* method description */
@@ -187,8 +187,8 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if the map is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an entry with the least key,
          or `],
@@ -267,8 +267,8 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if the map is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an entry with the greatest key,
          or `],
@@ -315,8 +315,8 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if the map is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the removed first entry of this map,
          or `],
@@ -331,8 +331,8 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if the map is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the removed last entry of this map,
          or `],
@@ -368,8 +368,8 @@ DocsCollector.collect('java.util.NavigableMap', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reverse order view of this map`]
 			]
@@ -643,8 +643,8 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reverse order navigable set view of the keys in this map`]
 			]
@@ -679,8 +679,8 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a navigable set view of the keys in this map`]
 			]
@@ -1034,4 +1034,5 @@ DocsCollector.collect('java.util.NavigableMap', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

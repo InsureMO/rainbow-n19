@@ -9,14 +9,14 @@ DocsCollector.collect('java.text.spi.DateFormatSymbolsProvider', [
 		[/* reference */ 'r', `java.text.DateFormatSymbols`, `DateFormatSymbols`],
 		[/* text */ 't', ` class.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -56,4 +56,5 @@ DocsCollector.collect('java.text.spi.DateFormatSymbolsProvider', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

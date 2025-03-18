@@ -262,8 +262,8 @@ DocsCollector.collect('java.util.Map', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'containsKey(java.lang.Object)', [
 			[/* method description */
@@ -381,7 +381,7 @@ DocsCollector.collect('java.util.Map', [
 					[/* text */ 't', `object to be compared for equality with this map`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this map`]
@@ -393,8 +393,8 @@ DocsCollector.collect('java.util.Map', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map contains no key-value mappings.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map contains no key-value mappings`]
@@ -421,8 +421,8 @@ DocsCollector.collect('java.util.Map', [
 				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this map`]
 			]
@@ -437,8 +437,8 @@ DocsCollector.collect('java.util.Map', [
 				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of key-value mappings in this map`]
 			]
@@ -475,8 +475,8 @@ DocsCollector.collect('java.util.Map', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collection view of the values contained in this map`]
 			]
@@ -516,8 +516,8 @@ DocsCollector.collect('java.util.Map', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the mappings contained in this map`]
 			]
@@ -554,8 +554,8 @@ DocsCollector.collect('java.util.Map', [
 				[/* text */ 't', `
  operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the keys contained in this map`]
 			]
@@ -780,7 +780,7 @@ DocsCollector.collect('java.util.Map', [
 				[/* text */ 't', `Removes all of the mappings from this map (optional operation).
  The map will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -1583,8 +1583,8 @@ DocsCollector.collect('java.util.Map', [
 				[/* text */ 't', `Unmodifiable Maps`],
 				[/* text */ 't', ` for details.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty `],
 				[/* inline code block */ 'i', `Map`]
@@ -2193,4 +2193,5 @@ DocsCollector.collect('java.util.Map', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

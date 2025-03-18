@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.EmptyStackException', [
 		[/* text */ 't', ` class to indicate
  that the stack is empty.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -19,9 +19,10 @@ DocsCollector.collect('java.util.EmptyStackException', [
 				[/* text */ 't', `
  as its error message string.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -6,13 +6,13 @@ DocsCollector.collect('java.lang.ref.ReferenceQueue', [
 		[/* text */ 't', `Reference queues, to which registered reference objects are appended by the
  garbage collector after the appropriate reachability changes are detected.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new reference-object queue.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -25,8 +25,8 @@ DocsCollector.collect('java.lang.ref.ReferenceQueue', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A reference object, if one was immediately available,
           otherwise `],
@@ -38,7 +38,7 @@ DocsCollector.collect('java.lang.ref.ReferenceQueue', [
 				[/* text */ 't', `Removes the next reference object in this queue, blocking until one
  becomes available.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
 					[/* text */ 't', `If the wait is interrupted`]
@@ -85,4 +85,5 @@ DocsCollector.collect('java.lang.ref.ReferenceQueue', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

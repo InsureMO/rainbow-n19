@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.IllegalArgumentException', [
 		[/* text */ 't', `Thrown to indicate that a method has been passed an illegal or
  inappropriate argument.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.IllegalArgumentException', [
 				[/* text */ 't', ` with no
  detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -97,5 +97,6 @@ DocsCollector.collect('java.lang.IllegalArgumentException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

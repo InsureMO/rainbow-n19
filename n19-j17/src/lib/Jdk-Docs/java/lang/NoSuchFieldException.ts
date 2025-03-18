@@ -5,13 +5,13 @@ DocsCollector.collect('java.lang.NoSuchFieldException', [
 	[/* class description */
 		[/* text */ 't', `Signals that the class doesn't have a field of a specified name.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -26,5 +26,6 @@ DocsCollector.collect('java.lang.NoSuchFieldException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

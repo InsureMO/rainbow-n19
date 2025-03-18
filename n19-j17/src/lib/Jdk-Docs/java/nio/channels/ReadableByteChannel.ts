@@ -13,8 +13,8 @@ DocsCollector.collect('java.nio.channels.ReadableByteChannel', [
  I/O operations may proceed concurrently with a read operation depends upon
  the type of the channel. `]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'read(java.nio.ByteBuffer)', [
 			[/* method description */
@@ -131,4 +131,5 @@ DocsCollector.collect('java.nio.channels.ReadableByteChannel', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

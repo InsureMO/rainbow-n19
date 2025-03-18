@@ -40,8 +40,8 @@ DocsCollector.collect('java.io.WriteAbortedException', [
 				[/* text */ 't', `Produce the message and include the message from the nested
  exception, if there is one.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the detail message string of this `],
 				[/* inline code block */ 'i', `Throwable`],
@@ -57,8 +57,8 @@ DocsCollector.collect('java.io.WriteAbortedException', [
 				[/* text */ 't', `cause`],
 				[/* text */ 't', `).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the exception that terminated the operation (the `],
 				[/* text */ 't', `cause`],
@@ -67,4 +67,5 @@ DocsCollector.collect('java.io.WriteAbortedException', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

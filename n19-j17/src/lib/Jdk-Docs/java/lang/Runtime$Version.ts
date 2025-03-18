@@ -280,8 +280,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
  occur. For example, in a future release, synchronization may fail.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -304,7 +304,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 					[/* text */ 't', ` is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a `],
@@ -335,7 +335,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 					[/* text */ 't', ` is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a `],
@@ -456,8 +456,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', ` element of
  the version number.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The value of the feature element`]
 			]
@@ -466,8 +466,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code of this version.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hashcode of this version`]
 			]
@@ -479,8 +479,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', ` element of
  the version number, or zero if it is absent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The value of the interim element, or zero`]
 			]
@@ -489,8 +489,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the major element of the version number.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The value of the feature element`]
 			]
@@ -500,8 +500,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', `Returns the value of the minor element of the version number, or
  zero if it is absent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The value of the interim element, or zero`]
 			]
@@ -513,8 +513,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', ` element of the
  version number, or zero if it is absent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The value of the patch element, or zero`]
 			]
@@ -524,8 +524,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', `Returns the value of the security element of the version number, or
  zero if it is absent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The value of the update element, or zero`]
 			]
@@ -537,8 +537,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', ` element of the
  version number, or zero if it is absent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The value of the update element, or zero`]
 			]
@@ -547,8 +547,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of this version.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The version string`]
 			]
@@ -568,8 +568,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', `feature version number`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An unmodifiable list of the integers
           represented in the version number`]
@@ -581,8 +581,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', `build number`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The optional build number.`]
 			]
@@ -594,8 +594,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', ` additional identifying build
  information.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `Additional build information as a String`]
 			]
@@ -606,8 +606,8 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', `pre-release`],
 				[/* text */ 't', ` information.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The optional pre-release information as a String`]
 			]
@@ -648,4 +648,5 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

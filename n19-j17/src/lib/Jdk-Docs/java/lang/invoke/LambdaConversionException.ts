@@ -5,7 +5,7 @@ DocsCollector.collect('java.lang.invoke.LambdaConversionException', [
 	[/* class description */
 		[/* text */ 't', `LambdaConversionException`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -13,7 +13,7 @@ DocsCollector.collect('java.lang.invoke.LambdaConversionException', [
 				[/* inline code block */ 'i', `LambdaConversionException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -82,5 +82,6 @@ DocsCollector.collect('java.lang.invoke.LambdaConversionException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

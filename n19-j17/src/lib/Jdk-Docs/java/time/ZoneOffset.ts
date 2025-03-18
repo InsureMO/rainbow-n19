@@ -92,7 +92,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
 			[/* method description */
@@ -149,7 +149,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other offset`]
 			]
@@ -201,7 +201,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this offset, false if not`]
 			]
@@ -319,8 +319,8 @@ DocsCollector.collect('java.time.ZoneOffset', [
  It returns the total of the hours, minutes and seconds fields as a
  single offset that can be added to a time.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total zone offset amount in seconds`]
 			]
@@ -329,8 +329,8 @@ DocsCollector.collect('java.time.ZoneOffset', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this offset.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -366,8 +366,8 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the zone offset ID, not null`]
 			]
@@ -378,8 +378,8 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', `, using the normalized ID.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this offset, not null`]
 			]
@@ -502,8 +502,8 @@ DocsCollector.collect('java.time.ZoneOffset', [
  The rules will always return this offset when queried.
  The implementation class is immutable, thread-safe and serializable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the rules, not null`]
 			]
@@ -843,4 +843,5 @@ DocsCollector.collect('java.time.ZoneOffset', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

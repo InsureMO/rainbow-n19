@@ -216,15 +216,15 @@ DocsCollector.collect('java.nio.IntBuffer', [
  specified to return the buffer upon which they are invoked.  This allows
  method invocations to be chained.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isDirect()', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this int buffer is direct.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this buffer is direct`]
@@ -237,7 +237,7 @@ DocsCollector.collect('java.nio.IntBuffer', [
 				[/* text */ 't', ` method.  Reads the int at this buffer's
  current position, and then increments the position.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.BufferUnderflowException', [/* throw description */
 					[/* text */ 't', `If the buffer's current position is not smaller than its limit`]
@@ -289,8 +289,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
  byte buffer at the moment that the view is created.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer's byte order`]
 			]
@@ -324,8 +324,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
 					[/* text */ 't', ` method.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new, read-only int buffer`]
 			]
@@ -377,7 +377,7 @@ DocsCollector.collect('java.nio.IntBuffer', [
  method. `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
 					[/* text */ 't', `If this buffer is read-only`]
@@ -408,8 +408,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
  The new buffer will be direct if, and only if, this buffer is direct, and
  it will be read-only if, and only if, this buffer is read-only.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new int buffer`]
 			]
@@ -501,8 +501,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
  The new buffer will be direct if, and only if, this buffer is direct, and
  it will be read-only if, and only if, this buffer is read-only.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new int buffer`]
 			]
@@ -610,7 +610,7 @@ DocsCollector.collect('java.nio.IntBuffer', [
 					[/* text */ 't', `The object to which this buffer is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this buffer is equal to the
@@ -635,8 +635,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this buffer
@@ -671,7 +671,7 @@ DocsCollector.collect('java.nio.IntBuffer', [
  array.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
 					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
@@ -705,7 +705,7 @@ DocsCollector.collect('java.nio.IntBuffer', [
  array.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
 					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
@@ -744,8 +744,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
  is named as if it did because it will most often be used in situations
  in which that might as well be the case. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -785,8 +785,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
  one place to another.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -803,7 +803,7 @@ DocsCollector.collect('java.nio.IntBuffer', [
          and no larger than this buffer's capacity`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -812,8 +812,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
 			[/* method description */
 				[/* text */ 't', `Sets this buffer's mark at its position.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -829,7 +829,7 @@ DocsCollector.collect('java.nio.IntBuffer', [
          and no larger than the current limit`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -881,8 +881,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
 				[/* block */ 'b', ` Invoking this method neither changes nor discards the mark's
  value. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -909,8 +909,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -949,7 +949,7 @@ DocsCollector.collect('java.nio.IntBuffer', [
 					[/* text */ 't', `the object to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A negative integer, zero, or a positive integer as this buffer
           is less than, equal to, or greater than the given buffer`]
@@ -977,8 +977,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
  to use buffers as keys in hash maps or similar data structures unless it
  is known that their contents will not change.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The current hash code of this buffer`]
 			]
@@ -1010,7 +1010,7 @@ DocsCollector.collect('java.nio.IntBuffer', [
 					[/* text */ 't', `The byte buffer to be tested for a mismatch with this buffer`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The relative index of the first mismatch between this and the
           given buffer, otherwise -1 if no mismatch.`]
@@ -1020,8 +1020,8 @@ DocsCollector.collect('java.nio.IntBuffer', [
 			[/* method description */
 				[/* text */ 't', `Returns a string summarizing the state of this buffer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A summary string`]
 			]
@@ -1739,7 +1739,7 @@ DocsCollector.collect('java.nio.IntBuffer', [
 					[/* text */ 't', `The array that will back this buffer`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new int buffer`]
 			]
@@ -1815,4 +1815,5 @@ DocsCollector.collect('java.nio.IntBuffer', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

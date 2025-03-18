@@ -209,7 +209,7 @@ DocsCollector.collect('java.lang.Math', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'abs(double)', [
 			[/* method description */
@@ -234,7 +234,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the argument whose absolute value is to be determined`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the absolute value of the argument.`]
 			]
@@ -268,7 +268,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the value whose arc cosine is to be returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the arc cosine of the argument.`]
 			]
@@ -300,7 +300,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the value whose arc sine is to be returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the arc sine of the argument.`]
 			]
@@ -342,7 +342,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the value whose arc tangent is to be returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the arc tangent of the argument.`]
 			]
@@ -480,7 +480,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the abscissa coordinate`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* text */ 't', `theta`],
@@ -536,7 +536,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the cube root of `],
 				[/* inline code block */ 'i', `a`],
@@ -574,7 +574,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the smallest (closest to negative infinity)
           floating-point value that is greater than or equal to
@@ -602,7 +602,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the parameter providing the sign of the result`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a value with the magnitude of `],
 				[/* inline code block */ 'i', `magnitude`],
@@ -638,7 +638,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `an angle, in radians.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the cosine of the argument.`]
 			]
@@ -693,7 +693,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `The number whose hyperbolic cosine is to be returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hyperbolic cosine of `],
 				[/* inline code block */ 'i', `x`],
@@ -738,7 +738,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', ` to.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* text */ 't', `e`],
@@ -822,7 +822,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', ` -1.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* text */ 't', `e`],
@@ -852,7 +852,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the largest (closest to positive infinity)
           floating-point value that less than or equal to the argument
@@ -944,7 +944,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `(`],
 				[/* text */ 't', `a`],
@@ -1001,7 +1001,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `sqrt(`],
 				[/* text */ 't', `x`],
@@ -1055,7 +1055,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the divisor.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the remainder when `],
 				[/* inline code block */ 'i', `f1`],
@@ -1103,7 +1103,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value ln `],
 				[/* inline code block */ 'i', `a`],
@@ -1160,7 +1160,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the base 10 logarithm of  `],
 				[/* inline code block */ 'i', `a`],
@@ -1217,7 +1217,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value ln(`],
 				[/* inline code block */ 'i', `x`],
@@ -1248,7 +1248,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `another argument.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the larger of `],
 				[/* inline code block */ 'i', `a`],
@@ -1278,7 +1278,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `another argument.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the smaller of `],
 				[/* inline code block */ 'i', `a`],
@@ -1376,7 +1376,7 @@ DocsCollector.collect('java.lang.Math', [
  be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The floating-point number adjacent to `],
 				[/* inline code block */ 'i', `start`],
@@ -1429,7 +1429,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `starting floating-point value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The adjacent floating-point value closer to negative
  infinity.`]
@@ -1478,7 +1478,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `starting floating-point value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The adjacent floating-point value closer to positive
  infinity.`]
@@ -1696,7 +1696,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the exponent.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `a`],
@@ -1737,8 +1737,8 @@ DocsCollector.collect('java.lang.Math', [
  pseudorandom numbers at a great rate, it may reduce contention
  for each thread to have its own pseudorandom-number generator.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a pseudorandom `],
 				[/* inline code block */ 'i', `double`],
@@ -1777,7 +1777,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', ` value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the closest floating-point value to `],
 				[/* inline code block */ 'i', `a`],
@@ -1838,7 +1838,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* inline code block */ 'i', `d`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `d`],
 				[/* text */ 't', ` × 2`],
@@ -1868,7 +1868,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the floating-point value whose signum is to be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the signum function of the argument`]
 			]
@@ -1895,7 +1895,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `an angle, in radians.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sine of the argument.`]
 			]
@@ -1947,7 +1947,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `The number whose hyperbolic sine is to be returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hyperbolic sine of `],
 				[/* inline code block */ 'i', `x`],
@@ -1983,7 +1983,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the positive square root of `],
 				[/* inline code block */ 'i', `a`],
@@ -2013,7 +2013,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `an angle, in radians.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the tangent of the argument.`]
 			]
@@ -2095,7 +2095,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `The number whose hyperbolic tangent is to be returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The hyperbolic tangent of `],
 				[/* inline code block */ 'i', `x`],
@@ -2121,7 +2121,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `an angle, in radians`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the measurement of the angle `],
 				[/* inline code block */ 'i', `angrad`],
@@ -2140,7 +2140,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `an angle, in degrees`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the measurement of the angle `],
 				[/* inline code block */ 'i', `angdeg`],
@@ -2196,7 +2196,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the floating-point value whose ulp is to be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the size of an ulp of the argument`]
 			]
@@ -2224,7 +2224,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the argument whose absolute value is to be determined`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the absolute value of the argument.`]
 			]
@@ -2250,7 +2250,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the parameter providing the sign of the result`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a value with the magnitude of `],
 				[/* inline code block */ 'i', `magnitude`],
@@ -2345,7 +2345,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `(`],
 				[/* text */ 't', `a`],
@@ -2381,7 +2381,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `another argument.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the larger of `],
 				[/* inline code block */ 'i', `a`],
@@ -2411,7 +2411,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `another argument.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the smaller of `],
 				[/* inline code block */ 'i', `a`],
@@ -2508,7 +2508,7 @@ DocsCollector.collect('java.lang.Math', [
  be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The floating-point number adjacent to `],
 				[/* inline code block */ 'i', `start`],
@@ -2561,7 +2561,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `starting floating-point value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The adjacent floating-point value closer to negative
  infinity.`]
@@ -2610,7 +2610,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `starting floating-point value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The adjacent floating-point value closer to positive
  infinity.`]
@@ -2669,7 +2669,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* inline code block */ 'i', `f`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `f`],
 				[/* text */ 't', ` × 2`],
@@ -2699,7 +2699,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the floating-point value whose signum is to be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the signum function of the argument`]
 			]
@@ -2752,7 +2752,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the floating-point value whose ulp is to be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the size of an ulp of the argument`]
 			]
@@ -2786,7 +2786,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the argument whose absolute value is to be determined`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the absolute value of the argument.`]
 			]
@@ -3206,7 +3206,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', ` value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the unbiased exponent of the argument`]
 			]
@@ -3243,7 +3243,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', ` value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the unbiased exponent of the argument`]
 			]
@@ -3291,7 +3291,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `another argument.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the larger of `],
 				[/* inline code block */ 'i', `a`],
@@ -3319,7 +3319,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `another argument.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the smaller of `],
 				[/* inline code block */ 'i', `a`],
@@ -3417,7 +3417,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `a floating-point value to be rounded to an integer.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the argument rounded to the nearest
           `],
@@ -3503,7 +3503,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the argument whose absolute value is to be determined`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the absolute value of the argument.`]
 			]
@@ -3816,7 +3816,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `another argument.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the larger of `],
 				[/* inline code block */ 'i', `a`],
@@ -3844,7 +3844,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `another argument.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the smaller of `],
 				[/* inline code block */ 'i', `a`],
@@ -3913,7 +3913,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the second value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result`]
 			]
@@ -3933,7 +3933,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `the second value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result`]
 			]
@@ -4005,7 +4005,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the argument rounded to the nearest
           `],
@@ -4038,4 +4038,5 @@ DocsCollector.collect('java.lang.Math', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

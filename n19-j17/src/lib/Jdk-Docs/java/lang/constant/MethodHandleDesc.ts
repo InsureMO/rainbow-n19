@@ -10,8 +10,8 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 		[/* reference */ 'r', `java.lang.invoke.MethodHandle`, `MethodHandle`],
 		[/* text */ 't', ` constant.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -29,7 +29,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 					[/* text */ 't', `the other object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `whether this descriptor is equal to the other object`]
 			]
@@ -43,8 +43,8 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
  describes the full set of stack values that are consumed by the invocation
  (including the receiver, if any).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
@@ -302,4 +302,5 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

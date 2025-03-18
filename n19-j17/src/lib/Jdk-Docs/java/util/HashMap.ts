@@ -169,7 +169,7 @@ DocsCollector.collect('java.util.HashMap', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -178,7 +178,7 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* text */ 't', ` with the default initial capacity
  (16) and the default load factor (0.75).`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -261,7 +261,7 @@ DocsCollector.collect('java.util.HashMap', [
 					[/* text */ 't', `The key whose presence in this map is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map contains a mapping for the specified
@@ -280,7 +280,7 @@ DocsCollector.collect('java.util.HashMap', [
 					[/* text */ 't', `value whose presence in this map is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map maps one or more keys to the
@@ -293,8 +293,8 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map contains no key-value mappings.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map contains no key-value mappings`]
@@ -306,8 +306,8 @@ DocsCollector.collect('java.util.HashMap', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of key-value mappings in this map.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of key-value mappings in this map`]
 			]
@@ -319,8 +319,8 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* text */ 't', ` instance: the keys and
  values themselves are not cloned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a shallow copy of this map`]
 			]
@@ -357,8 +357,8 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a view of the values contained in this map`]
 			]
@@ -398,8 +398,8 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the mappings contained in this map`]
 			]
@@ -436,8 +436,8 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* text */ 't', `
  operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the keys contained in this map`]
 			]
@@ -669,7 +669,7 @@ DocsCollector.collect('java.util.HashMap', [
 					[/* text */ 't', `the key whose associated value is to be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value to which the specified key is mapped, or
          `],
@@ -759,7 +759,7 @@ DocsCollector.collect('java.util.HashMap', [
 					[/* text */ 't', `value to be associated with the specified key`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous value associated with `],
 				[/* inline code block */ 'i', `key`],
@@ -789,7 +789,7 @@ DocsCollector.collect('java.util.HashMap', [
 					[/* text */ 't', `key whose mapping is to be removed from the map`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous value associated with `],
 				[/* inline code block */ 'i', `key`],
@@ -815,8 +815,8 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* text */ 't', `Removes all of the mappings from this map.
  The map will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
@@ -840,4 +840,5 @@ DocsCollector.collect('java.util.HashMap', [
 		]],
 		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF]
 	],
+	/* enum values */ UDF
 ]);

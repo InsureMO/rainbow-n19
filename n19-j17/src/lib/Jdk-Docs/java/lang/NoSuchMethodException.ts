@@ -5,7 +5,7 @@ DocsCollector.collect('java.lang.NoSuchMethodException', [
 	[/* class description */
 		[/* text */ 't', `Thrown when a particular method cannot be found.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -13,7 +13,7 @@ DocsCollector.collect('java.lang.NoSuchMethodException', [
 				[/* inline code block */ 'i', `NoSuchMethodException`],
 				[/* text */ 't', ` without a detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -30,5 +30,6 @@ DocsCollector.collect('java.lang.NoSuchMethodException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

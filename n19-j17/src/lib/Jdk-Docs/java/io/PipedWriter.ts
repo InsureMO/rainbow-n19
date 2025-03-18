@@ -5,7 +5,7 @@ DocsCollector.collect('java.io.PipedWriter', [
 	[/* class description */
 		[/* text */ 't', `Piped character-output streams.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -13,7 +13,7 @@ DocsCollector.collect('java.io.PipedWriter', [
  piped reader. It must be connected to a piped reader,
  either by the receiver or the sender, before being used.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.io.PipedReader)', [
@@ -87,7 +87,7 @@ DocsCollector.collect('java.io.PipedWriter', [
  to be written out.
  This will notify any readers that characters are waiting in the pipe.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is closed, or an I/O error occurs.`]
@@ -101,7 +101,7 @@ DocsCollector.collect('java.io.PipedWriter', [
  associated with this stream. This stream may no longer be used for
  writing characters.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -203,4 +203,5 @@ DocsCollector.collect('java.io.PipedWriter', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

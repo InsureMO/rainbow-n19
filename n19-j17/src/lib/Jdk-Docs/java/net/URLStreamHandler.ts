@@ -27,13 +27,13 @@ DocsCollector.collect('java.net.URLStreamHandler', [
  automatically loaded.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor for subclasses to call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -89,7 +89,7 @@ DocsCollector.collect('java.net.URLStreamHandler', [
 					[/* text */ 't', `a URL object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two urls are
@@ -109,7 +109,7 @@ DocsCollector.collect('java.net.URLStreamHandler', [
 					[/* text */ 't', `the URL of the second host to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if they
@@ -134,7 +134,7 @@ DocsCollector.collect('java.net.URLStreamHandler', [
 					[/* text */ 't', `a URL object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if u1 and u2 refer to the same file`]
 			]
@@ -144,8 +144,8 @@ DocsCollector.collect('java.net.URLStreamHandler', [
 				[/* text */ 't', `Returns the default port for a URL parsed by this handler. This method
  is meant to be overridden by handlers with default port numbers.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the default port for a `],
 				[/* inline code block */ 'i', `URL`],
@@ -163,7 +163,7 @@ DocsCollector.collect('java.net.URLStreamHandler', [
 					[/* text */ 't', `a URL object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `int`],
@@ -184,7 +184,7 @@ DocsCollector.collect('java.net.URLStreamHandler', [
 					[/* text */ 't', `the URL.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the `],
 				[/* inline code block */ 'i', `URL`],
@@ -201,7 +201,7 @@ DocsCollector.collect('java.net.URLStreamHandler', [
 					[/* text */ 't', `a URL object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `InetAddress`],
@@ -317,7 +317,7 @@ DocsCollector.collect('java.net.URLStreamHandler', [
                   after the sharp sign indicates an anchor.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setURL(java.net.URL,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String)', [
@@ -402,4 +402,5 @@ DocsCollector.collect('java.net.URLStreamHandler', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

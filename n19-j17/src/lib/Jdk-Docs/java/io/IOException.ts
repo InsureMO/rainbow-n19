@@ -7,7 +7,7 @@ DocsCollector.collect('java.io.IOException', [
  class is the general class of exceptions produced by failed or
  interrupted I/O operations.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -18,7 +18,7 @@ DocsCollector.collect('java.io.IOException', [
 				[/* text */ 't', `
  as its error detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -98,5 +98,6 @@ DocsCollector.collect('java.io.IOException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

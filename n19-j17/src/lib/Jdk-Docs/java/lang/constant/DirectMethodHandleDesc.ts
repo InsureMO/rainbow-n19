@@ -15,15 +15,15 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 		[/* inline code block */ 'i', `Constant_MethodHandle_info`],
 		[/* text */ 't', ` entry in the constant pool of a classfile.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isOwnerInterface()', [
 			[/* method description */
 				[/* text */ 't', `Indicates if the method is declared by an interface`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the method is declared by an interface`]
 			]
@@ -37,8 +37,8 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo`, `MethodHandleInfo`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the reference kind`]
 			]
@@ -50,8 +50,8 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 				[/* text */ 't', ` describing the class declaring the
  method or field described by this nominal descriptor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the class declaring the method or field`]
 			]
@@ -63,8 +63,8 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 				[/* text */ 't', ` of the method handle described by this nominal
  descriptor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* reference */ 'r', `enum class in java.lang.constant.DirectMethodHandleDesc.Kind`, `DirectMethodHandleDesc.Kind`]
@@ -80,8 +80,8 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc#of(java.lang.constant.DirectMethodHandleDesc.Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.String)`, `MethodHandleDesc.of(Kind, ClassDesc, String, String)`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lookup descriptor string`]
 			]
@@ -93,11 +93,12 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 				[/* inline code block */ 'i', `"<init>"`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the method or field`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -17,7 +17,8 @@ DocsCollector.collect('java.lang.annotation.Repeatable', [
  interface`],
 		[/* text */ 't', ` for the repeatable annotation interface.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

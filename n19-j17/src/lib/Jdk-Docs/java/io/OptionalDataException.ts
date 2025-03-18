@@ -36,6 +36,7 @@ DocsCollector.collect('java.io.OptionalDataException', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

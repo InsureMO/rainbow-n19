@@ -191,14 +191,14 @@ DocsCollector.collect('java.util.Hashtable', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new, empty hashtable with a default initial capacity (11)
  and load factor (0.75).`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -265,8 +265,8 @@ DocsCollector.collect('java.util.Hashtable', [
  number of keys in the hashtable exceeds this hashtable's capacity
  and load factor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'containsValue(java.lang.Object)', [
@@ -331,8 +331,8 @@ DocsCollector.collect('java.util.Hashtable', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collection view of the values contained in this map`]
 			]
@@ -372,8 +372,8 @@ DocsCollector.collect('java.util.Hashtable', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the mappings contained in this map`]
 			]
@@ -410,8 +410,8 @@ DocsCollector.collect('java.util.Hashtable', [
 				[/* text */ 't', `
  operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the keys contained in this map`]
 			]
@@ -495,7 +495,7 @@ DocsCollector.collect('java.util.Hashtable', [
 					[/* text */ 't', `object to be compared for equality with this hashtable`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the specified Object is equal to this Map`]
 			]
@@ -504,8 +504,8 @@ DocsCollector.collect('java.util.Hashtable', [
 			[/* method description */
 				[/* text */ 't', `Tests if this hashtable maps no keys to values.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this hashtable maps no keys to values;
@@ -521,8 +521,8 @@ DocsCollector.collect('java.util.Hashtable', [
 				[/* text */ 't', `Returns the hash code value for this Map as per the definition in the
  Map interface.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -531,8 +531,8 @@ DocsCollector.collect('java.util.Hashtable', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of keys in this hashtable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of keys in this hashtable.`]
 			]
@@ -543,8 +543,8 @@ DocsCollector.collect('java.util.Hashtable', [
  hashtable itself is copied, but the keys and values are not cloned.
  This is a relatively expensive operation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of the hashtable`]
 			]
@@ -566,8 +566,8 @@ DocsCollector.collect('java.util.Hashtable', [
 				[/* text */ 't', ` method is used to
  convert the key and element to strings.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this hashtable`]
 			]
@@ -579,8 +579,8 @@ DocsCollector.collect('java.util.Hashtable', [
  sequentially. If the hashtable is structurally modified while enumerating
  over the keys then the results of enumerating are undefined.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an enumeration of the keys in this hashtable.`]
 			]
@@ -592,8 +592,8 @@ DocsCollector.collect('java.util.Hashtable', [
  sequentially. If the hashtable is structurally modified while enumerating
  over the values then the results of enumerating are undefined.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an enumeration of the values in this hashtable.`]
 			]
@@ -960,8 +960,8 @@ DocsCollector.collect('java.util.Hashtable', [
 			[/* method description */
 				[/* text */ 't', `Clears this hashtable so that it contains no keys.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
@@ -985,4 +985,5 @@ DocsCollector.collect('java.util.Hashtable', [
 		]],
 		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF]
 	],
+	/* enum values */ UDF
 ]);

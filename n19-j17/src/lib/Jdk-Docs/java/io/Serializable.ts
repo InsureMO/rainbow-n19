@@ -210,7 +210,8 @@ DocsCollector.collect('java.io.Serializable', [
  serialVersionUID values is waived for array classes.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -20,8 +20,8 @@ DocsCollector.collect('java.util.function.ToDoubleFunction', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'applyAsDouble(java.lang.Object)', [
 			[/* method description */
@@ -32,10 +32,11 @@ DocsCollector.collect('java.util.function.ToDoubleFunction', [
 					[/* text */ 't', `the function argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the function result`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

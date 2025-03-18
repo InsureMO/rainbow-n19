@@ -180,7 +180,7 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 					[/* text */ 't', `the object to compare with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object's `],
@@ -202,8 +202,8 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 				[/* inline code block */ 'i', `LanguageRange`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the weight value.`]
 			]
@@ -212,8 +212,8 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code value for the object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -224,8 +224,8 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 				[/* inline code block */ 'i', `LanguageRange`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the language range.`]
 			]
@@ -238,8 +238,8 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
  object, consisting of language range and weight if the range is
  weighted and the weight is less than the max weight.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this `],
 				[/* inline code block */ 'i', `LanguageRange`],
@@ -555,4 +555,5 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -30,8 +30,8 @@ DocsCollector.collect('java.util.concurrent.ThreadFactory', [
  to known values before returning it.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'newThread(java.lang.Runnable)', [
 			[/* method description */
@@ -47,7 +47,7 @@ DocsCollector.collect('java.util.concurrent.ThreadFactory', [
 					[/* text */ 't', `a runnable to be executed by new thread instance`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `constructed thread, or `],
 				[/* inline code block */ 'i', `null`],
@@ -56,4 +56,5 @@ DocsCollector.collect('java.util.concurrent.ThreadFactory', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -8,7 +8,8 @@ DocsCollector.collect('java.util.IllegalFormatException', [
  explicit subtypes of this exception which correspond to specific errors
  should be instantiated.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -118,7 +118,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getMaxExpansion(int)', [
 			[/* method description */
@@ -130,7 +130,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 					[/* text */ 't', `a collation order returned by previous or next.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum length of any expansion sequences ending
          with the specified order.`]
@@ -147,8 +147,8 @@ DocsCollector.collect('java.text.CollationElementIterator', [
  This means if you do setOffset(x) followed immediately by getOffset(), getOffset()
  won't necessarily return x.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The character offset in the original text corresponding to the collation
  element that will be returned by the next call to next().`]
@@ -172,8 +172,8 @@ DocsCollector.collect('java.text.CollationElementIterator', [
  then call previous(), or call previous() and then call next()), you'll get
  back the same element twice.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the next collation element`]
 			]
@@ -196,8 +196,8 @@ DocsCollector.collect('java.text.CollationElementIterator', [
  iterating (i.e., call next() and then call previous(), or call previous()
  and then call next()), you'll get back the same element twice.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous collation element`]
 			]
@@ -211,7 +211,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 					[/* text */ 't', `the collation element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the element's primary component`]
 			]
@@ -225,7 +225,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 					[/* text */ 't', `the collation element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the element's secondary component`]
 			]
@@ -239,7 +239,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 					[/* text */ 't', `the collation element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the element's tertiary component`]
 			]
@@ -249,8 +249,8 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 				[/* text */ 't', `Resets the cursor to the beginning of the string.  The next call
  to next() will return the first collation element in the string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setOffset(int)', [
@@ -271,7 +271,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 					[/* text */ 't', `The new character offset into the original text.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setText(java.lang.String)', [
@@ -283,7 +283,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 					[/* text */ 't', `the new source text`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setText(java.text.CharacterIterator)', [
@@ -295,8 +295,9 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 					[/* text */ 't', `the new source text.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

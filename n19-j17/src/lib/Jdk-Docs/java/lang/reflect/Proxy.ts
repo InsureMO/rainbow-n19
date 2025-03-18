@@ -1,3 +1,4 @@
+import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.lang.reflect.Proxy', [
@@ -878,4 +879,5 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

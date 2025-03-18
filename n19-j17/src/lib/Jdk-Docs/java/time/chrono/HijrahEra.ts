@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.time.chrono.HijrahEra', [
@@ -20,8 +19,8 @@ DocsCollector.collect('java.time.chrono.HijrahEra', [
 			[/* text */ 't', ` instead.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getValue()', [
 			[/* method description */
@@ -32,8 +31,8 @@ DocsCollector.collect('java.time.chrono.HijrahEra', [
 				[/* block */ 'b', `
  The era AH has the value 1.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the era value, 1 (AH)`]
 			]
@@ -62,7 +61,7 @@ DocsCollector.collect('java.time.chrono.HijrahEra', [
 					[/* text */ 't', `the locale to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the text value of the era, not null`]
 			]
@@ -186,11 +185,19 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'AH', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the current era, 'Anno Hegirae',
+ which has the numeric value 1.`]
+			],
 		]]
 	],
 ]);

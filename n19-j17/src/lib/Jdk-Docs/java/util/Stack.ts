@@ -43,13 +43,13 @@ DocsCollector.collect('java.util.Stack', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an empty Stack.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -58,8 +58,8 @@ DocsCollector.collect('java.util.Stack', [
 			[/* method description */
 				[/* text */ 't', `Tests if this stack is empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this stack contains
@@ -82,7 +82,7 @@ DocsCollector.collect('java.util.Stack', [
 					[/* text */ 't', `the item to be pushed onto this stack.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `item`],
@@ -94,7 +94,7 @@ DocsCollector.collect('java.util.Stack', [
 				[/* text */ 't', `Looks at the object at the top of this stack without removing it
  from the stack.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.EmptyStackException', [/* throw description */
 					[/* text */ 't', `if this stack is empty.`]
@@ -112,7 +112,7 @@ DocsCollector.collect('java.util.Stack', [
 				[/* text */ 't', `Removes the object at the top of this stack and returns that
  object as the value of this function.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.EmptyStackException', [/* throw description */
 					[/* text */ 't', `if this stack is empty.`]
@@ -148,7 +148,7 @@ DocsCollector.collect('java.util.Stack', [
 					[/* text */ 't', `the desired object.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the 1-based position from the top of the stack where
           the object is located; the return value `],
@@ -158,4 +158,5 @@ DocsCollector.collect('java.util.Stack', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -10,15 +10,15 @@ DocsCollector.collect('java.nio.file.attribute.FileAttribute', [
 		[/* reference */ 'r', `java.nio.file.Files#createDirectory(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`, `createDirectory`],
 		[/* text */ 't', ` methods.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'name()', [
 			[/* method description */
 				[/* text */ 't', `Returns the attribute name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The attribute name`]
 			]
@@ -27,11 +27,12 @@ DocsCollector.collect('java.nio.file.attribute.FileAttribute', [
 			[/* method description */
 				[/* text */ 't', `Returns the attribute value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The attribute value`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

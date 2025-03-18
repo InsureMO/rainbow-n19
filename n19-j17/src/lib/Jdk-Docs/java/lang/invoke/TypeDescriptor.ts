@@ -5,8 +5,8 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor', [
 	[/* class description */
 		[/* text */ 't', `An entity that has a type descriptor.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'descriptorString()', [
 			[/* method description */
@@ -31,8 +31,8 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor', [
 				[/* text */ 't', `
  can be produced from the result string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the descriptor string for this `],
 				[/* inline code block */ 'i', `TypeDescriptor`],
@@ -40,4 +40,5 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

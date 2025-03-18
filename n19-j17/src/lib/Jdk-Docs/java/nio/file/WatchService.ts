@@ -123,8 +123,8 @@ DocsCollector.collect('java.nio.file.WatchService', [
  it is not required that changes to files carried out on remote systems be
  detected.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'poll()', [
 			[/* method description */
@@ -133,7 +133,7 @@ DocsCollector.collect('java.nio.file.WatchService', [
 				[/* text */ 't', ` if none are
  present.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.file.ClosedWatchServiceException', [/* throw description */
 					[/* text */ 't', `if this watch service is closed`]
@@ -178,7 +178,7 @@ DocsCollector.collect('java.nio.file.WatchService', [
 			[/* method description */
 				[/* text */ 't', `Retrieves and removes next watch key, waiting if none are yet present.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.file.ClosedWatchServiceException', [/* throw description */
 					[/* text */ 't', `if this watch service is closed, or it is closed while waiting
@@ -221,7 +221,7 @@ DocsCollector.collect('java.nio.file.WatchService', [
  has no effect.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -230,4 +230,5 @@ DocsCollector.collect('java.nio.file.WatchService', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

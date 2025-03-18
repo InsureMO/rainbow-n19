@@ -8,7 +8,7 @@ DocsCollector.collect('java.lang.UnsatisfiedLinkError', [
 		[/* inline code block */ 'i', `native`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -16,7 +16,7 @@ DocsCollector.collect('java.lang.UnsatisfiedLinkError', [
 				[/* inline code block */ 'i', `UnsatisfiedLinkError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -34,5 +34,6 @@ DocsCollector.collect('java.lang.UnsatisfiedLinkError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

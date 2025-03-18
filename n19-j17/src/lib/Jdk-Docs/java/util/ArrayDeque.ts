@@ -95,14 +95,14 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an empty array deque with an initial capacity
  sufficient to hold 16 elements.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -287,7 +287,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `object to be checked for containment in this deque`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this deque contains the specified element`]
@@ -299,8 +299,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this deque contains no elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this deque contains no elements`]
@@ -403,7 +403,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `element to be removed from this deque, if present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this deque contained the specified element`]
@@ -459,7 +459,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `element to be removed from this deque, if present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the deque contained the specified element`]
@@ -510,7 +510,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `element to be removed from this deque, if present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the deque contained the specified element`]
@@ -559,7 +559,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -580,7 +580,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  throws an exception if this deque is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -600,7 +600,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  throws an exception if this deque is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -624,8 +624,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of the queue represented by this deque, or
          `],
@@ -642,8 +642,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', ` if this deque is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of this deque, or `],
 				[/* inline code block */ 'i', `null`],
@@ -659,8 +659,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', ` if this deque is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the tail of this deque, or `],
 				[/* inline code block */ 'i', `null`],
@@ -682,8 +682,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of the queue represented by this deque, or
          `],
@@ -700,8 +700,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', ` if this deque is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of this deque, or `],
 				[/* inline code block */ 'i', `null`],
@@ -717,8 +717,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', ` if this deque is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the tail of this deque, or `],
 				[/* inline code block */ 'i', `null`],
@@ -737,7 +737,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -764,7 +764,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -784,7 +784,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  exception if this deque is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -804,7 +804,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  exception if this deque is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this deque is empty`]
@@ -818,8 +818,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of elements in this deque.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in this deque`]
 			]
@@ -838,8 +838,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
  APIs.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing all of the elements in this deque`]
 			]
@@ -848,8 +848,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* method description */
 				[/* text */ 't', `Returns a copy of this deque.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of this deque`]
 			]
@@ -860,8 +860,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
  sequential order.  The elements will be returned in order from
  last (tail) to first (head).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this deque in reverse
  sequence`]
@@ -878,8 +878,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* reference */ 'r', `#pop()`, `pop()`],
 				[/* text */ 't', `).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this deque`]
 			]
@@ -914,8 +914,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
  the reporting of additional characteristic values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -966,8 +966,8 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* text */ 't', `Removes all of the elements from this deque.
  The deque will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEach(java.util.function.Consumer)', [
@@ -1024,4 +1024,5 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

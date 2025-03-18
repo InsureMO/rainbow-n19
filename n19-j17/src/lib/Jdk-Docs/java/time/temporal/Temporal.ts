@@ -123,8 +123,8 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isSupported(java.time.temporal.TemporalUnit)', [
 			[/* method description */
@@ -146,7 +146,7 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 					[/* text */ 't', `the unit to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the unit can be added/subtracted, false if not`]
 			]
@@ -511,4 +511,5 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

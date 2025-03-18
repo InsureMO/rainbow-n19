@@ -23,8 +23,8 @@ DocsCollector.collect('java.lang.annotation.Annotation', [
  compatibility concerns when evolving an annotation interface from being
  non-repeatable to being repeatable.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -137,7 +137,7 @@ DocsCollector.collect('java.lang.annotation.Annotation', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the specified object represents an annotation
      that is logically equivalent to this one, otherwise false`]
@@ -220,8 +220,8 @@ DocsCollector.collect('java.lang.annotation.Annotation', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code of this annotation`]
 			]
@@ -230,8 +230,8 @@ DocsCollector.collect('java.lang.annotation.Annotation', [
 			[/* method description */
 				[/* text */ 't', `Returns the annotation interface of this annotation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the annotation interface of this annotation`]
 			]
@@ -245,11 +245,12 @@ DocsCollector.collect('java.lang.annotation.Annotation', [
 				[/* code block */ 'c', `   @com.example.Name(first="Duke", middle="of", last="Java")
  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this annotation`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -5,7 +5,7 @@ DocsCollector.collect('java.net.SocketException', [
 	[/* class description */
 		[/* text */ 't', `Thrown to indicate that there is an error creating or accessing a Socket.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -13,7 +13,7 @@ DocsCollector.collect('java.net.SocketException', [
 				[/* inline code block */ 'i', `SocketException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -31,5 +31,6 @@ DocsCollector.collect('java.net.SocketException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

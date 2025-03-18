@@ -7,7 +7,7 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
  ZIP file format. Includes support for both compressed and uncompressed
  entries.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.InputStream)', [
 			[/* constructor description */
@@ -63,7 +63,7 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 					[/* text */ 't', `the ZIP file entry name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ZipEntry just created`]
 			]
@@ -77,7 +77,7 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
  Programs should not count on this method to return the actual number
  of bytes that could be read without blocking.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -147,7 +147,7 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 				[/* text */ 't', `Reads the next ZIP file entry and positions the stream at the
  beginning of the entry data.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
 					[/* text */ 't', `if a ZIP file error has occurred`]
@@ -190,7 +190,7 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 				[/* text */ 't', `Closes this input stream and releases any system resources associated
  with the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -203,7 +203,7 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 				[/* text */ 't', `Closes the current ZIP entry and positions the stream for reading the
  next entry.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
 					[/* text */ 't', `if a ZIP file error has occurred`]
@@ -215,4 +215,5 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

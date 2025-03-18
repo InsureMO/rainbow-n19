@@ -41,17 +41,18 @@ DocsCollector.collect('java.nio.charset.CodingErrorAction', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this action.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A descriptive string`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

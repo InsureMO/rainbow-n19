@@ -107,8 +107,8 @@ private static CallSite bootstrapDynamic(MethodHandles.Lookup caller, String nam
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'dynamicInvoker()', [
 			[/* method description */
@@ -128,8 +128,8 @@ private static CallSite bootstrapDynamic(MethodHandles.Lookup caller, String nam
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a method handle which always invokes this call site's current target`]
 			]
@@ -143,8 +143,8 @@ private static CallSite bootstrapDynamic(MethodHandles.Lookup caller, String nam
 				[/* text */ 't', ` document the
  class-specific behaviors of this method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current linkage state of the call site, its target method handle`]
 			]
@@ -191,11 +191,12 @@ private static CallSite bootstrapDynamic(MethodHandles.Lookup caller, String nam
 				[/* text */ 't', ` method enforces this invariant by refusing any new target that does
  not have the previous target's type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the type of the current target, which is also the type of any future target`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

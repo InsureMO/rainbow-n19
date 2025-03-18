@@ -9,14 +9,14 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 		[/* reference */ 'r', `java.text.BreakIterator`, `BreakIterator`],
 		[/* text */ 't', ` class.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -162,4 +162,5 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

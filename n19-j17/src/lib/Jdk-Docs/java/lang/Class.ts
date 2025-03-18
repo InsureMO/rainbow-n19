@@ -233,8 +233,8 @@ DocsCollector.collect('java.lang.Class', [
 		[/* text */ 't', `.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
@@ -446,8 +446,8 @@ DocsCollector.collect('java.lang.Class', [
  class loader) its class loader's default assertion status is returned;
  otherwise, the system class default assertion status is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the desired assertion status of the specified class.`]
 			]
@@ -462,8 +462,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', `
  would also return true, as all annotation interfaces are also interfaces.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this `],
@@ -512,8 +512,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` if and only if the underlying class
  is an anonymous class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this class is an anonymous class.`]
@@ -539,8 +539,8 @@ DocsCollector.collect('java.lang.Class', [
  be used to get the class of the enum class declaring the
  constant.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this class was declared as an enum in the
      source code`]
@@ -553,8 +553,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` if and only if the underlying class
  is a local class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this class is a local class.`]
@@ -567,8 +567,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` if and only if the underlying class
  is a member class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this class is a member class.`]
@@ -592,7 +592,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `the class to check`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this class and `],
@@ -637,8 +637,8 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this class is a record class, otherwise false`]
 			]
@@ -664,8 +664,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` returns a non-null but
  possibly empty value for a sealed class or interface.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this `],
@@ -681,8 +681,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` if and only if this class has the synthetic modifier
  bit set.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this class has the synthetic modifier
@@ -836,8 +836,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* block */ 'b', `Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations present on this element`]
 			]
@@ -860,8 +860,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* block */ 'b', `Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations directly present on this element`]
 			]
@@ -875,8 +875,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* reference */ 'r', `java.lang.Class`, `Class`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Class`],
@@ -892,8 +892,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Class`],
@@ -913,8 +913,8 @@ DocsCollector.collect('java.lang.Class', [
  array.  If this class does not represent an array class this method
  returns null.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `Class`],
@@ -937,7 +937,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` object represents an array class, a primitive
  type, or void,then this method returns null.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -962,7 +962,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -1015,7 +1015,7 @@ DocsCollector.collect('java.lang.Class', [
  itself, and is the nest host.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If the returned class is not the current class, and
@@ -1053,7 +1053,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` object represents a primitive type, an array
  class, or void.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -1091,7 +1091,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` object represents a
  primitive type, an array class, or void.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -1247,8 +1247,8 @@ DocsCollector.collect('java.lang.Class', [
  returned in that order.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of interfaces directly implemented by this class`]
 			]
@@ -1318,7 +1318,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If any returned class is not the current class, and
@@ -1389,7 +1389,7 @@ DocsCollector.collect('java.lang.Class', [
  cannot be obtained, it is silently ignored, and not included in the result
  array.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -1426,7 +1426,7 @@ DocsCollector.collect('java.lang.Class', [
  represents a primitive type or void, null is returned.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager is present, and the caller's class loader
@@ -1469,8 +1469,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` of the class
  loader for this class is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the module that this class or interface is a member of`]
 			]
@@ -1487,8 +1487,8 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the package of this class.`]
 			]
@@ -1533,8 +1533,8 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object representing the superclass`]
 			]
@@ -1602,8 +1602,8 @@ DocsCollector.collect('java.lang.Class', [
  array of length 0.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array representing the superinterfaces`]
 			]
@@ -1626,7 +1626,7 @@ DocsCollector.collect('java.lang.Class', [
  or anonymous class immediately enclosed by a class or
  interface declaration, instance initializer or static initializer.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -1681,7 +1681,7 @@ DocsCollector.collect('java.lang.Class', [
  class has no public constructors, or if the class is an array class, or
  if the class reflects a primitive type or void.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -1730,7 +1730,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -2108,7 +2108,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* block */ 'b', ` The elements in the returned array are not sorted and are not in any
  particular order.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -2200,7 +2200,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* block */ 'b', ` The elements in the returned array are not sorted and are not in any
  particular order.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -2338,7 +2338,7 @@ DocsCollector.collect('java.lang.Class', [
  class is a local or anonymous class immediately enclosed by a class or
  interface declaration, instance initializer or static initializer.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -2618,7 +2618,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* block */ 'b', ` The elements in the returned array are not sorted and are not in any
  particular order.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -2773,7 +2773,7 @@ DocsCollector.collect('java.lang.Class', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -2823,7 +2823,7 @@ DocsCollector.collect('java.lang.Class', [
  returns a non-null value.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager, `],
@@ -2908,7 +2908,7 @@ DocsCollector.collect('java.lang.Class', [
  returned.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
 					[/* text */ 't', `if the generic
@@ -3020,7 +3020,7 @@ DocsCollector.collect('java.lang.Class', [
  returned in that order.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
 					[/* text */ 't', `if the generic class signature does not conform to the
@@ -3055,7 +3055,7 @@ DocsCollector.collect('java.lang.Class', [
  array of length 0 if the underlying generic declaration declares no type
  variables.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
 					[/* text */ 't', `if the generic
@@ -3207,8 +3207,8 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `).`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the descriptor string for this `],
 				[/* inline code block */ 'i', `Class`],
@@ -3248,8 +3248,8 @@ DocsCollector.collect('java.lang.Class', [
 					[/* block */ 'b', `an array whose component type does not have a canonical name`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the canonical name of the underlying class if it exists, and
  `],
@@ -3492,8 +3492,8 @@ DocsCollector.collect('java.lang.Class', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the class, interface, or other entity
           represented by this `],
@@ -3548,8 +3548,8 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `" is returned.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the fully qualified package name`]
 			]
@@ -3578,8 +3578,8 @@ DocsCollector.collect('java.lang.Class', [
  name of an array class whose component type is anonymous is "[]".`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the simple name of the underlying class`]
 			]
@@ -3588,8 +3588,8 @@ DocsCollector.collect('java.lang.Class', [
 			[/* method description */
 				[/* text */ 't', `Return an informative string for the name of this class or interface.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an informative string for the name of this class or interface`]
 			]
@@ -3638,8 +3638,8 @@ DocsCollector.collect('java.lang.Class', [
  originating source code or illegal on the originating source
  code may be present.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string describing this `],
 				[/* inline code block */ 'i', `Class`],
@@ -3668,8 +3668,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `getName`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this `],
 				[/* inline code block */ 'i', `Class`],
@@ -3824,7 +3824,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `ProtectionDomain`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its
@@ -3845,8 +3845,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -3862,8 +3862,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `Class`],
 				[/* text */ 't', ` object represents an array class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this `],
@@ -3952,8 +3952,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the underlying class is a hidden class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this class is a hidden class.`]
@@ -4037,7 +4037,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `the object to check`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if `],
 				[/* inline code block */ 'i', `obj`],
@@ -4051,8 +4051,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` object represents an
  interface type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this `],
@@ -4109,8 +4109,8 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this class represents a primitive type`]
 			]
@@ -4191,8 +4191,8 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `int`],
@@ -4223,8 +4223,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` class is
  returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the direct superclass of the class represented by this `],
 				[/* inline code block */ 'i', `Class`],
@@ -4235,8 +4235,8 @@ DocsCollector.collect('java.lang.Class', [
 			[/* method description */
 				[/* text */ 't', `Gets the signers of this class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the signers of this class, or null if there are no signers.  In
           particular, this method returns null if this `],
@@ -4572,7 +4572,7 @@ DocsCollector.collect('java.lang.Class', [
  expression with an empty argument list.  The class is initialized if it
  has not already been initialized.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
 					[/* text */ 't', `if the class or its nullary
@@ -4612,8 +4612,8 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', `Returns the elements of this enum class or null if this
  Class object does not represent an enum class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the values comprising the enum class
      represented by this `],
@@ -4626,4 +4626,5 @@ DocsCollector.collect('java.lang.Class', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

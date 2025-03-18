@@ -20,8 +20,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
  narrowing conversion would occur.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
@@ -112,7 +112,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -177,8 +177,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this field represents an element of
@@ -194,8 +194,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this field is a synthetic
  field as defined by the Java Language Specification.`]
@@ -458,8 +458,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				[/* text */ 't', ` class should
  be used to decode the modifiers.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Java language modifiers for the underlying member`]
 			]
@@ -472,8 +472,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
  exclusive-or of the hashcodes for the underlying field's
  declaring class name and its name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -488,8 +488,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				[/* inline code block */ 'i', `Field`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object representing the declaring class of the
  underlying member`]
@@ -505,8 +505,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				[/* inline code block */ 'i', `Field`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Class`],
@@ -616,8 +616,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				[/* text */ 't', `Returns an AnnotatedType object that represents the use of a type to specify
  the declared type of the field represented by this Field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an object representing the declared type of the field
  represented by this Field`]
@@ -645,7 +645,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				[/* block */ 'b', `If the type of the underlying field is a type variable or a
  parameterized type, it is created. Otherwise, it is resolved.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
 					[/* text */ 't', `if the generic field
@@ -679,8 +679,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				[/* inline code block */ 'i', `Field`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the simple name of the underlying member`]
 			]
@@ -719,8 +719,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string describing this `],
 				[/* inline code block */ 'i', `Field`],
@@ -767,8 +767,8 @@ DocsCollector.collect('java.lang.reflect.Field', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string describing this `],
 				[/* inline code block */ 'i', `Field`]
@@ -1669,4 +1669,5 @@ DocsCollector.collect('java.lang.reflect.Field', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

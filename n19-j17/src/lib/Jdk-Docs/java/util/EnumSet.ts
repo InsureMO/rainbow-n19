@@ -89,15 +89,15 @@ DocsCollector.collect('java.util.EnumSet', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'clone()', [
 			[/* method description */
 				[/* text */ 't', `Returns a copy of this set.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of this set`]
 			]
@@ -413,4 +413,5 @@ DocsCollector.collect('java.util.EnumSet', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

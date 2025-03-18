@@ -9,15 +9,15 @@ DocsCollector.collect('java.io.Flushable', [
  flush method is invoked to write any buffered output to the underlying
  stream.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'flush()', [
 			[/* method description */
 				[/* text */ 't', `Flushes this stream by writing any buffered output to the underlying
  stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -26,4 +26,5 @@ DocsCollector.collect('java.io.Flushable', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

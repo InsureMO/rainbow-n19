@@ -472,7 +472,7 @@ DocsCollector.collect('java.net.URLConnection', [
  connected, like getContentLength, will implicitly perform the
  connection, if necessary.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.SocketTimeoutException', [/* throw description */
 					[/* text */ 't', `if the timeout expires before
@@ -492,8 +492,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', ` field for
  this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the `],
 				[/* inline code block */ 'i', `allowUserInteraction`],
@@ -519,8 +519,8 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the default value of a `],
 				[/* inline code block */ 'i', `URLConnection`],
@@ -539,8 +539,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* inline code block */ 'i', `doInput`],
 				[/* text */ 't', ` flag.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of this `],
 				[/* inline code block */ 'i', `URLConnection`],
@@ -559,8 +559,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* inline code block */ 'i', `doOutput`],
 				[/* text */ 't', ` flag.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of this `],
 				[/* inline code block */ 'i', `URLConnection`],
@@ -579,8 +579,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* inline code block */ 'i', `useCaches`],
 				[/* text */ 't', ` field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of this `],
 				[/* inline code block */ 'i', `URLConnection`],
@@ -598,8 +598,8 @@ DocsCollector.collect('java.net.URLConnection', [
  0 return implies that the option is disabled
  (i.e., timeout of infinity).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `int`],
@@ -626,8 +626,8 @@ DocsCollector.collect('java.net.URLConnection', [
  instead and is therefore more portable.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the content length of the resource that this connection's URL
           references, `],
@@ -660,7 +660,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `the default value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the named field, parsed as an integer. The
           `],
@@ -674,8 +674,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', `Returns setting for read timeout. 0 return implies that the
  option is disabled (i.e., timeout of infinity).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `int`],
@@ -691,7 +691,7 @@ DocsCollector.collect('java.net.URLConnection', [
  returned input stream if the read timeout expires before data
  is available for read.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs while
@@ -710,7 +710,7 @@ DocsCollector.collect('java.net.URLConnection', [
 			[/* method description */
 				[/* text */ 't', `Returns an output stream that writes to this connection.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs while
@@ -803,7 +803,7 @@ DocsCollector.collect('java.net.URLConnection', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs while
@@ -860,8 +860,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* inline code block */ 'i', `content-encoding`],
 				[/* text */ 't', ` header field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the content encoding of the resource that the URL references,
           or `],
@@ -875,8 +875,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* inline code block */ 'i', `content-type`],
 				[/* text */ 't', ` header field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the content type of the resource that the URL references,
           or `],
@@ -912,7 +912,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* inline code block */ 'i', `n>=0`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the `],
 				[/* inline code block */ 'i', `n`],
@@ -938,7 +938,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `the name of a header field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the named header field, or `],
 				[/* inline code block */ 'i', `null`],
@@ -978,7 +978,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* inline code block */ 'i', `n>=0`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the key for the `],
 				[/* inline code block */ 'i', `n`],
@@ -1020,8 +1020,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` representation of this URL connection.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this `],
 				[/* inline code block */ 'i', `URLConnection`],
@@ -1037,8 +1037,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', `
  field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of this `],
 				[/* inline code block */ 'i', `URLConnection`],
@@ -1096,7 +1096,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', ` connecting.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the computation of the permission
@@ -1118,8 +1118,8 @@ DocsCollector.collect('java.net.URLConnection', [
  unmodifiable List of Strings that represents
  the corresponding field values.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a Map of header fields`]
 			]
@@ -1133,7 +1133,7 @@ DocsCollector.collect('java.net.URLConnection', [
  of Strings that represents the corresponding
  field values.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if already connected`]
@@ -1150,8 +1150,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', ` header field as a
  long.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the content length of the resource that this connection's URL
           references, or `],
@@ -1166,8 +1166,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* inline code block */ 'i', `date`],
 				[/* text */ 't', ` header field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sending date of the resource that the URL references,
           or `],
@@ -1182,8 +1182,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* inline code block */ 'i', `expires`],
 				[/* text */ 't', ` header field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the expiration date of the resource that this URL references,
           or 0 if not known. The value is the number of milliseconds since
@@ -1216,7 +1216,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `a default value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the field, parsed as a date. The value of the
           `],
@@ -1249,7 +1249,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `the default value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the named field, parsed as a long. The
           `],
@@ -1264,8 +1264,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* inline code block */ 'i', `ifModifiedSince`],
 				[/* text */ 't', ` field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of this object's `],
 				[/* inline code block */ 'i', `ifModifiedSince`],
@@ -1279,8 +1279,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', ` header field.
  The result is the number of milliseconds since January 1, 1970 GMT.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the date the resource referenced by this
           `],
@@ -1300,8 +1300,8 @@ DocsCollector.collect('java.net.URLConnection', [
  URLConnections.  This flag applies to the next, and all following
  URLConnections that are created.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the default value of the `],
 				[/* inline code block */ 'i', `allowUserInteraction`],
@@ -1330,7 +1330,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `the protocol whose defaultUseCaches setting is required`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the default value of the `],
 				[/* inline code block */ 'i', `useCaches`],
@@ -1347,7 +1347,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `the keyword by which the request is known (e.g., "Accept").`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the default request property
  for the specified key.`]
@@ -1367,7 +1367,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `a filename.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a guess as to what the content type of the object is,
           based upon its file name.`]
@@ -1420,8 +1420,8 @@ DocsCollector.collect('java.net.URLConnection', [
  by "content.types.user.table" property. If that fails,
  it tries to load the default built-in table.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the FileNameMap`]
 			]
@@ -1484,7 +1484,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `the new value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDefaultRequestProperty(java.lang.String,java.lang.String)', [
@@ -1506,7 +1506,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `the value associated with the key.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDefaultUseCaches(java.lang.String,boolean)', [
@@ -1530,7 +1530,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `whether caching is enabled by default for the given protocol`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setFileNameMap(java.net.FileNameMap)', [
@@ -1653,7 +1653,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `the new value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDoInput(boolean)', [
@@ -1830,4 +1830,5 @@ DocsCollector.collect('java.net.URLConnection', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -830,8 +830,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* inline code block */ 'i', `invokevirtual`],
 		[/* text */ 't', ` instruction.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'withInvokeBehavior()', [
 			[/* method description */
@@ -854,8 +854,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a VarHandle with invoke behavior`]
 			]
@@ -881,8 +881,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a VarHandle with invoke-exact behavior`]
 			]
@@ -895,8 +895,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* text */ 't', `invoke-exact behavior`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this VarHandle has `],
@@ -930,7 +930,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  signature-polymorphic method of the same name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the given access mode is supported, otherwise
@@ -956,7 +956,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  signature-polymorphic method of the same name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the access mode type for the given access mode`]
 			]
@@ -968,8 +968,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* text */ 't', `,
  including the type of variable described, and a description of its coordinates.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A compact textual description of this `],
 				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`]
@@ -3037,8 +3037,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* method description */
 				[/* text */ 't', `Returns the variable type of variables referenced by this VarHandle.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the variable type of variables referenced by this VarHandle`]
 			]
@@ -3054,7 +3054,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  signature-polymorphic method of the same name`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a method handle bound to this VarHandle and the given access mode`]
 			]
@@ -3063,8 +3063,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* method description */
 				[/* text */ 't', `Returns the coordinate types for this VarHandle.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the coordinate types for this VarHandle. The returned
  list is unmodifiable`]
@@ -3077,8 +3077,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -3093,8 +3093,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* text */ 't', `Ensures that loads before the fence will not be reordered with loads and
  stores after the fence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'fullFence()', [
@@ -3103,8 +3103,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  with
  loads and stores after the fence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'loadLoadFence()', [
@@ -3112,8 +3112,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* text */ 't', `Ensures that loads before the fence will not be reordered with
  loads after the fence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'releaseFence()', [
@@ -3121,8 +3121,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* text */ 't', `Ensures that loads and stores before the fence will not be
  reordered with stores after the fence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'storeStoreFence()', [
@@ -3130,9 +3130,10 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* text */ 't', `Ensures that stores before the fence will not be reordered with
  stores after the fence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

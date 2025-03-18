@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.VerifyError', [
  though well formed, contains some sort of internal inconsistency
  or security problem.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.VerifyError', [
 				[/* inline code block */ 'i', `VerifyError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -32,5 +32,6 @@ DocsCollector.collect('java.lang.VerifyError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

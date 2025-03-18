@@ -20,7 +20,7 @@ DocsCollector.collect('java.io.PipedOutputStream', [
  thread that was reading data bytes from the connected piped input
  stream is no longer alive.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -28,7 +28,7 @@ DocsCollector.collect('java.io.PipedOutputStream', [
  piped input stream. It must be connected to a piped input stream,
  either by the receiver or the sender, before being used.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.io.PipedInputStream)', [
@@ -102,7 +102,7 @@ DocsCollector.collect('java.io.PipedOutputStream', [
  to be written out.
  This will notify any readers that bytes are waiting in the pipe.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -116,7 +116,7 @@ DocsCollector.collect('java.io.PipedOutputStream', [
  associated with this stream. This stream may no longer be used for
  writing bytes.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -195,4 +195,5 @@ DocsCollector.collect('java.io.PipedOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

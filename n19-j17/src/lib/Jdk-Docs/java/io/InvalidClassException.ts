@@ -65,8 +65,8 @@ DocsCollector.collect('java.io.InvalidClassException', [
 			[/* method description */
 				[/* text */ 't', `Produce the message and include the classname, if present.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the detail message string of this `],
 				[/* inline code block */ 'i', `Throwable`],
@@ -77,4 +77,5 @@ DocsCollector.collect('java.io.InvalidClassException', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -1,12 +1,11 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires$Modifier', [
 	[/* class description */
 		[/* text */ 't', `A modifier on a module dependence.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -39,11 +38,42 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'TRANSITIVE', [
+			[/* enum value description */
+				[/* text */ 't', `The dependence causes any module which depends on the `],
+				[/* text */ 't', `current
+ module`],
+				[/* text */ 't', ` to have an implicitly declared dependence on the module
+ named by the `],
+				[/* inline code block */ 'i', `Requires`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'STATIC', [
+			[/* enum value description */
+				[/* text */ 't', `The dependence is mandatory in the static phase, during compilation,
+ but is optional in the dynamic phase, during execution.`]
+			],
+		]],
+		[/* enum value */ 'SYNTHETIC', [
+			[/* enum value description */
+				[/* text */ 't', `The dependence was not explicitly or implicitly declared in the
+ source of the module declaration.`]
+			],
+		]],
+		[/* enum value */ 'MANDATED', [
+			[/* enum value description */
+				[/* text */ 't', `The dependence was implicitly declared in the source of the module
+ declaration.`]
+			],
 		]]
 	],
 ]);

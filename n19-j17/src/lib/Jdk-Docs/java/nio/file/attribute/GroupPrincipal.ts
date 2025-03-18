@@ -15,7 +15,8 @@ DocsCollector.collect('java.nio.file.attribute.GroupPrincipal', [
  groups, and whether groups can be nested, are implementation specified and
  therefore not specified.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

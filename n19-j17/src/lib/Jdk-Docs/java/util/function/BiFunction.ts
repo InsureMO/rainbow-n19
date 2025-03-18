@@ -18,8 +18,8 @@ DocsCollector.collect('java.util.function.BiFunction', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'apply(java.lang.Object,java.lang.Object)', [
 			[/* method description */
@@ -33,7 +33,7 @@ DocsCollector.collect('java.util.function.BiFunction', [
 					[/* text */ 't', `the second function argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the function result`]
 			]
@@ -65,4 +65,5 @@ DocsCollector.collect('java.util.function.BiFunction', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

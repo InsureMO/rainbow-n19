@@ -145,7 +145,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isAbstract(int)', [
 			[/* method description */
@@ -163,7 +163,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -192,7 +192,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -221,7 +221,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -250,7 +250,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -279,7 +279,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -308,7 +308,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -337,7 +337,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -366,7 +366,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -395,7 +395,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -424,7 +424,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -453,7 +453,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -482,7 +482,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
@@ -502,8 +502,8 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 				[/* text */ 't', ` value OR-ing together the source language
  modifiers that can be applied to a class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `int`],
@@ -518,8 +518,8 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 				[/* text */ 't', ` value OR-ing together the source language
  modifiers that can be applied to a constructor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `int`],
@@ -534,8 +534,8 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 				[/* text */ 't', ` value OR-ing together the source language
  modifiers that can be applied to a field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `int`],
@@ -550,8 +550,8 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 				[/* text */ 't', ` value OR-ing together the source language
  modifiers that can be applied to an interface.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `int`],
@@ -566,8 +566,8 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 				[/* text */ 't', ` value OR-ing together the source language
  modifiers that can be applied to a method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `int`],
@@ -582,8 +582,8 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 				[/* text */ 't', ` value OR-ing together the source language
  modifiers that can be applied to a parameter.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `int`],
@@ -640,7 +640,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 					[/* text */ 't', `a set of modifiers`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the set of modifiers
  represented by `],
@@ -648,4 +648,5 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

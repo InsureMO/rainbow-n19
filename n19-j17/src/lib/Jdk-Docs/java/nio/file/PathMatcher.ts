@@ -6,8 +6,8 @@ DocsCollector.collect('java.nio.file.PathMatcher', [
 		[/* text */ 't', `An interface that is implemented by objects that perform match operations on
  paths.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'matches(java.nio.file.Path)', [
 			[/* method description */
@@ -18,7 +18,7 @@ DocsCollector.collect('java.nio.file.PathMatcher', [
 					[/* text */ 't', `the path to match`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the path matches this
@@ -26,4 +26,5 @@ DocsCollector.collect('java.nio.file.PathMatcher', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

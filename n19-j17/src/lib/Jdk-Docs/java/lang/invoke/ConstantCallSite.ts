@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.invoke.ConstantCallSite', [
 		[/* text */ 't', ` is permanently
  bound to the call site's target.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.invoke.MethodType,java.lang.invoke.MethodHandle)', [
 			[/* constructor description */
@@ -123,7 +123,7 @@ DocsCollector.collect('java.lang.invoke.ConstantCallSite', [
 				[/* reference */ 'r', `java.lang.invoke.CallSite#dynamicInvoker()`, `CallSite.dynamicInvoker`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -146,7 +146,7 @@ DocsCollector.collect('java.lang.invoke.ConstantCallSite', [
  That is, the target is always the original value passed
  to the constructor call which created this instance.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -178,4 +178,5 @@ DocsCollector.collect('java.lang.invoke.ConstantCallSite', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

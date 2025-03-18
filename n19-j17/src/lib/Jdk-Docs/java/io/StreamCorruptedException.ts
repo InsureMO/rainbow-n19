@@ -6,13 +6,13 @@ DocsCollector.collect('java.io.StreamCorruptedException', [
 		[/* text */ 't', `Thrown when control information that was read from an object stream
  violates internal consistency checks.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Create a StreamCorruptedException and list no reason why thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -27,5 +27,6 @@ DocsCollector.collect('java.io.StreamCorruptedException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

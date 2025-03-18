@@ -29,15 +29,15 @@ DocsCollector.collect('java.nio.channels.Channel', [
  as described in the specifications of the interfaces and classes that extend
  and implement this interface.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isOpen()', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this channel is open.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this channel is open`]
@@ -66,7 +66,7 @@ DocsCollector.collect('java.nio.channels.Channel', [
  the first invocation is complete, after which it will return without
  effect. `]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -75,4 +75,5 @@ DocsCollector.collect('java.nio.channels.Channel', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

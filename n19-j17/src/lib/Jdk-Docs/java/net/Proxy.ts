@@ -89,7 +89,7 @@ DocsCollector.collect('java.net.Proxy', [
 					[/* text */ 't', `the object to compare against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -102,8 +102,8 @@ DocsCollector.collect('java.net.Proxy', [
 			[/* method description */
 				[/* text */ 't', `Returns a hashcode for this Proxy.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this Proxy.`]
 			]
@@ -117,8 +117,8 @@ DocsCollector.collect('java.net.Proxy', [
 				[/* inline code block */ 'i', `DIRECT`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this object.`]
 			]
@@ -127,8 +127,8 @@ DocsCollector.collect('java.net.Proxy', [
 			[/* method description */
 				[/* text */ 't', `Returns the proxy type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a Type representing the proxy type`]
 			]
@@ -140,8 +140,8 @@ DocsCollector.collect('java.net.Proxy', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if its a direct connection.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `SocketAddress`],
@@ -150,4 +150,5 @@ DocsCollector.collect('java.net.Proxy', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -7,15 +7,15 @@ DocsCollector.collect('java.io.ObjectInput', [
  objects. DataInput includes methods for the input of primitive types,
  ObjectInput extends that interface to include objects, arrays, and Strings.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'available()', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of bytes that can be read
  without blocking.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -30,7 +30,7 @@ DocsCollector.collect('java.io.ObjectInput', [
 				[/* text */ 't', `Reads a byte of data. This method will block if no input is
  available.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -92,7 +92,7 @@ DocsCollector.collect('java.io.ObjectInput', [
 				[/* text */ 't', `Read and return an object. The class that implements this interface
  defines where the object is "read" from.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
 					[/* text */ 't', `If the class of a serialized
@@ -131,7 +131,7 @@ DocsCollector.collect('java.io.ObjectInput', [
  to release any resources associated with
  the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -140,4 +140,5 @@ DocsCollector.collect('java.io.ObjectInput', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

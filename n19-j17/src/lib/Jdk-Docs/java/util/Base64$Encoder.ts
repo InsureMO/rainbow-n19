@@ -35,8 +35,8 @@ DocsCollector.collect('java.util.Base64$Encoder', [
      to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'encode(byte[])', [
 			[/* method description */
@@ -51,7 +51,7 @@ DocsCollector.collect('java.util.Base64$Encoder', [
 					[/* text */ 't', `the byte array to encode`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A newly-allocated byte array containing the resulting
           encoded bytes.`]
@@ -113,7 +113,7 @@ DocsCollector.collect('java.util.Base64$Encoder', [
 					[/* text */ 't', `the output stream.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the output stream for encoding the byte data into the
           specified Base64 encoded format`]
@@ -149,7 +149,7 @@ DocsCollector.collect('java.util.Base64$Encoder', [
 					[/* text */ 't', `the byte array to encode`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A String containing the resulting Base64 encoded characters`]
 			]
@@ -172,7 +172,7 @@ DocsCollector.collect('java.util.Base64$Encoder', [
 					[/* text */ 't', `the source ByteBuffer to encode`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A newly-allocated byte buffer containing the encoded bytes.`]
 			]
@@ -188,12 +188,13 @@ DocsCollector.collect('java.util.Base64$Encoder', [
  this invocation. The returned encoder instance should be used for
  non-padding encoding operation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an equivalent encoder that encodes without adding any
          padding character at the end`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

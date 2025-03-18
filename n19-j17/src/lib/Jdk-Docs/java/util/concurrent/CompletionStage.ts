@@ -186,8 +186,8 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  interface by providing a common conversion type.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'thenCombine(java.util.concurrent.CompletionStage,java.util.function.BiFunction)', [
 			[/* method description */
@@ -209,7 +209,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -235,7 +235,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -264,7 +264,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -289,7 +289,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -315,7 +315,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -344,7 +344,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -369,7 +369,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -395,7 +395,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -424,7 +424,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -453,7 +453,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -483,7 +483,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -516,7 +516,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -552,7 +552,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -575,7 +575,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -600,7 +600,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -645,7 +645,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the function to use to compute another CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -681,7 +681,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the function to use to compute another CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -719,7 +719,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -739,8 +739,8 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				[/* inline code block */ 'i', `CompletableFuture`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the CompletableFuture`]
 			]
@@ -765,7 +765,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -791,7 +791,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -820,7 +820,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -844,7 +844,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -869,7 +869,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -897,7 +897,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -921,7 +921,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -946,7 +946,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -974,7 +974,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -996,7 +996,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1019,7 +1019,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1044,7 +1044,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1065,7 +1065,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1087,7 +1087,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  returned CompletionStage`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1111,7 +1111,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1131,7 +1131,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  exceptionally`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1173,7 +1173,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the action to perform`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1216,7 +1216,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the action to perform`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1262,7 +1262,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1283,7 +1283,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  exceptionally`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1306,7 +1306,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1323,7 +1323,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  CompletionStage if this CompletionStage completed exceptionally`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1341,7 +1341,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  CompletionStage if this CompletionStage completed exceptionally`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
@@ -1362,10 +1362,11 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

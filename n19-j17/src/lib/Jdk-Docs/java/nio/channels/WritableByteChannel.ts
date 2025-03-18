@@ -13,8 +13,8 @@ DocsCollector.collect('java.nio.channels.WritableByteChannel', [
  I/O operations may proceed concurrently with a write operation depends upon
  the type of the channel. `]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'write(java.nio.ByteBuffer)', [
 			[/* method description */
@@ -125,4 +125,5 @@ DocsCollector.collect('java.nio.channels.WritableByteChannel', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

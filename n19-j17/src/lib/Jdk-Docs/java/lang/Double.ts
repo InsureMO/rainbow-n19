@@ -504,7 +504,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -524,8 +524,8 @@ DocsCollector.collect('java.lang.Double', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the value represented by this object is
@@ -546,8 +546,8 @@ DocsCollector.collect('java.lang.Double', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the value represented by this object is
@@ -565,8 +565,8 @@ DocsCollector.collect('java.lang.Double', [
 				[/* text */ 't', `
  after a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `double`],
@@ -583,8 +583,8 @@ DocsCollector.collect('java.lang.Double', [
 				[/* inline code block */ 'i', `Double`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `double`],
@@ -600,8 +600,8 @@ DocsCollector.collect('java.lang.Double', [
 				[/* text */ 't', `
  after a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `double`],
@@ -678,7 +678,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', ` to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -750,8 +750,8 @@ DocsCollector.collect('java.lang.Double', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `hash code`],
@@ -767,8 +767,8 @@ DocsCollector.collect('java.lang.Double', [
 				[/* text */ 't', `
  after a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `double`],
@@ -789,7 +789,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', `ignored`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* reference */ 'r', `java.lang.Double`, `Double`],
@@ -809,8 +809,8 @@ DocsCollector.collect('java.lang.Double', [
 				[/* inline code block */ 'i', `toString`],
 				[/* text */ 't', ` of one argument.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `String`],
@@ -824,8 +824,8 @@ DocsCollector.collect('java.lang.Double', [
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance, which is the instance itself.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -843,8 +843,8 @@ DocsCollector.collect('java.lang.Double', [
 				[/* text */ 't', `
  after a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `double`],
@@ -862,8 +862,8 @@ DocsCollector.collect('java.lang.Double', [
 				[/* text */ 't', `
  after a narrowing primitive conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `double`],
@@ -889,7 +889,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', ` value to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the argument is a finite
@@ -912,7 +912,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', `the value to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the value of the argument is positive
@@ -935,7 +935,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', `the value to be tested.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the value of the argument is NaN;
@@ -961,7 +961,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the greater of `],
 				[/* inline code block */ 'i', `a`],
@@ -986,7 +986,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the smaller of `],
 				[/* inline code block */ 'i', `a`],
@@ -1047,7 +1047,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sum of `],
 				[/* inline code block */ 'i', `a`],
@@ -1078,7 +1078,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', ` to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -1120,7 +1120,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', `the value to hash`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for a `],
 				[/* inline code block */ 'i', `double`],
@@ -1150,7 +1150,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', `a double value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Double`],
@@ -1787,7 +1787,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', ` to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hex string representation of the argument.`]
 			]
@@ -1990,7 +1990,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', ` to be converted.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the argument.`]
 			]
@@ -2065,7 +2065,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', ` precision floating-point number.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the bits that represent the floating-point number.`]
 			]
@@ -2201,7 +2201,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', ` integer.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `double`],
@@ -2286,10 +2286,11 @@ DocsCollector.collect('java.lang.Double', [
 					[/* text */ 't', ` precision floating-point number.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the bits that represent the floating-point number.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

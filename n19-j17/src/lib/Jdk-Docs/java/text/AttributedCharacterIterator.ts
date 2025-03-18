@@ -70,8 +70,8 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getRunLimit()', [
 			[/* method description */
@@ -83,8 +83,8 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
  same set of attribute/value pairs) are treated as separate runs
  if the attributes have been given to those text segments separately.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first character following the run`]
 			]
@@ -101,7 +101,7 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 					[/* text */ 't', `the desired attribute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first character following the run`]
 			]
@@ -118,7 +118,7 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 					[/* text */ 't', `a set of the desired attributes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first character following the run`]
 			]
@@ -133,8 +133,8 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
  same set of attribute/value pairs) are treated as separate runs
  if the attributes have been given to those text segments separately.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first character of the run`]
 			]
@@ -151,7 +151,7 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 					[/* text */ 't', `the desired attribute.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first character of the run`]
 			]
@@ -168,7 +168,7 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 					[/* text */ 't', `a set of the desired attributes.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first character of the run`]
 			]
@@ -189,7 +189,7 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 					[/* text */ 't', `the desired attribute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the named `],
 				[/* inline code block */ 'i', `attribute`],
@@ -202,8 +202,8 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 				[/* text */ 't', `Returns a map with the attributes defined on the current
  character.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a map with the attributes defined on the current character`]
 			]
@@ -214,11 +214,12 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
  iterator's text range. The set is empty if no
  attributes are defined.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the keys of all attributes`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -1,4 +1,3 @@
-import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.time.DayOfWeek', [
@@ -52,8 +51,8 @@ DocsCollector.collect('java.time.DayOfWeek', [
  As such, this enum may be used by any calendar system that has the day-of-week
  concept defined exactly equivalent to the ISO calendar system.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
 			[/* method description */
@@ -142,7 +141,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this day-of-week, false if not`]
 			]
@@ -223,8 +222,8 @@ DocsCollector.collect('java.time.DayOfWeek', [
 					[/* text */ 't', ` for localized week-numbering.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-week, from 1 (Monday) to 7 (Sunday)`]
 			]
@@ -253,7 +252,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 					[/* text */ 't', `the locale to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the text value of the day-of-week, not null`]
 			]
@@ -274,7 +273,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 					[/* text */ 't', `the days to subtract, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the resulting day-of-week, not null`]
 			]
@@ -295,7 +294,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 					[/* text */ 't', `the days to add, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the resulting day-of-week, not null`]
 			]
@@ -604,11 +603,69 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'MONDAY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the day-of-week of Monday.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `1`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'TUESDAY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the day-of-week of Tuesday.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `2`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'WEDNESDAY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the day-of-week of Wednesday.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `3`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'THURSDAY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the day-of-week of Thursday.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `4`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'FRIDAY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the day-of-week of Friday.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `5`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'SATURDAY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the day-of-week of Saturday.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `6`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'SUNDAY', [
+			[/* enum value description */
+				[/* text */ 't', `The singleton instance for the day-of-week of Sunday.
+ This has the numeric value of `],
+				[/* inline code block */ 'i', `7`],
+				[/* text */ 't', `.`]
+			],
 		]]
 	],
 ]);

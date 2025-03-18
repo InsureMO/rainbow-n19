@@ -77,13 +77,13 @@ DocsCollector.collect('java.time.Clock', [
  resolution clock if one is available.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor accessible by subclasses.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -102,7 +102,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `the time-zone to change to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clock based on this clock with the specified time-zone, not null`]
 			]
@@ -114,7 +114,7 @@ DocsCollector.collect('java.time.Clock', [
 				[/* block */ 'b', `
  This returns an instant representing the current instant as defined by the clock.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
 					[/* text */ 't', `if the instant cannot be obtained, not thrown by most implementations`]
@@ -132,8 +132,8 @@ DocsCollector.collect('java.time.Clock', [
  A clock will typically obtain the current instant and then convert that
  to a date or time using a time-zone. This method returns the time-zone used.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the time-zone being used to interpret instants, not null`]
 			]
@@ -157,7 +157,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other clock`]
 			]
@@ -176,8 +176,8 @@ DocsCollector.collect('java.time.Clock', [
 					[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -211,7 +211,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
 					[/* text */ 't', `if the instant cannot be obtained, not thrown by most implementations`]
@@ -247,7 +247,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `the time-zone to use to convert the instant to date-time, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clock that always returns the same instant, not null`]
 			]
@@ -283,7 +283,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `the duration to add, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clock based on the base clock with the duration added, not null`]
 			]
@@ -317,7 +317,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `the time-zone to use to convert the instant to date-time, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clock that uses the best available system clock in the specified zone, not null`]
 			]
@@ -356,8 +356,8 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clock that uses the best available system clock in the default zone, not null`]
 			]
@@ -401,8 +401,8 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clock that uses the best available system clock in the UTC zone, not null`]
 			]
@@ -497,7 +497,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `the time-zone to use to convert the instant to date-time, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clock that ticks in whole milliseconds using the specified zone, not null`]
 			]
@@ -537,7 +537,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `the time-zone to use to convert the instant to date-time, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clock that ticks in whole minutes using the specified zone, not null`]
 			]
@@ -577,10 +577,11 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `the time-zone to use to convert the instant to date-time, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clock that ticks in whole seconds using the specified zone, not null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -55,13 +55,13 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  In practice, this simply parses the pattern and calls other methods on the builder.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new instance of the builder.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -100,8 +100,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the created formatter, not null`]
 			]
@@ -143,7 +143,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the locale to use for formatting, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the created formatter, not null`]
 			]
@@ -161,7 +161,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the formatter to add, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -199,8 +199,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', ` setting.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -218,7 +218,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the text style to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -311,7 +311,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the text style to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -442,7 +442,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the text style to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -487,7 +487,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the set of preferred zone ids, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -549,8 +549,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -644,7 +644,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the literal to append, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -664,7 +664,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the literal to append, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -1027,8 +1027,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  and parsing.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -1057,7 +1057,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the formatter to add, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -1363,7 +1363,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the field to append, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -1390,7 +1390,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the text style to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -1440,7 +1440,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the map from the value to the text`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -1473,7 +1473,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the field to append, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -1924,8 +1924,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2012,8 +2012,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  in the mechanism used to obtain the zone.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2098,8 +2098,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  produce one.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2162,7 +2162,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the text style to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2231,7 +2231,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the set of preferred zone ids, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2281,7 +2281,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  During parsing, the input will be successfully parsed whether the minute is present or not.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if there was no previous call to `],
@@ -2326,8 +2326,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  During parsing, the input will be successfully parsed whether the minute is present or not.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2421,8 +2421,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  multiple times during the parse.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2455,8 +2455,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2497,7 +2497,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `the value to default the field to`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2525,8 +2525,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', ` is called.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2551,8 +2551,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', ` is called.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this, for chaining, not null`]
 			]
@@ -2596,4 +2596,5 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

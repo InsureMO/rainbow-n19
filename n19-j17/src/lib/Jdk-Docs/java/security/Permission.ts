@@ -44,7 +44,7 @@ DocsCollector.collect('java.security.Permission', [
  provide methods that can change the state of a permission
  once it has been created.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -78,7 +78,7 @@ DocsCollector.collect('java.security.Permission', [
 					[/* text */ 't', `the object we are testing for equality with this object.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if both Permission objects are equivalent.`]
 			]
@@ -106,7 +106,7 @@ DocsCollector.collect('java.security.Permission', [
 					[/* text */ 't', `the permission to check against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the specified permission is implied by this object,
  false if not.`]
@@ -150,8 +150,8 @@ DocsCollector.collect('java.security.Permission', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -176,8 +176,8 @@ DocsCollector.collect('java.security.Permission', [
 				[/* inline code block */ 'i', `getActions`],
 				[/* text */ 't', ` method is invoked.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the actions of this Permission.`]
 			]
@@ -190,8 +190,8 @@ DocsCollector.collect('java.security.Permission', [
 				[/* text */ 't', `,
  the name will be a pathname.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this Permission.`]
 			]
@@ -203,8 +203,8 @@ DocsCollector.collect('java.security.Permission', [
  the following format: '("ClassName" "name" "actions")', or
  '("ClassName" "name")' if actions list is null or empty.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `information about this Permission.`]
 			]
@@ -223,8 +223,8 @@ DocsCollector.collect('java.security.Permission', [
  type in any PermissionCollection they choose (one that uses a Hashtable,
  one that uses a Vector, etc).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new PermissionCollection object for this type of Permission, or
  null if one is not defined.`]
@@ -256,4 +256,5 @@ DocsCollector.collect('java.security.Permission', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

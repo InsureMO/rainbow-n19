@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.AbstractMethodError', [
  incompatibly changed since the currently executing method was last
  compiled.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.AbstractMethodError', [
 				[/* inline code block */ 'i', `AbstractMethodError`],
 				[/* text */ 't', ` with no detail  message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -35,5 +35,6 @@ DocsCollector.collect('java.lang.AbstractMethodError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

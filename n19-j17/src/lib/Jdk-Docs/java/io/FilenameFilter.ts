@@ -13,8 +13,8 @@ DocsCollector.collect('java.io.FilenameFilter', [
 		[/* text */ 't', `, and by the Abstract Window Toolkit's file
  dialog component.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accept(java.io.File,java.lang.String)', [
 			[/* method description */
@@ -28,7 +28,7 @@ DocsCollector.collect('java.io.FilenameFilter', [
 					[/* text */ 't', `the name of the file.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the name should be
@@ -38,4 +38,5 @@ DocsCollector.collect('java.io.FilenameFilter', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

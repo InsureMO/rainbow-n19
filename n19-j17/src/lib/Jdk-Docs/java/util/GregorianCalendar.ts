@@ -515,7 +515,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int,int,int)', [
@@ -690,8 +690,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* inline code block */ 'i', `complete`],
 				[/* text */ 't', ` method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'computeTime()', [
@@ -701,7 +701,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* reference */ 'r', `java.util.Calendar#Epoch`, `Epoch`],
 				[/* text */ 't', `).`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if any calendar fields are invalid.`]
@@ -736,7 +736,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 					[/* text */ 't', `the object to compare with.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is equal to `],
@@ -763,7 +763,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 					[/* text */ 't', `the given year.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the given year is a leap year; `],
@@ -780,8 +780,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* text */ 't', `
  supports week dates.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (always)`]
@@ -794,8 +794,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  October 15, 1582 (Gregorian). Previous to this, dates will be in the Julian
  calendar.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Gregorian cutover date for this `],
 				[/* inline code block */ 'i', `GregorianCalendar`],
@@ -848,7 +848,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 					[/* text */ 't', `the calendar field`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum of the given field for the time value of
  this `],
@@ -893,7 +893,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 					[/* text */ 't', `the calendar field`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum of the given field for the time value of
  this `],
@@ -929,7 +929,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 					[/* text */ 't', `the calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the highest minimum value for the given calendar field.`]
 			]
@@ -963,7 +963,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 					[/* text */ 't', `the calendar field`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lowest maximum value for the given calendar field.`]
 			]
@@ -996,7 +996,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 					[/* text */ 't', `the calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum value for the given calendar field.`]
 			]
@@ -1029,7 +1029,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 					[/* text */ 't', `the calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum value for the given calendar field.`]
 			]
@@ -1057,8 +1057,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  52 for the period: December 31, 2007 to December 28, 2008.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of weeks in the week year.`]
 			]
@@ -1085,7 +1085,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  calculating the week year.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if any of the calendar fields is invalid in non-lenient mode.`]
@@ -1110,8 +1110,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* inline code block */ 'i', `GregorianCalendar`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -1123,8 +1123,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* inline code block */ 'i', `"gregory"`],
 				[/* text */ 't', ` as the calendar type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `"gregory"`]
 			]
@@ -1149,8 +1149,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  for Modified Julian Days.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a zoned date-time representing the same point on the time-line
   as this gregorian calendar`]
@@ -1472,7 +1472,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 					[/* text */ 't', `the given Gregorian cutover date.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setTimeZone(java.util.TimeZone)', UDF],
@@ -1577,4 +1577,5 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

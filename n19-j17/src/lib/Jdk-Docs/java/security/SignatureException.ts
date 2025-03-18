@@ -5,7 +5,7 @@ DocsCollector.collect('java.security.SignatureException', [
 	[/* class description */
 		[/* text */ 't', `This is the generic Signature exception.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -13,7 +13,7 @@ DocsCollector.collect('java.security.SignatureException', [
  detail message is a String that describes this particular
  exception.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -82,5 +82,6 @@ DocsCollector.collect('java.security.SignatureException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

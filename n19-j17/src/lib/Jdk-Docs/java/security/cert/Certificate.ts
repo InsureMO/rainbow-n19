@@ -21,7 +21,7 @@ DocsCollector.collect('java.security.cert.Certificate', [
  sets of information, and they store and retrieve the information in
  different ways.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -44,7 +44,7 @@ DocsCollector.collect('java.security.cert.Certificate', [
 			[/* method description */
 				[/* text */ 't', `Replace the Certificate to be serialized.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.ObjectStreamException', [/* throw description */
 					[/* text */ 't', `if a new object representing
@@ -62,7 +62,7 @@ DocsCollector.collect('java.security.cert.Certificate', [
  form of encoding; for example, X.509 certificates would
  be encoded as ASN.1 DER.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.security.cert.CertificateEncodingException', [/* throw description */
 					[/* text */ 't', `if an encoding error occurs.`]
@@ -76,8 +76,8 @@ DocsCollector.collect('java.security.cert.Certificate', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of this certificate.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this certificate.`]
 			]
@@ -86,8 +86,8 @@ DocsCollector.collect('java.security.cert.Certificate', [
 			[/* method description */
 				[/* text */ 't', `Gets the public key from this certificate.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the public key.`]
 			]
@@ -176,7 +176,7 @@ DocsCollector.collect('java.security.cert.Certificate', [
 					[/* text */ 't', `the object to test for equality with this certificate.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true iff the encoded forms of the two certificates
  match, false otherwise.`]
@@ -186,8 +186,8 @@ DocsCollector.collect('java.security.cert.Certificate', [
 			[/* method description */
 				[/* text */ 't', `Returns the type of this certificate.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the type of this certificate.`]
 			]
@@ -197,8 +197,8 @@ DocsCollector.collect('java.security.cert.Certificate', [
 				[/* text */ 't', `Returns a hashcode value for this certificate from its
  encoded form.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hashcode value.`]
 			]
@@ -252,4 +252,5 @@ DocsCollector.collect('java.security.cert.Certificate', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

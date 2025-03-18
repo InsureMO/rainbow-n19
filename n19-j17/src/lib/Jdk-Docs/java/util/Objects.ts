@@ -15,8 +15,8 @@ DocsCollector.collect('java.util.Objects', [
  hash code of an object, returning a string for an object, comparing two
  objects, and checking if indexes or sub-range values are out of bounds.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'compare(java.lang.Object,java.lang.Object,java.util.Comparator)', [
 			[/* method description */
@@ -57,7 +57,7 @@ DocsCollector.collect('java.util.Objects', [
 					[/* text */ 't', ` to compare the first two arguments`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `0 if the arguments are identical and `],
 				[/* inline code block */ 'i', `c.compare(a, b)`],
@@ -306,7 +306,7 @@ DocsCollector.collect('java.util.Objects', [
 					[/* text */ 't', ` for deep equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the arguments are deeply equal to each other
@@ -348,7 +348,7 @@ DocsCollector.collect('java.util.Objects', [
 					[/* text */ 't', ` for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the arguments are equal to each other
@@ -374,7 +374,7 @@ DocsCollector.collect('java.util.Objects', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the provided reference is `],
@@ -401,7 +401,7 @@ DocsCollector.collect('java.util.Objects', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the provided reference is non-`],
@@ -622,7 +622,7 @@ DocsCollector.collect('java.util.Objects', [
 					[/* text */ 't', `the values to be hashed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash value of the sequence of input values`]
 			]
@@ -641,7 +641,7 @@ DocsCollector.collect('java.util.Objects', [
 					[/* text */ 't', `an object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code of a non-`],
 				[/* inline code block */ 'i', `null`],
@@ -668,7 +668,7 @@ DocsCollector.collect('java.util.Objects', [
 					[/* text */ 't', `an object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of calling `],
 				[/* inline code block */ 'i', `toString`],
@@ -701,7 +701,7 @@ DocsCollector.collect('java.util.Objects', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of calling `],
 				[/* inline code block */ 'i', `toString`],
@@ -879,4 +879,5 @@ DocsCollector.collect('java.util.Objects', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

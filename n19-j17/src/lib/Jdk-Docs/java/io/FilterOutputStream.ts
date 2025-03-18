@@ -74,7 +74,7 @@ DocsCollector.collect('java.io.FilterOutputStream', [
 					[/* text */ 't', ` method of its underlying output stream.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -99,7 +99,7 @@ DocsCollector.collect('java.io.FilterOutputStream', [
 					[/* text */ 't', ` method of its underlying output stream.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -258,4 +258,5 @@ DocsCollector.collect('java.io.FilterOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -182,14 +182,14 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new, empty identity hash map with a default expected
  maximum size (21).`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -240,7 +240,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 					[/* text */ 't', `possible key`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object reference is a key
@@ -257,7 +257,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 					[/* text */ 't', `value whose presence in this map is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map maps one or more keys to the
@@ -298,7 +298,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 					[/* text */ 't', `object to be compared for equality with this map`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this map`]
@@ -311,8 +311,8 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 				[/* text */ 't', ` if this identity hash map contains no key-value
  mappings.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this identity hash map contains no key-value
@@ -360,8 +360,8 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 					[/* text */ 't', ` instance and the other is a normal map.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this map`]
 			]
@@ -370,8 +370,8 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of key-value mappings in this identity hash map.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of key-value mappings in this map`]
 			]
@@ -381,8 +381,8 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 				[/* text */ 't', `Returns a shallow copy of this identity hash map: the keys and values
  themselves are not cloned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a shallow copy of this map`]
 			]
@@ -439,8 +439,8 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 					[/* text */ 't', ` methods.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collection view of the values contained in this map`]
 			]
@@ -531,8 +531,8 @@ DocsCollector.collect('java.util.IdentityHashMap', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the identity-mappings contained in this map`]
 			]
@@ -623,8 +623,8 @@ DocsCollector.collect('java.util.IdentityHashMap', [
  returned by this method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an identity-based set view of the keys contained in this map`]
 			]
@@ -676,7 +676,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 					[/* text */ 't', `the key whose associated value is to be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value to which the specified key is mapped, or
          `],
@@ -698,7 +698,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 					[/* text */ 't', `the value to be associated with the specified key`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous value associated with `],
 				[/* inline code block */ 'i', `key`],
@@ -727,7 +727,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 					[/* text */ 't', `key whose mapping is to be removed from the map`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous value associated with `],
 				[/* inline code block */ 'i', `key`],
@@ -752,8 +752,8 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 				[/* text */ 't', `Removes all of the mappings from this map.
  The map will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
@@ -777,4 +777,5 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 		]],
 		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF]
 	],
+	/* enum values */ UDF
 ]);

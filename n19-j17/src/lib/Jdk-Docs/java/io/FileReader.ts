@@ -23,7 +23,7 @@ DocsCollector.collect('java.io.FileReader', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.File)', [
 			[/* constructor description */
@@ -157,5 +157,6 @@ DocsCollector.collect('java.io.FileReader', [
 			]
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

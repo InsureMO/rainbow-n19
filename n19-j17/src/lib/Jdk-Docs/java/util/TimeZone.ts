@@ -242,7 +242,7 @@ DocsCollector.collect('java.util.TimeZone', [
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -259,7 +259,7 @@ DocsCollector.collect('java.util.TimeZone', [
 					[/* text */ 't', `the given Date.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the given date is in Daylight Saving Time,
@@ -288,8 +288,8 @@ DocsCollector.collect('java.util.TimeZone', [
  if the current rule should also be taken into account.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this `],
@@ -339,7 +339,7 @@ DocsCollector.collect('java.util.TimeZone', [
  local time.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset in milliseconds to add to GMT to get local time.`]
 			]
@@ -365,8 +365,8 @@ DocsCollector.collect('java.util.TimeZone', [
  hours).`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the amount of raw offset time in milliseconds to add to UTC.`]
 			]
@@ -392,7 +392,7 @@ DocsCollector.collect('java.util.TimeZone', [
 					[/* text */ 't', `the given base time zone offset to GMT.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'hasSameRules(java.util.TimeZone)', [
@@ -408,7 +408,7 @@ DocsCollector.collect('java.util.TimeZone', [
 					[/* text */ 't', ` object to be compared with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the other zone is not null and is the same as this one,
  with the possible exception of the ID`]
@@ -439,8 +439,8 @@ DocsCollector.collect('java.util.TimeZone', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this `],
@@ -476,8 +476,8 @@ DocsCollector.collect('java.util.TimeZone', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the human-readable name of this time zone in the default locale.`]
 			]
@@ -623,8 +623,8 @@ DocsCollector.collect('java.util.TimeZone', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the amount of saving time in milliseconds`]
 			]
@@ -646,7 +646,7 @@ DocsCollector.collect('java.util.TimeZone', [
 					[/* text */ 't', `the date represented in milliseconds since January 1, 1970 00:00:00 GMT`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the amount of time in milliseconds to add to UTC to get local time.`]
 			]
@@ -657,8 +657,8 @@ DocsCollector.collect('java.util.TimeZone', [
 				[/* inline code block */ 'i', `TimeZone`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this `],
 				[/* inline code block */ 'i', `TimeZone`]
@@ -746,8 +746,8 @@ DocsCollector.collect('java.util.TimeZone', [
 			[/* method description */
 				[/* text */ 't', `Gets the ID of this time zone.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ID of this time zone.`]
 			]
@@ -760,8 +760,8 @@ DocsCollector.collect('java.util.TimeZone', [
 				[/* inline code block */ 'i', `ZoneId`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `ZoneId`],
@@ -811,8 +811,8 @@ DocsCollector.collect('java.util.TimeZone', [
  value is set to the ID upon return.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the default `],
 				[/* inline code block */ 'i', `TimeZone`]
@@ -852,8 +852,8 @@ DocsCollector.collect('java.util.TimeZone', [
 			[/* method description */
 				[/* text */ 't', `Gets all the available IDs supported.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of IDs.`]
 			]
@@ -867,7 +867,7 @@ DocsCollector.collect('java.util.TimeZone', [
 					[/* text */ 't', `the given time zone GMT offset in milliseconds.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of IDs, where the time zone for that ID has
  the specified GMT offset. For example, "America/Phoenix" and "America/Denver"
@@ -890,7 +890,7 @@ DocsCollector.collect('java.util.TimeZone', [
  for JDK 1.1.x compatibility only and full names should be used.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the specified `],
 				[/* inline code block */ 'i', `TimeZone`],
@@ -945,8 +945,9 @@ DocsCollector.collect('java.util.TimeZone', [
 					[/* text */ 't', `the new time zone ID.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

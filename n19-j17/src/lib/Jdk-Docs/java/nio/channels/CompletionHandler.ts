@@ -20,8 +20,8 @@ DocsCollector.collect('java.nio.channels.CompletionHandler', [
  to other completion handlers.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'completed(java.lang.Object,java.lang.Object)', [
 			[/* method description */
@@ -35,7 +35,7 @@ DocsCollector.collect('java.nio.channels.CompletionHandler', [
 					[/* text */ 't', `The object attached to the I/O operation when it was initiated.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'failed(java.lang.Throwable,java.lang.Object)', [
@@ -50,8 +50,9 @@ DocsCollector.collect('java.nio.channels.CompletionHandler', [
 					[/* text */ 't', `The object attached to the I/O operation when it was initiated.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -2698,14 +2698,14 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'flags()', [
 			[/* method description */
 				[/* text */ 't', `Returns this pattern's match flags.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The match flags specified when this pattern was compiled`]
 			]
@@ -2714,8 +2714,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* method description */
 				[/* text */ 't', `Returns the regular expression from which this pattern was compiled.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The source of this pattern`]
 			]
@@ -2726,8 +2726,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
  is the regular expression from which this pattern was
  compiled.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string representation of this pattern`]
 			]
@@ -2793,7 +2793,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 					[/* text */ 't', `The character sequence to be split`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The array of strings computed by splitting the input
           around matches of this pattern`]
@@ -2957,7 +2957,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 					[/* text */ 't', `The result threshold, as described above`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The array of strings computed by splitting the input
           around matches of this pattern`]
@@ -2967,8 +2967,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* method description */
 				[/* text */ 't', `Creates a predicate that tests if this pattern matches a given input string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The predicate which can be used for matching an input string
           against this pattern.`]
@@ -2979,8 +2979,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* text */ 't', `Creates a predicate that tests if this pattern is found in a given input
  string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The predicate which can be used for finding a match on a
           subsequence of a string`]
@@ -2995,7 +2995,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 					[/* text */ 't', `The character sequence to be matched`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A new matcher for this pattern`]
 			]
@@ -3034,7 +3034,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 					[/* text */ 't', `The character sequence to be split`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The stream of strings computed by splitting the input
           around matches of this pattern`]
@@ -3114,7 +3114,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 					[/* text */ 't', `The string to be literalized`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A literal string replacement`]
 			]
@@ -3186,4 +3186,5 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

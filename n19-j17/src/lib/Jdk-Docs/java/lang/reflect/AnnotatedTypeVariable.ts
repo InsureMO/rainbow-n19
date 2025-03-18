@@ -8,8 +8,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedTypeVariable', [
  type variable, whose declaration may have bounds which themselves represent
  annotated uses of types.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotatedOwnerType()', [
 			[/* method description */
@@ -33,8 +33,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedTypeVariable', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `null`]
 			]
@@ -47,11 +47,12 @@ DocsCollector.collect('java.lang.reflect.AnnotatedTypeVariable', [
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the potentially annotated bounds of this type variable`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

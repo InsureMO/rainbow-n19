@@ -80,7 +80,7 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 			[/* method description */
 				[/* text */ 't', `Fills input buffer with more data to decompress.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -105,8 +105,8 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -126,7 +126,7 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
  Programs should not count on this method to return the actual number
  of bytes that could be read without blocking.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -141,7 +141,7 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 				[/* text */ 't', `Reads a byte of uncompressed data. This method will block until
  enough input is available for decompression.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -247,7 +247,7 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
                       the mark position becomes invalid.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
@@ -270,7 +270,7 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this method is invoked.`]
@@ -283,7 +283,7 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 				[/* text */ 't', `Closes this input stream and releases any system resources associated
  with the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -292,4 +292,5 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

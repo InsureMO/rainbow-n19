@@ -211,6 +211,7 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

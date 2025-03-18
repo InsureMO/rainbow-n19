@@ -100,7 +100,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isLeapYear(long)', [
 			[/* method description */
@@ -135,7 +135,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `the proleptic-year to check, not validated for range`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the year is a leap year`]
 			]
@@ -166,7 +166,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `the chronology year-of-era`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the proleptic-year`]
 			]
@@ -188,8 +188,8 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the calendar system type; non-null if the calendar has
     a standard type, otherwise null`]
@@ -211,8 +211,8 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the chronology ID, non-null`]
 			]
@@ -262,7 +262,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `the temporal object to convert, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the local date-time in this chronology, not null`]
 			]
@@ -288,7 +288,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `the time-zone, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the zoned date-time, not null`]
 			]
@@ -355,7 +355,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `the temporal object to convert, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the zoned date-time in this chronology, not null`]
 			]
@@ -459,7 +459,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `the temporal object to convert, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the local date in this chronology, not null`]
 			]
@@ -500,8 +500,8 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  because the clock is hard-coded.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current local date using the system clock and default time-zone, not null`]
 			]
@@ -526,7 +526,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `the clock to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current local date, not null`]
 			]
@@ -554,7 +554,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `the zone ID to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current local date using the system clock, not null`]
 			]
@@ -830,7 +830,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `the requested type of resolve, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the resolved date, null if insufficient information to create a date`]
 			]
@@ -883,7 +883,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* text */ 't', `the field to get the range for, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the range of valid values for the field, not null`]
 			]
@@ -899,11 +899,12 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  list must be returned.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the list of eras for the chronology, may be immutable, not null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

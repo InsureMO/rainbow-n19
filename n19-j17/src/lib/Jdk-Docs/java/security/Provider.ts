@@ -124,7 +124,7 @@ DocsCollector.collect('java.security.Provider', [
  implementation-specific.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,double,java.lang.String)', [
 			[/* constructor description */
@@ -319,8 +319,8 @@ DocsCollector.collect('java.security.Provider', [
 			[/* method description */
 				[/* text */ 't', `Check if this provider instance has been configured.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if no further configuration is needed, false otherwise.`]
 			]
@@ -329,8 +329,8 @@ DocsCollector.collect('java.security.Provider', [
 			[/* method description */
 				[/* text */ 't', `Returns the version number for this provider.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the version number for this provider.`]
 			]
@@ -341,8 +341,8 @@ DocsCollector.collect('java.security.Provider', [
 				[/* text */ 't', `Returns a human-readable description of the provider and its
  services.  This may return an HTML page, with relevant links.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a description of the provider and its services.`]
 			]
@@ -351,8 +351,8 @@ DocsCollector.collect('java.security.Provider', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of this provider.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of this provider.`]
 			]
@@ -362,8 +362,8 @@ DocsCollector.collect('java.security.Provider', [
 			[/* method description */
 				[/* text */ 't', `Returns the version string for this provider.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the version string for this provider.`]
 			]
@@ -373,8 +373,8 @@ DocsCollector.collect('java.security.Provider', [
 				[/* text */ 't', `Returns a string with the name and the version string
  of this provider.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string with the name and the version string
  for this provider.`]
@@ -457,8 +457,8 @@ DocsCollector.collect('java.security.Provider', [
 				[/* text */ 't', `Returns an unmodifiable Collection view of the property values
  contained in this provider.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collection view of the values contained in this map`]
 			]
@@ -470,8 +470,8 @@ DocsCollector.collect('java.security.Provider', [
 				[/* text */ 't', `Returns an unmodifiable Set view of the property keys contained in
  this provider.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the keys contained in this map`]
 			]
@@ -712,7 +712,7 @@ DocsCollector.collect('java.security.Provider', [
 					[/* text */ 't', `the default mapping of the key`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value to which the specified key is mapped, or
  `],
@@ -969,8 +969,8 @@ DocsCollector.collect('java.security.Provider', [
 				[/* text */ 't', `Get an unmodifiable Set of all services supported by
  this Provider.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable Set of all services supported by
  this Provider`]
@@ -981,8 +981,8 @@ DocsCollector.collect('java.security.Provider', [
 				[/* text */ 't', `Returns an unmodifiable Set view of the property entries contained
  in this Provider.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the mappings contained in this map`]
 			]
@@ -1006,7 +1006,7 @@ DocsCollector.collect('java.security.Provider', [
  this provider.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
@@ -1030,7 +1030,7 @@ DocsCollector.collect('java.security.Provider', [
 					[/* text */ 't', `The action to be performed for each entry`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'load(java.io.InputStream)', [
@@ -1061,7 +1061,7 @@ DocsCollector.collect('java.security.Provider', [
 					[/* text */ 't', `mappings to be stored in this map`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'replaceAll(java.util.function.BiFunction)', [
@@ -1101,4 +1101,5 @@ DocsCollector.collect('java.security.Provider', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

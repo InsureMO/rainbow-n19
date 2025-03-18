@@ -48,8 +48,8 @@ DocsCollector.collect('java.time.YearMonth', [
 			[/* text */ 't', ` method should be used for comparisons.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
 			[/* method description */
@@ -105,7 +105,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other year-month`]
 			]
@@ -119,7 +119,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `the other year-month to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is after the specified year-month`]
 			]
@@ -133,7 +133,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `the other year-month to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this point is before the specified year-month`]
 			]
@@ -158,8 +158,8 @@ DocsCollector.collect('java.time.YearMonth', [
  The calculation is proleptic - applying the same rules into the far future and far past.
  This is historically inaccurate, but is correct for the ISO-8601 standard.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the year is leap, false otherwise`]
 			]
@@ -242,7 +242,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this year-month, false if not`]
 			]
@@ -327,7 +327,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `the unit to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the unit can be added/subtracted, false if not`]
 			]
@@ -345,7 +345,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `the day-of-month to validate, from 1 to 31, invalid value returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the day is valid for this year-month`]
 			]
@@ -367,7 +367,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `the other year-month to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
 			]
@@ -461,8 +461,8 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, from 1 to 12`]
 			]
@@ -485,8 +485,8 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the year, from MIN_YEAR to MAX_YEAR`]
 			]
@@ -495,8 +495,8 @@ DocsCollector.collect('java.time.YearMonth', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this year-month.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -509,8 +509,8 @@ DocsCollector.collect('java.time.YearMonth', [
  This returns the length of the month in days.
  For example, a date in January would return 31.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the length of the month in days, from 28 to 31`]
 			]
@@ -522,8 +522,8 @@ DocsCollector.collect('java.time.YearMonth', [
 				[/* block */ 'b', `
  This returns the length of the year in days, either 365 or 366.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `366 if the year is leap, 365 otherwise`]
 			]
@@ -564,8 +564,8 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `:`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this year-month, not null`]
 			]
@@ -629,8 +629,8 @@ DocsCollector.collect('java.time.YearMonth', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the last valid date of this year-month, not null`]
 			]
@@ -657,8 +657,8 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, not null`]
 			]
@@ -1667,8 +1667,8 @@ DocsCollector.collect('java.time.YearMonth', [
  Using this method will prevent the ability to use an alternate clock for testing
  because the clock is hard-coded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current year-month using the system clock and default time-zone, not null`]
 			]
@@ -1691,7 +1691,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `the clock to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current year-month, not null`]
 			]
@@ -1717,7 +1717,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `the zone ID to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current year-month using the system clock, not null`]
 			]
@@ -1826,4 +1826,5 @@ DocsCollector.collect('java.time.YearMonth', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

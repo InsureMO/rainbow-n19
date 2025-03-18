@@ -31,14 +31,14 @@ DocsCollector.collect('java.util.Dictionary', [
 		[/* block */ 'b', `NOTE: This class is obsolete.  New implementations should
  implement the Map interface, rather than extending this class.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -51,8 +51,8 @@ DocsCollector.collect('java.util.Dictionary', [
 				[/* text */ 't', ` method is that the result is true if and only
  if this dictionary contains no entries.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this dictionary maps no keys to values;
@@ -65,8 +65,8 @@ DocsCollector.collect('java.util.Dictionary', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of entries (distinct keys) in this dictionary.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of keys in this dictionary.`]
 			]
@@ -80,8 +80,8 @@ DocsCollector.collect('java.util.Dictionary', [
  is returned that will generate all the keys for which this dictionary
  contains entries.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an enumeration of the keys in this dictionary.`]
 			]
@@ -97,8 +97,8 @@ DocsCollector.collect('java.util.Dictionary', [
 				[/* text */ 't', ` is returned that will generate all the elements
  contained in entries in this dictionary.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an enumeration of the values in this dictionary.`]
 			]
@@ -256,4 +256,5 @@ DocsCollector.collect('java.util.Dictionary', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

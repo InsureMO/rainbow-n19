@@ -2447,7 +2447,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'hasFullPrivilegeAccess()', [
 			[/* method description */
@@ -2469,8 +2469,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				[/* reference */ 'r', `#lookupClass()`, `lookup class`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this lookup has full privilege access.`]
@@ -2486,8 +2486,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				[/* inline code block */ 'i', `MODULE`],
 				[/* text */ 't', ` access.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this lookup has `],
@@ -2547,8 +2547,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
   lookup object, and also by the new lookup class.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lookup modes, which limit the kinds of access performed by this lookup object`]
 			]
@@ -3067,8 +3067,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
   can be accessed.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lookup class, on behalf of which this lookup object finds members`]
 			]
@@ -3100,8 +3100,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  in one module to a new lookup class in another module.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lookup class in another module that this lookup object was
          previously teleported from, or `],
@@ -5609,11 +5609,12 @@ assertEquals("", (String) MH_newString.invokeExact());`]
  because it requires a direct subclass relationship between
  caller and callee.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

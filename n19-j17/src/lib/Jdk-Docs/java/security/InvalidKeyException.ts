@@ -6,7 +6,7 @@ DocsCollector.collect('java.security.InvalidKeyException', [
 		[/* text */ 't', `This is the exception for invalid Keys (invalid encoding, wrong
  length, uninitialized, etc).`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -14,7 +14,7 @@ DocsCollector.collect('java.security.InvalidKeyException', [
  detail message is a String that describes this particular
  exception.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -83,5 +83,6 @@ DocsCollector.collect('java.security.InvalidKeyException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

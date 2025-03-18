@@ -48,7 +48,7 @@ DocsCollector.collect('java.io.FilterWriter', [
  further write() or flush() invocations will cause an IOException to be
  thrown. Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -60,7 +60,7 @@ DocsCollector.collect('java.io.FilterWriter', [
 			[/* method description */
 				[/* text */ 't', `Flushes the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -153,4 +153,5 @@ DocsCollector.collect('java.io.FilterWriter', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

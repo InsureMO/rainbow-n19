@@ -35,7 +35,7 @@ DocsCollector.collect('java.io.FileWriter', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.File)', [
 			[/* constructor description */
@@ -292,5 +292,6 @@ DocsCollector.collect('java.io.FileWriter', [
 			]
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

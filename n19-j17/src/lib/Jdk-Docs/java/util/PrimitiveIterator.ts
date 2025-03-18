@@ -53,8 +53,8 @@ DocsCollector.collect('java.util.PrimitiveIterator', [
  are encountered.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'forEachRemaining(java.lang.Object)', [
 			[/* method description */
@@ -92,4 +92,5 @@ DocsCollector.collect('java.util.PrimitiveIterator', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

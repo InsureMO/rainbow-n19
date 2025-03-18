@@ -16,8 +16,8 @@ DocsCollector.collect('java.net.URLStreamHandlerFactory', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'createURLStreamHandler(java.lang.String)', [
 			[/* method description */
@@ -38,7 +38,7 @@ DocsCollector.collect('java.net.URLStreamHandlerFactory', [
 					[/* text */ 't', `", etc.).`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `URLStreamHandler`],
@@ -49,4 +49,5 @@ DocsCollector.collect('java.net.URLStreamHandlerFactory', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

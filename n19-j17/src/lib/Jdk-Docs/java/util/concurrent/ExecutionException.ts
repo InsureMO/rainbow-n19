@@ -9,7 +9,7 @@ DocsCollector.collect('java.util.concurrent.ExecutionException', [
 		[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 		[/* text */ 't', ` method.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -21,7 +21,7 @@ DocsCollector.collect('java.util.concurrent.ExecutionException', [
 				[/* reference */ 'r', `java.lang.Throwable#initCause(java.lang.Throwable)`, `initCause`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -84,5 +84,6 @@ DocsCollector.collect('java.util.concurrent.ExecutionException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

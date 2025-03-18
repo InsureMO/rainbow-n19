@@ -8,7 +8,7 @@ DocsCollector.collect('java.security.Timestamp', [
  It includes the timestamp's date and time as well as information about the
  Timestamping Authority (TSA) which generated and signed the timestamp.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.util.Date,java.security.cert.CertPath)', [
 			[/* constructor description */
@@ -41,7 +41,7 @@ DocsCollector.collect('java.security.Timestamp', [
 					[/* text */ 't', `the object to test for equality with this timestamp.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the timestamp are considered equal, false otherwise.`]
 			]
@@ -52,8 +52,8 @@ DocsCollector.collect('java.security.Timestamp', [
  The hash code is generated using the date and time of the timestamp
  and the TSA's certificate path.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this timestamp.`]
 			]
@@ -62,8 +62,8 @@ DocsCollector.collect('java.security.Timestamp', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this timestamp.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string comprising the date and time of the timestamp and
          its signer's certificate.`]
@@ -73,8 +73,8 @@ DocsCollector.collect('java.security.Timestamp', [
 			[/* method description */
 				[/* text */ 't', `Returns the certificate path for the Timestamping Authority.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The TSA's certificate path.`]
 			]
@@ -83,11 +83,12 @@ DocsCollector.collect('java.security.Timestamp', [
 			[/* method description */
 				[/* text */ 't', `Returns the date and time when the timestamp was generated.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The timestamp's date and time.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

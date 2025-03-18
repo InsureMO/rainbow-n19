@@ -34,15 +34,15 @@ DocsCollector.collect('java.util.Enumeration', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'hasMoreElements()', [
 			[/* method description */
 				[/* text */ 't', `Tests if this enumeration contains more elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this enumeration object
@@ -57,7 +57,7 @@ DocsCollector.collect('java.util.Enumeration', [
 				[/* text */ 't', `Returns the next element of this enumeration if this enumeration
  object has at least one more element to provide.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if no more elements exist.`]
@@ -77,11 +77,12 @@ DocsCollector.collect('java.util.Enumeration', [
 				[/* inline code block */ 'i', `asIterator`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an Iterator representing the remaining elements of this Enumeration`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

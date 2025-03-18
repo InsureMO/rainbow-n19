@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.annotation.AnnotationFormatError', [
 		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`, `API used to read annotations reflectively`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -75,5 +75,6 @@ DocsCollector.collect('java.lang.annotation.AnnotationFormatError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -5,13 +5,13 @@ DocsCollector.collect('java.util.zip.DataFormatException', [
 	[/* class description */
 		[/* text */ 't', `Signals that a data format error has occurred.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a DataFormatException with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -27,5 +27,6 @@ DocsCollector.collect('java.util.zip.DataFormatException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

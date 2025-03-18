@@ -15,8 +15,8 @@ DocsCollector.collect('java.util.function.Function', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'apply(java.lang.Object)', [
 			[/* method description */
@@ -27,7 +27,7 @@ DocsCollector.collect('java.util.function.Function', [
 					[/* text */ 't', `the function argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the function result`]
 			]
@@ -88,11 +88,12 @@ DocsCollector.collect('java.util.function.Function', [
 			[/* method description */
 				[/* text */ 't', `Returns a function that always returns its input argument.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a function that always returns its input argument`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

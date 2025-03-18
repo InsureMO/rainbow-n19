@@ -165,8 +165,8 @@ DocsCollector.collect('java.util.Set', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'toArray(java.lang.Object[])', [
 			[/* method description */
@@ -458,7 +458,7 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `object to be compared for equality with this set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this set`]
@@ -470,8 +470,8 @@ DocsCollector.collect('java.util.Set', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this set contains no elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this set contains no elements`]
@@ -635,8 +635,8 @@ DocsCollector.collect('java.util.Set', [
 				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this set`]
 			]
@@ -651,8 +651,8 @@ DocsCollector.collect('java.util.Set', [
 				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in this set (its cardinality)`]
 			]
@@ -674,8 +674,8 @@ DocsCollector.collect('java.util.Set', [
 				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
  APIs.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing all the elements in this set`]
 			]
@@ -686,8 +686,8 @@ DocsCollector.collect('java.util.Set', [
  returned in no particular order (unless this set is an instance of some
  class that provides a guarantee).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this set`]
 			]
@@ -697,7 +697,7 @@ DocsCollector.collect('java.util.Set', [
 				[/* text */ 't', `Removes all of the elements from this set (optional operation).
  The set will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -725,8 +725,8 @@ DocsCollector.collect('java.util.Set', [
  characteristic values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -769,8 +769,8 @@ DocsCollector.collect('java.util.Set', [
 				[/* text */ 't', `Unmodifiable Sets`],
 				[/* text */ 't', ` for details.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty `],
 				[/* inline code block */ 'i', `Set`]
@@ -1180,4 +1180,5 @@ DocsCollector.collect('java.util.Set', [
 		]],
 		[/* method */ 'of(java.lang.Object...)', UDF]
 	],
+	/* enum values */ UDF
 ]);

@@ -91,7 +91,7 @@ DocsCollector.collect('java.time.Period', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -112,7 +112,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other period`]
 			]
@@ -124,8 +124,8 @@ DocsCollector.collect('java.time.Period', [
 				[/* block */ 'b', `
  This checks whether the years, months or days units are less than zero.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if any unit of this period is negative`]
 			]
@@ -137,8 +137,8 @@ DocsCollector.collect('java.time.Period', [
 				[/* block */ 'b', `
  A zero period has the value zero for the years, months and days units.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this period is zero-length`]
 			]
@@ -150,8 +150,8 @@ DocsCollector.collect('java.time.Period', [
 				[/* block */ 'b', `
  This returns the days unit.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the amount of days of this period, may be negative`]
 			]
@@ -168,8 +168,8 @@ DocsCollector.collect('java.time.Period', [
  This means that a period of "15 months" is different to a period
  of "1 year and 3 months".`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the amount of months of this period, may be negative`]
 			]
@@ -186,8 +186,8 @@ DocsCollector.collect('java.time.Period', [
  This means that a period of "15 months" is different to a period
  of "1 year and 3 months".`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the amount of years of this period, may be negative`]
 			]
@@ -196,8 +196,8 @@ DocsCollector.collect('java.time.Period', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this period.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -214,8 +214,8 @@ DocsCollector.collect('java.time.Period', [
  The output will be in the ISO-8601 period format.
  A zero period will be represented as zero days, 'P0D'.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this period, not null`]
 			]
@@ -234,8 +234,8 @@ DocsCollector.collect('java.time.Period', [
  system, in which today's rules for leap years are applied for all time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ISO chronology, not null`]
 			]
@@ -408,7 +408,7 @@ DocsCollector.collect('java.time.Period', [
  negated to "-2 years, 3 months and -4 days".
  No normalization is performed.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs, which only happens if
@@ -440,7 +440,7 @@ DocsCollector.collect('java.time.Period', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs`]
@@ -597,7 +597,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `the days to represent, may be negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Period`],
@@ -625,7 +625,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `the months to represent, may be negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Period`],
@@ -653,7 +653,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `the years to represent, may be negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Period`],
@@ -809,8 +809,8 @@ DocsCollector.collect('java.time.Period', [
  to access the entire state of the period.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a list containing the years, months and days units, not null`]
 			]
@@ -863,8 +863,8 @@ DocsCollector.collect('java.time.Period', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total number of months in the period, may be negative`]
 			]
@@ -902,7 +902,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `the end date, exclusive, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period between this date and the end date, not null`]
 			]
@@ -983,7 +983,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `the amount of days, may be negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period of years, months and days, not null`]
 			]
@@ -1003,7 +1003,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `the number of days, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period of days, not null`]
 			]
@@ -1023,7 +1023,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `the number of months, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period of months, not null`]
 			]
@@ -1044,7 +1044,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `the number of weeks, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period, with the input weeks converted to days, not null`]
 			]
@@ -1064,7 +1064,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `the number of years, positive or negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period of years, not null`]
 			]
@@ -1147,4 +1147,5 @@ DocsCollector.collect('java.time.Period', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

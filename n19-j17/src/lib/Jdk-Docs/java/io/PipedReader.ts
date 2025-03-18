@@ -5,7 +5,7 @@ DocsCollector.collect('java.io.PipedReader', [
 	[/* class description */
 		[/* text */ 't', `Piped character-input streams.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -21,7 +21,7 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* text */ 't', `
  before being used.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -116,7 +116,7 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* text */ 't', `Tell whether this stream is ready to be read.  A piped character
  stream is ready if the circular buffer is not empty.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is
@@ -144,7 +144,7 @@ DocsCollector.collect('java.io.PipedReader', [
  This method blocks until input data is available, the end of
  the stream is detected, or an exception is thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is
@@ -241,7 +241,7 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* text */ 't', `Closes this piped stream and releases any system resources
  associated with the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -308,4 +308,5 @@ DocsCollector.collect('java.io.PipedReader', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -16,7 +16,8 @@ DocsCollector.collect('java.lang.annotation.Retention', [
  effect if the meta-annotated interface is used as a member interface in
  another annotation interface.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

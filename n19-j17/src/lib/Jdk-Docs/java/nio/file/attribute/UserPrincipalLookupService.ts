@@ -32,13 +32,13 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipalLookupService', [
 		[/* text */ 't', ` should be used to
  lookup groups.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Initializes a new instance of this class.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -112,4 +112,5 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipalLookupService', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

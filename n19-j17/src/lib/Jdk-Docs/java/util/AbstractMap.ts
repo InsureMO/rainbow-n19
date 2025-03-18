@@ -67,14 +67,14 @@ DocsCollector.collect('java.util.AbstractMap', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -86,7 +86,7 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* text */ 't', ` instance: the keys
  and values themselves are not cloned.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.CloneNotSupportedException', [/* throw description */
 					[/* text */ 't', `if the object's class does not
@@ -221,7 +221,7 @@ DocsCollector.collect('java.util.AbstractMap', [
 					[/* text */ 't', `object to be compared for equality with this map`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this map`]
@@ -233,8 +233,8 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map contains no key-value mappings.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map contains no key-value mappings`]
@@ -261,8 +261,8 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this map`]
 			]
@@ -277,8 +277,8 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of key-value mappings in this map`]
 			]
@@ -304,8 +304,8 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* reference */ 'r', `java.lang.String#valueOf(java.lang.Object)`, `String.valueOf(Object)`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this map`]
 			]
@@ -342,8 +342,8 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collection view of the values contained in this map`]
 			]
@@ -380,8 +380,8 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* text */ 't', `
  operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the keys contained in this map`]
 			]
@@ -606,7 +606,7 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* text */ 't', `Removes all of the mappings from this map (optional operation).
  The map will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -661,4 +661,5 @@ DocsCollector.collect('java.util.AbstractMap', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

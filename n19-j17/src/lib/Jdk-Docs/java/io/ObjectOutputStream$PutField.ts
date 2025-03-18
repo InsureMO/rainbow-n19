@@ -6,13 +6,13 @@ DocsCollector.collect('java.io.ObjectOutputStream$PutField', [
 		[/* text */ 't', `Provide programmatic access to the persistent fields to be written
  to ObjectOutput.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor for subclasses to call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -273,4 +273,5 @@ DocsCollector.collect('java.io.ObjectOutputStream$PutField', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

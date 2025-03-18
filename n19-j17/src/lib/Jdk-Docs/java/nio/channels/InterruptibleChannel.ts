@@ -53,8 +53,8 @@ DocsCollector.collect('java.nio.channels.InterruptibleChannel', [
 			[/* text */ 't', ` operator.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'close()', [
 			[/* method description */
@@ -75,7 +75,7 @@ DocsCollector.collect('java.nio.channels.InterruptibleChannel', [
 					[/* text */ 't', ` interface.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -84,4 +84,5 @@ DocsCollector.collect('java.nio.channels.InterruptibleChannel', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -113,8 +113,8 @@ DocsCollector.collect('java.lang.constant.ConstantDesc', [
  particular entity will always be represented by the same descriptor instance.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)', [
 			[/* method description */
@@ -147,4 +147,5 @@ DocsCollector.collect('java.lang.constant.ConstantDesc', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

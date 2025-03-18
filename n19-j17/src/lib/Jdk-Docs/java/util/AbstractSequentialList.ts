@@ -86,14 +86,14 @@ DocsCollector.collect('java.util.AbstractSequentialList', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Sole constructor.  (For invocation by subclass constructors, typically
  implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -367,8 +367,8 @@ DocsCollector.collect('java.util.AbstractSequentialList', [
 
  This implementation merely returns a list iterator over the list.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this list (in proper sequence)`]
 			]
@@ -439,4 +439,5 @@ DocsCollector.collect('java.util.AbstractSequentialList', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

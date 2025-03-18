@@ -147,7 +147,7 @@ DocsCollector.collect('java.util.Vector', [
 				[/* text */ 't', ` and its standard capacity increment is
  zero.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -232,7 +232,7 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `index after last element to be removed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'addAll(java.util.Collection)', [
@@ -279,7 +279,7 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `element whose presence in this vector is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this vector contains the specified element`]
@@ -300,7 +300,7 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `element to be removed from this Vector, if present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the Vector contained the specified element`]
 			]
@@ -414,7 +414,7 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `element to search for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the first occurrence of the specified element in
          this vector, or -1 if this vector does not contain the element`]
@@ -435,8 +435,8 @@ DocsCollector.collect('java.util.Vector', [
  structurally modified while enumerating over the elements then the
  results of enumerating are undefined.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an enumeration of the components of this vector`]
 			]
@@ -469,8 +469,8 @@ DocsCollector.collect('java.util.Vector', [
  characteristic values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -522,7 +522,7 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `element to be appended to this Vector`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
@@ -610,7 +610,7 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `the Object to be compared for equality with this Vector`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the specified Object is equal to this Vector`]
 			]
@@ -619,8 +619,8 @@ DocsCollector.collect('java.util.Vector', [
 			[/* method description */
 				[/* text */ 't', `Tests if this vector has no components.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this vector has
@@ -654,7 +654,7 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `the component to be removed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the argument was a component of this
@@ -701,7 +701,7 @@ DocsCollector.collect('java.util.Vector', [
 				[/* text */ 't', `) of
  this vector.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this vector has no components`]
@@ -736,7 +736,7 @@ DocsCollector.collect('java.util.Vector', [
 			[/* method description */
 				[/* text */ 't', `Returns the last component of the vector.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this vector is empty`]
@@ -800,8 +800,8 @@ DocsCollector.collect('java.util.Vector', [
 			[/* method description */
 				[/* text */ 't', `Returns the current capacity of this vector.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current capacity (the length of its internal
           data array, kept in the field `],
@@ -814,8 +814,8 @@ DocsCollector.collect('java.util.Vector', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code value for this Vector.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this list`]
 			]
@@ -875,7 +875,7 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `element to search for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the last occurrence of the specified element in
          this vector, or -1 if this vector does not contain the element`]
@@ -922,8 +922,8 @@ DocsCollector.collect('java.util.Vector', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of components in this vector.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of components in this vector`]
 			]
@@ -936,8 +936,8 @@ DocsCollector.collect('java.util.Vector', [
 				[/* inline code block */ 'i', `Vector`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this vector`]
 			]
@@ -947,8 +947,8 @@ DocsCollector.collect('java.util.Vector', [
 				[/* text */ 't', `Returns an array containing all of the elements in this Vector
  in the correct order.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
 				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
@@ -962,8 +962,8 @@ DocsCollector.collect('java.util.Vector', [
 				[/* text */ 't', `Returns a string representation of this Vector, containing
  the String representation of each element.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this collection`]
 			]
@@ -979,8 +979,8 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this list in proper sequence`]
 			]
@@ -1056,8 +1056,8 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a list iterator over the elements in this list (in proper
          sequence)`]
@@ -1126,7 +1126,7 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `the component to be added`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'copyInto(java.lang.Object[])', [
@@ -1197,7 +1197,7 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `the desired minimum capacity`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEach(java.util.function.Consumer)', [
@@ -1298,8 +1298,8 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', ` interface).`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'removeElementAt(int)', [
@@ -1461,8 +1461,8 @@ DocsCollector.collect('java.util.Vector', [
  with a smaller one. An application can use this operation to
  minimize the storage of a vector.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'add(int,java.lang.Object)', [
@@ -1494,9 +1494,10 @@ DocsCollector.collect('java.util.Vector', [
 				[/* text */ 't', `Removes all of the elements from this Vector.  The Vector will
  be empty after this call returns (unless it throws an exception).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

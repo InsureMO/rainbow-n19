@@ -22,8 +22,8 @@ DocsCollector.collect('java.security.Guard', [
  to determine whether or not to allow access to the object.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'checkGuard(java.lang.Object)', [
 			[/* method description */
@@ -46,4 +46,5 @@ DocsCollector.collect('java.security.Guard', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

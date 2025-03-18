@@ -19,8 +19,8 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 			[/* text */ 't', ` value.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'enumConstant(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class)', [
 			[/* method description */
@@ -544,4 +544,5 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

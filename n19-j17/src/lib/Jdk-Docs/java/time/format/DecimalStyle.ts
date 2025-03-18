@@ -19,7 +19,7 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -30,7 +30,7 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other date`]
 			]
@@ -43,8 +43,8 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
  The character used to represent a decimal point may vary by culture.
  This method specifies the character to use.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character for the decimal point`]
 			]
@@ -57,8 +57,8 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
  The character used to represent a negative number may vary by culture.
  This method specifies the character to use.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character for the negative sign`]
 			]
@@ -71,8 +71,8 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
  The character used to represent a positive number may vary by culture.
  This method specifies the character to use.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character for the positive sign`]
 			]
@@ -85,8 +85,8 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
  The character used to represent digits may vary by culture.
  This method specifies the zero character to use, which implies the characters for one to nine.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the character for zero`]
 			]
@@ -95,8 +95,8 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this DecimalStyle.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -105,8 +105,8 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this DecimalStyle.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string description, not null`]
 			]
@@ -124,7 +124,7 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 					[/* text */ 't', `the character for the decimal point`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy with a new character that represents the decimal point, not null`]
 			]
@@ -142,7 +142,7 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 					[/* text */ 't', `the character for the negative sign`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy with a new character that represents the negative sign, not null`]
 			]
@@ -160,7 +160,7 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 					[/* text */ 't', `the character for the positive sign`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy with a new character that represents the positive sign, not null`]
 			]
@@ -178,7 +178,7 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 					[/* text */ 't', `the character for zero`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy with a new character that represents zero, not null`]
 			]
@@ -203,7 +203,7 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 					[/* text */ 't', `the locale, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the decimal style, not null`]
 			]
@@ -226,8 +226,8 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the decimal style, not null`]
 			]
@@ -239,11 +239,12 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 				[/* block */ 'b', `
  The locale 'en_US' will always be present.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a Set of Locales for which localization is supported`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

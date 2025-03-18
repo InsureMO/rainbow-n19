@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.LayerInstantiationException', [
 		[/* reference */ 'r', `java.lang.ModuleLayer`, `module layer`],
 		[/* text */ 't', ` fails.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.LayerInstantiationException', [
 				[/* inline code block */ 'i', `LayerInstantiationException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -67,5 +67,6 @@ DocsCollector.collect('java.lang.LayerInstantiationException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

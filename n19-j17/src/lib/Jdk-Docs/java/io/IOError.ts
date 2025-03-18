@@ -5,7 +5,7 @@ DocsCollector.collect('java.io.IOError', [
 	[/* class description */
 		[/* text */ 't', `Thrown when a serious I/O error has occurred.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Throwable)', [
 			[/* constructor description */
@@ -27,5 +27,6 @@ DocsCollector.collect('java.io.IOError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

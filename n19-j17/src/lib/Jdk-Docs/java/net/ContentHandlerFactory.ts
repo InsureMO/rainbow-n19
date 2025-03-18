@@ -19,8 +19,8 @@ DocsCollector.collect('java.net.ContentHandlerFactory', [
 			[/* text */ 't', ` for a MIME type.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'createContentHandler(java.lang.String)', [
 			[/* method description */
@@ -36,7 +36,7 @@ DocsCollector.collect('java.net.ContentHandlerFactory', [
 					[/* text */ 't', `the MIME type for which a content handler is desired.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new `],
 				[/* inline code block */ 'i', `ContentHandler`],
@@ -47,4 +47,5 @@ DocsCollector.collect('java.net.ContentHandlerFactory', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

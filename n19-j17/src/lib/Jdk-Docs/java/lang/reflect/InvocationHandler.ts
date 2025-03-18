@@ -19,8 +19,8 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
  method of its invocation handler.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'invoke(java.lang.Object,java.lang.reflect.Method,java.lang.Object[])', [
 			[/* method description */
@@ -456,4 +456,5 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

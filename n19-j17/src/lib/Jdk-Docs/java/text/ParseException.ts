@@ -6,7 +6,7 @@ DocsCollector.collect('java.text.ParseException', [
 		[/* text */ 't', `Signals that an error has been reached unexpectedly
  while parsing.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,int)', [
 			[/* constructor description */
@@ -30,11 +30,12 @@ DocsCollector.collect('java.text.ParseException', [
 			[/* method description */
 				[/* text */ 't', `Returns the position where the error was found.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the position where the error was found`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

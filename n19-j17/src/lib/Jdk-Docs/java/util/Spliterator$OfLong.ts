@@ -7,8 +7,8 @@ DocsCollector.collect('java.util.Spliterator$OfLong', [
 		[/* inline code block */ 'i', `long`],
 		[/* text */ 't', ` values.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'tryAdvance(java.util.function.LongConsumer)', UDF],
 		[/* method */ 'trySplit()', UDF],
@@ -35,7 +35,7 @@ DocsCollector.collect('java.util.Spliterator$OfLong', [
 					[/* text */ 't', `The action`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` if no remaining elements existed
@@ -63,9 +63,10 @@ DocsCollector.collect('java.util.Spliterator$OfLong', [
 					[/* text */ 't', `The action`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEachRemaining(java.util.function.LongConsumer)', UDF]
 	],
+	/* enum values */ UDF
 ]);

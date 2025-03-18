@@ -13,18 +13,19 @@ DocsCollector.collect('java.nio.file.WatchEvent$Modifier', [
  `],
 		[/* block */ 'b', `standard`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'name()', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the modifier.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the modifier`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

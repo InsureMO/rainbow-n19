@@ -18,8 +18,8 @@ DocsCollector.collect('java.lang.reflect.Array', [
  conversion would occur.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'newInstance(java.lang.Class,int)', [
 			[/* method description */
@@ -847,4 +847,5 @@ DocsCollector.collect('java.lang.reflect.Array', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

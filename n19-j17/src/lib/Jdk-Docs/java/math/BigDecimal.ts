@@ -1423,7 +1423,7 @@ DocsCollector.collect('java.math.BigDecimal', [
          to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the specified `],
@@ -1455,7 +1455,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', ` is
  thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if `],
@@ -1510,8 +1510,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', `
  value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1556,8 +1556,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', `
  value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1606,7 +1606,7 @@ DocsCollector.collect('java.math.BigDecimal', [
          to be compared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `-1, 0, or 1 as this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1629,8 +1629,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `hash code for this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1672,8 +1672,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', `
  value as well as return a result with the opposite sign.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1700,7 +1700,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', ` is
  thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if `],
@@ -1731,8 +1731,8 @@ DocsCollector.collect('java.math.BigDecimal', [
  `],
 				[/* block */ 'b', `The precision of a zero value is 1.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the precision of this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1754,8 +1754,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', ` means the unscaled
  value is multiplied by 1000.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the scale of this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1768,8 +1768,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `-1, 0, or 1 as the value of this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1816,8 +1816,8 @@ DocsCollector.collect('java.math.BigDecimal', [
  result from applying the string constructor to the method's output.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `string representation of this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1867,8 +1867,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', `
  method in 1.4 and earlier releases.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -2077,8 +2077,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `string representation of this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -2097,8 +2097,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `this.scale()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `abs(this)`]
 			]
@@ -2118,7 +2118,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `the context to use.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `abs(this)`],
 				[/* text */ 't', `, rounded as necessary.`]
@@ -2141,7 +2141,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this + augend`]
 			]
@@ -2168,7 +2168,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `the context to use.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this + augend`],
 				[/* text */ 't', `, rounded as necessary.`]
@@ -2510,7 +2510,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `value with which the maximum is to be computed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -2542,7 +2542,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `value with which the minimum is to be computed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -2669,7 +2669,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this * multiplicand`]
 			]
@@ -2692,7 +2692,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `the context to use.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this * multiplicand`],
 				[/* text */ 't', `, rounded as necessary.`]
@@ -2709,8 +2709,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `this.scale()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `-this`],
 				[/* text */ 't', `.`]
@@ -2730,7 +2730,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `the context to use.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `-this`],
 				[/* text */ 't', `, rounded as necessary.`]
@@ -2757,8 +2757,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this`],
 				[/* text */ 't', `.`]
@@ -2785,7 +2785,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `the context to use.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this`],
 				[/* text */ 't', `, rounded as necessary.  A zero result will
@@ -3089,7 +3089,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `the context to use.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -3401,7 +3401,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `BigDecimal.ZERO`],
 				[/* text */ 't', ` is returned.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if scale overflows.`]
@@ -3431,7 +3431,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this - subtrahend`]
 			]
@@ -3462,7 +3462,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `the context to use.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `this - subtrahend`],
 				[/* text */ 't', `, rounded as necessary.`]
@@ -3491,8 +3491,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `[1, this.scale()]`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the size of an ulp of `],
 				[/* inline code block */ 'i', `this`]
@@ -3649,8 +3649,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', ` method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -3671,7 +3671,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', ` has a nonzero fractional part.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if `],
@@ -3701,8 +3701,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `(this * 10this.scale())`],
 				[/* text */ 't', `.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the unscaled value of this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -3744,8 +3744,8 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', ` value as well
  as return a result with the opposite sign.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -3772,7 +3772,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', ` is
  thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if `],
@@ -3809,7 +3809,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', ` is
  thrown.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if `],
@@ -3883,7 +3883,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -3915,7 +3915,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -3926,4 +3926,5 @@ DocsCollector.collect('java.math.BigDecimal', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

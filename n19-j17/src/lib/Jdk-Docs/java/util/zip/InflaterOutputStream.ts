@@ -97,7 +97,7 @@ DocsCollector.collect('java.util.zip.InflaterOutputStream', [
 				[/* text */ 't', `Writes any remaining uncompressed data to the output stream and closes
  the underlying output stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -111,7 +111,7 @@ DocsCollector.collect('java.util.zip.InflaterOutputStream', [
  the underlying stream.  Use this method when applying multiple filters in
  succession to the same output stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs or this stream is already
@@ -125,7 +125,7 @@ DocsCollector.collect('java.util.zip.InflaterOutputStream', [
 				[/* text */ 't', `Flushes this output stream, forcing any pending buffered output bytes to be
  written.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs or this stream is already
@@ -199,4 +199,5 @@ DocsCollector.collect('java.util.zip.InflaterOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

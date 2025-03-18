@@ -8,8 +8,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedWildcardType', [
  wildcard type argument, whose upper or lower bounds may themselves represent
  annotated uses of types.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotatedOwnerType()', [
 			[/* method description */
@@ -33,8 +33,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedWildcardType', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `null`]
 			]
@@ -45,8 +45,8 @@ DocsCollector.collect('java.lang.reflect.AnnotatedWildcardType', [
  If no lower bound is explicitly declared, the lower bound is the
  type of null. In this case, a zero length array is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the potentially annotated lower bounds of this wildcard type or
  an empty array if no lower bound is explicitly declared.`]
@@ -59,11 +59,12 @@ DocsCollector.collect('java.lang.reflect.AnnotatedWildcardType', [
  unannotated `],
 				[/* inline code block */ 'i', `Object`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the potentially annotated upper bounds of this wildcard type`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

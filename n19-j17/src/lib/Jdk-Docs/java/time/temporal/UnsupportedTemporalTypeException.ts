@@ -6,7 +6,7 @@ DocsCollector.collect('java.time.temporal.UnsupportedTemporalTypeException', [
 		[/* text */ 't', `UnsupportedTemporalTypeException indicates that a ChronoField or ChronoUnit is
  not supported for a Temporal class.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -34,5 +34,6 @@ DocsCollector.collect('java.time.temporal.UnsupportedTemporalTypeException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

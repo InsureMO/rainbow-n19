@@ -6,15 +6,16 @@ DocsCollector.collect('java.nio.charset.CharacterCodingException', [
 		[/* text */ 't', `Checked exception thrown when a character encoding
  or decoding error occurs.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an instance of this class.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

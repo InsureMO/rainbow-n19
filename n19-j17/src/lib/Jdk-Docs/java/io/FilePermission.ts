@@ -109,7 +109,7 @@ DocsCollector.collect('java.io.FilePermission', [
  directory it's in (or a subdirectory of that directory); it does not
  need explicit permission to do so.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
 			[/* constructor description */
@@ -177,7 +177,7 @@ DocsCollector.collect('java.io.FilePermission', [
 					[/* text */ 't', `the object we are testing for equality with this object.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if obj is a FilePermission, and has the same
@@ -250,7 +250,7 @@ DocsCollector.collect('java.io.FilePermission', [
 					[/* text */ 't', `the permission to check against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified permission is not
@@ -266,8 +266,8 @@ DocsCollector.collect('java.io.FilePermission', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code value for this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -282,8 +282,8 @@ DocsCollector.collect('java.io.FilePermission', [
 				[/* text */ 't', `
  will return the string "read,write".`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the canonical string representation of the actions.`]
 			]
@@ -349,12 +349,13 @@ DocsCollector.collect('java.io.FilePermission', [
 				[/* text */ 't', ` method.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new PermissionCollection object suitable for storing
  FilePermissions.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

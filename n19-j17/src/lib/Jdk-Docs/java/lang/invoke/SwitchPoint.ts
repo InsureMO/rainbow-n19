@@ -131,13 +131,13 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new switch point.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -180,8 +180,8 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 					[/* text */ 't', ` true and false method handles.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this switch point has been invalidated`]
 			]
@@ -298,4 +298,5 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

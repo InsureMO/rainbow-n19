@@ -88,7 +88,7 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Closes the ZIP output stream as well as the stream being filtered.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
 					[/* text */ 't', `if a ZIP file error has occurred`]
@@ -104,7 +104,7 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
 				[/* text */ 't', `Closes the current ZIP entry and positions the stream for writing
  the next entry.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
 					[/* text */ 't', `if a ZIP format error has occurred`]
@@ -121,7 +121,7 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
  the underlying stream. Use this method when applying multiple filters
  in succession to the same output stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
 					[/* text */ 't', `if a ZIP file error has occurred`]
@@ -220,4 +220,5 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

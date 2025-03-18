@@ -164,8 +164,8 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'submit(java.lang.Runnable,java.lang.Object)', [
 			[/* method description */
@@ -459,8 +459,8 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this executor has been shut down.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this executor has been shut down`]
@@ -482,8 +482,8 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 				[/* inline code block */ 'i', `shutdownNow`],
 				[/* text */ 't', ` was called first.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if all tasks have completed following shut down`]
@@ -544,7 +544,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
  task that fails to respond to interrupts may never terminate.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and
@@ -579,7 +579,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
  to do that.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and
@@ -598,4 +598,5 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

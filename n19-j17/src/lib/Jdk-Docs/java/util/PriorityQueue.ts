@@ -128,7 +128,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -140,7 +140,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -430,7 +430,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 					[/* text */ 't', `object to be checked for containment in this queue`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this queue contains the specified element`]
@@ -482,7 +482,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 					[/* text */ 't', `element to be removed from this queue, if present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this queue changed as a result of the call`]
@@ -578,8 +578,8 @@ DocsCollector.collect('java.util.PriorityQueue', [
 					[/* text */ 't', ` if this queue is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of this queue, or `],
 				[/* inline code block */ 'i', `null`],
@@ -595,8 +595,8 @@ DocsCollector.collect('java.util.PriorityQueue', [
 					[/* text */ 't', ` if this queue is empty.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the head of this queue, or `],
 				[/* inline code block */ 'i', `null`],
@@ -634,8 +634,8 @@ DocsCollector.collect('java.util.PriorityQueue', [
  characteristic values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -654,8 +654,8 @@ DocsCollector.collect('java.util.PriorityQueue', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in this collection`]
 			]
@@ -674,8 +674,8 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
  APIs.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing all of the elements in this queue`]
 			]
@@ -690,8 +690,8 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', ` of its elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator used to order this queue, or
          `],
@@ -705,8 +705,8 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* text */ 't', `Returns an iterator over the elements in this queue. The iterator
  does not return the elements in any particular order.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this queue`]
 			]
@@ -716,8 +716,8 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* text */ 't', `Removes all of the elements from this priority queue.
  The queue will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEach(java.util.function.Consumer)', [
@@ -750,4 +750,5 @@ DocsCollector.collect('java.util.PriorityQueue', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

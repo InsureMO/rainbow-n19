@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.IllegalMonitorStateException', [
  object's monitor or to notify other threads waiting on an object's
  monitor without owning the specified monitor.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -16,7 +16,7 @@ DocsCollector.collect('java.lang.IllegalMonitorStateException', [
 				[/* text */ 't', ` with no
  detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -34,5 +34,6 @@ DocsCollector.collect('java.lang.IllegalMonitorStateException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

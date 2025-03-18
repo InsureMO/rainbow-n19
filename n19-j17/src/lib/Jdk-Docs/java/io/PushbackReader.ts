@@ -6,7 +6,7 @@ DocsCollector.collect('java.io.PushbackReader', [
 		[/* text */ 't', `A character-stream reader that allows characters to be pushed back into the
  stream.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.Reader)', [
 			[/* constructor description */
@@ -45,8 +45,8 @@ DocsCollector.collect('java.io.PushbackReader', [
 				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does
  not.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
 			]
@@ -55,7 +55,7 @@ DocsCollector.collect('java.io.PushbackReader', [
 			[/* method description */
 				[/* text */ 't', `Tells whether this stream is ready to be read.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -71,7 +71,7 @@ DocsCollector.collect('java.io.PushbackReader', [
 			[/* method description */
 				[/* text */ 't', `Reads a single character.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -92,7 +92,7 @@ DocsCollector.collect('java.io.PushbackReader', [
  Closing a previously closed stream has no effect. This method will block
  while there is another thread blocking on the reader.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -133,7 +133,7 @@ DocsCollector.collect('java.io.PushbackReader', [
 				[/* inline code block */ 'i', `PushbackReader`],
 				[/* text */ 't', ` always throws an exception.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `Always, since reset is not supported`]
@@ -218,4 +218,5 @@ DocsCollector.collect('java.io.PushbackReader', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

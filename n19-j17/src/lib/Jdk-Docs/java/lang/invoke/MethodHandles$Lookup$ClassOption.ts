@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup$ClassOption', [
@@ -10,8 +9,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup$ClassOption', [
  to the nest of a lookup class and/or whether a hidden class has
  a strong relationship with the class loader marked as its defining loader.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -44,11 +43,46 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'NESTMATE', [
+			[/* enum value description */
+				[/* text */ 't', `Specifies that a hidden class be added to `],
+				[/* reference */ 'r', `java.lang.Class#getNestHost()`, `nest`],
+				[/* text */ 't', `
+ of a lookup class as a nestmate.
+
+ `],
+				[/* block */ 'b', ` A hidden nestmate class has access to the private members of all
+ classes and interfaces in the same nest.`]
+			],
+		]],
+		[/* enum value */ 'STRONG', [
+			[/* enum value description */
+				[/* text */ 't', `Specifies that a hidden class has a `],
+				[/* text */ 't', `strong`],
+				[/* text */ 't', `
+ relationship with the class loader marked as its defining loader,
+ as a normal class or interface has with its own defining loader.
+ This means that the hidden class may be unloaded if and only if
+ its defining loader is not reachable and thus may be reclaimed
+ by a garbage collector (JLS 12.7).
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` By default, a hidden class or interface may be unloaded
+ even if the class loader that is marked as its defining loader is
+ `],
+					[/* text */ 't', `reachable`],
+					[/* text */ 't', `.`]
+				]]
+			],
 		]]
 	],
 ]);

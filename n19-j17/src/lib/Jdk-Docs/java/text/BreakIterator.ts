@@ -277,7 +277,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor. BreakIterator is stateless and has no default behavior.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -293,8 +293,8 @@ DocsCollector.collect('java.text.BreakIterator', [
  has been reached, it returns the first or last text boundary depending on
  which one is reached.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The text boundary returned from the above methods, first or last
  text boundary.`]
@@ -305,8 +305,8 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* text */ 't', `Returns the first boundary. The iterator's current position is set
  to the first text boundary.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The character index of the first text boundary.`]
 			]
@@ -348,8 +348,8 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* text */ 't', `Returns the last boundary. The iterator's current position is set
  to the last text boundary.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The character index of the last text boundary.`]
 			]
@@ -363,8 +363,8 @@ DocsCollector.collect('java.text.BreakIterator', [
  the iterator's current position is unchanged. Otherwise, the iterator's
  current position is set to the boundary following the current boundary.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The character index of the next text boundary or
  `],
@@ -399,7 +399,7 @@ DocsCollector.collect('java.text.BreakIterator', [
  and positive values move to later boundaries.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The character index of the nth boundary from the current position
  or `],
@@ -417,8 +417,8 @@ DocsCollector.collect('java.text.BreakIterator', [
  the iterator's current position is unchanged. Otherwise, the iterator's
  current position is set to the boundary preceding the current boundary.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The character index of the previous text boundary or
  `],
@@ -431,8 +431,8 @@ DocsCollector.collect('java.text.BreakIterator', [
 			[/* method description */
 				[/* text */ 't', `Get the text being scanned`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the text being scanned`]
 			]
@@ -447,7 +447,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 					[/* text */ 't', `new text to scan.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'isBoundary(int)', [
@@ -509,8 +509,8 @@ DocsCollector.collect('java.text.BreakIterator', [
 			[/* method description */
 				[/* text */ 't', `Create a copy of this iterator`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A copy of this`]
 			]
@@ -527,8 +527,8 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* reference */ 'r', `java.util.Locale#getDefault()`, `default locale`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A break iterator for character breaks`]
 			]
@@ -571,8 +571,8 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* reference */ 'r', `java.util.Locale#getDefault()`, `default locale`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A break iterator for line breaks`]
 			]
@@ -615,8 +615,8 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* reference */ 'r', `java.util.Locale#getDefault()`, `default locale`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A break iterator for sentence breaks`]
 			]
@@ -659,8 +659,8 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* reference */ 'r', `java.util.Locale#getDefault()`, `default locale`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A break iterator for word breaks`]
 			]
@@ -710,8 +710,8 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An array of locales for which localized
          `],
@@ -729,8 +729,9 @@ DocsCollector.collect('java.text.BreakIterator', [
 					[/* text */ 't', `new text to scan.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -15,7 +15,7 @@ DocsCollector.collect('java.util.FormatFlagsConversionMismatchException', [
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,char)', [
 			[/* constructor description */
@@ -38,8 +38,8 @@ DocsCollector.collect('java.util.FormatFlagsConversionMismatchException', [
 			[/* method description */
 				[/* text */ 't', `Returns the incompatible conversion.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The conversion`]
 			]
@@ -48,12 +48,13 @@ DocsCollector.collect('java.util.FormatFlagsConversionMismatchException', [
 			[/* method description */
 				[/* text */ 't', `Returns the incompatible flag.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The flag`]
 			]
 		]],
 		[/* method */ 'getMessage()', UDF]
 	],
+	/* enum values */ UDF
 ]);

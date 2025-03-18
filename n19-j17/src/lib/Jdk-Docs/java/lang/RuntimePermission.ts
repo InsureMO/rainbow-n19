@@ -586,7 +586,7 @@ DocsCollector.collect('java.lang.RuntimePermission', [
 		],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -646,5 +646,6 @@ DocsCollector.collect('java.lang.RuntimePermission', [
 			]
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

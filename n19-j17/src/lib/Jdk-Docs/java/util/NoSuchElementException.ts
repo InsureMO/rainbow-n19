@@ -6,7 +6,7 @@ DocsCollector.collect('java.util.NoSuchElementException', [
 		[/* text */ 't', `Thrown by various accessor methods to indicate that the element being requested
  does not exist.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -17,7 +17,7 @@ DocsCollector.collect('java.util.NoSuchElementException', [
 				[/* text */ 't', `
  as its error message string.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -82,5 +82,6 @@ DocsCollector.collect('java.util.NoSuchElementException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

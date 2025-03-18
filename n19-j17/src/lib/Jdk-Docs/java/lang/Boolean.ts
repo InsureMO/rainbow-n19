@@ -130,8 +130,8 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* text */ 't', ` object as a boolean
  primitive.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the primitive `],
 				[/* inline code block */ 'i', `boolean`],
@@ -157,7 +157,7 @@ DocsCollector.collect('java.lang.Boolean', [
 					[/* text */ 't', `the object to compare with.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the Boolean objects represent the
@@ -198,8 +198,8 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* inline code block */ 'i', `Boolean`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the integer `],
 				[/* inline code block */ 'i', `1231`],
@@ -229,8 +229,8 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* inline code block */ 'i', `"false"`],
 				[/* text */ 't', ` is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this object.`]
 			]
@@ -242,8 +242,8 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -308,7 +308,7 @@ DocsCollector.collect('java.lang.Boolean', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the logical AND of `],
 				[/* inline code block */ 'i', `a`],
@@ -331,7 +331,7 @@ DocsCollector.collect('java.lang.Boolean', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the logical OR of `],
 				[/* inline code block */ 'i', `a`],
@@ -354,7 +354,7 @@ DocsCollector.collect('java.lang.Boolean', [
 					[/* text */ 't', `the second operand`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the logical XOR of `],
 				[/* inline code block */ 'i', `a`],
@@ -402,7 +402,7 @@ DocsCollector.collect('java.lang.Boolean', [
                  representation to be parsed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the boolean represented by the string argument`]
 			]
@@ -429,7 +429,7 @@ DocsCollector.collect('java.lang.Boolean', [
 					[/* text */ 't', ` to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -461,7 +461,7 @@ DocsCollector.collect('java.lang.Boolean', [
 					[/* text */ 't', `the value to hash`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -502,7 +502,7 @@ DocsCollector.collect('java.lang.Boolean', [
 					[/* text */ 't', `a boolean value.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Boolean`],
@@ -533,7 +533,7 @@ DocsCollector.collect('java.lang.Boolean', [
 					[/* text */ 't', `a string.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `Boolean`],
@@ -560,11 +560,12 @@ DocsCollector.collect('java.lang.Boolean', [
 					[/* text */ 't', `the boolean to be converted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string representation of the specified `],
 				[/* inline code block */ 'i', `boolean`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

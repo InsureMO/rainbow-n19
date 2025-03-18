@@ -206,7 +206,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', `n`],
 				[/* text */ 't', ` is an integer.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.Runnable)', [
@@ -722,7 +722,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', `Throws CloneNotSupportedException as a Thread can not be meaningfully
  cloned. Construct a new Thread instead.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.CloneNotSupportedException', [/* throw description */
 					[/* text */ 't', `always`]
@@ -739,8 +739,8 @@ DocsCollector.collect('java.lang.Thread', [
  status`],
 				[/* text */ 't', ` of the thread is unaffected by this method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this thread has been interrupted;
@@ -753,8 +753,8 @@ DocsCollector.collect('java.lang.Thread', [
 			[/* method description */
 				[/* text */ 't', `Tests if this thread is a daemon thread.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this thread is a daemon thread;
@@ -767,8 +767,8 @@ DocsCollector.collect('java.lang.Thread', [
 			[/* method description */
 				[/* text */ 't', `Returns this thread's priority.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this thread's priority.`]
 			]
@@ -777,8 +777,8 @@ DocsCollector.collect('java.lang.Thread', [
 			[/* method description */
 				[/* text */ 't', `Returns this thread's name.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this thread's name.`]
 			]
@@ -789,8 +789,8 @@ DocsCollector.collect('java.lang.Thread', [
  This method returns null if this thread has died
  (been stopped).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this thread's thread group.`]
 			]
@@ -800,8 +800,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', `Tests if this thread is alive. A thread is alive if it has
  been started and has not yet died.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this thread is alive;
@@ -974,7 +974,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread is not allowed to
@@ -1002,7 +1002,7 @@ DocsCollector.collect('java.lang.Thread', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
 					[/* text */ 't', `if any thread has interrupted the current thread. The
@@ -1033,7 +1033,7 @@ DocsCollector.collect('java.lang.Thread', [
  If the thread is alive but suspended, it is resumed and is
  permitted to make progress in its execution.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread cannot modify this
@@ -1201,7 +1201,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread cannot
@@ -1229,7 +1229,7 @@ DocsCollector.collect('java.lang.Thread', [
  If the thread is alive, it is suspended and makes no further
  progress unless and until it is resumed.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread cannot modify
@@ -1244,8 +1244,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `nothing`]
 			]
@@ -1271,7 +1271,7 @@ DocsCollector.collect('java.lang.Thread', [
  primordial thread is typically set to the class loader used to load the
  application.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager is present, and the caller's class loader
@@ -1326,7 +1326,7 @@ DocsCollector.collect('java.lang.Thread', [
  this thread is permitted to return a zero-length array from this
  method.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its
@@ -1348,8 +1348,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', `Returns a string representation of this thread, including the
  thread's name, priority, and thread group.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this thread.`]
 			]
@@ -1360,8 +1360,8 @@ DocsCollector.collect('java.lang.Thread', [
  This method is designed for use in monitoring of the system state,
  not for synchronization control.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this thread's state.`]
 			]
@@ -1378,8 +1378,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the uncaught exception handler for this thread`]
 			]
@@ -1393,8 +1393,8 @@ DocsCollector.collect('java.lang.Thread', [
  The thread ID is unique and remains unchanged during its lifetime.
  When a thread is terminated, this thread ID may be reused.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `this thread's ID.`]
 			]
@@ -1410,8 +1410,8 @@ DocsCollector.collect('java.lang.Thread', [
  interrupted again, after the first call had cleared its interrupted
  status and before the second call had examined it).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the current thread has been interrupted;
@@ -1436,8 +1436,8 @@ DocsCollector.collect('java.lang.Thread', [
  system threads. This method is intended primarily for debugging
  and monitoring purposes.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an estimate of the number of active threads in the current
           thread's thread group and in any other thread group that
@@ -1499,8 +1499,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', `,
  there is no default.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the default uncaught exception handler for all threads`]
 			]
@@ -1542,7 +1542,7 @@ DocsCollector.collect('java.lang.Thread', [
  to see if it is ok to get the stack trace of all threads.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its
@@ -1600,8 +1600,8 @@ DocsCollector.collect('java.lang.Thread', [
 			[/* method description */
 				[/* text */ 't', `Returns a reference to the currently executing thread object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the currently executing thread.`]
 			]
@@ -1657,8 +1657,8 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* text */ 't', ` package.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'dumpStack()', [
@@ -1666,8 +1666,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', `Prints a stack trace of the current thread to the standard error stream.
  This method is used only for debugging.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'onSpinWait()', [
@@ -1679,8 +1679,8 @@ DocsCollector.collect('java.lang.Thread', [
  The runtime may take action to improve the performance of invoking
  spin-wait loop constructions.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDefaultUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler)', [
@@ -1801,7 +1801,7 @@ DocsCollector.collect('java.lang.Thread', [
  In particular, a thread may not be restarted once it has completed
  execution.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
 					[/* text */ 't', `if the thread was already started.`]
@@ -1883,7 +1883,7 @@ DocsCollector.collect('java.lang.Thread', [
  `],
 				[/* block */ 'b', ` Interrupting a thread that is not alive need not have any effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread cannot modify this thread`]
@@ -1911,8 +1911,8 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* text */ 't', ` should override this method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setContextClassLoader(java.lang.ClassLoader)', [
@@ -1981,4 +1981,5 @@ DocsCollector.collect('java.lang.Thread', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

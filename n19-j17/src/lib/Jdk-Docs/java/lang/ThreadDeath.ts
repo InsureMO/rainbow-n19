@@ -46,7 +46,7 @@ DocsCollector.collect('java.lang.ThreadDeath', [
 			[/* text */ 't', ` and then discard the exception.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -54,9 +54,10 @@ DocsCollector.collect('java.lang.ThreadDeath', [
 				[/* inline code block */ 'i', `ThreadDeath`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

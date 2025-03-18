@@ -22,7 +22,7 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getField(java.lang.String)', [
 			[/* method description */
@@ -33,7 +33,7 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 					[/* text */ 't', `the name of the data field to look for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The ObjectStreamField object of the named field or null if
           there is no such named field.`]
@@ -43,8 +43,8 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 			[/* method description */
 				[/* text */ 't', `Return an array of the fields of this serializable class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing an element for each persistent field of
           this class. Returns an array of length zero if there are no
@@ -56,8 +56,8 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 				[/* text */ 't', `Return the class in the local VM that this version is mapped to.  Null
  is returned if there is no corresponding local class.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `Class`],
@@ -72,8 +72,8 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 				[/* reference */ 'r', `java.lang.Class#getName()`, `Class.getName()`],
 				[/* text */ 't', ` method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representing the name of the class`]
 			]
@@ -82,8 +82,8 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 			[/* method description */
 				[/* text */ 't', `Return a string describing this ObjectStreamClass.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
@@ -95,8 +95,8 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
  common root class and agree to be serialized and deserialized using a
  common format.  NonSerializable classes have a serialVersionUID of 0L.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the SUID of the class described by this descriptor`]
 			]
@@ -113,7 +113,7 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 					[/* text */ 't', `class for which to get the descriptor`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the class descriptor for the specified class`]
 			]
@@ -130,10 +130,11 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 					[/* text */ 't', `class for which to get the descriptor`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the class descriptor for the specified class`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

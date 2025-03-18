@@ -231,8 +231,8 @@ DocsCollector.collect('java.net.InetAddress', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -262,7 +262,7 @@ DocsCollector.collect('java.net.InetAddress', [
 					[/* text */ 't', `the object to compare against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -275,8 +275,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Utility routine to check if the InetAddress is a wildcard address.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -288,8 +288,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Utility routine to check if the InetAddress is an link local address.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -301,8 +301,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Utility routine to check if the InetAddress is a loopback address.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -314,8 +314,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Utility routine to check if the multicast address has global scope.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -328,8 +328,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Utility routine to check if the multicast address has link scope.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -342,8 +342,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Utility routine to check if the multicast address has node scope.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -356,8 +356,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Utility routine to check if the multicast address has organization scope.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -371,8 +371,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Utility routine to check if the multicast address has site scope.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -386,8 +386,8 @@ DocsCollector.collect('java.net.InetAddress', [
 				[/* text */ 't', `Utility routine to check if the InetAddress is an
  IP multicast address.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -499,8 +499,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Utility routine to check if the InetAddress is a site local address.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `boolean`],
@@ -518,8 +518,8 @@ DocsCollector.collect('java.net.InetAddress', [
 				[/* inline code block */ 'i', `getAddress()[0]`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the raw IP address of this object.`]
 			]
@@ -528,8 +528,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Returns a hashcode for this IP address.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this IP address.`]
 			]
@@ -555,8 +555,8 @@ DocsCollector.collect('java.net.InetAddress', [
  the textual representation of the IP address.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the fully qualified domain name for this IP address,
     or if the operation is not allowed by the security check,
@@ -567,8 +567,8 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* method description */
 				[/* text */ 't', `Returns the IP address string in textual presentation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the raw IP address in a string format.`]
 			]
@@ -604,8 +604,8 @@ DocsCollector.collect('java.net.InetAddress', [
  the textual representation of the IP address.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the host name for this IP address, or if the operation
     is not allowed by the security check, the textual
@@ -623,8 +623,8 @@ DocsCollector.collect('java.net.InetAddress', [
  If the host name is unresolved, no reverse name service lookup
  is performed. The hostname part will be represented by an empty string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this IP address.`]
 			]
@@ -819,7 +819,7 @@ DocsCollector.collect('java.net.InetAddress', [
  the loopback address is returned.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.UnknownHostException', [/* throw description */
 					[/* text */ 't', `if the local host name could not
@@ -840,8 +840,8 @@ DocsCollector.collect('java.net.InetAddress', [
  address, ::1. The IPv4 loopback address returned
  is only one of many in the form 127.*.*.*`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the InetAddress loopback instance.`]
 			]
@@ -943,4 +943,5 @@ DocsCollector.collect('java.net.InetAddress', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

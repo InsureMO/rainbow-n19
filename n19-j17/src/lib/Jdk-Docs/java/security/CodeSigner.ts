@@ -6,7 +6,7 @@ DocsCollector.collect('java.security.CodeSigner', [
 		[/* text */ 't', `This class encapsulates information about a code signer.
  It is immutable.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.security.cert.CertPath,java.security.Timestamp)', [
 			[/* constructor description */
@@ -52,7 +52,7 @@ DocsCollector.collect('java.security.CodeSigner', [
 					[/* text */ 't', `the object to test for equality with this object.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the objects are considered equal, false otherwise.`]
 			]
@@ -63,8 +63,8 @@ DocsCollector.collect('java.security.CodeSigner', [
  The hash code is generated using the signer's certificate path and the
  timestamp, if present.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this code signer.`]
 			]
@@ -73,8 +73,8 @@ DocsCollector.collect('java.security.CodeSigner', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this code signer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string comprising the signer's certificate and a timestamp,
          if present.`]
@@ -84,8 +84,8 @@ DocsCollector.collect('java.security.CodeSigner', [
 			[/* method description */
 				[/* text */ 't', `Returns the signer's certificate path.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A certificate path.`]
 			]
@@ -94,8 +94,8 @@ DocsCollector.collect('java.security.CodeSigner', [
 			[/* method description */
 				[/* text */ 't', `Returns the signature timestamp.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The timestamp or `],
 				[/* inline code block */ 'i', `null`],
@@ -103,4 +103,5 @@ DocsCollector.collect('java.security.CodeSigner', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

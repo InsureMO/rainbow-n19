@@ -36,8 +36,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
  This might be described as 'the clocks will move back one hour tonight at 2am'.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -51,7 +51,7 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 					[/* text */ 't', `the other object to compare to, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if equal`]
 			]
@@ -71,8 +71,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
  This might be described as 'the clocks will move forward one hour tonight at 1am'.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this transition is a gap, false if it is an overlap`]
 			]
@@ -92,8 +92,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
  This might be described as 'the clocks will move back one hour tonight at 2am'.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this transition is an overlap, false if it is a gap`]
 			]
@@ -112,7 +112,7 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 					[/* text */ 't', `the offset to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the offset is valid during the transition`]
 			]
@@ -130,7 +130,7 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 					[/* text */ 't', `the transition to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
 			]
@@ -139,8 +139,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 			[/* method description */
 				[/* text */ 't', `Returns a suitable hash code.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code`]
 			]
@@ -149,8 +149,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string for debugging, not null`]
 			]
@@ -164,8 +164,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
  The duration will be positive for a gap and negative for an overlap.
  Time-zones are second-based, so the nanosecond part of the duration will be zero.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the duration of the transition, positive for gaps, negative for overlaps`]
 			]
@@ -190,8 +190,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
  all represent the same instant.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the transition instant, not null`]
 			]
@@ -207,8 +207,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
  The combination of the 'before' date-time and offset represents the same instant
  as the 'after' date-time and offset.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the transition date-time expressed with the after offset, not null`]
 			]
@@ -226,8 +226,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
  The combination of the 'before' date-time and offset represents the same instant
  as the 'after' date-time and offset.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the transition date-time expressed with the before offset, not null`]
 			]
@@ -239,8 +239,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 				[/* block */ 'b', `
  This is the offset in use on and after the instant of the transition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset after the transition, not null`]
 			]
@@ -252,8 +252,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 				[/* block */ 'b', `
  This is the offset in use before the instant of the transition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset before the transition, not null`]
 			]
@@ -262,8 +262,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 			[/* method description */
 				[/* text */ 't', `Gets the transition instant as an epoch second.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the transition epoch second`]
 			]
@@ -311,4 +311,5 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

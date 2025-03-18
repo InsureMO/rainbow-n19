@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.ClassCastException', [
  `]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -23,7 +23,7 @@ DocsCollector.collect('java.lang.ClassCastException', [
 				[/* inline code block */ 'i', `ClassCastException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -41,5 +41,6 @@ DocsCollector.collect('java.lang.ClassCastException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

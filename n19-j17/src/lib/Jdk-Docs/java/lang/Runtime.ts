@@ -15,8 +15,8 @@ DocsCollector.collect('java.lang.Runtime', [
 		[/* block */ 'b', `
  An application cannot create its own instance of this class.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'removeShutdownHook(java.lang.Thread)', [
 			[/* method description */
@@ -600,8 +600,8 @@ DocsCollector.collect('java.lang.Runtime', [
  processors should therefore occasionally poll this property and adjust
  their resource usage appropriately. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum number of processors available to the virtual
           machine; never smaller than one`]
@@ -617,8 +617,8 @@ DocsCollector.collect('java.lang.Runtime', [
  by `],
 				[/* inline code block */ 'i', `freeMemory.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an approximation to the total amount of memory currently
           available for future allocated objects, measured in bytes.`]
@@ -632,8 +632,8 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum amount of memory that the virtual machine will
           attempt to use, measured in bytes`]
@@ -649,8 +649,8 @@ DocsCollector.collect('java.lang.Runtime', [
  Note that the amount of memory required to hold an object of any
  given type may be implementation-dependent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total amount of memory currently available for current
           and future objects, measured in bytes.`]
@@ -699,8 +699,8 @@ DocsCollector.collect('java.lang.Runtime', [
  means of invoking this method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getRuntime()', [
@@ -711,8 +711,8 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* text */ 't', ` are instance
  methods and must be invoked with respect to the current runtime object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `Runtime`],
@@ -726,8 +726,8 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* reference */ 'r', `java.lang.Runtime.Version`, `Runtime.Version`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* reference */ 'r', `java.lang.Runtime.Version`, `Runtime.Version`],
@@ -1189,9 +1189,10 @@ DocsCollector.collect('java.lang.Runtime', [
  and convenient means of invoking this method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

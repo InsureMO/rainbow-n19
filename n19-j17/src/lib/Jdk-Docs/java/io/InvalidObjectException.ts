@@ -6,7 +6,7 @@ DocsCollector.collect('java.io.InvalidObjectException', [
 		[/* text */ 't', `Indicates that one or more deserialized objects failed validation
  tests.  The argument should provide the reason for the failure.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -22,5 +22,6 @@ DocsCollector.collect('java.io.InvalidObjectException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

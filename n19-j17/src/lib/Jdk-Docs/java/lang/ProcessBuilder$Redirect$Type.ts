@@ -1,4 +1,3 @@
-import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.lang.ProcessBuilder$Redirect$Type', [
@@ -7,8 +6,8 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect$Type', [
 		[/* reference */ 'r', `java.lang.ProcessBuilder.Redirect`, `ProcessBuilder.Redirect`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -41,11 +40,51 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'PIPE', [
+			[/* enum value description */
+				[/* text */ 't', `The type of `],
+				[/* reference */ 'r', `java.lang.ProcessBuilder.Redirect#PIPE`, `Redirect.PIPE`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'INHERIT', [
+			[/* enum value description */
+				[/* text */ 't', `The type of `],
+				[/* reference */ 'r', `java.lang.ProcessBuilder.Redirect#INHERIT`, `Redirect.INHERIT`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'READ', [
+			[/* enum value description */
+				[/* text */ 't', `The type of redirects returned from
+ `],
+				[/* reference */ 'r', `java.lang.ProcessBuilder.Redirect#from(java.io.File)`, `Redirect.from(File)`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'WRITE', [
+			[/* enum value description */
+				[/* text */ 't', `The type of redirects returned from
+ `],
+				[/* reference */ 'r', `java.lang.ProcessBuilder.Redirect#to(java.io.File)`, `Redirect.to(File)`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* enum value */ 'APPEND', [
+			[/* enum value description */
+				[/* text */ 't', `The type of redirects returned from
+ `],
+				[/* reference */ 'r', `java.lang.ProcessBuilder.Redirect#appendTo(java.io.File)`, `Redirect.appendTo(File)`],
+				[/* text */ 't', `.`]
+			],
 		]]
 	],
 ]);

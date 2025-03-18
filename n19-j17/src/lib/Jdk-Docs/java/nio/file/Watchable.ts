@@ -25,8 +25,8 @@ DocsCollector.collect('java.nio.file.Watchable', [
 			[/* text */ 't', ` method.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind...)', [
 			[/* method description */
@@ -142,4 +142,5 @@ DocsCollector.collect('java.nio.file.Watchable', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

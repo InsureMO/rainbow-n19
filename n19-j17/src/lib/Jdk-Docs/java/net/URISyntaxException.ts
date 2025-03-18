@@ -6,7 +6,7 @@ DocsCollector.collect('java.net.URISyntaxException', [
 		[/* text */ 't', `Checked exception thrown to indicate that a string could not be parsed as a
  URI reference.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
 			[/* constructor description */
@@ -69,8 +69,8 @@ DocsCollector.collect('java.net.URISyntaxException', [
 				[/* inline code block */ 'i', `-1`],
 				[/* text */ 't', ` if this position is not known.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The error index`]
 			]
@@ -79,8 +79,8 @@ DocsCollector.collect('java.net.URISyntaxException', [
 			[/* method description */
 				[/* text */ 't', `Returns the input string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The input string`]
 			]
@@ -98,8 +98,8 @@ DocsCollector.collect('java.net.URISyntaxException', [
  decimal, is inserted after the reason string and before the colon
  character.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string describing the parse error`]
 			]
@@ -108,11 +108,12 @@ DocsCollector.collect('java.net.URISyntaxException', [
 			[/* method description */
 				[/* text */ 't', `Returns a string explaining why the input string could not be parsed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The reason string`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

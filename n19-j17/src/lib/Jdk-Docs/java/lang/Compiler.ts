@@ -2,9 +2,9 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.lang.Compiler', [
-	/* class description */ UDF,
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* class description */,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'compileClass(java.lang.Class)', [
 			[/* method description */
@@ -85,17 +85,18 @@ DocsCollector.collect('java.lang.Compiler', [
 			[/* method description */
 				[/* text */ 't', `Cause the Compiler to cease operation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'enable()', [
 			[/* method description */
 				[/* text */ 't', `Cause the Compiler to resume operation.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

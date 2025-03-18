@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.ArrayIndexOutOfBoundsException', [
 		[/* text */ 't', `Thrown to indicate that an array has been accessed with an illegal index. The
  index is either negative or greater than or equal to the size of the array.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.ArrayIndexOutOfBoundsException', [
 				[/* text */ 't', ` with no detail
  message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -51,5 +51,6 @@ DocsCollector.collect('java.lang.ArrayIndexOutOfBoundsException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -312,8 +312,8 @@ DocsCollector.collect('java.io.DataInput', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'readBoolean()', [
 			[/* method description */
@@ -332,7 +332,7 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* inline code block */ 'i', `DataOutput`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end before reading
@@ -366,7 +366,7 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* inline code block */ 'i', `DataOutput`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end before reading
@@ -407,7 +407,7 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* inline code block */ 'i', `DataOutput`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end before reading
@@ -453,7 +453,7 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* inline code block */ 'i', `DataOutput`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end before reading
@@ -499,7 +499,7 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* inline code block */ 'i', `DataOutput`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end before reading
@@ -538,7 +538,7 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* inline code block */ 'i', `DataOutput`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end before reading
@@ -584,7 +584,7 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* inline code block */ 'i', `255`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end before reading
@@ -638,7 +638,7 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* inline code block */ 'i', `65535`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end before reading
@@ -750,7 +750,7 @@ DocsCollector.collect('java.io.DataInput', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -936,7 +936,7 @@ DocsCollector.collect('java.io.DataInput', [
  for reading by this method.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end
@@ -988,7 +988,7 @@ DocsCollector.collect('java.io.DataInput', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end before reading
@@ -1032,7 +1032,7 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* inline code block */ 'i', `DataOutput`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this stream reaches the end before reading
@@ -1277,4 +1277,5 @@ DocsCollector.collect('java.io.DataInput', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

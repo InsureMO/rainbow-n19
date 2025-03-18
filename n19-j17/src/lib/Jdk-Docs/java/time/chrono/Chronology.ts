@@ -175,8 +175,8 @@ DocsCollector.collect('java.time.chrono.Chronology', [
  CLDR specification then the calendar type is the concatenation of the
  CLDR type and, if applicable, the CLDR variant.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -190,7 +190,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other chronology`]
 			]
@@ -226,7 +226,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `the proleptic-year to check, not validated for range`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the year is a leap year`]
 			]
@@ -249,7 +249,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `the other chronology to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
 			]
@@ -261,8 +261,8 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', `
  The hash code should be based on the entire state of the object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -328,8 +328,8 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the calendar system type, null if the calendar is not defined by CLDR/LDML`]
 			]
@@ -350,8 +350,8 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the chronology ID, not null`]
 			]
@@ -365,8 +365,8 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', `
  The format should include the entire state of the object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this chronology, not null`]
 			]
@@ -614,8 +614,8 @@ DocsCollector.collect('java.time.chrono.Chronology', [
  If the calendar system does not support the concept of eras, an empty
  list must be returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the list of eras for the chronology, may be immutable, not null`]
 			]
@@ -637,7 +637,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `the locale to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the text value of the chronology, not null`]
 			]
@@ -691,7 +691,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
  Using this method will prevent the ability to use an alternate clock for testing
  because the clock is hard-coded.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
 					[/* text */ 't', `if unable to create the date`]
@@ -865,7 +865,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `the number of years, may be negative`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period in terms of this chronology, not null`]
 			]
@@ -1251,11 +1251,12 @@ DocsCollector.collect('java.time.chrono.Chronology', [
  configuration.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the independent, modifiable set of the available chronology IDs, not null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

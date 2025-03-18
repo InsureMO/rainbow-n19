@@ -178,14 +178,14 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new, empty linked hash set with the default initial
  capacity (16) and load factor (0.75).`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -272,8 +272,8 @@ DocsCollector.collect('java.util.LinkedHashSet', [
  should document the reporting of additional characteristic values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -281,4 +281,5 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

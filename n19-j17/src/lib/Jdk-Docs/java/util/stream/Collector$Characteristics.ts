@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.util.stream.Collector$Characteristics', [
@@ -8,8 +7,8 @@ DocsCollector.collect('java.util.stream.Collector$Characteristics', [
 		[/* text */ 't', `, which can
  be used to optimize reduction implementations.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -42,11 +41,50 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'CONCURRENT', [
+			[/* enum value description */
+				[/* text */ 't', `Indicates that this collector is `],
+				[/* text */ 't', `concurrent`],
+				[/* text */ 't', `, meaning that
+ the result container can support the accumulator function being
+ called concurrently with the same result container from multiple
+ threads.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If a `],
+					[/* inline code block */ 'i', `CONCURRENT`],
+					[/* text */ 't', ` collector is not also `],
+					[/* inline code block */ 'i', `UNORDERED`],
+					[/* text */ 't', `,
+ then it should only be evaluated concurrently if applied to an
+ unordered data source.`]
+				]]
+			],
+		]],
+		[/* enum value */ 'UNORDERED', [
+			[/* enum value description */
+				[/* text */ 't', `Indicates that the collection operation does not commit to preserving
+ the encounter order of input elements.  (This might be true if the
+ result container has no intrinsic order, such as a `],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
+				[/* text */ 't', `.)`]
+			],
+		]],
+		[/* enum value */ 'IDENTITY_FINISH', [
+			[/* enum value description */
+				[/* text */ 't', `Indicates that the finisher function is the identity function and
+ can be elided.  If set, it must be the case that an unchecked cast
+ from A to R will succeed.`]
+			],
 		]]
 	],
 ]);

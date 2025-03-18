@@ -41,8 +41,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  parallelism.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'collect(java.util.function.Supplier,java.util.function.ObjDoubleConsumer,java.util.function.BiConsumer)', [
 			[/* method description */
@@ -118,7 +118,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                     first result container.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
 			]
@@ -148,7 +148,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -180,7 +180,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                   predicate to apply to elements of this stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if either all elements of the stream match the
@@ -215,7 +215,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                   predicate to apply to elements of this stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if any elements of the stream match the provided
@@ -250,7 +250,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                   predicate to apply to elements of this stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if either no elements of the stream match the
@@ -325,7 +325,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
            function for combining two values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
 			]
@@ -424,8 +424,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sum of elements in this stream`]
 			]
@@ -441,8 +441,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the elements of this stream`]
 			]
@@ -464,8 +464,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `DoubleSummaryStatistics`],
@@ -504,8 +504,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalDouble`],
@@ -540,8 +540,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', ` instead.)`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalDouble`],
@@ -568,8 +568,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalDouble`],
@@ -608,8 +608,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalDouble`],
@@ -645,8 +645,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OptionalDouble`],
@@ -716,7 +716,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
            function for combining two values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
 			]
@@ -738,8 +738,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result stream`]
 			]
@@ -768,7 +768,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                   should be included`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -807,7 +807,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', ` of new values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -865,7 +865,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -898,7 +898,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                they are consumed from the stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -953,8 +953,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result stream`]
 			]
@@ -984,7 +984,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1014,7 +1014,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                function to apply to each element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1035,8 +1035,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Stream`],
@@ -1065,8 +1065,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the count of elements in this stream`]
 			]
@@ -1092,7 +1092,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEachOrdered(java.util.function.DoubleConsumer)', [
@@ -1115,7 +1115,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'dropWhile(java.util.function.DoublePredicate)', [
@@ -1165,7 +1165,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                   prefix of elements.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1207,7 +1207,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                function that generates replacement elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1258,7 +1258,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
                   prefix of elements.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1285,7 +1285,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `the second stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the concatenation of the two input streams`]
 			]
@@ -1296,8 +1296,8 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* inline code block */ 'i', `DoubleStream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty sequential stream`]
 			]
@@ -1317,7 +1317,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', ` for generated elements`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new infinite sequential unordered `],
 				[/* inline code block */ 'i', `DoubleStream`]
@@ -1409,7 +1409,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
              a new element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential `],
 				[/* inline code block */ 'i', `DoubleStream`]
@@ -1482,7 +1482,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
           a new element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new sequential `],
 				[/* inline code block */ 'i', `DoubleStream`]
@@ -1499,7 +1499,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `the single element`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a singleton sequential stream`]
 			]
@@ -1513,7 +1513,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* text */ 't', `the elements of the new stream`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new stream`]
 			]
@@ -1524,11 +1524,12 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* inline code block */ 'i', `DoubleStream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream builder`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

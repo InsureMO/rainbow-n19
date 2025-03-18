@@ -34,8 +34,8 @@ DocsCollector.collect('java.lang.Appendable', [
  with different styles of error handling there is no guarantee that
  errors will be propagated to the invoker.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'append(char)', [
 			[/* method description */
@@ -175,4 +175,5 @@ DocsCollector.collect('java.lang.Appendable', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

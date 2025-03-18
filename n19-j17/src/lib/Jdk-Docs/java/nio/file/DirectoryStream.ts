@@ -179,8 +179,8 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
  `],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'iterator()', [
 			[/* method description */
@@ -188,7 +188,7 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
 				[/* inline code block */ 'i', `DirectoryStream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this directory stream is closed or the iterator has already
@@ -201,4 +201,5 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

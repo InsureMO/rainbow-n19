@@ -44,8 +44,8 @@ DocsCollector.collect('java.util.Arrays', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'compare(java.lang.Comparable[],int,int,java.lang.Comparable[],int,int)', [
 			[/* method description */
@@ -247,7 +247,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -1218,7 +1218,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array, assumed to be unmodified during use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a spliterator for the array elements`]
 			]
@@ -1288,7 +1288,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `The array, assumed to be unmodified during use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Stream`],
@@ -1997,7 +1997,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the other array to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two arrays are equal`]
@@ -2026,7 +2026,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the other array to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two arrays are equal`]
@@ -2119,7 +2119,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the other array to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two arrays are equal`]
@@ -2212,7 +2212,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the other array to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two arrays are equal`]
@@ -2323,7 +2323,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the other array to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two arrays are equal`]
@@ -2456,7 +2456,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the other array to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two arrays are equal`]
@@ -2635,7 +2635,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the other array to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two arrays are equal`]
@@ -2753,7 +2753,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the other array to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two arrays are equal`]
@@ -2846,7 +2846,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the other array to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two arrays are equal`]
@@ -2939,7 +2939,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the other array to be tested for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the two arrays are equal`]
@@ -3511,7 +3511,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be searched for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `index of the search key, if it is contained in the array;
          otherwise, `],
@@ -3606,7 +3606,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be searched for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `index of the search key, if it is contained in the array;
          otherwise, `],
@@ -3702,7 +3702,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be searched for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `index of the search key, if it is contained in the array;
          otherwise, `],
@@ -3799,7 +3799,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be searched for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `index of the search key, if it is contained in the array;
          otherwise, `],
@@ -3895,7 +3895,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be searched for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `index of the search key, if it is contained in the array;
          otherwise, `],
@@ -4173,7 +4173,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be searched for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `index of the search key, if it is contained in the array;
          otherwise, `],
@@ -4268,7 +4268,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be searched for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `index of the search key, if it is contained in the array;
          otherwise, `],
@@ -4346,7 +4346,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -4535,7 +4535,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -4723,7 +4723,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -4911,7 +4911,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -5099,7 +5099,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -5399,7 +5399,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -5587,7 +5587,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -5775,7 +5775,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -5835,7 +5835,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -6061,7 +6061,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -6204,7 +6204,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -6347,7 +6347,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the second array to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value `],
 				[/* inline code block */ 'i', `0`],
@@ -6429,7 +6429,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose deep-content-based hash code to compute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a deep-content-based hash code for `],
 				[/* inline code block */ 'i', `a`]
@@ -6478,7 +6478,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose hash value to compute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a content-based hash code for `],
 				[/* inline code block */ 'i', `a`]
@@ -6527,7 +6527,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose hash value to compute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a content-based hash code for `],
 				[/* inline code block */ 'i', `a`]
@@ -6576,7 +6576,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose hash value to compute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a content-based hash code for `],
 				[/* inline code block */ 'i', `a`]
@@ -6625,7 +6625,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose hash value to compute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a content-based hash code for `],
 				[/* inline code block */ 'i', `a`]
@@ -6674,7 +6674,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose hash value to compute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a content-based hash code for `],
 				[/* inline code block */ 'i', `a`]
@@ -6723,7 +6723,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose hash value to compute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a content-based hash code for `],
 				[/* inline code block */ 'i', `a`]
@@ -6773,7 +6773,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose content-based hash code to compute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a content-based hash code for `],
 				[/* inline code block */ 'i', `a`]
@@ -6822,7 +6822,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose hash value to compute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a content-based hash code for `],
 				[/* inline code block */ 'i', `a`]
@@ -6871,7 +6871,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose hash value to compute`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a content-based hash code for `],
 				[/* inline code block */ 'i', `a`]
@@ -9050,7 +9050,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose string representation to return`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of `],
 				[/* inline code block */ 'i', `a`]
@@ -9083,7 +9083,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose string representation to return`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of `],
 				[/* inline code block */ 'i', `a`]
@@ -9116,7 +9116,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose string representation to return`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of `],
 				[/* inline code block */ 'i', `a`]
@@ -9149,7 +9149,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose string representation to return`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of `],
 				[/* inline code block */ 'i', `a`]
@@ -9182,7 +9182,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose string representation to return`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of `],
 				[/* inline code block */ 'i', `a`]
@@ -9215,7 +9215,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose string representation to return`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of `],
 				[/* inline code block */ 'i', `a`]
@@ -9248,7 +9248,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose string representation to return`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of `],
 				[/* inline code block */ 'i', `a`]
@@ -9288,7 +9288,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose string representation to return`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of `],
 				[/* inline code block */ 'i', `a`]
@@ -9321,7 +9321,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose string representation to return`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of `],
 				[/* inline code block */ 'i', `a`]
@@ -9354,7 +9354,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array whose string representation to return`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of `],
 				[/* inline code block */ 'i', `a`]
@@ -9387,7 +9387,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array, assumed to be unmodified during use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a spliterator for the array elements`]
 			]
@@ -9471,7 +9471,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array, assumed to be unmodified during use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a spliterator for the array elements`]
 			]
@@ -9555,7 +9555,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array, assumed to be unmodified during use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the spliterator for the array elements`]
 			]
@@ -9625,7 +9625,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array, assumed to be unmodified during use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `DoubleStream`],
@@ -9684,7 +9684,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array, assumed to be unmodified during use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `IntStream`],
@@ -9743,7 +9743,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array, assumed to be unmodified during use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `LongStream`],
@@ -10021,7 +10021,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be stored in all elements of the array`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'fill(boolean[],int,int,boolean)', [
@@ -10082,7 +10082,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be stored in all elements of the array`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'fill(byte[],int,int,byte)', [
@@ -10143,7 +10143,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be stored in all elements of the array`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'fill(char[],int,int,char)', [
@@ -10204,7 +10204,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be stored in all elements of the array`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'fill(double[],int,int,double)', [
@@ -10265,7 +10265,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be stored in all elements of the array`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'fill(float[],int,int,float)', [
@@ -10326,7 +10326,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be stored in all elements of the array`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'fill(int[],int,int,int)', [
@@ -10502,7 +10502,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be stored in all elements of the array`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'fill(short[],int,int,short)', [
@@ -10563,7 +10563,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the value to be stored in all elements of the array`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'parallelPrefix(double[],int,int,java.util.function.DoubleBinaryOperator)', [
@@ -10873,7 +10873,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'parallelSort(byte[],int,int)', [
@@ -10923,7 +10923,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'parallelSort(char[],int,int)', [
@@ -11002,7 +11002,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'parallelSort(double[],int,int)', [
@@ -11110,7 +11110,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'parallelSort(float[],int,int)', [
@@ -11189,7 +11189,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'parallelSort(int[],int,int)', [
@@ -11239,7 +11239,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'parallelSort(long[],int,int)', [
@@ -11289,7 +11289,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'parallelSort(short[],int,int)', [
@@ -11414,7 +11414,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'sort(byte[],int,int)', [
@@ -11464,7 +11464,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'sort(char[],int,int)', [
@@ -11543,7 +11543,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'sort(double[],int,int)', [
@@ -11651,7 +11651,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'sort(float[],int,int)', [
@@ -11730,7 +11730,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'sort(int[],int,int)', [
@@ -11973,7 +11973,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'sort(long[],int,int)', [
@@ -12023,7 +12023,7 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `the array to be sorted`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'sort(short[],int,int)', [
@@ -12065,4 +12065,5 @@ DocsCollector.collect('java.util.Arrays', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

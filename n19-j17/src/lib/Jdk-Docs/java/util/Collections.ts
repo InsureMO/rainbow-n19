@@ -82,7 +82,7 @@ DocsCollector.collect('java.util.Collections', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'checkedCollection(java.util.Collection,java.lang.Class)', [
 			[/* method description */
@@ -184,7 +184,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', ` is permitted to hold`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a dynamically typesafe view of the specified collection`]
 			]
@@ -235,7 +235,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', ` is permitted to hold`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a dynamically typesafe view of the specified list`]
 			]
@@ -287,7 +287,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', ` is permitted to hold`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a dynamically typesafe view of the specified navigable set`]
 			]
@@ -306,8 +306,8 @@ DocsCollector.collect('java.util.Collections', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the empty navigable set`]
 			]
@@ -360,7 +360,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', ` is permitted to hold`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a dynamically typesafe view of the specified queue`]
 			]
@@ -411,7 +411,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', ` is permitted to hold`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a dynamically typesafe view of the specified set`]
 			]
@@ -526,7 +526,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', ` is permitted to hold`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a dynamically typesafe view of the specified sorted set`]
 			]
@@ -545,8 +545,8 @@ DocsCollector.collect('java.util.Collections', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the empty sorted set`]
 			]
@@ -618,7 +618,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', ` is permitted to hold`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a dynamically typesafe view of the specified map`]
 			]
@@ -638,7 +638,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an immutable map containing only the specified key-value
          mapping.`]
@@ -689,7 +689,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the map to be "wrapped" in a synchronized map.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a synchronized view of the specified map.`]
 			]
@@ -715,7 +715,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the map for which an unmodifiable view is to be returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable view of the specified map.`]
 			]
@@ -777,7 +777,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', ` is permitted to hold`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a dynamically typesafe view of the specified map`]
 			]
@@ -850,7 +850,7 @@ DocsCollector.collect('java.util.Collections', [
               map`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a synchronized view of the specified navigable map.`]
 			]
@@ -884,7 +884,7 @@ DocsCollector.collect('java.util.Collections', [
         returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable view of the specified navigable map`]
 			]
@@ -956,7 +956,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', ` is permitted to hold`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a dynamically typesafe view of the specified map`]
 			]
@@ -1028,7 +1028,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the sorted map to be "wrapped" in a synchronized sorted map.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a synchronized view of the specified sorted map.`]
 			]
@@ -1062,7 +1062,7 @@ DocsCollector.collect('java.util.Collections', [
         returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable view of the specified sorted map.`]
 			]
@@ -1428,7 +1428,7 @@ DocsCollector.collect('java.util.Collections', [
           array list`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array list containing the elements returned
          by the specified enumeration.`]
@@ -1494,7 +1494,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the collection to be "wrapped" in a synchronized collection.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a synchronized view of the specified collection.`]
 			]
@@ -1538,7 +1538,7 @@ DocsCollector.collect('java.util.Collections', [
          returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable view of the specified collection.`]
 			]
@@ -1570,8 +1570,8 @@ DocsCollector.collect('java.util.Collections', [
 
  The returned comparator is serializable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A comparator that imposes the reverse of the `],
 				[/* text */ 't', `natural
@@ -1611,7 +1611,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A comparator that imposes the reverse ordering of the
          specified comparator.`]
@@ -1645,8 +1645,8 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', `Implementations of this method are permitted, but not
  required, to return the same object from multiple invocations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty enumeration`]
 			]
@@ -1672,7 +1672,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the collection for which an enumeration is to be returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an enumeration over the specified collection.`]
 			]
@@ -1708,8 +1708,8 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', `Implementations of this method are permitted, but not
  required, to return the same object from multiple invocations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty iterator`]
 			]
@@ -1757,7 +1757,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the sole object to be stored in the returned list.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an immutable list containing only the specified object.`]
 			]
@@ -1805,7 +1805,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the list to be "wrapped" in a synchronized list.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a synchronized view of the specified list.`]
 			]
@@ -1836,7 +1836,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the list for which an unmodifiable view is to be returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable view of the specified list.`]
 			]
@@ -1898,8 +1898,8 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', `Implementations of this method are permitted, but not
  required, to return the same object from multiple invocations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty list iterator`]
 			]
@@ -1967,7 +1967,7 @@ DocsCollector.collect('java.util.Collections', [
  set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a synchronized view of the specified navigable set`]
 			]
@@ -2001,7 +2001,7 @@ DocsCollector.collect('java.util.Collections', [
         returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable view of the specified navigable set`]
 			]
@@ -2046,7 +2046,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the deque`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the queue`]
 			]
@@ -2061,7 +2061,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the sole object to be stored in the returned set.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an immutable set containing only the specified object.`]
 			]
@@ -2109,7 +2109,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the set to be "wrapped" in a synchronized set.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a synchronized view of the specified set.`]
 			]
@@ -2134,7 +2134,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the set for which an unmodifiable view is to be returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable view of the specified set.`]
 			]
@@ -2201,7 +2201,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `the sorted set to be "wrapped" in a synchronized sorted set.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a synchronized view of the specified sorted set.`]
 			]
@@ -2235,7 +2235,7 @@ DocsCollector.collect('java.util.Collections', [
         returned.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable view of the specified sorted set.`]
 			]
@@ -2566,8 +2566,8 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty map`]
 			]
@@ -2585,8 +2585,8 @@ DocsCollector.collect('java.util.Collections', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty navigable map`]
 			]
@@ -2604,8 +2604,8 @@ DocsCollector.collect('java.util.Collections', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty sorted map`]
 			]
@@ -2621,8 +2621,8 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty immutable list`]
 			]
@@ -2639,8 +2639,8 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the empty set`]
 			]
@@ -2713,7 +2713,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the starting position of the first occurrence of the specified
          target list within the specified source list, or -1 if there
@@ -2753,7 +2753,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the starting position of the last occurrence of the specified
          target list within the specified source list, or -1 if there
@@ -3035,4 +3035,5 @@ DocsCollector.collect('java.util.Collections', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

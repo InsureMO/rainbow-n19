@@ -23,8 +23,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 		[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'reflectAs(java.lang.Class,java.lang.invoke.MethodHandle)', [
 			[/* method description */
@@ -4856,7 +4856,7 @@ return invoker;`]
 					[/* text */ 't', `the desired target type`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a method handle suitable for invoking an access mode method of
          any VarHandle whose access mode type is of the given type.`]
@@ -4901,7 +4901,7 @@ return invoker;`]
 					[/* text */ 't', `the desired target type`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a method handle suitable for invoking an access mode method of
          any VarHandle whose access mode type is convertible to the given
@@ -5218,8 +5218,8 @@ return invoker;`]
  This method is caller sensitive, which means that it may return different
  values to different callers.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a lookup object for the caller of this method, with
  `],
@@ -5448,8 +5448,8 @@ return invoker;`]
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a lookup object which is trusted minimally`]
 			]
@@ -6041,4 +6041,5 @@ return invoker;`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

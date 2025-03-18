@@ -89,7 +89,7 @@ DocsCollector.collect('java.util.EnumMap', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Class)', [
 			[/* constructor description */
@@ -173,7 +173,7 @@ DocsCollector.collect('java.util.EnumMap', [
 					[/* text */ 't', `the key whose presence in this map is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map contains a mapping for the specified
@@ -192,7 +192,7 @@ DocsCollector.collect('java.util.EnumMap', [
 					[/* text */ 't', `the value whose presence in this map is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map maps one or more keys to this value`]
@@ -213,7 +213,7 @@ DocsCollector.collect('java.util.EnumMap', [
 					[/* text */ 't', `the object to be compared for equality with this map`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this map`]
@@ -224,8 +224,8 @@ DocsCollector.collect('java.util.EnumMap', [
 				[/* text */ 't', `Returns the hash code value for this map.  The hash code of a map is
  defined to be the sum of the hash codes of each entry in the map.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this map`]
 			]
@@ -234,8 +234,8 @@ DocsCollector.collect('java.util.EnumMap', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of key-value mappings in this map.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of key-value mappings in this map`]
 			]
@@ -253,8 +253,8 @@ DocsCollector.collect('java.util.EnumMap', [
  which is their natural order (the order in which the enum constants
  are declared).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collection view of the values contained in this map`]
 			]
@@ -264,8 +264,8 @@ DocsCollector.collect('java.util.EnumMap', [
 				[/* text */ 't', `Returns a shallow copy of this enum map. The values themselves
  are not cloned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a shallow copy of this enum map`]
 			]
@@ -282,8 +282,8 @@ DocsCollector.collect('java.util.EnumMap', [
  mappings in the order their keys appear in map, which is their
  natural order (the order in which the enum constants are declared).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the mappings contained in this enum map`]
 			]
@@ -300,8 +300,8 @@ DocsCollector.collect('java.util.EnumMap', [
  in their natural order (the order in which the enum constants
  are declared).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the keys contained in this enum map`]
 			]
@@ -353,7 +353,7 @@ DocsCollector.collect('java.util.EnumMap', [
 					[/* text */ 't', `the key whose associated value is to be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value to which the specified key is mapped, or
          `],
@@ -402,7 +402,7 @@ DocsCollector.collect('java.util.EnumMap', [
 					[/* text */ 't', `the key whose mapping is to be removed from the map`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous value associated with specified key, or
      `],
@@ -420,8 +420,8 @@ DocsCollector.collect('java.util.EnumMap', [
 			[/* method description */
 				[/* text */ 't', `Removes all mappings from this map.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'putAll(java.util.Map)', [
@@ -444,4 +444,5 @@ DocsCollector.collect('java.util.EnumMap', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

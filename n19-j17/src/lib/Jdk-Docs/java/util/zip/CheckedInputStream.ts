@@ -6,7 +6,7 @@ DocsCollector.collect('java.util.zip.CheckedInputStream', [
 		[/* text */ 't', `An input stream that also maintains a checksum of the data being read.
  The checksum can then be used to verify the integrity of the input data.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.InputStream,java.util.zip.Checksum)', [
 			[/* constructor description */
@@ -28,7 +28,7 @@ DocsCollector.collect('java.util.zip.CheckedInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads a byte. Will block if no input is available.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
@@ -93,8 +93,8 @@ DocsCollector.collect('java.util.zip.CheckedInputStream', [
 			[/* method description */
 				[/* text */ 't', `Returns the Checksum for this input stream.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Checksum value`]
 			]
@@ -118,4 +118,5 @@ DocsCollector.collect('java.util.zip.CheckedInputStream', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

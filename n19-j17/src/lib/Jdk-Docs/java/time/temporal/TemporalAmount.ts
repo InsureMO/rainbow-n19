@@ -54,8 +54,8 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'addTo(java.time.temporal.Temporal)', [
 			[/* method description */
@@ -160,8 +160,8 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
  The units are ordered from longest duration to the shortest duration
  of the unit.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the List of `],
 				[/* inline code block */ 'i', `TemporalUnits`],
@@ -203,4 +203,5 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

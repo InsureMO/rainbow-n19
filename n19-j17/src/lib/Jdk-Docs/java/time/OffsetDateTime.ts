@@ -101,7 +101,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
 			[/* method description */
@@ -165,7 +165,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other date-time`]
 			]
@@ -192,7 +192,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the other date-time to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is after the instant of the specified date-time`]
 			]
@@ -217,7 +217,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the other date-time to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is before the instant of the specified date-time`]
 			]
@@ -244,7 +244,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the other date-time to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the instant equals the instant of the specified date-time`]
 			]
@@ -452,7 +452,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this date-time, false if not`]
 			]
@@ -582,7 +582,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the unit to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the unit can be added/subtracted, false if not`]
 			]
@@ -636,7 +636,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the other date-time to compare to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
 			]
@@ -733,8 +733,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', ` value for the day-of-month.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-month, from 1 to 31`]
 			]
@@ -750,8 +750,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', ` value for the day-of-year.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-year, from 1 to 365, or 366 in a leap year`]
 			]
@@ -760,8 +760,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 			[/* method description */
 				[/* text */ 't', `Gets the hour-of-day field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hour-of-day, from 0 to 23`]
 			]
@@ -770,8 +770,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 			[/* method description */
 				[/* text */ 't', `Gets the minute-of-hour field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minute-of-hour, from 0 to 59`]
 			]
@@ -793,8 +793,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, from 1 to 12`]
 			]
@@ -803,8 +803,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 			[/* method description */
 				[/* text */ 't', `Gets the nano-of-second field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the nano-of-second, from 0 to 999,999,999`]
 			]
@@ -813,8 +813,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 			[/* method description */
 				[/* text */ 't', `Gets the second-of-minute field.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the second-of-minute, from 0 to 59`]
 			]
@@ -840,8 +840,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the year, from MIN_YEAR to MAX_YEAR`]
 			]
@@ -850,8 +850,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this date-time.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -910,8 +910,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  the time where the omitted parts are implied to be zero.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this date-time, not null`]
 			]
@@ -946,8 +946,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  This includes textual names of the values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-week, not null`]
 			]
@@ -966,8 +966,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  time-line as this date-time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Instant`],
@@ -988,8 +988,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  as this date-time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the date part of this date-time, not null`]
 			]
@@ -1008,8 +1008,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  as this date-time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the local date-time part of this date-time, not null`]
 			]
@@ -1028,8 +1028,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  nanosecond as this date-time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the time part of this date-time, not null`]
 			]
@@ -1056,8 +1056,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month-of-year, not null`]
 			]
@@ -2322,7 +2322,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the zone offset to change to, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OffsetDateTime`],
@@ -2395,8 +2395,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', `
  This returns an offset time with the same local time and offset.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an OffsetTime representing the time and offset, not null`]
 			]
@@ -2549,7 +2549,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the time-zone to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the zoned date-time formed from this date-time, not null`]
 			]
@@ -2605,7 +2605,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the time-zone to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the zoned date-time formed from this date and the earliest valid time for the zone, not null`]
 			]
@@ -2634,8 +2634,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a zoned date-time representing the same local date-time and offset, not null`]
 			]
@@ -2647,8 +2647,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', `
  This is the offset of the local date-time from UTC/Greenwich.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the zone offset, not null`]
 			]
@@ -2727,8 +2727,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  intended for low-level conversions rather than general application usage.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of seconds from the epoch of 1970-01-01T00:00:00Z`]
 			]
@@ -2961,8 +2961,8 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  Using this method will prevent the ability to use an alternate clock for testing
  because the clock is hard-coded.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date-time using the system clock, not null`]
 			]
@@ -2988,7 +2988,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the clock to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date-time, not null`]
 			]
@@ -3015,7 +3015,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the zone ID to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current date-time using the system clock, not null`]
 			]
@@ -3097,7 +3097,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the zone offset, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset date-time, not null`]
 			]
@@ -3119,7 +3119,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `the zone offset, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset date-time, not null`]
 			]
@@ -3226,11 +3226,12 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  only compares the underlying instant.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares in time-line order`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

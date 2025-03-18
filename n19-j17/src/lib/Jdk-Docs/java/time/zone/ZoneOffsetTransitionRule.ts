@@ -23,8 +23,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
  These different rule types can be expressed and queried.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -38,7 +38,7 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 					[/* text */ 't', `the other object to compare to, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if equal`]
 			]
@@ -50,8 +50,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 				[/* block */ 'b', `
  The transition may be represented as occurring at 24:00.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `whether a local time of midnight is at the start or end of the day`]
 			]
@@ -81,8 +81,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
  In this case, the day identified is the latest possible date that the transition can be.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-month indicator, from -28 to 31 excluding 0`]
 			]
@@ -91,8 +91,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 			[/* method description */
 				[/* text */ 't', `Returns a suitable hash code.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code`]
 			]
@@ -101,8 +101,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string for debugging, not null`]
 			]
@@ -120,8 +120,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
  If the day is positive then the adjustment is later.
  If the day is negative then the adjustment is earlier.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the day-of-week that the transition occurs, null if the rule defines an exact date`]
 			]
@@ -136,8 +136,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 				[/* block */ 'b', `
  The time is converted into an instant using the time definition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the local time of day of the transition, not null`]
 			]
@@ -153,8 +153,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
  If the rule defines a week where the transition might occur, then the month
  if the month of either the earliest or latest possible date of the cutover.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the month of the transition, not null`]
 			]
@@ -171,7 +171,7 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 					[/* text */ 't', `the year to create a transition for, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the transition instance, not null`]
 			]
@@ -184,8 +184,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
  The local time can be converted to an instant using the standard offset,
  the wall offset or UTC.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the time definition, not null`]
 			]
@@ -194,8 +194,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 			[/* method description */
 				[/* text */ 't', `Gets the offset after the transition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset after, not null`]
 			]
@@ -204,8 +204,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 			[/* method description */
 				[/* text */ 't', `Gets the offset before the transition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the offset before, not null`]
 			]
@@ -214,8 +214,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 			[/* method description */
 				[/* text */ 't', `Gets the standard offset in force at the transition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the standard offset, not null`]
 			]
@@ -283,4 +283,5 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

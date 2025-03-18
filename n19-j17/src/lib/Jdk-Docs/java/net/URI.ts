@@ -1052,7 +1052,7 @@ DocsCollector.collect('java.net.URI', [
  opening a connection to the specified resource.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -1695,7 +1695,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `The object to which this object is to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a URI that
@@ -1709,8 +1709,8 @@ DocsCollector.collect('java.net.URI', [
  `],
 				[/* block */ 'b', ` A URI is absolute if, and only if, it has a scheme component. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this URI is absolute`]
@@ -1726,8 +1726,8 @@ DocsCollector.collect('java.net.URI', [
  An opaque URI has a scheme, a scheme-specific part, and possibly
  a fragment; all other components are undefined. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this URI is opaque`]
@@ -1837,8 +1837,8 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', ` The port component of a URI, if defined, is a non-negative
  integer. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The port component of this URI,
           or `],
@@ -1854,8 +1854,8 @@ DocsCollector.collect('java.net.URI', [
 				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode`],
 				[/* text */ 't', ` method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A hash-code value for this URI`]
 			]
@@ -1875,8 +1875,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The decoded authority component of this URI,
           or `],
@@ -1899,8 +1899,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The decoded fragment component of this URI,
           or `],
@@ -1981,8 +1981,8 @@ DocsCollector.collect('java.net.URI', [
  The host component of a URI cannot contain escaped octets, hence this
  method does not perform any decoding.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The host component of this URI,
           or `],
@@ -2005,8 +2005,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The decoded path component of this URI,
           or `],
@@ -2029,8 +2029,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The decoded query component of this URI,
           or `],
@@ -2062,8 +2062,8 @@ DocsCollector.collect('java.net.URI', [
  components. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The raw authority component of this URI,
           or `],
@@ -2079,8 +2079,8 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', ` The fragment component of a URI, if defined, only contains legal URI
  characters. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The raw fragment component of this URI,
           or `],
@@ -2112,8 +2112,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', ` categories. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The path component of this URI,
           or `],
@@ -2129,8 +2129,8 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', ` The query component of a URI, if defined, only contains legal URI
  characters. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The raw query component of this URI,
           or `],
@@ -2147,8 +2147,8 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', ` The scheme-specific part of a URI only contains legal URI
  characters. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The raw scheme-specific part of this URI
           (never `],
@@ -2175,8 +2175,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', ` categories. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The raw user-information component of this URI,
           or `],
@@ -2205,8 +2205,8 @@ DocsCollector.collect('java.net.URI', [
  The scheme component of a URI cannot contain escaped octets, hence this
  method does not perform any decoding.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The scheme component of this URI,
           or `],
@@ -2229,8 +2229,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The decoded scheme-specific part of this URI
           (never `],
@@ -2253,8 +2253,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The decoded user-information component of this URI,
           or `],
@@ -2280,8 +2280,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', ` the result.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string form of this URI, encoded as needed
           so that it only contains characters in the US-ASCII
@@ -2305,8 +2305,8 @@ DocsCollector.collect('java.net.URI', [
  section 5.2, step 7. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The string form of this URI`]
 			]
@@ -2392,8 +2392,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', ` segments. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A URI equivalent to this URI,
           but whose path is in normal form`]
@@ -2463,7 +2463,7 @@ DocsCollector.collect('java.net.URI', [
  that is thrown. `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.net.URISyntaxException', [/* throw description */
 					[/* text */ 't', `If the authority component of this URI is defined
@@ -2656,7 +2656,7 @@ DocsCollector.collect('java.net.URI', [
  first checking that this URI is absolute. `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `If this URL is not absolute`]
@@ -2720,4 +2720,5 @@ DocsCollector.collect('java.net.URI', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

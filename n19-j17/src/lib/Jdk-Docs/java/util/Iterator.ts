@@ -30,8 +30,8 @@ DocsCollector.collect('java.util.Iterator', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'hasNext()', [
 			[/* method description */
@@ -45,8 +45,8 @@ DocsCollector.collect('java.util.Iterator', [
 				[/* text */ 't', ` would
  return an element rather than throwing an exception.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the iteration has more elements`]
@@ -56,7 +56,7 @@ DocsCollector.collect('java.util.Iterator', [
 			[/* method description */
 				[/* text */ 't', `Returns the next element in the iteration.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if the iteration has no more elements`]
@@ -123,7 +123,7 @@ DocsCollector.collect('java.util.Iterator', [
 					[/* text */ 't', ` method.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -147,4 +147,5 @@ DocsCollector.collect('java.util.Iterator', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

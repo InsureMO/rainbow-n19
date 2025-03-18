@@ -29,7 +29,7 @@ DocsCollector.collect('java.io.CharArrayWriter', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new CharArrayWriter.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -53,8 +53,8 @@ DocsCollector.collect('java.io.CharArrayWriter', [
 			[/* method description */
 				[/* text */ 't', `Returns a copy of the input data.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of chars copied from the input data.`]
 			]
@@ -63,8 +63,8 @@ DocsCollector.collect('java.io.CharArrayWriter', [
 			[/* method description */
 				[/* text */ 't', `Returns the current size of the buffer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an int representing the current size of the buffer.`]
 			]
@@ -90,7 +90,7 @@ DocsCollector.collect('java.io.CharArrayWriter', [
 					[/* text */ 't', `The 16-bit character to append`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This writer`]
 			]
@@ -140,7 +140,7 @@ DocsCollector.collect('java.io.CharArrayWriter', [
          appended to this writer.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This writer`]
 			]
@@ -216,8 +216,8 @@ DocsCollector.collect('java.io.CharArrayWriter', [
 			[/* method description */
 				[/* text */ 't', `Converts input data to a string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string.`]
 			]
@@ -228,8 +228,8 @@ DocsCollector.collect('java.io.CharArrayWriter', [
  contents might still be required. Note: Invoking this method in this class
  will have no effect.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'flush()', [
@@ -245,8 +245,8 @@ DocsCollector.collect('java.io.CharArrayWriter', [
 					[/* text */ 't', ` does nothing.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
@@ -254,8 +254,8 @@ DocsCollector.collect('java.io.CharArrayWriter', [
 				[/* text */ 't', `Resets the buffer so that you can use it again without
  throwing away the already allocated buffer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(char[],int,int)', [
@@ -297,7 +297,7 @@ DocsCollector.collect('java.io.CharArrayWriter', [
 					[/* text */ 't', `int specifying a character to be written`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(java.lang.String,int,int)', [
@@ -347,4 +347,5 @@ DocsCollector.collect('java.io.CharArrayWriter', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

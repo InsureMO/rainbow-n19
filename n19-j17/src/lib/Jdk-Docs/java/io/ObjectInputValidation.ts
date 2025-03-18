@@ -7,14 +7,14 @@ DocsCollector.collect('java.io.ObjectInputValidation', [
  Allows an object to be called when a complete graph of objects has
  been deserialized.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'validateObject()', [
 			[/* method description */
 				[/* text */ 't', `Validates the object.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.InvalidObjectException', [/* throw description */
 					[/* text */ 't', `If the object cannot validate itself.`]
@@ -23,4 +23,5 @@ DocsCollector.collect('java.io.ObjectInputValidation', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

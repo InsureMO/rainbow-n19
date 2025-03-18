@@ -222,8 +222,8 @@ DocsCollector.collect('java.util.List', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'toArray(java.lang.Object[])', [
 			[/* method description */
@@ -550,7 +550,7 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `the object to be compared for equality with this list`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this list`]
@@ -562,8 +562,8 @@ DocsCollector.collect('java.util.List', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this list contains no elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this list contains no elements`]
@@ -816,8 +816,8 @@ DocsCollector.collect('java.util.List', [
 				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this list`]
 			]
@@ -908,8 +908,8 @@ DocsCollector.collect('java.util.List', [
 				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in this list`]
 			]
@@ -929,8 +929,8 @@ DocsCollector.collect('java.util.List', [
 				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
  APIs.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing all of the elements in this list in proper
          sequence`]
@@ -940,8 +940,8 @@ DocsCollector.collect('java.util.List', [
 			[/* method description */
 				[/* text */ 't', `Returns an iterator over the elements in this list in proper sequence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an iterator over the elements in this list in proper sequence`]
 			]
@@ -1022,8 +1022,8 @@ DocsCollector.collect('java.util.List', [
 				[/* text */ 't', `Returns a list iterator over the elements in this list (in proper
  sequence).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a list iterator over the elements in this list (in proper
          sequence)`]
@@ -1111,7 +1111,7 @@ DocsCollector.collect('java.util.List', [
 				[/* text */ 't', `Removes all of the elements from this list (optional operation).
  The list will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -1141,8 +1141,8 @@ DocsCollector.collect('java.util.List', [
  reporting of additional characteristic values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -1296,8 +1296,8 @@ DocsCollector.collect('java.util.List', [
 				[/* text */ 't', `Unmodifiable Lists`],
 				[/* text */ 't', ` for details.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an empty `],
 				[/* inline code block */ 'i', `List`]
@@ -1690,4 +1690,5 @@ DocsCollector.collect('java.util.List', [
 		]],
 		[/* method */ 'of(java.lang.Object...)', UDF]
 	],
+	/* enum values */ UDF
 ]);

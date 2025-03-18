@@ -756,8 +756,8 @@ mh.invokeExact(System.out, "Hello, world.");
 		[/* text */ 't', `.
  In particular, a method handle’s type must not have an arity of the exact maximum 255.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isVarargsCollector()', [
 			[/* method description */
@@ -792,8 +792,8 @@ mh.invokeExact(System.out, "Hello, world.");
 					]]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this method handle accepts more than one arity of plain, inexact `],
 				[/* inline code block */ 'i', `invoke`],
@@ -1236,8 +1236,8 @@ assertEquals("[three, thee, tee]", asListFix.invoke((Object)argv).toString());`]
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new method handle which accepts only a fixed number of arguments`]
 			]
@@ -2124,8 +2124,8 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 				[/* inline code block */ 'i', `invokeExact`],
 				[/* text */ 't', ` must exactly match this type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the method handle type`]
 			]
@@ -2471,8 +2471,8 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
  `],
 				[/* block */ 'b', `Note:`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the method handle`]
 			]
@@ -2484,8 +2484,8 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An `],
 				[/* reference */ 'r', `java.util.Optional`, `Optional`],
@@ -2496,4 +2496,5 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -40,8 +40,8 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
  so that method invocations on the implementation class can be chained.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'read(java.nio.ByteBuffer)', [
 			[/* method description */
@@ -223,7 +223,7 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 			[/* method description */
 				[/* text */ 't', `Returns this channel's position.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
@@ -242,7 +242,7 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 			[/* method description */
 				[/* text */ 't', `Returns the current size of entity to which this channel is connected.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
@@ -256,4 +256,5 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -14,7 +14,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  thread then access to the data input stream should be controlled
  by appropriate synchronization.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.InputStream)', [
 			[/* constructor description */
@@ -43,7 +43,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  Bytes for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream has reached the end.`]
@@ -74,7 +74,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream has reached the end.`]
@@ -106,7 +106,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream reaches the end before
@@ -139,7 +139,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream reaches the end before
@@ -172,7 +172,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream reaches the end before
@@ -424,7 +424,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream reaches the end before
@@ -457,7 +457,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream has reached the end.`]
@@ -487,7 +487,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream reaches the end before
@@ -548,7 +548,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -572,7 +572,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream reaches the end before
@@ -606,7 +606,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream reaches the end before
@@ -639,7 +639,7 @@ DocsCollector.collect('java.io.DataInputStream', [
  for this operation are read from the contained
  input stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.EOFException', [/* throw description */
 					[/* text */ 't', `if this input stream reaches the end before
@@ -801,4 +801,5 @@ DocsCollector.collect('java.io.DataInputStream', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

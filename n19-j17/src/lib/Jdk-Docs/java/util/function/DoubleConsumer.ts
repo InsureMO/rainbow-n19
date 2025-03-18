@@ -26,8 +26,8 @@ DocsCollector.collect('java.util.function.DoubleConsumer', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'accept(double)', [
 			[/* method description */
@@ -38,7 +38,7 @@ DocsCollector.collect('java.util.function.DoubleConsumer', [
 					[/* text */ 't', `the input argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'andThen(java.util.function.DoubleConsumer)', [
@@ -77,4 +77,5 @@ DocsCollector.collect('java.util.function.DoubleConsumer', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

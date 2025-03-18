@@ -209,7 +209,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -218,7 +218,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 				[/* text */ 't', ` with the default initial
  capacity (16) and load factor (0.75).`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -300,7 +300,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 					[/* text */ 't', `The key whose presence in this map is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if there is a mapping for `],
@@ -323,7 +323,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 					[/* text */ 't', `value whose presence in this map is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map maps one or more keys to the
@@ -339,8 +339,8 @@ DocsCollector.collect('java.util.WeakHashMap', [
  entries that will be removed before next attempted access
  because they are no longer referenced.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this map contains no key-value mappings`]
@@ -353,8 +353,8 @@ DocsCollector.collect('java.util.WeakHashMap', [
  entries that will be removed before next attempted access
  because they are no longer referenced.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of key-value mappings in this map`]
 			]
@@ -391,8 +391,8 @@ DocsCollector.collect('java.util.WeakHashMap', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a collection view of the values contained in this map`]
 			]
@@ -432,8 +432,8 @@ DocsCollector.collect('java.util.WeakHashMap', [
 				[/* inline code block */ 'i', `addAll`],
 				[/* text */ 't', ` operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the mappings contained in this map`]
 			]
@@ -470,8 +470,8 @@ DocsCollector.collect('java.util.WeakHashMap', [
 				[/* text */ 't', `
  operations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a set view of the keys contained in this map`]
 			]
@@ -524,7 +524,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 					[/* text */ 't', `the key whose associated value is to be returned`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value to which the specified key is mapped, or
          `],
@@ -546,7 +546,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 					[/* text */ 't', `value to be associated with the specified key.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous value associated with `],
 				[/* inline code block */ 'i', `key`],
@@ -605,7 +605,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 					[/* text */ 't', `key whose mapping is to be removed from the map`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the previous value associated with `],
 				[/* inline code block */ 'i', `key`],
@@ -621,8 +621,8 @@ DocsCollector.collect('java.util.WeakHashMap', [
 				[/* text */ 't', `Removes all of the mappings from this map.
  The map will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
@@ -646,4 +646,5 @@ DocsCollector.collect('java.util.WeakHashMap', [
 		]],
 		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF]
 	],
+	/* enum values */ UDF
 ]);

@@ -373,7 +373,7 @@ DocsCollector.collect('java.util.Spliterator', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'tryAdvance(java.util.function.Consumer)', [
 			[/* method description */
@@ -446,8 +446,8 @@ DocsCollector.collect('java.util.Spliterator', [
  or across multiple invocations), no guarantees can be made
  about any computation using this Spliterator.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a representation of characteristics`]
 			]
@@ -513,8 +513,8 @@ DocsCollector.collect('java.util.Spliterator', [
  considerations.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -549,8 +549,8 @@ DocsCollector.collect('java.util.Spliterator', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the estimated size, or `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
@@ -571,7 +571,7 @@ DocsCollector.collect('java.util.Spliterator', [
 					[/* text */ 't', `the characteristics to check for`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if all the specified characteristics are present,
@@ -602,7 +602,7 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* reference */ 'r', `java.lang.IllegalStateException`, `IllegalStateException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the spliterator does not report
@@ -629,8 +629,8 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* inline code block */ 'i', `-1`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the exact size, if known, else `],
 				[/* inline code block */ 'i', `-1`],
@@ -664,4 +664,5 @@ DocsCollector.collect('java.util.Spliterator', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

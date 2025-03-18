@@ -23,8 +23,8 @@ DocsCollector.collect('java.util.function.DoubleToIntFunction', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'applyAsInt(double)', [
 			[/* method description */
@@ -35,10 +35,11 @@ DocsCollector.collect('java.util.function.DoubleToIntFunction', [
 					[/* text */ 't', `the function argument`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the function result`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

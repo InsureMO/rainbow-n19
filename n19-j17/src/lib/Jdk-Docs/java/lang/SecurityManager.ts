@@ -2,8 +2,8 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.lang.SecurityManager', [
-	/* class description */ UDF,
-	/* fields */ UDF,
+	/* class description */,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -27,7 +27,7 @@ DocsCollector.collect('java.lang.SecurityManager', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager already
@@ -56,8 +56,8 @@ DocsCollector.collect('java.lang.SecurityManager', [
  the class of that method's caller, and so on.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the execution stack.`]
 			]
@@ -85,8 +85,8 @@ DocsCollector.collect('java.lang.SecurityManager', [
 					[/* text */ 't', ` object.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an implementation-dependent object that encapsulates
           sufficient information about the current execution environment
@@ -101,8 +101,8 @@ DocsCollector.collect('java.lang.SecurityManager', [
  thread. This should be overridden by a specific security
  manager to return the appropriate thread group.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `ThreadGroup that new threads are instantiated into`]
 			]
@@ -550,7 +550,7 @@ DocsCollector.collect('java.lang.SecurityManager', [
  exception.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the calling thread does not
@@ -1193,7 +1193,7 @@ DocsCollector.collect('java.lang.SecurityManager', [
  exception.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the calling thread does not have
@@ -1242,7 +1242,7 @@ DocsCollector.collect('java.lang.SecurityManager', [
  exception.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the calling thread does not have
@@ -1592,7 +1592,7 @@ DocsCollector.collect('java.lang.SecurityManager', [
  exception.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the calling thread does not have
@@ -1700,4 +1700,5 @@ DocsCollector.collect('java.lang.SecurityManager', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

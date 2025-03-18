@@ -310,7 +310,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* text */ 't', `Sole constructor. (For invocation by subclass constructors,
  typically implicit.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -1680,4 +1680,5 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

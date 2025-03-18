@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.IncompatibleClassChangeError', [
  definition. The definition of some class, on which the currently
  executing method depends, has since changed.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -16,7 +16,7 @@ DocsCollector.collect('java.lang.IncompatibleClassChangeError', [
 				[/* text */ 't', ` with no
  detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -34,5 +34,6 @@ DocsCollector.collect('java.lang.IncompatibleClassChangeError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

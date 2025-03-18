@@ -43,8 +43,8 @@ DocsCollector.collect('java.util.Map$Entry', [
 			[/* text */ 't', ` element of the entry-set view.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -77,7 +77,7 @@ DocsCollector.collect('java.util.Map$Entry', [
 					[/* text */ 't', `object to be compared for equality with this map entry`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this map
@@ -109,8 +109,8 @@ DocsCollector.collect('java.util.Map$Entry', [
 				[/* inline code block */ 'i', `Object.hashCode`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this map entry`]
 			]
@@ -119,7 +119,7 @@ DocsCollector.collect('java.util.Map$Entry', [
 			[/* method description */
 				[/* text */ 't', `Returns the key corresponding to this entry.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `implementations may, but are not
@@ -139,7 +139,7 @@ DocsCollector.collect('java.util.Map$Entry', [
 				[/* inline code block */ 'i', `remove`],
 				[/* text */ 't', ` operation), the results of this call are undefined.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `implementations may, but are not
@@ -207,8 +207,8 @@ DocsCollector.collect('java.util.Map$Entry', [
 					[/* text */ 't', ` when comparing an entry with a null key.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares `],
 				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
@@ -228,8 +228,8 @@ DocsCollector.collect('java.util.Map$Entry', [
 					[/* text */ 't', ` when comparing an entry with null values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares `],
 				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
@@ -255,7 +255,7 @@ DocsCollector.collect('java.util.Map$Entry', [
 					[/* reference */ 'r', `java.util.Comparator`, `Comparator`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares `],
 				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
@@ -281,7 +281,7 @@ DocsCollector.collect('java.util.Map$Entry', [
 					[/* reference */ 'r', `java.util.Comparator`, `Comparator`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares `],
 				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
@@ -313,4 +313,5 @@ DocsCollector.collect('java.util.Map$Entry', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

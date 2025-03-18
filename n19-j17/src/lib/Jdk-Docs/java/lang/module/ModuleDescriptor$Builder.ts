@@ -72,8 +72,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
          .build();`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'build()', [
 			[/* method description */
@@ -98,8 +98,8 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
  modifier if the dependence was not declared. `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The module descriptor`]
 			]
@@ -632,7 +632,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 					[/* text */ 't', `The version`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This builder`]
 			]
@@ -661,4 +661,5 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

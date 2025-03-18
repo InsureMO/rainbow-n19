@@ -1,4 +1,3 @@
-import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('java.util.Locale$IsoCountryCode', [
@@ -7,8 +6,8 @@ DocsCollector.collect('java.util.Locale$IsoCountryCode', [
  retrieve the two-letter ISO3166-1 alpha-2, three-letter ISO3166-1
  alpha-3, four-letter ISO3166-3 country codes.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -41,11 +40,30 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'PART1_ALPHA2', [
+			[/* enum value description */
+				[/* text */ 't', `PART1_ALPHA2 is used to represent the ISO3166-1 alpha-2 two letter
+ country codes.`]
+			],
+		]],
+		[/* enum value */ 'PART1_ALPHA3', [
+			[/* enum value description */
+				[/* text */ 't', `PART1_ALPHA3 is used to represent the ISO3166-1 alpha-3 three letter
+ country codes.`]
+			],
+		]],
+		[/* enum value */ 'PART3', [
+			[/* enum value description */
+				[/* text */ 't', `PART3 is used to represent the ISO3166-3 four letter country codes.`]
+			],
 		]]
 	],
 ]);

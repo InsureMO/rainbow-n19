@@ -13,8 +13,8 @@ DocsCollector.collect('java.lang.Readable', [
 		[/* reference */ 'r', `java.nio.CharBuffer`, `CharBuffer`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'read(java.nio.CharBuffer)', [
 			[/* method description */
@@ -47,4 +47,5 @@ DocsCollector.collect('java.lang.Readable', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -29,8 +29,8 @@ DocsCollector.collect('java.io.DataOutput', [
 			[/* text */ 't', ` is thrown.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'write(byte[])', [
 			[/* method description */
@@ -759,4 +759,5 @@ DocsCollector.collect('java.io.DataOutput', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -222,8 +222,8 @@ DocsCollector.collect('java.lang.ModuleLayer', [
      Class<?> c = layer.findLoader("myapp").loadClass("app.Main");`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'findLoader(java.lang.String)', [
 			[/* method description */
@@ -270,8 +270,8 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* method description */
 				[/* text */ 't', `Returns the configuration for this layer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The configuration for this layer`]
 			]
@@ -454,8 +454,8 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing this module layer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly empty string describing this module layer`]
 			]
@@ -468,8 +468,8 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				[/* text */ 't', ` then an
  empty list is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable list of this layer's parents`]
 			]
@@ -494,7 +494,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 					[/* text */ 't', `The name of the module to find`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The module with the given name or an empty `],
 				[/* inline code block */ 'i', `Optional`],
@@ -507,8 +507,8 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* method description */
 				[/* text */ 't', `Returns an unmodifiable set of the modules in this layer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A possibly-empty unmodifiable set of the modules in this layer`]
 			]
@@ -522,8 +522,8 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				[/* reference */ 'r', `#empty()`, `empty`],
 				[/* text */ 't', ` layer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The boot layer`]
 			]
@@ -535,8 +535,8 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				[/* text */ 't', ` layer. There are no modules in the empty
  layer. It has no parents.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The empty layer`]
 			]
@@ -855,4 +855,5 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

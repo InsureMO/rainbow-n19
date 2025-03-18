@@ -209,7 +209,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
  If multiple threads access a format concurrently, it must be synchronized
  externally.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(double[],java.lang.String[])', [
 			[/* constructor description */
@@ -265,7 +265,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -278,8 +278,8 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 			[/* method description */
 				[/* text */ 't', `Get the limits passed in the constructor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the limits.`]
 			]
@@ -288,8 +288,8 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 			[/* method description */
 				[/* text */ 't', `Generates a hash code for the message format object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -335,8 +335,8 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 			[/* method description */
 				[/* text */ 't', `Overrides Cloneable`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -345,8 +345,8 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 			[/* method description */
 				[/* text */ 't', `Get the formats passed in the constructor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the formats.`]
 			]
@@ -355,8 +355,8 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the pattern.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the pattern string`]
 			]
@@ -430,7 +430,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the formatted StringBuffer`]
 			]
@@ -469,7 +469,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 					[/* text */ 't', ` otherwise`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the least or greater double value`]
 			]
@@ -490,7 +490,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 					[/* text */ 't', `the reference value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the least double value greather than `],
 				[/* inline code block */ 'i', `d`]
@@ -510,7 +510,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 					[/* text */ 't', `the reference value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the greatest double value less than `],
 				[/* inline code block */ 'i', `d`]
@@ -571,4 +571,5 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -39,7 +39,7 @@ DocsCollector.collect('java.io.BufferedWriter', [
  inefficient.`],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.Writer)', [
 			[/* constructor description */
@@ -81,7 +81,7 @@ DocsCollector.collect('java.io.BufferedWriter', [
  further write() or flush() invocations will cause an IOException to be
  thrown. Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -93,7 +93,7 @@ DocsCollector.collect('java.io.BufferedWriter', [
 			[/* method description */
 				[/* text */ 't', `Flushes the stream.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -109,7 +109,7 @@ DocsCollector.collect('java.io.BufferedWriter', [
 				[/* text */ 't', `, and is not necessarily a single
  newline ('\\n') character.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -210,4 +210,5 @@ DocsCollector.collect('java.io.BufferedWriter', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

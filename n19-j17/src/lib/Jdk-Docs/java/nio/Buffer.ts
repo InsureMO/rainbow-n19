@@ -312,8 +312,8 @@ DocsCollector.collect('java.nio.Buffer', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'hasArray()', [
 			[/* method description */
@@ -333,8 +333,8 @@ DocsCollector.collect('java.nio.Buffer', [
  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this buffer
@@ -348,8 +348,8 @@ DocsCollector.collect('java.nio.Buffer', [
 				[/* reference */ 'r', `java.nio.ByteBuffer#direct`, `direct`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this buffer is direct`]
@@ -359,8 +359,8 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this buffer is read-only.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this buffer is read-only`]
@@ -394,7 +394,7 @@ DocsCollector.collect('java.nio.Buffer', [
  array.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
 					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
@@ -433,7 +433,7 @@ DocsCollector.collect('java.nio.Buffer', [
  array.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
 					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
@@ -462,8 +462,8 @@ DocsCollector.collect('java.nio.Buffer', [
  only if, this buffer is direct, and it will be read-only if, and only if,
  this buffer is read-only.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new buffer`]
 			]
@@ -486,8 +486,8 @@ DocsCollector.collect('java.nio.Buffer', [
  direct, and it will be read-only if, and only if, this buffer is
  read-only.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The new buffer`]
 			]
@@ -554,8 +554,8 @@ DocsCollector.collect('java.nio.Buffer', [
 				[/* text */ 't', `Tells whether there are any elements between the current position and
  the limit.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, there is at least one element
@@ -566,8 +566,8 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* method description */
 				[/* text */ 't', `Returns this buffer's capacity.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The capacity of this buffer`]
 			]
@@ -576,8 +576,8 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* method description */
 				[/* text */ 't', `Returns this buffer's limit.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The limit of this buffer`]
 			]
@@ -586,8 +586,8 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* method description */
 				[/* text */ 't', `Returns this buffer's position.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The position of this buffer`]
 			]
@@ -597,8 +597,8 @@ DocsCollector.collect('java.nio.Buffer', [
 				[/* text */ 't', `Returns the number of elements between the current position and the
  limit.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The number of elements remaining in this buffer`]
 			]
@@ -629,8 +629,8 @@ DocsCollector.collect('java.nio.Buffer', [
  is named as if it did because it will most often be used in situations
  in which that might as well be the case. `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -670,8 +670,8 @@ DocsCollector.collect('java.nio.Buffer', [
  one place to another.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -703,8 +703,8 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* method description */
 				[/* text */ 't', `Sets this buffer's mark at its position.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
@@ -739,7 +739,7 @@ DocsCollector.collect('java.nio.Buffer', [
 				[/* block */ 'b', ` Invoking this method neither changes nor discards the mark's
  value. `]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.nio.InvalidMarkException', [/* throw description */
 					[/* text */ 't', `If the mark has not been set`]
@@ -771,11 +771,12 @@ DocsCollector.collect('java.nio.Buffer', [
 				]],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

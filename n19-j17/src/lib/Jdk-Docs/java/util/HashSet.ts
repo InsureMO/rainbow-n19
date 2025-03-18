@@ -103,7 +103,7 @@ DocsCollector.collect('java.util.HashSet', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -112,7 +112,7 @@ DocsCollector.collect('java.util.HashSet', [
 				[/* text */ 't', ` instance has
  default initial capacity (16) and load factor (0.75).`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -216,7 +216,7 @@ DocsCollector.collect('java.util.HashSet', [
         runtime type is allocated for this purpose.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing all of the elements in this collection`]
 			]
@@ -243,7 +243,7 @@ DocsCollector.collect('java.util.HashSet', [
 					[/* text */ 't', `element to be added to this set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this set did not already contain the specified
@@ -270,7 +270,7 @@ DocsCollector.collect('java.util.HashSet', [
 					[/* text */ 't', `element whose presence in this set is to be tested`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this set contains the specified element`]
@@ -282,8 +282,8 @@ DocsCollector.collect('java.util.HashSet', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this set contains no elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this set contains no elements`]
@@ -310,7 +310,7 @@ DocsCollector.collect('java.util.HashSet', [
 					[/* text */ 't', `object to be removed from this set, if present`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the set contained the specified element`]
@@ -320,8 +320,8 @@ DocsCollector.collect('java.util.HashSet', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of elements in this set (its cardinality).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of elements in this set (its cardinality)`]
 			]
@@ -333,8 +333,8 @@ DocsCollector.collect('java.util.HashSet', [
 				[/* text */ 't', ` instance: the elements
  themselves are not cloned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a shallow copy of this set`]
 			]
@@ -358,8 +358,8 @@ DocsCollector.collect('java.util.HashSet', [
  The caller is thus free to modify the returned array.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
 				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
@@ -373,8 +373,8 @@ DocsCollector.collect('java.util.HashSet', [
 				[/* text */ 't', `Returns an iterator over the elements in this set.  The elements
  are returned in no particular order.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an Iterator over the elements in this set`]
 			]
@@ -404,8 +404,8 @@ DocsCollector.collect('java.util.HashSet', [
  the reporting of additional characteristic values.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -417,9 +417,10 @@ DocsCollector.collect('java.util.HashSet', [
 				[/* text */ 't', `Removes all of the elements from this set.
  The set will be empty after this call returns.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

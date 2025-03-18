@@ -5,15 +5,15 @@ DocsCollector.collect('java.util.zip.Checksum', [
 	[/* class description */
 		[/* text */ 't', `An interface representing a data checksum.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getValue()', [
 			[/* method description */
 				[/* text */ 't', `Returns the current checksum value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current checksum value`]
 			]
@@ -22,8 +22,8 @@ DocsCollector.collect('java.util.zip.Checksum', [
 			[/* method description */
 				[/* text */ 't', `Resets the checksum to its initial value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'update(byte[],int,int)', [
@@ -41,7 +41,7 @@ DocsCollector.collect('java.util.zip.Checksum', [
 					[/* text */ 't', `the number of bytes to use for the update`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'update(int)', [
@@ -53,7 +53,7 @@ DocsCollector.collect('java.util.zip.Checksum', [
 					[/* text */ 't', `the byte to update the checksum with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'update(byte[])', [
@@ -99,4 +99,5 @@ DocsCollector.collect('java.util.zip.Checksum', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

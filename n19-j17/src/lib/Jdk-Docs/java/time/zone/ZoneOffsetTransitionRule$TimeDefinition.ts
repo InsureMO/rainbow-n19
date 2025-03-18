@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule$TimeDefinition', [
@@ -16,8 +15,8 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule$TimeDefinition', 
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'createDateTime(java.time.LocalDateTime,java.time.ZoneOffset,java.time.ZoneOffset)', [
 			[/* method description */
@@ -45,7 +44,7 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule$TimeDefinition', 
 					[/* text */ 't', `the wall offset, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the date-time relative to the wall/before offset, not null`]
 			]
@@ -81,11 +80,28 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'UTC', [
+			[/* enum value description */
+				[/* text */ 't', `The local date-time is expressed in terms of the UTC offset.`]
+			],
+		]],
+		[/* enum value */ 'WALL', [
+			[/* enum value description */
+				[/* text */ 't', `The local date-time is expressed in terms of the wall offset.`]
+			],
+		]],
+		[/* enum value */ 'STANDARD', [
+			[/* enum value description */
+				[/* text */ 't', `The local date-time is expressed in terms of the standard offset.`]
+			],
 		]]
 	],
 ]);

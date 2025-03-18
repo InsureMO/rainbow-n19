@@ -128,8 +128,8 @@ DocsCollector.collect('java.util.concurrent.Executor', [
  its execution begins, perhaps in another thread.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'execute(java.lang.Runnable)', [
 			[/* method description */
@@ -156,4 +156,5 @@ DocsCollector.collect('java.util.concurrent.Executor', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

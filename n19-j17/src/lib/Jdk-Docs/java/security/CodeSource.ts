@@ -7,7 +7,7 @@ DocsCollector.collect('java.security.CodeSource', [
  encapsulate not only the location (URL) but also the certificate chains
  that were used to verify signed code originating from that location.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.net.URL,java.security.cert.Certificate[])', [
 			[/* constructor description */
@@ -64,7 +64,7 @@ DocsCollector.collect('java.security.CodeSource', [
 					[/* text */ 't', `the object to test for equality with this object.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the objects are considered equal, false otherwise.`]
 			]
@@ -204,7 +204,7 @@ DocsCollector.collect('java.security.CodeSource', [
 					[/* text */ 't', `CodeSource to compare against.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the specified codesource is implied by this codesource,
  false if not.`]
@@ -214,8 +214,8 @@ DocsCollector.collect('java.security.CodeSource', [
 			[/* method description */
 				[/* text */ 't', `Returns the location associated with this CodeSource.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the location (URL), or `],
 				[/* inline code block */ 'i', `null`],
@@ -241,8 +241,8 @@ DocsCollector.collect('java.security.CodeSource', [
  certificate authority last).`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of the certificate array, or `],
 				[/* inline code block */ 'i', `null`],
@@ -265,8 +265,8 @@ DocsCollector.collect('java.security.CodeSource', [
  are examined - all other certificate types are ignored.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of the code signer array, or `],
 				[/* inline code block */ 'i', `null`],
@@ -278,8 +278,8 @@ DocsCollector.collect('java.security.CodeSource', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code value for this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -289,11 +289,12 @@ DocsCollector.collect('java.security.CodeSource', [
 				[/* text */ 't', `Returns a string describing this CodeSource, telling its
  URL and certificates.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `information about this CodeSource.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

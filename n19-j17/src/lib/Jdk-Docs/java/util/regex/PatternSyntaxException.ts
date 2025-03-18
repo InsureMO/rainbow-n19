@@ -6,7 +6,7 @@ DocsCollector.collect('java.util.regex.PatternSyntaxException', [
 		[/* text */ 't', `Unchecked exception thrown to indicate a syntax error in a
  regular-expression pattern.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.String,int)', [
 			[/* constructor description */
@@ -34,8 +34,8 @@ DocsCollector.collect('java.util.regex.PatternSyntaxException', [
 			[/* method description */
 				[/* text */ 't', `Retrieves the error index.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The approximate index in the pattern of the error,
          or `],
@@ -47,8 +47,8 @@ DocsCollector.collect('java.util.regex.PatternSyntaxException', [
 			[/* method description */
 				[/* text */ 't', `Retrieves the description of the error.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The description of the error`]
 			]
@@ -59,8 +59,8 @@ DocsCollector.collect('java.util.regex.PatternSyntaxException', [
  error and its index, the erroneous regular-expression pattern, and a
  visual indication of the error index within the pattern.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The full detail message`]
 			]
@@ -69,11 +69,12 @@ DocsCollector.collect('java.util.regex.PatternSyntaxException', [
 			[/* method description */
 				[/* text */ 't', `Retrieves the erroneous regular-expression pattern.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The erroneous pattern`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

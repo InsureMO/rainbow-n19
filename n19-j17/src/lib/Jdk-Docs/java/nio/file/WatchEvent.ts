@@ -26,8 +26,8 @@ DocsCollector.collect('java.nio.file.WatchEvent', [
 		[/* block */ 'b', ` Watch events are immutable and safe for use by multiple concurrent
  threads.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'count()', [
 			[/* method description */
@@ -36,8 +36,8 @@ DocsCollector.collect('java.nio.file.WatchEvent', [
 				[/* text */ 't', `
  then this is a repeated event.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the event count`]
 			]
@@ -46,8 +46,8 @@ DocsCollector.collect('java.nio.file.WatchEvent', [
 			[/* method description */
 				[/* text */ 't', `Returns the event kind.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the event kind`]
 			]
@@ -75,12 +75,13 @@ DocsCollector.collect('java.nio.file.WatchEvent', [
  created, deleted, or modified.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the event context; may be `],
 				[/* inline code block */ 'i', `null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -53,7 +53,7 @@ DocsCollector.collect('java.util.BitSet', [
  external synchronization.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -61,7 +61,7 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -119,7 +119,7 @@ DocsCollector.collect('java.util.BitSet', [
 					[/* text */ 't', `the object to compare with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are the same;
@@ -177,7 +177,7 @@ DocsCollector.collect('java.util.BitSet', [
 					[/* text */ 't', ` to intersect with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `boolean indicating whether this `],
 				[/* inline code block */ 'i', `BitSet`],
@@ -195,8 +195,8 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `boolean indicating whether this `],
 				[/* inline code block */ 'i', `BitSet`],
@@ -230,8 +230,8 @@ DocsCollector.collect('java.util.BitSet', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a byte array containing a little-endian representation
          of all the bits in this bit set`]
@@ -245,8 +245,8 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* inline code block */ 'i', `BitSet`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of bits set to `],
 				[/* inline code block */ 'i', `true`],
@@ -279,8 +279,8 @@ DocsCollector.collect('java.util.BitSet', [
  Note that the hash code changes if the set of bits is altered.`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this bit set`]
 			]
@@ -297,8 +297,8 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* inline code block */ 'i', `BitSet`],
 				[/* text */ 't', ` contains no set bits.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the logical size of this `],
 				[/* inline code block */ 'i', `BitSet`]
@@ -465,8 +465,8 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* text */ 't', ` to represent bit values.
  The maximum element in the set is the size - 1st element.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of bits currently in this bit set`]
 			]
@@ -484,8 +484,8 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` as this bit set.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this bit set`]
 			]
@@ -531,8 +531,8 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* text */ 't', `".`],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this bit set`]
 			]
@@ -601,8 +601,8 @@ DocsCollector.collect('java.util.BitSet', [
  bit set is modified during that operation then the result is undefined.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a stream of integers representing set indices`]
 			]
@@ -634,8 +634,8 @@ DocsCollector.collect('java.util.BitSet', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a long array containing a little-endian representation
          of all the bits in this bit set`]
@@ -674,7 +674,7 @@ DocsCollector.collect('java.util.BitSet', [
         initial bits of the new bit set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `BitSet`],
@@ -711,7 +711,7 @@ DocsCollector.collect('java.util.BitSet', [
         used as the initial bits of the new bit set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `BitSet`],
@@ -749,7 +749,7 @@ DocsCollector.collect('java.util.BitSet', [
         used as the initial bits of the new bit set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `BitSet`],
@@ -790,7 +790,7 @@ DocsCollector.collect('java.util.BitSet', [
         new bit set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `BitSet`],
@@ -818,7 +818,7 @@ DocsCollector.collect('java.util.BitSet', [
 					[/* text */ 't', `a bit set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'andNot(java.util.BitSet)', [
@@ -839,7 +839,7 @@ DocsCollector.collect('java.util.BitSet', [
 					[/* inline code block */ 'i', `BitSet`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'clear()', [
@@ -848,8 +848,8 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'clear(int)', [
@@ -977,7 +977,7 @@ DocsCollector.collect('java.util.BitSet', [
 					[/* text */ 't', `a bit set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'set(int)', [
@@ -1125,8 +1125,9 @@ DocsCollector.collect('java.util.BitSet', [
 					[/* text */ 't', `a bit set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -415,7 +415,7 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* constructor description */
 				[/* text */ 't', `Create a new date format.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -474,7 +474,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the string buffer passed in as `],
 				[/* inline code block */ 'i', `toAppendTo`],
@@ -536,7 +536,7 @@ DocsCollector.collect('java.text.DateFormat', [
               start position if the parse failed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A `],
 				[/* inline code block */ 'i', `Date`],
@@ -554,7 +554,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -574,8 +574,8 @@ DocsCollector.collect('java.text.DateFormat', [
 					]]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the `],
@@ -597,7 +597,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `the time value to be formatted into a date-time string.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the formatted date-time string.`]
 			]
@@ -684,8 +684,8 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Overrides hashCode`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -694,8 +694,8 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Overrides Cloneable`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
 			]
@@ -772,8 +772,8 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* text */ 't', `Gets the number formatter which this date/time formatter uses to
  format and parse a time.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number formatter which this date/time formatter uses.`]
 			]
@@ -782,8 +782,8 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the calendar associated with this date/time formatter.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the calendar associated with this date/time formatter.`]
 			]
@@ -831,8 +831,8 @@ DocsCollector.collect('java.text.DateFormat', [
 					]]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the time zone associated with the calendar of DateFormat.`]
 			]
@@ -851,8 +851,8 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a date formatter.`]
 			]
@@ -877,7 +877,7 @@ DocsCollector.collect('java.text.DateFormat', [
  SHORT for "M/d/yy" in the US locale.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a date formatter.`]
 			]
@@ -896,7 +896,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `the given locale.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a date formatter.`]
 			]
@@ -915,8 +915,8 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a date/time formatter.`]
 			]
@@ -945,7 +945,7 @@ DocsCollector.collect('java.text.DateFormat', [
  SHORT for "h:mm a" in the US locale.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a date/time formatter.`]
 			]
@@ -966,7 +966,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `the given locale.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a date/time formatter.`]
 			]
@@ -976,8 +976,8 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* text */ 't', `Get a default date/time formatter that uses the SHORT style for both the
  date and the time.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a date/time formatter`]
 			]
@@ -996,8 +996,8 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a time formatter.`]
 			]
@@ -1022,7 +1022,7 @@ DocsCollector.collect('java.text.DateFormat', [
  SHORT for "h:mm a" in the US locale.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a time formatter.`]
 			]
@@ -1041,7 +1041,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `the given locale.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a time formatter.`]
 			]
@@ -1065,8 +1065,8 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An array of locales for which localized
          `],
@@ -1098,7 +1098,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', ` to be used by the date format`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setLenient(boolean)', [
@@ -1133,7 +1133,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `, parsing is lenient`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setNumberFormat(java.text.NumberFormat)', [
@@ -1145,7 +1145,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `the given new NumberFormat.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setTimeZone(java.util.TimeZone)', [
@@ -1185,8 +1185,9 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `the given new time zone.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

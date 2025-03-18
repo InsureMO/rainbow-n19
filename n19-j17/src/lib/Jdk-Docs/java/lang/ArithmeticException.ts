@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.ArithmeticException', [
 		[/* reference */ 'r', `java.lang.Throwable#<init>(java.lang.String,java.lang.Throwable,boolean,boolean)`, `suppression were disabled and/or the stack trace was not writable`],
 		[/* text */ 't', `.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -23,7 +23,7 @@ DocsCollector.collect('java.lang.ArithmeticException', [
 				[/* text */ 't', ` with no detail
  message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -41,5 +41,6 @@ DocsCollector.collect('java.lang.ArithmeticException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

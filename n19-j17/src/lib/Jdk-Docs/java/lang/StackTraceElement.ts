@@ -12,7 +12,7 @@ DocsCollector.collect('java.lang.StackTraceElement', [
  this is the point at which the throwable corresponding to the stack trace
  was created.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.String,java.lang.String,int)', [
 			[/* constructor description */
@@ -158,7 +158,7 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 					[/* text */ 't', `the object to be compared with this stack trace element.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the specified object is another
          `],
@@ -172,8 +172,8 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 				[/* text */ 't', `Returns true if the method containing the execution point
  represented by this stack trace element is a native method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the method containing the execution point
@@ -196,8 +196,8 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html#jvms-4.7.8`, `4.7.8`],
 				[/* text */ 't', `).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the line number of the source line containing the execution
          point represented by this stack trace element, or a negative
@@ -208,8 +208,8 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code value for this stack trace element.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -219,8 +219,8 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 				[/* text */ 't', `Returns the name of the class loader of the class containing the
  execution point represented by this stack trace element.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the class loader of the class containing the execution
          point represented by this stack trace element; `],
@@ -234,8 +234,8 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 				[/* text */ 't', `Returns the fully qualified name of the class containing the
  execution point represented by this stack trace element.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the fully qualified name of the `],
 				[/* inline code block */ 'i', `Class`],
@@ -260,8 +260,8 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 				[/* text */ 't', `).  In some systems, the name may refer to some source code unit
  other than a file, such as an entry in source repository.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the file containing the execution point
          represented by this stack trace element, or `],
@@ -289,8 +289,8 @@ DocsCollector.collect('java.lang.StackTraceElement', [
  Machine Specification`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the method containing the execution point
          represented by this stack trace element.`]
@@ -301,8 +301,8 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 				[/* text */ 't', `Returns the module name of the module containing the execution point
  represented by this stack trace element.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the module name of the `],
 				[/* inline code block */ 'i', `Module`],
@@ -318,8 +318,8 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 				[/* text */ 't', `Returns the module version of the module containing the execution point
  represented by this stack trace element.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the module version of the `],
 				[/* inline code block */ 'i', `Module`],
@@ -334,11 +334,12 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of this stack trace element.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

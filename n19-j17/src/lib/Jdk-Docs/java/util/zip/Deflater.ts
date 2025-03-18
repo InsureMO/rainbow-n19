@@ -137,7 +137,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* text */ 't', `Creates a new compressor with the default compression level.
  Compressed data will be generated in ZLIB format.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -176,8 +176,8 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* text */ 't', `Returns true if the end of the compressed data output stream has
  been reached.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the end of the compressed data output stream has
  been reached`]
@@ -191,8 +191,8 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* text */ 't', ` methods should be
  called in order to provide more input.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the input data buffer is empty and setInput()
  should be called in order to provide more input`]
@@ -226,7 +226,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `the buffer for the compressed data`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the actual number of bytes of compressed data written to the
          output buffer`]
@@ -266,7 +266,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `the maximum number of bytes of compressed data`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the actual number of bytes of compressed data written to the
          output buffer`]
@@ -414,7 +414,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `the buffer for the compressed data`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the actual number of bytes of compressed data written to the
          output buffer`]
@@ -537,8 +537,8 @@ DocsCollector.collect('java.util.zip.Deflater', [
 			[/* method description */
 				[/* text */ 't', `Returns the ADLER-32 value of the uncompressed data.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ADLER-32 value of the uncompressed data`]
 			]
@@ -556,8 +556,8 @@ DocsCollector.collect('java.util.zip.Deflater', [
  the preferred means of obtaining this information.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total number of uncompressed bytes input so far`]
 			]
@@ -575,8 +575,8 @@ DocsCollector.collect('java.util.zip.Deflater', [
  the preferred means of obtaining this information.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total number of compressed bytes output so far`]
 			]
@@ -585,8 +585,8 @@ DocsCollector.collect('java.util.zip.Deflater', [
 			[/* method description */
 				[/* text */ 't', `Returns the total number of uncompressed bytes input so far.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total (non-negative) number of uncompressed bytes input so far`]
 			]
@@ -595,8 +595,8 @@ DocsCollector.collect('java.util.zip.Deflater', [
 			[/* method description */
 				[/* text */ 't', `Returns the total number of compressed bytes output so far.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the total (non-negative) number of compressed bytes output so far`]
 			]
@@ -609,8 +609,8 @@ DocsCollector.collect('java.util.zip.Deflater', [
  being used. Once this method is called, the behavior of the
  Deflater object is undefined.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'finish()', [
@@ -618,8 +618,8 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* text */ 't', `When called, indicates that compression should end with the current
  contents of the input buffer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
@@ -627,8 +627,8 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* text */ 't', `Resets deflater so that a new set of input data can be processed.
  Keeps current compression level and strategy settings.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDictionary(byte[])', [
@@ -644,7 +644,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `the dictionary data bytes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDictionary(byte[],int,int)', [
@@ -666,7 +666,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `the length of the data`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDictionary(java.nio.ByteBuffer)', [
@@ -686,7 +686,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `the dictionary data bytes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setInput(byte[])', [
@@ -709,7 +709,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `the input data bytes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setInput(byte[],int,int)', [
@@ -738,7 +738,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `the length of the data`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setInput(java.nio.ByteBuffer)', [
@@ -774,7 +774,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `the input data bytes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setLevel(int)', [
@@ -831,4 +831,5 @@ DocsCollector.collect('java.util.zip.Deflater', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

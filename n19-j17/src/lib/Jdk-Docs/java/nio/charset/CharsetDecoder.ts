@@ -171,7 +171,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 		[/* block */ 'b', ` Instances of this class are not safe for use by multiple concurrent
  threads.  `]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.nio.charset.Charset,float,float)', [
 			[/* constructor description */
@@ -264,7 +264,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* text */ 't', `The output character buffer`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A coder-result object describing the reason for termination`]
 			]
@@ -288,7 +288,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* text */ 't', `The output character buffer`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A coder-result object, either `],
 				[/* reference */ 'r', `java.nio.charset.CoderResult#UNDERFLOW`, `CoderResult.UNDERFLOW`],
@@ -311,7 +311,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* text */ 't', `The new action`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'implOnUnmappableCharacter(java.nio.charset.CodingErrorAction)', [
@@ -328,7 +328,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* text */ 't', `The new action`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'implReplaceWith(java.lang.String)', [
@@ -345,7 +345,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* text */ 't', `The replacement value`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'implReset()', [
@@ -356,8 +356,8 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
  should be overridden by decoders that maintain internal state.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'isAutoDetecting()', [
@@ -375,8 +375,8 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* text */ 't', `.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, this decoder implements an
@@ -423,7 +423,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  has been determined.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `If this decoder does not implement an auto-detecting charset`]
@@ -441,8 +441,8 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  byte of input.  This heuristic value may be used to estimate the size
  of the output buffer required for a given input sequence.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The average number of characters produced
           per byte of input`]
@@ -460,8 +460,8 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 
  characters.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The maximum number of characters that will be produced per
           byte of input`]
@@ -471,8 +471,8 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			[/* method description */
 				[/* text */ 't', `Returns this decoder's replacement value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This decoder's current replacement,
           which is never `],
@@ -528,8 +528,8 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			[/* method description */
 				[/* text */ 't', `Returns the charset that created this decoder.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This decoder's charset`]
 			]
@@ -634,8 +634,8 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  charset-specific reset actions.  `]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This decoder`]
 			]
@@ -920,7 +920,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  auto-detecting decoders to return the appropriate value.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If insufficient bytes have been read to determine a charset`]
@@ -940,8 +940,8 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			[/* method description */
 				[/* text */ 't', `Returns this decoder's current action for malformed-input errors.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The current malformed-input action, which is never `],
 				[/* inline code block */ 'i', `null`]
@@ -951,8 +951,8 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			[/* method description */
 				[/* text */ 't', `Returns this decoder's current action for unmappable-character errors.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The current unmappable-character action, which is never
          `],
@@ -960,4 +960,5 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

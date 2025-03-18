@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.time.format.ResolverStyle', [
@@ -11,8 +10,8 @@ DocsCollector.collect('java.time.format.ResolverStyle', [
  Phase 2 resolves the parsed field-value pairs into date and/or time objects.
  This style is used to control how phase 2, resolving, happens.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -45,11 +44,58 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'STRICT', [
+			[/* enum value description */
+				[/* text */ 't', `Style to resolve dates and times strictly.
+ `],
+				[/* block */ 'b', `
+ Using strict resolution will ensure that all parsed values are within
+ the outer range of valid values for the field. Individual fields may
+ be further processed for strictness.
+ `],
+				[/* block */ 'b', `
+ For example, resolving year-month and day-of-month in the ISO calendar
+ system using strict mode will ensure that the day-of-month is valid
+ for the year-month, rejecting invalid values.`]
+			],
+		]],
+		[/* enum value */ 'SMART', [
+			[/* enum value description */
+				[/* text */ 't', `Style to resolve dates and times in a smart, or intelligent, manner.
+ `],
+				[/* block */ 'b', `
+ Using smart resolution will perform the sensible default for each
+ field, which may be the same as strict, the same as lenient, or a third
+ behavior. Individual fields will interpret this differently.
+ `],
+				[/* block */ 'b', `
+ For example, resolving year-month and day-of-month in the ISO calendar
+ system using smart mode will ensure that the day-of-month is from
+ 1 to 31, converting any value beyond the last valid day-of-month to be
+ the last valid day-of-month.`]
+			],
+		]],
+		[/* enum value */ 'LENIENT', [
+			[/* enum value description */
+				[/* text */ 't', `Style to resolve dates and times leniently.
+ `],
+				[/* block */ 'b', `
+ Using lenient resolution will resolve the values in an appropriate
+ lenient manner. Individual fields will interpret this differently.
+ `],
+				[/* block */ 'b', `
+ For example, lenient mode allows the month in the ISO calendar system
+ to be outside the range 1 to 12.
+ For example, month 15 is treated as being 3 months after month 12.`]
+			],
 		]]
 	],
 ]);

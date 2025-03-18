@@ -5,13 +5,13 @@ DocsCollector.collect('java.io.UnsupportedEncodingException', [
 	[/* class description */
 		[/* text */ 't', `The Character Encoding is not supported.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an UnsupportedEncodingException without a detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -26,5 +26,6 @@ DocsCollector.collect('java.io.UnsupportedEncodingException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -11,7 +11,8 @@ DocsCollector.collect('java.nio.channels.ByteChannel', [
 		[/* text */ 't', `; it does not
  specify any new operations.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

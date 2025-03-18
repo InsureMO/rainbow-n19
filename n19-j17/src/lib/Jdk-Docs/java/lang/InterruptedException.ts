@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.InterruptedException', [
       throw new InterruptedException();
  `]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -22,7 +22,7 @@ DocsCollector.collect('java.lang.InterruptedException', [
 				[/* inline code block */ 'i', `InterruptedException`],
 				[/* text */ 't', ` with no detail  message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -40,5 +40,6 @@ DocsCollector.collect('java.lang.InterruptedException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

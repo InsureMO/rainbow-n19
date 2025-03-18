@@ -7,7 +7,7 @@ DocsCollector.collect('java.io.UncheckedIOException', [
 		[/* reference */ 'r', `java.io.IOException`, `IOException`],
 		[/* text */ 't', ` with an unchecked exception.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.IOException)', [
 			[/* constructor description */
@@ -52,8 +52,8 @@ DocsCollector.collect('java.io.UncheckedIOException', [
 			[/* method description */
 				[/* text */ 't', `Returns the cause of this exception.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `IOException`],
@@ -61,4 +61,5 @@ DocsCollector.collect('java.io.UncheckedIOException', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

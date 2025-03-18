@@ -1265,7 +1265,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', `
  locale.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.util.TimeZone,java.util.Locale)', [
@@ -1301,8 +1301,8 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* reference */ 'r', `#complete()`, `complete()`],
 				[/* text */ 't', ` method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'computeTime()', [
@@ -1315,8 +1315,8 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', `time`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'internalGet(int)', [
@@ -1329,7 +1329,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the given calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value for the given calendar field.`]
 			]
@@ -1347,8 +1347,8 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', ` method is
  called to calculate all calendar field values.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getGreatestMinimum(int)', [
@@ -1368,7 +1368,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the highest minimum value for the given calendar field.`]
 			]
@@ -1398,7 +1398,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lowest maximum value for the given calendar field.`]
 			]
@@ -1420,7 +1420,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum value for the given calendar field.`]
 			]
@@ -1442,7 +1442,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum value for the given calendar field.`]
 			]
@@ -1466,7 +1466,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the amount of date or time to be added to the field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'roll(int,boolean)', [
@@ -1498,7 +1498,7 @@ DocsCollector.collect('java.util.Calendar', [
  rolled up or rolled down. Use true if rolling up, false otherwise.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'after(java.lang.Object)', [
@@ -1531,7 +1531,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', ` to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the time of this `],
@@ -1575,7 +1575,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', ` to be compared`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the time of this
@@ -1647,7 +1647,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the object to compare with.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is equal to `],
@@ -1662,8 +1662,8 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* method description */
 				[/* text */ 't', `Tells whether date/time interpretation is to be lenient.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the interpretation mode of this calendar is lenient;
@@ -1685,8 +1685,8 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this `],
@@ -1710,7 +1710,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the calendar field to test`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the given calendar field has a value set;
@@ -1735,8 +1735,8 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the instant representing the same point on the time-line`]
 			]
@@ -1752,8 +1752,8 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', `Epoch`],
 				[/* text */ 't', `").`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Date`],
@@ -1786,8 +1786,8 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `YEAR`],
 				[/* text */ 't', ` field value is undefined.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'clear(int)', [
@@ -1835,7 +1835,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the calendar field to be cleared.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'set(int,int,int)', [
@@ -1871,7 +1871,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', ` calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'set(int,int,int,int,int)', [
@@ -1922,7 +1922,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', ` calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'set(int,int,int,int,int,int)', [
@@ -1980,7 +1980,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', ` calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setTime(java.util.Date)', [
@@ -2125,7 +2125,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the calendar field`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum of the given calendar field for the time
  value of this `],
@@ -2155,7 +2155,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the calendar field`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum of the given calendar field for the time
  value of this `],
@@ -2171,8 +2171,8 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `MONDAY`],
 				[/* text */ 't', ` in France.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the first day of the week.`]
 			]
@@ -2185,8 +2185,8 @@ DocsCollector.collect('java.util.Calendar', [
  the minimal days required must be a full week, this method
  returns 7.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimal days required in the first week of the year.`]
 			]
@@ -2206,7 +2206,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if any week year numbering isn't supported in this
@@ -2237,7 +2237,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if any week year numbering isn't supported
@@ -2255,8 +2255,8 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code for this calendar.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object.`]
 			]
@@ -2265,8 +2265,8 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* method description */
 				[/* text */ 't', `Creates and returns a copy of this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of this object.`]
 			]
@@ -2291,8 +2291,8 @@ DocsCollector.collect('java.util.Calendar', [
  appropriate calendar types.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the LDML-defined calendar type or the class name of this
          `],
@@ -2429,8 +2429,8 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this calendar.`]
 			]
@@ -2577,8 +2577,8 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* method description */
 				[/* text */ 't', `Gets the time zone.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the time zone object associated with this calendar.`]
 			]
@@ -2587,8 +2587,8 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* method description */
 				[/* text */ 't', `Returns this Calendar's time value in milliseconds.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current time as UTC milliseconds from the epoch.`]
 			]
@@ -2613,8 +2613,8 @@ DocsCollector.collect('java.util.Calendar', [
  that time zone is used instead.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a Calendar.`]
 			]
@@ -2641,7 +2641,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the locale for the week data`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a Calendar.`]
 			]
@@ -2662,7 +2662,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the time zone to use`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a Calendar.`]
 			]
@@ -2683,7 +2683,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the locale for the week data`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a Calendar.`]
 			]
@@ -2711,8 +2711,8 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `"gregory"`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an unmodifiable `],
 				[/* inline code block */ 'i', `Set`],
@@ -2732,8 +2732,8 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `An array of locales for which localized
          `],
@@ -2775,7 +2775,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'set(int,int)', [
@@ -2816,7 +2816,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the given first day of the week.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setLenient(boolean)', [
@@ -2837,7 +2837,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', ` if it is to be turned off.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setMinimalDaysInFirstWeek(int)', [
@@ -2853,7 +2853,7 @@ DocsCollector.collect('java.util.Calendar', [
  of the year.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setTimeInMillis(long)', [
@@ -2865,7 +2865,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the new time in UTC milliseconds from the epoch.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setTimeZone(java.util.TimeZone)', [
@@ -2877,7 +2877,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `the given time zone.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setWeekDate(int,int,int)', [
@@ -2956,4 +2956,5 @@ DocsCollector.collect('java.util.Calendar', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

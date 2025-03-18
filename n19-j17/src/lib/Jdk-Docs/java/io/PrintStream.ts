@@ -54,7 +54,7 @@ DocsCollector.collect('java.io.PrintStream', [
  control over the encoding process is required.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.io.File)', [
 			[/* constructor description */
@@ -389,8 +389,8 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setError()', [
@@ -411,8 +411,8 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` is invoked.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'checkError()', [
@@ -443,8 +443,8 @@ DocsCollector.collect('java.io.PrintStream', [
 				[/* text */ 't', `
  or the equivalent.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if this stream has encountered an
@@ -482,7 +482,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', `The 16-bit character to append`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This output stream`]
 			]
@@ -534,7 +534,7 @@ DocsCollector.collect('java.io.PrintStream', [
          appended to this output stream.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This output stream`]
 			]
@@ -874,8 +874,8 @@ DocsCollector.collect('java.io.PrintStream', [
 				[/* text */ 't', `Closes the stream.  This is done by flushing the stream and then closing
  the underlying output stream.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'flush()', [
@@ -883,8 +883,8 @@ DocsCollector.collect('java.io.PrintStream', [
 				[/* text */ 't', `Flushes the stream.  This is done by writing any buffered output bytes to
  the underlying output stream and then flushing that stream.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(boolean)', [
@@ -905,7 +905,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(char)', [
@@ -924,7 +924,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(char[])', [
@@ -969,7 +969,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(float)', [
@@ -990,7 +990,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(int)', [
@@ -1011,7 +1011,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(java.lang.Object)', [
@@ -1032,7 +1032,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(java.lang.String)', [
@@ -1057,7 +1057,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'print(long)', [
@@ -1078,7 +1078,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println()', [
@@ -1092,8 +1092,8 @@ DocsCollector.collect('java.io.PrintStream', [
 				[/* inline code block */ 'i', `'\\n'`],
 				[/* text */ 't', `).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(boolean)', [
@@ -1113,7 +1113,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(char)', [
@@ -1133,7 +1133,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(char[])', [
@@ -1151,7 +1151,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', `an array of chars to print.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(double)', [
@@ -1171,7 +1171,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(float)', [
@@ -1191,7 +1191,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(int)', [
@@ -1211,7 +1211,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(java.lang.Object)', [
@@ -1233,7 +1233,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(java.lang.String)', [
@@ -1253,7 +1253,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'println(long)', [
@@ -1273,7 +1273,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', ` to be printed.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(byte[])', [
@@ -1344,7 +1344,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', `Number of bytes to write`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(int)', [
@@ -1372,7 +1372,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', `The byte to be written`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'writeBytes(byte[])', [
@@ -1400,8 +1400,9 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* text */ 't', `A byte array`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

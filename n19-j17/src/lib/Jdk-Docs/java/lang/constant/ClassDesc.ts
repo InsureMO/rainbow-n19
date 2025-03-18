@@ -46,8 +46,8 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			[/* text */ 't', ` methods.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -64,7 +64,7 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 					[/* text */ 't', `the other object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `whether this descriptor is equal to the other object`]
 			]
@@ -73,8 +73,8 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns a field type descriptor string for this type`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the descriptor string`]
 			]
@@ -85,8 +85,8 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describes an array type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `whether this `],
 				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
@@ -99,8 +99,8 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describes a class or interface type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `whether this `],
 				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
@@ -113,8 +113,8 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describes a primitive type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `whether this `],
 				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
@@ -130,7 +130,7 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the resulting `],
@@ -179,8 +179,8 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
@@ -268,8 +268,8 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns a human-readable name for the type described by this descriptor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the human-readable name`]
 			]
@@ -281,8 +281,8 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				[/* text */ 't', `, if it describes
  a class or interface type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the package name, or the empty string if the class is in the
  default package, or this `],
@@ -395,4 +395,5 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

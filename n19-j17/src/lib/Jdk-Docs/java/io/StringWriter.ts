@@ -17,14 +17,14 @@ DocsCollector.collect('java.io.StringWriter', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Create a new string writer using the default initial string-buffer
  size.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -71,7 +71,7 @@ DocsCollector.collect('java.io.StringWriter', [
 					[/* text */ 't', `The 16-bit character to append`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This writer`]
 			]
@@ -121,7 +121,7 @@ DocsCollector.collect('java.io.StringWriter', [
          appended to this writer.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `This writer`]
 			]
@@ -199,8 +199,8 @@ DocsCollector.collect('java.io.StringWriter', [
 			[/* method description */
 				[/* text */ 't', `Return the buffer's current value as a string.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
 			]
@@ -209,8 +209,8 @@ DocsCollector.collect('java.io.StringWriter', [
 			[/* method description */
 				[/* text */ 't', `Return the string buffer itself.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `StringBuffer holding the current buffer value.`]
 			]
@@ -225,7 +225,7 @@ DocsCollector.collect('java.io.StringWriter', [
 				[/* inline code block */ 'i', `IOException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -246,8 +246,8 @@ DocsCollector.collect('java.io.StringWriter', [
 					[/* text */ 't', ` does nothing.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(char[],int,int)', [
@@ -289,7 +289,7 @@ DocsCollector.collect('java.io.StringWriter', [
 					[/* text */ 't', `int specifying a character to be written`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(java.lang.String)', [
@@ -301,7 +301,7 @@ DocsCollector.collect('java.io.StringWriter', [
 					[/* text */ 't', `String to be written`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(java.lang.String,int,int)', [
@@ -335,4 +335,5 @@ DocsCollector.collect('java.io.StringWriter', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -10,7 +10,7 @@ DocsCollector.collect('java.util.IllformedLocaleException', [
 		[/* text */ 't', ` to
  indicate that an argument is not a well-formed BCP 47 tag.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -19,7 +19,7 @@ DocsCollector.collect('java.util.IllformedLocaleException', [
 				[/* text */ 't', ` with no
  detail message and -1 as the error index.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -63,11 +63,12 @@ DocsCollector.collect('java.util.IllformedLocaleException', [
 				[/* text */ 't', `Returns the index where the error was found. A negative value indicates
  either the error index is not applicable or unknown.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the error index`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

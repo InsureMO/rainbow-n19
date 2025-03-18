@@ -1,12 +1,11 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.nio.file.AccessMode', [
 	[/* class description */
 		[/* text */ 't', `Defines access modes used to test the accessibility of a file.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -39,11 +38,28 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'READ', [
+			[/* enum value description */
+				[/* text */ 't', `Test read access.`]
+			],
+		]],
+		[/* enum value */ 'WRITE', [
+			[/* enum value description */
+				[/* text */ 't', `Test write access.`]
+			],
+		]],
+		[/* enum value */ 'EXECUTE', [
+			[/* enum value description */
+				[/* text */ 't', `Test execute access.`]
+			],
 		]]
 	],
 ]);

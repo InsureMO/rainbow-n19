@@ -59,8 +59,8 @@ DocsCollector.collect('java.time.temporal.TemporalAdjuster', [
 		]],
 		[/* block */ 'b', '']
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'adjustInto(java.time.temporal.Temporal)', [
 			[/* method description */
@@ -110,4 +110,5 @@ DocsCollector.collect('java.time.temporal.TemporalAdjuster', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

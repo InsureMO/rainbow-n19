@@ -110,7 +110,7 @@ DocsCollector.collect('java.util.Timer', [
  `],
 		[/* block */ 'b', `Implementation note: All constructors start a timer thread.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -121,7 +121,7 @@ DocsCollector.collect('java.util.Timer', [
 				[/* reference */ 'r', `java.lang.Thread#setDaemon(boolean)`, `run as a daemon`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(boolean)', [
@@ -213,8 +213,8 @@ DocsCollector.collect('java.util.Timer', [
 				[/* block */ 'b', `Note that it is permissible to call this method from within
  a task scheduled on this timer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the number of tasks removed from the queue.`]
 			]
@@ -236,8 +236,8 @@ DocsCollector.collect('java.util.Timer', [
 				[/* block */ 'b', `This method may be called repeatedly; the second and subsequent
  calls have no effect.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'schedule(java.util.TimerTask,java.util.Date)', [
@@ -580,4 +580,5 @@ DocsCollector.collect('java.util.Timer', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

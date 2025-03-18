@@ -5,13 +5,13 @@ DocsCollector.collect('java.io.NotActiveException', [
 	[/* class description */
 		[/* text */ 't', `Thrown when serialization or deserialization is not active.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor to create a new NotActiveException without a reason.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -26,5 +26,6 @@ DocsCollector.collect('java.io.NotActiveException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

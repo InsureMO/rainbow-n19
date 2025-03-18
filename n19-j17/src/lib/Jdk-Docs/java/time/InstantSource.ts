@@ -64,8 +64,8 @@ DocsCollector.collect('java.time.InstantSource', [
  resolution clock if one is available.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'instant()', [
 			[/* method description */
@@ -74,7 +74,7 @@ DocsCollector.collect('java.time.InstantSource', [
 				[/* block */ 'b', `
  This returns an instant representing the current instant as defined by the source.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
 					[/* text */ 't', `if the instant cannot be obtained, not thrown by most implementations`]
@@ -109,7 +109,7 @@ DocsCollector.collect('java.time.InstantSource', [
 					[/* text */ 't', `the time-zone to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a clock based on this source with the specified time-zone, not null`]
 			]
@@ -136,7 +136,7 @@ DocsCollector.collect('java.time.InstantSource', [
  where the creation of an object would be unacceptable.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
 					[/* text */ 't', `if the instant cannot be obtained, not thrown by most implementations`]
@@ -169,7 +169,7 @@ DocsCollector.collect('java.time.InstantSource', [
 					[/* text */ 't', `the instant to use, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a source that always returns the same instant, not null`]
 			]
@@ -205,7 +205,7 @@ DocsCollector.collect('java.time.InstantSource', [
 					[/* text */ 't', `the duration to add, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a source based on the base source with the duration added, not null`]
 			]
@@ -232,8 +232,8 @@ DocsCollector.collect('java.time.InstantSource', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a source that uses the best available system clock, not null`]
 			]
@@ -295,4 +295,5 @@ DocsCollector.collect('java.time.InstantSource', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

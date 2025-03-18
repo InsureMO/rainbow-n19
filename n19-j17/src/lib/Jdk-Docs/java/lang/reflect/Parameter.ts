@@ -11,8 +11,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
  including its name and modifiers.  It also provides an alternate
  means of obtaining attributes for the parameter.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
@@ -171,7 +171,7 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 					[/* text */ 't', `The object to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `Whether or not this is equal to the argument.`]
 			]
@@ -185,8 +185,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this parameter is implicitly
  declared as defined by `],
@@ -202,8 +202,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
  is determined by the MethodParameters attribute of
  the method which declares the parameter.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if the parameter has a name according
  to the class file.`]
@@ -219,8 +219,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* text */ 't', `
  otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if and only if this parameter is a synthetic
  construct as defined by
@@ -238,8 +238,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if an only if this parameter represents a
@@ -253,8 +253,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* text */ 't', ` for
  the parameter represented by this object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the Java language `],
 				[/* reference */ 'r', `java.lang.reflect.Modifier`, `modifiers`],
@@ -267,8 +267,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* text */ 't', `Returns a hash code based on the executable's hash code and the
  index.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A hash code based on the executable's hash code.`]
 			]
@@ -290,8 +290,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* block */ 'b', `Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations present on this element`]
 			]
@@ -314,8 +314,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* block */ 'b', `Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations directly present on this element`]
 			]
@@ -330,8 +330,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* inline code block */ 'i', `Parameter`],
 				[/* text */ 't', ` object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Class`],
@@ -344,8 +344,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* text */ 't', `Returns an AnnotatedType object that represents the use of a type to
  specify the type of the formal parameter represented by this Parameter.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `AnnotatedType`],
@@ -360,8 +360,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* inline code block */ 'i', `Executable`],
 				[/* text */ 't', ` declaring this parameter.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `Executable`],
@@ -378,8 +378,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 				[/* text */ 't', `
  object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Type`],
@@ -398,8 +398,8 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
  the parameter in the descriptor of the method which declares
  the parameter.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The name of the parameter, either provided by the class
          file or synthesized if the class file does not provide
@@ -419,12 +419,13 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
  arity, followed by a space, followed by the name of the
  parameter.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A string representation of the parameter and associated
  information.`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

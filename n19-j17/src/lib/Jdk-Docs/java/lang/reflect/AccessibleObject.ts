@@ -67,13 +67,13 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 			[/* text */ 't', `). `]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor: only used by the Java Virtual Machine.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -236,8 +236,8 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 				[/* inline code block */ 'i', `accessible`],
 				[/* text */ 't', ` flag for this reflected object.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the object's `],
 				[/* inline code block */ 'i', `accessible`],
@@ -439,7 +439,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  permission. `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the request is denied by the security manager`]
@@ -475,8 +475,8 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 				[/* block */ 'b', ` Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations present on this element`]
 			]
@@ -500,8 +500,8 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 				[/* block */ 'b', ` Note that any annotations returned by this method are
  declaration annotations.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `annotations directly present on this element`]
 			]
@@ -748,4 +748,5 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

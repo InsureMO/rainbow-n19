@@ -150,7 +150,7 @@ DocsCollector.collect('java.lang.Throwable', [
  cause).`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.String,java.lang.Throwable,boolean,boolean)', [
 			[/* constructor description */
@@ -240,7 +240,7 @@ DocsCollector.collect('java.lang.Throwable', [
  the stack trace data in the newly created throwable.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -363,8 +363,8 @@ DocsCollector.collect('java.lang.Throwable', [
  thread-safe.  Writes to the returned array do not affect future
  calls to this method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing all of the exceptions that were
          suppressed to deliver this exception.`]
@@ -492,8 +492,8 @@ DocsCollector.collect('java.lang.Throwable', [
  affect future calls to this method.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array of stack trace elements representing the stack trace
          pertaining to this throwable.`]
@@ -509,8 +509,8 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* inline code block */ 'i', `getMessage()`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The localized description of this throwable.`]
 			]
@@ -519,8 +519,8 @@ DocsCollector.collect('java.lang.Throwable', [
 			[/* method description */
 				[/* text */ 't', `Returns the detail message string of this throwable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the detail message string of this `],
 				[/* inline code block */ 'i', `Throwable`],
@@ -560,8 +560,8 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* text */ 't', `, then just
  the class name is returned.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this throwable.`]
 			]
@@ -583,8 +583,8 @@ DocsCollector.collect('java.lang.Throwable', [
 					[/* text */ 't', `, calling this method has no effect.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a reference to this `],
 				[/* inline code block */ 'i', `Throwable`],
@@ -625,8 +625,8 @@ DocsCollector.collect('java.lang.Throwable', [
  cause of a throwable.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the cause of this throwable or `],
 				[/* inline code block */ 'i', `null`],
@@ -878,8 +878,8 @@ DocsCollector.collect('java.lang.Throwable', [
  `],
 				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'printStackTrace(java.io.PrintStream)', [
@@ -893,7 +893,7 @@ DocsCollector.collect('java.lang.Throwable', [
 					[/* text */ 't', ` to use for output`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'printStackTrace(java.io.PrintWriter)', [
@@ -908,7 +908,7 @@ DocsCollector.collect('java.lang.Throwable', [
 					[/* text */ 't', ` to use for output`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setStackTrace(java.lang.StackTraceElement[])', [
@@ -969,4 +969,5 @@ DocsCollector.collect('java.lang.Throwable', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

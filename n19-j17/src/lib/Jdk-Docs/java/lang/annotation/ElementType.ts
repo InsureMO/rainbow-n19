@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.lang.annotation.ElementType', [
@@ -106,8 +105,8 @@ DocsCollector.collect('java.lang.annotation.ElementType', [
 			[/* text */ 't', ` appears at the variable's declaration.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
@@ -140,11 +139,74 @@ not permitted.)`]
 				[/* text */ 't', `Returns an array containing the constants of this enum class, in
 the order they are declared.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
+		]]
+	],
+	[/* enum values */
+		[/* enum value */ 'TYPE', [
+			[/* enum value description */
+				[/* text */ 't', `Class, interface (including annotation interface), enum, or record
+ declaration`]
+			],
+		]],
+		[/* enum value */ 'FIELD', [
+			[/* enum value description */
+				[/* text */ 't', `Field declaration (includes enum constants)`]
+			],
+		]],
+		[/* enum value */ 'METHOD', [
+			[/* enum value description */
+				[/* text */ 't', `Method declaration`]
+			],
+		]],
+		[/* enum value */ 'PARAMETER', [
+			[/* enum value description */
+				[/* text */ 't', `Formal parameter declaration`]
+			],
+		]],
+		[/* enum value */ 'CONSTRUCTOR', [
+			[/* enum value description */
+				[/* text */ 't', `Constructor declaration`]
+			],
+		]],
+		[/* enum value */ 'LOCAL_VARIABLE', [
+			[/* enum value description */
+				[/* text */ 't', `Local variable declaration`]
+			],
+		]],
+		[/* enum value */ 'ANNOTATION_TYPE', [
+			[/* enum value description */
+				[/* text */ 't', `Annotation interface declaration (Formerly known as an annotation type.)`]
+			],
+		]],
+		[/* enum value */ 'PACKAGE', [
+			[/* enum value description */
+				[/* text */ 't', `Package declaration`]
+			],
+		]],
+		[/* enum value */ 'TYPE_PARAMETER', [
+			[/* enum value description */
+				[/* text */ 't', `Type parameter declaration`]
+			],
+		]],
+		[/* enum value */ 'TYPE_USE', [
+			[/* enum value description */
+				[/* text */ 't', `Use of a type`]
+			],
+		]],
+		[/* enum value */ 'MODULE', [
+			[/* enum value description */
+				[/* text */ 't', `Module declaration.`]
+			],
+		]],
+		[/* enum value */ 'RECORD_COMPONENT', [
+			[/* enum value description */
+				[/* text */ 't', `Record component`]
+			],
 		]]
 	],
 ]);

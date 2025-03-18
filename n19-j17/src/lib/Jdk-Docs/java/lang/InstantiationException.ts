@@ -26,7 +26,7 @@ DocsCollector.collect('java.lang.InstantiationException', [
 `]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -34,7 +34,7 @@ DocsCollector.collect('java.lang.InstantiationException', [
 				[/* inline code block */ 'i', `InstantiationException`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -52,5 +52,6 @@ DocsCollector.collect('java.lang.InstantiationException', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

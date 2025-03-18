@@ -181,6 +181,7 @@ DocsCollector.collect('java.io.ObjectStreamConstants', [
 			],
 		]]
 	],
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

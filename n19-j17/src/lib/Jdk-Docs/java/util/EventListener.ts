@@ -5,7 +5,8 @@ DocsCollector.collect('java.util.EventListener', [
 	[/* class description */
 		[/* text */ 't', `A tagging interface that all event listener interfaces must extend.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);

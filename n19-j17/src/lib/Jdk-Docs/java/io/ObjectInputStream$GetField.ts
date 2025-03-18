@@ -5,13 +5,13 @@ DocsCollector.collect('java.io.ObjectInputStream$GetField', [
 	[/* class description */
 		[/* text */ 't', `Provide access to the persistent fields read from the input stream.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor for subclasses to call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -251,8 +251,8 @@ DocsCollector.collect('java.io.ObjectInputStream$GetField', [
 			[/* method description */
 				[/* text */ 't', `Get the ObjectStreamClass that describes the fields in the stream.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the descriptor class that describes the serializable fields`]
 			]
@@ -360,4 +360,5 @@ DocsCollector.collect('java.io.ObjectInputStream$GetField', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

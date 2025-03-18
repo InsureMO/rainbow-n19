@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.ClassFormatError', [
  file and determines that the file is malformed or otherwise cannot
  be interpreted as a class file.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.ClassFormatError', [
 				[/* inline code block */ 'i', `ClassFormatError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -33,5 +33,6 @@ DocsCollector.collect('java.lang.ClassFormatError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

@@ -24,8 +24,8 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 		[/* block */ 'b', `
  Instances of this class are not tied to a specific field.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -45,7 +45,7 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other range`]
 			]
@@ -59,8 +59,8 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
  Since there is uncertainty about the maximum value, the range is not fixed.
  However, for the month of January, the range is always 1 to 31, thus it is fixed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the set of values is fixed`]
 			]
@@ -97,8 +97,8 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if a valid value always fits in an `],
 				[/* inline code block */ 'i', `int`]
@@ -125,7 +125,7 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 					[/* text */ 't', `the value to check`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the value is valid and fits in an `],
 				[/* inline code block */ 'i', `int`]
@@ -143,7 +143,7 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 					[/* text */ 't', `the value to check`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the value is valid`]
 			]
@@ -171,7 +171,7 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 					[/* text */ 't', `the field being checked, may be null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value that was passed in`]
 			]
@@ -180,8 +180,8 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -197,8 +197,8 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
  where the largestMin or smallestMax sections may be omitted, together
  with associated slash, if they are the same as the min or max.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this range, not null`]
 			]
@@ -219,7 +219,7 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 					[/* text */ 't', `the field being checked, may be null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value that was passed in`]
 			]
@@ -232,8 +232,8 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
  For example, the ISO day-of-month always starts at 1.
  The largest minimum is therefore 1.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the largest possible minimum value for this field`]
 			]
@@ -246,8 +246,8 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
  For example, the ISO day-of-month runs to between 28 and 31 days.
  The maximum is therefore 31.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum value for this field`]
 			]
@@ -260,8 +260,8 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
  For example, the ISO day-of-month always starts at 1.
  The minimum is therefore 1.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum value for this field`]
 			]
@@ -274,8 +274,8 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
  For example, the ISO day-of-month runs to between 28 and 31 days.
  The smallest maximum is therefore 28.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the smallest possible maximum value for this field`]
 			]
@@ -370,4 +370,5 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -16,8 +16,8 @@ DocsCollector.collect('java.lang.AutoCloseable', [
  release, avoiding resource exhaustion exceptions and errors that
  may otherwise occur.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'close()', [
 			[/* method description */
@@ -27,7 +27,7 @@ DocsCollector.collect('java.lang.AutoCloseable', [
 				[/* inline code block */ 'i', `try`],
 				[/* text */ 't', `-with-resources statement.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.Exception', [/* throw description */
 					[/* text */ 't', `if this resource cannot be closed`]
@@ -36,4 +36,5 @@ DocsCollector.collect('java.lang.AutoCloseable', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

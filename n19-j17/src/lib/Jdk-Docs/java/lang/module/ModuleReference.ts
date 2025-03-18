@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.module.ModuleReference', [
  modular JAR file.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.module.ModuleDescriptor,java.net.URI)', [
 			[/* constructor description */
@@ -41,7 +41,7 @@ DocsCollector.collect('java.lang.module.ModuleReference', [
 			[/* method description */
 				[/* text */ 't', `Opens the module content for reading.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -60,8 +60,8 @@ DocsCollector.collect('java.lang.module.ModuleReference', [
 			[/* method description */
 				[/* text */ 't', `Returns the module descriptor.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The module descriptor`]
 			]
@@ -82,8 +82,8 @@ DocsCollector.collect('java.lang.module.ModuleReference', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The location or an empty `],
 				[/* inline code block */ 'i', `Optional`],
@@ -91,4 +91,5 @@ DocsCollector.collect('java.lang.module.ModuleReference', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -27,7 +27,7 @@ DocsCollector.collect('java.text.ParsePosition', [
  records the current position.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
@@ -51,7 +51,7 @@ DocsCollector.collect('java.text.ParsePosition', [
 					[/* text */ 't', `the reference object with which to compare.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this object is the same as the obj
@@ -65,8 +65,8 @@ DocsCollector.collect('java.text.ParsePosition', [
 				[/* text */ 't', `Retrieve the index at which an error occurred, or -1 if the
  error index has not been set.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index at which an error occurred`]
 			]
@@ -77,8 +77,8 @@ DocsCollector.collect('java.text.ParsePosition', [
  is the index of the character at which parsing will begin; on output, it
  is the index of the character following the last character parsed.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current parse position`]
 			]
@@ -87,8 +87,8 @@ DocsCollector.collect('java.text.ParsePosition', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code for this ParsePosition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this object`]
 			]
@@ -97,8 +97,8 @@ DocsCollector.collect('java.text.ParsePosition', [
 			[/* method description */
 				[/* text */ 't', `Return a string representation of this ParsePosition.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this object`]
 			]
@@ -114,7 +114,7 @@ DocsCollector.collect('java.text.ParsePosition', [
 					[/* text */ 't', `the index at which an error occurred`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setIndex(int)', [
@@ -126,8 +126,9 @@ DocsCollector.collect('java.text.ParsePosition', [
 					[/* text */ 't', `the current parse position`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

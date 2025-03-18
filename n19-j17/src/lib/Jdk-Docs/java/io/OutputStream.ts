@@ -16,13 +16,13 @@ DocsCollector.collect('java.io.OutputStream', [
  that writes one byte of output.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor for subclasses to call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -101,8 +101,8 @@ DocsCollector.collect('java.io.OutputStream', [
 					[/* text */ 't', ` method does nothing.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `OutputStream`],
@@ -127,7 +127,7 @@ DocsCollector.collect('java.io.OutputStream', [
 					[/* text */ 't', ` does nothing.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -162,7 +162,7 @@ DocsCollector.collect('java.io.OutputStream', [
 					[/* text */ 't', ` does nothing.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -281,4 +281,5 @@ DocsCollector.collect('java.io.OutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

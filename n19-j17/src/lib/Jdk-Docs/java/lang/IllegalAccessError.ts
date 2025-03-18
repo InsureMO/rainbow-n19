@@ -11,7 +11,7 @@ DocsCollector.collect('java.lang.IllegalAccessError', [
  only occur at run time if the definition of a class has
  incompatibly changed.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
@@ -19,7 +19,7 @@ DocsCollector.collect('java.lang.IllegalAccessError', [
 				[/* inline code block */ 'i', `IllegalAccessError`],
 				[/* text */ 't', ` with no detail message.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -37,5 +37,6 @@ DocsCollector.collect('java.lang.IllegalAccessError', [
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

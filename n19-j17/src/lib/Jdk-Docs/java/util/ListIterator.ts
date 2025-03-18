@@ -55,8 +55,8 @@ DocsCollector.collect('java.util.ListIterator', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'hasNext()', [
 			[/* method description */
@@ -71,8 +71,8 @@ DocsCollector.collect('java.util.ListIterator', [
 				[/* text */ 't', ` would return an element rather
  than throwing an exception.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the list iterator has more elements when
@@ -92,8 +92,8 @@ DocsCollector.collect('java.util.ListIterator', [
 				[/* text */ 't', ` would return an element
  rather than throwing an exception.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the list iterator has more elements when
@@ -114,7 +114,7 @@ DocsCollector.collect('java.util.ListIterator', [
 				[/* text */ 't', `
  will return the same element repeatedly.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if the iteration has no next element`]
@@ -139,7 +139,7 @@ DocsCollector.collect('java.util.ListIterator', [
 				[/* text */ 't', ` will return the same
  element repeatedly.)`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if the iteration has no previous
@@ -158,8 +158,8 @@ DocsCollector.collect('java.util.ListIterator', [
 				[/* text */ 't', `. (Returns list size if the list
  iterator is at the end of the list.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the element that would be returned by a
          subsequent call to `],
@@ -176,8 +176,8 @@ DocsCollector.collect('java.util.ListIterator', [
 				[/* text */ 't', `. (Returns -1 if the list
  iterator is at the beginning of the list.)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index of the element that would be returned by a
          subsequent call to `],
@@ -255,7 +255,7 @@ DocsCollector.collect('java.util.ListIterator', [
 				[/* inline code block */ 'i', `previous`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
@@ -347,4 +347,5 @@ DocsCollector.collect('java.util.ListIterator', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

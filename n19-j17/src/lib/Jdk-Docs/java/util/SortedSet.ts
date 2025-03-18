@@ -165,14 +165,14 @@ DocsCollector.collect('java.util.SortedSet', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'first()', [
 			[/* method description */
 				[/* text */ 't', `Returns the first (lowest) element currently in this set.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this set is empty`]
@@ -186,7 +186,7 @@ DocsCollector.collect('java.util.SortedSet', [
 			[/* method description */
 				[/* text */ 't', `Returns the last (highest) element currently in this set.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
 					[/* text */ 't', `if this set is empty`]
@@ -205,8 +205,8 @@ DocsCollector.collect('java.util.SortedSet', [
 				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', ` of its elements.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the comparator used to order the elements in this set,
          or `],
@@ -459,8 +459,8 @@ DocsCollector.collect('java.util.SortedSet', [
  same total ordering as the sorted set's comparator.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
@@ -468,4 +468,5 @@ DocsCollector.collect('java.util.SortedSet', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

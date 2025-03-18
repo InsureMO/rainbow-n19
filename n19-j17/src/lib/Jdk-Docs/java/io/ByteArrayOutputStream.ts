@@ -44,7 +44,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 				[/* text */ 't', `. The buffer capacity is
  initially 32 bytes, though its size increases if necessary.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -73,8 +73,8 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
  size of this output stream and the valid contents of the buffer
  have been copied into it.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current contents of this output stream, as a byte array.`]
 			]
@@ -83,8 +83,8 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Returns the current size of the buffer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the value of the `],
 				[/* inline code block */ 'i', `count`],
@@ -112,8 +112,8 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
  required.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `String decoded from the buffer's contents.`]
 			]
@@ -141,7 +141,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 					[/* text */ 't', `the high byte of each resulting Unicode character.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current contents of the output stream, as a string.`]
 			]
@@ -233,7 +233,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 					[/* inline code block */ 'i', `bytes`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `String decoded from the buffer's contents.`]
 			]
@@ -249,8 +249,8 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
  output stream is discarded. The output stream can be used again,
  reusing the already allocated buffer space.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'write(byte[],int,int)', [
@@ -309,7 +309,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 					[/* text */ 't', `the byte to be written.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'writeTo(java.io.OutputStream)', [
@@ -351,7 +351,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 				[/* inline code block */ 'i', `IOException`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -383,4 +383,5 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

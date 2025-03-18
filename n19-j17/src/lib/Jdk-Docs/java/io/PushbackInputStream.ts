@@ -104,8 +104,8 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 				[/* inline code block */ 'i', `reset`],
 				[/* text */ 't', ` methods, which it does not.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `, since this class does not support the
@@ -132,7 +132,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
@@ -174,7 +174,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
  input stream and returns whatever value that method returns.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
@@ -313,7 +313,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
  available(), reset(), or skip() invocations will throw an IOException.
  Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -341,7 +341,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
                       the mark position becomes invalid.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
@@ -364,7 +364,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this method is invoked.`]
@@ -476,4 +476,5 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -22,8 +22,8 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'isNativeMethod()', [
 			[/* method description */
@@ -32,8 +32,8 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 				[/* text */ 't', ` if the method containing the execution point
  represented by this stack frame is a native method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the method containing the execution point
@@ -49,8 +49,8 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
  The code array gives the actual bytes of Java Virtual Machine code
  that implement the method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the index to the code array of the `],
 				[/* inline code block */ 'i', `Code`],
@@ -73,8 +73,8 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
  Specification`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the line number of the source line containing the execution
          point represented by this stack frame, or a negative number if
@@ -88,7 +88,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 				[/* text */ 't', ` for the method represented by
  this stack frame.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if this `],
@@ -112,8 +112,8 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 				[/* inline code block */ 'i', `StackTraceElement`],
 				[/* text */ 't', ` for this stack frame.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `StackTraceElement`],
 				[/* text */ 't', ` for this stack frame.`]
@@ -126,8 +126,8 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 				[/* text */ 't', `
  of the declaring class of the method represented by this stack frame.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the binary name of the declaring class of the method
          represented by this stack frame`]
@@ -148,8 +148,8 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
  In some systems, the name may refer to some source code unit
  other than a file, such as an entry in a source repository.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the file containing the execution point
          represented by this stack frame, or `],
@@ -162,8 +162,8 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 			[/* method description */
 				[/* text */ 't', `Gets the name of the method represented by this stack frame.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the name of the method represented by this stack frame`]
 			]
@@ -175,7 +175,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 				[/* text */ 't', ` representing the parameter types and
  the return type for the method represented by this stack frame.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if this `],
@@ -202,12 +202,13 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 				[/* text */ 't', `The Java Virtual Machine Specification`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the descriptor of the method represented by
          this stack frame`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

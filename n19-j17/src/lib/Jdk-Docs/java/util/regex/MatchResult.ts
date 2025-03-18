@@ -15,14 +15,14 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'end()', [
 			[/* method description */
 				[/* text */ 't', `Returns the offset after the last character matched.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If no match has yet been attempted,
@@ -90,8 +90,8 @@ DocsCollector.collect('java.util.regex.MatchResult', [
  returned by this method is guaranteed to be a valid group index for
  this matcher.  `]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The number of capturing groups in this matcher's pattern`]
 			]
@@ -100,7 +100,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 			[/* method description */
 				[/* text */ 't', `Returns the start index of the match.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If no match has yet been attempted,
@@ -192,7 +192,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
  successfully matches the empty string in the input.  `]
 				]]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If no match has yet been attempted,
@@ -293,4 +293,5 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

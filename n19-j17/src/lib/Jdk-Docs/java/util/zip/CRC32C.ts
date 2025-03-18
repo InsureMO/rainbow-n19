@@ -27,13 +27,13 @@ DocsCollector.collect('java.util.zip.CRC32C', [
  `]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new CRC32C object.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -42,8 +42,8 @@ DocsCollector.collect('java.util.zip.CRC32C', [
 			[/* method description */
 				[/* text */ 't', `Returns CRC-32C value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the current checksum value`]
 			]
@@ -52,8 +52,8 @@ DocsCollector.collect('java.util.zip.CRC32C', [
 			[/* method description */
 				[/* text */ 't', `Resets CRC-32C to initial value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'update(byte[],int,int)', [
@@ -98,7 +98,7 @@ DocsCollector.collect('java.util.zip.CRC32C', [
 					[/* text */ 't', `the byte to update the checksum with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'update(java.nio.ByteBuffer)', [
@@ -114,8 +114,9 @@ DocsCollector.collect('java.util.zip.CRC32C', [
 					[/* text */ 't', `the ByteBuffer to update the checksum with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

@@ -27,7 +27,7 @@ DocsCollector.collect('java.io.Writer', [
 				[/* text */ 't', `Creates a new character-stream writer whose critical sections will
  synchronize on the writer itself.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.Object)', [
@@ -50,7 +50,7 @@ DocsCollector.collect('java.io.Writer', [
  further write() or flush() invocations will cause an IOException to be
  thrown. Closing a previously closed stream has no effect.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -73,7 +73,7 @@ DocsCollector.collect('java.io.Writer', [
  passed to the operating system for writing; it does not guarantee that
  they are actually written to a physical device such as a disk drive.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -321,8 +321,8 @@ DocsCollector.collect('java.io.Writer', [
 					[/* text */ 't', ` is not specified.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Writer`],
@@ -418,4 +418,5 @@ DocsCollector.collect('java.io.Writer', [
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

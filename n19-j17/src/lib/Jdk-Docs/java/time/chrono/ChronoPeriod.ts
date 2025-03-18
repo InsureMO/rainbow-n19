@@ -22,8 +22,8 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
  The period is modeled as a directed amount of time, meaning that individual
  parts of the period may be negative.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
@@ -40,7 +40,7 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `the object to check, null returns false`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this is equal to the other period`]
 			]
@@ -49,8 +49,8 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 			[/* method description */
 				[/* text */ 't', `A hash code for this period.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
 			]
@@ -64,8 +64,8 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 				[/* block */ 'b', `
  The output will include the period amounts and chronology.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a string representation of this period, not null`]
 			]
@@ -83,8 +83,8 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', ` instances of the same chronology.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the chronology defining the period, not null`]
 			]
@@ -164,7 +164,7 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs`]
@@ -331,8 +331,8 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
  to access the entire state of the period.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a list containing the supported units, not null`]
 			]
@@ -378,8 +378,8 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 			[/* method description */
 				[/* text */ 't', `Checks if any of the supported units of this period are negative.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if any unit of this period is negative`]
 			]
@@ -388,8 +388,8 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 			[/* method description */
 				[/* text */ 't', `Checks if all the supported units of this period are zero.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if this period is zero-length`]
 			]
@@ -404,7 +404,7 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
  negated to "-2 years, 3 months and -4 days".
  No normalization is performed.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs, which only happens if
@@ -450,10 +450,11 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `the end date, exclusive, in any chronology, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the period between this date and the end date, not null`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

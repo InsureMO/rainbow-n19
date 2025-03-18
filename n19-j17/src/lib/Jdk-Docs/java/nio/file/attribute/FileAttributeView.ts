@@ -8,7 +8,8 @@ DocsCollector.collect('java.nio.file.attribute.FileAttributeView', [
  implemented by specific file attribute views that define methods to read
  and/or update the attributes of a file.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
-	/* methods */ UDF,
+	/* fields */,
+	/* constructors */,
+	/* methods */,
+	/* enum values */ UDF
 ]);
