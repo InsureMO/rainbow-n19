@@ -58,6 +58,15 @@ const FieldOption = (props: { field: Java.IField }) => {
 	</>;
 };
 
+const EnumValueOption = (props: { enumValue: Java.EnumValue }) => {
+	const {enumValue} = props;
+
+	return <>
+		<span data-icon="class-enum-value">ⓥ</span>
+		<span>{enumValue.name}</span>
+	</>;
+};
+
 const toConstructorOptionStr = (constructor: Java.IConstructor): string => {
 	return [
 		constructor.declaringClass.simpleName,
@@ -143,6 +152,9 @@ export const ShortcutsPart: FC<ShortcutsPartProps> = (props) => {
 	const toField = (field: Java.IField) => () => {
 		toSomePart(field.toShortString(), <FieldOption field={field}/>);
 	};
+	const toEnumValue = (value: Java.EnumValue) => () => {
+		toSomePart(value.name, <EnumValueOption enumValue={value}/>);
+	};
 	const toConstructor = (constructor: Java.IConstructor) => () => {
 		toSomePart(constructor.toShortString(), <ConstructorOption constructor={constructor}
 		                                                           label={toConstructorOptionStr(constructor)}/>);
@@ -183,12 +195,22 @@ export const ShortcutsPart: FC<ShortcutsPartProps> = (props) => {
 				</ShortcutsOption>);
 			});
 		}
+		// enum values documentation
+		if (details.class?.enumConstants != null && details.class.enumConstants.length > 0) {
+			details.class.enumConstants.sort((ev1, ev2) => {
+				return ev1.name.localeCompare(ev2.name, (void 0), {sensitivity: 'base'});
+			}).map((value, index) => {
+				options.push(<ShortcutsOption onClick={toEnumValue(value)} key={`${index}-${value.name}`}>
+					<EnumValueOption enumValue={value}/>
+				</ShortcutsOption>);
+			});
+		}
 		// constructors documentation
 		if (details.class?.declaredConstructors != null && details.class.declaredConstructors.length > 0) {
 			details.class.declaredConstructors.map(constructor => {
 				return {constructor, label: toConstructorOptionStr(constructor)};
-			}).sort((m1, m2) => {
-				return m1.label.localeCompare(m2.label, (void 0), {sensitivity: 'base'});
+			}).sort((c1, c2) => {
+				return c1.label.localeCompare(c2.label, (void 0), {sensitivity: 'base'});
 			}).map(({constructor, label}, index) => {
 				options.push(<ShortcutsOption onClick={toConstructor(constructor)}
 				                              key={`${index}-${constructor.toShortString()}`}>

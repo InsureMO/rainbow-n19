@@ -97,10 +97,19 @@ const Type: FC<TypeProps<Java.IType>> = (props) => {
 	}
 };
 
-export interface MemberTitleProps<M extends Java.IField | Java.IMethod | Java.IConstructor> {
+export interface MemberTitleProps<M extends Java.IField | Java.IMethod | Java.IConstructor | Java.EnumValue> {
 	details: ClassDocDetails;
 	member: M;
 }
+
+export const EnumValueTitle: FC<MemberTitleProps<Java.EnumValue>> = (props) => {
+	const {member: enumValue} = props;
+
+	return <>
+		<a id={enumValue.name}/>
+		{enumValue.name}
+	</>;
+};
 
 export const FieldTitle: FC<MemberTitleProps<Java.IField>> = (props) => {
 	const {details, member: field} = props;

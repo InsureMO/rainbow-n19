@@ -114,23 +114,27 @@ export const ShortcutsOption = styled.span.attrs({
     }
 
     > span[data-icon=class-extends] {
-        color: rgb(163, 136, 238);
+        color: var(--groovy-editor-help-class-extends-icon-color, rgb(163, 136, 238));
     }
 
     > span[data-icon=class-doc] {
-        color: rgb(76, 142, 79);
+        color: var(--groovy-editor-help-class-doc-icon-color, rgb(76, 142, 79));
     }
 
     > span[data-icon=class-field] {
-        color: rgb(218, 125, 61);
+        color: var(--groovy-editor-help-class-field-icon-color, rgb(218, 125, 61));
+    }
+
+    > span[data-icon=class-enum-value] {
+        color: var(--groovy-editor-help-class-enum-value-icon-color, rgb(178, 40, 209));
     }
 
     > span[data-icon=class-constructor] {
-        color: rgb(205, 82, 90);
+        color: var(--groovy-editor-help-class-constructor-icon-color, rgb(205, 82, 90));
     }
 
     > span[data-icon=class-method] {
-        color: rgb(67, 118, 232);
+        color: var(--groovy-editor-help-class-method-icon-color, rgb(67, 118, 232));
     }
 
     > span:last-child {

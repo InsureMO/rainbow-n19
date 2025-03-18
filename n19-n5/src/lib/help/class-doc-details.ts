@@ -70,6 +70,10 @@ export class ClassDocDetails {
 		return this._doc?.fields?.find(f => f.key === field.name);
 	}
 
+	findEnumValueDoc(field: Java.EnumValue): Optional<Java.ClassEnumValueDoc> {
+		return this._doc?.enumValues?.find(f => f.key === field.name);
+	}
+
 	private transformClassNameForExecutableKey(clazz: Java.IClass): string {
 		if (clazz.isPrimitive) {
 			return clazz.simpleName;

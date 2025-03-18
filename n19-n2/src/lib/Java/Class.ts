@@ -132,7 +132,8 @@ export class Class implements IClass {
 			.setDeclaredAnnotations(more?.declaredAnnotations?.(this))
 			.setDeclaredConstructors(more?.declaredConstructors?.(this))
 			.setDeclaredMethods(more?.declaredMethods?.(this))
-			.setDeclaredFields(more?.declaredFields?.(this));
+			.setDeclaredFields(more?.declaredFields?.(this))
+			.setEnumConstants(more?.enumValues);
 	}
 
 	get classLoader(): IClassLoader {

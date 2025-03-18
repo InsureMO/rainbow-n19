@@ -3,6 +3,7 @@ import React from 'react';
 import {CodeEditorClassDocs} from '../types';
 import {ClassDocDetails} from './class-doc-details';
 import {ClassPartDoc} from './class-part';
+import {EnumValuesPartDoc} from './enum-values-part';
 import {ConstructorsPartDoc, MethodsPartDoc} from './executables-part';
 import {ExtendsPartDoc} from './extends-part';
 import {FieldsPartDoc} from './fields-part';
@@ -27,6 +28,7 @@ export const HelpClassDoc = (props: HelpClassDocProps) => {
 	return <>
 		<ExtendsPartDoc details={details}/>
 		<ClassPartDoc details={details}/>
+		<EnumValuesPartDoc details={details}/>
 		<FieldsPartDoc details={details}/>
 		<ConstructorsPartDoc details={details}/>
 		<MethodsPartDoc details={details}/>
