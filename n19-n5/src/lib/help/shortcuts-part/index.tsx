@@ -1,5 +1,5 @@
 import {Java} from '@rainbow-n19/n2';
-import React, {FC, Fragment, ReactNode, useEffect, useRef, useState} from 'react';
+import React, {FC, ReactNode, useEffect, useRef, useState} from 'react';
 import {ClassDocDetails} from '../class-doc-details';
 import {ShortcutsOption, ShortcutsOptions, ShortcutsPartContainer, ShortcutsPartCurrent} from './widgets';
 
@@ -58,44 +58,44 @@ const FieldOption = (props: { field: Java.IField }) => {
 	</>;
 };
 
-const ConstructorOption = (props: { constructor: Java.IConstructor }) => {
-	const {constructor} = props;
+const toConstructorOptionStr = (constructor: Java.IConstructor): string => {
+	return [
+		constructor.declaringClass.simpleName,
+		'(',
+		(constructor.parameters ?? []).map(parameter => {
+			return parameter.simpleGenericTypeName + (parameter.isVarArgs ? '...' : '');
+		}).join(', '),
+		')'
+	].join('');
+};
+
+const ConstructorOption = (props: { constructor: Java.IConstructor, label: string }) => {
+	const {label} = props;
 
 	return <>
 		<span data-icon="class-constructor">ⓒ</span>
-		<span>
-			{constructor.declaringClass.simpleName}
-			(
-			{(constructor.parameters ?? []).map((parameter, index) => {
-				return <Fragment key={parameter.name}>
-					{index !== 0 ? ', ' : (void 0)}
-					{parameter.simpleGenericTypeName}
-					{parameter.isVarArgs ? '...' : (void 0)}
-				</Fragment>;
-			})}
-			)
-		</span>
+		<span>{label}</span>
 	</>;
 };
 
-const MethodOption = (props: { method: Java.IMethod }) => {
-	const {method} = props;
+const toMethodOptionStr = (method: Java.IMethod): string => {
+	return [
+		method.name,
+		'(',
+		(method.parameters ?? []).map(parameter => {
+			return parameter.simpleGenericTypeName + (parameter.isVarArgs ? '...' : '');
+		}).join(', '),
+		') ',
+		method.returned.simpleGenericTypeName
+	].join('');
+};
+
+const MethodOption = (props: { method: Java.IMethod, label: string }) => {
+	const {label} = props;
 
 	return <>
 		<span data-icon="class-method">ⓜ</span>
-		<span>
-			{method.name}
-			(
-			{(method.parameters ?? []).map((parameter, index) => {
-				return <Fragment key={parameter.name}>
-					{index !== 0 ? ', ' : (void 0)}
-					{parameter.simpleGenericTypeName}
-					{parameter.isVarArgs ? '...' : (void 0)}
-				</Fragment>;
-			})}
-			{') '}
-			{method.returned.simpleGenericTypeName}
-		</span>
+		<span>{label}</span>
 	</>;
 };
 
@@ -144,10 +144,11 @@ export const ShortcutsPart: FC<ShortcutsPartProps> = (props) => {
 		toSomePart(field.toShortString(), <FieldOption field={field}/>);
 	};
 	const toConstructor = (constructor: Java.IConstructor) => () => {
-		toSomePart(constructor.toShortString(), <ConstructorOption constructor={constructor}/>);
+		toSomePart(constructor.toShortString(), <ConstructorOption constructor={constructor}
+		                                                           label={toConstructorOptionStr(constructor)}/>);
 	};
 	const toMethod = (method: Java.IMethod) => () => {
-		toSomePart(method.toShortString(), <MethodOption method={method}/>);
+		toSomePart(method.toShortString(), <MethodOption method={method} label={toMethodOptionStr(method)}/>);
 	};
 	const onShortcutsClicked = () => {
 		if (state.optionsState === ShortcutsOptionsState.SHOW) {
@@ -185,25 +186,25 @@ export const ShortcutsPart: FC<ShortcutsPartProps> = (props) => {
 		// constructors documentation
 		if (details.class?.declaredConstructors != null && details.class.declaredConstructors.length > 0) {
 			details.class.declaredConstructors.map(constructor => {
-				return {constructor, key: constructor.toGenericString()};
+				return {constructor, label: toConstructorOptionStr(constructor)};
 			}).sort((m1, m2) => {
-				return m1.key.localeCompare(m2.key, (void 0), {sensitivity: 'base'});
-			}).map(({constructor}, index) => {
+				return m1.label.localeCompare(m2.label, (void 0), {sensitivity: 'base'});
+			}).map(({constructor, label}, index) => {
 				options.push(<ShortcutsOption onClick={toConstructor(constructor)}
 				                              key={`${index}-${constructor.toShortString()}`}>
-					<ConstructorOption constructor={constructor}/>
+					<ConstructorOption constructor={constructor} label={label}/>
 				</ShortcutsOption>);
 			});
 		}
 		// methods documentation
 		if (details.class?.declaredMethods != null && details.class.declaredMethods.length > 0) {
 			details.class.declaredMethods.map(method => {
-				return {method, key: method.toGenericString()};
+				return {method, label: toMethodOptionStr(method)};
 			}).sort((m1, m2) => {
-				return m1.key.localeCompare(m2.key, (void 0), {sensitivity: 'base'});
-			}).map(({method}, index) => {
-				options.push(<ShortcutsOption onClick={toMethod(method)} key={`${index}-${method.toShortString()}`}>
-					<MethodOption method={method}/>
+				return m1.label.localeCompare(m2.label, (void 0), {sensitivity: 'base'});
+			}).map(({method, label}, index) => {
+				options.push(<ShortcutsOption onClick={toMethod(method)} key={`${index}-${label}`}>
+					<MethodOption method={method} label={label}/>
 				</ShortcutsOption>);
 			});
 		}
