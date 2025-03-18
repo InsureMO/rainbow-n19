@@ -1095,7 +1095,7 @@ private class ClassGenerator(
 			?.joinToString(",\n", "${indent}[${comments}\n", "\n${indent}],") { node ->
 				generateDocSegment(node, level + 1, false)
 			}
-			?: "${indent}${comments} UDF,"
+			?: "${indent}${comments},"
 	}
 
 	private fun generateClassDoc(classDescriptionNode: Element): String {
@@ -1122,14 +1122,14 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
-	private fun generateClassFieldDocs(fieldDetailNode: Element?): String {
+	private fun generateFieldDocs(fieldDetailNode: Element?): String {
 		if (fieldDetailNode == null) {
-			return "\t/* fields */ UDF,"
+			return "\t/* fields */,"
 		}
 
 		val fields = findClassFields()
 		if (fields.isEmpty()) {
-			return "\t/* fields */ UDF,"
+			return "\t/* fields */,"
 		}
 
 		return listOf(
@@ -1143,16 +1143,16 @@ private class ClassGenerator(
 	private fun generateParameterDocs(node: Element?, level: Int): String {
 		val indent = "\t".repeat(level)
 		if (node == null) {
-			return "${indent}/* parameters */ UDF,"
+			return "${indent}/* parameters */,"
 		}
 		val leadNode =
 			node.children().firstOrNull { child -> child.nodeName() == "dt" && child.text() == "Parameters:" }
 		if (leadNode == null) {
-			return "${indent}/* parameters */ UDF,"
+			return "${indent}/* parameters */,"
 		}
 		val parameterNodes = leadNode.nextElementSiblings().takeWhile { sibling -> sibling.nodeName() == "dd" }
 		if (parameterNodes.isEmpty()) {
-			return "${indent}/* parameters */ UDF,"
+			return "${indent}/* parameters */,"
 		}
 
 		val indent1 = "\t".repeat(level + 1)
@@ -1185,19 +1185,20 @@ private class ClassGenerator(
 
 	@Suppress("SameParameterValue")
 	private fun generateThrownDocs(node: Element?, level: Int, lastElement: Boolean): String {
+		val lastUndefined = if (lastElement) " UDF" else ""
 		val lastComma = if (lastElement) "" else ","
 		val indent = "\t".repeat(level)
 		if (node == null) {
-			return "${indent}/* throws */ UDF${lastComma}"
+			return "${indent}/* throws */${lastUndefined}${lastComma}"
 		}
 		val leadNode =
 			node.children().firstOrNull { child -> child.nodeName() == "dt" && child.text() == "Throws:" }
 		if (leadNode == null) {
-			return "${indent}/* throws */ UDF${lastComma}"
+			return "${indent}/* throws */${lastUndefined}${lastComma}"
 		}
 		val parameterNodes = leadNode.nextElementSiblings().takeWhile { sibling -> sibling.nodeName() == "dd" }
 		if (parameterNodes.isEmpty()) {
-			return "${indent}/* throws */ UDF${lastComma}"
+			return "${indent}/* throws */${lastUndefined}${lastComma}"
 		}
 
 		val indent1 = "\t".repeat(level + 1)
@@ -1263,14 +1264,14 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
-	private fun generateClassConstructorDocs(constructorDetailNode: Element?): String {
+	private fun generateConstructorDocs(constructorDetailNode: Element?): String {
 		if (constructorDetailNode == null) {
-			return "\t/* constructors */ UDF,"
+			return "\t/* constructors */,"
 		}
 
 		val constructors = findClassConstructors()
 		if (constructors.isEmpty()) {
-			return "\t/* constructors */ UDF,"
+			return "\t/* constructors */,"
 		}
 
 		return listOf(
@@ -1339,14 +1340,14 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
-	private fun generateClassMethodDocs(methodDetailNode: Element?): String {
+	private fun generateMethodDocs(methodDetailNode: Element?): String {
 		if (methodDetailNode == null) {
-			return "\t/* methods */ UDF,"
+			return "\t/* methods */,"
 		}
 
 		val methods = findClassMethods()
 		if (methods.isEmpty()) {
-			return "\t/* methods */ UDF,"
+			return "\t/* methods */,"
 		}
 
 		return listOf(
@@ -1356,17 +1357,53 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
+	private fun generateEnumValueDoc(value: Enum<*>, enumValueDetailNode: Element): String {
+		val name = value.name
+		val fieldNode = enumValueDetailNode.getElementById(name)
+		if (fieldNode == null) {
+			return "\t\t[/* enum value */ '${name}', UDF]"
+		}
+
+		val childNodes = fieldNode.children()
+		val descNode = childNodes.firstOrNull { child -> child.attr("class") == "block" }
+
+		return listOf(
+			"\t\t[/* enum value */ '${name}', [",
+			generateDescDoc(descNode, 3, "/* enum value description */"),
+			"\t\t]]"
+		).joinToString("\n")
+	}
+
+	private fun generateEnumValueDocs(enumValueDetailNode: Element?): String {
+		if (enumValueDetailNode == null) {
+			return "\t/* enum values */ UDF"
+		}
+
+		val values = clazz.enumConstants
+		if (values == null || values.isEmpty()) {
+			return "\t/* enum values */ UDF"
+		}
+
+		return listOf(
+			"\t[/* enum values */",
+			values.joinToString(",\n") { generateEnumValueDoc(it as Enum<*>, enumValueDetailNode) },
+			"\t],"
+		).joinToString("\n")
+	}
+
 	fun generateDoc(packageLevel: Int): String {
 		return htmlDocument?.let { doc ->
 			val classDescriptionNode = doc.getElementById("class-description")
 			val classDoc = generateClassDoc(classDescriptionNode!!)
-			val fieldDocs = generateClassFieldDocs(doc.getElementById("field-detail"))
-			val constructorDocs = generateClassConstructorDocs(doc.getElementById("constructor-detail"))
-			val methodDocs = generateClassMethodDocs(doc.getElementById("method-detail"))
+			val fieldDocs = generateFieldDocs(doc.getElementById("field-detail"))
+			val constructorDocs = generateConstructorDocs(doc.getElementById("constructor-detail"))
+			val methodDocs = generateMethodDocs(doc.getElementById("method-detail"))
+			val enumValueDocs = generateEnumValueDocs(doc.getElementById("enum-constant-detail"))
 			val imports = if (classDoc.contains("UDF")
 				|| fieldDocs.contains("UDF")
 				|| constructorDocs.contains("UDF")
 				|| methodDocs.contains("UDF")
+				|| enumValueDocs.contains("UDF")
 			) {
 				"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';\n" +
 						"import {DocsCollector} from '${"../".repeat(packageLevel)}DocsCollector';"
@@ -1381,6 +1418,7 @@ private class ClassGenerator(
 				fieldDocs,
 				constructorDocs,
 				methodDocs,
+				enumValueDocs,
 				"]);",
 				""
 			).joinToString("\n")
