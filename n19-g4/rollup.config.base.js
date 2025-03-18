@@ -10,20 +10,26 @@ export const buildConfig = (lint) => {
 	// 	}
 	// });
 
-	return [{
-		input: './src/index.ts',
-		output: [
-			{format: 'es', dir: '.'},
-			{format: 'cjs', file: './index.cjs'}
-		],
-		plugins: [
-			lint ? eslint({exclude: ['../node_modules/**', 'node_modules/**']}) : null,
-			// lint ? tslint({exclude: ['../node_modules/**', 'node_modules/**']}) : null,
-			typescript({clean: true}),
-			babel({babelHelpers: 'bundled'})
-		].filter(x => x != null),
-		external(id) {
-			return ['@rainbow-n19/n2'].includes(id);
+	return [
+		['./src/index.ts', './index.cjs'],
+		['./src/classes.ts', './classes.cjs'],
+		['./src/docs.ts', './docs.cjs']
+	].map(([input, cjs]) => {
+		return {
+			input,
+			output: [
+				{format: 'es', dir: '.'},
+				{format: 'cjs', file: cjs}
+			],
+			plugins: [
+				lint ? eslint({exclude: ['../node_modules/**', 'node_modules/**']}) : null,
+				// lint ? tslint({exclude: ['../node_modules/**', 'node_modules/**']}) : null,
+				typescript({clean: true}),
+				babel({babelHelpers: 'bundled'})
+			].filter(x => x != null),
+			external(id) {
+				return ['@rainbow-n19/n2'].includes(id);
+			}
 		}
-	}];
+	});
 };
