@@ -74,7 +74,7 @@ export abstract class AbstractClassElementDoc {
 }
 
 export type ClassFieldDocKey = string;
-export type ClassFieldDocContents = [...ClassElementDocContents]
+export type ClassFieldDocContents = [...ClassElementDocContents];
 
 export class ClassFieldDoc extends AbstractClassElementDoc {
 	private readonly _key: ClassFieldDocKey;
@@ -85,6 +85,22 @@ export class ClassFieldDoc extends AbstractClassElementDoc {
 	}
 
 	get key(): ClassFieldDocKey {
+		return this._key;
+	}
+}
+
+export type ClassEnumValueDocKey = string;
+export type ClassEnumValueDocContents = [...ClassElementDocContents];
+
+export class ClassEnumValueDoc extends AbstractClassElementDoc {
+	private readonly _key: ClassEnumValueDocKey;
+
+	constructor(key: ClassEnumValueDocKey, contents?: ClassEnumValueDocContents) {
+		super(contents);
+		this._key = key;
+	}
+
+	get key(): ClassEnumValueDocKey {
 		return this._key;
 	}
 }
@@ -206,7 +222,9 @@ export type ClassDocContents = [
 	// constructors
 	Optional<Array<[ClassConstructorDocKey, ClassConstructorDocContents]>>,
 	// methods
-	Optional<Array<[ClassMethodDocKey, ClassMethodDocContents]>>
+	Optional<Array<[ClassMethodDocKey, ClassMethodDocContents]>>,
+	// enum values
+	Optional<Array<[ClassEnumValueDocKey, ClassEnumValueDocContents]>>
 ]
 
 export class ClassDoc extends AbstractClassElementDoc {
@@ -214,6 +232,7 @@ export class ClassDoc extends AbstractClassElementDoc {
 	private readonly _fields: Optional<Array<ClassFieldDoc>>;
 	private readonly _constructors: Optional<Array<ClassConstructorDoc>>;
 	private readonly _methods: Optional<Array<ClassMethodDoc>>;
+	private readonly _enumValues: Optional<Array<ClassEnumValueDoc>>;
 
 	constructor(name: ClassName, contents?: ClassDocContents) {
 		super(contents as unknown as ClassElementDocContents);
@@ -226,6 +245,9 @@ export class ClassDoc extends AbstractClassElementDoc {
 		});
 		this._methods = contents?.[3]?.map(([key, contents]) => {
 			return new ClassMethodDoc(key, contents);
+		});
+		this._enumValues = contents?.[4]?.map(([key, contents]) => {
+			return new ClassEnumValueDoc(key, contents);
 		});
 	}
 
@@ -243,6 +265,10 @@ export class ClassDoc extends AbstractClassElementDoc {
 
 	get methods(): Optional<Array<ClassMethodDoc>> {
 		return this._methods;
+	}
+
+	get enumValues(): Optional<Array<ClassEnumValueDoc>> {
+		return this._enumValues;
 	}
 }
 
