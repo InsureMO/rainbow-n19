@@ -105,6 +105,15 @@ const createClassesGroup = (group: PackageGroup) => (groups: { [key: string]: It
 	return groups;
 };
 
+export const getClassesByDocs = (docs: Array<Java.ClassDoc>, classloader: Java.IClassLoader, group: PackageGroup): Array<ItemGroup> => {
+	const groups = docs
+		.map(cls => classloader.findClass(cls.name))
+		.filter(cls => cls != null)
+		.filter(cls => !cls.isArray && !cls.isPrimitive)
+		.reduce(createClassesGroup(group), {} as { [key: string]: ItemGroup });
+	return sortGroups(Object.values(groups).map(group => ({...group, expanded: true})));
+};
+
 export const getAllClasses = (classloader: Java.IClassLoader, group: PackageGroup): Array<ItemGroup> => {
 	const groups = classloader.allClasses()
 		.filter(cls => !cls.isArray && !cls.isPrimitive)

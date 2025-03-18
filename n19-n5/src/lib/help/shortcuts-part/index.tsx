@@ -214,6 +214,7 @@ export const ShortcutsPart: FC<ShortcutsPartProps> = (props) => {
 
 	return <ShortcutsPartContainer data-state={state.optionsState} ref={ref}>
 		<ShortcutsPartCurrent onClick={onShortcutsClicked}>
+			<span>📍</span>
 			<ShortcutsOption>
 				{state.currentOption}
 			</ShortcutsOption>

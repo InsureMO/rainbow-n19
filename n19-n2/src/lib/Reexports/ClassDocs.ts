@@ -30,6 +30,13 @@ export abstract class AbstractMutableClassDocs<P extends IClassDocs> extends Abs
 	removeDoc(name: ClassName): Optional<ClassDoc> {
 		return super.removeDoc(name);
 	}
+
+	filterBy(text: string): Optional<Array<ClassDoc>> {
+		return [
+			...super.filterBy(text),
+			...this.parent.filterBy(text)
+		];
+	}
 }
 
 export class ProjectClassDocs extends AbstractMutableClassDocs<ImmutableClassDocs> {

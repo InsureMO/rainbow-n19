@@ -3,7 +3,14 @@ import React, {useEffect, useReducer, useRef, useState} from 'react';
 import {CodeEditorClassDocs} from '../../types';
 import {useHelpDocsContext} from '../common';
 import {HelpStateMode, PackageGroup} from '../types';
-import {createPackageGroup, getAllClasses, getAllClassesInPackage, getAllPackages, ItemGroup} from './utils';
+import {
+	createPackageGroup,
+	getAllClasses,
+	getAllClassesInPackage,
+	getAllPackages,
+	getClassesByDocs,
+	ItemGroup
+} from './utils';
 import {
 	HelpContentItem,
 	HelpContentItemGroup,
@@ -15,6 +22,7 @@ import {
 export interface HelpItemListProps {
 	mode: HelpStateMode;
 	packageName?: Java.PackageName;
+	docs?: Array<Java.ClassDoc>;
 	classDocs: CodeEditorClassDocs;
 	group?: PackageGroup;
 }
@@ -25,21 +33,25 @@ interface HelpItemListState {
 }
 
 const buildItems = (
-	mode: HelpStateMode, packageName: Java.PackageName, classDocs: CodeEditorClassDocs, group: PackageGroup
+	mode: HelpStateMode,
+	packageName: Java.PackageName, classes: Array<Java.ClassDoc> | null | undefined,
+	classDocs: CodeEditorClassDocs, group: PackageGroup
 ): Array<ItemGroup> => {
 	if (mode === HelpStateMode.PACKAGES) {
 		return getAllPackages(classDocs.classLoader().parent(), group);
 	} else if (mode === HelpStateMode.PACKAGE) {
 		return getAllClassesInPackage(classDocs.classLoader().findPackage(packageName), classDocs.classLoader().parent());
-	} else if (mode === HelpStateMode.CLASSES) {
+	} else if (mode === HelpStateMode.CLASSES && classes == null) {
 		return getAllClasses(classDocs.classLoader().parent(), group);
+	} else if (mode === HelpStateMode.CLASSES && classes != null && classes.length !== 0) {
+		return getClassesByDocs(classes, classDocs.classLoader(), group);
 	} else {
 		return [];
 	}
 };
 
 export const HelpItemList = (props: HelpItemListProps) => {
-	const {mode, packageName, classDocs, group: givenGroup} = props;
+	const {mode, packageName, docs, classDocs, group: givenGroup} = props;
 
 	const {switchTo} = useHelpDocsContext();
 	const firstGroupRef = useRef<HTMLDivElement>(null);
@@ -51,9 +63,9 @@ export const HelpItemList = (props: HelpItemListProps) => {
 	useEffect(() => {
 		setState(state => {
 			const group = createPackageGroup(givenGroup);
-			return {items: buildItems(mode, packageName, classDocs, state.group), group};
+			return {items: buildItems(mode, packageName, docs, classDocs, state.group), group};
 		});
-	}, [mode, packageName, classDocs, givenGroup]);
+	}, [mode, packageName, docs, classDocs, givenGroup]);
 	useEffect(() => {
 		if (firstGroupRef.current == null) {
 			return;
@@ -76,9 +88,13 @@ export const HelpItemList = (props: HelpItemListProps) => {
 			return <HelpContentNoItemAvailable>
 				No packages available.
 			</HelpContentNoItemAvailable>;
-		} else if (mode === HelpStateMode.CLASSES) {
+		} else if (mode === HelpStateMode.CLASSES && docs == null) {
 			return <HelpContentNoItemAvailable>
 				No classes available.
+			</HelpContentNoItemAvailable>;
+		} else if (mode === HelpStateMode.CLASSES && docs != null) {
+			return <HelpContentNoItemAvailable>
+				No items found.
 			</HelpContentNoItemAvailable>;
 		} else {
 			return <HelpContentNoItemAvailable>

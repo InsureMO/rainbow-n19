@@ -1,19 +1,12 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {FC, ReactNode, useEffect, useRef, useState} from 'react';
 import {CodeEditorClassDocs, GroovyEditorPackageGroup} from '../types';
+import {HelpBar} from './bar';
 import {HelpClassDoc} from './class-doc';
 import {HelpDocsContextProvider, linkToAnchor, useHelpDocsContext} from './common';
 import {HelpItemList} from './item-list';
 import {HelpStateMode} from './types';
-import {
-	HelpClose,
-	HelpContainer,
-	HelpContent,
-	HelpContentTitle,
-	HelpSearchInput,
-	HelpShortcut,
-	HelpShortcuts
-} from './widgets';
+import {HelpContainer, HelpContent, HelpContentTitle} from './widgets';
 
 interface ClassTitleProps {
 	classDocs: CodeEditorClassDocs;
@@ -130,9 +123,13 @@ export interface HelpProps {
 
 interface HelpState {
 	mode: HelpStateMode;
+	/** available only when mode is PACKAGE */
 	packageName?: Java.PackageName;
+	/** available only when mode is CLASSES */
+	docs?: Array<Java.ClassDoc>;
+	/** available only when mode is CLASS */
 	className?: Java.ClassName;
-	/** available only class name is given */
+	/** available only when class name is given */
 	anchor?: string;
 }
 
@@ -193,34 +190,26 @@ export const HelpDocs = (props: HelpProps) => {
 		}
 	});
 
-	const onPackagesClicked = () => {
+	const toPackages = () => {
 		if (state.mode === HelpStateMode.PACKAGES) {
 			return;
 		}
 		// get all packages from parent class loader
 		setState({mode: HelpStateMode.PACKAGES});
 	};
-	const onClassesClicked = () => {
-		if (state.mode === HelpStateMode.CLASSES) {
+	const toClasses = (docs: Array<Java.ClassDoc>) => {
+		if (state.mode === HelpStateMode.CLASSES && state.docs === docs) {
 			return;
 		}
-		setState({mode: HelpStateMode.CLASSES});
-	};
-	const onCloseClicked = () => {
-		classDocs?.toggle();
+		if (docs != null) {
+			setState({mode: HelpStateMode.CLASSES, docs});
+		} else {
+			setState({mode: HelpStateMode.CLASSES});
+		}
 	};
 
 	return <HelpContainer data-visible={opened}>
-		<HelpSearchInput placeholder="Press Enter to start searching…"/>
-		<HelpShortcuts>
-			<HelpShortcut onClick={onPackagesClicked} data-active={state.mode === HelpStateMode.PACKAGES}>
-				Packages
-			</HelpShortcut>
-			<HelpShortcut onClick={onClassesClicked} data-active={state.mode === HelpStateMode.CLASSES}>
-				Classes
-			</HelpShortcut>
-		</HelpShortcuts>
-		<HelpClose onClick={onCloseClicked}>×</HelpClose>
+		<HelpBar mode={state.mode} toPackages={toPackages} toClasses={toClasses} classDocs={classDocs}/>
 		<HelpContent ref={contentRef}>
 			{state.mode === HelpStateMode.PACKAGES
 				? <HelpContentTitle>All Packages</HelpContentTitle>
@@ -234,8 +223,8 @@ export const HelpDocs = (props: HelpProps) => {
 			{state.mode === HelpStateMode.CLASS
 				? <HelpContentTitle><ClassTitle classDocs={classDocs} className={state.className}/></HelpContentTitle>
 				: null}
-			<HelpItemList mode={state.mode} packageName={state.packageName} classDocs={classDocs}
-			              group={packageGroup}/>
+			<HelpItemList mode={state.mode} packageName={state.packageName} docs={state.docs}
+			              classDocs={classDocs} group={packageGroup}/>
 			<HelpClassDoc mode={state.mode} className={state.className} classDocs={classDocs}/>
 		</HelpContent>
 	</HelpContainer>;

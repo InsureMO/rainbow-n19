@@ -35,10 +35,26 @@ export const ShortcutsPartCurrent = styled.div.attrs({
     line-height: calc(var(--groovy-editor-help-class-shortcuts-height, 32px) * 7 / 8);
     font-size: var(--groovy-editor-help-class-shortcuts-font-size, 14px);
     cursor: pointer;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+        background-color: var(--groovy-editor-help-class-shortcuts-hover-color, #D6E2FC);
+    }
+
+    > span:first-child {
+        display: inline-flex;
+        position: relative;
+        align-items: center;
+        padding: var(--groovy-editor-help-class-shortcuts-pin-padding, 0 0 0 10px);
+    }
 
     > span[data-w=groovy-editor-help-class-shortcuts-option] {
         height: var(--groovy-editor-help-class-shortcuts-height, 32px);
         line-height: calc(var(--groovy-editor-help-class-shortcuts-height, 32px) * 7 / 8);
+
+        &:hover {
+            background-color: unset;
+        }
     }
 `;
 // noinspection CssUnresolvedCustomProperty
@@ -94,7 +110,7 @@ export const ShortcutsOption = styled.span.attrs({
     transition: all 300ms ease-in-out;
 
     &:hover {
-        background-color: var(--groovy-editor-help-background-color, #D6E2FC);
+        background-color: var(--groovy-editor-help-class-shortcuts-hover-color, #D6E2FC);
     }
 
     > span[data-icon=class-extends] {

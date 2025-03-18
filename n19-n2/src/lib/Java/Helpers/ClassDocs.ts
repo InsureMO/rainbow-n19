@@ -249,27 +249,44 @@ export class ClassDoc extends AbstractClassElementDoc {
 export interface IClassDocs {
 	addDoc(name: ClassName, contents?: ClassDocContents): void;
 	findDoc(name: ClassName): Optional<ClassDoc>;
+	filterBy(text: string): Optional<Array<ClassDoc>>;
 }
 
 export abstract class AbstractClassDocs implements IClassDocs {
 	private readonly _docs: Map<ClassName, ClassDoc> = new Map();
+	private readonly _docRefs: Map<ClassName, string> = new Map();
 
 	protected constructor() {
 	}
 
 	addDoc(name: ClassName, contents?: ClassDocContents): void {
 		this._docs.set(name, new ClassDoc(name, contents));
+		this._docRefs.set(name, name.toLowerCase());
 	}
 
 	protected removeDoc(name: ClassName): Optional<ClassDoc> {
 		const existing = this._docs.get(name);
 		if (existing != null) {
 			this._docs.delete(name);
+			this._docRefs.delete(name.toLowerCase());
 		}
 		return existing;
 	}
 
 	findDoc(name: ClassName): Optional<ClassDoc> {
 		return this._docs.get(name);
+	}
+
+	filterBy(text: string): Optional<Array<ClassDoc>> {
+		if (text == null || text.trim().length === 0) {
+			return [];
+		}
+		const parts = text.split('.')
+			.map(part => part.trim())
+			.filter(part => part.length !== 0)
+			.map(part => part.toLowerCase());
+		return [...this._docRefs.entries()].filter(([, lowerClassName]) => {
+			return parts.every(part => lowerClassName.includes(part));
+		}).map(([className]) => this._docs.get(className));
 	}
 }
