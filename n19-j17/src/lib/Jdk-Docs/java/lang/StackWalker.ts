@@ -33,7 +33,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`, `stack walking options`],
+			[/* reference */ 'r', `java.lang.StackWalker.Option`, `stack walking options`],
 			[/* text */ 't', ` of a
  `],
 			[/* inline code block */ 'i', `StackWalker`],
@@ -245,7 +245,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 			[/* parameters */
 				[/* parameter */ 'option', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`, `stack walking option`]
+					[/* reference */ 'r', `java.lang.StackWalker.Option`, `stack walking option`]
 				]]
 			],
 			[/* throws */
@@ -302,7 +302,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 			[/* parameters */
 				[/* parameter */ 'options', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`, `stack walking option`]
+					[/* reference */ 'r', `java.lang.StackWalker.Option`, `stack walking option`]
 				]]
 			],
 			[/* throws */
@@ -373,7 +373,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 			[/* parameters */
 				[/* parameter */ 'options', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`, `stack walking options`]
+					[/* reference */ 'r', `java.lang.StackWalker.Option`, `stack walking options`]
 				]],
 				[/* parameter */ 'estimateDepth', [/* parameter description */
 					[/* text */ 't', `Estimate number of stack frames to be traversed.`]

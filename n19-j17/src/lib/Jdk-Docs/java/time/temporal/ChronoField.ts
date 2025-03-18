@@ -68,7 +68,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
 						[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.
  If the field is not supported an `],
 						[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -140,7 +140,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
 						[/* text */ 't', `
  Implementations should determine whether they are supported using the fields
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.`]
 					]]
 				]]
@@ -344,7 +344,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
 						[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.
  If the field is not supported an `],
 						[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -429,7 +429,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
 						[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.
  If the field is not supported an `],
 						[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -974,7 +974,7 @@ the order they are declared.`]
  This represents the standard concept of the day of the week.
  In the default ISO calendar system, this has values from Monday (1) to Sunday (7).
  The `],
-					[/* reference */ 'r', `enum class in java.time.DayOfWeek`, `DayOfWeek`],
+					[/* reference */ 'r', `java.time.DayOfWeek`, `DayOfWeek`],
 					[/* text */ 't', ` class can be used to interpret the result.
  `]
 				]],

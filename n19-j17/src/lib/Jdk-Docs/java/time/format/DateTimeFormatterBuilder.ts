@@ -523,7 +523,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `enum class in java.time.format.ResolverStyle`, `resolver style`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle`, `resolver style`],
 					[/* text */ 't', ` has no effect on instant parsing.
  The end-of-day time of '24:00' is handled as midnight at the start of the following day.
  The leap-second time of '23:59:59' is handled to some degree, see
@@ -600,7 +600,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `enum class in java.time.format.ResolverStyle`, `resolver style`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle`, `resolver style`],
 					[/* text */ 't', ` has no effect on instant parsing.
  The end-of-day time of '24:00' is handled as midnight at the start of the following day.
  The leap-second time of '23:59:60' is handled to some degree, see
@@ -773,7 +773,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  This appends a localized zone offset to the builder, the format of the
  localized offset is controlled by the specified `],
-					[/* reference */ 'r', `enum class in java.time.format.FormatStyle`, `style`],
+					[/* reference */ 'r', `java.time.format.FormatStyle`, `style`],
 					[/* text */ 't', `
  to this method:
  `]

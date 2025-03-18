@@ -1205,7 +1205,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The `],
-			[/* reference */ 'r', `enum class in java.time.format.ResolverStyle`, `ResolverStyle`],
+			[/* reference */ 'r', `java.time.format.ResolverStyle`, `ResolverStyle`],
 			[/* text */ 't', ` is an enum that offers three different approaches,
  strict, smart and lenient. The smart option is the default.
  It can be set using `],
@@ -1259,7 +1259,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* inline code block */ 'i', `ChronoField`],
 				[/* text */ 't', ` time fields are resolved.
  This is documented on `],
-				[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+				[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 				[/* text */ 't', ` and is the same for all chronologies.
  `]
 			]],
@@ -1311,7 +1311,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* text */ 't', ` was not parsed,
  then the resolver ensures that milli, micro and nano second values are
  available to meet the contract of `],
-				[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+				[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 				[/* text */ 't', `.
  These will be set to zero if missing.
  `]

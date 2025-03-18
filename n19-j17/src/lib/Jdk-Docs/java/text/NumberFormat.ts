@@ -747,7 +747,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* method */ 'getRoundingMode()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
+				[/* reference */ 'r', `java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this NumberFormat.
  The default implementation of this method in NumberFormat
  always throws `],
@@ -938,7 +938,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* reference */ 'r', `java.util.Locale`, `locale`],
 				[/* text */ 't', `
  and `],
-				[/* reference */ 'r', `enum class in java.text.NumberFormat.Style`, `formatStyle`],
+				[/* reference */ 'r', `java.text.NumberFormat.Style`, `formatStyle`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1248,7 +1248,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
 			[/* method description */
 				[/* text */ 't', `Sets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
+				[/* reference */ 'r', `java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this NumberFormat.
  The default implementation of this method in NumberFormat always
  throws `],

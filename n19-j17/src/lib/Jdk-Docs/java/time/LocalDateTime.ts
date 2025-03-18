@@ -289,7 +289,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported fields are:
  `]
@@ -484,7 +484,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the unit is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported units are:
  `]
@@ -645,7 +645,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -773,7 +773,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` from 1 to 12.
  Application code is frequently clearer if the enum `],
-					[/* reference */ 'r', `enum class in java.time.Month`, `Month`],
+					[/* reference */ 'r', `java.time.Month`, `Month`],
 					[/* text */ 't', `
  is used by calling `],
 					[/* reference */ 'r', `#getMonth()`, `getMonth()`],
@@ -912,7 +912,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method returns the enum `],
-					[/* reference */ 'r', `enum class in java.time.DayOfWeek`, `DayOfWeek`],
+					[/* reference */ 'r', `java.time.DayOfWeek`, `DayOfWeek`],
 					[/* text */ 't', ` for the day-of-week.
  This avoids confusion as to what `],
 					[/* inline code block */ 'i', `int`],
@@ -1380,7 +1380,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` then the addition is implemented here.
  Date units are added as per `],
 					[/* reference */ 'r', `java.time.LocalDate#plus(long,java.time.temporal.TemporalUnit)`, `LocalDate.plus(long, TemporalUnit)`],
@@ -1706,7 +1706,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `
  that divides into the length of a standard day without remainder.
  This includes all supplied time units on `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` and
  `],
 					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
@@ -1763,7 +1763,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* inline code block */ 'i', `TemporalAdjuster`],
 					[/* text */ 't', ` interface,
  such as `],
-					[/* reference */ 'r', `enum class in java.time.Month`, `Month`],
+					[/* reference */ 'r', `java.time.Month`, `Month`],
 					[/* text */ 't', ` and `],
 					[/* reference */ 'r', `java.time.MonthDay`, `MonthDay`],
 					[/* text */ 't', `.
@@ -1859,7 +1859,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the adjustment is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -2167,7 +2167,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method returns the enum `],
-					[/* reference */ 'r', `enum class in java.time.Month`, `Month`],
+					[/* reference */ 'r', `java.time.Month`, `Month`],
 					[/* text */ 't', ` for the month.
  This avoids confusion as to what `],
 					[/* inline code block */ 'i', `int`],
@@ -2279,7 +2279,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -2395,7 +2395,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -2498,7 +2498,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The calculation is implemented in this method for `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', `.
  The units `],
 					[/* inline code block */ 'i', `NANOS`],

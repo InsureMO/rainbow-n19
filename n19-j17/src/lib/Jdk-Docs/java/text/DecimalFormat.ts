@@ -669,7 +669,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* inline code block */ 'i', `DecimalFormat`],
 		[/* text */ 't', ` provides rounding modes defined in
  `],
-		[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
+		[/* reference */ 'r', `java.math.RoundingMode`, `RoundingMode`],
 		[/* text */ 't', ` for formatting.  By default, it uses
  `],
 		[/* reference */ 'r', `java.math.RoundingMode#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
@@ -1483,7 +1483,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* method */ 'getRoundingMode()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
+				[/* reference */ 'r', `java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this DecimalFormat.`]
 			],
 			/* parameters */,
@@ -1958,7 +1958,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
 			[/* method description */
 				[/* text */ 't', `Sets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
+				[/* reference */ 'r', `java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this DecimalFormat.`]
 			],
 			[/* parameters */

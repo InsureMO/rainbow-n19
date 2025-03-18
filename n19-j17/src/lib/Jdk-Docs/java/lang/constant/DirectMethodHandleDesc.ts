@@ -67,7 +67,7 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `enum class in java.lang.constant.DirectMethodHandleDesc.Kind`, `DirectMethodHandleDesc.Kind`]
+				[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc.Kind`, `DirectMethodHandleDesc.Kind`]
 			]
 		]],
 		[/* method */ 'lookupDescriptor()', [

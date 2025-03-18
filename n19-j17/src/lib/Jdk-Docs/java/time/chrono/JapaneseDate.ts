@@ -119,7 +119,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported fields are:
  `]
@@ -305,7 +305,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` represents the calendar system in use.
  The era and other fields in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` are defined by the chronology.`]
 				]]
 			],

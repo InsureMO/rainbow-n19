@@ -250,7 +250,7 @@ DocsCollector.collect('java.time.OffsetTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported fields are:
  `]
@@ -385,7 +385,7 @@ DocsCollector.collect('java.time.OffsetTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the unit is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported units are:
  `]
@@ -538,7 +538,7 @@ DocsCollector.collect('java.time.OffsetTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -1020,7 +1020,7 @@ DocsCollector.collect('java.time.OffsetTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` then the addition is implemented by
  `],
 					[/* reference */ 'r', `java.time.LocalTime#plus(long,java.time.temporal.TemporalUnit)`, `LocalTime.plus(long, TemporalUnit)`],
@@ -1193,7 +1193,7 @@ DocsCollector.collect('java.time.OffsetTime', [
 					[/* text */ 't', `
  that divides into the length of a standard day without remainder.
  This includes all supplied time units on `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` and
  `],
 					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
@@ -1313,7 +1313,7 @@ DocsCollector.collect('java.time.OffsetTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the adjustment is implemented here.
  `]
 				]],
@@ -1671,7 +1671,7 @@ DocsCollector.collect('java.time.OffsetTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -1742,7 +1742,7 @@ DocsCollector.collect('java.time.OffsetTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -1875,7 +1875,7 @@ DocsCollector.collect('java.time.OffsetTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The calculation is implemented in this method for `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', `.
  The units `],
 					[/* inline code block */ 'i', `NANOS`],

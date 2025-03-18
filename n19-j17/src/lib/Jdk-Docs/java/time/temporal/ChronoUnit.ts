@@ -57,9 +57,9 @@ DocsCollector.collect('java.time.temporal.ChronoUnit', [
 						[/* text */ 't', `
  Implementations should perform any queries or calculations using the units
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
+						[/* reference */ 'r', `java.time.temporal.ChronoUnit`, `ChronoUnit`],
 						[/* text */ 't', ` or the fields available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.
  If the unit is not supported an `],
 						[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -223,9 +223,9 @@ DocsCollector.collect('java.time.temporal.ChronoUnit', [
 						[/* text */ 't', `
  Implementations should perform any queries or calculations using the units
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
+						[/* reference */ 'r', `java.time.temporal.ChronoUnit`, `ChronoUnit`],
 						[/* text */ 't', ` or the fields available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.
  If the unit is not supported an `],
 						[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],

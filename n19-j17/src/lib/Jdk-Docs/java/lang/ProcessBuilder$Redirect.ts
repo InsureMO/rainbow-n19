@@ -58,7 +58,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Each of the above categories has an associated unique
  `],
-			[/* reference */ 'r', `enum class in java.lang.ProcessBuilder.Redirect.Type`, `Type`],
+			[/* reference */ 'r', `java.lang.ProcessBuilder.Redirect.Type`, `Type`],
 			[/* text */ 't', `.`]
 		]]
 	],

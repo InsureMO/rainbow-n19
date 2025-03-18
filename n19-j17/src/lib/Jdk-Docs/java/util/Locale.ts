@@ -453,7 +453,7 @@ DocsCollector.collect('java.util.Locale', [
  (called "extended filtering"). They may return different results by what
  kind of language ranges are included in the given Language Priority List.
  `],
-			[/* reference */ 'r', `enum class in java.util.Locale.FilteringMode`, `Locale.FilteringMode`],
+			[/* reference */ 'r', `java.util.Locale.FilteringMode`, `Locale.FilteringMode`],
 			[/* text */ 't', ` is a parameter to specify how filtering should
  be done.
 
@@ -2615,7 +2615,7 @@ DocsCollector.collect('java.util.Locale', [
 			[/* parameters */
 				[/* parameter */ 'type', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.util.Locale.IsoCountryCode`, `Locale.IsoCountryCode`],
+					[/* reference */ 'r', `java.util.Locale.IsoCountryCode`, `Locale.IsoCountryCode`],
 					[/* text */ 't', ` specified ISO code type.`]
 				]]
 			],

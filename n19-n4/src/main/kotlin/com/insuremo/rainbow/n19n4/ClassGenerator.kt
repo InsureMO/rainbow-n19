@@ -769,6 +769,7 @@ private class ClassGenerator(
 			title.startsWith("class in ") -> title.substring("class in ".length)
 			title.startsWith("interface in ") -> title.substring("interface in ".length)
 			title.startsWith("annotation in ") -> title.substring("annotation in ".length)
+			title.startsWith("enum class in ") -> title.substring("enum class in ".length)
 			title.startsWith("class or interface in ") -> title.substring("class or interface in ".length)
 			else -> title
 		}

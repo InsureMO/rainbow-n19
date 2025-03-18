@@ -16,7 +16,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 			[/* reference */ 'r', `#getDeclaringClass()`, `getDeclaringClass()`],
 			[/* text */ 't', ` method may be unsupported as determined
  by the `],
-			[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`, `stack walking options`],
+			[/* reference */ 'r', `java.lang.StackWalker.Option`, `stack walking options`],
 			[/* text */ 't', ` of a `],
 			[/* reference */ 'r', `java.lang.StackWalker`, `stack walker`],
 			[/* text */ 't', `.`]

@@ -666,7 +666,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
  module. This method is equivalent to invoking `],
 				[/* reference */ 'r', `#newModule(java.lang.String,java.util.Set)`, `newModule`],
 				[/* text */ 't', ` with an empty set of `],
-				[/* reference */ 'r', `enum class in java.lang.module.ModuleDescriptor.Modifier`, `modifiers`],
+				[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Modifier`, `modifiers`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

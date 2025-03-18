@@ -24,7 +24,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDateTime', [
 			[/* reference */ 'r', `java.time.temporal.TemporalField`, `TemporalField`],
 			[/* text */ 't', `,
  where most common implementations are defined in `],
-			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 			[/* text */ 't', `.
  The chronology defines how the calendar system operates and the meaning of
  the standard fields.
@@ -761,7 +761,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDateTime', [
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` represents the calendar system in use.
  The era and other fields in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` are defined by the chronology.`]
 				]]
 			],

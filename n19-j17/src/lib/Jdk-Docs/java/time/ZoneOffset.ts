@@ -172,7 +172,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `OFFSET_SECONDS`],
@@ -261,7 +261,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `OFFSET_SECONDS`],
@@ -450,7 +450,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -522,7 +522,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `OFFSET_SECONDS`],

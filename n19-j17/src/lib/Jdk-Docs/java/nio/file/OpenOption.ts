@@ -22,7 +22,7 @@ DocsCollector.collect('java.nio.file.OpenOption', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `enum class in java.nio.file.StandardOpenOption`, `StandardOpenOption`],
+			[/* reference */ 'r', `java.nio.file.StandardOpenOption`, `StandardOpenOption`],
 			[/* text */ 't', ` enumeration type defines the
  `],
 			[/* text */ 't', `standard`],

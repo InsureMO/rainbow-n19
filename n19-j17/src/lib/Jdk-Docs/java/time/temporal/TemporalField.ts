@@ -12,7 +12,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The most commonly used units are defined in `],
-			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 			[/* text */ 't', `.
  Further fields are supplied in `],
 			[/* reference */ 'r', `java.time.temporal.IsoFields`, `IsoFields`],
@@ -84,7 +84,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', `.
  If the field is not supported an `],
 					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -175,7 +175,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  Implementations should determine whether they are supported using the fields
  available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -343,7 +343,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', `.
  If the field is not supported an `],
 					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -401,7 +401,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', `.
  If the field is not supported an `],
 					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],

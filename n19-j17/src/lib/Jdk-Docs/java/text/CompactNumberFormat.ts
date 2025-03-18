@@ -424,7 +424,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* inline code block */ 'i', `CompactNumberFormat`],
 		[/* text */ 't', ` provides rounding modes defined in
  `],
-		[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
+		[/* reference */ 'r', `java.math.RoundingMode`, `RoundingMode`],
 		[/* text */ 't', ` for formatting.  By default, it uses
  `],
 		[/* reference */ 'r', `java.math.RoundingMode#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
@@ -1067,7 +1067,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* method */ 'getRoundingMode()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
+				[/* reference */ 'r', `java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this
  `],
 				[/* inline code block */ 'i', `CompactNumberFormat`],
@@ -1310,7 +1310,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
 			[/* method description */
 				[/* text */ 't', `Sets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
+				[/* reference */ 'r', `java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this
  `],
 				[/* inline code block */ 'i', `CompactNumberFormat`],

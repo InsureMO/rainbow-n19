@@ -25,7 +25,7 @@ DocsCollector.collect('java.math.MathContext', [
 				[/* inline code block */ 'i', `roundingMode`],
 				[/* text */ 't', `:
  a `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
+				[/* reference */ 'r', `java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` object which specifies the algorithm to be
  used for rounding.
  `]
@@ -291,7 +291,7 @@ DocsCollector.collect('java.math.MathContext', [
 						[/* text */ 't', ` setting as a
  word.  This word will be the same as the name of the
  corresponding public constant in the `],
-						[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
+						[/* reference */ 'r', `java.math.RoundingMode`, `RoundingMode`],
 						[/* text */ 't', `
  enum.
  `]

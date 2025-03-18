@@ -174,7 +174,7 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistDate', [
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` represents the calendar system in use.
  The era and other fields in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` are defined by the chronology.`]
 				]]
 			],
@@ -446,7 +446,7 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistDate', [
 					[/* text */ 't', `
  The Thai Buddhist calendar system has two eras, 'BE' and 'BEFORE_BE',
  defined by `],
-					[/* reference */ 'r', `enum class in java.time.chrono.ThaiBuddhistEra`, `ThaiBuddhistEra`],
+					[/* reference */ 'r', `java.time.chrono.ThaiBuddhistEra`, `ThaiBuddhistEra`],
 					[/* text */ 't', `.`]
 				]]
 			],

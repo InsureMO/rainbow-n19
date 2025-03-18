@@ -4690,7 +4690,7 @@ assertEquals("", (String) MH_newString.invokeExact());`]
 				]],
 				[/* parameter */ 'options', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.lang.invoke.MethodHandles.Lookup.ClassOption`, `class options`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup.ClassOption`, `class options`]
 				]]
 			],
 			[/* throws */
@@ -4829,7 +4829,7 @@ assertEquals("", (String) MH_newString.invokeExact());`]
 				]],
 				[/* parameter */ 'options', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.lang.invoke.MethodHandles.Lookup.ClassOption`, `class options`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup.ClassOption`, `class options`]
 				]]
 			],
 			[/* throws */

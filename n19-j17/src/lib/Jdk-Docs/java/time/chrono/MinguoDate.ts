@@ -174,7 +174,7 @@ DocsCollector.collect('java.time.chrono.MinguoDate', [
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` represents the calendar system in use.
  The era and other fields in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` are defined by the chronology.`]
 				]]
 			],
@@ -446,7 +446,7 @@ DocsCollector.collect('java.time.chrono.MinguoDate', [
 					[/* text */ 't', `
  The Minguo calendar system has two eras, 'ROC' and 'BEFORE_ROC',
  defined by `],
-					[/* reference */ 'r', `enum class in java.time.chrono.MinguoEra`, `MinguoEra`],
+					[/* reference */ 'r', `java.time.chrono.MinguoEra`, `MinguoEra`],
 					[/* text */ 't', `.`]
 				]]
 			],

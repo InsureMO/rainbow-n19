@@ -15,7 +15,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
  Most other calendar systems also operate on the shared concepts of year, month and day,
  linked to the cycles of the Earth around the Sun, and the Moon around the Earth.
  These shared concepts are defined by `],
-			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 			[/* text */ 't', ` and are available
  for use by any `],
 			[/* inline code block */ 'i', `Chronology`],

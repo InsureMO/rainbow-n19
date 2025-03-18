@@ -28,7 +28,7 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 			[/* text */ 't', ` to handle large values. Year, month and day-of-month are
  simple examples of fields, but they also include instant and offsets.
  See `],
-			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField`, `ChronoField`],
 			[/* text */ 't', ` for the standard set of fields.
  `]
 		]],

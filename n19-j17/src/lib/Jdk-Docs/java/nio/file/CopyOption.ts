@@ -21,7 +21,7 @@ DocsCollector.collect('java.nio.file.CopyOption', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `enum class in java.nio.file.StandardCopyOption`, `StandardCopyOption`],
+			[/* reference */ 'r', `java.nio.file.StandardCopyOption`, `StandardCopyOption`],
 			[/* text */ 't', ` enumeration type defines the
  `],
 			[/* text */ 't', `standard`],
