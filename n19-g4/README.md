@@ -2,4 +2,4 @@
 
 # n19/g4
 
-Class metadata of Groovy4.
+Class metadata of Groovy4, created by `n4`.

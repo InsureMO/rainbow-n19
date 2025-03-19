@@ -2,4 +2,4 @@
 
 # n19/j17
 
-Class metadata of JDK17.
+Class metadata of JDK17, created by `n4`.
