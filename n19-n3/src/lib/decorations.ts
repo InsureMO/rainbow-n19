@@ -2,7 +2,8 @@ import {syntaxTree} from '@codemirror/language';
 import {Range} from '@codemirror/state';
 import {Decoration, DecorationSet, EditorView, ViewPlugin, ViewUpdate} from '@codemirror/view';
 import {SyntaxNodeRef} from '@lezer/common';
-import {Groovy, Optional, Parsed} from '@rainbow-n19/n2';
+import {Optional} from '@rainbow-n19/n2';
+import {Groovy, Parsed} from '@rainbow-n19/n6';
 import {GroovyFacet, GroovyFacetParsedCache} from './facet';
 import {AdditionalToken, SymbolToken} from './tokens';
 

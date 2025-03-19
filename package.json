@@ -7,13 +7,15 @@
 		"n19-n2",
 		"n19-n3",
 		"n19-n5",
-		"n19-n5-demo"
+		"n19-n5-demo",
+		"n19-n6"
 	],
 	"scripts": {
 		"n1:build": "cd ./n19-n1 && yarn build",
 		"n2:build": "cd ./n19-n2 && yarn build",
 		"n3:build": "cd ./n19-n3 && yarn build",
 		"n5:build": "cd ./n19-n5 && yarn build",
+		"n6:build": "cd ./n19-n6 && yarn build",
 		"j17:build": "cd ./n19-j17 && yarn build",
 		"g4:build": "cd ./n19-g4 && yarn build",
 		"lib:build": "yarn n1:build && yarn n2:build && yarn n3:build && yarn n5:build",
@@ -23,6 +25,7 @@
 		"n2:build:ci": "cd ./n19-n2 && yarn build:ci",
 		"n3:build:ci": "cd ./n19-n3 && yarn build:ci",
 		"n5:build:ci": "cd ./n19-n5 && yarn build:ci",
+		"n6:build:ci": "cd ./n19-n6 && yarn build:ci",
 		"j17:build:ci": "cd ./n19-j17 && yarn build:ci",
 		"g4:build:ci": "cd ./n19-g4 && yarn build:ci",
 		"lib:build:ci": "yarn n1:build:ci && yarn n2:build:ci && yarn n3:build:ci && yarn n5:build:ci",

@@ -1,5 +1,5 @@
 import {Input, Parser, PartialParse, Tree} from '@lezer/common';
-import {Parsed} from '@rainbow-n19/n2';
+import {Parsed} from '@rainbow-n19/n6';
 import {GroovyFacetParsedCache} from './facet';
 import {GroovyLanguageServer, GroovyLanguageServerOptions} from './language-server';
 import {NodeSet} from './node-set';

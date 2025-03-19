@@ -1,4 +1,4 @@
-import {Groovy, Parsed} from '@rainbow-n19/n2';
+import {Groovy, Parsed} from '@rainbow-n19/n6';
 
 const AstBuilder = Groovy.AstBuilder;
 const IntactParseListener = Parsed.IntactParseListener;

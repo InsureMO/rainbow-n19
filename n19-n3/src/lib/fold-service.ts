@@ -1,6 +1,7 @@
 import {foldService} from '@codemirror/language';
 import {EditorState} from '@codemirror/state';
-import {Groovy, Optional, Parsed} from '@rainbow-n19/n2';
+import {Optional} from '@rainbow-n19/n2';
+import {Groovy, Parsed} from '@rainbow-n19/n6';
 import {GroovyFacet} from './facet';
 
 export type FoldRange = Optional<{ from: number, to: number }>;

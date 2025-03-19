@@ -2,7 +2,8 @@ import {syntaxTree} from '@codemirror/language';
 import {Diagnostic, linter} from '@codemirror/lint';
 import {EditorState} from '@codemirror/state';
 import {SyntaxNodeRef} from '@lezer/common';
-import {EditingClassLoader, Parsed} from '@rainbow-n19/n2';
+import {EditingClassLoader} from '@rainbow-n19/n2';
+import {Parsed} from '@rainbow-n19/n6';
 import {GroovyFacet, GroovyFacetParsedCache} from './facet';
 
 type DiagnosticCollector = (diagnostics: Array<Diagnostic>) => void;

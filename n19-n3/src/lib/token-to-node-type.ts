@@ -1,5 +1,5 @@
 import {NodeType} from '@lezer/common';
-import {Groovy} from '@rainbow-n19/n2';
+import {Groovy} from '@rainbow-n19/n6';
 import {SymbolToken} from './tokens';
 
 const GroovyParser = Groovy.GroovyParser;

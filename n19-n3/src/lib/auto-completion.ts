@@ -1,7 +1,8 @@
 import {autocompletion, CompletionContext, CompletionResult, CompletionSource} from '@codemirror/autocomplete';
 import {syntaxTree} from '@codemirror/language';
 import {SyntaxNodeRef} from '@lezer/common';
-import {Java, Optional, Parsed} from '@rainbow-n19/n2';
+import {Java, Optional} from '@rainbow-n19/n2';
+import {Parsed} from '@rainbow-n19/n6';
 import {GroovyFacet, GroovyFacetParsedCache} from './facet';
 
 // const GroovyParser = Groovy.GroovyParser;
