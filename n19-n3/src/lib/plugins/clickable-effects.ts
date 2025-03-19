@@ -2,30 +2,30 @@ import {StateEffect, StateEffectType, StateField} from '@codemirror/state';
 import {Decoration, DecorationSet, EditorView} from '@codemirror/view';
 
 // common decoration mark
-export const RefClickableMarks = {
-	RefClassClickable: Decoration.mark({class: 'ref ref-class-clickable'})
+export const ClickableMarks = {
+	ClassClickable: Decoration.mark({class: 'clickable class-clickable'})
 };
 
-export interface RefClickableEffect {
+export interface ClickableEffect {
 	mark: Decoration;
-	add: StateEffectType<RefClickableRange>;
-	remove: StateEffectType<RefClickableRange>;
+	add: StateEffectType<ClickableRange>;
+	remove: StateEffectType<ClickableRange>;
 	field: StateField<DecorationSet>;
 }
 
-export interface RefClickableRange {
+export interface ClickableRange {
 	from: number;
 	to: number;
 }
 
-export const RefClickableEffects = Object.keys(RefClickableMarks).reduce((effects, key: keyof typeof RefClickableMarks) => {
-	const mark = RefClickableMarks[key];
-	const add = StateEffect.define<RefClickableRange>({
+export const ClickableEffects = Object.keys(ClickableMarks).reduce((effects, key: keyof typeof ClickableMarks) => {
+	const mark = ClickableMarks[key];
+	const add = StateEffect.define<ClickableRange>({
 		map: ({from, to}, change) => {
 			return {from: change.mapPos(from), to: change.mapPos(to)};
 		}
 	});
-	const remove = StateEffect.define<RefClickableRange>({
+	const remove = StateEffect.define<ClickableRange>({
 		map: ({from, to}, change) => {
 			return {from: change.mapPos(from), to: change.mapPos(to)};
 		}
@@ -55,5 +55,5 @@ export const RefClickableEffects = Object.keys(RefClickableMarks).reduce((effect
 	});
 	effects[key] = {mark, add, remove, field};
 	return effects;
-}, {} as { [key in keyof typeof RefClickableMarks]: RefClickableEffect });
+}, {} as { [key in keyof typeof ClickableMarks]: ClickableEffect });
 

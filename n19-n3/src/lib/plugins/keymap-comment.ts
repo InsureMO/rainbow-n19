@@ -78,6 +78,6 @@ export const toggleComment: Command = (target: EditorView): boolean => {
 	return true;
 };
 
-export const KeymapServicePlugin = Prec.highest(keymap.of([
+export const KeymapCommentPlugin = Prec.highest(keymap.of([
 	{key: 'Mod-/', run: toggleComment}
 ]));

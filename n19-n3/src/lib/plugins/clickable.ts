@@ -3,16 +3,16 @@ import {StateEffect} from '@codemirror/state';
 import {EditorView, ViewPlugin} from '@codemirror/view';
 import {SyntaxNodeRef} from '@lezer/common';
 import {Optional} from '@rainbow-n19/n2';
-import {RefClickableEffect, RefClickableEffects, RefClickableRange} from './state';
-import {isCtrlOrCmdKeyPressed} from './utils';
+import {isCtrlOrCmdKeyPressed} from '../utils';
+import {ClickableEffect, ClickableEffects, ClickableRange} from './clickable-effects';
 
-class RefClickableViewPlugin {
+class ClickableViewPlugin {
 	private readonly _view: EditorView;
 	private readonly _onMouseMoved: (event: MouseEvent) => void;
 	private readonly _onClicked: (event: MouseEvent) => void;
 	private readonly _onMouseLeft: (event: MouseEvent) => void;
 
-	private _oppositeEffect?: StateEffect<RefClickableRange>;
+	private _oppositeEffect?: StateEffect<ClickableRange>;
 
 	constructor(view: EditorView) {
 		this._view = view;
@@ -56,8 +56,8 @@ class RefClickableViewPlugin {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	private addEffect(node: SyntaxNodeRef, use: RefClickableEffect, effects: Array<StateEffect<any>>) {
-		const range: RefClickableRange = {from: node.from, to: node.to};
+	private addEffect(node: SyntaxNodeRef, use: ClickableEffect, effects: Array<StateEffect<any>>) {
+		const range: ClickableRange = {from: node.from, to: node.to};
 		if (this._oppositeEffect != null) {
 			effects.push(this._oppositeEffect);
 		}
@@ -79,7 +79,8 @@ class RefClickableViewPlugin {
 		this.findPositionAnd(event, isCtrlOrCmdKeyPressed, (_pos, sn) => {
 			const token = this.view.state.sliceDoc(sn.from, sn.to);
 			if (token != null && token.trim().length !== 0) {
-				this.addEffect(sn, RefClickableEffects.RefClassClickable, effects);
+				// TODO check token content
+				this.addEffect(sn, ClickableEffects.ClassClickable, effects);
 			}
 		});
 
@@ -113,4 +114,4 @@ class RefClickableViewPlugin {
 	}
 }
 
-export const RefClickablePlugin = ViewPlugin.fromClass(RefClickableViewPlugin);
+export const ClickablePlugin = ViewPlugin.fromClass(ClickableViewPlugin);

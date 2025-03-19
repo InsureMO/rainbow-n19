@@ -28,7 +28,3 @@ export const BROWSER = {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	tabSize: (doc.documentElement.style as any).tabSize != null ? 'tab-size' : '-moz-tab-size'
 };
-
-export const isCtrlOrCmdKeyPressed = (event: MouseEvent): boolean => {
-	return (BROWSER.mac && event.metaKey) || (!BROWSER.mac && event.ctrlKey);
-};
