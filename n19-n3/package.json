@@ -1,6 +1,6 @@
 {
 	"name": "@rainbow-n19/n3",
-	"version": "0.1.1",
+	"version": "0.1.2-alpha.1",
 	"description": "Groovy4 code mirror editor extension.",
 	"main": "index.cjs",
 	"module": "index.js",
@@ -22,7 +22,7 @@
 	},
 	"dependencies": {
 		"@codemirror/language": "^6.6.0",
-		"@rainbow-n19/n2": "0.1.1"
+		"@rainbow-n19/n2": "0.1.2-alpha.1"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.23.9",

@@ -1,6 +1,6 @@
 {
 	"name": "@rainbow-n19/n1",
-	"version": "0.1.1",
+	"version": "0.1.2-alpha.1",
 	"description": "Value operators.",
 	"main": "index.cjs",
 	"module": "index.js",
