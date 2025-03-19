@@ -25,9 +25,9 @@ import {
 	rectangularSelection
 } from '@codemirror/view';
 import {EditingClassDocs, EditingClassLoader, Optional} from '@rainbow-n19/n2';
-import {createGroovyExtensions} from '@rainbow-n19/n3';
+import {groovy} from '@rainbow-n19/n3';
 import {MutableRefObject, useEffect, useRef, useState} from 'react';
-import {CodeEditorClassDocs, CodeEditorState, GroovyEditorProps} from './types';
+import {CodeEditorClassDocsToggle, CodeEditorState, GroovyEditorProps} from './types';
 
 export interface UseInitEditorOptions {
 	contentChanged: GroovyEditorProps['contentChanged'];
@@ -82,7 +82,7 @@ class EditorContext {
 	}
 }
 
-export class EditorClassDocs implements CodeEditorClassDocs {
+export class ContextBasedClassDocsToggle implements CodeEditorClassDocsToggle {
 	private _context: MutableRefObject<EditorContext>;
 	private _opened: boolean = false;
 	private _handlers: Array<(open: boolean) => Promise<void>> = [];
@@ -129,9 +129,14 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 			return;
 		}
 
-		const changeListener = new Compartment();
-		const themeListener = new Compartment();
-		const classDocs = new EditorClassDocs(context);
+		const docChangeCompartment = new Compartment();
+		const themeCompartment = new Compartment();
+		const classDocsToggle = new ContextBasedClassDocsToggle(context);
+		const language = groovy({
+			languageOptions: {timeSpentLogEnabled: true},
+			classLoader: () => context.current.classLoader,
+			classDocsToggle: classDocsToggle
+		}).reconfigurable();
 		const editor = new EditorView({
 			state: CodeMirrorState.create({
 				doc: '',
@@ -168,22 +173,13 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 					],
 					indentUnit.of('  '),
 					keymap.of([indentWithTab]),
-					createGroovyExtensions({
-						languageServer: {
-							// positionedNodesLogEnabled: true,
-							// atomicNodesLogEnabled: true,
-							// ruleProcessingLogsEnabled: true,
-							// timeSpentLogEnabled: true,
-						},
-						classLoader: () => context.current.classLoader,
-						classDocs
-					}),
-					changeListener.of(EditorView.updateListener.of((update) => {
+					language.extension,
+					docChangeCompartment.of(EditorView.updateListener.of((update) => {
 						if (update.docChanged) {
 							context.current.contentChanged(update.state.doc.toString());
 						}
 					})),
-					context.current.theme == null ? null : themeListener.of(context.current.theme())
+					context.current.theme == null ? null : themeCompartment.of(context.current.theme())
 				].filter(x => x != null)
 			}),
 			parent: ref.current
@@ -191,7 +187,15 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 		setState(state => {
 			return {
 				...state,
-				editor, changeListener, themeListener, classDocs
+				editor,
+				reconfigureDocChangeListener: (listener) => {
+					docChangeCompartment.reconfigure(EditorView.updateListener.of(listener));
+				},
+				reconfigureTheme: (editor, theme) => {
+					editor.dispatch({effects: themeCompartment.reconfigure(theme())});
+				},
+				reconfigureLanguage: language.reconfigure,
+				classDocsToggle: classDocsToggle
 			};
 		});
 		return () => {
@@ -204,14 +208,19 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 		context.current.contentChanged = options.contentChanged;
 	}, [options.contentChanged]);
 	useEffect(() => {
-		context.current.classLoader = options.classLoader;
-	}, [options.classLoader]);
+		if (context.current.classLoader !== options.classLoader || context.current.classDocs !== options.classDocs) {
+			context.current.classLoader = options.classLoader;
+			context.current.classDocs = options.classDocs;
+			state.reconfigureLanguage(state.editor, {
+				languageOptions: {timeSpentLogEnabled: true},
+				classLoader: () => context.current.classLoader,
+				classDocsToggle: state.classDocsToggle
+			});
+		}
+	}, [options.classLoader, options.classDocs, state.classDocsToggle]);
 	useEffect(() => {
-		context.current.classDocs = options.classDocs;
-	}, [options.classDocs]);
-	useEffect(() => {
-		if (options.theme != null) {
-			state.editor.dispatch({effects: state.themeListener.reconfigure(options.theme())});
+		if (options.theme != null && context.current.theme !== options.theme) {
+			state.reconfigureTheme(state.editor, options.theme);
 		}
 	}, [options.theme]);
 

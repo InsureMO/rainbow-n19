@@ -1,6 +1,6 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {FC, ReactNode, useEffect, useRef, useState} from 'react';
-import {CodeEditorClassDocs, GroovyEditorPackageGroup} from '../types';
+import {CodeEditorClassDocsToggle, GroovyEditorPackageGroup} from '../types';
 import {HelpBar} from './bar';
 import {HelpClassDoc} from './class-doc';
 import {HelpDocsContextProvider, linkToAnchor, useHelpDocsContext} from './common';
@@ -9,33 +9,33 @@ import {HelpStateMode} from './types';
 import {HelpContainer, HelpContent, HelpContentTitle} from './widgets';
 
 interface ClassTitleProps {
-	classDocs: CodeEditorClassDocs;
+	classDocsToggle: CodeEditorClassDocsToggle;
 	className: Java.ClassName;
 }
 
 const ClassTitle: FC<ClassTitleProps> = (props) => {
-	const {classDocs, className} = props;
+	const {classDocsToggle, className} = props;
 
 	const {switchTo} = useHelpDocsContext();
 
-	const cls = classDocs.classLoader().findClass(className);
+	const cls = classDocsToggle.classLoader().findClass(className);
 	if (cls == null) {
 		return null;
 	}
 
 	const onPackageClicked = (packageNames: Array<string>, index: number) => () => {
 		const packageName = packageNames.slice(0, index + 1).join('.');
-		const pkg = classDocs.classLoader().findPackage(packageName);
+		const pkg = classDocsToggle.classLoader().findPackage(packageName);
 		switchTo(pkg);
 	};
 	const onClassClicked = (packageNames: Array<string>, simpleName: string, innerClasses?: Array<string>, innerClassIndex?: number) => () => {
 		const className = packageNames.length === 0 ? '' : (packageNames.join('.') + '.') + simpleName;
 		if (innerClasses == null) {
-			const cls = classDocs.classLoader().findClass(className);
+			const cls = classDocsToggle.classLoader().findClass(className);
 			switchTo(cls);
 		} else {
 			const innerClassName = innerClasses.slice(0, innerClassIndex + 1).join('$');
-			const cls = classDocs.classLoader().findClass(className + '$' + innerClassName);
+			const cls = classDocsToggle.classLoader().findClass(className + '$' + innerClassName);
 			switchTo(cls);
 		}
 	};
@@ -117,7 +117,7 @@ const ClassTitle: FC<ClassTitleProps> = (props) => {
 };
 
 export interface HelpProps {
-	classDocs: CodeEditorClassDocs;
+	classDocs: CodeEditorClassDocsToggle;
 	packageGroup?: GroovyEditorPackageGroup;
 }
 
@@ -209,7 +209,7 @@ export const HelpDocs = (props: HelpProps) => {
 	};
 
 	return <HelpContainer data-visible={opened}>
-		<HelpBar mode={state.mode} toPackages={toPackages} toClasses={toClasses} classDocs={classDocs}/>
+		<HelpBar mode={state.mode} toPackages={toPackages} toClasses={toClasses} classDocsToggle={classDocs}/>
 		<HelpContent ref={contentRef}>
 			{state.mode === HelpStateMode.PACKAGES
 				? <HelpContentTitle>All Packages</HelpContentTitle>
@@ -221,11 +221,11 @@ export const HelpDocs = (props: HelpProps) => {
 				? <HelpContentTitle>Package {state.packageName}</HelpContentTitle>
 				: null}
 			{state.mode === HelpStateMode.CLASS
-				? <HelpContentTitle><ClassTitle classDocs={classDocs} className={state.className}/></HelpContentTitle>
+				? <HelpContentTitle><ClassTitle classDocsToggle={classDocs} className={state.className}/></HelpContentTitle>
 				: null}
 			<HelpItemList mode={state.mode} packageName={state.packageName} docs={state.docs}
-			              classDocs={classDocs} group={packageGroup}/>
-			<HelpClassDoc mode={state.mode} className={state.className} classDocs={classDocs}/>
+			              classDocsToggle={classDocs} group={packageGroup}/>
+			<HelpClassDoc mode={state.mode} className={state.className} classDocsToggle={classDocs}/>
 		</HelpContent>
 	</HelpContainer>;
 };

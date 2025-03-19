@@ -1,6 +1,6 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {ChangeEvent, FC, KeyboardEvent, useState} from 'react';
-import {CodeEditorClassDocs} from '../../types';
+import {CodeEditorClassDocsToggle} from '../../types';
 import {HelpStateMode} from '../types';
 import {HelpClose, HelpSearchInput, HelpShortcut, HelpShortcuts} from '../widgets';
 
@@ -8,14 +8,14 @@ export interface HelpBarProps {
 	mode: HelpStateMode;
 	toPackages: () => void;
 	toClasses: (docs?: Array<Java.ClassDoc>) => void;
-	classDocs: CodeEditorClassDocs;
+	classDocsToggle: CodeEditorClassDocsToggle;
 }
 
 export const HelpBar: FC<HelpBarProps> = (props) => {
 	const {
 		mode,
 		toPackages, toClasses,
-		classDocs
+		classDocsToggle
 	} = props;
 
 	const [text, setText] = useState('');
@@ -32,10 +32,10 @@ export const HelpBar: FC<HelpBarProps> = (props) => {
 			return;
 		}
 
-		toClasses(classDocs.docs().filterBy(text));
+		toClasses(classDocsToggle.docs().filterBy(text));
 	};
 	const onCloseClicked = () => {
-		classDocs?.toggle();
+		classDocsToggle?.toggle();
 	};
 
 	return <>

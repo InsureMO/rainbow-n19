@@ -1,7 +1,7 @@
-import {Compartment, Extension} from '@codemirror/state';
-import {EditorView} from '@codemirror/view';
+import {Extension} from '@codemirror/state';
+import {EditorView, ViewUpdate} from '@codemirror/view';
 import {EditingClassDocs, EditingClassLoader, Java, Optional} from '@rainbow-n19/n2';
-import {ClassDocsToggleHandler} from '@rainbow-n19/n3';
+import {ClassDocsToggle, ReconfigurableGroovyExtension} from '@rainbow-n19/n3';
 
 export type GroovyEditorThemeCreate = () => Extension;
 export type GroovyEditorPackageGroup = (packageName: Java.PackageName) => string;
@@ -15,7 +15,7 @@ export interface GroovyEditorProps {
 	packageGroup?: GroovyEditorPackageGroup;
 }
 
-export interface CodeEditorClassDocs extends ClassDocsToggleHandler {
+export interface CodeEditorClassDocsToggle extends ClassDocsToggle {
 	addToggleHandler(handler: (open: boolean) => Promise<void>): void;
 	removeToggleHandler(handler: (open: boolean) => Promise<void>): void;
 	classLoader(): EditingClassLoader;
@@ -24,7 +24,8 @@ export interface CodeEditorClassDocs extends ClassDocsToggleHandler {
 
 export interface CodeEditorState {
 	editor?: EditorView;
-	changeListener?: Compartment;
-	themeListener?: Compartment;
-	classDocs?: CodeEditorClassDocs;
+	reconfigureDocChangeListener?: (listener: (update: ViewUpdate) => void) => void;
+	reconfigureTheme?: (editor: EditorView, theme: GroovyEditorThemeCreate) => void;
+	reconfigureLanguage?: ReconfigurableGroovyExtension['reconfigure'];
+	classDocsToggle?: CodeEditorClassDocsToggle;
 }

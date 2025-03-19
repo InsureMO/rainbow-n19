@@ -1,6 +1,6 @@
 import {Java} from '@rainbow-n19/n2';
 import React from 'react';
-import {CodeEditorClassDocs} from '../types';
+import {CodeEditorClassDocsToggle} from '../types';
 import {ClassDocDetails} from './class-doc-details';
 import {ClassPartDoc} from './class-part';
 import {EnumValuesPartDoc} from './enum-values-part';
@@ -13,17 +13,17 @@ import {HelpStateMode} from './types';
 export interface HelpClassDocProps {
 	mode: HelpStateMode;
 	className: Java.ClassName;
-	classDocs: CodeEditorClassDocs;
+	classDocsToggle: CodeEditorClassDocsToggle;
 }
 
 export const HelpClassDoc = (props: HelpClassDocProps) => {
-	const {mode, className, classDocs} = props;
+	const {mode, className, classDocsToggle} = props;
 
 	if (mode !== HelpStateMode.CLASS) {
 		return null;
 	}
 
-	const details = new ClassDocDetails(className, classDocs, mode);
+	const details = new ClassDocDetails(className, classDocsToggle, mode);
 
 	return <>
 		<ExtendsPartDoc details={details}/>

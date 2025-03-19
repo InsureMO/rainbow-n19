@@ -1,6 +1,6 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {useEffect, useReducer, useRef, useState} from 'react';
-import {CodeEditorClassDocs} from '../../types';
+import {CodeEditorClassDocsToggle} from '../../types';
 import {useHelpDocsContext} from '../common';
 import {HelpStateMode, PackageGroup} from '../types';
 import {
@@ -23,7 +23,7 @@ export interface HelpItemListProps {
 	mode: HelpStateMode;
 	packageName?: Java.PackageName;
 	docs?: Array<Java.ClassDoc>;
-	classDocs: CodeEditorClassDocs;
+	classDocsToggle: CodeEditorClassDocsToggle;
 	group?: PackageGroup;
 }
 
@@ -35,7 +35,7 @@ interface HelpItemListState {
 const buildItems = (
 	mode: HelpStateMode,
 	packageName: Java.PackageName, classes: Array<Java.ClassDoc> | null | undefined,
-	classDocs: CodeEditorClassDocs, group: PackageGroup
+	classDocs: CodeEditorClassDocsToggle, group: PackageGroup
 ): Array<ItemGroup> => {
 	if (mode === HelpStateMode.PACKAGES) {
 		return getAllPackages(classDocs.classLoader().parent(), group);
@@ -51,7 +51,7 @@ const buildItems = (
 };
 
 export const HelpItemList = (props: HelpItemListProps) => {
-	const {mode, packageName, docs, classDocs, group: givenGroup} = props;
+	const {mode, packageName, docs, classDocsToggle, group: givenGroup} = props;
 
 	const {switchTo} = useHelpDocsContext();
 	const firstGroupRef = useRef<HTMLDivElement>(null);
@@ -63,9 +63,9 @@ export const HelpItemList = (props: HelpItemListProps) => {
 	useEffect(() => {
 		setState(state => {
 			const group = createPackageGroup(givenGroup);
-			return {items: buildItems(mode, packageName, docs, classDocs, state.group), group};
+			return {items: buildItems(mode, packageName, docs, classDocsToggle, state.group), group};
 		});
-	}, [mode, packageName, docs, classDocs, givenGroup]);
+	}, [mode, packageName, docs, classDocsToggle, givenGroup]);
 	useEffect(() => {
 		if (firstGroupRef.current == null) {
 			return;

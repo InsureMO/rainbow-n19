@@ -1,7 +1,7 @@
 import {NodeType} from '@lezer/common';
 
 export enum GroovyTokenId {
-	COMPILATION_UNIT = 1
+	COMPILATION_UNIT = 0
 }
 
 interface GroovyToken {
