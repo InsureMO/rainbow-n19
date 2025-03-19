@@ -56,5 +56,32 @@ jobs:
           access: public
           package: ./n19-n1
 #          dry-run: true
+      - name: "Publish @n19/n2"
+        id: publish-n2
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          tag: ${{ inputs.lane }}
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
+          package: ./n19-n2
+      #          dry-run: true
+      - name: "Publish @n19/j17"
+        id: publish-j17
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          tag: ${{ inputs.lane }}
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
+          package: ./n19-j17
+      #          dry-run: true
+      - name: "Publish @n19/g4"
+        id: publish-g4
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          tag: ${{ inputs.lane }}
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
+          package: ./n19-g4
+      #          dry-run: true
       - run: |
           echo "Package ${{ steps.publish-n1.outputs.id }} published to lane [${{ steps.publish-n1.outputs.tag }}]"

@@ -36,6 +36,24 @@ jobs:
         with:
           module-name: n19-n1
           target-version: ${{ inputs.version }}
+      - name: Change Version of n19-n2
+        uses: ./.github/actions/change-node-version/
+        id: change-node-version-n19-n2
+        with:
+          module-name: n19-n2
+          target-version: ${{ inputs.version }}
+      - name: Change Version of n19-j17
+        uses: ./.github/actions/change-node-version/
+        id: change-node-version-n19-j17
+        with:
+          module-name: n19-j17
+          target-version: ${{ inputs.version }}
+      - name: Change Version of n19-g4
+        uses: ./.github/actions/change-node-version/
+        id: change-node-version-n19-g4
+        with:
+          module-name: n19-g4
+          target-version: ${{ inputs.version }}
       - name: Create pre release branch
         run: git checkout -b ${{ inputs.branch }}
       - name: Initialize mandatory git config
