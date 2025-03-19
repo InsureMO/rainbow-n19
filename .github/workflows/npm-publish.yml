@@ -91,3 +91,25 @@ jobs:
       #          dry-run: true
       - run: |
           echo "Package ${{ steps.publish-g4.outputs.id }} published to lane [${{ steps.publish-g4.outputs.tag }}]"
+      - name: "Publish @n19/n6"
+        id: publish-n6
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          tag: ${{ inputs.lane }}
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
+          package: ./n19-n6
+      #          dry-run: true
+      - run: |
+          echo "Package ${{ steps.publish-n6.outputs.id }} published to lane [${{ steps.publish-n6.outputs.tag }}]"
+      - name: "Publish @n19/n7"
+        id: publish-n7
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          tag: ${{ inputs.lane }}
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
+          package: ./n19-n7
+      #          dry-run: true
+      - run: |
+          echo "Package ${{ steps.publish-n7.outputs.id }} published to lane [${{ steps.publish-n7.outputs.tag }}]"
