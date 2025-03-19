@@ -18,7 +18,7 @@
 		"n6:build": "cd ./n19-n6 && yarn build",
 		"j17:build": "cd ./n19-j17 && yarn build",
 		"g4:build": "cd ./n19-g4 && yarn build",
-		"lib:build": "yarn n1:build && yarn n2:build && yarn n3:build && yarn n5:build",
+		"lib:build": "yarn n1:build && yarn n2:build && yarn n3:build && yarn n5:build && yarn n6:build",
 		"class:build": "yarn j17:build && yarn g4:build",
 		"all:build": "yarn lib:build && yarn class:build",
 		"n1:build:ci": "cd ./n19-n1 && yarn build:ci",
@@ -28,7 +28,7 @@
 		"n6:build:ci": "cd ./n19-n6 && yarn build:ci",
 		"j17:build:ci": "cd ./n19-j17 && yarn build:ci",
 		"g4:build:ci": "cd ./n19-g4 && yarn build:ci",
-		"lib:build:ci": "yarn n1:build:ci && yarn n2:build:ci && yarn n3:build:ci && yarn n5:build:ci",
+		"lib:build:ci": "yarn n1:build:ci && yarn n2:build:ci && yarn n3:build:ci && yarn n5:build:ci && yarn n6:build:ci",
 		"class:build:ci": "yarn j17:build:ci && yarn g4:build:ci",
 		"all:build:ci": "yarn lib:build:ci && yarn class:build:ci"
 	},
