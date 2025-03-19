@@ -117,7 +117,7 @@ const ClassTitle: FC<ClassTitleProps> = (props) => {
 };
 
 export interface HelpProps {
-	classDocs: CodeEditorClassDocsToggle;
+	classDocsToggle: CodeEditorClassDocsToggle;
 	packageGroup?: GroovyEditorPackageGroup;
 }
 
@@ -134,7 +134,7 @@ interface HelpState {
 }
 
 export const HelpDocs = (props: HelpProps) => {
-	const {classDocs, packageGroup} = props;
+	const {classDocsToggle, packageGroup} = props;
 
 	const {
 		onSwitchToPackage, offSwitchToPackage,
@@ -151,11 +151,11 @@ export const HelpDocs = (props: HelpProps) => {
 		const toggleHandler = async (opened: boolean) => {
 			setOpened(opened);
 		};
-		classDocs.addToggleHandler(toggleHandler);
+		classDocsToggle.addToggleHandler(toggleHandler);
 		return () => {
-			classDocs.removeToggleHandler(toggleHandler);
+			classDocsToggle.removeToggleHandler(toggleHandler);
 		};
-	}, [classDocs]);
+	}, [classDocsToggle]);
 	useEffect(() => {
 		const toPackage = (pkg: Java.IPackage) => {
 			setState({mode: HelpStateMode.PACKAGE, packageName: pkg.name});
@@ -165,7 +165,7 @@ export const HelpDocs = (props: HelpProps) => {
 		};
 		const toClassAnd = (to: string) => {
 			const [className, id] = to.split('#');
-			const cls = classDocs.classLoader().findClass(className);
+			const cls = classDocsToggle.classLoader().findClass(className);
 			if (cls == null) {
 				return;
 			}
@@ -179,7 +179,7 @@ export const HelpDocs = (props: HelpProps) => {
 			offSwitchToClass(toClass);
 			offSwitchToClassAnd(toClassAnd);
 		};
-	}, [classDocs]);
+	}, [classDocsToggle]);
 	useEffect(() => {
 		if (opened && contentRef.current != null) {
 			if (state.mode !== HelpStateMode.CLASS || state.anchor == null) {
@@ -209,7 +209,7 @@ export const HelpDocs = (props: HelpProps) => {
 	};
 
 	return <HelpContainer data-visible={opened}>
-		<HelpBar mode={state.mode} toPackages={toPackages} toClasses={toClasses} classDocsToggle={classDocs}/>
+		<HelpBar mode={state.mode} toPackages={toPackages} toClasses={toClasses} classDocsToggle={classDocsToggle}/>
 		<HelpContent ref={contentRef}>
 			{state.mode === HelpStateMode.PACKAGES
 				? <HelpContentTitle>All Packages</HelpContentTitle>
@@ -221,11 +221,11 @@ export const HelpDocs = (props: HelpProps) => {
 				? <HelpContentTitle>Package {state.packageName}</HelpContentTitle>
 				: null}
 			{state.mode === HelpStateMode.CLASS
-				? <HelpContentTitle><ClassTitle classDocsToggle={classDocs} className={state.className}/></HelpContentTitle>
+				? <HelpContentTitle><ClassTitle classDocsToggle={classDocsToggle} className={state.className}/></HelpContentTitle>
 				: null}
 			<HelpItemList mode={state.mode} packageName={state.packageName} docs={state.docs}
-			              classDocsToggle={classDocs} group={packageGroup}/>
-			<HelpClassDoc mode={state.mode} className={state.className} classDocsToggle={classDocs}/>
+			              classDocsToggle={classDocsToggle} group={packageGroup}/>
+			<HelpClassDoc mode={state.mode} className={state.className} classDocsToggle={classDocsToggle}/>
 		</HelpContent>
 	</HelpContainer>;
 };

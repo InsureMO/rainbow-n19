@@ -10,7 +10,8 @@ export const GroovyEditor = forwardRef((props: GroovyEditorProps, ref: Forwarded
 	const {ref: divRef, state} = useInitEditor(props);
 	useDualRefs(divRef, ref);
 	useInitCodeContent({editor: state.editor, content: props.initContent ?? ''});
+
 	return <EditorContainer ref={divRef}>
-		{state.classDocsToggle != null ? <Help classDocs={state.classDocsToggle}/> : null}
+		{state.classDocsToggle != null ? <Help classDocsToggle={state.classDocsToggle}/> : null}
 	</EditorContainer>;
 });

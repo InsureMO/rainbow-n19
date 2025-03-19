@@ -52,7 +52,6 @@ export const Editor = () => {
 				...state, classDocs
 			}));
 		})();
-
 	}, []);
 
 	const onContentChanged = (content: string) => {
