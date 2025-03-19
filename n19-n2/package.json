@@ -1,6 +1,6 @@
 {
 	"name": "@rainbow-n19/n2",
-	"version": "0.1.1",
+	"version": "0.1.2-alpha.1",
 	"description": "Groovy4 AST Parser.",
 	"main": "index.cjs",
 	"module": "index.js",
