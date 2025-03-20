@@ -1,3 +1,5 @@
+export * from './types';
+
 export * from './tokens';
 export * from './ast-node';
 export * from './ast';
