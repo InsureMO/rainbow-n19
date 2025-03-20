@@ -27,7 +27,7 @@ import {
 import {EditingClassDocs, EditingClassLoader, Optional} from '@rainbow-n19/n2';
 import {groovy} from '@rainbow-n19/n3';
 import {MutableRefObject, useEffect, useRef, useState} from 'react';
-import {CodeEditorClassDocsToggle, CodeEditorState, GroovyEditorProps} from './types';
+import {CodeEditorState, EditorHelp, GroovyEditorProps} from './types';
 
 export interface UseInitEditorOptions {
 	contentChanged: GroovyEditorProps['contentChanged'];
@@ -82,7 +82,7 @@ class EditorContext {
 	}
 }
 
-export class ContextBasedClassDocsToggle implements CodeEditorClassDocsToggle {
+export class ContextBasedEditorHelp implements EditorHelp {
 	private _context: MutableRefObject<EditorContext>;
 	private _opened: boolean = false;
 	private _handlers: Array<(open: boolean) => Promise<void>> = [];
@@ -131,11 +131,11 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 
 		const docChangeCompartment = new Compartment();
 		const themeCompartment = new Compartment();
-		const classDocsToggle = new ContextBasedClassDocsToggle(context);
+		const help = new ContextBasedEditorHelp(context);
 		const language = groovy({
 			languageOptions: {timeSpentLogEnabled: true},
 			classLoader: () => context.current.classLoader,
-			classDocsToggle: classDocsToggle
+			helpToggle: help
 		}).reconfigurable();
 		const editor = new EditorView({
 			state: CodeMirrorState.create({
@@ -187,15 +187,14 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 		setState(state => {
 			return {
 				...state,
-				editor,
+				editor, help,
 				reconfigureDocChangeListener: (listener) => {
 					docChangeCompartment.reconfigure(EditorView.updateListener.of(listener));
 				},
 				reconfigureTheme: (editor, theme) => {
 					editor.dispatch({effects: themeCompartment.reconfigure(theme())});
 				},
-				reconfigureLanguage: language.reconfigure,
-				classDocsToggle: classDocsToggle
+				reconfigureLanguage: language.reconfigure
 			};
 		});
 		return () => {
@@ -214,10 +213,10 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 			state.reconfigureLanguage(state.editor, {
 				languageOptions: {timeSpentLogEnabled: true},
 				classLoader: () => context.current.classLoader,
-				classDocsToggle: state.classDocsToggle
+				helpToggle: state.help
 			});
 		}
-	}, [options.classLoader, options.classDocs, state.classDocsToggle]);
+	}, [options.classLoader, options.classDocs, state.help]);
 	useEffect(() => {
 		if (options.theme != null && context.current.theme !== options.theme) {
 			state.reconfigureTheme(state.editor, options.theme);

@@ -6,12 +6,13 @@ import {useInitCodeContent} from './use-init-code';
 import {useInitEditor} from './use-init-editor';
 import {EditorContainer} from './widgets';
 
-export const GroovyEditor = forwardRef((props: GroovyEditorProps, ref: ForwardedRef<HTMLDivElement>) => {
-	const {ref: divRef, state} = useInitEditor(props);
-	useDualRefs(divRef, ref);
-	useInitCodeContent({editor: state.editor, content: props.initContent ?? ''});
+export const GroovyEditor = forwardRef(
+	(props: GroovyEditorProps, ref: ForwardedRef<HTMLDivElement>) => {
+		const {ref: divRef, state} = useInitEditor(props);
+		useDualRefs(divRef, ref);
+		useInitCodeContent({editor: state.editor, content: props.initContent ?? ''});
 
-	return <EditorContainer ref={divRef}>
-		{state.classDocsToggle != null ? <Help classDocsToggle={state.classDocsToggle}/> : null}
-	</EditorContainer>;
-});
+		return <EditorContainer ref={divRef}>
+			{state.help != null ? <Help help={state.help}/> : null}
+		</EditorContainer>;
+	});

@@ -4,13 +4,13 @@ import {EditorView} from '@codemirror/view';
 import {EditingClassLoader} from '@rainbow-n19/n2';
 import {DefaultGroovyAstHolder, GroovyAstHolder} from './ast';
 import {createGroovyLanguage, GroovyLanguageServerOptions} from './language';
-import {ClassDocsToggle, ClickablePlugin, GroovyFacet, KeymapCommentPlugin, KeymapHelpPlugin} from './plugins';
+import {ClickablePlugin, GroovyFacet, HelpToggle, KeymapCommentPlugin, KeymapHelpPlugin} from './plugins';
 
 export interface GroovyExtensionOptions {
 	languageOptions?: GroovyLanguageServerOptions;
 	astHolder?: GroovyAstHolder;
 	classLoader: EditingClassLoader | (() => EditingClassLoader);
-	classDocsToggle?: ClassDocsToggle;
+	helpToggle?: HelpToggle;
 }
 
 export interface ReconfigurableGroovyExtension {
@@ -47,8 +47,8 @@ export const groovy = (options: GroovyExtensionOptions): GroovyLanguageSupport =
 	const languageOptions = options?.languageOptions ?? {};
 	const astHolder = options.astHolder ?? new DefaultGroovyAstHolder();
 	const classLoader = options.classLoader instanceof EditingClassLoader ? options.classLoader : options.classLoader();
-	const classDocsToggle = options.classDocsToggle;
-	const facet = GroovyFacet.of({astHolder, classLoader, classDocsToggle});
+	const helpToggle = options.helpToggle;
+	const facet = GroovyFacet.of({astHolder, classLoader, helpToggle});
 	const language = createGroovyLanguage({...languageOptions, astHolder});
 	return new GroovyLanguageSupport(language, [
 		facet,

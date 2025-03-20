@@ -5,8 +5,8 @@ const KeymapHelp: KeyBinding = {
 	key: 'F1',
 	run: (view: EditorView): boolean => {
 		const config = view.state.facet(GroovyFacet);
-		if (config.classDocsToggle != null) {
-			config.classDocsToggle.toggle();
+		if (config.helpToggle != null) {
+			config.helpToggle.toggle();
 			return true;
 		} else {
 			return false;

@@ -1,5 +1,5 @@
 import {Java, Optional} from '@rainbow-n19/n2';
-import {CodeEditorClassDocsToggle} from '../types';
+import {EditorHelp} from '../types';
 import {HelpStateMode} from './types';
 
 export class ClassDocDetails {
@@ -7,14 +7,14 @@ export class ClassDocDetails {
 	private readonly _doc: Optional<Java.ClassDoc>;
 
 	constructor(className: Optional<Java.ClassName>,
-	            classDocsToggle: CodeEditorClassDocsToggle,
+	            help: EditorHelp,
 	            mode: HelpStateMode) {
 		if (mode !== HelpStateMode.CLASS || className == null) {
 			this._class = (void 0);
 			this._doc = (void 0);
 		} else {
-			this._class = classDocsToggle.classLoader().findClass(className);
-			this._doc = classDocsToggle.docs().findDoc(className);
+			this._class = help.classLoader().findClass(className);
+			this._doc = help.docs().findDoc(className);
 		}
 	}
 

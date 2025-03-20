@@ -8,11 +8,11 @@ export const HelpDocOfCategory = styled.div.attrs({
     display: grid;
     position: relative;
     grid-template-columns: auto 1fr;
-    grid-column-gap: var(--groovy-editor-help-class-doc-of-category-column-gap, 12px);
+    grid-column-gap: var(--geh-cd-of-category-column-gap, 12px);
     align-items: center;
-    height: var(--groovy-editor-help-class-doc-of-category-height, 40px);
-    line-height: calc(var(--groovy-editor-help-class-doc-of-category-height, 40px) * 7 / 8);
-    border-bottom: var(--groovy-editor-help-class-doc-of-category-border, 1px solid #e5e5e5);
+    height: var(--geh-cd-of-category-height, 40px);
+    line-height: calc(var(--geh-cd-of-category-height, 40px) * 7 / 8);
+    border-bottom: var(--geh-cd-of-category-border, 1px solid #e5e5e5);
 `;
 // noinspection CssUnresolvedCustomProperty
 export const HelpDocOfCategoryTitle = styled.div.attrs({
@@ -22,12 +22,12 @@ export const HelpDocOfCategoryTitle = styled.div.attrs({
     display: flex;
     position: relative;
     align-items: center;
-    height: var(--groovy-editor-help-item-group-title-height, 40px);
-    line-height: calc(var(--groovy-editor-help-item-group-title-height, 40px) * 7 / 8);
-    font-size: var(--groovy-editor-help-class-doc-of-category-title-font-size, 14px);
-    font-weight: var(--groovy-editor-help-class-doc-of-category-title-font-weight, 500);
-    color: var(--groovy-editor-help-class-doc-of-category-title-color, #4868c6);
-    border: var(--groovy-editor-help-item-group-title-border, 1px solid transparent);
+    height: var(--geh-dc-item-group-title-height, 40px);
+    line-height: calc(var(--geh-dc-item-group-title-height, 40px) * 7 / 8);
+    font-size: var(--geh-cd-of-category-title-font-size, 14px);
+    font-weight: var(--geh-cd-of-category-title-font-weight, 500);
+    color: var(--geh-cd-of-category-title-color, #4868c6);
+    border: var(--geh-dc-item-group-title-border, 1px solid transparent);
 
     > span:first-child {
         opacity: 0.5;
@@ -62,10 +62,10 @@ export const HelpDocOfItem = styled.div.attrs({
     display: flex;
     position: relative;
     align-items: center;
-    min-height: var(--groovy-editor-help-class-doc-of-item-height, 32px);
-    padding: var(--groovy-editor-help-class-doc-of-item-padding, 4px 0);
+    min-height: var(--geh-cd-of-item-height, 32px);
+    padding: var(--geh-cd-of-item-padding, 4px 0);
     width: 100%;
-    border-bottom: var(--groovy-editor-help-class-doc-of-item-border, 1px solid #e5e5e5);
+    border-bottom: var(--geh-cd-of-item-border, 1px solid #e5e5e5);
 `;
 // noinspection CssUnresolvedCustomProperty
 export const HelpDocOfItemTitle = styled.div.attrs({
@@ -75,11 +75,11 @@ export const HelpDocOfItemTitle = styled.div.attrs({
     display: flex;
     position: relative;
     align-items: center;
-    min-height: var(--groovy-editor-help-class-doc-of-item-title-height, 24px);
-    line-height: var(--groovy-editor-help-class-doc-of-item-title-height, 24px);
-    font-size: var(--groovy-editor-help-class-class-doc-of-item-title-font-size, 12px);
-    font-weight: var(--groovy-editor-help-class-class-doc-of-item-title-font-weight, 500);
-    color: var(--groovy-editor-help-class-class-doc-of-item-title-color, #6073a8);
+    min-height: var(--geh-cd-of-item-title-height, 24px);
+    line-height: var(--geh-cd-of-item-title-height, 24px);
+    font-size: var(--geh-dc-class-class-doc-of-item-title-font-size, 12px);
+    font-weight: var(--geh-dc-class-class-doc-of-item-title-font-weight, 500);
+    color: var(--geh-dc-class-class-doc-of-item-title-color, #6073a8);
 
     > span:first-child {
         opacity: 0.5;
@@ -100,11 +100,11 @@ export const HelpDocOfItemContent = styled.div.attrs({
 })`
     display: block;
     position: relative;
-    padding: var(--padding, var(--groovy-editor-help-class-doc-padding, 4px 0));
+    padding: var(--padding, var(--geh-cd-padding, 4px 0));
     padding-left: 18px;
     width: 100%;
     height: var(--height);
-    font-size: var(--groovy-editor-help-class-doc-font-size, 12px);
+    font-size: var(--geh-cd-font-size, 12px);
     overflow: hidden;
     transition: all 300ms ease-in-out;
 
@@ -117,7 +117,7 @@ export const HelpDocOfItemContent = styled.div.attrs({
     caption[data-w=tc] {
         position: relative;
         align-items: center;
-        line-height: var(--groovy-editor-help-class-doc-row-height, 20px);
+        line-height: var(--geh-cd-row-height, 20px);
     }
 
     a[data-w=a] {
@@ -126,30 +126,30 @@ export const HelpDocOfItemContent = styled.div.attrs({
         transition: all 300ms ease-in-out;
 
         &:hover {
-            color: var(--groovy-editor-help-class-doc-ref-hover-color, #0033B3);
+            color: var(--geh-cd-ref-hover-color, #0033B3);
         }
     }
 
     p[data-w=b],
     pre[data-w=c] {
-        padding: var(--groovy-editor-help-class-doc-padding, 4px 0);
+        padding: var(--geh-cd-padding, 4px 0);
     }
 
     blockquote[data-w=q] {
-        border-left: var(--groovy-editor-help-class-doc-blockquote-border, 2px solid #d5d5d5);
+        border-left: var(--geh-cd-blockquote-border, 2px solid #d5d5d5);
     }
 
     code[data-w=i] {
-        font-style: var(--groovy-editor-help-class-doc-code-font-style, italic);
-        background-color: var(--groovy-editor-help-class-doc-code-font-color, #f1c7b7);
-        padding: var(--groovy-editor-help-class-doc-code-font-padding, 0 4px);
-        border-radius: var(--groovy-editor-help-class-doc-code-font-border-radius, 4px);
+        font-style: var(--geh-cd-code-font-style, italic);
+        background-color: var(--geh-cd-code-font-color, #f1c7b7);
+        padding: var(--geh-cd-code-font-padding, 0 4px);
+        border-radius: var(--geh-cd-code-font-border-radius, 4px);
     }
 
     ul[data-w=l] {
         display: block;
         position: relative;
-        padding-inline-start: var(--groovy-editor-help-class-doc-list-padding-inline-start, 20px);
+        padding-inline-start: var(--geh-cd-list-padding-inline-start, 20px);
 
         > li {
         }
@@ -167,7 +167,7 @@ export const HelpDocOfItemContent = styled.div.attrs({
             transition: all 300ms ease-in-out;
 
             &:hover {
-                color: var(--groovy-editor-help-class-doc-ref-hover-color, #0033B3);
+                color: var(--geh-cd-ref-hover-color, #0033B3);
             }
         }
     }
@@ -179,25 +179,25 @@ export const HelpDocOfItemContent = styled.div.attrs({
         overflow: hidden;
 
         > caption[data-w=tc] {
-            background-color: var(--groovy-editor-help-class-doc-table-caption-bg-colo, #e5e6ea);
+            background-color: var(--geh-cd-table-caption-bg-colo, #e5e6ea);
         }
 
         th[data-w=thc], td[data-w=tbc] {
-            padding: var(--groovy-editor-help-class-doc-padding, 4px 8px);
-            border: var(--groovy-editor-help-class-doc-table-border, 1px solid #e1e1e1);
+            padding: var(--geh-cd-padding, 4px 8px);
+            border: var(--geh-cd-table-border, 1px solid #e1e1e1);
         }
     }
 
     dl[data-w=dl] {
-        padding: var(--groovy-editor-help-class-doc-detail-list-padding, 0 0 0 4px);
+        padding: var(--geh-cd-detail-list-padding, 0 0 0 4px);
 
         > dt[data-w=dt] {
-            padding: var(--groovy-editor-help-class-doc-padding, 4px 8px);
-            font-weight: var(--groovy-editor-help-class-doc-detail-list-title-font-weight, 500);
+            padding: var(--geh-cd-padding, 4px 8px);
+            font-weight: var(--geh-cd-detail-list-title-font-weight, 500);
         }
 
         > dd[data-w=dd] {
-            padding: var(--groovy-editor-help-class-doc-padding, 4px 8px 4px 48px);
+            padding: var(--geh-cd-padding, 4px 8px 4px 48px);
         }
     }
 `;

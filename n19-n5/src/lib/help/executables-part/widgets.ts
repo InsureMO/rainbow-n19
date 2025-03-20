@@ -8,10 +8,10 @@ export const HelpDocOfExecutableMembersTitle = styled.div.attrs({
     display: flex;
     position: relative;
     align-items: center;
-    height: var(--groovy-editor-help-class-doc-of-executable-members-title-height, 24px);
-    line-height: var(--groovy-editor-help-class-doc-of-executable-members-title-height, 24px);
-    font-size: var(--groovy-editor-help-class-doc-of-executable-members-title-font-size, 12px);
-    font-weight: var(--groovy-editor-help-class-doc-of-executable-members-title-font-weight, 500);
+    height: var(--geh-cd-of-executable-members-title-height, 24px);
+    line-height: var(--geh-cd-of-executable-members-title-height, 24px);
+    font-size: var(--geh-cd-of-executable-members-title-font-size, 12px);
+    font-weight: var(--geh-cd-of-executable-members-title-font-weight, 500);
     text-decoration: underline;
 `;
 // noinspection CssUnresolvedCustomProperty
@@ -29,12 +29,12 @@ export const HelpDocOfExecutableMemberName = styled.span.attrs({
 })`
     position: relative;
     white-space: pre;
-    font-size: var(--groovy-editor-help-class-doc-of-executable-member-name-font-size, 12px);
-    font-weight: var(--groovy-editor-help-class-doc-of-executable-member-name-font-weight, 500);
+    font-size: var(--geh-cd-of-executable-member-name-font-size, 12px);
+    font-weight: var(--geh-cd-of-executable-member-name-font-weight, 500);
 
     span[data-w=ref-to-class] {
         cursor: pointer;
         text-decoration: underline;
-        color: var(--groovy-editor-help-class-doc-of-executable-member-name-ref-to-class-color, #6073a8)
+        color: var(--geh-cd-of-executable-member-name-ref-to-class-color, #6073a8)
     }
 `;

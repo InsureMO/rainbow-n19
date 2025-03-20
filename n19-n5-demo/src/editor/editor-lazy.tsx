@@ -48,9 +48,7 @@ export const Editor = () => {
 	useEffect(() => {
 		(async () => {
 			const classDocs = await createDefaultClassDocs();
-			setState(state => ({
-				...state, classDocs
-			}));
+			setState(state => ({...state, classDocs}));
 		})();
 	}, []);
 
