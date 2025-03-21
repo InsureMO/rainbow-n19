@@ -1,13 +1,13 @@
 import {combineConfig, Facet} from '@codemirror/state';
 import {EditingClassLoader} from '@rainbow-n19/n2';
-import {GroovyAstHolder} from '../ast';
+import {AstHolder} from '../ast';
 
 export interface HelpToggle {
 	toggle(): void;
 }
 
 export interface GroovyFacetData {
-	astHolder: GroovyAstHolder;
+	astHolder: AstHolder;
 	classLoader: EditingClassLoader;
 	helpToggle?: HelpToggle;
 }

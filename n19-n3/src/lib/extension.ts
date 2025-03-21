@@ -2,13 +2,13 @@ import {LanguageSupport} from '@codemirror/language';
 import {Compartment, Extension, StateEffect} from '@codemirror/state';
 import {EditorView} from '@codemirror/view';
 import {EditingClassLoader} from '@rainbow-n19/n2';
-import {DefaultGroovyAstHolder, GroovyAstHolder} from './ast';
+import {DefaultAstHolder, AstHolder} from './ast';
 import {createGroovyLanguage, GroovyLanguageServerOptions} from './language';
 import {ClickablePlugin, GroovyFacet, HelpToggle, KeymapCommentPlugin, KeymapHelpPlugin} from './plugins';
 
 export interface GroovyExtensionOptions {
 	languageOptions?: GroovyLanguageServerOptions;
-	astHolder?: GroovyAstHolder;
+	astHolder?: AstHolder;
 	classLoader: EditingClassLoader | (() => EditingClassLoader);
 	helpToggle?: HelpToggle;
 }
@@ -45,7 +45,7 @@ export class GroovyLanguageSupport extends LanguageSupport {
 
 export const groovy = (options: GroovyExtensionOptions): GroovyLanguageSupport => {
 	const languageOptions = options?.languageOptions ?? {};
-	const astHolder = options.astHolder ?? new DefaultGroovyAstHolder();
+	const astHolder = options.astHolder ?? new DefaultAstHolder();
 	const classLoader = options.classLoader instanceof EditingClassLoader ? options.classLoader : options.classLoader();
 	const helpToggle = options.helpToggle;
 	const facet = GroovyFacet.of({astHolder, classLoader, helpToggle});

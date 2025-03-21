@@ -1,18 +1,18 @@
-import {GroovyAst} from './ast';
+import {Ast} from './ast';
 
-export interface GroovyAstHolder {
-	get ast(): GroovyAst;
-	replace(ast: GroovyAst): void;
+export interface AstHolder {
+	get ast(): Ast;
+	replace(ast: Ast): void;
 }
 
-export class DefaultGroovyAstHolder implements GroovyAstHolder {
-	private _ast: GroovyAst = new GroovyAst();
+export class DefaultAstHolder implements AstHolder {
+	private _ast: Ast = new Ast();
 
-	get ast(): GroovyAst {
+	get ast(): Ast {
 		return this._ast;
 	}
 
-	replace(ast: GroovyAst): void {
+	replace(ast: Ast): void {
 		if (ast == null) {
 			throw new Error('Given groovy ast cannot be null.');
 		}

@@ -1,9 +1,9 @@
 import {Input, NodeSet as LezerNodeSet, Parser, PartialParse, Tree} from '@lezer/common';
-import {GroovyAstHolder, GroovyAstNode, GroovyTokenId, TokenToNodeType} from '../ast';
+import {AstHolder, AstNode, TokenId, TokenToNodeType} from '../ast';
 import {GroovyLanguageServer, GroovyLanguageServerOptions} from './server';
 
 export interface GroovyParserOptions extends GroovyLanguageServerOptions {
-	astHolder: GroovyAstHolder;
+	astHolder: AstHolder;
 }
 
 type Fragments = Parameters<Parser['createParse']>[1];
@@ -13,7 +13,7 @@ const NodeSet = new LezerNodeSet(Object.values(TokenToNodeType));
 
 export class GroovyParser extends Parser {
 	static readonly DEFAULT_NODE_GROUP_SIZE: number = 4;
-	private readonly _astHolder: GroovyAstHolder;
+	private readonly _astHolder: AstHolder;
 	private readonly _languageServer: GroovyLanguageServer;
 
 	constructor(options?: GroovyParserOptions) {
@@ -23,7 +23,7 @@ export class GroovyParser extends Parser {
 		this._languageServer = new GroovyLanguageServer(rest);
 	}
 
-	get astHolder(): GroovyAstHolder {
+	get astHolder(): AstHolder {
 		return this._astHolder;
 	}
 
@@ -35,7 +35,7 @@ export class GroovyParser extends Parser {
 		return this.startParse(input, fragments, ranges);
 	}
 
-	private createBufferFromTokens(nodes: Array<GroovyAstNode>): Array<number> {
+	private createBufferFromTokens(nodes: Array<AstNode>): Array<number> {
 		const buffer: Array<number> = [];
 
 		nodes.forEach((node) => {
@@ -46,7 +46,7 @@ export class GroovyParser extends Parser {
 			buffer.push(nodeTypeId, startOffset, endOffset, GroovyParser.DEFAULT_NODE_GROUP_SIZE);
 		});
 
-		const topNodeId = GroovyTokenId.COMPILATION_UNIT;
+		const topNodeId = TokenId.COMPILATION_UNIT;
 		const startOffset = nodes[0].startOffset;
 		const endOffset = nodes[nodes.length - 1].endOffsetOfCM;
 		const topNodeSize = nodes.length * GroovyParser.DEFAULT_NODE_GROUP_SIZE + GroovyParser.DEFAULT_NODE_GROUP_SIZE;
@@ -66,19 +66,19 @@ export class GroovyParser extends Parser {
 		if (nodes.length < 1) {
 			return Tree.build({
 				buffer: [
-					GroovyTokenId.COMPILATION_UNIT,
+					TokenId.COMPILATION_UNIT,
 					0,
 					document.length,
 					GroovyParser.DEFAULT_NODE_GROUP_SIZE
 				],
 				nodeSet: NodeSet,
-				topID: GroovyTokenId.COMPILATION_UNIT
+				topID: TokenId.COMPILATION_UNIT
 			});
 		} else {
 			return Tree.build({
 				buffer: this.createBufferFromTokens(nodes),
 				nodeSet: NodeSet,
-				topID: GroovyTokenId.COMPILATION_UNIT
+				topID: TokenId.COMPILATION_UNIT
 			});
 		}
 	}

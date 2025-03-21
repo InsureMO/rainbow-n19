@@ -1,29 +1,27 @@
-import {GroovyAstNode} from './ast-node';
-import {GroovyAstBuildOptions} from './types';
-import {GroovyAstVisitor} from './visit';
+import {AstNode} from './ast-node';
+import {CompilationUnitNode} from './node/compilation-unit-node';
 
-export class GroovyAst {
-	private readonly _document: string;
-	private readonly _nodes: Array<GroovyAstNode> = [];
+export class Ast {
+	private readonly _compilationUnit: CompilationUnitNode;
 
-	constructor(document?: string, options?: GroovyAstBuildOptions) {
-		this._document = document ?? '';
-		new GroovyAstVisitor(this, options).visit();
+	constructor(document?: string) {
+		document = document ?? '';
+		this._compilationUnit = new CompilationUnitNode({text: document, startOffset: 0});
+	}
+
+	get compilationUnit(): CompilationUnitNode {
+		return this._compilationUnit;
 	}
 
 	get document(): string {
-		return this._document;
+		return this._compilationUnit.text;
 	}
 
 	get documentLength(): number {
-		return this.document.length;
+		return this._compilationUnit.text.length;
 	}
 
-	get nodes(): Array<GroovyAstNode> {
-		return this._nodes;
-	}
-
-	get nodeCount(): number {
-		return this._nodes.length;
+	get nodes(): Array<AstNode> {
+		return this._compilationUnit.nextNodes;
 	}
 }

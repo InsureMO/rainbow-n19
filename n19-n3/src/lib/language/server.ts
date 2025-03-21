@@ -1,9 +1,9 @@
-import {GroovyAst, GroovyAstBuilder} from '../ast';
-import {GroovyAstBuildOptions} from '../ast';
+import {Ast, AstBuilder} from '../ast';
+import {AstBuildOptions} from '../ast';
 
 export interface GroovyLanguageServerOptions {
 	timeSpentLogEnabled?: boolean;
-	buildOptions?: GroovyAstBuildOptions;
+	buildOptions?: AstBuildOptions;
 }
 
 type RequiredOptionKeys = 'timeSpentLogEnabled'
@@ -41,9 +41,9 @@ export class GroovyLanguageServer {
 		}
 	}
 
-	parse(source: string): GroovyAst {
+	parse(source: string): Ast {
 		return this.logTimeSpent(source, () => {
-			return GroovyAstBuilder.ast(source, {
+			return AstBuilder.ast(source, {
 				visitor: this._options.buildOptions?.visitor
 			});
 		});

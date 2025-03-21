@@ -1,10 +1,9 @@
-import {GroovyAstNode} from './ast-node';
+import {AstNode} from './ast-node';
 
-export interface GroovyAstBuildVisitor {
-	enterNode(node: GroovyAstNode): void;
-	exitNode(node: GroovyAstNode): void;
+export interface AstBuildVisitor {
+	onDetermined(node: AstNode): void;
 }
 
-export interface GroovyAstBuildOptions {
-	visitor?: GroovyAstBuildVisitor;
+export interface AstBuildOptions {
+	visitor?: AstBuildVisitor;
 }
