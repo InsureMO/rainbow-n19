@@ -81,8 +81,8 @@ export class AstVisitor {
 	}
 
 	appendToAst(node: AstNode): void {
-		this._currentAstNode = this._currentAstNode.append(node);
 		this.onNodeDetermined(node);
+		this._currentAstNode = this._currentAstNode.append(node);
 	}
 
 	protected address(char: Char = this.charAt(this._cursor)): void {
@@ -100,12 +100,4 @@ export class AstVisitor {
 		// address from current cursor
 		this.address();
 	}
-
-	// /**
-	//  * create an UnexpectedCharsNode for given text
-	//  */
-	// protected unexpectedCharCausedByError(text: string, offset: number): void {
-	// 	this.appendToAst(new UnexpectedCharsNode({text, startOffset: offset}));
-	// 	this.moveCursorTo(offset + text.length);
-	// }
 }

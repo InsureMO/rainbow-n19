@@ -30,7 +30,7 @@ export abstract class AbstractAstNode implements AstNode {
 	 * append given text to this, will change {@link #text} and {@link #endOffset}
 	 */
 	protected appendText(text: string): void {
-		this._text = text ?? '';
+		this._text = this._text + (text ?? '');
 		this._endOffset = this._startOffset + this._text.length;
 	}
 
@@ -171,7 +171,7 @@ export abstract class AbstractAstNode implements AstNode {
 		if (this._previous !== previous) {
 			this._previous = previous;
 		}
-		if (previous.next === this) {
+		if (previous.next !== this) {
 			previous.asPreviousOf(this);
 		}
 	}
@@ -240,11 +240,10 @@ export abstract class AbstractAstNode implements AstNode {
 	}
 
 	/**
-	 * default set given one as next of this one, global level.
-	 * and returns given one.
+	 * default set given node as last child of my parent, and return it.
 	 */
 	append(node: AstNode): AstNode {
-		node.asNextOf(this);
+		node.asLastChildOf(this.parent);
 		return node;
 	}
 }
