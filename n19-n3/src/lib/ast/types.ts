@@ -1,7 +1,8 @@
 import {AstNode} from './ast-node';
 
 export interface AstBuildVisitor {
-	onDetermined(node: AstNode): void;
+	onDetermined?: (node: AstNode) => void;
+	onNodeAppended?: (node: AstNode) => void;
 }
 
 export enum AstBuildCommentKeywordOption {

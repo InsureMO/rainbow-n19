@@ -46,6 +46,7 @@ export class ScriptCommandCaptor extends AbstractCharSequenceCaptor {
 		this.appendToAst(node);
 		this.appendToAst(headNode);
 		this.appendToAst(contentNode);
+		node.close();
 
 		// move cursor
 		this.moveCursorTo(contentCharOffset);

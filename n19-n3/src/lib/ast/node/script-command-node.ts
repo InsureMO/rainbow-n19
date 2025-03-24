@@ -1,7 +1,7 @@
 import {AstNode} from '../ast-node';
 import {TokenId} from '../tokens';
+import {AbstractContainerAstNode} from './abstract-container-node';
 import {AbstractAstNode} from './abstract-node';
-import {SimpleContainerAstNode} from './simple-container-ast-node';
 
 export class ScriptCommandHeadNode extends AbstractAstNode {
 	get tokenId(): TokenId {
@@ -15,7 +15,7 @@ export class ScriptCommandContentNode extends AbstractAstNode {
 	}
 }
 
-export class ScriptCommandNode extends SimpleContainerAstNode {
+export class ScriptCommandNode extends AbstractContainerAstNode {
 	get tokenId(): TokenId {
 		return TokenId.ScriptCommand;
 	}

@@ -102,7 +102,11 @@ export class AstVisitor {
 	}
 
 	protected onNodeDetermined(node: AstNode): void {
-		this._buildVisitor?.onDetermined(node);
+		this._buildVisitor?.onDetermined?.(node);
+	}
+
+	protected onNodeAppended(node: AstNode): void {
+		this._buildVisitor?.onNodeAppended?.(node);
 	}
 
 	visit(): void {
@@ -144,6 +148,7 @@ export class AstVisitor {
 	appendToAst(node: AstNode): void {
 		this.onNodeDetermined(node);
 		this._currentAstNode = this._currentAstNode.append(node);
+		this.onNodeAppended(node);
 	}
 
 	protected address(char: Char = this.charAt(this._cursor)): void {

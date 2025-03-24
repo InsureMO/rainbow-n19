@@ -1,7 +1,8 @@
 import {AstNode} from '../ast-node';
 import {TokenId} from '../tokens';
+import {AbstractContainerAstNode} from './abstract-container-node';
 import {AbstractAstNode} from './abstract-node';
-import {SimpleContainerAstNode} from './simple-container-ast-node';
+import {NewLineNode} from './new-line-node';
 import {TextNode} from './text-node';
 
 export class CommentHighlightKeywordNode extends AbstractAstNode {
@@ -22,7 +23,7 @@ export class SingleLineCommentStartMarkNode extends AbstractAstNode {
 	}
 }
 
-export class SingleLineCommentNode extends SimpleContainerAstNode {
+export class SingleLineCommentNode extends AbstractContainerAstNode {
 	get tokenId(): TokenId {
 		return TokenId.SingleLineComment;
 	}
@@ -47,7 +48,7 @@ export class MultipleLinesCommentEndMarkNode extends AbstractAstNode {
 	}
 }
 
-export class MultipleLinesCommentNode extends SimpleContainerAstNode {
+export class MultipleLinesCommentNode extends AbstractContainerAstNode {
 	get tokenId(): TokenId {
 		return TokenId.MultipleLinesComment;
 	}
@@ -55,8 +56,9 @@ export class MultipleLinesCommentNode extends SimpleContainerAstNode {
 	protected couldBeChildOfMe(node: AstNode): boolean {
 		return node instanceof MultipleLinesCommentStartMarkNode
 			|| node instanceof TextNode
-			|| node instanceof MultipleLinesCommentEndMarkNode
 			|| node instanceof CommentHighlightKeywordNode
-			|| node instanceof CommentHighlightContentNode;
+			|| node instanceof CommentHighlightContentNode
+			|| node instanceof NewLineNode
+			|| node instanceof MultipleLinesCommentEndMarkNode;
 	}
 }

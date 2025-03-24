@@ -1,5 +1,5 @@
 export * from './abstract-node';
-export * from './simple-container-ast-node';
+export * from './abstract-container-node';
 
 export * from './unexpected-chars-node';
 export * from './text-node';

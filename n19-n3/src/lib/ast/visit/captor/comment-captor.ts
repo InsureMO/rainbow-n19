@@ -72,6 +72,7 @@ export class SingleLineCommentCaptor extends AbstractCharSequenceCaptor {
 		this.appendToAst(node);
 		this.appendToAst(startMarkNode);
 		contentNodes.forEach(node => this.appendToAst(node));
+		node.close();
 
 		// move cursor
 		this.moveCursorTo(contentCharOffset);
