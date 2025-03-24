@@ -240,7 +240,7 @@ export abstract class AbstractAstNode implements AstNode {
 	}
 
 	/**
-	 * default set given node as last child of my parent, and return it.
+	 * default set given node as last child of my parent, and return given one.
 	 * so make sure the node has parent.
 	 */
 	append(node: AstNode): AstNode {
