@@ -415,11 +415,14 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	ElvisAssign: {id: TokenId.ElvisAssign, name: 'ElvisAssign'},
 	At: {id: TokenId.At, name: 'At'},
 	Ellipsis: {id: TokenId.Ellipsis, name: 'Ellipsis'},
+	// comment
 	SingleLineComment: {id: TokenId.SingleLineComment, name: 'SingleLineComment'},
 	MultipleLinesComment: {id: TokenId.MultipleLinesComment, name: 'MultipleLinesComment'},
+	// shebang command
 	ScriptCommandHead: {id: TokenId.ScriptCommandHead, name: 'ScriptCommandHead'},
 	ScriptCommandContent: {id: TokenId.ScriptCommandContent, name: 'ScriptCommandContent'},
 	ScriptCommand: {id: TokenId.ScriptCommand, name: 'ScriptCommand'},
+	// text content
 	Whitespaces: {id: TokenId.Whitespaces, name: 'Whitespaces'},
 	Tabs: {id: TokenId.Tabs, name: 'Tabs'},
 	NewLine: {id: TokenId.NewLine, name: 'NewLine'},
@@ -431,8 +434,30 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	ImportDeclaration: {id: TokenId.ImportDeclaration, name: 'ImportDeclaration'}
 };
 
-export const TokenToNodeType: { [key in keyof typeof TokenId]: NodeType } =
-	Object.keys(Tokens).reduce((map, key) => {
-		map[key] = NodeType.define(Tokens[key]);
-		return map;
-	}, {} as { [key in keyof typeof TokenId]: NodeType });
+export const TokenToNodeTypes: Array<NodeType> = (() => {
+	const tokens = Object.values(Tokens);
+	const types: Array<NodeType> = new Array(tokens.length).fill(null);
+	tokens.forEach(token => types[token.id] = NodeType.define(token));
+	const notDefined: Array<number> = [];
+	const incorrectIndexes: Array<{ def: NodeType, index: number }> = [];
+	types.forEach((type, index) => {
+		if (type == null) {
+			notDefined.push(index);
+		} else if (type.id !== index) {
+			incorrectIndexes.push({def: type, index});
+		}
+	});
+	const error: Array<string> = [];
+	if (notDefined.length !== 0) {
+		error.push(`not defined[${notDefined.join(', ')}]`);
+	}
+	if (incorrectIndexes.length !== 0) {
+		error.push(`mismatched[${incorrectIndexes.map(({def, index}) => {
+			return `[defId=${def.id}, defName=${def.name}, index=${index}, expect=${Tokens[index]?.name ?? 'TBD'}]`;
+		}).join(', ')}]`);
+	}
+	if (error.length !== 0) {
+		throw new Error(`Error occurred in node type definition, ${error.join(', ')}.`);
+	}
+	return types;
+})();

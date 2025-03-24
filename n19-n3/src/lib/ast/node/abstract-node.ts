@@ -241,6 +241,7 @@ export abstract class AbstractAstNode implements AstNode {
 
 	/**
 	 * default set given node as last child of my parent, and return it.
+	 * so make sure the node has parent.
 	 */
 	append(node: AstNode): AstNode {
 		node.asLastChildOf(this.parent);

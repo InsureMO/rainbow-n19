@@ -1,5 +1,5 @@
 import {Input, NodeSet as LezerNodeSet, Parser, PartialParse, Tree} from '@lezer/common';
-import {AstHolder, AstNode, TokenId, TokenToNodeType} from '../ast';
+import {AstHolder, AstNode, TokenId, TokenToNodeTypes} from '../ast';
 import {GroovyLanguageServer, GroovyLanguageServerOptions} from './server';
 
 export interface GroovyParserOptions extends GroovyLanguageServerOptions {
@@ -9,7 +9,7 @@ export interface GroovyParserOptions extends GroovyLanguageServerOptions {
 type Fragments = Parameters<Parser['createParse']>[1];
 type Ranges = Parameters<Parser['createParse']>[2];
 
-const NodeSet = new LezerNodeSet(Object.values(TokenToNodeType));
+const NodeSet = new LezerNodeSet(TokenToNodeTypes);
 
 export class GroovyParser extends Parser {
 	static readonly DEFAULT_NODE_GROUP_SIZE: number = 4;
