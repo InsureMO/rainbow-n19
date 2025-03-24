@@ -1,7 +1,8 @@
 import {Optional} from '@rainbow-n19/n2';
 import {AstNode} from '../../ast-node';
 import {CharSequenceCaptor} from '../char-sequence-captor';
-import {Char} from '../types';
+import {AstChars} from '../chars';
+import {Char, VisitorCommentKeywords} from '../types';
 import {AstVisitor} from '../visitor';
 
 export abstract class AbstractCharSequenceCaptor implements CharSequenceCaptor {
@@ -30,6 +31,18 @@ export abstract class AbstractCharSequenceCaptor implements CharSequenceCaptor {
 
 	protected appendToAst(node: AstNode): void {
 		this._astVisitor.appendToAst(node);
+	}
+
+	protected getCommentKeywords(): VisitorCommentKeywords {
+		return this._astVisitor.commentKeywords;
+	}
+
+	// mine
+	/**
+	 * check the given char is \r, \n or nothing, returns true if so
+	 */
+	protected endOfLine(char: Char): boolean {
+		return char === AstChars.NewLine || char === AstChars.CarriageReturn || char == null;
 	}
 
 	abstract attempt(char: Char): boolean;

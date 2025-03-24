@@ -4,5 +4,7 @@ export enum AstChars {
 	NewLine = '\n',
 	CarriageReturn = '\r',
 	WellNumberMark = '#',
-	ExclamationMark = '!'
+	ExclamationMark = '!',
+	SlashMark = '/',
+	AsteriskMark = '*',
 }

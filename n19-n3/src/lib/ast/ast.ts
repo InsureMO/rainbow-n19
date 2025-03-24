@@ -24,4 +24,8 @@ export class Ast {
 	get nodes(): Array<AstNode> {
 		return this._compilationUnit.nextNodes;
 	}
+
+	get leafNodes(): Array<AstNode> {
+		return this._compilationUnit.nextNodes.filter(node => node.children.length === 0);
+	}
 }

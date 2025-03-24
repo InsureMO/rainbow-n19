@@ -27,7 +27,7 @@ export class ScriptCommandCaptor extends AbstractCharSequenceCaptor {
 		const contentStartOffset = offset + 2;
 		let contentCharOffset = contentStartOffset;
 		let contentChar = this.charAt(contentCharOffset);
-		while (contentChar !== AstChars.NewLine && contentChar !== AstChars.CarriageReturn) {
+		while (!this.endOfLine(contentChar)) {
 			contentCharOffset += 1;
 			contentChar = this.charAt(contentCharOffset);
 		}

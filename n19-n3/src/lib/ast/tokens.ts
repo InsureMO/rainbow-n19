@@ -191,7 +191,12 @@ export enum TokenId {
 	At, // @
 	Ellipsis, // ...
 	// comment
+	CommentHighlightKeyword,
+	CommentHighlightContent,
+	SingleLineCommentStartMark,
 	SingleLineComment,
+	MultipleLinesCommentStartMark,
+	MultipleLinesCommentEndMark,
 	MultipleLinesComment,
 	// shebang command
 	ScriptCommandHead, // #!
@@ -201,6 +206,7 @@ export enum TokenId {
 	Whitespaces,
 	Tabs,
 	NewLine, // \n or \r\n
+	Text,
 	UndeterminedText,
 	UnexpectedChars,
 	// statements
@@ -416,7 +422,12 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	At: {id: TokenId.At, name: 'At'},
 	Ellipsis: {id: TokenId.Ellipsis, name: 'Ellipsis'},
 	// comment
+	CommentHighlightKeyword: {id: TokenId.CommentHighlightKeyword, name: 'CommentHighlightKeyword'},
+	CommentHighlightContent: {id: TokenId.CommentHighlightContent, name: 'CommentHighlightContent'},
+	SingleLineCommentStartMark: {id: TokenId.SingleLineCommentStartMark, name: 'SingleLineCommentStartMark'},
 	SingleLineComment: {id: TokenId.SingleLineComment, name: 'SingleLineComment'},
+	MultipleLinesCommentStartMark: {id: TokenId.MultipleLinesCommentStartMark, name: 'MultipleLinesCommentStartMark'},
+	MultipleLinesCommentEndMark: {id: TokenId.MultipleLinesCommentEndMark, name: 'MultipleLinesCommentEndMark'},
 	MultipleLinesComment: {id: TokenId.MultipleLinesComment, name: 'MultipleLinesComment'},
 	// shebang command
 	ScriptCommandHead: {id: TokenId.ScriptCommandHead, name: 'ScriptCommandHead'},
@@ -426,6 +437,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	Whitespaces: {id: TokenId.Whitespaces, name: 'Whitespaces'},
 	Tabs: {id: TokenId.Tabs, name: 'Tabs'},
 	NewLine: {id: TokenId.NewLine, name: 'NewLine'},
+	Text: {id: TokenId.Text, name: 'Text'},
 	UndeterminedText: {id: TokenId.UndeterminedText, name: 'UndeterminedText'},
 	UnexpectedChars: {id: TokenId.UnexpectedChars, name: 'UnexpectedChars'},
 	// statements
