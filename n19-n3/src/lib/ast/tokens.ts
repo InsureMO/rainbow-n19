@@ -204,8 +204,8 @@ export enum TokenId {
 	Whitespaces,
 	Tabs,
 	NewLine, // \n or \r\n
-	Text,
-	UndeterminedText,
+	Chars,
+	UndeterminedChars,
 	UnexpectedChars,
 	// statements
 	Annotation,
@@ -433,8 +433,8 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	Whitespaces: {id: TokenId.Whitespaces, name: 'Whitespaces'},
 	Tabs: {id: TokenId.Tabs, name: 'Tabs'},
 	NewLine: {id: TokenId.NewLine, name: 'NewLine'},
-	Text: {id: TokenId.Text, name: 'Text'},
-	UndeterminedText: {id: TokenId.UndeterminedText, name: 'UndeterminedText'},
+	Chars: {id: TokenId.Chars, name: 'Chars'},
+	UndeterminedChars: {id: TokenId.UndeterminedChars, name: 'UndeterminedChars'},
 	UnexpectedChars: {id: TokenId.UnexpectedChars, name: 'UnexpectedChars'},
 	// statements
 	Annotation: {id: TokenId.Annotation, name: 'Annotation'},

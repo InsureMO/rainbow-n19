@@ -4,7 +4,7 @@ import {AbstractContainerAstNode} from './abstract-container-node';
 import {AbstractAstNode} from './abstract-node';
 import {NewLineNode} from './new-line-node';
 import {TabsNode} from './tabs-node';
-import {TextNode} from './text-node';
+import {CharsNode} from './chars-node';
 import {WhitespacesNode} from './whitespaces-node';
 
 export class CommentKeywordNode extends AbstractAstNode {
@@ -28,7 +28,7 @@ export class SingleLineCommentNode extends AbstractContainerAstNode {
 		return node instanceof SingleLineCommentStartMarkNode
 			|| node instanceof WhitespacesNode
 			|| node instanceof TabsNode
-			|| node instanceof TextNode
+			|| node instanceof CharsNode
 			|| node instanceof CommentKeywordNode;
 	}
 }
@@ -54,7 +54,7 @@ export class MultipleLinesCommentNode extends AbstractContainerAstNode {
 		return node instanceof MultipleLinesCommentStartMarkNode
 			|| node instanceof WhitespacesNode
 			|| node instanceof TabsNode
-			|| node instanceof TextNode
+			|| node instanceof CharsNode
 			|| node instanceof CommentKeywordNode
 			|| node instanceof NewLineNode
 			|| node instanceof MultipleLinesCommentEndMarkNode;

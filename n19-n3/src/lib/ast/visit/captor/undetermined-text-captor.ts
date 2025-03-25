@@ -1,4 +1,4 @@
-import {UndeterminedTextNode} from '../../node';
+import {UndeterminedCharsNode} from '../../node';
 import {Char} from '../types';
 import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
 
@@ -12,7 +12,7 @@ export class UndeterminedTextCaptor extends AbstractCharSequenceCaptor {
 	}
 
 	visit(char: Char, offset: number): boolean {
-		this.createAndAppendToAst(UndeterminedTextNode, {text: char, startOffset: offset});
+		this.createAndAppendToAst(UndeterminedCharsNode, {text: char, startOffset: offset});
 		this.moveCursorTo(offset + 1);
 		return true;
 	}

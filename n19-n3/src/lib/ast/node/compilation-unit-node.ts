@@ -3,6 +3,9 @@ import {AstNode} from '../ast-node';
 import {TokenId} from '../tokens';
 import {AbstractAstNode} from './abstract-node';
 
+/**
+ * compilation unit, root.
+ */
 export class CompilationUnitNode extends AbstractAstNode {
 	get tokenId(): TokenId {
 		return TokenId.COMPILATION_UNIT;

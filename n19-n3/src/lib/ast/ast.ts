@@ -28,4 +28,17 @@ export class Ast {
 	get leafNodes(): Array<AstNode> {
 		return this._compilationUnit.nextNodes.filter(node => node.children.length === 0);
 	}
+
+	toString() {
+		const lines: Array<string> = [];
+		const stringify = (node: AstNode, indent: string): void => {
+			lines.push(indent + node.toString());
+			node.children.map(child => stringify(child, indent + '\t'));
+		};
+
+		let indent = '\t';
+		lines.push(this.compilationUnit.toString());
+		this.compilationUnit.children.map(child => stringify(child, indent));
+		return lines.join('\n') + '\n';
+	}
 }

@@ -2,8 +2,8 @@ export * from './abstract-node';
 export * from './abstract-container-node';
 
 export * from './unexpected-chars-node';
-export * from './text-node';
-export * from './undetermined-text-node';
+export * from './undetermined-chars-node';
+export * from './chars-node';
 
 export * from './whitespaces-node';
 export * from './tabs-node';

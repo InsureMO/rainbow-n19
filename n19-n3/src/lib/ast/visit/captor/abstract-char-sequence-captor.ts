@@ -1,6 +1,6 @@
 import {Optional} from '@rainbow-n19/n2';
 import {AstNode, AstNodeConstructOptions, AstNodeConstructor} from '../../ast-node';
-import {TabsNode, TextNode, WhitespacesNode} from '../../node';
+import {TabsNode, CharsNode, WhitespacesNode} from '../../node';
 import {CharSequenceCaptor} from '../char-sequence-captor';
 import {AstChars} from '../chars';
 import {Char, VisitorCommentKeywords} from '../types';
@@ -103,7 +103,7 @@ export abstract class AbstractCharSequenceCaptor implements CharSequenceCaptor {
 				if (currentStartIndex < index) {
 					// to ignore the first char, even current and new state are not matched
 					if (currentState === 'char') {
-						nodes.push(this.createAstNode(TextNode, {
+						nodes.push(this.createAstNode(CharsNode, {
 							text: text.slice(currentStartIndex, index), startOffset: startOffset + currentStartIndex
 						}));
 					} else if (currentState === 'space') {

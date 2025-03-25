@@ -247,4 +247,27 @@ export abstract class AbstractAstNode implements AstNode {
 		node.asLastChildOf(this.parent);
 		return node;
 	}
+
+	toString(): string {
+		const specialCharMap: { [key: string]: string } = {
+			'\n': '\\n',
+			'\r': '\\r',
+			'\t': '\\t',
+			'\b': '\\b',
+			'\f': '\\f'
+		};
+		const regex = new RegExp(`[${Object.keys(specialCharMap).join('')}]`, 'g');
+
+		return [
+			TokenId[this.tokenId],
+			'[',
+			[
+				['start', this.startOffset],
+				['end', this.endOffset],
+				['line', this.line],
+				['text', this.text?.replace(regex, (match) => specialCharMap[match])]
+			].map(attr => attr.join('=')).join(','),
+			']'
+		].join('');
+	}
 }

@@ -2,13 +2,17 @@ import {AstNode} from '../ast-node';
 import {TokenId} from '../tokens';
 import {AbstractAstNode} from './abstract-node';
 
-export class UndeterminedTextNode extends AbstractAstNode {
+/**
+ * chars not includes whitespace, new lines, tabs.
+ * and neither undetermined nor unexpected chars.
+ */
+export class CharsNode extends AbstractAstNode {
 	get tokenId(): TokenId {
-		return TokenId.UndeterminedText;
+		return TokenId.Chars;
 	}
 
 	append(node: AstNode): AstNode {
-		if (node instanceof UndeterminedTextNode) {
+		if (node instanceof CharsNode) {
 			// merge the given one to this
 			this.appendText(node.text);
 			return this;
