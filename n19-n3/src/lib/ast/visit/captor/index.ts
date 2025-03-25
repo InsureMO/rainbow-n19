@@ -1,6 +1,7 @@
 import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
+import {AbstractEndMarkedCaptor, AbstractEndMarkedWithNewLineCaptor} from './abstract-end-marked-captor';
 import {AbstractSameCharsCaptor} from './abstract-same-chars-captor';
-import {SingleLineCommentCaptor} from './comment-captor';
+import {AbstractCommentCaptor, MultipleLinesCommentCaptor, SingleLineCommentCaptor} from './comment-captor';
 import {NewLineStartsWithCarriageReturnCaptor, NewLineStartsWithNewLineCaptor} from './new-line-captors';
 import {ScriptCommandCaptor} from './script-command-captor';
 import {TabsCaptor} from './tabs-captor';
@@ -15,6 +16,7 @@ export const SortedCaptors = [
 
 	ScriptCommandCaptor,
 	SingleLineCommentCaptor,
+	MultipleLinesCommentCaptor,
 
 	UndeterminedTextCaptor
 ] as const;
@@ -22,6 +24,9 @@ export const SortedCaptors = [
 export const Captors = {
 	AbstractCharSequenceCaptor,
 	AbstractSameCharsCaptor,
+	AbstractEndMarkedCaptor,
+	AbstractEndMarkedWithNewLineCaptor,
+	AbstractCommentCaptor,
 
 	WhitespacesCaptor,
 	TabsCaptor,
@@ -30,6 +35,7 @@ export const Captors = {
 
 	ScriptCommandCaptor,
 	SingleLineCommentCaptor,
+	MultipleLinesCommentCaptor,
 
 	UndeterminedTextCaptor
 } as const;

@@ -1,6 +1,13 @@
 import {Optional} from '@rainbow-n19/n2';
 import {TokenId} from './tokens';
 
+export interface AstNodeConstructOptions {
+	text?: string;
+	startOffset: number;
+	endOffset?: number;
+	line: number;
+}
+
 export interface AstNode {
 	// myself
 	tokenId: TokenId;
@@ -9,6 +16,8 @@ export interface AstNode {
 	endOffset: number;
 	/** end offset of code mirror, physical offset + 1 */
 	endOffsetOfCM: number;
+	/** start line */
+	line: number;
 
 	// relationship
 	/** previous node, global level */
@@ -87,4 +96,8 @@ export interface AstNode {
 	 * depends on current situation of this node.
 	 */
 	append(node: AstNode): AstNode;
+}
+
+export interface AstNodeConstructor<N extends AstNode> {
+	new(options: AstNodeConstructOptions): N;
 }

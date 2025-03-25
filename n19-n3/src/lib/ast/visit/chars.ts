@@ -8,3 +8,11 @@ export enum AstChars {
 	SlashMark = '/',
 	AsteriskMark = '*',
 }
+
+export enum AstTexts {
+	CarriageReturnNewLine = '\r\n',
+	ScriptCommandStartMark = '#!',
+	SLCommentStartMark = '//',
+	MLCommentStartMark = '/*',
+	MLCommentEndMark = '*/',
+}

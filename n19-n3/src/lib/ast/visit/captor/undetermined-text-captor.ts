@@ -12,7 +12,7 @@ export class UndeterminedTextCaptor extends AbstractCharSequenceCaptor {
 	}
 
 	visit(char: Char, offset: number): boolean {
-		this.appendToAst(new UndeterminedTextNode({text: char, startOffset: offset}));
+		this.createAndAppendToAst(UndeterminedTextNode, {text: char, startOffset: offset});
 		this.moveCursorTo(offset + 1);
 		return true;
 	}

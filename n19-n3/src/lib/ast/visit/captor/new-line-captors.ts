@@ -1,5 +1,5 @@
 import {NewLineNode} from '../../node';
-import {AstChars} from '../chars';
+import {AstChars, AstTexts} from '../chars';
 import {Char} from '../types';
 import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
 
@@ -12,7 +12,7 @@ export class NewLineStartsWithNewLineCaptor extends AbstractCharSequenceCaptor {
 	}
 
 	visit(char: Char, offset: number): boolean {
-		this.appendToAst(new NewLineNode({text: char, startOffset: offset}));
+		this.createAndAppendToAst(NewLineNode, {text: char, startOffset: offset});
 		this.moveCursorTo(offset + 1);
 		this.increaseLine();
 		return true;
@@ -29,12 +29,11 @@ export class NewLineStartsWithCarriageReturnCaptor extends AbstractCharSequenceC
 
 	visit(char: Char, offset: number): boolean {
 		const nextOffset = offset + 1;
-		const nextChar = this.charAt(nextOffset);
-		if (nextChar == AstChars.NewLine) {
-			this.appendToAst(new NewLineNode({text: '\r\n', startOffset: offset}));
+		if (this.charAt(nextOffset) == AstChars.NewLine) {
+			this.createAndAppendToAst(NewLineNode, {text: AstTexts.CarriageReturnNewLine, startOffset: offset});
 			this.moveCursorTo(nextOffset + 1);
 		} else {
-			this.appendToAst(new NewLineNode({text: char, startOffset: offset}));
+			this.createAndAppendToAst(NewLineNode, {text: char, startOffset: offset});
 			this.moveCursorTo(nextOffset);
 		}
 		this.increaseLine();

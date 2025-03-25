@@ -134,6 +134,10 @@ export class AstVisitor {
 		}
 	}
 
+	currentLine(): number {
+		return this._line;
+	}
+
 	/**
 	 * move cursor to given offset
 	 */

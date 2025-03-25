@@ -74,11 +74,11 @@ export enum TokenId {
 	NumericBasePart, // numbers
 	NumericUnderscorePart, // _ between numbers, could be multiple times
 	NumericSuffixPart, // gG: BigInteger/BigDecimal, lL: Long, iI: Integer, dD: double, fF: float
-	BinaryHead, // 0b of [+-]0b...
+	BinaryStartMark, // 0b of [+-]0b...
 	BinaryLiteral, // [+-]0b..., "..." means numbers
-	OctalHead, // 0 of [+-]0...
+	OctalStartMark, // 0 of [+-]0...
 	OctalLiteral, // [+-]0..., "..." means numbers
-	HexadecimalHead, // 0x of [+-]0x...
+	HexadecimalStartMark, // 0x of [+-]0x...
 	HexadecimalLiteral, // [+-]0x..., "..." means numbers
 	IntegralLiteral, // [+-]..., "..." means numbers
 	DecimalExponentSymbol, // E or e
@@ -199,8 +199,7 @@ export enum TokenId {
 	MultipleLinesCommentEndMark,
 	MultipleLinesComment,
 	// shebang command
-	ScriptCommandHead, // #!
-	ScriptCommandContent, // rest of script command except head
+	ScriptCommandStartMark, // #!
 	ScriptCommand, // first line starts with "#!"
 	// text content
 	Whitespaces,
@@ -295,11 +294,11 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	NumericBasePart: {id: TokenId.NumericBasePart, name: 'NumericBasePart'},
 	NumericUnderscorePart: {id: TokenId.NumericUnderscorePart, name: 'NumericUnderscorePart'},
 	NumericSuffixPart: {id: TokenId.NumericSuffixPart, name: 'NumericSuffixPart'},
-	BinaryHead: {id: TokenId.BinaryHead, name: 'BinaryHead'},
+	BinaryStartMark: {id: TokenId.BinaryStartMark, name: 'BinaryStartMark'},
 	BinaryLiteral: {id: TokenId.BinaryLiteral, name: 'BinaryLiteral'},
-	OctalHead: {id: TokenId.OctalHead, name: 'OctalHead'},
+	OctalStartMark: {id: TokenId.OctalStartMark, name: 'OctalStartMark'},
 	OctalLiteral: {id: TokenId.OctalLiteral, name: 'OctalLiteral'},
-	HexadecimalHead: {id: TokenId.HexadecimalHead, name: 'HexadecimalHead'},
+	HexadecimalStartMark: {id: TokenId.HexadecimalStartMark, name: 'HexadecimalStartMark'},
 	HexadecimalLiteral: {id: TokenId.HexadecimalLiteral, name: 'HexadecimalLiteral'},
 	IntegralLiteral: {id: TokenId.IntegralLiteral, name: 'IntegralLiteral'},
 	DecimalExponentSymbol: {id: TokenId.DecimalExponentSymbol, name: 'DecimalExponentSymbol'},
@@ -430,8 +429,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	MultipleLinesCommentEndMark: {id: TokenId.MultipleLinesCommentEndMark, name: 'MultipleLinesCommentEndMark'},
 	MultipleLinesComment: {id: TokenId.MultipleLinesComment, name: 'MultipleLinesComment'},
 	// shebang command
-	ScriptCommandHead: {id: TokenId.ScriptCommandHead, name: 'ScriptCommandHead'},
-	ScriptCommandContent: {id: TokenId.ScriptCommandContent, name: 'ScriptCommandContent'},
+	ScriptCommandStartMark: {id: TokenId.ScriptCommandStartMark, name: 'ScriptCommandStartMark'},
 	ScriptCommand: {id: TokenId.ScriptCommand, name: 'ScriptCommand'},
 	// text content
 	Whitespaces: {id: TokenId.Whitespaces, name: 'Whitespaces'},

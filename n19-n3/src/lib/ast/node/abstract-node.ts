@@ -1,17 +1,12 @@
 import {Optional} from '@rainbow-n19/n2';
-import {AstNode} from '../ast-node';
+import {AstNode, AstNodeConstructOptions} from '../ast-node';
 import {TokenId} from '../tokens';
-
-export interface AstNodeConstructOptions {
-	text?: string;
-	startOffset: number;
-	endOffset?: number;
-}
 
 export abstract class AbstractAstNode implements AstNode {
 	private _text: string;
 	private readonly _startOffset: number;
 	private _endOffset: number;
+	private readonly _line: number;
 
 	/** previous in global level */
 	private _previous: Optional<AstNode>;
@@ -24,6 +19,7 @@ export abstract class AbstractAstNode implements AstNode {
 		this._text = options.text ?? '';
 		this._startOffset = options.startOffset;
 		this._endOffset = options.endOffset ?? (options.startOffset + this._text.length);
+		this._line = options.line;
 	}
 
 	/**
@@ -50,6 +46,10 @@ export abstract class AbstractAstNode implements AstNode {
 
 	get endOffsetOfCM(): number {
 		return (this._endOffset ?? 0) + 1;
+	}
+
+	get line(): number {
+		return this._line;
 	}
 
 	get previous(): Optional<AstNode> {

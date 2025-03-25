@@ -11,8 +11,13 @@ describe('Ast test #1', () => {
 		const ast = AstBuilder.ast(text);
 		console.log(ast);
 	});
-	test('Single line comment', async () => {
+	test('Single line comment #1', async () => {
 		const text = '// todo abc';
+		const ast = AstBuilder.ast(text);
+		console.log(ast);
+	});
+	test('Single line comment #2', async () => {
+		const text = '// abc\t\tdef xyz';
 		const ast = AstBuilder.ast(text);
 		console.log(ast);
 	});

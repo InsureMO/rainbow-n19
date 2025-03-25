@@ -1,13 +1,12 @@
-import {Optional} from '@rainbow-n19/n2';
-import {ScriptCommandContentNode, ScriptCommandHeadNode, ScriptCommandNode} from '../../node';
-import {AstChars} from '../chars';
+import {ScriptCommandNode, ScriptCommandStartMarkNode} from '../../node';
+import {AstChars, AstTexts} from '../chars';
 import {Char} from '../types';
-import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
+import {AbstractEndMarkedWithNewLineCaptor} from './abstract-end-marked-captor';
 
 /**
  * first line of document, and starts with "#!"
  */
-export class ScriptCommandCaptor extends AbstractCharSequenceCaptor {
+export class ScriptCommandCaptor extends AbstractEndMarkedWithNewLineCaptor {
 	attempt(char: Char): boolean {
 		return char === AstChars.WellNumberMark;
 	}
@@ -21,35 +20,22 @@ export class ScriptCommandCaptor extends AbstractCharSequenceCaptor {
 			return false;
 		}
 
-		const headNode = new ScriptCommandHeadNode({text: '#!', startOffset: offset});
-
 		// capture any chars until a "\r" or "\n"
-		const contentStartOffset = offset + 2;
-		let contentCharOffset = contentStartOffset;
-		let contentChar = this.charAt(contentCharOffset);
-		while (!this.endOfLine(contentChar)) {
-			contentCharOffset += 1;
-			contentChar = this.charAt(contentCharOffset);
-		}
+		const {content, startOffsetOfContent, endOffsetOfContent} = this.contentAndEnd(offset + 2);
+		const contentNodes = this.visitNormalText(content, startOffsetOfContent, endOffsetOfContent);
 
-		let contentNode: Optional<ScriptCommandContentNode> = (void 0);
-		if (contentCharOffset === contentStartOffset) {
-			// no content
-		} else {
-			contentNode = new ScriptCommandContentNode({
-				text: this.sliceText(contentStartOffset, contentCharOffset),
-				startOffset: contentStartOffset
-			});
-		}
-
-		const node = new ScriptCommandNode({text: this.sliceText(offset, contentCharOffset), startOffset: offset});
-		this.appendToAst(node);
-		this.appendToAst(headNode);
-		this.appendToAst(contentNode);
+		const node = this.createAndAppendToAst(ScriptCommandNode, {
+			text: this.sliceText(offset, endOffsetOfContent),
+			startOffset: offset
+		});
+		this.createAndAppendToAst(ScriptCommandStartMarkNode, {
+			text: AstTexts.ScriptCommandStartMark, startOffset: offset
+		});
+		contentNodes.forEach(contentNode => this.appendToAst(contentNode));
 		node.close();
 
 		// move cursor
-		this.moveCursorTo(contentCharOffset);
+		this.moveCursorTo(endOffsetOfContent);
 		return true;
 	}
 }

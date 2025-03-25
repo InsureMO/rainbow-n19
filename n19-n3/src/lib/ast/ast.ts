@@ -6,7 +6,7 @@ export class Ast {
 
 	constructor(document?: string) {
 		document = document ?? '';
-		this._compilationUnit = new CompilationUnitNode({text: document, startOffset: 0});
+		this._compilationUnit = new CompilationUnitNode({text: document, startOffset: 0, line: 0});
 	}
 
 	get compilationUnit(): CompilationUnitNode {
