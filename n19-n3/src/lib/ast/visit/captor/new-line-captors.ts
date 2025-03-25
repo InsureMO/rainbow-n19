@@ -1,5 +1,5 @@
 import {NewLineNode} from '../../node';
-import {AstChars, AstTexts} from '../chars';
+import {AstChars, AstMarks} from '../chars';
 import {Char} from '../types';
 import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
 
@@ -30,7 +30,7 @@ export class NewLineStartsWithCarriageReturnCaptor extends AbstractCharSequenceC
 	visit(char: Char, offset: number): boolean {
 		const nextOffset = offset + 1;
 		if (this.charAt(nextOffset) == AstChars.NewLine) {
-			this.createAndAppendToAst(NewLineNode, {text: AstTexts.CarriageReturnNewLine, startOffset: offset});
+			this.createAndAppendToAst(NewLineNode, {text: AstMarks.CarriageReturnNewLine, startOffset: offset});
 			this.moveCursorTo(nextOffset + 1);
 		} else {
 			this.createAndAppendToAst(NewLineNode, {text: char, startOffset: offset});

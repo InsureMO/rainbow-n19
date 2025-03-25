@@ -1,5 +1,5 @@
 import {ScriptCommandNode, ScriptCommandStartMarkNode} from '../../node';
-import {AstChars, AstTexts} from '../chars';
+import {AstChars, AstMarks} from '../chars';
 import {Char} from '../types';
 import {AbstractEndMarkedWithNewLineCaptor} from './abstract-end-marked-captor';
 
@@ -29,7 +29,7 @@ export class ScriptCommandCaptor extends AbstractEndMarkedWithNewLineCaptor {
 			startOffset: offset
 		});
 		this.createAndAppendToAst(ScriptCommandStartMarkNode, {
-			text: AstTexts.ScriptCommandStartMark, startOffset: offset
+			text: AstMarks.ScriptCommandStartMark, startOffset: offset
 		});
 		contentNodes.forEach(contentNode => this.appendToAst(contentNode));
 		node.close();

@@ -6,7 +6,7 @@ import {
 	MultipleLinesCommentStartMarkNode,
 	NewLineNode
 } from '../../../node';
-import {AstChars, AstTexts} from '../../chars';
+import {AstChars, AstMarks} from '../../chars';
 import {Char} from '../../types';
 import {EndMark} from '../abstract-end-marked-captor';
 import {AbstractCommentCaptor} from './abstract-comment-captor';
@@ -19,7 +19,7 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 	protected checkEndMark(char: Char, offset: number): Optional<EndMark> {
 		if (char === AstChars.AsteriskMark && this.charAt(offset + 1) === AstChars.SlashMark) {
 			return {
-				endMark: AstTexts.MLCommentEndMark,
+				endMark: AstMarks.MLCommentEndMark,
 				startOffsetOfEndMark: offset, endOffsetOfEndMark: offset + 2
 			};
 		} else {
@@ -40,7 +40,7 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 			// check the last char of line
 			if (line[lengthOfLine - 1] === AstChars.CarriageReturn) {
 				lastNode = this.createAstNode(NewLineNode, {
-					text: (index === count - 1) ? AstChars.CarriageReturn : AstTexts.CarriageReturnNewLine,
+					text: (index === count - 1) ? AstChars.CarriageReturn : AstMarks.CarriageReturnNewLine,
 					startOffset: endOffsetOfLine - ((index === count - 1) ? 1 : 2)
 				});
 				line = line.slice(0, -1);
@@ -89,13 +89,13 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 			startOffset: offset
 		});
 		this.createAndAppendToAst(MultipleLinesCommentStartMarkNode, {
-			text: AstTexts.MLCommentStartMark, startOffset: offset
+			text: AstMarks.MLCommentStartMark, startOffset: offset
 		});
 		contentNodes.forEach(node => this.appendToAst(node));
 		if (endMark != null) {
 			// end mark found
 			this.createAndAppendToAst(MultipleLinesCommentEndMarkNode, {
-				text: AstTexts.MLCommentEndMark, startOffset: startOffsetOfEndMark
+				text: AstMarks.MLCommentEndMark, startOffset: startOffsetOfEndMark
 			});
 		}
 		node.close();

@@ -1,6 +1,6 @@
 import {AstNode} from '../../../ast-node';
 import {SingleLineCommentNode, SingleLineCommentStartMarkNode} from '../../../node';
-import {AstChars, AstTexts} from '../../chars';
+import {AstChars, AstMarks} from '../../chars';
 import {Char} from '../../types';
 import {AbstractCommentCaptor} from './abstract-comment-captor';
 
@@ -41,7 +41,7 @@ export class SingleLineCommentCaptor extends AbstractCommentCaptor {
 			text: this.sliceText(offset, endOffsetOfContent), startOffset: offset
 		});
 		this.createAndAppendToAst(SingleLineCommentStartMarkNode, {
-			text: AstTexts.SLCommentStartMark, startOffset: offset
+			text: AstMarks.SLCommentStartMark, startOffset: offset
 		});
 		contentNodes.forEach(node => this.appendToAst(node));
 		node.close();

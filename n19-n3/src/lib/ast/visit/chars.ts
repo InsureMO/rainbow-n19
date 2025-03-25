@@ -9,10 +9,15 @@ export enum AstChars {
 	AsteriskMark = '*',
 }
 
-export enum AstTexts {
+export enum AstMarks {
 	CarriageReturnNewLine = '\r\n',
 	ScriptCommandStartMark = '#!',
 	SLCommentStartMark = '//',
 	MLCommentStartMark = '/*',
 	MLCommentEndMark = '*/',
+}
+
+export enum AstKeywords {
+	Package = 'package',
+	Import = 'import',
 }

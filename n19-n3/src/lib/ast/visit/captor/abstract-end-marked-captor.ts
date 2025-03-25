@@ -1,5 +1,5 @@
 import {Optional} from '@rainbow-n19/n2';
-import {AstChars, AstTexts} from '../chars';
+import {AstChars, AstMarks} from '../chars';
 import {Char} from '../types';
 import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
 
@@ -56,7 +56,7 @@ export abstract class AbstractEndMarkedWithNewLineCaptor extends AbstractEndMark
 		if (this.endOfLine(char)) {
 			if (char === AstChars.CarriageReturn && this.charAt(offset + 1) === AstChars.NewLine) {
 				return {
-					endMark: AstTexts.CarriageReturnNewLine,
+					endMark: AstMarks.CarriageReturnNewLine,
 					startOffsetOfEndMark: offset, endOffsetOfEndMark: offset + 2
 				};
 			} else {
