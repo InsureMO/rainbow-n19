@@ -43,6 +43,4 @@ export abstract class AbstractCommentCaptor extends AbstractEndMarkedWithNewLine
 
 		return nodes;
 	}
-
-	protected abstract visitForPreviousLineKeyword(content: string, startOffset: number, endOffset: number): Array<AstNode>;
 }

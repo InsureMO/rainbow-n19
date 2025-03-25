@@ -21,4 +21,9 @@ describe('Ast test #1', () => {
 		const ast = AstBuilder.ast(text);
 		console.log(ast);
 	});
+	test('Multiple lines comment #1', async () => {
+		const text = '/* todo abc';
+		const ast = AstBuilder.ast(text);
+		console.log(ast);
+	});
 });

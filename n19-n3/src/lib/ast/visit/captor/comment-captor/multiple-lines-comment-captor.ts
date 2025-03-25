@@ -27,11 +27,6 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 		}
 	}
 
-	protected visitForPreviousLineKeyword(content: string, startOffset: number, endOffset: number): Array<AstNode> {
-		// TODO
-		return [];
-	}
-
 	protected visitContent(content: string, startOffset: number, endOffset: number): Array<AstNode> {
 		const nodes: Array<AstNode> = [];
 
@@ -59,10 +54,6 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 
 			// check keyword
 			let lineNodes = this.visitLineForKeyword(content, startOffset, endOffset);
-			if (lineNodes.length === 0) {
-				// keyword not detected, check keyword in previous lines
-				lineNodes = this.visitForPreviousLineKeyword(content, startOffset, endOffset);
-			}
 			if (lineNodes.length === 0) {
 				// visit as normal text
 				lineNodes = this.visitNormalText(content, startOffset, endOffset);

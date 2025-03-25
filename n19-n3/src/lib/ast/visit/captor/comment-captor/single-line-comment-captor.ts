@@ -9,11 +9,6 @@ export class SingleLineCommentCaptor extends AbstractCommentCaptor {
 		return char === AstChars.SlashMark;
 	}
 
-	protected visitForPreviousLineKeyword(content: string, startOffset: number, endOffset: number): Array<AstNode> {
-		// TODO
-		return [];
-	}
-
 	protected visitContent(content: string, startOffset: number, endOffset: number): Array<AstNode> {
 		const contentLength = content.length;
 		if (contentLength === 0) {
@@ -24,11 +19,6 @@ export class SingleLineCommentCaptor extends AbstractCommentCaptor {
 		let nodes = this.visitLineForKeyword(content, startOffset, endOffset);
 		if (nodes.length !== 0) {
 			// keyword detected
-			return nodes;
-		}
-		// check keyword in previous lines
-		nodes = this.visitForPreviousLineKeyword(content, startOffset, endOffset);
-		if (nodes.length !== 0) {
 			return nodes;
 		}
 		// visit as normal text
