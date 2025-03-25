@@ -1,5 +1,5 @@
 import {AstNode} from '../../../ast-node';
-import {CommentHighlightContentNode, CommentHighlightKeywordNode, TextNode} from '../../../node';
+import {CommentKeywordNode, TextNode} from '../../../node';
 import {AbstractEndMarkedWithNewLineCaptor} from '../abstract-end-marked-captor';
 
 export abstract class AbstractCommentCaptor extends AbstractEndMarkedWithNewLineCaptor {
@@ -27,15 +27,14 @@ export abstract class AbstractCommentCaptor extends AbstractEndMarkedWithNewLine
 					// text before keyword
 					nodes.push(this.createAstNode(TextNode, {text: line.slice(0, index), startOffset: startOffset}));
 				}
-				// highlight keyword
-				nodes.push(this.createAstNode(CommentHighlightKeywordNode, {
+				// keyword
+				nodes.push(this.createAstNode(CommentKeywordNode, {
 					text: line.slice(index, index + keywordLength), startOffset: startOffset + index
 				}));
-				// highlight content
+				// content follows keyword
 				if (startOffset + index + keywordLength < endOffset) {
-					nodes.push(this.createAstNode(CommentHighlightContentNode, {
-						text: line.slice(index + keywordLength), startOffset: startOffset + index + keywordLength
-					}));
+					const text = line.slice(index + keywordLength);
+					nodes.push(...this.visitNormalText(text, startOffset + index + keywordLength, startOffset + index + keywordLength + text.length));
 				}
 				// break for loop, only one keyword for a single line
 				break;
@@ -45,5 +44,5 @@ export abstract class AbstractCommentCaptor extends AbstractEndMarkedWithNewLine
 		return nodes;
 	}
 
-	protected abstract visitForMultipleLinesHighlight(content: string, startOffset: number, endOffset: number): Array<AstNode>;
+	protected abstract visitForPreviousLineKeyword(content: string, startOffset: number, endOffset: number): Array<AstNode>;
 }

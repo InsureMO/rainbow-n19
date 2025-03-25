@@ -9,7 +9,7 @@ export class SingleLineCommentCaptor extends AbstractCommentCaptor {
 		return char === AstChars.SlashMark;
 	}
 
-	protected visitForMultipleLinesHighlight(content: string, startOffset: number, endOffset: number): Array<AstNode> {
+	protected visitForPreviousLineKeyword(content: string, startOffset: number, endOffset: number): Array<AstNode> {
 		// TODO
 		return [];
 	}
@@ -26,8 +26,8 @@ export class SingleLineCommentCaptor extends AbstractCommentCaptor {
 			// keyword detected
 			return nodes;
 		}
-		// check multiple line highlight
-		nodes = this.visitForMultipleLinesHighlight(content, startOffset, endOffset);
+		// check keyword in previous lines
+		nodes = this.visitForPreviousLineKeyword(content, startOffset, endOffset);
 		if (nodes.length !== 0) {
 			return nodes;
 		}
@@ -44,7 +44,7 @@ export class SingleLineCommentCaptor extends AbstractCommentCaptor {
 		// capture any chars until a "\r" or "\n"
 		const {content, startOffsetOfContent, endOffsetOfContent} = this.contentAndEnd(offset + 2);
 
-		// detect highlight keywords
+		// detect keywords
 		const contentNodes = this.visitContent(content, startOffsetOfContent, endOffsetOfContent);
 
 		const node = this.createAndAppendToAst(SingleLineCommentNode, {

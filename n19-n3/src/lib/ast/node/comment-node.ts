@@ -7,15 +7,9 @@ import {TabsNode} from './tabs-node';
 import {TextNode} from './text-node';
 import {WhitespacesNode} from './whitespaces-node';
 
-export class CommentHighlightKeywordNode extends AbstractAstNode {
+export class CommentKeywordNode extends AbstractAstNode {
 	get tokenId(): TokenId {
-		return TokenId.CommentHighlightKeyword;
-	}
-}
-
-export class CommentHighlightContentNode extends AbstractAstNode {
-	get tokenId(): TokenId {
-		return TokenId.CommentHighlightContent;
+		return TokenId.CommentKeyword;
 	}
 }
 
@@ -35,8 +29,7 @@ export class SingleLineCommentNode extends AbstractContainerAstNode {
 			|| node instanceof WhitespacesNode
 			|| node instanceof TabsNode
 			|| node instanceof TextNode
-			|| node instanceof CommentHighlightKeywordNode
-			|| node instanceof CommentHighlightContentNode;
+			|| node instanceof CommentKeywordNode;
 	}
 }
 
@@ -62,9 +55,8 @@ export class MultipleLinesCommentNode extends AbstractContainerAstNode {
 			|| node instanceof WhitespacesNode
 			|| node instanceof TabsNode
 			|| node instanceof TextNode
-			|| node instanceof CommentHighlightKeywordNode
-			|| node instanceof CommentHighlightContentNode
-			|| node instanceof MultipleLinesCommentEndMarkNode
-			|| node instanceof NewLineNode;
+			|| node instanceof CommentKeywordNode
+			|| node instanceof NewLineNode
+			|| node instanceof MultipleLinesCommentEndMarkNode;
 	}
 }

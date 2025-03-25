@@ -191,8 +191,7 @@ export enum TokenId {
 	At, // @
 	Ellipsis, // ...
 	// comment
-	CommentHighlightKeyword,
-	CommentHighlightContent,
+	CommentKeyword,
 	SingleLineCommentStartMark,
 	SingleLineComment,
 	MultipleLinesCommentStartMark,
@@ -421,8 +420,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	At: {id: TokenId.At, name: 'At'},
 	Ellipsis: {id: TokenId.Ellipsis, name: 'Ellipsis'},
 	// comment
-	CommentHighlightKeyword: {id: TokenId.CommentHighlightKeyword, name: 'CommentHighlightKeyword'},
-	CommentHighlightContent: {id: TokenId.CommentHighlightContent, name: 'CommentHighlightContent'},
+	CommentKeyword: {id: TokenId.CommentKeyword, name: 'CommentKeyword'},
 	SingleLineCommentStartMark: {id: TokenId.SingleLineCommentStartMark, name: 'SingleLineCommentStartMark'},
 	SingleLineComment: {id: TokenId.SingleLineComment, name: 'SingleLineComment'},
 	MultipleLinesCommentStartMark: {id: TokenId.MultipleLinesCommentStartMark, name: 'MultipleLinesCommentStartMark'},

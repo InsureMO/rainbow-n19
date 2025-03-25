@@ -3,7 +3,8 @@ import {AstNode} from '../../../ast-node';
 import {
 	MultipleLinesCommentEndMarkNode,
 	MultipleLinesCommentNode,
-	MultipleLinesCommentStartMarkNode
+	MultipleLinesCommentStartMarkNode,
+	NewLineNode
 } from '../../../node';
 import {AstChars, AstTexts} from '../../chars';
 import {Char} from '../../types';
@@ -26,30 +27,54 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 		}
 	}
 
-	protected visitForMultipleLinesHighlight(content: string, startOffset: number, endOffset: number): Array<AstNode> {
+	protected visitForPreviousLineKeyword(content: string, startOffset: number, endOffset: number): Array<AstNode> {
 		// TODO
 		return [];
 	}
 
 	protected visitContent(content: string, startOffset: number, endOffset: number): Array<AstNode> {
-		const contentNodes: Array<AstNode> = [];
-		const {minLength, available} = this.getCommentKeywords();
+		const nodes: Array<AstNode> = [];
 
-		const lines = content.split('\n');
+		let startOffsetOfLine = startOffset;
+		const lines = content.split(AstChars.NewLine);
 		for (let index = 0, count = lines.length; index < count; index++) {
-			const line = lines[index];
-			const lineLength = line.length;
-			let hasKeyword = false;
-			const lineNodes = [];
-			if (lineLength >= minLength) {
-
+			let lastNode: Optional<NewLineNode>;
+			let line = lines[index];
+			let lengthOfLine = line.length;
+			let endOffsetOfLine = startOffsetOfLine + lengthOfLine + 1;
+			// check the last char of line
+			if (line[lengthOfLine - 1] === AstChars.CarriageReturn) {
+				lastNode = this.createAstNode(NewLineNode, {
+					text: (index === count - 1) ? AstChars.CarriageReturn : AstTexts.CarriageReturnNewLine,
+					startOffset: endOffsetOfLine - ((index === count - 1) ? 1 : 2)
+				});
+				line = line.slice(0, -1);
+				lengthOfLine = lengthOfLine - 1;
+			} else if (index !== count - 1) {
+				lastNode = this.createAstNode(NewLineNode, {
+					text: AstChars.NewLine,
+					startOffset: endOffsetOfLine - 1
+				});
 			}
-			if (!hasKeyword) {
-				// to check this line is the continued line of previous or not
+
+			// check keyword
+			let lineNodes = this.visitLineForKeyword(content, startOffset, endOffset);
+			if (lineNodes.length === 0) {
+				// keyword not detected, check keyword in previous lines
+				lineNodes = this.visitForPreviousLineKeyword(content, startOffset, endOffset);
+			}
+			if (lineNodes.length === 0) {
+				// visit as normal text
+				lineNodes = this.visitNormalText(content, startOffset, endOffset);
+			}
+			nodes.push(...lineNodes);
+			if (lastNode != null) {
+				nodes.push(lastNode);
+				this.increaseLine();
 			}
 		}
 
-		return contentNodes;
+		return nodes;
 	}
 
 	visit(_char: Char, offset: number): boolean {
@@ -65,7 +90,7 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 			endOffsetOfAll
 		} = this.contentAndEnd(offset + 2);
 
-		// detect highlight keywords
+		// detect keywords
 		const contentNodes = this.visitContent(content, startOffsetOfContent, endOffsetOfContent);
 
 		const node = this.createAndAppendToAst(MultipleLinesCommentNode, {
