@@ -6,7 +6,6 @@ export abstract class AbstractAstNode implements AstNode {
 	private _text: string;
 	private readonly _startOffset: number;
 	private _endOffset: number;
-	private readonly _line: number;
 
 	/** previous in global level */
 	private _previous: Optional<AstNode>;
@@ -19,7 +18,6 @@ export abstract class AbstractAstNode implements AstNode {
 		this._text = options.text ?? '';
 		this._startOffset = options.startOffset;
 		this._endOffset = options.endOffset ?? (options.startOffset + this._text.length);
-		this._line = options.line;
 	}
 
 	/**
@@ -42,14 +40,6 @@ export abstract class AbstractAstNode implements AstNode {
 
 	get endOffset(): number {
 		return this._endOffset;
-	}
-
-	get endOffsetOfCM(): number {
-		return (this._endOffset ?? 0) + 1;
-	}
-
-	get line(): number {
-		return this._line;
 	}
 
 	get previous(): Optional<AstNode> {
@@ -264,7 +254,6 @@ export abstract class AbstractAstNode implements AstNode {
 			[
 				['start', this.startOffset],
 				['end', this.endOffset],
-				['line', this.line],
 				['text', this.text?.replace(regex, (match) => specialCharMap[match])]
 			].map(attr => attr.join('=')).join(','),
 			']'

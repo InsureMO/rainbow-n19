@@ -5,7 +5,6 @@ export interface AstNodeConstructOptions {
 	text?: string;
 	startOffset: number;
 	endOffset?: number;
-	line: number;
 }
 
 export interface AstNode {
@@ -14,10 +13,6 @@ export interface AstNode {
 	text: string;
 	startOffset: number;
 	endOffset: number;
-	/** end offset of code mirror, physical offset + 1 */
-	endOffsetOfCM: number;
-	/** start line */
-	line: number;
 
 	// relationship
 	/** previous node, global level */

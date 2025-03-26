@@ -5,8 +5,8 @@ import {Char} from '../../types';
 import {AbstractCommentCaptor} from './abstract-comment-captor';
 
 export class SingleLineCommentCaptor extends AbstractCommentCaptor {
-	attempt(char: Char): boolean {
-		return char === AstChars.SlashMark;
+	attempt(char: Char, offset: number): boolean {
+		return char === AstChars.SlashMark && this.charAt(offset + 1) === AstChars.SlashMark;
 	}
 
 	protected visitContent(content: string, startOffset: number, endOffset: number): Array<AstNode> {
@@ -16,7 +16,7 @@ export class SingleLineCommentCaptor extends AbstractCommentCaptor {
 		}
 
 		// check keyword
-		let nodes = this.visitLineForKeyword(content, startOffset, endOffset);
+		const nodes = this.visitLineForKeyword(content, startOffset, endOffset);
 		if (nodes.length !== 0) {
 			// keyword detected
 			return nodes;
@@ -26,11 +26,6 @@ export class SingleLineCommentCaptor extends AbstractCommentCaptor {
 	}
 
 	visit(_char: Char, offset: number): boolean {
-		const nextChar = this.charAt(offset + 1);
-		if (nextChar !== AstChars.SlashMark) {
-			return false;
-		}
-
 		// capture any chars until a "\r" or "\n"
 		const {content, startOffsetOfContent, endOffsetOfContent} = this.contentAndEnd(offset + 2);
 

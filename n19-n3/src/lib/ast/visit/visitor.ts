@@ -2,13 +2,13 @@ import {Optional} from '@rainbow-n19/n2';
 import {Ast} from '../ast';
 import {AstNode} from '../ast-node';
 import {AstBuildCommentKeywordOption, AstBuildOptions, AstBuildVisitor} from '../types';
-import {SortedCaptors} from './captor';
-import {CharSequenceCaptor} from './char-sequence-captor';
+import {AstNodeCaptor} from './captor';
+import {SortedCaptors} from './captors';
 import {Char, VisitorCommentKeyword, VisitorCommentKeywords} from './types';
 
 export class AstVisitor {
 	private readonly _ast: Ast;
-	private readonly _captors: Array<CharSequenceCaptor>;
+	private readonly _captors: Array<AstNodeCaptor>;
 	private readonly _buildVisitor: Optional<AstBuildVisitor>;
 	private readonly _buildCommentKeywords: VisitorCommentKeywords;
 
@@ -23,65 +23,70 @@ export class AstVisitor {
 		this._captors = SortedCaptors.map(Captor => new Captor(this));
 		this._buildVisitor = options?.visitor;
 		// build comment keywords
-		let todoConfigured = false;
-		const commentKeywords = options?.commentKeywords ?? {};
-		this._buildCommentKeywords = (() => {
-			const defs = Object.keys(commentKeywords).reduce((keywords, keyword) => {
-				const option = commentKeywords[keyword];
-				keyword = keyword.trim();
-				switch (option) {
-					case AstBuildCommentKeywordOption.DISABLE:
-						// ignored
-						break;
-					case AstBuildCommentKeywordOption.ENABLE_AND_CASE_SENSITIVE:
-						keywords.push({
-							keyword,
-							pattern: new RegExp(`\\b${keyword}\\b`),
-							caseSensitive: true,
-							keywordLength: keyword.length
-						});
-						break;
-					case AstBuildCommentKeywordOption.ENABLE_AND_CASE_INSENSITIVE:
-					default:
-						// default treated as case-insensitive
-						keywords.push({
-							keyword,
-							pattern: new RegExp(`\\b${keyword}\\b`, 'i'),
-							caseSensitive: false,
-							keywordLength: keyword.length
-						});
-
-				}
-				if (keyword.toLowerCase() === 'todo') {
-					todoConfigured = true;
-				}
-				return keywords;
-			}, [] as Array<VisitorCommentKeyword>);
-			if (!todoConfigured) {
-				// push a todo as first one
-				defs.unshift({keyword: 'todo', pattern: /\btodo\b/i, caseSensitive: false, keywordLength: 4});
-			}
-
-			const maxLength = Math.max(...defs.map(({keywordLength: length}) => length));
-			const filtered: { [key in number]: Array<VisitorCommentKeyword> } = {};
-			return {
-				minLength: Math.min(...defs.map(({keywordLength: length}) => length)),
-				available: (contentLength: number) => {
-					if (contentLength >= maxLength) {
-						return defs;
-					}
-					if (filtered[contentLength] == null) {
-						filtered[contentLength] = defs.filter(({keywordLength: length}) => length <= contentLength);
-					}
-					return filtered[contentLength];
-				},
-				all: defs
-			};
-		})();
+		this._buildCommentKeywords = this.initializeCommentKeywords(options?.commentKeywords);
 
 		this._currentAstNode = ast.compilationUnit;
 	}
 
+	// initializing
+	protected initializeCommentKeywords(keywords?: AstBuildOptions['commentKeywords']): VisitorCommentKeywords {
+		keywords = keywords ?? {};
+
+		let todoConfigured = false;
+		const defs = Object.keys(keywords).reduce((keywords, keyword) => {
+			const option = keywords[keyword];
+			keyword = keyword.trim();
+			switch (option) {
+				case AstBuildCommentKeywordOption.DISABLE:
+					// ignored
+					break;
+				case AstBuildCommentKeywordOption.ENABLE_AND_CASE_SENSITIVE:
+					keywords.push({
+						keyword,
+						pattern: new RegExp(`\\b${keyword}\\b`),
+						caseSensitive: true,
+						keywordLength: keyword.length
+					});
+					break;
+				case AstBuildCommentKeywordOption.ENABLE_AND_CASE_INSENSITIVE:
+				default:
+					// default treated as case-insensitive
+					keywords.push({
+						keyword,
+						pattern: new RegExp(`\\b${keyword}\\b`, 'i'),
+						caseSensitive: false,
+						keywordLength: keyword.length
+					});
+
+			}
+			if (keyword.toLowerCase() === 'todo') {
+				todoConfigured = true;
+			}
+			return keywords;
+		}, [] as Array<VisitorCommentKeyword>);
+		if (!todoConfigured) {
+			// push a todo as first one
+			defs.unshift({keyword: 'todo', pattern: /\btodo\b/i, caseSensitive: false, keywordLength: 4});
+		}
+
+		const maxLength = Math.max(...defs.map(({keywordLength: length}) => length));
+		const filtered: { [key in number]: Array<VisitorCommentKeyword> } = {};
+		return {
+			minLength: Math.min(...defs.map(({keywordLength: length}) => length)),
+			available: (contentLength: number) => {
+				if (contentLength >= maxLength) {
+					return defs;
+				}
+				if (filtered[contentLength] == null) {
+					filtered[contentLength] = defs.filter(({keywordLength: length}) => length <= contentLength);
+				}
+				return filtered[contentLength];
+			},
+			all: defs
+		};
+	}
+
+	// static visit
 	static visit(document?: string, options?: AstBuildOptions): Ast {
 		const ast = new Ast(document);
 		const visitor = new AstVisitor(ast, options);
@@ -89,6 +94,7 @@ export class AstVisitor {
 		return ast;
 	}
 
+	// getter
 	get ast(): Ast {
 		return this._ast;
 	}
@@ -101,6 +107,7 @@ export class AstVisitor {
 		return this._buildCommentKeywords;
 	}
 
+	// event dispatcher
 	protected onNodeDetermined(node: AstNode): void {
 		this._buildVisitor?.onDetermined?.(node);
 	}
@@ -109,6 +116,7 @@ export class AstVisitor {
 		this._buildVisitor?.onNodeAppended?.(node);
 	}
 
+	// visit
 	visit(): void {
 		const char = this.charAt(this._cursor);
 		if (char == null) {
@@ -134,18 +142,25 @@ export class AstVisitor {
 		}
 	}
 
+	/**
+	 * get current line.
+	 */
 	currentLine(): number {
 		return this._line;
 	}
 
 	/**
-	 * move cursor to given offset
+	 * move cursor to given offset.
+	 * it is important to know that move cursor will not impact value of line.
 	 */
 	moveCursorTo(offset: number): void {
 		this._cursor = offset;
 	}
 
-	increaseLine(): void {
+	/**
+	 * move to next line
+	 */
+	moveToNextLine(): void {
 		this._line += 1;
 	}
 
@@ -161,10 +176,15 @@ export class AstVisitor {
 			return;
 		}
 		for (const captor of this._captors) {
-			if (captor.attempt(char)) {
+			const attempted = captor.attempt(char, this._cursor);
+			if (attempted === true) {
 				if (captor.visit(char, this._cursor)) {
 					break;
 				}
+			} else if (attempted === false) {
+				// do nothing
+			} else if (attempted.visit(char, this._cursor)) {
+				break;
 			}
 		}
 		// address from current cursor

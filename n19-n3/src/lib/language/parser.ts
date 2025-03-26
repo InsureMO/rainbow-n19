@@ -41,14 +41,14 @@ export class GroovyParser extends Parser {
 		nodes.forEach((node) => {
 			const nodeTypeId = node.tokenId;
 			const startOffset = node.startOffset;
-			const endOffset = node.endOffsetOfCM;
+			const endOffset = node.endOffset;
 
 			buffer.push(nodeTypeId, startOffset, endOffset, GroovyParser.DEFAULT_NODE_GROUP_SIZE);
 		});
 
 		const topNodeId = TokenId.COMPILATION_UNIT;
 		const startOffset = nodes[0].startOffset;
-		const endOffset = nodes[nodes.length - 1].endOffsetOfCM;
+		const endOffset = nodes[nodes.length - 1].endOffset;
 		const topNodeSize = nodes.length * GroovyParser.DEFAULT_NODE_GROUP_SIZE + GroovyParser.DEFAULT_NODE_GROUP_SIZE;
 
 		buffer.push(topNodeId, startOffset, endOffset, topNodeSize);

@@ -7,19 +7,11 @@ import {AbstractEndMarkedWithNewLineCaptor} from './abstract-end-marked-captor';
  * first line of document, and starts with "#!"
  */
 export class ScriptCommandCaptor extends AbstractEndMarkedWithNewLineCaptor {
-	attempt(char: Char): boolean {
-		return char === AstChars.WellNumberMark;
+	attempt(char: Char, offset: number): boolean {
+		return offset === 0 && char === AstChars.WellNumberMark && this.charAt(offset + 1) === AstChars.ExclamationMark;
 	}
 
 	visit(_char: Char, offset: number): boolean {
-		if (offset !== 0) {
-			return false;
-		}
-		const nextChar = this.charAt(offset + 1);
-		if (nextChar !== AstChars.ExclamationMark) {
-			return false;
-		}
-
 		// capture any chars until a "\r" or "\n"
 		const {content, startOffsetOfContent, endOffsetOfContent} = this.contentAndEnd(offset + 2);
 		const contentNodes = this.visitNormalText(content, startOffsetOfContent, endOffsetOfContent);

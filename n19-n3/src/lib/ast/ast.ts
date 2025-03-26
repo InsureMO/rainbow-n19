@@ -6,7 +6,7 @@ export class Ast {
 
 	constructor(document?: string) {
 		document = document ?? '';
-		this._compilationUnit = new CompilationUnitNode({text: document, startOffset: 0, line: 0});
+		this._compilationUnit = new CompilationUnitNode({text: document, startOffset: 0});
 	}
 
 	get compilationUnit(): CompilationUnitNode {
@@ -36,7 +36,7 @@ export class Ast {
 			node.children.map(child => stringify(child, indent + '\t'));
 		};
 
-		let indent = '\t';
+		const indent = '\t';
 		lines.push(this.compilationUnit.toString());
 		this.compilationUnit.children.map(child => stringify(child, indent));
 		return lines.join('\n') + '\n';

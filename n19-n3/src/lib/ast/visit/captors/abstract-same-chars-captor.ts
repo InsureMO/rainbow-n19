@@ -8,7 +8,8 @@ import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
 export abstract class AbstractSameCharsCaptor<N extends AstNode> extends AbstractCharSequenceCaptor {
 	protected abstract get leadChar(): Char;
 
-	attempt(char: Char): boolean {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	attempt(char: Char, _offset: number): boolean {
 		return char === this.leadChar;
 	}
 

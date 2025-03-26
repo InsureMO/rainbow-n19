@@ -1,12 +1,12 @@
 import {Optional} from '@rainbow-n19/n2';
 import {AstNode, AstNodeConstructOptions, AstNodeConstructor} from '../../ast-node';
-import {TabsNode, CharsNode, WhitespacesNode} from '../../node';
-import {CharSequenceCaptor} from '../char-sequence-captor';
+import {CharsNode, TabsNode, WhitespacesNode} from '../../node';
+import {AstNodeCaptor} from '../captor';
 import {AstChars} from '../chars';
 import {Char, VisitorCommentKeywords} from '../types';
 import {AstVisitor} from '../visitor';
 
-export abstract class AbstractCharSequenceCaptor implements CharSequenceCaptor {
+export abstract class AbstractCharSequenceCaptor implements AstNodeCaptor {
 	private readonly _astVisitor: AstVisitor;
 
 	constructor(astVisitor: AstVisitor) {
@@ -30,8 +30,8 @@ export abstract class AbstractCharSequenceCaptor implements CharSequenceCaptor {
 		this._astVisitor.moveCursorTo(offset);
 	}
 
-	protected increaseLine(): void {
-		this._astVisitor.increaseLine();
+	protected moveToNextLine(): void {
+		this._astVisitor.moveToNextLine();
 	}
 
 	protected appendToAst(node: AstNode): void {
@@ -43,15 +43,11 @@ export abstract class AbstractCharSequenceCaptor implements CharSequenceCaptor {
 	}
 
 	// mine
-	protected createAstNode<N extends AstNode>(
-		Constructor: AstNodeConstructor<N>,
-		options: Omit<AstNodeConstructOptions, 'line'> & Partial<Pick<AstNodeConstructOptions, 'line'>>): N {
-		return new Constructor({line: this.currentLine(), ...options});
+	protected createAstNode<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: AstNodeConstructOptions): N {
+		return new Constructor(options);
 	}
 
-	protected createAndAppendToAst<N extends AstNode>(
-		Constructor: AstNodeConstructor<N>,
-		options: Omit<AstNodeConstructOptions, 'line'> & Partial<Pick<AstNodeConstructOptions, 'line'>>): N {
+	protected createAndAppendToAst<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: AstNodeConstructOptions): N {
 		const node = this.createAstNode(Constructor, options);
 		this.appendToAst(node);
 		return node;
@@ -124,7 +120,7 @@ export abstract class AbstractCharSequenceCaptor implements CharSequenceCaptor {
 		return nodes;
 	}
 
-	abstract attempt(char: Char): boolean;
+	abstract attempt(char: Char, offset: number): boolean;
 
 	abstract visit(char: Char, offset: number): boolean;
 }
