@@ -5,7 +5,7 @@ export abstract class AbstractSymbolNode extends AbstractAstNode {
 }
 
 /** ";" */
-export class SemiColonNode extends AbstractSymbolNode {
+export class SemicolonNode extends AbstractSymbolNode {
 	get tokenId(): TokenId {
 		return TokenId.Semi;
 	}

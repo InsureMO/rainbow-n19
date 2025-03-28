@@ -20,14 +20,18 @@ export abstract class AbstractContainerAstNode extends AbstractAstNode {
 		return this._closed;
 	}
 
+	protected appendAsLastChild(node: AstNode): AstNode {
+		node.asLastChildOf(this);
+		return this;
+	}
+
 	/**
 	 * accept node which pass the {@link couldBeChildOfMe} as child,
 	 * otherwise call super.
 	 */
 	append(node: AstNode): AstNode {
 		if (!this.closed && this.couldBeChildOfMe(node)) {
-			node.asLastChildOf(this);
-			return this;
+			return this.appendAsLastChild(node);
 		} else {
 			const ret = super.append(node);
 			// once a node is appended as next sibling, close me.

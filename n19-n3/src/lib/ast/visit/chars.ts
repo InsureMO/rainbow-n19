@@ -8,7 +8,10 @@ export enum AstChars {
 	SlashMark = '/',
 	AsteriskMark = '*',
 	Semicolon = ';',
-	Colon = ':'
+	Colon = ':',
+	Dot = '.',
+	And = '&',
+	Pipe = '|'
 }
 
 export enum AstMarks {

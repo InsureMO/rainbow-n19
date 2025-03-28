@@ -4,7 +4,7 @@ import {AbstractContainerAstNode} from './abstract-container-node';
 import {MultipleLinesCommentNode} from './comment-node';
 import {IdentifierNode} from './identifier-node';
 import {KwPackageNode} from './keyword-nodes';
-import {DotNode, SemiColonNode} from './symbol-nodes';
+import {DotNode, SemicolonNode} from './symbol-nodes';
 import {TabsNode} from './tabs-node';
 import {UnexpectedCharsNode} from './unexpected-chars-node';
 import {WhitespacesNode} from './whitespaces-node';
@@ -24,7 +24,17 @@ export class PackageDeclarationNode extends AbstractContainerAstNode {
 			|| node instanceof DotNode
 			|| node instanceof IdentifierNode
 			|| node instanceof UnexpectedCharsNode
-			|| node instanceof SemiColonNode
+			|| node instanceof SemicolonNode
 			|| node instanceof MultipleLinesCommentNode;
+	}
+
+	protected appendAsLastChild(node: AstNode): AstNode {
+		if (node instanceof SemicolonNode) {
+			super.appendAsLastChild(node);
+			this.close();
+			return this.parent;
+		} else {
+			return super.appendAsLastChild(node);
+		}
 	}
 }

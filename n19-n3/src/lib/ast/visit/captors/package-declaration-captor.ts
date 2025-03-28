@@ -29,18 +29,17 @@ export class PackageDeclarationCaptor extends AbstractCharSequenceCaptor {
 		return !Character.isJavaIdentifierPart(nextCharToWord.codePointAt(0));
 	}
 
-	visit(char: Char, offset: number): boolean {
-		const startOffsetOfContent = offset + PackageDeclarationCaptor.PACKAGE_CHARS.length;
-		// expect whitespace, tab or ml comment
-
-		// TODO
-		this.createAndAppendToAst(PackageDeclarationNode, {
-			text: '', startOffset: offset
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	visit(_char: Char, offset: number): boolean {
+		// create node
+		const node = this.createAndAppendToAst(PackageDeclarationNode, {
+			text: AstKeywords.Package, startOffset: offset
 		});
+		// create keyword node
 		this.createAndAppendToAst(KwPackageNode, {text: AstKeywords.Package, startOffset: offset});
+		node.close();
 
-		this.moveToNextLine();
-		this.moveCursorTo(startOffsetOfContent);
+		this.moveCursorTo(node.endOffset);
 		return true;
 	}
 }
