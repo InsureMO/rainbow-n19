@@ -39,6 +39,13 @@ export abstract class AbstractAstNode implements AstNode {
 	}
 
 	get endOffset(): number {
+		if (this._children != null) {
+			// sometimes child appended and endOffset not updated
+			const endOffsetOfLastChild = this._children[this._children.length - 1].endOffset;
+			if (endOffsetOfLastChild !== this._endOffset) {
+				this._endOffset = endOffsetOfLastChild;
+			}
+		}
 		return this._endOffset;
 	}
 
