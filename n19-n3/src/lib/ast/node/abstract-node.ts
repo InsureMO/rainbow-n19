@@ -234,7 +234,7 @@ export abstract class AbstractAstNode implements AstNode {
 	 * so make sure the node has parent.
 	 */
 	append(node: AstNode): AstNode {
-		node.asLastChildOf(this.parent);
+		this.parent.append(node);
 		return node;
 	}
 

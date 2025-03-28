@@ -3,12 +3,13 @@ import {AbstractEndMarkedCaptor, AbstractEndMarkedWithNewLineCaptor} from './abs
 import {AbstractSameCharsCaptor} from './abstract-same-chars-captor';
 import {AbstractSingleCharCaptor} from './abstract-single-char-captor';
 import {AbstractCommentCaptor, MultipleLinesCommentCaptor, SingleLineCommentCaptor} from './comment-captors';
+import {IdentifierCaptor} from './identifier-captor';
 import {NewLineStartsWithCarriageReturnCaptor, NewLineStartsWithNewLineCaptor} from './new-line-captors';
 import {PackageDeclarationCaptor} from './package-declaration-captor';
 import {ScriptCommandCaptor} from './script-command-captor';
 import {DotCaptor, SemicolonCaptor, SpreadDotCaptor} from './symbol-captors';
 import {TabsCaptor} from './tabs-captor';
-import {UndeterminedTextCaptor} from './undetermined-text-captor';
+import {UndeterminedCharsCaptor} from './undetermined-chars-captor';
 import {WhitespacesCaptor} from './whitespaces-captor';
 
 export const SortedCaptors = [
@@ -27,8 +28,10 @@ export const SortedCaptors = [
 	SemicolonCaptor,
 	DotCaptor,
 	SpreadDotCaptor,
+	// identifier
+	IdentifierCaptor,
 	// others
-	UndeterminedTextCaptor
+	UndeterminedCharsCaptor
 ] as const;
 
 export const Captors = {
@@ -55,6 +58,8 @@ export const Captors = {
 	SemicolonCaptor,
 	DotCaptor,
 	SpreadDotCaptor,
+	// identifier
+	IdentifierCaptor,
 	// others
-	UndeterminedTextCaptor
+	UndeterminedCharsCaptor
 } as const;

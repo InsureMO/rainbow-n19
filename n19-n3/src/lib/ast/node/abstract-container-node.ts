@@ -22,7 +22,7 @@ export abstract class AbstractContainerAstNode extends AbstractAstNode {
 
 	protected appendAsLastChild(node: AstNode): AstNode {
 		node.asLastChildOf(this);
-		return this;
+		return node;
 	}
 
 	/**
@@ -31,12 +31,11 @@ export abstract class AbstractContainerAstNode extends AbstractAstNode {
 	 */
 	append(node: AstNode): AstNode {
 		if (!this.closed && this.couldBeChildOfMe(node)) {
+			// this is opened for child, and given node can be child of this
 			return this.appendAsLastChild(node);
 		} else {
-			const ret = super.append(node);
-			// once a node is appended as next sibling, close me.
-			this.close();
-			return ret;
+			// given one cannot be child of this
+			return super.append(node);
 		}
 	}
 }

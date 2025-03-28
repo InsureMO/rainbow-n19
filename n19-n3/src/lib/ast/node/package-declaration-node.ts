@@ -27,14 +27,4 @@ export class PackageDeclarationNode extends AbstractContainerAstNode {
 			|| node instanceof SemicolonNode
 			|| node instanceof MultipleLinesCommentNode;
 	}
-
-	protected appendAsLastChild(node: AstNode): AstNode {
-		if (node instanceof SemicolonNode) {
-			super.appendAsLastChild(node);
-			this.close();
-			return this.parent;
-		} else {
-			return super.appendAsLastChild(node);
-		}
-	}
 }

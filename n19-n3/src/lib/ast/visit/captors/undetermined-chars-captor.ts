@@ -5,7 +5,7 @@ import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
 /**
  * accept any char, so must be the last captor.
  */
-export class UndeterminedTextCaptor extends AbstractCharSequenceCaptor {
+export class UndeterminedCharsCaptor extends AbstractCharSequenceCaptor {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	attempt(_char: Char, _offset: number): boolean {
 		return true;

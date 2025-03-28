@@ -37,7 +37,6 @@ export class PackageDeclarationCaptor extends AbstractCharSequenceCaptor {
 		});
 		// create keyword node
 		this.createAndAppendToAst(KwPackageNode, {text: AstKeywords.Package, startOffset: offset});
-		node.close();
 
 		this.moveCursorTo(node.endOffset);
 		return true;
