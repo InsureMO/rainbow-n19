@@ -26,7 +26,7 @@ describe('Package declaration test', () => {
 		const ast = AstBuilder.ast(text);
 		console.log(ast.toString())
 	});
-	test('Package declaration #5', async () => {
+	test('Package declaration #6', async () => {
 		const text = 'package/* a */ abc/*b\n*/.; /*c*/1df/*d*/\n';
 		const ast = AstBuilder.ast(text);
 		console.log(ast.toString())
