@@ -25,6 +25,8 @@ export enum AstMarks {
 export enum AstKeywords {
 	Package = 'package',
 	Import = 'import',
+	Static = 'static',
+	As = 'as'
 }
 
 // The following code is copied from the JDK and moderately modified while maintaining the original logic.

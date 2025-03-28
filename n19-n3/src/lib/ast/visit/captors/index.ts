@@ -4,8 +4,14 @@ import {AbstractSameCharsCaptor} from './abstract-same-chars-captor';
 import {AbstractSingleCharCaptor} from './abstract-single-char-captor';
 import {AbstractCommentCaptor, MultipleLinesCommentCaptor, SingleLineCommentCaptor} from './comment-captors';
 import {IdentifierCaptor} from './identifier-captor';
+import {
+	AbstractKeywordCaptor,
+	ImportDeclarationCaptor,
+	KwAsCaptor,
+	KwStaticCaptor,
+	PackageDeclarationCaptor
+} from './keyword-captors';
 import {NewLineStartsWithCarriageReturnCaptor, NewLineStartsWithNewLineCaptor} from './new-line-captors';
-import {PackageDeclarationCaptor} from './package-declaration-captor';
 import {ScriptCommandCaptor} from './script-command-captor';
 import {DotCaptor, SemicolonCaptor, SpreadDotCaptor} from './symbol-captors';
 import {TabsCaptor} from './tabs-captor';
@@ -22,8 +28,12 @@ export const SortedCaptors = [
 	ScriptCommandCaptor,
 	SingleLineCommentCaptor,
 	MultipleLinesCommentCaptor,
-	// keyword
+	// statement
 	PackageDeclarationCaptor,
+	ImportDeclarationCaptor,
+	// keyword
+	KwStaticCaptor,
+	KwAsCaptor,
 	// symbol
 	SemicolonCaptor,
 	DotCaptor,
@@ -34,6 +44,7 @@ export const SortedCaptors = [
 	UndeterminedCharsCaptor
 ] as const;
 
+// noinspection JSUnusedGlobalSymbols
 export const Captors = {
 	// abstract
 	AbstractCharSequenceCaptor,
@@ -42,6 +53,7 @@ export const Captors = {
 	AbstractEndMarkedCaptor,
 	AbstractEndMarkedWithNewLineCaptor,
 	AbstractCommentCaptor,
+	AbstractKeywordCaptor,
 
 	// whitespace, tab and new line
 	WhitespacesCaptor,
@@ -52,8 +64,12 @@ export const Captors = {
 	ScriptCommandCaptor,
 	SingleLineCommentCaptor,
 	MultipleLinesCommentCaptor,
-	// keyword
+	// statement
 	PackageDeclarationCaptor,
+	ImportDeclarationCaptor,
+	// keyword
+	KwStaticCaptor,
+	KwAsCaptor,
 	// symbol
 	SemicolonCaptor,
 	DotCaptor,

@@ -11,6 +11,13 @@ export class KwPackageNode extends AbstractKeywordNode {
 	}
 }
 
+/** "import" */
+export class KwImportNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.IMPORT;
+	}
+}
+
 /** "as" */
 export class KwAsNode extends AbstractKeywordNode {
 	get tokenId(): TokenId {
