@@ -3,7 +3,7 @@ import {AbstractDelegateCaptor} from './abstract-delegate-captor';
 import {AbstractEndMarkedCaptor, AbstractEndMarkedWithNewLineCaptor} from './abstract-end-marked-captor';
 import {AbstractSameCharsCaptor} from './abstract-same-chars-captor';
 import {AbstractCommentCaptor, MultipleLinesCommentCaptor, SingleLineCommentCaptor} from './comment-captor';
-import {PKeywordCaptor} from './keyword-captor';
+import {PackageDeclarationCaptor} from './keyword-captor';
 import {NewLineStartsWithCarriageReturnCaptor, NewLineStartsWithNewLineCaptor} from './new-line-captors';
 import {ScriptCommandCaptor} from './script-command-captor';
 import {TabsCaptor} from './tabs-captor';
@@ -21,7 +21,7 @@ export const SortedCaptors = [
 	SingleLineCommentCaptor,
 	MultipleLinesCommentCaptor,
 	// keyword
-	PKeywordCaptor,
+	PackageDeclarationCaptor,
 	// others
 	UndeterminedTextCaptor
 ] as const;
@@ -44,7 +44,7 @@ export const Captors = {
 	SingleLineCommentCaptor,
 	MultipleLinesCommentCaptor,
 	// keyword
-	PKeywordCaptor,
+	PKeywordCaptor: PackageDeclarationCaptor,
 	// others
 	UndeterminedTextCaptor
 } as const;

@@ -1,1 +1,1 @@
-export * from './p-keyword-captor';
+export * from './package-declaration-captor';

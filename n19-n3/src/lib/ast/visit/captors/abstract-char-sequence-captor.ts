@@ -120,7 +120,7 @@ export abstract class AbstractCharSequenceCaptor implements AstNodeCaptor {
 		return nodes;
 	}
 
-	abstract attempt(char: Char, offset: number): boolean;
+	abstract attempt(char: Char, offset: number): AstNodeCaptor | boolean;
 
 	abstract visit(char: Char, offset: number): boolean;
 }

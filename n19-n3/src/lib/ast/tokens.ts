@@ -12,61 +12,61 @@ export enum TokenId {
 	FLOAT,
 	DOUBLE,
 	// groovy keywords
-	AS,
-	DEF,
-	IN,
-	TRAIT,
-	THREADSAFE,
+	AS, // G1.0
+	DEF, // G1.0
+	IN, // G1.0
+	TRAIT, // G2.3
+	THREADSAFE, // G2.4 @ThreadSafe
 	// java keywords
-	ABSTRACT,
-	ASSERT,
-	BREAK,
-	CASE,
-	CATCH,
-	CLASS,
-	CONST,
-	CONTINUE,
-	DEFAULT,
-	DO,
-	ELSE,
-	ENUM,
-	EXTENDS,
-	FINAL,
-	FINALLY,
-	FOR,
-	GOTO,
-	IF,
-	IMPLEMENTS,
-	IMPORT,
-	INSTANCEOF,
-	INTERFACE,
-	NATIVE,
-	NEW,
-	NON_SEALED,  // non-sealed
-	NULL,
-	PACKAGE,
-	PERMITS,
-	PRIVATE,
-	PROTECTED,
-	PUBLIC,
-	RECORD,
-	RETURN,
-	SEALED,
-	STATIC,
-	STRICTFP,
-	SUPER,
-	SWITCH,
-	SYNCHRONIZED,
-	THIS,
-	THROW,
-	THROWS,
-	TRANSIENT,
-	TRY,
-	VAR, // the reserved type name of Java10
-	VOID,
-	VOLATILE,
-	WHILE,
-	YIELD,
+	ABSTRACT, // 1.0
+	ASSERT, // 1.4
+	BREAK, // 1.0
+	CASE, // 1.0
+	CATCH, // 1.0
+	CLASS, // 1.0
+	CONST, // reserved, 1.0
+	CONTINUE, // 1.0
+	DEFAULT, // 1.0
+	DO, // 1.0
+	ELSE, // 1.0
+	ENUM, // 5
+	EXTENDS, // 1.0
+	FINAL, // 1.0
+	FINALLY, // 1.0
+	FOR, // 1.0
+	GOTO, // reserved, 1.0
+	IF, // 1.0
+	IMPLEMENTS, // 1.0
+	IMPORT, // 1.0
+	INSTANCEOF, // 1.0
+	INTERFACE, // 1.0
+	NATIVE, // 1.0
+	NEW, // 1.0
+	NON_SEALED, // 17
+	NULL, // 1.0
+	PACKAGE, // 1.0
+	PERMITS, // 17
+	PRIVATE, // 1.0
+	PROTECTED, // 1.0
+	PUBLIC, // 1.0
+	RECORD, // 16
+	RETURN, // 1.0
+	SEALED, // 17
+	STATIC, // 1.0
+	STRICTFP, // 1.2
+	SUPER, // 1.0
+	SWITCH, // 1.0
+	SYNCHRONIZED, // 1.0
+	THIS, // 1.0
+	THROW, // 1.0
+	THROWS, // 1.0
+	TRANSIENT, // 1.0
+	TRY, // 1.0
+	VAR, // 10
+	VOID, // 1.0
+	VOLATILE, // 1.0
+	WHILE, // 1.0
+	YIELD, // 14
 	// boolean
 	BooleanLiteral, // true or false
 	// numeric
