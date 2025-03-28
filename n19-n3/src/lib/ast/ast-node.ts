@@ -96,3 +96,7 @@ export interface AstNode {
 export interface AstNodeConstructor<N extends AstNode> {
 	new(options: AstNodeConstructOptions): N;
 }
+
+export interface AstNodeWithOptionsConstructor extends AstNode {
+	new(options: AstNodeConstructOptions);
+}

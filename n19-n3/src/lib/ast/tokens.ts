@@ -20,6 +20,7 @@ export enum TokenId {
 	// java keywords
 	ABSTRACT, // 1.0
 	ASSERT, // 1.4
+	AT_INTERFACE, // 5
 	BREAK, // 1.0
 	CASE, // 1.0
 	CATCH, // 1.0
@@ -240,6 +241,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	// java keywords
 	ABSTRACT: {id: TokenId.ABSTRACT, name: 'Abstract'},
 	ASSERT: {id: TokenId.ASSERT, name: 'Assert'},
+	AT_INTERFACE: {id: TokenId.AT_INTERFACE, name: '@Interface'},
 	BREAK: {id: TokenId.BREAK, name: 'Break'},
 	CASE: {id: TokenId.CASE, name: 'Case'},
 	CATCH: {id: TokenId.CATCH, name: 'Catch'},

@@ -1,4 +1,5 @@
 import {Char} from './types';
+import {AstVisitor} from './visitor';
 
 export interface AstNodeCaptor {
 	/**
@@ -14,4 +15,8 @@ export interface AstNodeCaptor {
 	 * or returns false if no node visited.
 	 */
 	visit(char: Char, offset: number): boolean;
+}
+
+export interface AstNodeCaptorWithVisitorConstructor extends AstNodeCaptor {
+	new(astVisitor: AstVisitor);
 }
