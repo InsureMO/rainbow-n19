@@ -62,7 +62,8 @@ export abstract class AbstractCharSequenceCaptor implements AstNodeCaptor {
 
 	/**
 	 * normal text includes whitespace, tab and characters,
-	 * not includes \r, \n
+	 * not includes \r, \n.
+	 * produce {@link CharsNode}, {@link WhitespacesNode} and {@link TabsNode} only.
 	 *
 	 * @param text whitespace, tab and characters. no \r or \n.
 	 * @param startOffset start offset of text

@@ -11,3 +11,9 @@ export * from './new-line-node';
 
 export * from './script-command-node';
 export * from './comment-node';
+
+export * from './keyword-nodes';
+export * from './symbol-nodes';
+export * from './identifier-node';
+
+export * from './package-declaration-node';

@@ -205,6 +205,7 @@ export enum TokenId {
 	Tabs,
 	NewLine, // \n or \r\n
 	Chars,
+	Identifier,
 	UndeterminedChars,
 	UnexpectedChars,
 	// statements
@@ -434,6 +435,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	Tabs: {id: TokenId.Tabs, name: 'Tabs'},
 	NewLine: {id: TokenId.NewLine, name: 'NewLine'},
 	Chars: {id: TokenId.Chars, name: 'Chars'},
+	Identifier: {id: TokenId.Identifier, name: 'Identifier'},
 	UndeterminedChars: {id: TokenId.UndeterminedChars, name: 'UndeterminedChars'},
 	UnexpectedChars: {id: TokenId.UnexpectedChars, name: 'UnexpectedChars'},
 	// statements

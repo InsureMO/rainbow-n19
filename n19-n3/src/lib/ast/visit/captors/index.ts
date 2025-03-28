@@ -1,10 +1,9 @@
 import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
-import {AbstractDelegateCaptor} from './abstract-delegate-captor';
 import {AbstractEndMarkedCaptor, AbstractEndMarkedWithNewLineCaptor} from './abstract-end-marked-captor';
 import {AbstractSameCharsCaptor} from './abstract-same-chars-captor';
 import {AbstractCommentCaptor, MultipleLinesCommentCaptor, SingleLineCommentCaptor} from './comment-captor';
-import {PackageDeclarationCaptor} from './keyword-captor';
 import {NewLineStartsWithCarriageReturnCaptor, NewLineStartsWithNewLineCaptor} from './new-line-captors';
+import {PackageDeclarationCaptor} from './package-declaration-captor';
 import {ScriptCommandCaptor} from './script-command-captor';
 import {TabsCaptor} from './tabs-captor';
 import {UndeterminedTextCaptor} from './undetermined-text-captor';
@@ -27,13 +26,13 @@ export const SortedCaptors = [
 ] as const;
 
 export const Captors = {
+	// abstract
 	AbstractCharSequenceCaptor,
 	AbstractSameCharsCaptor,
 	AbstractEndMarkedCaptor,
 	AbstractEndMarkedWithNewLineCaptor,
 	AbstractCommentCaptor,
 
-	AbstractDelegateCaptor,
 	// whitespace, tab and new line
 	WhitespacesCaptor,
 	TabsCaptor,
@@ -44,7 +43,7 @@ export const Captors = {
 	SingleLineCommentCaptor,
 	MultipleLinesCommentCaptor,
 	// keyword
-	PKeywordCaptor: PackageDeclarationCaptor,
+	PackageDeclarationCaptor,
 	// others
 	UndeterminedTextCaptor
 } as const;
