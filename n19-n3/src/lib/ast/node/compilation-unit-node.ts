@@ -73,6 +73,7 @@ export class CompilationUnitNode extends AbstractAstNode {
 	/**
 	 * do nothing, text of this is frozen on constructing.
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	appendText(_text: string): void {
 		// do nothing
 	}
