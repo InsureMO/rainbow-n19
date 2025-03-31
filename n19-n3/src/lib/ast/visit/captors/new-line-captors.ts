@@ -38,6 +38,7 @@ export class NewLineStartsWithCarriageReturnCaptor extends AbstractCharSequenceC
 			this.createAndAppendToAst(NewLineNode, {text: char, startOffset: offset});
 			this.moveCursorTo(nextOffset);
 		}
+		// treat single carriage return as a new line, not just move cursor to head of line
 		this.moveToNextLine();
 		return true;
 	}

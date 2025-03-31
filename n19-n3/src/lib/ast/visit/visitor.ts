@@ -13,10 +13,10 @@ export class AstVisitor {
 	private readonly _buildCommentKeywords: VisitorCommentKeywords;
 
 	private _currentAstNode: AstNode;
-	/** char cursor */
+	/** char cursor. The cursor position is not always within the current line. */
 	private _cursor: number = 0;
-	/** line starts with 1, initial value is 0 */
-	private _line: number = 0;
+	/** line starts with 1, initial value is 1 */
+	private _line: number = 1;
 
 	constructor(ast: Ast, options?: AstBuildOptions) {
 		this._ast = ast;

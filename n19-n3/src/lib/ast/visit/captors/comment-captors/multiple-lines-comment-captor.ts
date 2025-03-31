@@ -74,6 +74,7 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 					nodes.push(this.createAstNode(NewLineNode, {
 						text: AstChars.CarriageReturn, startOffset: startOffsetOfPart + partOfLine.length
 					}));
+					// treat single carriage return as a new line, not just move cursor to head of line
 					this.moveToNextLine();
 				}
 				startOffsetOfPart = startOffsetOfPart + partOfLine.length + 1;
@@ -101,8 +102,7 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 		const contentNodes = this.visitContent(content, startOffsetOfContent, endOffsetOfContent);
 
 		const node = this.createAndAppendToAst(MultipleLinesCommentNode, {
-			text: this.sliceText(offset, endOffsetOfAll),
-			startOffset: offset
+			text: this.sliceText(offset, endOffsetOfAll), startOffset: offset
 		});
 		this.createAndAppendToAst(MultipleLinesCommentStartMarkNode, {
 			text: AstMarks.MLCommentStartMark, startOffset: offset

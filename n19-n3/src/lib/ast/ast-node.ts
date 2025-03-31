@@ -5,6 +5,7 @@ export interface AstNodeConstructOptions {
 	text?: string;
 	startOffset: number;
 	endOffset?: number;
+	startLine: number;
 }
 
 export interface AstNode {
@@ -13,6 +14,7 @@ export interface AstNode {
 	text: string;
 	startOffset: number;
 	endOffset: number;
+	startLine: number;
 
 	// relationship
 	/** previous node, global level */
@@ -36,6 +38,8 @@ export interface AstNode {
 	 * the returned data conforms to the natural order.
 	 */
 	ancestors: Array<AstNode>;
+	/** root node */
+	root: AstNode;
 	/** previous sibling node, same level */
 	previousSibling: Optional<AstNode>;
 	/**

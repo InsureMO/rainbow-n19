@@ -1,5 +1,5 @@
 import {AstNode} from '../../../ast-node';
-import {CommentKeywordNode, CharsNode} from '../../../node';
+import {CharsNode, CommentKeywordNode} from '../../../node';
 import {AbstractEndMarkedWithNewLineCaptor} from '../abstract-end-marked-captor';
 
 export abstract class AbstractCommentCaptor extends AbstractEndMarkedWithNewLineCaptor {

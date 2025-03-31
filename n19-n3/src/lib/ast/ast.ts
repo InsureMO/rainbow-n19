@@ -1,5 +1,5 @@
 import {AstNode} from './ast-node';
-import {CompilationUnitNode} from './node/compilation-unit-node';
+import {CompilationUnitNode} from './node';
 
 export class Ast {
 	private readonly _compilationUnit: CompilationUnitNode;

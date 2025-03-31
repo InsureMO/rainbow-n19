@@ -43,11 +43,11 @@ export abstract class AbstractCharSequenceCaptor implements AstNodeCaptor {
 	}
 
 	// mine
-	protected createAstNode<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: AstNodeConstructOptions): N {
-		return new Constructor(options);
+	protected createAstNode<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N {
+		return new Constructor({...options, startLine: this.currentLine()});
 	}
 
-	protected createAndAppendToAst<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: AstNodeConstructOptions): N {
+	protected createAndAppendToAst<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N {
 		const node = this.createAstNode(Constructor, options);
 		this.appendToAst(node);
 		return node;

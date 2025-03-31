@@ -6,6 +6,7 @@ export abstract class AbstractAstNode implements AstNode {
 	private _text: string;
 	private readonly _startOffset: number;
 	private _endOffset: number;
+	private readonly _startLine: number;
 
 	/** previous in global level */
 	private _previous: Optional<AstNode>;
@@ -18,6 +19,7 @@ export abstract class AbstractAstNode implements AstNode {
 		this._text = options.text ?? '';
 		this._startOffset = options.startOffset;
 		this._endOffset = options.endOffset ?? (options.startOffset + this._text.length);
+		this._startLine = options.startLine;
 	}
 
 	/**
@@ -31,7 +33,7 @@ export abstract class AbstractAstNode implements AstNode {
 	abstract get tokenId(): TokenId;
 
 	get text(): string {
-		return this._text;
+		return this._text ?? '';
 	}
 
 	get startOffset(): number {
@@ -39,14 +41,11 @@ export abstract class AbstractAstNode implements AstNode {
 	}
 
 	get endOffset(): number {
-		if (this._children != null) {
-			// sometimes child appended and endOffset not updated
-			const endOffsetOfLastChild = this._children[this._children.length - 1].endOffset;
-			if (endOffsetOfLastChild !== this._endOffset) {
-				this._endOffset = endOffsetOfLastChild;
-			}
-		}
 		return this._endOffset;
+	}
+
+	get startLine(): number {
+		return this._startLine;
 	}
 
 	get previous(): Optional<AstNode> {
@@ -83,12 +82,16 @@ export abstract class AbstractAstNode implements AstNode {
 
 	get ancestors(): Array<AstNode> {
 		const nodes: Array<AstNode> = [];
-		let parent = this.parent;
+		let parent = this._parent;
 		while (parent != null) {
 			nodes.push(parent);
 			parent = parent.parent;
 		}
 		return nodes.reverse();
+	}
+
+	get root(): AstNode {
+		return this._parent != null ? this._parent.root : this;
 	}
 
 	get previousSibling(): Optional<AstNode> {
@@ -173,34 +176,41 @@ export abstract class AbstractAstNode implements AstNode {
 		}
 	}
 
-	private defendChildren() {
+	protected defendChildren() {
 		if (this._children == null) {
 			this._children = [];
 		}
 	}
 
-	asParentOf(lastChild: AstNode): void {
-		this.defendChildren();
+	protected doPushAsLastChild(lastChild: AstNode): void {
+		this._children.push(lastChild);
+	}
 
-		const children = this.children;
-		if (children.includes(lastChild)) {
-			if (lastChild !== children[children.length - 1]) {
+	protected pushAsLastChild(lastChild: AstNode): void {
+		this.defendChildren();
+		this.doPushAsLastChild(lastChild);
+		this.appendText(lastChild.text);
+	}
+
+	asParentOf(lastChild: AstNode): void {
+		if (this._children?.includes(lastChild)) {
+			if (lastChild !== this._children[this._children.length - 1]) {
 				throw new Error('It is not allowed that the child is already a direct child of its parent and is not the last one when establishing a parent-child relationship.');
 			}
 		} else {
-			children.push(lastChild);
+			this.pushAsLastChild(lastChild);
 		}
 		if (lastChild.parent !== this) {
 			lastChild.asLastChildOf(this);
 		}
-		if (children.length == 1) {
+		if (this._children.length == 1) {
 			// given one is the only child of this,
 			// set this as previous node of given one
 			this.asPreviousOf(lastChild);
 		} else {
 			// find the previous sibling of given one
 			// and get last descendant, to set as previous of given one
-			let node = children[children.length - 2];
+			let node = this._children[this._children.length - 2];
 			while (node.children.length !== 0) {
 				node = node.children[node.children.length - 1];
 			}

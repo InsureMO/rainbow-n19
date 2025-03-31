@@ -2,6 +2,8 @@ export * from './abstract-node';
 export * from './abstract-container-node';
 export * from './abstract-statement-node';
 
+export * from './compilation-unit-node';
+
 export * from './unexpected-chars-node';
 export * from './undetermined-chars-node';
 export * from './chars-node';

@@ -8,7 +8,7 @@ import {AbstractEndMarkedWithNewLineCaptor} from './abstract-end-marked-captor';
  */
 export class ScriptCommandCaptor extends AbstractEndMarkedWithNewLineCaptor {
 	attempt(char: Char, offset: number): boolean {
-		return offset === 0 && char === AstChars.WellNumberMark && this.charAt(offset + 1) === AstChars.ExclamationMark;
+		return char === AstChars.WellNumberMark && this.charAt(offset + 1) === AstChars.ExclamationMark;
 	}
 
 	visit(_char: Char, offset: number): boolean {
