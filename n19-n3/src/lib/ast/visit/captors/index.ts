@@ -9,28 +9,22 @@ import {
 	ImportDeclarationCaptor,
 	KwAbstractCaptor,
 	KwAsCaptor,
-	KwAtInterfaceCaptor,
-	KwClassCaptor,
 	KwConstCaptor,
 	KwDefaultCaptor,
-	KwEnumCaptor,
 	KwExtendsCaptor,
 	KwFinalCaptor,
 	KwGotoCaptor,
 	KwImplementsCaptor,
-	KwInterfaceCaptor,
 	KwNativeCaptor,
 	KwNonSealedCaptor,
 	KwPermitsCaptor,
 	KwPrivateCaptor,
 	KwProtectedCaptor,
 	KwPublicCaptor,
-	KwRecordCaptor,
 	KwSealedCaptor,
 	KwStaticCaptor,
 	KwStrictfpCaptor,
 	KwSynchronizedCaptor,
-	KwTraitCaptor,
 	KwTransientCaptor,
 	KwVolatileCaptor,
 	PackageDeclarationCaptor
@@ -39,6 +33,7 @@ import {NewLineStartsWithCarriageReturnCaptor, NewLineStartsWithNewLineCaptor} f
 import {ScriptCommandCaptor} from './script-command-captor';
 import {DotCaptor, SemicolonCaptor, SpreadDotCaptor} from './symbol-captors';
 import {TabsCaptor} from './tabs-captor';
+import {AbstractTypeCaptor, InterfaceDeclarationCaptor} from './type-captors';
 import {UndeterminedCharsCaptor} from './undetermined-chars-captor';
 import {WhitespacesCaptor} from './whitespaces-captor';
 
@@ -55,6 +50,7 @@ export const SortedCaptors = [
 	// statement
 	PackageDeclarationCaptor,
 	ImportDeclarationCaptor,
+	InterfaceDeclarationCaptor,
 	// keyword
 	KwStaticCaptor,
 	KwAsCaptor,
@@ -66,15 +62,9 @@ export const SortedCaptors = [
 	KwFinalCaptor,
 	KwAbstractCaptor,
 	KwStrictfpCaptor,
-	KwRecordCaptor,
 	KwSealedCaptor,
 	KwPermitsCaptor,
 	KwNonSealedCaptor,
-	KwInterfaceCaptor,
-	KwClassCaptor,
-	KwAtInterfaceCaptor,
-	KwEnumCaptor,
-	KwTraitCaptor,
 	KwExtendsCaptor,
 	KwImplementsCaptor,
 	KwDefaultCaptor,
@@ -104,6 +94,7 @@ export const Captors = {
 	AbstractEndMarkedWithNewLineCaptor,
 	AbstractCommentCaptor,
 	AbstractKeywordCaptor,
+	AbstractTypeCaptor,
 
 	// whitespace, tab and new line
 	WhitespacesCaptor,
@@ -117,6 +108,7 @@ export const Captors = {
 	// statement
 	PackageDeclarationCaptor,
 	ImportDeclarationCaptor,
+	InterfaceDeclarationCaptor,
 	// keyword
 	KwStaticCaptor,
 	KwAsCaptor,
@@ -126,15 +118,9 @@ export const Captors = {
 	KwFinalCaptor,
 	KwAbstractCaptor,
 	KwStrictfpCaptor,
-	KwRecordCaptor,
 	KwSealedCaptor,
 	KwPermitsCaptor,
 	KwNonSealedCaptor,
-	KwInterfaceCaptor,
-	KwClassCaptor,
-	KwAtInterfaceCaptor,
-	KwEnumCaptor,
-	KwTraitCaptor,
 	KwExtendsCaptor,
 	KwImplementsCaptor,
 	KwDefaultCaptor,

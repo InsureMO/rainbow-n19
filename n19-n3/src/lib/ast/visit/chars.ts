@@ -11,7 +11,13 @@ export enum AstChars {
 	Colon = ':',
 	Dot = '.',
 	And = '&',
-	Pipe = '|'
+	Pipe = '|',
+	LBrace = '{',
+	RBrace = '}',
+	LBrack = '[',
+	RBrack = ']',
+	LParen = '(',
+	RParen = ')'
 }
 
 export enum AstMarks {

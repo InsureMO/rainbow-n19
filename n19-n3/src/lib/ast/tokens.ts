@@ -213,6 +213,12 @@ export enum TokenId {
 	Annotation,
 	PackageDeclaration,
 	ImportDeclaration,
+	InterfaceDeclaration,
+	ClassDeclaration,
+	AtInterfaceClassDeclaration,
+	EnumClassDeclaration,
+	RecordClassDeclaration,
+	TraitClassDeclaration
 }
 
 interface Token {
@@ -443,7 +449,13 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	// statements
 	Annotation: {id: TokenId.Annotation, name: 'Annotation'},
 	PackageDeclaration: {id: TokenId.PackageDeclaration, name: 'PackageDeclaration'},
-	ImportDeclaration: {id: TokenId.ImportDeclaration, name: 'ImportDeclaration'}
+	ImportDeclaration: {id: TokenId.ImportDeclaration, name: 'ImportDeclaration'},
+	InterfaceDeclaration: {id: TokenId.InterfaceDeclaration, name: 'InterfaceDeclaration'},
+	ClassDeclaration: {id: TokenId.ClassDeclaration, name: 'ClassDeclaration'},
+	AtInterfaceClassDeclaration: {id: TokenId.AtInterfaceClassDeclaration, name: 'AtInterfaceClassDeclaration'},
+	EnumClassDeclaration: {id: TokenId.EnumClassDeclaration, name: 'EnumClassDeclaration'},
+	RecordClassDeclaration: {id: TokenId.RecordClassDeclaration, name: 'RecordClassDeclaration'},
+	TraitClassDeclaration: {id: TokenId.TraitClassDeclaration, name: 'TraitClassDeclaration'}
 };
 
 export const TokenToNodeTypes: Array<NodeType> = (() => {

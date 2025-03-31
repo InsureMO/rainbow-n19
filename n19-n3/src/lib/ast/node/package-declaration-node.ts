@@ -1,6 +1,6 @@
 import {AstNode} from '../ast-node';
 import {TokenId} from '../tokens';
-import {AbstractStatementAstNode} from './abstract-statement-node';
+import {AbstractStatementEndBySemicolonAstNode} from './abstract-statement-node';
 import {MultipleLinesCommentNode} from './comment-node';
 import {IdentifierNode} from './identifier-node';
 import {KwPackageNode} from './keyword-nodes';
@@ -11,7 +11,7 @@ import {WhitespacesNode} from './whitespaces-node';
 /**
  * package declaration of file
  */
-export class PackageDeclarationNode extends AbstractStatementAstNode {
+export class PackageDeclarationNode extends AbstractStatementEndBySemicolonAstNode {
 	get tokenId(): TokenId {
 		return TokenId.PackageDeclaration;
 	}
