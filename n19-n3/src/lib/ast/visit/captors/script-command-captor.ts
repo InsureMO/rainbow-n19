@@ -16,10 +16,7 @@ export class ScriptCommandCaptor extends AbstractEndMarkedWithNewLineCaptor {
 		const {content, startOffsetOfContent, endOffsetOfContent} = this.contentAndEnd(offset + 2);
 		const contentNodes = this.visitNormalText(content, startOffsetOfContent, endOffsetOfContent);
 
-		const node = this.createAndAppendToAst(ScriptCommandNode, {
-			text: this.sliceText(offset, endOffsetOfContent),
-			startOffset: offset
-		});
+		const node = this.createAndAppendToAst(ScriptCommandNode, {startOffset: offset});
 		this.createAndAppendToAst(ScriptCommandStartMarkNode, {
 			text: AstMarks.ScriptCommandStartMark, startOffset: offset
 		});

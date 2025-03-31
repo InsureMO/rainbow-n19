@@ -14,6 +14,10 @@ export class ImportDeclarationCaptor extends AbstractKeywordCaptor<ImportDeclara
 		return ImportDeclarationNode;
 	}
 
+	protected isContainerNode(): boolean {
+		return true;
+	}
+
 	protected createChildAstNodes(_node: ImportDeclarationNode, _char: Char, offset: number): number {
 		this.createAndAppendToAst(KwImportNode, {text: AstKeywords.Import, startOffset: offset});
 		return offset + this.keywordLength;

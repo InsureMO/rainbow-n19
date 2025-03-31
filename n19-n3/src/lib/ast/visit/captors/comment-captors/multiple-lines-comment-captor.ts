@@ -101,9 +101,7 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 		// detect keywords
 		const contentNodes = this.visitContent(content, startOffsetOfContent, endOffsetOfContent);
 
-		const node = this.createAndAppendToAst(MultipleLinesCommentNode, {
-			text: this.sliceText(offset, endOffsetOfAll), startOffset: offset
-		});
+		const node = this.createAndAppendToAst(MultipleLinesCommentNode, {startOffset: offset});
 		this.createAndAppendToAst(MultipleLinesCommentStartMarkNode, {
 			text: AstMarks.MLCommentStartMark, startOffset: offset
 		});

@@ -3,28 +3,22 @@ import {
 	AbstractKeywordNode,
 	KwAbstractNode,
 	KwAsNode,
-	KwAtInterfaceNode,
-	KwClassNode,
 	KwConstNode,
 	KwDefaultNode,
-	KwEnumNode,
 	KwExtendsNode,
 	KwFinalNode,
 	KwGotoNode,
 	KwImplementsNode,
-	KwInterfaceNode,
 	KwNativeNode,
 	KwNonSealedNode,
 	KwPermitsNode,
 	KwPrivateNode,
 	KwProtectedNode,
 	KwPublicNode,
-	KwRecordNode,
 	KwSealedNode,
 	KwStaticNode,
 	KwStrictfpNode,
 	KwSynchronizedNode,
-	KwTraitNode,
 	KwTransientNode,
 	KwVolatileNode
 } from '../../../node';
@@ -41,6 +35,10 @@ const createSingleWordCaptor = <N extends AbstractKeywordNode>(name: string, typ
 
 		protected getAstNodeConstructor(): AstNodeConstructor<N> {
 			return type;
+		}
+
+		protected isContainerNode(): boolean {
+			return false;
 		}
 	};
 	Object.defineProperty(cls, 'name', {value: `Kw${name[0].toUpperCase() + name.slice(1)}Captor`});

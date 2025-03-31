@@ -20,6 +20,10 @@ export class PackageDeclarationCaptor extends AbstractKeywordCaptor<PackageDecla
 		return PackageDeclarationNode;
 	}
 
+	protected isContainerNode(): boolean {
+		return true;
+	}
+
 	protected createChildAstNodes(_node: PackageDeclarationNode, _char: Char, offset: number): number {
 		this.createAndAppendToAst(KwPackageNode, {text: AstKeywords.Package, startOffset: offset});
 		return offset + this.keywordLength;

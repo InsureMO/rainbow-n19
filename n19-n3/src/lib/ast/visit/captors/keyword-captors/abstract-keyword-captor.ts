@@ -53,6 +53,11 @@ export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractC
 	protected abstract getAstNodeConstructor(): AstNodeConstructor<N>;
 
 	/**
+	 * ignore text when node is {@link AbstractContainerAstNode}
+	 */
+	protected abstract isContainerNode(): boolean;
+
+	/**
 	 * create child ast nodes and returns end offset of last one.
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -63,7 +68,7 @@ export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractC
 	visit(char: Char, offset: number): boolean {
 		// create node
 		const node = this.createAndAppendToAst(this.getAstNodeConstructor(), {
-			text: this.keyword, startOffset: offset
+			text: this.isContainerNode() ? '' : this.keyword, startOffset: offset
 		});
 
 		this.moveCursorTo(this.createChildAstNodes(node, char, offset));

@@ -17,6 +17,10 @@ export abstract class AbstractTypeCaptor<N extends AstNode, K extends AstNode> e
 		super(keyword, astVisitor);
 	}
 
+	protected isContainerNode(): boolean {
+		return true;
+	}
+
 	protected abstract getKeywordAstNodeConstructor(): AstNodeConstructor<K>
 
 	/**

@@ -1,8 +1,18 @@
-import {AstNode} from '../ast-node';
+import {AstNode, AstNodeConstructOptions} from '../ast-node';
 import {AbstractAstNode} from './abstract-node';
 
 export abstract class AbstractContainerAstNode extends AbstractAstNode {
 	private _closed: boolean = false;
+
+	constructor(options: AstNodeConstructOptions) {
+		super({...options, text: ''});
+		if (options.text != null && options.text.length !== 0) {
+			console.warn(`For class[${this.constructor.name}], ` +
+				'is one of implementation classes of AbstractContainerAstNode, ' +
+				'text should be null or empty string, ' +
+				`but is [${options.text}], and it is constructed by empty string now, check your code please.`);
+		}
+	}
 
 	/**
 	 * check given node could be child of me or not

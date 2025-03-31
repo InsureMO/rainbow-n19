@@ -32,9 +32,7 @@ export class SingleLineCommentCaptor extends AbstractCommentCaptor {
 		// detect keywords
 		const contentNodes = this.visitContent(content, startOffsetOfContent, endOffsetOfContent);
 
-		const node = this.createAndAppendToAst(SingleLineCommentNode, {
-			text: this.sliceText(offset, endOffsetOfContent), startOffset: offset
-		});
+		const node = this.createAndAppendToAst(SingleLineCommentNode, {startOffset: offset});
 		this.createAndAppendToAst(SingleLineCommentStartMarkNode, {
 			text: AstMarks.SLCommentStartMark, startOffset: offset
 		});
