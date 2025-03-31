@@ -191,6 +191,7 @@ export enum TokenId {
 	ElvisAssign, // ?=
 	At, // @
 	Ellipsis, // ...
+	Asterisk, // *
 	// comment
 	CommentKeyword,
 	SingleLineCommentStartMark,
@@ -428,6 +429,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	ElvisAssign: {id: TokenId.ElvisAssign, name: 'ElvisAssign'},
 	At: {id: TokenId.At, name: 'At'},
 	Ellipsis: {id: TokenId.Ellipsis, name: 'Ellipsis'},
+	Asterisk: {id: TokenId.Asterisk, name: 'Asterisk'},
 	// comment
 	CommentKeyword: {id: TokenId.CommentKeyword, name: 'CommentKeyword'},
 	SingleLineCommentStartMark: {id: TokenId.SingleLineCommentStartMark, name: 'SingleLineCommentStartMark'},

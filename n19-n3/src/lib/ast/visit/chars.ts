@@ -10,6 +10,7 @@ export enum AstChars {
 	Semicolon = ';',
 	Colon = ':',
 	Dot = '.',
+	Comma = ',',
 	And = '&',
 	Pipe = '|',
 	LBrace = '{',

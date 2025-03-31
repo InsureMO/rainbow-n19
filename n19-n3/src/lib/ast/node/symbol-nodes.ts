@@ -17,10 +17,12 @@ const createSymbolNode = (name: string, tokeId: TokenId) => {
 
 /** ";" */
 export const SemicolonNode = createSymbolNode('Semicolon', TokenId.Semi);
+/** "," */
+export const CommaNode = createSymbolNode('Comma', TokenId.Comma);
 /** "." */
 export const DotNode = createSymbolNode('Dot', TokenId.Dot);
 /** "*" */
-export const SpreadDotNode = createSymbolNode('SpreadDot', TokenId.SpreadDot);
+export const AsteriskNode = createSymbolNode('Asterisk', TokenId.Asterisk);
 /** "{" */
 export const LBraceNode = createSymbolNode('LBrace', TokenId.LBrace);
 /** "}" */

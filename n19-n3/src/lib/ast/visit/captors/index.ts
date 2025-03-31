@@ -31,7 +31,7 @@ import {
 } from './keyword-captors';
 import {NewLineStartsWithCarriageReturnCaptor, NewLineStartsWithNewLineCaptor} from './new-line-captors';
 import {ScriptCommandCaptor} from './script-command-captor';
-import {DotCaptor, SemicolonCaptor, SpreadDotCaptor} from './symbol-captors';
+import {AsteriskCaptor, CommaCaptor, DotCaptor, SemicolonCaptor} from './symbol-captors';
 import {TabsCaptor} from './tabs-captor';
 import {AbstractTypeCaptor, InterfaceDeclarationCaptor} from './type-captors';
 import {UndeterminedCharsCaptor} from './undetermined-chars-captor';
@@ -77,7 +77,8 @@ export const SortedCaptors = [
 	// symbol
 	SemicolonCaptor,
 	DotCaptor,
-	SpreadDotCaptor,
+	CommaCaptor,
+	AsteriskCaptor,
 	// identifier
 	IdentifierCaptor,
 	// others
@@ -133,7 +134,8 @@ export const Captors = {
 	// symbol
 	SemicolonCaptor,
 	DotCaptor,
-	SpreadDotCaptor,
+	CommaCaptor,
+	AsteriskCaptor,
 	// identifier
 	IdentifierCaptor,
 	// others

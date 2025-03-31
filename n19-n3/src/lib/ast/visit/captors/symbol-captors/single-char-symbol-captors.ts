@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '../../../ast-node';
 import {
-	AbstractSymbolNode,
+	AbstractSymbolNode, CommaNode,
 	DotNode,
 	LBraceNode,
 	LBrackNode,
@@ -9,7 +9,7 @@ import {
 	RBrackNode,
 	RParenNode,
 	SemicolonNode,
-	SpreadDotNode
+	AsteriskNode
 } from '../../../node';
 import {AstNodeCaptorWithVisitorConstructor} from '../../captor';
 import {AstChars} from '../../chars';
@@ -32,10 +32,12 @@ const createSingleCharCaptor = <N extends AbstractSymbolNode>(name: string, char
 
 /** "." */
 export const DotCaptor = createSingleCharCaptor('dot', AstChars.Dot, DotNode);
+/** "," */
+export const CommaCaptor = createSingleCharCaptor('comma', AstChars.Comma, CommaNode);
 /** ";" */
 export const SemicolonCaptor = createSingleCharCaptor('semicolon', AstChars.Semicolon, SemicolonNode);
 /** "*" */
-export const SpreadDotCaptor = createSingleCharCaptor('SpreadDot', AstChars.AsteriskMark, SpreadDotNode);
+export const AsteriskCaptor = createSingleCharCaptor('Asterisk', AstChars.AsteriskMark, AsteriskNode);
 /** "{" */
 export const LBraceCaptor = createSingleCharCaptor('LBrace', AstChars.LBrace, LBraceNode);
 /** "}" */

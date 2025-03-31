@@ -4,7 +4,7 @@ import {AbstractStatementEndBySemicolonAstNode} from './abstract-statement-node'
 import {MultipleLinesCommentNode} from './comment-node';
 import {IdentifierNode} from './identifier-node';
 import {KwAsNode, KwImportNode, KwStaticNode} from './keyword-nodes';
-import {DotNode, SemicolonNode, SpreadDotNode} from './symbol-nodes';
+import {DotNode, SemicolonNode, AsteriskNode} from './symbol-nodes';
 import {TabsNode} from './tabs-node';
 import {WhitespacesNode} from './whitespaces-node';
 
@@ -24,7 +24,7 @@ export class ImportDeclarationNode extends AbstractStatementEndBySemicolonAstNod
 			|| node instanceof KwStaticNode
 			|| node instanceof IdentifierNode
 			|| node instanceof KwAsNode
-			|| node instanceof SpreadDotNode
+			|| node instanceof AsteriskNode
 			|| node instanceof SemicolonNode
 			|| node instanceof MultipleLinesCommentNode;
 	}
