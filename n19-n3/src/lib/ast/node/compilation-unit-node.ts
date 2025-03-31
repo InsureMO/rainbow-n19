@@ -69,4 +69,11 @@ export class CompilationUnitNode extends AbstractAstNode {
 		node.asLastChildOf(this);
 		return node;
 	}
+
+	/**
+	 * do nothing, text of this is frozen on constructing.
+	 */
+	appendText(_text: string): void {
+		// do nothing
+	}
 }

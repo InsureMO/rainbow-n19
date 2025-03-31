@@ -22,14 +22,6 @@ export abstract class AbstractAstNode implements AstNode {
 		this._startLine = options.startLine;
 	}
 
-	/**
-	 * append given text to this, will change {@link #text} and {@link #endOffset}
-	 */
-	protected appendText(text: string): void {
-		this._text = this._text + (text ?? '');
-		this._endOffset = this._startOffset + this._text.length;
-	}
-
 	abstract get tokenId(): TokenId;
 
 	get text(): string {
@@ -253,6 +245,13 @@ export abstract class AbstractAstNode implements AstNode {
 	append(node: AstNode): AstNode {
 		this.parent.append(node);
 		return node;
+	}
+
+	appendText(text: string): void {
+		this._text = this._text + (text ?? '');
+		this._endOffset = this._startOffset + this._text.length;
+		// also change parent's text and offset
+		this.parent?.appendText(text);
 	}
 
 	toString(): string {

@@ -39,7 +39,7 @@ export class AstChecker {
 			this._logs.push([
 				indent,
 				bullet,
-				' ✅[',
+				' ✅ [',
 				`Check[type=${type.name}, `,
 				`startOffset=${startOffset}, `,
 				`endOffset=${endOffset}, `,
@@ -51,7 +51,7 @@ export class AstChecker {
 			this._logs.push([
 				indent,
 				bullet,
-				' 💔[',
+				' 💔 [',
 				`Check[type=${type.name}, `,
 				`startOffset=${startOffset}, `,
 				`endOffset=${endOffset}, `,

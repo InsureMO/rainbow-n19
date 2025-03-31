@@ -95,6 +95,11 @@ export interface AstNode {
 	 * depends on current situation of this node.
 	 */
 	append(node: AstNode): AstNode;
+	/**
+	 * append given text to this, will change {@link #text} and {@link #endOffset}.
+	 * also will change parent's {@link #text} and {@link #endOffset}.
+	 */
+	appendText(text: string): void;
 }
 
 export interface AstNodeConstructor<N extends AstNode> {
