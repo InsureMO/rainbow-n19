@@ -14,12 +14,12 @@ describe('Script command test', () => {
 		const text = '#!/bin/sh\n';
 		const ast = AstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 10, text, [
-				[ScriptCommandNode, 0, 9, '#!/bin/sh', [
-					[ScriptCommandStartMarkNode, 0, 2, '#!'],
-					[CharsNode, 2, 9, '/bin/sh']
+			CompilationUnitNode, 0, 10, 0, text, [
+				[ScriptCommandNode, 0, 9, 1, '#!/bin/sh', [
+					[ScriptCommandStartMarkNode, 0, 2, 1, '#!'],
+					[CharsNode, 2, 9, 1, '/bin/sh']
 				]],
-				[NewLineNode, 9, 10, '\n']
+				[NewLineNode, 9, 10, 1, '\n']
 			]
 		]);
 	});
@@ -27,13 +27,13 @@ describe('Script command test', () => {
 		const text = '\t#!/bin/sh\n';
 		const ast = AstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 11, text, [
-				[TabsNode, 0, 1, '\t'],
-				[ScriptCommandNode, 1, 10, '#!/bin/sh', [
-					[ScriptCommandStartMarkNode, 1, 3, '#!'],
-					[CharsNode, 3, 10, '/bin/sh']
+			CompilationUnitNode, 0, 11, 0, text, [
+				[TabsNode, 0, 1, 1, '\t'],
+				[ScriptCommandNode, 1, 10, 1, '#!/bin/sh', [
+					[ScriptCommandStartMarkNode, 1, 3, 1, '#!'],
+					[CharsNode, 3, 10, 1, '/bin/sh']
 				]],
-				[NewLineNode, 10, 11, '\n']
+				[NewLineNode, 10, 11, 1, '\n']
 			]
 		]);
 	});
@@ -41,13 +41,13 @@ describe('Script command test', () => {
 		const text = '\n#!/bin/sh\n';
 		const ast = AstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 11, text, [
-				[NewLineNode, 0, 1, '\n'],
-				[ScriptCommandNode, 1, 10, '#!/bin/sh', [
-					[ScriptCommandStartMarkNode, 1, 3, '#!'],
-					[CharsNode, 3, 10, '/bin/sh']
+			CompilationUnitNode, 0, 11, 0, text, [
+				[NewLineNode, 0, 1, 1, '\n'],
+				[ScriptCommandNode, 1, 10, 1, '#!/bin/sh', [
+					[ScriptCommandStartMarkNode, 1, 3, 1, '#!'],
+					[CharsNode, 3, 10, 1, '/bin/sh']
 				]],
-				[NewLineNode, 10, 11, '\n']
+				[NewLineNode, 10, 11, 1, '\n']
 			]
 		]);
 	});

@@ -1,6 +1,7 @@
 import {Optional} from '@rainbow-n19/n2';
 import {AstNode} from '../../../ast-node';
 import {
+	AsteriskNode,
 	MultipleLinesCommentEndMarkNode,
 	MultipleLinesCommentNode,
 	MultipleLinesCommentStartMarkNode,
@@ -49,8 +50,20 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 		if (lineNodes.length !== 0) {
 			return lineNodes;
 		}
-		// visit as normal text
-		return this.visitNormalText(line, startOffset, endOffset);
+		if (line.trim().startsWith(AstChars.AsteriskMark)) {
+			// only the first "*" will be treated as asterisk mark
+			const parts = line.split(AstChars.AsteriskMark, 2);
+			return [
+				...this.visitNormalText(parts[0], startOffset, startOffset + parts[0].length),
+				this.createAstNode(AsteriskNode, {
+					text: AstChars.AsteriskMark, startOffset: startOffset + parts[0].length
+				}),
+				...this.visitNormalText(parts[1], startOffset + parts[0].length + 1, endOffset)
+			];
+		} else {
+			// visit as normal text
+			return this.visitNormalText(line, startOffset, endOffset);
+		}
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars

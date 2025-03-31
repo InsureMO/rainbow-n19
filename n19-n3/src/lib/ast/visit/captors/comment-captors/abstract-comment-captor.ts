@@ -1,5 +1,5 @@
 import {AstNode} from '../../../ast-node';
-import {CharsNode, CommentKeywordNode} from '../../../node';
+import {CommentKeywordNode} from '../../../node';
 import {AbstractEndMarkedWithNewLineCaptor} from '../abstract-end-marked-captor';
 
 export abstract class AbstractCommentCaptor extends AbstractEndMarkedWithNewLineCaptor {
@@ -24,8 +24,9 @@ export abstract class AbstractCommentCaptor extends AbstractEndMarkedWithNewLine
 			if (matched != null) {
 				const index = matched.index;
 				if (index !== 0) {
+					const text = line.slice(0, index);
 					// text before keyword
-					nodes.push(this.createAstNode(CharsNode, {text: line.slice(0, index), startOffset: startOffset}));
+					nodes.push(...this.visitNormalText(text, startOffset, startOffset + index));
 				}
 				// keyword
 				nodes.push(this.createAstNode(CommentKeywordNode, {

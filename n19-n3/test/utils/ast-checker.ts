@@ -2,8 +2,8 @@ import {Ast, AstNode} from '../../src';
 
 export type NodeType = any;
 export type NodeSpec =
-	| [NodeType, number, number, string] // leaf node
-	| [NodeType, number, number, string, Array<NodeSpec>] // container node
+	| [NodeType, number, number, number, string] // leaf node
+	| [NodeType, number, number, number, string, Array<NodeSpec>] // container node
 const specialCharMap: { [key: string]: string } = {
 	'\n': '\\n',
 	'\r': '\\r',
@@ -28,7 +28,7 @@ export class AstChecker {
 	}
 
 	private doCheck(node: AstNode, spec: NodeSpec, bullet: string) {
-		const [type, startOffset, endOffset, text, children] = spec;
+		const [type, startOffset, endOffset, startLine, text, children] = spec;
 		const indent = new Array(bullet.split('.').length - 2).fill('\t').join('');
 		try {
 			expect(node).not.toBeNull();
@@ -41,8 +41,9 @@ export class AstChecker {
 				bullet,
 				' ✅[',
 				`Check[type=${type.name}, `,
-				`start=${startOffset}, `,
-				`end=${endOffset}, `,
+				`startOffset=${startOffset}, `,
+				`endOffset=${endOffset}, `,
+				`startLine=${startLine}, `,
 				`text=${(text ?? '').replace(regex, (match) => specialCharMap[match])}`,
 				'].'
 			].join(''));
@@ -52,8 +53,9 @@ export class AstChecker {
 				bullet,
 				' 💔[',
 				`Check[type=${type.name}, `,
-				`start=${startOffset}, `,
-				`end=${endOffset}, `,
+				`startOffset=${startOffset}, `,
+				`endOffset=${endOffset}, `,
+				`startLine=${startLine}, `,
 				`text=${(text ?? '').replace(regex, (match) => specialCharMap[match])}`,
 				'].'
 			].join(''));

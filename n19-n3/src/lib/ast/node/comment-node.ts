@@ -2,9 +2,10 @@ import {AstNode} from '../ast-node';
 import {TokenId} from '../tokens';
 import {AbstractContainerAstNode} from './abstract-container-node';
 import {AbstractAstNode} from './abstract-node';
-import {NewLineNode} from './new-line-node';
-import {TabsNode} from './tabs-node';
 import {CharsNode} from './chars-node';
+import {NewLineNode} from './new-line-node';
+import {AsteriskNode} from './symbol-nodes';
+import {TabsNode} from './tabs-node';
 import {WhitespacesNode} from './whitespaces-node';
 
 export class CommentKeywordNode extends AbstractAstNode {
@@ -55,6 +56,7 @@ export class MultipleLinesCommentNode extends AbstractContainerAstNode {
 			|| node instanceof WhitespacesNode
 			|| node instanceof TabsNode
 			|| node instanceof CharsNode
+			|| node instanceof AsteriskNode
 			|| node instanceof CommentKeywordNode
 			|| node instanceof NewLineNode
 			|| node instanceof MultipleLinesCommentEndMarkNode;
