@@ -1,6 +1,5 @@
 import {AstNodeConstructor} from '../../../ast-node';
-import {KwEnumNode} from '../../../node';
-import {EnumClassDeclarationNode} from '../../../node/type-declaration-nodes';
+import {EnumClassDeclarationNode, KwEnumNode} from '../../../node';
 import {AstKeywords} from '../../chars';
 import {AstVisitor} from '../../visitor';
 import {AbstractTypeCaptor} from './abstract-type-captor';

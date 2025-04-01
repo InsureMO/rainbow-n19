@@ -22,3 +22,4 @@ export * from './identifier-node';
 export * from './package-declaration-node';
 export * from './import-declaration-node';
 export * from './type-declaration-nodes';
+export * from './annotation-declaration-node';

@@ -219,7 +219,8 @@ export enum TokenId {
 	AtInterfaceClassDeclaration,
 	EnumClassDeclaration,
 	RecordClassDeclaration,
-	TraitClassDeclaration
+	TraitClassDeclaration,
+	AnnotationDeclaration,
 }
 
 interface Token {
@@ -457,7 +458,8 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	AtInterfaceClassDeclaration: {id: TokenId.AtInterfaceClassDeclaration, name: 'AtInterfaceClassDeclaration'},
 	EnumClassDeclaration: {id: TokenId.EnumClassDeclaration, name: 'EnumClassDeclaration'},
 	RecordClassDeclaration: {id: TokenId.RecordClassDeclaration, name: 'RecordClassDeclaration'},
-	TraitClassDeclaration: {id: TokenId.TraitClassDeclaration, name: 'TraitClassDeclaration'}
+	TraitClassDeclaration: {id: TokenId.TraitClassDeclaration, name: 'TraitClassDeclaration'},
+	AnnotationDeclaration: {id: TokenId.AnnotationDeclaration, name: 'AnnotationDeclaration'}
 };
 
 export const TokenToNodeTypes: Array<NodeType> = (() => {

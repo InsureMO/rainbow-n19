@@ -1,5 +1,6 @@
 import {AstNode, AstNodeConstructor} from '../../../ast-node';
 import {
+	AnnotationDeclarationNode,
 	KwAbstractNode,
 	KwFinalNode,
 	KwNonSealedNode,
@@ -47,14 +48,21 @@ export abstract class AbstractTypeCaptor<N extends AstNode, K extends AstNode> e
 		return offset + this.keywordLength;
 	}
 
+	/**
+	 * modifier can be concatenated with comments, new lines, whitespaces, tabs, annotations
+	 */
 	protected isModifierConcatenator(node: AstNode): boolean {
 		return node instanceof MultipleLinesCommentNode
 			|| node instanceof SingleLineCommentNode
 			|| node instanceof NewLineNode
 			|| node instanceof WhitespacesNode
-			|| node instanceof TabsNode;
+			|| node instanceof TabsNode
+			|| node instanceof AnnotationDeclarationNode;
 	}
 
+	/**
+	 * check the given node is modifier or not
+	 */
 	protected isModifier(node: AstNode): boolean {
 		return node instanceof KwPublicNode
 			|| node instanceof KwProtectedNode

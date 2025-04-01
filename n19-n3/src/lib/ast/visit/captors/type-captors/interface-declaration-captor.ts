@@ -1,6 +1,5 @@
 import {AstNodeConstructor} from '../../../ast-node';
-import {KwInterfaceNode} from '../../../node';
-import {InterfaceDeclarationNode} from '../../../node/type-declaration-nodes';
+import {InterfaceDeclarationNode, KwInterfaceNode} from '../../../node';
 import {AstKeywords} from '../../chars';
 import {AstVisitor} from '../../visitor';
 import {AbstractTypeCaptor} from './abstract-type-captor';

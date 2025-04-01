@@ -1,6 +1,8 @@
 import {AstNodeConstructor} from '../../../ast-node';
 import {
-	AbstractSymbolNode, CommaNode,
+	AbstractSymbolNode,
+	AsteriskNode,
+	CommaNode,
 	DotNode,
 	LBraceNode,
 	LBrackNode,
@@ -8,8 +10,7 @@ import {
 	RBraceNode,
 	RBrackNode,
 	RParenNode,
-	SemicolonNode,
-	AsteriskNode
+	SemicolonNode
 } from '../../../node';
 import {AstNodeCaptorWithVisitorConstructor} from '../../captor';
 import {AstChars} from '../../chars';

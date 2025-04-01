@@ -36,7 +36,7 @@ export abstract class AbstractContainerAstNode extends AbstractAstNode {
 	}
 
 	/**
-	 * accept node which pass the {@link couldBeChildOfMe} as child,
+	 * accept node which pass the {@link couldBeChildOfMe} check,
 	 * otherwise call super.
 	 */
 	append(node: AstNode): AstNode {
@@ -45,7 +45,12 @@ export abstract class AbstractContainerAstNode extends AbstractAstNode {
 			return this.appendAsLastChild(node);
 		} else {
 			// given one cannot be child of this
-			return super.append(node);
+			// also means this is closed for child
+			const ret = super.append(node);
+			if (!this._closed) {
+				this.close();
+			}
+			return ret;
 		}
 	}
 }
