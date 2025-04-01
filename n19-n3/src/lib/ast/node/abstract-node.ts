@@ -243,15 +243,59 @@ export abstract class AbstractAstNode implements AstNode {
 	 * so make sure the node has parent.
 	 */
 	append(node: AstNode): AstNode {
-		this.parent.append(node);
+		this._parent.append(node);
 		return node;
 	}
 
 	appendText(text: string): void {
-		this._text = this._text + (text ?? '');
+		if (text == null || text.length === 0) {
+			return;
+		}
+		this._text = this._text + text;
 		this._endOffset = this._startOffset + this._text.length;
 		// also change parent's text and offset
 		this.parent?.appendText(text);
+	}
+
+	detachFromParent(): void {
+		if (this._parent == null) {
+			// do nothing is no parent
+			return;
+		}
+
+		const parent = this._parent;
+		const childrenOfParent = parent.children;
+		if (childrenOfParent.includes(this)) {
+			if (childrenOfParent[childrenOfParent.length - 1] !== this) {
+				throw new Error('It is not allowed that the child is already a direct child of its parent and is not the last one when detaching child.');
+			}
+			this._parent = null;
+			parent.detachLastChild(this);
+		} else {
+			this._parent = null;
+		}
+	}
+
+	detachLastChild(lastChild: AstNode): void {
+		const children = this._children ?? [];
+		if (children.includes(lastChild)) {
+			if (children[children.length - 1] !== lastChild) {
+				throw new Error('It is not allowed that the child is already a direct child of its parent and is not the last one when detaching child.');
+			} else {
+				this._children.length = this._children.length - 1;
+				this.detachTextFromTail(lastChild.text);
+			}
+		}
+		lastChild.detachFromParent();
+	}
+
+	detachTextFromTail(text: string): void {
+		if (text == null || text.length === 0) {
+			return;
+		}
+		this._text = this._text.substring(0, 0 - text.length);
+		this._endOffset = this._startOffset + this._text.length;
+		this.parent.detachTextFromTail(text);
 	}
 
 	toString(): string {

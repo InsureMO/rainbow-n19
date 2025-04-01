@@ -57,7 +57,7 @@ export class CompilationUnitNode extends AbstractAstNode {
 		this.doPushAsLastChild(lastChild);
 	}
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	asLastChildOf(_parent: AstNode) {
 		throw new Error('It is not allowed to set the compilation unit node as a child node of any other node.');
 	}
@@ -71,10 +71,29 @@ export class CompilationUnitNode extends AbstractAstNode {
 	}
 
 	/**
-	 * do nothing, text of this is frozen on constructing.
+	 * do nothing, text of this is frozen on constructing
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	appendText(_text: string): void {
+		// do nothing
+	}
+
+	/**
+	 * do nothing, compilation unit node is root node
+	 */
+	detachFromParent() {
+		// do nothing
+	}
+
+	detachLastChild(lastNode: AstNode) {
+		super.detachLastChild(lastNode);
+	}
+
+	/**
+	 * do nothing, text of this is frozen on constructing
+	 */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	detachTextFromTail(_text: string) {
 		// do nothing
 	}
 }

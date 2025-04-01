@@ -57,7 +57,7 @@ export const KwTraitNode = createKeywordNode('Trait', TokenId.TRAIT);
 export const KwExtendsNode = createKeywordNode('Extends', TokenId.EXTENDS);
 /** "implements", for class */
 export const KwImplementsNode = createKeywordNode('Implements', TokenId.IMPLEMENTS);
-/** "default", for interface, switch */
+/** "default", for interface default method, switch */
 export const KwDefaultNode = createKeywordNode('Default', TokenId.DEFAULT);
 /** "synchronized", for method */
 export const KwSynchronizedNode = createKeywordNode('Synchronized', TokenId.SYNCHRONIZED);

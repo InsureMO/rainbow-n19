@@ -6,7 +6,7 @@ import {AstChars} from '../chars';
 import {Char, VisitorCommentKeywords} from '../types';
 import {AstVisitor} from '../visitor';
 
-export abstract class AbstractCharSequenceCaptor implements AstNodeCaptor {
+export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
 	private readonly _astVisitor: AstVisitor;
 
 	constructor(astVisitor: AstVisitor) {
@@ -18,12 +18,16 @@ export abstract class AbstractCharSequenceCaptor implements AstNodeCaptor {
 		return this._astVisitor.charAt(offset);
 	}
 
+	protected sliceText(startOffset: number, endOffset: number): Optional<string> {
+		return this._astVisitor.document.substring(startOffset, endOffset);
+	}
+
 	protected currentLine(): number {
 		return this._astVisitor.currentLine();
 	}
 
-	protected sliceText(startOffset: number, endOffset: number): Optional<string> {
-		return this._astVisitor.document.substring(startOffset, endOffset);
+	protected latestNode(): AstNode {
+		return this._astVisitor.latestNode();
 	}
 
 	protected moveCursorTo(offset: number): void {
@@ -36,6 +40,10 @@ export abstract class AbstractCharSequenceCaptor implements AstNodeCaptor {
 
 	protected appendToAst(node: AstNode): void {
 		this._astVisitor.appendToAst(node);
+	}
+
+	protected detachFromAst(node: AstNode): void {
+		this._astVisitor.detachFromAst(node);
 	}
 
 	protected getCommentKeywords(): VisitorCommentKeywords {

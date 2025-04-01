@@ -2,9 +2,9 @@ import {AstNode, AstNodeConstructor} from '../../../ast-node';
 import {Character} from '../../chars';
 import {Char} from '../../types';
 import {AstVisitor} from '../../visitor';
-import {AbstractCharSequenceCaptor} from '../abstract-char-sequence-captor';
+import {AbstractAstNodeCaptor} from '../abstract-ast-node-captor';
 
-export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractCharSequenceCaptor {
+export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractAstNodeCaptor {
 	private readonly _keyword: string;
 	private readonly _firstChar: Char;
 	private readonly _restChars: Array<Char>;
@@ -47,7 +47,7 @@ export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractC
 		}
 		// next char to keyword cannot be part of java identifier
 		const nextCharToWord = this.charAt(offset + this.keywordLength);
-		return !Character.isJavaIdentifierPart(nextCharToWord.codePointAt(0));
+		return nextCharToWord == null || !Character.isJavaIdentifierPart(nextCharToWord.codePointAt(0));
 	}
 
 	protected abstract getAstNodeConstructor(): AstNodeConstructor<N>;

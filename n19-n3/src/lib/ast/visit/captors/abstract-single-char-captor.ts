@@ -1,9 +1,9 @@
 import {AstNode, AstNodeConstructor} from '../../ast-node';
 import {AstNodeCaptor} from '../captor';
 import {Char} from '../types';
-import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
+import {AbstractAstNodeCaptor} from './abstract-ast-node-captor';
 
-export abstract class AbstractSingleCharCaptor<N extends AstNode> extends AbstractCharSequenceCaptor {
+export abstract class AbstractSingleCharCaptor<N extends AstNode> extends AbstractAstNodeCaptor {
 	protected abstract get char(): Char;
 
 	/**

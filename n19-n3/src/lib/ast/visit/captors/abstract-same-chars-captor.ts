@@ -1,11 +1,11 @@
 import {AstNode, AstNodeConstructor} from '../../ast-node';
 import {Char} from '../types';
-import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
+import {AbstractAstNodeCaptor} from './abstract-ast-node-captor';
 
 /**
  * Capture all the next characters that are the same with the given one, and create ast node.
  */
-export abstract class AbstractSameCharsCaptor<N extends AstNode> extends AbstractCharSequenceCaptor {
+export abstract class AbstractSameCharsCaptor<N extends AstNode> extends AbstractAstNodeCaptor {
 	protected abstract get leadChar(): Char;
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars

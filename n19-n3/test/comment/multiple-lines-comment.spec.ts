@@ -9,8 +9,8 @@ import {
 	MultipleLinesCommentStartMarkNode,
 	NewLineNode,
 	WhitespacesNode
-} from '../src';
-import {AstChecker} from './utils/ast-checker';
+} from '../../src';
+import {AstChecker} from '../utils/ast-checker';
 
 describe('Multiple lines comment test', () => {
 	test('Multiple lines comment #1', async () => {

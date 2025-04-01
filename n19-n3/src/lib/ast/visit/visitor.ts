@@ -13,6 +13,7 @@ export class AstVisitor {
 	private readonly _buildCommentKeywords: VisitorCommentKeywords;
 
 	private _currentAstNode: AstNode;
+	private _latestAstNode: AstNode;
 	/** char cursor. The cursor position is not always within the current line. */
 	private _cursor: number = 0;
 	/** line starts with 1, initial value is 1 */
@@ -26,6 +27,7 @@ export class AstVisitor {
 		this._buildCommentKeywords = this.initializeCommentKeywords(options?.commentKeywords);
 
 		this._currentAstNode = ast.compilationUnit;
+		this._latestAstNode = ast.compilationUnit;
 	}
 
 	// initializing
@@ -116,6 +118,10 @@ export class AstVisitor {
 		this._buildVisitor?.onNodeAppended?.(node);
 	}
 
+	protected onNodeDetached(node: AstNode): void {
+		this._buildVisitor?.onNodeDetached?.(node);
+	}
+
 	// visit
 	visit(): void {
 		const char = this.charAt(this._cursor);
@@ -150,6 +156,13 @@ export class AstVisitor {
 	}
 
 	/**
+	 * the latest node appended to ast.
+	 */
+	latestNode(): AstNode {
+		return this._latestAstNode;
+	}
+
+	/**
 	 * move cursor to given offset.
 	 * it is important to know that move cursor will not impact value of line.
 	 */
@@ -167,7 +180,15 @@ export class AstVisitor {
 	appendToAst(node: AstNode): void {
 		this.onNodeDetermined(node);
 		this._currentAstNode = this._currentAstNode.append(node);
+		this._latestAstNode = node;
 		this.onNodeAppended(node);
+	}
+
+	detachFromAst(node: AstNode): void {
+		this._currentAstNode = node.previousSibling ?? node.parent;
+		this._latestAstNode = node.previous;
+		node.detachFromParent();
+		this.onNodeDetached(node);
 	}
 
 	protected address(char: Char = this.charAt(this._cursor)): void {

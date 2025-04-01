@@ -1,4 +1,4 @@
-import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
+import {AbstractAstNodeCaptor} from './abstract-ast-node-captor';
 import {AbstractEndMarkedCaptor, AbstractEndMarkedWithNewLineCaptor} from './abstract-end-marked-captor';
 import {AbstractSameCharsCaptor} from './abstract-same-chars-captor';
 import {AbstractSingleCharCaptor} from './abstract-single-char-captor';
@@ -33,7 +33,15 @@ import {NewLineStartsWithCarriageReturnCaptor, NewLineStartsWithNewLineCaptor} f
 import {ScriptCommandCaptor} from './script-command-captor';
 import {AsteriskCaptor, CommaCaptor, DotCaptor, SemicolonCaptor} from './symbol-captors';
 import {TabsCaptor} from './tabs-captor';
-import {AbstractTypeCaptor, InterfaceDeclarationCaptor} from './type-captors';
+import {
+	AbstractTypeCaptor,
+	AtInterfaceDeclarationCaptor,
+	ClassDeclarationCaptor,
+	EnumClassDeclarationCaptor,
+	InterfaceDeclarationCaptor,
+	RecordClassDeclarationCaptor,
+	TraitClassDeclarationCaptor
+} from './type-captors';
 import {UndeterminedCharsCaptor} from './undetermined-chars-captor';
 import {WhitespacesCaptor} from './whitespaces-captor';
 
@@ -51,6 +59,11 @@ export const SortedCaptors = [
 	PackageDeclarationCaptor,
 	ImportDeclarationCaptor,
 	InterfaceDeclarationCaptor,
+	ClassDeclarationCaptor,
+	AtInterfaceDeclarationCaptor,
+	EnumClassDeclarationCaptor,
+	RecordClassDeclarationCaptor,
+	TraitClassDeclarationCaptor,
 	// keyword
 	KwStaticCaptor,
 	KwAsCaptor,
@@ -88,7 +101,7 @@ export const SortedCaptors = [
 // noinspection JSUnusedGlobalSymbols
 export const Captors = {
 	// abstract
-	AbstractCharSequenceCaptor,
+	AbstractCharSequenceCaptor: AbstractAstNodeCaptor,
 	AbstractSameCharsCaptor,
 	AbstractSingleCharCaptor,
 	AbstractEndMarkedCaptor,
@@ -110,6 +123,11 @@ export const Captors = {
 	PackageDeclarationCaptor,
 	ImportDeclarationCaptor,
 	InterfaceDeclarationCaptor,
+	ClassDeclarationCaptor,
+	AtInterfaceDeclarationCaptor,
+	EnumClassDeclarationCaptor,
+	RecordClassDeclarationCaptor,
+	TraitClassDeclarationCaptor,
 	// keyword
 	KwStaticCaptor,
 	KwAsCaptor,

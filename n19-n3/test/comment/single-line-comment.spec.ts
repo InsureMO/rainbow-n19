@@ -8,8 +8,8 @@ import {
 	SingleLineCommentStartMarkNode,
 	TabsNode,
 	WhitespacesNode
-} from '../src';
-import {AstChecker} from './utils/ast-checker';
+} from '../../src';
+import {AstChecker} from '../utils/ast-checker';
 
 describe('Single line comment test', () => {
 	test('Single line comment #1', async () => {

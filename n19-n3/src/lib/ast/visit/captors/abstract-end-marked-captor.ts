@@ -1,7 +1,7 @@
 import {Optional} from '@rainbow-n19/n2';
 import {AstChars, AstMarks} from '../chars';
 import {Char} from '../types';
-import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
+import {AbstractAstNodeCaptor} from './abstract-ast-node-captor';
 
 export interface EndMark {
 	endMark?: string;
@@ -16,7 +16,7 @@ export interface ContentAndEnd extends EndMark {
 	endOffsetOfAll: number;
 }
 
-export abstract class AbstractEndMarkedCaptor extends AbstractCharSequenceCaptor {
+export abstract class AbstractEndMarkedCaptor extends AbstractAstNodeCaptor {
 	/**
 	 * check end mark by given char and offset.
 	 */

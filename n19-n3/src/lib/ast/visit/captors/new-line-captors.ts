@@ -1,12 +1,12 @@
 import {NewLineNode} from '../../node';
 import {AstChars, AstMarks} from '../chars';
 import {Char} from '../types';
-import {AbstractCharSequenceCaptor} from './abstract-char-sequence-captor';
+import {AbstractAstNodeCaptor} from './abstract-ast-node-captor';
 
 /**
  * no need to capture next char, just create node by given char itself
  */
-export class NewLineStartsWithNewLineCaptor extends AbstractCharSequenceCaptor {
+export class NewLineStartsWithNewLineCaptor extends AbstractAstNodeCaptor {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	attempt(char: Char, _offset: number): boolean {
 		return char === AstChars.NewLine;
@@ -23,7 +23,7 @@ export class NewLineStartsWithNewLineCaptor extends AbstractCharSequenceCaptor {
 /**
  * try to capture next "\n", and create node by "\r\n" or "\r".
  */
-export class NewLineStartsWithCarriageReturnCaptor extends AbstractCharSequenceCaptor {
+export class NewLineStartsWithCarriageReturnCaptor extends AbstractAstNodeCaptor {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	attempt(char: Char, _offset: number): boolean {
 		return char == AstChars.CarriageReturn;
