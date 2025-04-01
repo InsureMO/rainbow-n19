@@ -2,11 +2,6 @@ import {AstNode} from '../ast-node';
 import {TokenId} from '../tokens';
 import {AbstractContainerAstNode} from './abstract-container-node';
 import {AbstractAstNode} from './abstract-node';
-import {CharsNode} from './chars-node';
-import {NewLineNode} from './new-line-node';
-import {AsteriskNode} from './symbol-nodes';
-import {TabsNode} from './tabs-node';
-import {WhitespacesNode} from './whitespaces-node';
 
 export class CommentKeywordNode extends AbstractAstNode {
 	get tokenId(): TokenId {
@@ -26,11 +21,13 @@ export class SingleLineCommentNode extends AbstractContainerAstNode {
 	}
 
 	protected couldBeChildOfMe(node: AstNode): boolean {
-		return node instanceof SingleLineCommentStartMarkNode
-			|| node instanceof WhitespacesNode
-			|| node instanceof TabsNode
-			|| node instanceof CharsNode
-			|| node instanceof CommentKeywordNode;
+		return [
+			TokenId.SingleLineCommentStartMark,
+			TokenId.Whitespaces,
+			TokenId.Tabs,
+			TokenId.Chars,
+			TokenId.CommentKeyword
+		].includes(node.tokenId);
 	}
 }
 
@@ -52,13 +49,15 @@ export class MultipleLinesCommentNode extends AbstractContainerAstNode {
 	}
 
 	protected couldBeChildOfMe(node: AstNode): boolean {
-		return node instanceof MultipleLinesCommentStartMarkNode
-			|| node instanceof WhitespacesNode
-			|| node instanceof TabsNode
-			|| node instanceof CharsNode
-			|| node instanceof AsteriskNode
-			|| node instanceof CommentKeywordNode
-			|| node instanceof NewLineNode
-			|| node instanceof MultipleLinesCommentEndMarkNode;
+		return [
+			TokenId.MultipleLinesCommentStartMark,
+			TokenId.Whitespaces,
+			TokenId.Tabs,
+			TokenId.Chars,
+			TokenId.Asterisk,
+			TokenId.CommentKeyword,
+			TokenId.NewLine,
+			TokenId.MultipleLinesCommentEndMark
+		].includes(node.tokenId);
 	}
 }

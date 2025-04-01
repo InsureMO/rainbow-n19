@@ -1,20 +1,5 @@
 import {AstNode, AstNodeConstructor} from '../../../ast-node';
-import {
-	AnnotationDeclarationNode,
-	KwAbstractNode,
-	KwFinalNode,
-	KwNonSealedNode,
-	KwPrivateNode,
-	KwProtectedNode,
-	KwPublicNode,
-	KwSealedNode,
-	KwStrictfpNode,
-	MultipleLinesCommentNode,
-	NewLineNode,
-	SingleLineCommentNode,
-	TabsNode,
-	WhitespacesNode
-} from '../../../node';
+import {TokenId} from '../../../tokens';
 import {AstKeywords} from '../../chars';
 import {Char} from '../../types';
 import {AstVisitor} from '../../visitor';
@@ -52,26 +37,27 @@ export abstract class AbstractTypeCaptor<N extends AstNode, K extends AstNode> e
 	 * modifier can be concatenated with comments, new lines, whitespaces, tabs, annotations
 	 */
 	protected isModifierConcatenator(node: AstNode): boolean {
-		return node instanceof MultipleLinesCommentNode
-			|| node instanceof SingleLineCommentNode
-			|| node instanceof NewLineNode
-			|| node instanceof WhitespacesNode
-			|| node instanceof TabsNode
-			|| node instanceof AnnotationDeclarationNode;
+		return [
+			// comment nodes
+			TokenId.MultipleLinesComment, TokenId.SingleLineComment,
+			// new line, whitespaces and tabs
+			TokenId.NewLine, TokenId.Whitespaces, TokenId.Tabs,
+			// annotation
+			TokenId.AnnotationDeclaration
+		].includes(node.tokenId);
 	}
 
 	/**
 	 * check the given node is modifier or not
 	 */
 	protected isModifier(node: AstNode): boolean {
-		return node instanceof KwPublicNode
-			|| node instanceof KwProtectedNode
-			|| node instanceof KwPrivateNode
-			|| node instanceof KwAbstractNode
-			|| node instanceof KwFinalNode
-			|| node instanceof KwSealedNode
-			|| node instanceof KwNonSealedNode
-			|| node instanceof KwStrictfpNode;
+		return [
+			// comment nodes
+			// modifier nodes
+			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
+			TokenId.ABSTRACT, TokenId.FINAL, TokenId.STATIC,
+			TokenId.SEALED, TokenId.NON_SEALED, TokenId.STRICTFP
+		].includes(node.tokenId);
 	}
 
 	visit(char: Char, offset: number): boolean {

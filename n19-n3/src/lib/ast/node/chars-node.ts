@@ -12,7 +12,7 @@ export class CharsNode extends AbstractAstNode {
 	}
 
 	append(node: AstNode): AstNode {
-		if (node instanceof CharsNode) {
+		if (node.tokenId === TokenId.Chars) {
 			// merge the given one to this
 			this.appendText(node.text);
 			return this;

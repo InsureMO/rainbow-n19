@@ -1,25 +1,6 @@
 import {AstNode} from '../ast-node';
 import {TokenId} from '../tokens';
 import {AbstractStatementEndByRBraceAstNode} from './abstract-statement-node';
-import {AnnotationDeclarationNode} from './annotation-declaration-node';
-import {MultipleLinesCommentNode, SingleLineCommentNode} from './comment-node';
-import {IdentifierNode} from './identifier-node';
-import {
-	KwAbstractNode,
-	KwExtendsNode,
-	KwFinalNode,
-	KwImplementsNode,
-	KwNonSealedNode,
-	KwPrivateNode,
-	KwProtectedNode,
-	KwPublicNode,
-	KwSealedNode,
-	KwStrictfpNode
-} from './keyword-nodes';
-import {NewLineNode} from './new-line-node';
-import {LBraceNode, RBraceNode} from './symbol-nodes';
-import {TabsNode} from './tabs-node';
-import {WhitespacesNode} from './whitespaces-node';
 
 export enum TypeDeclarationBodyStatus {
 	NOT_STARTED = 'not-started',
@@ -35,30 +16,27 @@ export abstract class AbstractTypeDeclarationNode extends AbstractStatementEndBy
 	}
 
 	protected couldBeChildOfMeWhenBodyNotStarted(node: AstNode): boolean {
-		// comment nodes
-		return node instanceof MultipleLinesCommentNode
-			|| node instanceof SingleLineCommentNode
+		return [
+			// comment nodes
+			TokenId.MultipleLinesComment, TokenId.SingleLineComment,
 			// new line, whitespaces and tabs
-			|| node instanceof NewLineNode
-			|| node instanceof WhitespacesNode
-			|| node instanceof TabsNode
+			TokenId.NewLine, TokenId.Whitespaces, TokenId.Tabs,
 			// modifier nodes
-			|| node instanceof KwPublicNode
-			|| node instanceof KwProtectedNode
-			|| node instanceof KwPrivateNode
-			|| node instanceof KwAbstractNode
-			|| node instanceof KwFinalNode
-			|| node instanceof KwSealedNode
-			|| node instanceof KwNonSealedNode
-			|| node instanceof KwStrictfpNode
+			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
+			TokenId.ABSTRACT, TokenId.FINAL, TokenId.STATIC,
+			TokenId.SEALED, TokenId.NON_SEALED, TokenId.STRICTFP,
+			// type keywords
+			TokenId.INTERFACE, TokenId.CLASS, TokenId.AT_INTERFACE, TokenId.ENUM,
+			TokenId.RECORD, TokenId.TRAIT,
+			// identifier
+			TokenId.Dot, TokenId.Identifier,
 			// extends and implements
-			|| node instanceof KwExtendsNode
-			|| node instanceof KwImplementsNode
-			|| node instanceof IdentifierNode
+			TokenId.EXTENDS, TokenId.IMPLEMENTS,
 			// annotation
-			|| node instanceof AnnotationDeclarationNode
+			TokenId.AnnotationDeclaration,
 			// start body
-			|| node instanceof LBraceNode;
+			TokenId.LBrace
+		].includes(node.tokenId);
 	}
 
 	/**
@@ -83,9 +61,9 @@ export abstract class AbstractTypeDeclarationNode extends AbstractStatementEndBy
 
 	protected appendAsLastChild(node: AstNode): AstNode {
 		const ret = super.appendAsLastChild(node);
-		if (node instanceof LBraceNode) {
+		if (node.tokenId === TokenId.LBrace) {
 			this._bodyStatus = TypeDeclarationBodyStatus.STARTED;
-		} else if (node instanceof RBraceNode) {
+		} else if (node.tokenId === TokenId.RBrace) {
 			this._bodyStatus = TypeDeclarationBodyStatus.ENDED;
 		}
 		return ret;

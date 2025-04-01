@@ -150,7 +150,7 @@ export enum TokenId {
 	RParen, // )
 	LBrack, // [
 	RBrack, // ]
-	Semi, // ;
+	Semicolon, // ;
 	Comma, // ,
 	Dot, // .
 	// operators
@@ -389,7 +389,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	RParen: {id: TokenId.RParen, name: 'RParen'},
 	LBrack: {id: TokenId.LBrack, name: 'LBrack'},
 	RBrack: {id: TokenId.RBrack, name: 'RBrack'},
-	Semi: {id: TokenId.Semi, name: 'Semi'},
+	Semicolon: {id: TokenId.Semicolon, name: 'Semicolon'},
 	Comma: {id: TokenId.Comma, name: 'Comma'},
 	Dot: {id: TokenId.Dot, name: 'Dot'},
 	// operators

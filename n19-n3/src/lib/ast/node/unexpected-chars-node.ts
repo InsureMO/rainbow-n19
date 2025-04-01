@@ -11,7 +11,7 @@ export class UnexpectedCharsNode extends AbstractAstNode {
 	}
 
 	append(node: AstNode): AstNode {
-		if (node instanceof UnexpectedCharsNode) {
+		if (node.tokenId === TokenId.UnexpectedChars) {
 			// merge the given one to this
 			this.appendText(node.text);
 			return this;

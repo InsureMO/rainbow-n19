@@ -16,7 +16,7 @@ const createSymbolNode = (name: string, tokeId: TokenId) => {
 };
 
 /** ";" */
-export const SemicolonNode = createSymbolNode('Semicolon', TokenId.Semi);
+export const SemicolonNode = createSymbolNode('Semicolon', TokenId.Semicolon);
 /** "," */
 export const CommaNode = createSymbolNode('Comma', TokenId.Comma);
 /** "." */

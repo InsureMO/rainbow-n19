@@ -1,6 +1,6 @@
 import {AstNode} from '../ast-node';
+import {TokenId} from '../tokens';
 import {AbstractContainerAstNode} from './abstract-container-node';
-import {RBraceNode, SemicolonNode} from './symbol-nodes';
 
 /**
  * close when a node, which pass the {@link #endBy} check, is appended to me.
@@ -28,13 +28,13 @@ export abstract class AbstractStatementAstNode extends AbstractContainerAstNode 
 /** statement end by semicolon */
 export abstract class AbstractStatementEndBySemicolonAstNode extends AbstractStatementAstNode {
 	protected endBy(node: AstNode): boolean {
-		return node instanceof SemicolonNode;
+		return node.tokenId === TokenId.Semicolon;
 	}
 }
 
 /** statement end by rbrace */
 export abstract class AbstractStatementEndByRBraceAstNode extends AbstractStatementAstNode {
 	protected endBy(node: AstNode): boolean {
-		return node instanceof RBraceNode;
+		return node.tokenId === TokenId.RBrace;
 	}
 }
