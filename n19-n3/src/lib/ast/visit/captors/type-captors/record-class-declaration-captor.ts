@@ -4,7 +4,7 @@ import {AstKeywords} from '../../chars';
 import {AstVisitor} from '../../visitor';
 import {AbstractTypeCaptor} from './abstract-type-captor';
 
-export class RecordClassDeclarationCaptor extends AbstractTypeCaptor<RecordClassDeclarationNode, typeof KwRecordNode> {
+export class RecordClassDeclarationCaptor extends AbstractTypeCaptor<[AstKeywords.Record, RecordClassDeclarationNode, KwRecordNode]> {
 	constructor(astVisitor: AstVisitor) {
 		super(AstKeywords.Record, astVisitor);
 	}
@@ -13,7 +13,7 @@ export class RecordClassDeclarationCaptor extends AbstractTypeCaptor<RecordClass
 		return RecordClassDeclarationNode;
 	}
 
-	protected getKeywordAstNodeConstructor(): AstNodeConstructor<typeof KwRecordNode> {
+	protected getKeywordAstNodeConstructor(): AstNodeConstructor<KwRecordNode> {
 		return KwRecordNode;
 	}
 }

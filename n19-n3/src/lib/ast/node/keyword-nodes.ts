@@ -1,77 +1,215 @@
-import {AstNodeWithOptionsConstructor} from '../ast-node';
 import {TokenId} from '../tokens';
 import {AbstractAstNode} from './abstract-node';
 
 export abstract class AbstractKeywordNode extends AbstractAstNode {
 }
 
-const createKeywordNode = (name: string, tokeId: TokenId) => {
-	const cls = class extends AbstractKeywordNode {
-		get tokenId(): TokenId {
-			return tokeId;
-		}
-	};
-	Object.defineProperty(cls, 'name', {value: `Kw${name}Node`});
-	return cls as unknown as AstNodeWithOptionsConstructor;
-};
-
 /** "package" */
-export const KwPackageNode = createKeywordNode('Package', TokenId.PACKAGE);
+export class KwPackageNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.PACKAGE;
+	}
+}
+
 /** "import" */
-export const KwImportNode = createKeywordNode('Import', TokenId.IMPORT);
+export class KwImportNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.IMPORT;
+	}
+}
+
 /** "as", for class/field import and type cast */
-export const KwAsNode = createKeywordNode('As', TokenId.AS);
+export class KwAsNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.AS;
+	}
+}
+
 /** "static", for class, method, field and static import */
-export const KwStaticNode = createKeywordNode('Static', TokenId.STATIC);
+export class KwStaticNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.STATIC;
+	}
+}
+
 /** "public", for class, constructor, method, and field */
-export const KwPublicNode = createKeywordNode('Public', TokenId.PUBLIC);
+export class KwPublicNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.PUBLIC;
+	}
+}
+
 /** "protected", for class, constructor, method, and field */
-export const KwProtectedNode = createKeywordNode('Protected', TokenId.PROTECTED);
+export class KwProtectedNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.PROTECTED;
+	}
+}
+
 /** "private", for class, constructor, method, and field */
-export const KwPrivateNode = createKeywordNode('Private', TokenId.PRIVATE);
+export class KwPrivateNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.PRIVATE;
+	}
+}
+
 /** "final", for class (not interface), method, field and parameter */
-export const KwFinalNode = createKeywordNode('Final', TokenId.FINAL);
+export class KwFinalNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.FINAL;
+	}
+}
+
 /** "abstract", for class, constructor, method */
-export const KwAbstractNode = createKeywordNode('Abstract', TokenId.ABSTRACT);
+export class KwAbstractNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.ABSTRACT;
+	}
+}
+
 /** "strictfp", for class, constructor, method, and field */
-export const KwStrictfpNode = createKeywordNode('Strictfp', TokenId.STRICTFP);
+export class KwStrictfpNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.STRICTFP;
+	}
+}
+
 /** "record", for class */
-export const KwRecordNode = createKeywordNode('Record', TokenId.RECORD);
+export class KwRecordNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.RECORD;
+	}
+}
+
 /** "sealed", for class */
-export const KwSealedNode = createKeywordNode('Sealed', TokenId.SEALED);
+export class KwSealedNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.SEALED;
+	}
+}
+
 /** "permits", for class */
-export const KwPermitsNode = createKeywordNode('Permits', TokenId.PERMITS);
+export class KwPermitsNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.PERMITS;
+	}
+}
+
 /** "non-sealed", for class */
-export const KwNonSealedNode = createKeywordNode('NonSealed', TokenId.NON_SEALED);
+export class KwNonSealedNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.NON_SEALED;
+	}
+}
+
 /** "interface" */
-export const KwInterfaceNode = createKeywordNode('Interface', TokenId.INTERFACE);
+export class KwInterfaceNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.INTERFACE;
+	}
+}
+
 /** "class" */
-export const KwClassNode = createKeywordNode('Class', TokenId.CLASS);
+export class KwClassNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.CLASS;
+	}
+}
+
 /** "@interface" */
-export const KwAtInterfaceNode = createKeywordNode('AtInterface', TokenId.AT_INTERFACE);
+export class KwAtInterfaceNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.AT_INTERFACE;
+	}
+}
+
 /** "enum" */
-export const KwEnumNode = createKeywordNode('Enum', TokenId.ENUM);
+export class KwEnumNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.ENUM;
+	}
+}
+
 /** "trait", for class */
-export const KwTraitNode = createKeywordNode('Trait', TokenId.TRAIT);
+export class KwTraitNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.TRAIT;
+	}
+}
+
 /** "extends", for class */
-export const KwExtendsNode = createKeywordNode('Extends', TokenId.EXTENDS);
+export class KwExtendsNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.EXTENDS;
+	}
+}
+
 /** "implements", for class */
-export const KwImplementsNode = createKeywordNode('Implements', TokenId.IMPLEMENTS);
+export class KwImplementsNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.IMPLEMENTS;
+	}
+}
+
 /** "default", for interface default method, switch */
-export const KwDefaultNode = createKeywordNode('Default', TokenId.DEFAULT);
+export class KwDefaultNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.DEFAULT;
+	}
+}
+
 /** "synchronized", for method */
-export const KwSynchronizedNode = createKeywordNode('Synchronized', TokenId.SYNCHRONIZED);
+export class KwSynchronizedNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.SYNCHRONIZED;
+	}
+}
+
 /** "native", for method */
-export const KwNativeNode = createKeywordNode('Native', TokenId.NATIVE);
+export class KwNativeNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.NATIVE;
+	}
+}
+
 /** "transient", for field */
-export const KwTransientNode = createKeywordNode('Transient', TokenId.TRANSIENT);
+export class KwTransientNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.TRANSIENT;
+	}
+}
+
 /** "volatile", for field */
-export const KwVolatileNode = createKeywordNode('Volatile', TokenId.VOLATILE);
+export class KwVolatileNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.VOLATILE;
+	}
+}
+
 /** "def" */
-export const KwDefNode = createKeywordNode('Def', TokenId.DEF);
+export class KwDefNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.DEF;
+	}
+}
+
 /** "var" */
-export const KwVarNode = createKeywordNode('Var', TokenId.VAR);
+export class KwVarNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.VAR;
+	}
+}
+
 /** "const", reserved */
-export const KwConstNode = createKeywordNode('Const', TokenId.CONST);
+export class KwConstNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.CONST;
+	}
+}
+
 /** "goto", reserved */
-export const KwGotoNode = createKeywordNode('Goto', TokenId.GOTO);
+export class KwGotoNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.GOTO;
+	}
+}

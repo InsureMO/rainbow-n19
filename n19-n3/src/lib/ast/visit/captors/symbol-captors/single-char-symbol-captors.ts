@@ -1,53 +1,150 @@
 import {AstNodeConstructor} from '../../../ast-node';
 import {
-	AbstractSymbolNode,
 	AsteriskNode,
 	CommaNode,
 	DotNode,
+	LAngleBrackNode,
 	LBraceNode,
 	LBrackNode,
 	LParenNode,
+	RAngleBrackNode,
 	RBraceNode,
 	RBrackNode,
 	RParenNode,
 	SemicolonNode
 } from '../../../node';
-import {AstNodeCaptorWithVisitorConstructor} from '../../captor';
 import {AstChars} from '../../chars';
 import {Char} from '../../types';
 import {AbstractSingleCharCaptor} from '../abstract-single-char-captor';
 
-const createSingleCharCaptor = <N extends AbstractSymbolNode>(name: string, char: Char, type: AstNodeConstructor<N>) => {
-	const cls = class extends AbstractSingleCharCaptor<N> {
-		protected get char(): Char {
-			return char;
-		}
-
-		protected getAstNodeConstructor(): AstNodeConstructor<N> {
-			return type;
-		}
-	};
-	Object.defineProperty(cls, 'name', {value: `${name[0].toUpperCase() + name.slice(1)}Captor`});
-	return cls as unknown as AstNodeCaptorWithVisitorConstructor;
-};
-
 /** "." */
-export const DotCaptor = createSingleCharCaptor('dot', AstChars.Dot, DotNode);
+export class DotCaptor extends AbstractSingleCharCaptor<DotNode> {
+	protected get char(): Char {
+		return AstChars.Dot;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<DotNode> {
+		return DotNode;
+	}
+}
+
 /** "," */
-export const CommaCaptor = createSingleCharCaptor('comma', AstChars.Comma, CommaNode);
+export class CommaCaptor extends AbstractSingleCharCaptor<CommaNode> {
+	protected get char(): Char {
+		return AstChars.Comma;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<CommaNode> {
+		return CommaNode;
+	}
+}
+
 /** ";" */
-export const SemicolonCaptor = createSingleCharCaptor('semicolon', AstChars.Semicolon, SemicolonNode);
+export class SemicolonCaptor extends AbstractSingleCharCaptor<SemicolonNode> {
+	protected get char(): Char {
+		return AstChars.Semicolon;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<SemicolonNode> {
+		return SemicolonNode;
+	}
+}
+
 /** "*" */
-export const AsteriskCaptor = createSingleCharCaptor('Asterisk', AstChars.AsteriskMark, AsteriskNode);
+export class AsteriskCaptor extends AbstractSingleCharCaptor<AsteriskNode> {
+	protected get char(): Char {
+		return AstChars.AsteriskMark;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<AsteriskNode> {
+		return AsteriskNode;
+	}
+}
+
 /** "{" */
-export const LBraceCaptor = createSingleCharCaptor('LBrace', AstChars.LBrace, LBraceNode);
+export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
+	protected get char(): Char {
+		return AstChars.LBrace;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<LBraceNode> {
+		return LBraceNode;
+	}
+}
+
 /** "}" */
-export const RBraceCaptor = createSingleCharCaptor('RBrace', AstChars.RBrace, RBraceNode);
+export class RBraceCaptor extends AbstractSingleCharCaptor<RBraceNode> {
+	protected get char(): Char {
+		return AstChars.RBrace;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<RBraceNode> {
+		return RBraceNode;
+	}
+}
+
 /** "[" */
-export const LBrackCaptor = createSingleCharCaptor('LBrack', AstChars.LBrack, LBrackNode);
+export class LBrackCaptor extends AbstractSingleCharCaptor<LBrackNode> {
+	protected get char(): Char {
+		return AstChars.LBrack;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<LBrackNode> {
+		return LBrackNode;
+	}
+}
+
 /** "]" */
-export const RBrackCaptor = createSingleCharCaptor('RBrack', AstChars.RBrack, RBrackNode);
+export class RBrackCaptor extends AbstractSingleCharCaptor<RBrackNode> {
+	protected get char(): Char {
+		return AstChars.RBrack;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<RBrackNode> {
+		return RBrackNode;
+	}
+}
+
 /** "(" */
-export const LParenCaptor = createSingleCharCaptor('LParen', AstChars.LParen, LParenNode);
+export class LParenCaptor extends AbstractSingleCharCaptor<LParenNode> {
+	protected get char(): Char {
+		return AstChars.LParen;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<LParenNode> {
+		return LParenNode;
+	}
+}
+
 /** ")" */
-export const RParenCaptor = createSingleCharCaptor('RParen', AstChars.RParen, RParenNode);
+export class RParenCaptor extends AbstractSingleCharCaptor<RParenNode> {
+	protected get char(): Char {
+		return AstChars.RParen;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<RParenNode> {
+		return RParenNode;
+	}
+}
+
+/** "<" */
+export class LAngleBrackCaptor extends AbstractSingleCharCaptor<LAngleBrackNode> {
+	protected get char(): Char {
+		return AstChars.LAngleBrack;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<LAngleBrackNode> {
+		return LAngleBrackNode;
+	}
+}
+
+/** ">" */
+export class RAngleBrackCaptor extends AbstractSingleCharCaptor<RAngleBrackNode> {
+	protected get char(): Char {
+		return AstChars.RAngleBrack;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<RAngleBrackNode> {
+		return RAngleBrackNode;
+	}
+}

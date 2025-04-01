@@ -1,37 +1,89 @@
-import {AstNodeWithOptionsConstructor} from '../ast-node';
 import {TokenId} from '../tokens';
 import {AbstractAstNode} from './abstract-node';
 
 export abstract class AbstractSymbolNode extends AbstractAstNode {
 }
 
-const createSymbolNode = (name: string, tokeId: TokenId) => {
-	const cls = class extends AbstractSymbolNode {
-		get tokenId(): TokenId {
-			return tokeId;
-		}
-	};
-	Object.defineProperty(cls, 'name', {value: `${name}Node`});
-	return cls as unknown as AstNodeWithOptionsConstructor;
-};
-
 /** ";" */
-export const SemicolonNode = createSymbolNode('Semicolon', TokenId.Semicolon);
+export class SemicolonNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.Semicolon;
+	}
+}
+
 /** "," */
-export const CommaNode = createSymbolNode('Comma', TokenId.Comma);
+export class CommaNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.Comma;
+	}
+}
+
 /** "." */
-export const DotNode = createSymbolNode('Dot', TokenId.Dot);
+export class DotNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.Dot;
+	}
+}
+
 /** "*" */
-export const AsteriskNode = createSymbolNode('Asterisk', TokenId.Asterisk);
+export class AsteriskNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.Asterisk;
+	}
+}
+
 /** "{" */
-export const LBraceNode = createSymbolNode('LBrace', TokenId.LBrace);
+export class LBraceNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.LBrace;
+	}
+}
+
 /** "}" */
-export const RBraceNode = createSymbolNode('RBrace', TokenId.RBrace);
+export class RBraceNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.RBrace;
+	}
+}
+
 /** "[" */
-export const LBrackNode = createSymbolNode('LBrack', TokenId.LBrack);
+export class LBrackNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.LBrack;
+	}
+}
+
 /** "]" */
-export const RBrackNode = createSymbolNode('RBrack', TokenId.RBrack);
+export class RBrackNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.RBrack;
+	}
+}
+
 /** "(" */
-export const LParenNode = createSymbolNode('LParen', TokenId.LParen);
+export class LParenNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.LParen;
+	}
+}
+
 /** ")" */
-export const RParenNode = createSymbolNode('RParen', TokenId.RParen);
+export class RParenNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.RParen;
+	}
+}
+
+/** "<" */
+export class LAngleBrackNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.LAngleBrack;
+	}
+}
+
+/** ">" */
+export class RAngleBrackNode extends AbstractSymbolNode {
+	get tokenId(): TokenId {
+		return TokenId.RAngleBrack;
+	}
+}

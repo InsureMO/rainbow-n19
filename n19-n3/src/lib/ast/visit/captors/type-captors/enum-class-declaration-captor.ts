@@ -4,7 +4,7 @@ import {AstKeywords} from '../../chars';
 import {AstVisitor} from '../../visitor';
 import {AbstractTypeCaptor} from './abstract-type-captor';
 
-export class EnumClassDeclarationCaptor extends AbstractTypeCaptor<EnumClassDeclarationNode, typeof KwEnumNode> {
+export class EnumClassDeclarationCaptor extends AbstractTypeCaptor<[AstKeywords.Enum, EnumClassDeclarationNode, KwEnumNode]> {
 	constructor(astVisitor: AstVisitor) {
 		super(AstKeywords.Enum, astVisitor);
 	}
@@ -13,7 +13,7 @@ export class EnumClassDeclarationCaptor extends AbstractTypeCaptor<EnumClassDecl
 		return EnumClassDeclarationNode;
 	}
 
-	protected getKeywordAstNodeConstructor(): AstNodeConstructor<typeof KwEnumNode> {
+	protected getKeywordAstNodeConstructor(): AstNodeConstructor<KwEnumNode> {
 		return KwEnumNode;
 	}
 }

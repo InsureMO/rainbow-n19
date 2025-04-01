@@ -4,7 +4,7 @@ import {AstKeywords} from '../../chars';
 import {AstVisitor} from '../../visitor';
 import {AbstractTypeCaptor} from './abstract-type-captor';
 
-export class AtInterfaceDeclarationCaptor extends AbstractTypeCaptor<AtInterfaceDeclarationNode, typeof KwAtInterfaceNode> {
+export class AtInterfaceDeclarationCaptor extends AbstractTypeCaptor<[AstKeywords.AtInterface, AtInterfaceDeclarationNode, KwAtInterfaceNode]> {
 	constructor(astVisitor: AstVisitor) {
 		super(AstKeywords.AtInterface, astVisitor);
 	}
@@ -13,7 +13,7 @@ export class AtInterfaceDeclarationCaptor extends AbstractTypeCaptor<AtInterface
 		return AtInterfaceDeclarationNode;
 	}
 
-	protected getKeywordAstNodeConstructor(): AstNodeConstructor<typeof KwAtInterfaceNode> {
+	protected getKeywordAstNodeConstructor(): AstNodeConstructor<KwAtInterfaceNode> {
 		return KwAtInterfaceNode;
 	}
 }

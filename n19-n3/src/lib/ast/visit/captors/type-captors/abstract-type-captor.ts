@@ -1,20 +1,34 @@
 import {AstNode, AstNodeConstructor} from '../../../ast-node';
+import {
+	AtInterfaceDeclarationNode,
+	ClassDeclarationNode,
+	EnumClassDeclarationNode,
+	InterfaceDeclarationNode,
+	KwAtInterfaceNode,
+	KwClassNode,
+	KwEnumNode,
+	KwInterfaceNode,
+	KwRecordNode,
+	KwTraitNode,
+	RecordClassDeclarationNode,
+	TraitClassDeclarationNode
+} from '../../../node';
 import {TokenId} from '../../../tokens';
 import {AstKeywords} from '../../chars';
 import {Char} from '../../types';
 import {AstVisitor} from '../../visitor';
 import {AbstractKeywordCaptor} from '../keyword-captors';
 
-export type TypeKeywords =
-	| AstKeywords.Interface
-	| AstKeywords.Class
-	| AstKeywords.AtInterface
-	| AstKeywords.Enum
-	| AstKeywords.Record
-	| AstKeywords.Trait;
+export type TypeDefs =
+	| [AstKeywords.Interface, InterfaceDeclarationNode, KwInterfaceNode]
+	| [AstKeywords.Class, ClassDeclarationNode, KwClassNode]
+	| [AstKeywords.AtInterface, AtInterfaceDeclarationNode, KwAtInterfaceNode]
+	| [AstKeywords.Enum, EnumClassDeclarationNode, KwEnumNode]
+	| [AstKeywords.Record, RecordClassDeclarationNode, KwRecordNode]
+	| [AstKeywords.Trait, TraitClassDeclarationNode, KwTraitNode]
 
-export abstract class AbstractTypeCaptor<N extends AstNode, K extends AstNode> extends AbstractKeywordCaptor<N> {
-	protected constructor(keyword: TypeKeywords, astVisitor: AstVisitor) {
+export abstract class AbstractTypeCaptor<T extends TypeDefs> extends AbstractKeywordCaptor<T[1]> {
+	protected constructor(keyword: T[0], astVisitor: AstVisitor) {
 		super(keyword, astVisitor);
 	}
 
@@ -22,13 +36,13 @@ export abstract class AbstractTypeCaptor<N extends AstNode, K extends AstNode> e
 		return true;
 	}
 
-	protected abstract getKeywordAstNodeConstructor(): AstNodeConstructor<K>
+	protected abstract getKeywordAstNodeConstructor(): AstNodeConstructor<T[2]>
 
 	/**
 	 * create child ast nodes and returns end offset of last one.
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected createChildAstNodes(_node: N, _char: Char, offset: number): number {
+	protected createChildAstNodes(_node: T[1], _char: Char, offset: number): number {
 		this.createAndAppendToAst(this.getKeywordAstNodeConstructor(), {text: this.keyword, startOffset: offset});
 		return offset + this.keywordLength;
 	}

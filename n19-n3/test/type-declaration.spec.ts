@@ -3,6 +3,7 @@ import {
 	CharsNode,
 	ClassDeclarationNode,
 	CompilationUnitNode,
+	IdentifierNode,
 	InterfaceDeclarationNode,
 	KwAbstractNode,
 	KwClassNode,
@@ -15,10 +16,12 @@ import {
 	KwSealedNode,
 	KwStaticNode,
 	KwStrictfpNode,
+	LBraceNode,
 	MultipleLinesCommentEndMarkNode,
 	MultipleLinesCommentNode,
 	MultipleLinesCommentStartMarkNode,
 	NewLineNode,
+	RBraceNode,
 	SingleLineCommentNode,
 	SingleLineCommentStartMarkNode,
 	TabsNode,
@@ -82,6 +85,27 @@ describe('Type declaration test', () => {
 					[TabsNode, 91, 92, 4, '\t'],
 					[WhitespacesNode, 92, 93, 4, ' '],
 					[KwClassNode, 93, 98, 4, 'class']
+				]]
+			]
+		]);
+	});
+	test('Class declaration #3', async () => {
+		const text = 'public abstract class AbstractA {\n}';
+		const ast = AstBuilder.ast(text);
+		AstChecker.check(ast, [
+			CompilationUnitNode, 0, 35, 0, text, [
+				[ClassDeclarationNode, 0, 35, 1, text, [
+					[KwPublicNode, 0, 6, 1, 'public'],
+					[WhitespacesNode, 6, 7, 1, ' '],
+					[KwAbstractNode, 7, 15, 1, 'abstract'],
+					[WhitespacesNode, 15, 16, 1, ' '],
+					[KwClassNode, 16, 21, 1, 'class'],
+					[WhitespacesNode, 21, 22, 1, ' '],
+					[IdentifierNode, 22, 31, 1, 'AbstractA'],
+					[WhitespacesNode, 31, 32, 1, ' '],
+					[LBraceNode, 32, 33, 1, '{'],
+					[NewLineNode, 33, 34, 1, '\n'],
+					[RBraceNode, 34, 35, 1, '}']
 				]]
 			]
 		]);

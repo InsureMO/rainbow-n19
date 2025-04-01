@@ -28,6 +28,7 @@ export abstract class AbstractTypeDeclarationNode extends AbstractStatementEndBy
 			// type keywords
 			TokenId.INTERFACE, TokenId.CLASS, TokenId.AT_INTERFACE, TokenId.ENUM,
 			TokenId.RECORD, TokenId.TRAIT,
+			TokenId.PERMITS,
 			// identifier
 			TokenId.Dot, TokenId.Identifier,
 			// extends and implements

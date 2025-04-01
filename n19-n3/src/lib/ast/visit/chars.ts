@@ -18,7 +18,9 @@ export enum AstChars {
 	LBrack = '[',
 	RBrack = ']',
 	LParen = '(',
-	RParen = ')'
+	RParen = ')',
+	LAngleBrack = '<',
+	RAngleBrack = '>'
 }
 
 export enum AstMarks {
