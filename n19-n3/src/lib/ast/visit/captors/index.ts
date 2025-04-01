@@ -100,21 +100,51 @@ export const SortedCaptors = [
 	UndeterminedCharsCaptor
 ] as const;
 
-const AbstractCaptors = {
+// noinspection JSUnusedGlobalSymbols
+export const Captors = {
 	AbstractAstNodeCaptor,
 	AbstractSameCharsCaptor, AbstractSingleCharCaptor,
 	AbstractEndMarkedCaptor, AbstractEndMarkedWithNewLineCaptor,
 	AbstractCommentCaptor,
 	AbstractKeywordCaptor, AbstractSingleWordKeywordCaptor,
-	AbstractTypeCaptor
-};
-// noinspection JSUnusedGlobalSymbols
-export const Captors = {
-	...AbstractCaptors,
+	AbstractTypeCaptor,
 
-	...SortedCaptors.reduce((acc, Captor) => {
-		acc[Captor.name] = Captor;
-		return acc;
-	}, {})
+	// whitespace, tab and new line
+	WhitespacesCaptor, TabsCaptor,
+	NewLineStartsWithCarriageReturnCaptor, NewLineStartsWithNewLineCaptor,
+	// shebang and comment
+	ScriptCommandCaptor,
+	SingleLineCommentCaptor, MultipleLinesCommentCaptor,
+	// statement
+	PackageDeclarationCaptor,
+	ImportDeclarationCaptor,
+	InterfaceDeclarationCaptor,
+	ClassDeclarationCaptor,
+	AtInterfaceDeclarationCaptor,
+	EnumClassDeclarationCaptor,
+	RecordClassDeclarationCaptor,
+	TraitClassDeclarationCaptor,
+	// keyword
+	KwStaticCaptor,
+	KwAsCaptor,
+	KwPublicCaptor, KwProtectedCaptor, KwPrivateCaptor,
+	KwFinalCaptor, KwAbstractCaptor, KwStrictfpCaptor,
+	KwSealedCaptor, KwPermitsCaptor, KwNonSealedCaptor,
+	KwExtendsCaptor, KwImplementsCaptor,
+	KwDefaultCaptor, KwSynchronizedCaptor, KwNativeCaptor,
+	KwTransientCaptor, KwVolatileCaptor,
+	// reserved keyword
+	KwConstCaptor,
+	KwGotoCaptor,
+	// symbol
+	SemicolonCaptor, DotCaptor, CommaCaptor,
+	AsteriskCaptor,
+	LBraceCaptor, RBraceCaptor,
+	LBrackCaptor, RBrackCaptor,
+	LParenCaptor, RParenCaptor,
+	LAngleBrackCaptor, RAngleBrackCaptor,
+	// identifier
+	IdentifierCaptor,
+	// others
+	UndeterminedCharsCaptor
 } as const;
-
