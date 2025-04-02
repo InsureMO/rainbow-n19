@@ -3,11 +3,9 @@ import {
 	AsteriskNode,
 	CommaNode,
 	DotNode,
-	LAngleBrackNode,
 	LBraceNode,
 	LBrackNode,
 	LParenNode,
-	RAngleBrackNode,
 	RBraceNode,
 	RBrackNode,
 	RParenNode,
@@ -124,27 +122,5 @@ export class RParenCaptor extends AbstractSingleCharCaptor<RParenNode> {
 
 	protected getAstNodeConstructor(): AstNodeConstructor<RParenNode> {
 		return RParenNode;
-	}
-}
-
-/** "<" */
-export class LAngleBrackCaptor extends AbstractSingleCharCaptor<LAngleBrackNode> {
-	protected get char(): Char {
-		return AstChars.LAngleBrack;
-	}
-
-	protected getAstNodeConstructor(): AstNodeConstructor<LAngleBrackNode> {
-		return LAngleBrackNode;
-	}
-}
-
-/** ">" */
-export class RAngleBrackCaptor extends AbstractSingleCharCaptor<RAngleBrackNode> {
-	protected get char(): Char {
-		return AstChars.RAngleBrack;
-	}
-
-	protected getAstNodeConstructor(): AstNodeConstructor<RAngleBrackNode> {
-		return RAngleBrackNode;
 	}
 }

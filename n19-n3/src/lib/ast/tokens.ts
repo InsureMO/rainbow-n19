@@ -132,7 +132,7 @@ export enum TokenId {
 	SafeChainDot, // ??.
 	Elvis, // ?:
 	MethodPointer, // .&
-	MethodReference, // ::
+	MethodReference, // :: // this also supported by java
 	RegexFind, // =~
 	RegexMatch, // ==~
 	Power, // **
@@ -140,7 +140,7 @@ export enum TokenId {
 	Spaceship, // <=>
 	Identical, // ===
 	NotIdentical, // !==
-	Arrow, // ->
+	Arrow, // -> // this also supported by java
 	NotInstanceOf, // !instanceof
 	NotIn, // !in
 	// separators
@@ -150,8 +150,6 @@ export enum TokenId {
 	RParen, // )
 	LBrack, // [
 	RBrack, // ]
-	LAngleBrack, // <
-	RAngleBrack, // >
 	Semicolon, // ;
 	Comma, // ,
 	Dot, // .
@@ -213,7 +211,6 @@ export enum TokenId {
 	UndeterminedChars,
 	UnexpectedChars,
 	// statements
-	Annotation,
 	PackageDeclaration,
 	ImportDeclaration,
 	InterfaceDeclaration,
@@ -391,8 +388,6 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	RParen: {id: TokenId.RParen, name: 'RParen'},
 	LBrack: {id: TokenId.LBrack, name: 'LBrack'},
 	RBrack: {id: TokenId.RBrack, name: 'RBrack'},
-	LAngleBrack: {id: TokenId.LAngleBrack, name: 'LAngleBrack'},
-	RAngleBrack: {id: TokenId.RAngleBrack, name: 'RAngleBrack'},
 	Semicolon: {id: TokenId.Semicolon, name: 'Semicolon'},
 	Comma: {id: TokenId.Comma, name: 'Comma'},
 	Dot: {id: TokenId.Dot, name: 'Dot'},
@@ -454,7 +449,6 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	UndeterminedChars: {id: TokenId.UndeterminedChars, name: 'UndeterminedChars'},
 	UnexpectedChars: {id: TokenId.UnexpectedChars, name: 'UnexpectedChars'},
 	// statements
-	Annotation: {id: TokenId.Annotation, name: 'Annotation'},
 	PackageDeclaration: {id: TokenId.PackageDeclaration, name: 'PackageDeclaration'},
 	ImportDeclaration: {id: TokenId.ImportDeclaration, name: 'ImportDeclaration'},
 	InterfaceDeclaration: {id: TokenId.InterfaceDeclaration, name: 'InterfaceDeclaration'},

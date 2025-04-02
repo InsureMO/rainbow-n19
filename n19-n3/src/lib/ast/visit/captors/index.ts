@@ -1,5 +1,6 @@
 import {AbstractAstNodeCaptor} from './abstract-ast-node-captor';
 import {AbstractEndMarkedCaptor, AbstractEndMarkedWithNewLineCaptor} from './abstract-end-marked-captor';
+import {AbstractMultipleCharsCaptor} from './abstract-multiple-chars-captor';
 import {AbstractSameCharsCaptor} from './abstract-same-chars-captor';
 import {AbstractSingleCharCaptor} from './abstract-single-char-captor';
 import {AbstractCommentCaptor, MultipleLinesCommentCaptor, SingleLineCommentCaptor} from './comment-captors';
@@ -31,16 +32,36 @@ import {
 	PackageDeclarationCaptor
 } from './keyword-captors';
 import {NewLineStartsWithCarriageReturnCaptor, NewLineStartsWithNewLineCaptor} from './new-line-captors';
+import {
+	ArrowCaptor,
+	ElvisCaptor,
+	IdenticalCaptor,
+	MethodPointerCaptor,
+	MethodReferenceCaptor,
+	NotIdenticalCaptor,
+	PowerAssignCaptor,
+	PowerCaptor,
+	RangeExclusiveFullCaptor,
+	RangeExclusiveLeftCaptor,
+	RangeExclusiveRightCaptor,
+	RangeInclusiveCaptor,
+	RegexFindCaptor,
+	RegexMatchCaptor,
+	SafeChainDotCaptor,
+	SafeDotCaptor,
+	SafeIndexCaptor,
+	SafeIndexCloseCaptor,
+	SpaceshipCaptor,
+	SpreadDotCaptor
+} from './operator-captors';
 import {ScriptCommandCaptor} from './script-command-captor';
 import {
 	AsteriskCaptor,
 	CommaCaptor,
 	DotCaptor,
-	LAngleBrackCaptor,
 	LBraceCaptor,
 	LBrackCaptor,
 	LParenCaptor,
-	RAngleBrackCaptor,
 	RBraceCaptor,
 	RBrackCaptor,
 	RParenCaptor,
@@ -87,13 +108,29 @@ export const SortedCaptors = [
 	// reserved keyword
 	KwConstCaptor,
 	KwGotoCaptor,
+	// operators
+	RangeInclusiveCaptor, RangeExclusiveLeftCaptor, RangeExclusiveRightCaptor, RangeExclusiveFullCaptor,
+	SpreadDotCaptor,
+	SafeDotCaptor,
+	SafeIndexCaptor, SafeIndexCloseCaptor,
+	SafeChainDotCaptor,
+	ElvisCaptor,
+	MethodPointerCaptor,
+	MethodReferenceCaptor,
+	RegexFindCaptor,
+	RegexMatchCaptor,
+	PowerAssignCaptor, PowerCaptor,
+	SpaceshipCaptor,
+	IdenticalCaptor,
+	NotIdenticalCaptor,
+	ArrowCaptor,
 	// symbol
+	// single char symbol
 	SemicolonCaptor, DotCaptor, CommaCaptor,
 	AsteriskCaptor,
 	LBraceCaptor, RBraceCaptor,
 	LBrackCaptor, RBrackCaptor,
 	LParenCaptor, RParenCaptor,
-	LAngleBrackCaptor, RAngleBrackCaptor,
 	// identifier
 	IdentifierCaptor,
 	// others
@@ -103,7 +140,7 @@ export const SortedCaptors = [
 // noinspection JSUnusedGlobalSymbols
 export const Captors = {
 	AbstractAstNodeCaptor,
-	AbstractSameCharsCaptor, AbstractSingleCharCaptor,
+	AbstractSameCharsCaptor, AbstractSingleCharCaptor, AbstractMultipleCharsCaptor,
 	AbstractEndMarkedCaptor, AbstractEndMarkedWithNewLineCaptor,
 	AbstractCommentCaptor,
 	AbstractKeywordCaptor, AbstractSingleWordKeywordCaptor,
@@ -136,13 +173,29 @@ export const Captors = {
 	// reserved keyword
 	KwConstCaptor,
 	KwGotoCaptor,
+	// operators
+	RangeInclusiveCaptor, RangeExclusiveLeftCaptor, RangeExclusiveRightCaptor, RangeExclusiveFullCaptor,
+	SpreadDotCaptor,
+	SafeDotCaptor,
+	SafeIndexCaptor, SafeIndexCloseCaptor,
+	SafeChainDotCaptor,
+	ElvisCaptor,
+	MethodPointerCaptor,
+	MethodReferenceCaptor,
+	RegexFindCaptor,
+	RegexMatchCaptor,
+	PowerAssignCaptor, PowerCaptor,
+	SpaceshipCaptor,
+	IdenticalCaptor,
+	NotIdenticalCaptor,
+	ArrowCaptor,
 	// symbol
+	// single char symbol
 	SemicolonCaptor, DotCaptor, CommaCaptor,
 	AsteriskCaptor,
 	LBraceCaptor, RBraceCaptor,
 	LBrackCaptor, RBrackCaptor,
 	LParenCaptor, RParenCaptor,
-	LAngleBrackCaptor, RAngleBrackCaptor,
 	// identifier
 	IdentifierCaptor,
 	// others
