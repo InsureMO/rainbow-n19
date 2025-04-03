@@ -9,3 +9,5 @@ export * from './ast-holder';
 
 export * from './node';
 export * from './visit';
+
+export * from './ast-defs';

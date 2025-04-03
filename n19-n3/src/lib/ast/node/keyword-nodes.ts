@@ -213,3 +213,193 @@ export class KwGotoNode extends AbstractKeywordNode {
 		return TokenId.GOTO;
 	}
 }
+
+/** "in" */
+export class KwInNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.IN;
+	}
+}
+
+/** "@Threadsafe" */
+export class ThreadsafeNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.THREADSAFE;
+	}
+}
+
+/** "assert" */
+export class AssertNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.ASSERT;
+	}
+}
+
+/** "break" */
+export class BreakNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.BREAK;
+	}
+}
+
+/** "case" */
+export class CaseNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.CASE;
+	}
+}
+
+/** "catch" */
+export class CatchNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.CATCH;
+	}
+}
+
+/** "continue" */
+export class ContinueNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.CONTINUE;
+	}
+}
+
+/** "do" */
+export class DoNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.DO;
+	}
+}
+
+/** "else" */
+export class ElseNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.ELSE;
+	}
+}
+
+/** "final" */
+export class FinalNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.FINAL;
+	}
+}
+
+/** "finally" */
+export class FinallyNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.FINALLY;
+	}
+}
+
+/** "for" */
+export class ForNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.FOR;
+	}
+}
+
+/** "if" */
+export class IfNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.IF;
+	}
+}
+
+/** "instanceof" */
+export class InstanceofNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.INSTANCEOF;
+	}
+}
+
+/** "new" */
+export class NewNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.NEW;
+	}
+}
+
+/** "null" */
+export class NullNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.NULL;
+	}
+}
+
+/** "return" */
+export class ReturnNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.RETURN;
+	}
+}
+
+/** "super" */
+export class SuperNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.SUPER;
+	}
+}
+
+/** "switch" */
+export class SwitchNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.SWITCH;
+	}
+}
+
+/** "this" */
+export class ThisNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.THIS;
+	}
+}
+
+/** "throw" */
+export class ThrowNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.THROW;
+	}
+}
+
+/** "throws" */
+export class ThrowsNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.THROWS;
+	}
+}
+
+/** "transient" */
+export class TransientNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.TRANSIENT;
+	}
+}
+
+/** "try" */
+export class TryNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.TRY;
+	}
+}
+
+/** "void" */
+export class VoidNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.VOID;
+	}
+}
+
+/** "while" */
+export class WhileNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.WHILE;
+	}
+}
+
+/** "yield" */
+export class YieldNode extends AbstractKeywordNode {
+	get tokenId(): TokenId {
+		return TokenId.YIELD;
+	}
+}
+

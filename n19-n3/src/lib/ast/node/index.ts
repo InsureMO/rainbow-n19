@@ -15,9 +15,12 @@ export * from './new-line-node';
 export * from './script-command-node';
 export * from './comment-node';
 
+export * from './primitive-type-nodes';
 export * from './keyword-nodes';
 export * from './symbol-nodes';
+export * from './operator-nodes';
 export * from './identifier-node';
+export * from './value-nodes';
 
 export * from './package-declaration-node';
 export * from './import-declaration-node';

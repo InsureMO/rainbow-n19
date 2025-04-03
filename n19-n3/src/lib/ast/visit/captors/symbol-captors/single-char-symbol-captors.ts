@@ -48,17 +48,6 @@ export class SemicolonCaptor extends AbstractSingleCharCaptor<SemicolonNode> {
 	}
 }
 
-/** "*" */
-export class AsteriskCaptor extends AbstractSingleCharCaptor<AsteriskNode> {
-	protected get char(): Char {
-		return AstChars.AsteriskMark;
-	}
-
-	protected getAstNodeConstructor(): AstNodeConstructor<AsteriskNode> {
-		return AsteriskNode;
-	}
-}
-
 /** "{" */
 export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
 	protected get char(): Char {

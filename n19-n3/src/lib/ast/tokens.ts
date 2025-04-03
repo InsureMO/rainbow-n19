@@ -189,7 +189,6 @@ export enum TokenId {
 	RshiftAssign, // >>=
 	UrshiftAssign, // >>>=
 	ElvisAssign, // ?=
-	At, // @
 	Ellipsis, // ...
 	Asterisk, // *
 	// comment
@@ -427,7 +426,6 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	RshiftAssign: {id: TokenId.RshiftAssign, name: 'RshiftAssign'},
 	UrshiftAssign: {id: TokenId.UrshiftAssign, name: 'UrshiftAssign'},
 	ElvisAssign: {id: TokenId.ElvisAssign, name: 'ElvisAssign'},
-	At: {id: TokenId.At, name: 'At'},
 	Ellipsis: {id: TokenId.Ellipsis, name: 'Ellipsis'},
 	Asterisk: {id: TokenId.Asterisk, name: 'Asterisk'},
 	// comment
@@ -487,3 +485,4 @@ export const TokenToNodeTypes: Array<NodeType> = (() => {
 	}
 	return types;
 })();
+

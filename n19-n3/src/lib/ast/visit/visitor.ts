@@ -3,7 +3,6 @@ import {Ast} from '../ast';
 import {AstNode} from '../ast-node';
 import {AstBuildCommentKeywordOption, AstBuildOptions, AstBuildVisitor} from '../types';
 import {AstNodeCaptor} from './captor';
-import {SortedCaptors} from './captors';
 import {Char, VisitorCommentKeyword, VisitorCommentKeywords} from './types';
 
 export class AstVisitor {

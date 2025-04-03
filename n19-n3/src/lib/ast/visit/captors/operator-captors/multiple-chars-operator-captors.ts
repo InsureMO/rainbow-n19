@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '../../../ast-node';
 import {
-	ArrowNode,
+	ArrowNode, AsteriskNode,
 	ElvisNode,
 	IdenticalNode,
 	MethodPointerNode,
@@ -22,8 +22,10 @@ import {
 	SpreadDotNode
 } from '../../../node';
 import {AstChars, AstOperators} from '../../chars';
+import {Char} from '../../types';
 import {AstVisitor} from '../../visitor';
 import {AbstractMultipleCharsCaptor} from '../abstract-multiple-chars-captor';
+import {AbstractSingleCharCaptor} from '../abstract-single-char-captor';
 
 /** ".." */
 export class RangeInclusiveCaptor extends AbstractMultipleCharsCaptor<RangeInclusiveNode> {
@@ -267,3 +269,14 @@ export class ArrowCaptor extends AbstractMultipleCharsCaptor<ArrowNode> {
 	}
 }
 
+
+/** "*" */
+export class AsteriskCaptor extends AbstractSingleCharCaptor<AsteriskNode> {
+	protected get char(): Char {
+		return AstChars.AsteriskMark;
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<AsteriskNode> {
+		return AsteriskNode;
+	}
+}
