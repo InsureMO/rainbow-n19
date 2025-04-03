@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '../../../ast-node';
+import {Char} from '../../../captor';
 import {
-	AsteriskNode,
 	CommaNode,
 	DotNode,
 	LBraceNode,
@@ -12,7 +12,6 @@ import {
 	SemicolonNode
 } from '../../../node';
 import {AstChars} from '../../chars';
-import {Char} from '../../types';
 import {AbstractSingleCharCaptor} from '../abstract-single-char-captor';
 
 /** "." */

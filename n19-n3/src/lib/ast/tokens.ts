@@ -86,7 +86,7 @@ export enum TokenId {
 	DecimalExponentPart, // [+-]..., "..." means numbers. exponent part of decimal literal, after symbol
 	DecimalLiteral, // [+-]..., "..." means float, double or exponent number
 	// char
-	GChar, // a single char in '', and declared as char with 3 different ways: "char x = 'x'", "def x = 'x' as char", "def x = (char)'x'"
+	CharLiteral, // a single char in '', and declared as char with 3 different ways: "char x = 'x'", "def x = 'x' as char", "def x = (char)'x'"
 	// string and gstring
 	StringQuotationMark, // '
 	StringQuotationMarkML, // '''
@@ -104,7 +104,7 @@ export enum TokenId {
 	StringUnicodeEscape, // \u followed by 4 hexadecimal digits
 	StringUnicodeEscapeMark, // \u
 	StringUnicodeEscapeContent, // 4 hexadecimal digits follows \u
-	String,
+	StringLiteral,
 	GStringQuotationMark, // "
 	GStringQuotationMarkML, // """
 	SlashyGStringQuotationMark, // /
@@ -117,9 +117,9 @@ export enum TokenId {
 	GStringInterpolationSymbol, // $ of ${...} or $...
 	GStringInterpolationContent, // ${...}, $..., the "..." part, any groovy expression is good for it
 	GStringInterpolation, // ${...}, $..., "..." means interpolation, any groovy expression is good for it
-	GString,
-	SlashyGString,
-	DollarSlashyGString,
+	GStringLiteral,
+	SlashyGStringLiteral,
+	DollarSlashyGStringLiteral,
 	// Groovy Operators
 	RangeInclusive, // ..
 	RangeExclusiveLeft, // <..
@@ -168,7 +168,7 @@ export enum TokenId {
 	And, // &&
 	Or, // ||
 	Increase, // ++
-	Dec, // --
+	Decrease, // --
 	Add, // +
 	Subtract, // -
 	Multiple, // *
@@ -178,9 +178,9 @@ export enum TokenId {
 	Xor, // ^
 	Mod, // %
 	AddAssign, // +=
-	SubAssign, // -=
-	MulAssign, // *=
-	DivAssign, // /=
+	SubtractAssign, // -=
+	MultipleAssign, // *=
+	DivideAssign, // /=
 	AndAssign, // &=
 	OrAssign, // |=
 	XorAssign, // ^=
@@ -190,7 +190,6 @@ export enum TokenId {
 	UrshiftAssign, // >>>=
 	ElvisAssign, // ?=
 	Ellipsis, // ...
-	Asterisk, // *
 	// comment
 	CommentKeyword,
 	SingleLineCommentStartMark,
@@ -313,7 +312,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	DecimalExponentPart: {id: TokenId.DecimalExponentPart, name: 'DecimalExponentPart'},
 	DecimalLiteral: {id: TokenId.DecimalLiteral, name: 'DecimalLiteral'},
 	// char
-	GChar: {id: TokenId.GChar, name: 'GChar'},
+	CharLiteral: {id: TokenId.CharLiteral, name: 'CharLiteral'},
 	// string and gstring
 	StringQuotationMark: {id: TokenId.StringQuotationMark, name: 'StringQuotationMark'},
 	StringQuotationMarkML: {id: TokenId.StringQuotationMarkML, name: 'StringQuotationMarkML'},
@@ -331,7 +330,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	StringUnicodeEscape: {id: TokenId.StringUnicodeEscape, name: 'StringUnicodeEscape'},
 	StringUnicodeEscapeMark: {id: TokenId.StringUnicodeEscapeMark, name: 'StringUnicodeEscapeMark'},
 	StringUnicodeEscapeContent: {id: TokenId.StringUnicodeEscapeContent, name: 'StringUnicodeEscapeContent'},
-	String: {id: TokenId.String, name: 'String'},
+	StringLiteral: {id: TokenId.StringLiteral, name: 'StringLiteral'},
 	GStringQuotationMark: {id: TokenId.GStringQuotationMark, name: 'GStringQuotationMark'},
 	GStringQuotationMarkML: {id: TokenId.GStringQuotationMarkML, name: 'GStringQuotationMarkML'},
 	SlashyGStringQuotationMark: {id: TokenId.SlashyGStringQuotationMark, name: 'SlashyGStringQuotationMark'},
@@ -354,9 +353,9 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	GStringInterpolationSymbol: {id: TokenId.GStringInterpolationSymbol, name: 'GStringInterpolationSymbol'},
 	GStringInterpolationContent: {id: TokenId.GStringInterpolationContent, name: 'GStringInterpolationContent'},
 	GStringInterpolation: {id: TokenId.GStringInterpolation, name: 'GStringInterpolation'},
-	GString: {id: TokenId.GString, name: 'GString'},
-	SlashyGString: {id: TokenId.SlashyGString, name: 'SlashyGString'},
-	DollarSlashyGString: {id: TokenId.DollarSlashyGString, name: 'DollarSlashyGString'},
+	GStringLiteral: {id: TokenId.GStringLiteral, name: 'GStringLiteral'},
+	SlashyGStringLiteral: {id: TokenId.SlashyGStringLiteral, name: 'SlashyGStringLiteral'},
+	DollarSlashyGStringLiteral: {id: TokenId.DollarSlashyGStringLiteral, name: 'DollarSlashyGStringLiteral'},
 	// Groovy Operators
 	RangeInclusive: {id: TokenId.RangeInclusive, name: 'RangeInclusive'},
 	RangeExclusiveLeft: {id: TokenId.RangeExclusiveLeft, name: 'RangeExclusiveLeft'},
@@ -405,7 +404,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	And: {id: TokenId.And, name: 'And'},
 	Or: {id: TokenId.Or, name: 'Or'},
 	Increase: {id: TokenId.Increase, name: 'Increase'},
-	Dec: {id: TokenId.Dec, name: 'Dec'},
+	Decrease: {id: TokenId.Decrease, name: 'Decrease'},
 	Add: {id: TokenId.Add, name: 'Add'},
 	Subtract: {id: TokenId.Subtract, name: 'Subtract'},
 	Multiple: {id: TokenId.Multiple, name: 'Multiple'},
@@ -415,9 +414,9 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	Xor: {id: TokenId.Xor, name: 'Xor'},
 	Mod: {id: TokenId.Mod, name: 'Mod'},
 	AddAssign: {id: TokenId.AddAssign, name: 'AddAssign'},
-	SubAssign: {id: TokenId.SubAssign, name: 'SubAssign'},
-	MulAssign: {id: TokenId.MulAssign, name: 'MulAssign'},
-	DivAssign: {id: TokenId.DivAssign, name: 'DivAssign'},
+	SubtractAssign: {id: TokenId.SubtractAssign, name: 'SubtractAssign'},
+	MultipleAssign: {id: TokenId.MultipleAssign, name: 'MultipleAssign'},
+	DivideAssign: {id: TokenId.DivideAssign, name: 'DivideAssign'},
 	AndAssign: {id: TokenId.AndAssign, name: 'AndAssign'},
 	OrAssign: {id: TokenId.OrAssign, name: 'OrAssign'},
 	XorAssign: {id: TokenId.XorAssign, name: 'XorAssign'},
@@ -427,7 +426,6 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	UrshiftAssign: {id: TokenId.UrshiftAssign, name: 'UrshiftAssign'},
 	ElvisAssign: {id: TokenId.ElvisAssign, name: 'ElvisAssign'},
 	Ellipsis: {id: TokenId.Ellipsis, name: 'Ellipsis'},
-	Asterisk: {id: TokenId.Asterisk, name: 'Asterisk'},
 	// comment
 	CommentKeyword: {id: TokenId.CommentKeyword, name: 'CommentKeyword'},
 	SingleLineCommentStartMark: {id: TokenId.SingleLineCommentStartMark, name: 'SingleLineCommentStartMark'},

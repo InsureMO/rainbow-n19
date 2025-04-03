@@ -1,5 +1,3 @@
-export type Char = string;
-
 export interface VisitorCommentKeyword {
 	keyword: string;
 	pattern: RegExp;

@@ -1,6 +1,6 @@
+import {Char} from '../../captor';
 import {ScriptCommandNode, ScriptCommandStartMarkNode} from '../../node';
 import {AstChars, AstMarks} from '../chars';
-import {Char} from '../types';
 import {AbstractEndMarkedWithNewLineCaptor} from './abstract-end-marked-captor';
 
 /**

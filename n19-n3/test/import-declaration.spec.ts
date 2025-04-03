@@ -1,19 +1,19 @@
 import {
+	AsNode,
 	AstBuilder,
-	AsteriskNode,
 	CharsNode,
 	CompilationUnitNode,
 	DotNode,
 	IdentifierNode,
 	ImportDeclarationNode,
-	KwAsNode,
-	KwImportNode,
-	KwStaticNode,
+	ImportNode,
 	MultipleLinesCommentEndMarkNode,
 	MultipleLinesCommentNode,
 	MultipleLinesCommentStartMarkNode,
+	MultipleNode,
 	NewLineNode,
 	SemicolonNode,
+	StaticNode,
 	WhitespacesNode
 } from '../src';
 import {AstChecker} from './utils/ast-checker';
@@ -25,7 +25,7 @@ describe('Import declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 7, 0, text, [
 				[ImportDeclarationNode, 0, 6, 1, 'import', [
-					[KwImportNode, 0, 6, 1, 'import']
+					[ImportNode, 0, 6, 1, 'import']
 				]],
 				[NewLineNode, 6, 7, 1, '\n']
 			]
@@ -46,7 +46,7 @@ describe('Import declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 7, 0, text, [
 				[ImportDeclarationNode, 0, 7, 1, text, [
-					[KwImportNode, 0, 6, 1, 'import'],
+					[ImportNode, 0, 6, 1, 'import'],
 					[DotNode, 6, 7, 1, '.']
 				]]
 			]
@@ -58,7 +58,7 @@ describe('Import declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 14, 0, text, [
 				[ImportDeclarationNode, 0, 14, 1, text, [
-					[KwImportNode, 0, 6, 1, 'import'],
+					[ImportNode, 0, 6, 1, 'import'],
 					[WhitespacesNode, 6, 7, 1, ' '],
 					[IdentifierNode, 7, 10, 1, 'abc'],
 					[DotNode, 10, 11, 1, '.'],
@@ -73,7 +73,7 @@ describe('Import declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 38, 0, text, [
 				[ImportDeclarationNode, 0, 37, 1, 'import/* a */ abc/*b*/. /*c*/1df/*d*/', [
-					[KwImportNode, 0, 6, 1, 'import'],
+					[ImportNode, 0, 6, 1, 'import'],
 					[MultipleLinesCommentNode, 6, 13, 1, '/* a */', [
 						[MultipleLinesCommentStartMarkNode, 6, 8, 1, '/*'],
 						[WhitespacesNode, 8, 9, 1, ' '],
@@ -112,7 +112,7 @@ describe('Import declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 40, 0, text, [
 				[ImportDeclarationNode, 0, 25, 1, 'import/* a */ abc/*b\n*/.;', [
-					[KwImportNode, 0, 6, 1, 'import'],
+					[ImportNode, 0, 6, 1, 'import'],
 					[MultipleLinesCommentNode, 6, 13, 1, '/* a */', [
 						[MultipleLinesCommentStartMarkNode, 6, 8, 1, '/*'],
 						[WhitespacesNode, 8, 9, 1, ' '],
@@ -153,7 +153,7 @@ describe('Import declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 60, 0, text, [
 				[ImportDeclarationNode, 0, 59, 1, 'import /* 0 */ static/* a */ abc/*b\n*/. /*c*/1df/*d*/ as $1', [
-					[KwImportNode, 0, 6, 1, 'import'],
+					[ImportNode, 0, 6, 1, 'import'],
 					[WhitespacesNode, 6, 7, 1, ' '],
 					[MultipleLinesCommentNode, 7, 14, 1, '/* 0 */', [
 						[MultipleLinesCommentStartMarkNode, 7, 9, 1, '/*'],
@@ -163,7 +163,7 @@ describe('Import declaration test', () => {
 						[MultipleLinesCommentEndMarkNode, 12, 14, 1, '*/']
 					]],
 					[WhitespacesNode, 14, 15, 1, ' '],
-					[KwStaticNode, 15, 21, 1, 'static'],
+					[StaticNode, 15, 21, 1, 'static'],
 					[MultipleLinesCommentNode, 21, 28, 1, '/* a */', [
 						[MultipleLinesCommentStartMarkNode, 21, 23, 1, '/*'],
 						[WhitespacesNode, 23, 24, 1, ' '],
@@ -193,7 +193,7 @@ describe('Import declaration test', () => {
 						[MultipleLinesCommentEndMarkNode, 51, 53, 2, '*/']
 					]],
 					[WhitespacesNode, 53, 54, 2, ' '],
-					[KwAsNode, 54, 56, 2, 'as'],
+					[AsNode, 54, 56, 2, 'as'],
 					[WhitespacesNode, 56, 57, 2, ' '],
 					[IdentifierNode, 57, 59, 2, '$1']
 				]],
@@ -207,7 +207,7 @@ describe('Import declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 58, 0, text, [
 				[ImportDeclarationNode, 0, 57, 1, 'import /* 0 */ static/* a */ abc/*b\n*/. /*c*/1df/*d*/ . *', [
-					[KwImportNode, 0, 6, 1, 'import'],
+					[ImportNode, 0, 6, 1, 'import'],
 					[WhitespacesNode, 6, 7, 1, ' '],
 					[MultipleLinesCommentNode, 7, 14, 1, '/* 0 */', [
 						[MultipleLinesCommentStartMarkNode, 7, 9, 1, '/*'],
@@ -217,7 +217,7 @@ describe('Import declaration test', () => {
 						[MultipleLinesCommentEndMarkNode, 12, 14, 1, '*/']
 					]],
 					[WhitespacesNode, 14, 15, 1, ' '],
-					[KwStaticNode, 15, 21, 1, 'static'],
+					[StaticNode, 15, 21, 1, 'static'],
 					[MultipleLinesCommentNode, 21, 28, 1, '/* a */', [
 						[MultipleLinesCommentStartMarkNode, 21, 23, 1, '/*'],
 						[WhitespacesNode, 23, 24, 1, ' '],
@@ -249,7 +249,7 @@ describe('Import declaration test', () => {
 					[WhitespacesNode, 53, 54, 2, ' '],
 					[DotNode, 54, 55, 2, '.'],
 					[WhitespacesNode, 55, 56, 2, ' '],
-					[AsteriskNode, 56, 57, 2, '*']
+					[MultipleNode, 56, 57, 2, '*']
 				]],
 				[NewLineNode, 57, 58, 2, '\n']
 			]

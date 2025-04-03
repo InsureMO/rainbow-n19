@@ -1,7 +1,7 @@
 import {AstNodeConstructor} from '../../ast-node';
+import {Char} from '../../captor';
 import {TabsNode} from '../../node';
 import {AstChars} from '../chars';
-import {Char} from '../types';
 import {AbstractSameCharsCaptor} from './abstract-same-chars-captor';
 
 /**

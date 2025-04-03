@@ -1,9 +1,10 @@
 import {Optional} from '@rainbow-n19/n2';
 import {AstNode, AstNodeConstructOptions, AstNodeConstructor} from '../../ast-node';
+import {Char} from '../../captor';
+import {AstNodeCaptor} from '../../captor/captor';
 import {CharsNode, TabsNode, WhitespacesNode} from '../../node';
-import {AstNodeCaptor} from '../captor';
 import {AstChars} from '../chars';
-import {Char, VisitorCommentKeywords} from '../types';
+import {VisitorCommentKeywords} from '../types';
 import {AstVisitor} from '../visitor';
 
 export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {

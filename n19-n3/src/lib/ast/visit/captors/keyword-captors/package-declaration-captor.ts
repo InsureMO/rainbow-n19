@@ -1,7 +1,7 @@
 import {AstNodeConstructor} from '../../../ast-node';
+import {Char} from '../../../captor';
 import {KwPackageNode, PackageDeclarationNode} from '../../../node';
 import {AstKeywords} from '../../chars';
-import {Char} from '../../types';
 import {AstVisitor} from '../../visitor';
 import {AbstractKeywordCaptor} from './abstract-keyword-captor';
 

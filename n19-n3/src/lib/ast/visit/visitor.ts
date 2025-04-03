@@ -1,13 +1,14 @@
 import {Optional} from '@rainbow-n19/n2';
 import {Ast} from '../ast';
 import {AstNode} from '../ast-node';
+import {Char} from '../captor';
+import {CaptorSelector} from '../captor/captor-selector';
 import {AstBuildCommentKeywordOption, AstBuildOptions, AstBuildVisitor} from '../types';
-import {AstNodeCaptor} from './captor';
-import {Char, VisitorCommentKeyword, VisitorCommentKeywords} from './types';
+import {VisitorCommentKeyword, VisitorCommentKeywords} from './types';
 
 export class AstVisitor {
 	private readonly _ast: Ast;
-	private readonly _captors: Array<AstNodeCaptor>;
+	private readonly _captorSelector: CaptorSelector;
 	private readonly _buildVisitor: Optional<AstBuildVisitor>;
 	private readonly _buildCommentKeywords: VisitorCommentKeywords;
 
@@ -20,7 +21,7 @@ export class AstVisitor {
 
 	constructor(ast: Ast, options?: AstBuildOptions) {
 		this._ast = ast;
-		this._captors = SortedCaptors.map(Captor => new Captor(this));
+		this._captorSelector = new CaptorSelector(this);
 		this._buildVisitor = options?.visitor;
 		// build comment keywords
 		this._buildCommentKeywords = this.initializeCommentKeywords(options?.commentKeywords);
@@ -195,18 +196,9 @@ export class AstVisitor {
 			// stop visiting
 			return;
 		}
-		for (const captor of this._captors) {
-			const attempted = captor.attempt(char, this._cursor);
-			if (attempted === true) {
-				if (captor.visit(char, this._cursor)) {
-					break;
-				}
-			} else if (attempted === false) {
-				// do nothing
-			} else if (attempted.visit(char, this._cursor)) {
-				break;
-			}
-		}
+
+		const captor = this._captorSelector.select(char, this._cursor);
+		captor.visit(char, this._cursor);
 		// address from current cursor
 		this.address();
 	}

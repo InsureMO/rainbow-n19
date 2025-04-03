@@ -1,12 +1,12 @@
 import {
 	AstBuilder,
-	AsteriskNode,
 	CharsNode,
 	CommentKeywordNode,
 	CompilationUnitNode,
 	MultipleLinesCommentEndMarkNode,
 	MultipleLinesCommentNode,
 	MultipleLinesCommentStartMarkNode,
+	MultipleNode,
 	NewLineNode,
 	WhitespacesNode
 } from '../../src';
@@ -26,12 +26,12 @@ describe('Multiple lines comment test', () => {
 					[CharsNode, 8, 11, 1, 'abc'],
 					[NewLineNode, 11, 12, 1, '\n'],
 					[WhitespacesNode, 12, 13, 2, ' '],
-					[AsteriskNode, 13, 14, 2, '*'],
+					[MultipleNode, 13, 14, 2, '*'],
 					[WhitespacesNode, 14, 15, 2, ' '],
 					[CharsNode, 15, 18, 2, 'def'],
 					[NewLineNode, 18, 20, 2, '\r\n'],
 					[WhitespacesNode, 20, 21, 3, ' '],
-					[AsteriskNode, 21, 22, 3, '*'],
+					[MultipleNode, 21, 22, 3, '*'],
 					[WhitespacesNode, 22, 23, 3, ' '],
 					[CharsNode, 23, 26, 3, 'xyz'],
 					[NewLineNode, 26, 27, 3, '\r'],

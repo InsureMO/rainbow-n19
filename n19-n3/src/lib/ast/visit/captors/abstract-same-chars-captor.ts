@@ -1,5 +1,5 @@
 import {AstNode, AstNodeConstructor} from '../../ast-node';
-import {Char} from '../types';
+import {Char} from '../../captor';
 import {AbstractAstNodeCaptor} from './abstract-ast-node-captor';
 
 /**

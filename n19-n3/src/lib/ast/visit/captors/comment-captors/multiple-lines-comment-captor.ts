@@ -1,14 +1,14 @@
 import {Optional} from '@rainbow-n19/n2';
 import {AstNode} from '../../../ast-node';
+import {Char} from '../../../captor';
 import {
-	AsteriskNode,
 	MultipleLinesCommentEndMarkNode,
 	MultipleLinesCommentNode,
 	MultipleLinesCommentStartMarkNode,
+	MultipleNode,
 	NewLineNode
 } from '../../../node';
 import {AstChars, AstMarks} from '../../chars';
-import {Char} from '../../types';
 import {EndMark} from '../abstract-end-marked-captor';
 import {AbstractCommentCaptor} from './abstract-comment-captor';
 
@@ -55,7 +55,7 @@ export class MultipleLinesCommentCaptor extends AbstractCommentCaptor {
 			const parts = line.split(AstChars.AsteriskMark, 2);
 			return [
 				...this.visitNormalText(parts[0], startOffset, startOffset + parts[0].length),
-				this.createAstNode(AsteriskNode, {
+				this.createAstNode(MultipleNode, {
 					text: AstChars.AsteriskMark, startOffset: startOffset + parts[0].length
 				}),
 				...this.visitNormalText(parts[1], startOffset + parts[0].length + 1, endOffset)

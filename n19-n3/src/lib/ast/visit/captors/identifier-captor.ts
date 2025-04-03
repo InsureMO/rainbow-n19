@@ -1,6 +1,6 @@
+import {Char} from '../../captor';
 import {IdentifierNode} from '../../node';
 import {Character} from '../chars';
-import {Char} from '../types';
 import {AbstractAstNodeCaptor} from './abstract-ast-node-captor';
 
 /**

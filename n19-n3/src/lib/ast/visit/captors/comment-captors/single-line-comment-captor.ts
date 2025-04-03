@@ -1,7 +1,7 @@
 import {AstNode} from '../../../ast-node';
+import {Char} from '../../../captor';
 import {SingleLineCommentNode, SingleLineCommentStartMarkNode} from '../../../node';
 import {AstChars, AstMarks} from '../../chars';
-import {Char} from '../../types';
 import {AbstractCommentCaptor} from './abstract-comment-captor';
 
 export class SingleLineCommentCaptor extends AbstractCommentCaptor {

@@ -1,6 +1,6 @@
 import {Optional} from '@rainbow-n19/n2';
+import {Char} from '../../captor';
 import {AstChars, AstMarks} from '../chars';
-import {Char} from '../types';
 import {AbstractAstNodeCaptor} from './abstract-ast-node-captor';
 
 export interface EndMark {

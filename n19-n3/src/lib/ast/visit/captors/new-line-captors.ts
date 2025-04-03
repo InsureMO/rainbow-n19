@@ -1,6 +1,6 @@
+import {Char} from '../../captor';
 import {NewLineNode} from '../../node';
 import {AstChars, AstMarks} from '../chars';
-import {Char} from '../types';
 import {AbstractAstNodeCaptor} from './abstract-ast-node-captor';
 
 /**
