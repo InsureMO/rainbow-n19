@@ -211,6 +211,7 @@ export enum TokenId {
 	// statements
 	PackageDeclaration,
 	ImportDeclaration,
+	ImportAllMark,
 	InterfaceDeclaration,
 	ClassDeclaration,
 	AtInterfaceClassDeclaration,
@@ -447,6 +448,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	// statements
 	PackageDeclaration: {id: TokenId.PackageDeclaration, name: 'PackageDeclaration'},
 	ImportDeclaration: {id: TokenId.ImportDeclaration, name: 'ImportDeclaration'},
+	ImportAllMark: {id: TokenId.ImportAllMark, name: 'ImportAllMark'},
 	InterfaceDeclaration: {id: TokenId.InterfaceDeclaration, name: 'InterfaceDeclaration'},
 	ClassDeclaration: {id: TokenId.ClassDeclaration, name: 'ClassDeclaration'},
 	AtInterfaceClassDeclaration: {id: TokenId.AtInterfaceClassDeclaration, name: 'AtInterfaceClassDeclaration'},

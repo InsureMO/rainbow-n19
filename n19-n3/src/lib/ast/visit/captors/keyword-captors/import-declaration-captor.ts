@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '../../../ast-node';
 import {Char} from '../../../captor';
-import {ImportDeclarationNode, KwImportNode} from '../../../node';
+import {ImportDeclarationNode, ImportNode} from '../../../node';
 import {AstKeywords} from '../../chars';
 import {AstVisitor} from '../../visitor';
 import {AbstractKeywordCaptor} from './abstract-keyword-captor';
@@ -19,7 +19,7 @@ export class ImportDeclarationCaptor extends AbstractKeywordCaptor<ImportDeclara
 	}
 
 	protected createChildAstNodes(_node: ImportDeclarationNode, _char: Char, offset: number): number {
-		this.createAndAppendToAst(KwImportNode, {text: AstKeywords.Import, startOffset: offset});
+		this.createAndAppendToAst(ImportNode, {text: AstKeywords.Import, startOffset: offset});
 		return offset + this.keywordLength;
 	}
 }

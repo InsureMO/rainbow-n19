@@ -5,12 +5,12 @@ import {
 	CompilationUnitNode,
 	DotNode,
 	IdentifierNode,
+	ImportAllMarkNode,
 	ImportDeclarationNode,
 	ImportNode,
 	MultipleLinesCommentEndMarkNode,
 	MultipleLinesCommentNode,
 	MultipleLinesCommentStartMarkNode,
-	MultipleNode,
 	NewLineNode,
 	SemicolonNode,
 	StaticNode,
@@ -249,7 +249,7 @@ describe('Import declaration test', () => {
 					[WhitespacesNode, 53, 54, 2, ' '],
 					[DotNode, 54, 55, 2, '.'],
 					[WhitespacesNode, 55, 56, 2, ' '],
-					[MultipleNode, 56, 57, 2, '*']
+					[ImportAllMarkNode, 56, 57, 2, '*']
 				]],
 				[NewLineNode, 57, 58, 2, '\n']
 			]
