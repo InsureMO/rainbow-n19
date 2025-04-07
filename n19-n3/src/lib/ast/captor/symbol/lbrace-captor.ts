@@ -1,0 +1,16 @@
+import {AstNodeConstructor} from '../../ast-node';
+import {LBraceNode} from '../../node';
+import {AstVisitor} from '../../ast-visitor';
+import {AbstractSingleCharCaptor} from '../abstract';
+import {AstChars} from '../util';
+
+/** "{" */
+export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
+	constructor(astVisitor: AstVisitor) {
+		super(AstChars.LBrace, astVisitor);
+	}
+
+	protected getAstNodeConstructor(): AstNodeConstructor<LBraceNode> {
+		return LBraceNode;
+	}
+}

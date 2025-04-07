@@ -1,9 +1,153 @@
 import {AstNode} from './ast-node';
+import {AstVisitor} from './ast-visitor';
+import {
+	AddAssignCaptor,
+	AddCaptor,
+	AndCaptor,
+	ArrowCaptor,
+	AssignCaptor,
+	AstNodeCaptor,
+	AtInterfaceDeclarationCaptor,
+	BitandAssignCaptor,
+	BitandCaptor,
+	BitnotCaptor,
+	BitorAssignCaptor,
+	BitorCaptor,
+	ClassDeclarationCaptor,
+	ColonCaptor,
+	CommaCaptor,
+	DecreaseCaptor,
+	DivideAssignCaptor,
+	DivideCaptor,
+	DotCaptor,
+	EllipsisCaptor,
+	ElvisCaptor,
+	EnumClassDeclarationCaptor,
+	EqualCaptor,
+	GreaterThanCaptor,
+	GreaterThanOrEqualCaptor,
+	IdenticalCaptor,
+	IdentifierCaptor,
+	ImportDeclarationCaptor,
+	IncreaseCaptor,
+	InterfaceDeclarationCaptor,
+	KwAbstractCaptor,
+	KwAsCaptor,
+	KwAssertCaptor,
+	KwBreakCaptor,
+	KwCaseCaptor,
+	KwCatchCaptor,
+	KwConstCaptor,
+	KwContinueCaptor,
+	KwDefaultCaptor,
+	KwDefCaptor,
+	KwDoCaptor,
+	KwElseCaptor,
+	KwExtendsCaptor,
+	KwFinalCaptor,
+	KwFinallyCaptor,
+	KwForCaptor,
+	KwGotoCaptor,
+	KwIfCaptor,
+	KwImplementsCaptor,
+	KwInCaptor,
+	KwInstanceofCaptor,
+	KwNativeCaptor,
+	KwNewCaptor,
+	KwNonSealedCaptor,
+	KwNullCaptor,
+	KwPermitsCaptor,
+	KwPrivateCaptor,
+	KwProtectedCaptor,
+	KwPublicCaptor,
+	KwReturnCaptor,
+	KwSealedCaptor,
+	KwStaticCaptor,
+	KwStrictfpCaptor,
+	KwSuperCaptor,
+	KwSwitchCaptor,
+	KwSynchronizedCaptor,
+	KwThisCaptor,
+	KwThreadsafeCaptor,
+	KwThrowCaptor,
+	KwThrowsCaptor,
+	KwTransientCaptor,
+	KwTryCaptor,
+	KwVarCaptor,
+	KwVoidCaptor,
+	KwVolatileCaptor,
+	KwWhileCaptor,
+	KwYieldCaptor,
+	LBraceCaptor,
+	LBrackCaptor,
+	LessThanCaptor,
+	LessThanOrEqualCaptor,
+	LParenCaptor,
+	LshiftAssignCaptor,
+	LtBooleanFalseCaptor,
+	LtBooleanTrueCaptor,
+	MethodPointerCaptor,
+	MethodReferenceCaptor,
+	ModAssignCaptor,
+	ModCaptor,
+	MultipleAssignCaptor,
+	MultipleCaptor,
+	MultipleLinesCommentCaptor,
+	NewLineWith2CharsCaptor,
+	NewLineWithSingleCarriageReturnCaptor,
+	NewLineWithSingleNewLineCaptor,
+	NotCaptor,
+	NotEqualCaptor,
+	NotIdenticalCaptor,
+	NotInCaptor,
+	NotInstanceofCaptor,
+	OrCaptor,
+	PackageDeclarationCaptor,
+	PowerAssignCaptor,
+	PowerCaptor,
+	PtBooleanCaptor,
+	PtByteCaptor,
+	PtCharCaptor,
+	PtDoubleCaptor,
+	PtFloatCaptor,
+	PtIntCaptor,
+	PtLongCaptor,
+	PtShortCaptor,
+	QuestionCaptor,
+	RangeExclusiveFullCaptor,
+	RangeExclusiveLeftCaptor,
+	RangeExclusiveRightCaptor,
+	RangeInclusiveCaptor,
+	RBraceCaptor,
+	RBrackCaptor,
+	RecordClassDeclarationCaptor,
+	RegexFindCaptor,
+	RegexMatchCaptor,
+	RParenCaptor,
+	RshiftAssignCaptor,
+	SafeChainDotCaptor,
+	SafeDotCaptor,
+	SafeIndexCaptor,
+	SafeIndexCloseCaptor,
+	ScriptCommandCaptor,
+	SemicolonCaptor,
+	SingleLineCommentCaptor,
+	SpaceshipCaptor,
+	SpreadDotCaptor,
+	SubtractAssignCaptor,
+	SubtractCaptor,
+	TabsCaptor,
+	TraitClassDeclarationCaptor,
+	UndeterminedCharsCaptor,
+	UrshiftAssignCaptor,
+	WhitespacesCaptor,
+	XorAssignCaptor,
+	XorCaptor
+} from './captor';
 import {
 	AbstractNode,
 	AddAssignNode,
 	AddNode,
-	AndAssignNode,
 	AndNode,
 	AnnotationDeclarationNode,
 	ArrowNode,
@@ -14,8 +158,10 @@ import {
 	AtInterfaceNode,
 	BinaryLiteralNode,
 	BinaryStartMarkNode,
+	BitandAssignNode,
 	BitandNode,
 	BitnotNode,
+	BitorAssignNode,
 	BitorNode,
 	BooleanLiteralNode,
 	BooleanNode,
@@ -78,6 +224,7 @@ import {
 	IdentifierNode,
 	IfNode,
 	ImplementsNode,
+	ImportAllMarkNode,
 	ImportDeclarationNode,
 	ImportNode,
 	IncreaseNode,
@@ -110,7 +257,7 @@ import {
 	NotEqualNode,
 	NotIdenticalNode,
 	NotInNode,
-	NotInstanceOfNode,
+	NotInstanceofNode,
 	NotNode,
 	NullNode,
 	NumericBasePartNode,
@@ -119,7 +266,6 @@ import {
 	NumericUnderscorePartNode,
 	OctalLiteralNode,
 	OctalStartMarkNode,
-	OrAssignNode,
 	OrNode,
 	PackageDeclarationNode,
 	PackageNode,
@@ -205,76 +351,9 @@ import {
 	YieldNode
 } from './node';
 import {TokenId} from './tokens';
-import {
-	ArrowCaptor,
-	AstNodeCaptor,
-	AstVisitor,
-	AtInterfaceDeclarationCaptor,
-	ClassDeclarationCaptor,
-	CommaCaptor,
-	DotCaptor,
-	ElvisCaptor,
-	EnumClassDeclarationCaptor,
-	IdenticalCaptor,
-	IdentifierCaptor,
-	ImportDeclarationCaptor,
-	InterfaceDeclarationCaptor,
-	KwAbstractCaptor,
-	KwAsCaptor,
-	KwConstCaptor,
-	KwDefaultCaptor,
-	KwExtendsCaptor,
-	KwGotoCaptor,
-	KwImplementsCaptor,
-	KwNativeCaptor,
-	KwNonSealedCaptor,
-	KwPermitsCaptor,
-	KwPrivateCaptor,
-	KwProtectedCaptor,
-	KwPublicCaptor,
-	KwSealedCaptor,
-	KwStaticCaptor,
-	KwStrictfpCaptor,
-	KwSynchronizedCaptor,
-	KwVolatileCaptor,
-	LBraceCaptor,
-	LBrackCaptor,
-	LParenCaptor,
-	MethodPointerCaptor,
-	MethodReferenceCaptor,
-	MultipleLinesCommentCaptor,
-	NewLineStartsWithCarriageReturnCaptor,
-	NewLineStartsWithNewLineCaptor,
-	NotIdenticalCaptor,
-	PackageDeclarationCaptor,
-	PowerAssignCaptor,
-	PowerCaptor,
-	RangeExclusiveFullCaptor,
-	RangeExclusiveLeftCaptor,
-	RangeExclusiveRightCaptor,
-	RangeInclusiveCaptor,
-	RBraceCaptor,
-	RBrackCaptor,
-	RecordClassDeclarationCaptor,
-	RegexFindCaptor,
-	RegexMatchCaptor,
-	RParenCaptor,
-	SafeChainDotCaptor,
-	SafeDotCaptor,
-	SafeIndexCaptor,
-	SafeIndexCloseCaptor,
-	ScriptCommandCaptor,
-	SemicolonCaptor,
-	SingleLineCommentCaptor,
-	SpaceshipCaptor,
-	SpreadDotCaptor,
-	TabsCaptor,
-	TraitClassDeclarationCaptor,
-	UndeterminedCharsCaptor,
-	WhitespacesCaptor
-} from './visit';
 
 // constructor of elements
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ClassImplementsAstNode = new (...args: any[]) => AstNode;
 type ClassImplementsAstNodeCaptor = new (astVisitor: AstVisitor) => AstNodeCaptor;
 
@@ -286,7 +365,7 @@ type CommentTokenIds =
 	| TokenId.MultipleLinesCommentEndMark
 	| TokenId.CommentKeyword;
 type PackageNoCaptorTokenId = TokenId.PACKAGE;
-type ImportNoCaptorTokenId = TokenId.IMPORT
+type ImportNoCaptorTokenId = TokenId.IMPORT | TokenId.ImportAllMark;
 type TypeTokenIds =
 	| TokenId.INTERFACE
 	| TokenId.CLASS
@@ -303,15 +382,73 @@ type NoCaptorTokenIds =
 	| TypeTokenIds
 	| CharsNoCaptorTokenId;
 
-type SpecialDefTokenIds = TokenId.NewLine;
-type CaptorNotDefinedYetTokenIds = TokenId.AnnotationDeclaration;
+type SpecialDefTokenIds =
+	| TokenId.NewLine
+	| TokenId.BooleanLiteral;
+type CaptorNotDefinedYetTokenIds =
+// numeric
+	| TokenId.NumericSignPart
+	| TokenId.NumericBasePart
+	| TokenId.NumericUnderscorePart
+	| TokenId.NumericSuffixPart
+	| TokenId.BinaryStartMark
+	| TokenId.BinaryLiteral
+	| TokenId.OctalStartMark
+	| TokenId.OctalLiteral
+	| TokenId.HexadecimalStartMark
+	| TokenId.HexadecimalLiteral
+	| TokenId.IntegralLiteral
+	| TokenId.DecimalExponentSymbol
+	| TokenId.DecimalExponentPart
+	| TokenId.DecimalLiteral
+	// char
+	| TokenId.CharLiteral
+	// string and gstring
+	| TokenId.StringQuotationMark
+	| TokenId.StringQuotationMarkML
+	| TokenId.StringMLFirstNewLineEraser
+	| TokenId.StringBackspaceEscape
+	| TokenId.StringFormFeedEscape
+	| TokenId.StringNewLineEscape
+	| TokenId.StringCarriageReturnEscape
+	| TokenId.StringSingleSpaceEscape
+	| TokenId.StringTabulationEscape
+	| TokenId.StringBackslashEscape
+	| TokenId.StringSingleQuoteEscape
+	| TokenId.StringDoubleQuoteEscape
+	| TokenId.StringDollarEscape
+	| TokenId.StringUnicodeEscape
+	| TokenId.StringUnicodeEscapeMark
+	| TokenId.StringUnicodeEscapeContent
+	| TokenId.StringLiteral
+	| TokenId.GStringQuotationMark
+	| TokenId.GStringQuotationMarkML
+	| TokenId.SlashyGStringQuotationMark
+	| TokenId.DollarSlashyGStringQuotationMarkBegin
+	| TokenId.DollarSlashyGStringQuotationMarkEnd
+	| TokenId.SlashyGStringBackslashEscape
+	| TokenId.DollarSlashyGStringDollarEscape
+	| TokenId.DollarSlashyGStringSlashEscape
+	| TokenId.GStringContent
+	| TokenId.GStringInterpolationSymbol
+	| TokenId.GStringInterpolationContent
+	| TokenId.GStringInterpolation
+	| TokenId.GStringLiteral
+	| TokenId.SlashyGStringLiteral
+	| TokenId.DollarSlashyGStringLiteral
+	// annotation
+	| TokenId.AnnotationDeclaration;
 type StandardDefTokenIds = Exclude<TokenId, NoCaptorTokenIds | SpecialDefTokenIds | CaptorNotDefinedYetTokenIds>;
 type TokenAstDefsType = {
-	[key in StandardDefTokenIds]: [ClassImplementsAstNode, ClassImplementsAstNodeCaptor] | [ClassImplementsAstNode]
+	[key in StandardDefTokenIds]: [ClassImplementsAstNode, ClassImplementsAstNodeCaptor]
 } & {
 	[key in NoCaptorTokenIds]: [ClassImplementsAstNode]
 } & {
-	[key in TokenId.NewLine]: [ClassImplementsAstNode, ClassImplementsAstNodeCaptor, ClassImplementsAstNodeCaptor]
+	// new line has 3 captors
+	[key in TokenId.NewLine]: [ClassImplementsAstNode, ClassImplementsAstNodeCaptor, ClassImplementsAstNodeCaptor, ClassImplementsAstNodeCaptor]
+} & {
+	// boolean literal has 2 captors
+	[key in TokenId.BooleanLiteral]: [ClassImplementsAstNode, ClassImplementsAstNodeCaptor, ClassImplementsAstNodeCaptor]
 } & {
 	[key in CaptorNotDefinedYetTokenIds]: [ClassImplementsAstNode]
 }
@@ -322,73 +459,73 @@ type TokenAstDefsType = {
 export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.COMPILATION_UNIT]: [CompilationUnitNode],
 	// primitive types
-	[TokenId.BOOLEAN]: [BooleanNode],
-	[TokenId.CHAR]: [CharNode],
-	[TokenId.BYTE]: [ByteNode],
-	[TokenId.SHORT]: [ShortNode],
-	[TokenId.INT]: [IntNode],
-	[TokenId.LONG]: [LongNode],
-	[TokenId.FLOAT]: [FloatNode],
-	[TokenId.DOUBLE]: [DoubleNode],
+	[TokenId.BOOLEAN]: [BooleanNode, PtBooleanCaptor],
+	[TokenId.CHAR]: [CharNode, PtCharCaptor],
+	[TokenId.BYTE]: [ByteNode, PtByteCaptor],
+	[TokenId.SHORT]: [ShortNode, PtShortCaptor],
+	[TokenId.INT]: [IntNode, PtIntCaptor],
+	[TokenId.LONG]: [LongNode, PtLongCaptor],
+	[TokenId.FLOAT]: [FloatNode, PtFloatCaptor],
+	[TokenId.DOUBLE]: [DoubleNode, PtDoubleCaptor],
 	// groovy keywords
 	[TokenId.AS]: [AsNode, KwAsCaptor],
-	[TokenId.DEF]: [DefNode],
-	[TokenId.IN]: [InNode],
+	[TokenId.DEF]: [DefNode, KwDefCaptor],
+	[TokenId.IN]: [InNode, KwInCaptor],
 	[TokenId.TRAIT]: [TraitNode],
-	[TokenId.THREADSAFE]: [ThreadsafeNode],
+	[TokenId.THREADSAFE]: [ThreadsafeNode, KwThreadsafeCaptor],
 	// java keywords
 	[TokenId.ABSTRACT]: [AbstractNode, KwAbstractCaptor],
-	[TokenId.ASSERT]: [AssertNode],
+	[TokenId.ASSERT]: [AssertNode, KwAssertCaptor],
 	[TokenId.AT_INTERFACE]: [AtInterfaceNode],
-	[TokenId.BREAK]: [BreakNode],
-	[TokenId.CASE]: [CaseNode],
-	[TokenId.CATCH]: [CatchNode],
+	[TokenId.BREAK]: [BreakNode, KwBreakCaptor],
+	[TokenId.CASE]: [CaseNode, KwCaseCaptor],
+	[TokenId.CATCH]: [CatchNode, KwCatchCaptor],
 	[TokenId.CLASS]: [ClassNode],
 	[TokenId.CONST]: [ConstNode, KwConstCaptor],
-	[TokenId.CONTINUE]: [ContinueNode],
+	[TokenId.CONTINUE]: [ContinueNode, KwContinueCaptor],
 	[TokenId.DEFAULT]: [DefaultNode, KwDefaultCaptor],
-	[TokenId.DO]: [DoNode],
-	[TokenId.ELSE]: [ElseNode],
+	[TokenId.DO]: [DoNode, KwDoCaptor],
+	[TokenId.ELSE]: [ElseNode, KwElseCaptor],
 	[TokenId.ENUM]: [EnumNode],
 	[TokenId.EXTENDS]: [ExtendsNode, KwExtendsCaptor],
-	[TokenId.FINAL]: [FinalNode],
-	[TokenId.FINALLY]: [FinallyNode],
-	[TokenId.FOR]: [ForNode],
+	[TokenId.FINAL]: [FinalNode, KwFinalCaptor],
+	[TokenId.FINALLY]: [FinallyNode, KwFinallyCaptor],
+	[TokenId.FOR]: [ForNode, KwForCaptor],
 	[TokenId.GOTO]: [GotoNode, KwGotoCaptor],
-	[TokenId.IF]: [IfNode],
+	[TokenId.IF]: [IfNode, KwIfCaptor],
 	[TokenId.IMPLEMENTS]: [ImplementsNode, KwImplementsCaptor],
 	[TokenId.IMPORT]: [ImportNode],
-	[TokenId.INSTANCEOF]: [InstanceofNode],
+	[TokenId.INSTANCEOF]: [InstanceofNode, KwInstanceofCaptor],
 	[TokenId.INTERFACE]: [InterfaceNode],
 	[TokenId.NATIVE]: [NativeNode, KwNativeCaptor],
-	[TokenId.NEW]: [NewNode],
+	[TokenId.NEW]: [NewNode, KwNewCaptor],
 	[TokenId.NON_SEALED]: [NonSealedNode, KwNonSealedCaptor],
-	[TokenId.NULL]: [NullNode],
+	[TokenId.NULL]: [NullNode, KwNullCaptor],
 	[TokenId.PACKAGE]: [PackageNode],
 	[TokenId.PERMITS]: [PermitsNode, KwPermitsCaptor],
 	[TokenId.PRIVATE]: [PrivateNode, KwPrivateCaptor],
 	[TokenId.PROTECTED]: [ProtectedNode, KwProtectedCaptor],
 	[TokenId.PUBLIC]: [PublicNode, KwPublicCaptor],
 	[TokenId.RECORD]: [RecordNode],
-	[TokenId.RETURN]: [ReturnNode],
+	[TokenId.RETURN]: [ReturnNode, KwReturnCaptor],
 	[TokenId.SEALED]: [SealedNode, KwSealedCaptor],
 	[TokenId.STATIC]: [StaticNode, KwStaticCaptor],
 	[TokenId.STRICTFP]: [StrictfpNode, KwStrictfpCaptor],
-	[TokenId.SUPER]: [SuperNode],
-	[TokenId.SWITCH]: [SwitchNode],
+	[TokenId.SUPER]: [SuperNode, KwSuperCaptor],
+	[TokenId.SWITCH]: [SwitchNode, KwSwitchCaptor],
 	[TokenId.SYNCHRONIZED]: [SynchronizedNode, KwSynchronizedCaptor],
-	[TokenId.THIS]: [ThisNode],
-	[TokenId.THROW]: [ThrowNode],
-	[TokenId.THROWS]: [ThrowsNode],
-	[TokenId.TRANSIENT]: [TransientNode],
-	[TokenId.TRY]: [TryNode],
-	[TokenId.VAR]: [VarNode],
-	[TokenId.VOID]: [VoidNode],
+	[TokenId.THIS]: [ThisNode, KwThisCaptor],
+	[TokenId.THROW]: [ThrowNode, KwThrowCaptor],
+	[TokenId.THROWS]: [ThrowsNode, KwThrowsCaptor],
+	[TokenId.TRANSIENT]: [TransientNode, KwTransientCaptor],
+	[TokenId.TRY]: [TryNode, KwTryCaptor],
+	[TokenId.VAR]: [VarNode, KwVarCaptor],
+	[TokenId.VOID]: [VoidNode, KwVoidCaptor],
 	[TokenId.VOLATILE]: [VolatileNode, KwVolatileCaptor],
-	[TokenId.WHILE]: [WhileNode],
-	[TokenId.YIELD]: [YieldNode],
+	[TokenId.WHILE]: [WhileNode, KwWhileCaptor],
+	[TokenId.YIELD]: [YieldNode, KwYieldCaptor],
 	// boolean
-	[TokenId.BooleanLiteral]: [BooleanLiteralNode],
+	[TokenId.BooleanLiteral]: [BooleanLiteralNode, LtBooleanTrueCaptor, LtBooleanFalseCaptor],
 	// numeric
 	[TokenId.NumericSignPart]: [NumericSignPartNode],
 	[TokenId.NumericBasePart]: [NumericBasePartNode],
@@ -460,8 +597,8 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.Identical]: [IdenticalNode, IdenticalCaptor],
 	[TokenId.NotIdentical]: [NotIdenticalNode, NotIdenticalCaptor],
 	[TokenId.Arrow]: [ArrowNode, ArrowCaptor],
-	[TokenId.NotInstanceOf]: [NotInstanceOfNode],
-	[TokenId.NotIn]: [NotInNode],
+	[TokenId.NotInstanceof]: [NotInstanceofNode, NotInstanceofCaptor],
+	[TokenId.NotIn]: [NotInNode, NotInCaptor],
 	// separators
 	[TokenId.LBrace]: [LBraceNode, LBraceCaptor],
 	[TokenId.RBrace]: [RBraceNode, RBraceCaptor],
@@ -473,42 +610,42 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.Comma]: [CommaNode, CommaCaptor],
 	[TokenId.Dot]: [DotNode, DotCaptor],
 	// operators
-	[TokenId.Assign]: [AssignNode],
-	[TokenId.GreaterThan]: [GreaterThanNode],
-	[TokenId.LessThan]: [LessThanNode],
-	[TokenId.Not]: [NotNode],
-	[TokenId.Bitnot]: [BitnotNode],
-	[TokenId.Question]: [QuestionNode],
-	[TokenId.Colon]: [ColonNode],
-	[TokenId.Equal]: [EqualNode],
-	[TokenId.LessThanOrEqual]: [LessThanOrEqualNode],
-	[TokenId.GreaterThanOrEqual]: [GreaterThanOrEqualNode],
-	[TokenId.NotEqual]: [NotEqualNode],
-	[TokenId.And]: [AndNode],
-	[TokenId.Or]: [OrNode],
-	[TokenId.Increase]: [IncreaseNode],
-	[TokenId.Decrease]: [DecreaseNode],
-	[TokenId.Add]: [AddNode],
-	[TokenId.Subtract]: [SubtractNode],
-	[TokenId.Multiple]: [MultipleNode],
-	[TokenId.Divide]: [DivideNode],
-	[TokenId.Bitand]: [BitandNode],
-	[TokenId.Bitor]: [BitorNode],
-	[TokenId.Xor]: [XorNode],
-	[TokenId.Mod]: [ModNode],
-	[TokenId.AddAssign]: [AddAssignNode],
-	[TokenId.SubtractAssign]: [SubtractAssignNode],
-	[TokenId.MultipleAssign]: [MultipleAssignNode],
-	[TokenId.DivideAssign]: [DivideAssignNode],
-	[TokenId.AndAssign]: [AndAssignNode],
-	[TokenId.OrAssign]: [OrAssignNode],
-	[TokenId.XorAssign]: [XorAssignNode],
-	[TokenId.ModAssign]: [ModAssignNode],
-	[TokenId.LshiftAssign]: [LshiftAssignNode],
-	[TokenId.RshiftAssign]: [RshiftAssignNode],
-	[TokenId.UrshiftAssign]: [UrshiftAssignNode],
-	[TokenId.ElvisAssign]: [ElvisAssignNode],
-	[TokenId.Ellipsis]: [EllipsisNode],
+	[TokenId.Assign]: [AssignNode, AssignCaptor],
+	[TokenId.GreaterThan]: [GreaterThanNode, GreaterThanCaptor],
+	[TokenId.LessThan]: [LessThanNode, LessThanCaptor],
+	[TokenId.Not]: [NotNode, NotCaptor],
+	[TokenId.Bitnot]: [BitnotNode, BitnotCaptor],
+	[TokenId.Question]: [QuestionNode, QuestionCaptor],
+	[TokenId.Colon]: [ColonNode, ColonCaptor],
+	[TokenId.Equal]: [EqualNode, EqualCaptor],
+	[TokenId.LessThanOrEqual]: [LessThanOrEqualNode, LessThanOrEqualCaptor],
+	[TokenId.GreaterThanOrEqual]: [GreaterThanOrEqualNode, GreaterThanOrEqualCaptor],
+	[TokenId.NotEqual]: [NotEqualNode, NotEqualCaptor],
+	[TokenId.And]: [AndNode, AndCaptor],
+	[TokenId.Or]: [OrNode, OrCaptor],
+	[TokenId.Increase]: [IncreaseNode, IncreaseCaptor],
+	[TokenId.Decrease]: [DecreaseNode, DecreaseCaptor],
+	[TokenId.Add]: [AddNode, AddCaptor],
+	[TokenId.Subtract]: [SubtractNode, SubtractCaptor],
+	[TokenId.Multiple]: [MultipleNode, MultipleCaptor],
+	[TokenId.Divide]: [DivideNode, DivideCaptor],
+	[TokenId.Bitand]: [BitandNode, BitandCaptor],
+	[TokenId.Bitor]: [BitorNode, BitorCaptor],
+	[TokenId.Xor]: [XorNode, XorCaptor],
+	[TokenId.Mod]: [ModNode, ModCaptor],
+	[TokenId.AddAssign]: [AddAssignNode, AddAssignCaptor],
+	[TokenId.SubtractAssign]: [SubtractAssignNode, SubtractAssignCaptor],
+	[TokenId.MultipleAssign]: [MultipleAssignNode, MultipleAssignCaptor],
+	[TokenId.DivideAssign]: [DivideAssignNode, DivideAssignCaptor],
+	[TokenId.BitandAssign]: [BitandAssignNode, BitandAssignCaptor],
+	[TokenId.BitorAssign]: [BitorAssignNode, BitorAssignCaptor],
+	[TokenId.XorAssign]: [XorAssignNode, XorAssignCaptor],
+	[TokenId.ModAssign]: [ModAssignNode, ModAssignCaptor],
+	[TokenId.LshiftAssign]: [LshiftAssignNode, LshiftAssignCaptor],
+	[TokenId.RshiftAssign]: [RshiftAssignNode, RshiftAssignCaptor],
+	[TokenId.UrshiftAssign]: [UrshiftAssignNode, UrshiftAssignCaptor],
+	[TokenId.ElvisAssign]: [ElvisAssignNode, ElvisCaptor],
+	[TokenId.Ellipsis]: [EllipsisNode, EllipsisCaptor],
 	// comment
 	[TokenId.CommentKeyword]: [CommentKeywordNode],
 	[TokenId.SingleLineCommentStartMark]: [SingleLineCommentStartMarkNode],
@@ -522,7 +659,7 @@ export const TokenAstDefs: TokenAstDefsType = {
 	// text content
 	[TokenId.Whitespaces]: [WhitespacesNode, WhitespacesCaptor],
 	[TokenId.Tabs]: [TabsNode, TabsCaptor],
-	[TokenId.NewLine]: [NewLineNode, NewLineStartsWithNewLineCaptor, NewLineStartsWithCarriageReturnCaptor],
+	[TokenId.NewLine]: [NewLineNode, NewLineWithSingleCarriageReturnCaptor, NewLineWithSingleNewLineCaptor, NewLineWith2CharsCaptor],
 	[TokenId.Chars]: [CharsNode],
 	[TokenId.Identifier]: [IdentifierNode, IdentifierCaptor],
 	[TokenId.UndeterminedChars]: [UndeterminedCharsNode, UndeterminedCharsCaptor],
@@ -530,6 +667,7 @@ export const TokenAstDefs: TokenAstDefsType = {
 	// statements
 	[TokenId.PackageDeclaration]: [PackageDeclarationNode, PackageDeclarationCaptor],
 	[TokenId.ImportDeclaration]: [ImportDeclarationNode, ImportDeclarationCaptor],
+	[TokenId.ImportAllMark]: [ImportAllMarkNode],
 	[TokenId.InterfaceDeclaration]: [InterfaceDeclarationNode, InterfaceDeclarationCaptor],
 	[TokenId.ClassDeclaration]: [ClassDeclarationNode, ClassDeclarationCaptor],
 	[TokenId.AtInterfaceClassDeclaration]: [AtInterfaceDeclarationNode, AtInterfaceDeclarationCaptor],

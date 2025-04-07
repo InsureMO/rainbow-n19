@@ -1,45 +1,32 @@
-import {
-	AstNodeCaptor,
-	AstNodeCaptorCharCheck,
-	AstNodeCaptorCharChecker,
-	AstNodeCaptorCharFuncCheck,
-	AstNodeCaptorCharsChecker,
-	AstNodeCaptorCharsCheckers,
-	AstVisitor
-} from '../visit';
+import {AstVisitor} from '../ast-visitor';
+import {AstNodeCaptor, AstNodeCaptorCharChecker, AstNodeCaptorCharFuncCheck, AstNodeCaptorCharsChecker} from './captor';
+import {UndeterminedCharsCaptor} from './fundamental';
 import {Char} from './types';
+import {isArrayCheck, isCharCheck, isFuncCheck, isMultiChecks} from './util';
 
 export class CaptorDelegate {
+	private readonly _astVisitor: AstVisitor;
+
 	private readonly _byCharMap: Record<Char, AstNodeCaptor | CaptorDelegate> = {};
 	private readonly _byFunc: Array<[AstNodeCaptorCharFuncCheck, AstNodeCaptor | CaptorDelegate]> = [];
 	private _fallback?: AstNodeCaptor;
 
-	protected isCharCheck(_checker: ReturnType<AstNodeCaptor['checkers']>, type: string): _checker is AstNodeCaptorCharCheck {
-		return type === 'string';
-	}
-
-	protected isFuncCheck(_checker: ReturnType<AstNodeCaptor['checkers']>, type: string): _checker is AstNodeCaptorCharFuncCheck {
-		return type === 'function';
-	}
-
-	protected isArrayCheck(checker: ReturnType<AstNodeCaptor['checkers']>): checker is AstNodeCaptorCharsChecker | AstNodeCaptorCharsCheckers {
-		return Array.isArray(checker);
-	}
-
-	protected isMultiChecks(checkers: AstNodeCaptorCharsChecker | AstNodeCaptorCharsCheckers): checkers is AstNodeCaptorCharsCheckers {
-		return checkers.some(checker => Array.isArray(checker));
+	constructor(astVisitor: AstVisitor) {
+		this._astVisitor = astVisitor;
 	}
 
 	protected standardizeCheckers(captor: AstNodeCaptor): Array<AstNodeCaptorCharsChecker> {
 		const checkers = captor.checkers();
 		const type = typeof checkers;
-		if (this.isCharCheck(checkers, type)) {
+		if (isCharCheck(checkers, type)) {
 			return [[checkers]];
-		} else if (this.isFuncCheck(checkers, type)) {
+		} else if (isFuncCheck(checkers, type)) {
 			return [[checkers]];
-		} else if (this.isArrayCheck(checkers)) {
-			// an error in TypeScript type inference in the IDE here, and the type needs to be manually specified.
-			if (this.isMultiChecks(checkers)) {
+		} else if (isArrayCheck(checkers)) {
+			// When dealing with scenarios where multiple checkers definitions are involved,
+			// the type definition actually overrides the single multi-steps checker definition.
+			// Therefore, manual identification is required here.
+			if (isMultiChecks(checkers)) {
 				return checkers.map((checker: AstNodeCaptorCharChecker | AstNodeCaptorCharsChecker) => Array.isArray(checker) ? checker : [checker]);
 			} else {
 				return [checkers as AstNodeCaptorCharsChecker];
@@ -49,7 +36,7 @@ export class CaptorDelegate {
 		}
 	}
 
-	protected registerFallback(captor: AstNodeCaptor): void {
+	registerFallback(captor: AstNodeCaptor): void {
 		if (this._fallback != null) {
 			throw new Error(`Conflict in capture check between two captors, ${this._fallback.constructor.name} and ${captor.constructor.name}.`);
 		}
@@ -63,7 +50,7 @@ export class CaptorDelegate {
 		const [first, ...rest] = usingCheckers;
 		const type = typeof first;
 		switch (true) {
-			case this.isCharCheck(first, type): {
+			case isCharCheck(first, type): {
 				// find captors which share same char
 				const exists = this._byCharMap[first];
 				if (exists != null) {
@@ -86,7 +73,7 @@ export class CaptorDelegate {
 						} else {
 							// create a delegate and register me to it
 							// using the exists as fallback
-							const delegate = new CaptorDelegate();
+							const delegate = new CaptorDelegate(this._astVisitor);
 							delegate.registerCaptorByCharsChecker(captor, checker, index + 1);
 							delegate.registerFallback(exists);
 							this._byCharMap[first] = delegate;
@@ -99,21 +86,21 @@ export class CaptorDelegate {
 						this._byCharMap[first] = captor;
 					} else {
 						// my check has more chars, create a delegate and register me to it
-						const delegate = new CaptorDelegate();
+						const delegate = new CaptorDelegate(this._astVisitor);
 						delegate.registerCaptorByCharsChecker(captor, checker, index + 1);
 						this._byCharMap[first] = delegate;
 					}
 				}
 				break;
 			}
-			case this.isFuncCheck(checker, type): {
+			case isFuncCheck(checker, type): {
 				// cannot compare function in definition phase, simply add
 				if (rest.length === 0) {
 					// my check ends by this char, register captor directly
 					this._byFunc.push([checker, captor]);
 				} else {
 					// my check has more chars, create a delegate and register me to it
-					const delegate = new CaptorDelegate();
+					const delegate = new CaptorDelegate(this._astVisitor);
 					delegate.registerCaptorByCharsChecker(captor, checker, index + 1);
 					this._byFunc.push([checker, delegate]);
 				}
@@ -129,22 +116,67 @@ export class CaptorDelegate {
 			.forEach(checker => this.registerCaptorByCharsChecker(captor, checker));
 	}
 
-	find(char: Char, offset: number): AstNodeCaptor {
-		// TODO
-		throw new Error();
+	find(char: Char, offset: number, text: string): AstNodeCaptor {
+		const captorOrDelegates: Array<AstNodeCaptor | CaptorDelegate> = [];
+
+		// find by char
+		const foundByChar = this._byCharMap[char];
+		if (foundByChar != null) {
+			captorOrDelegates.push(foundByChar);
+		}
+
+		// find by checker
+		this._byFunc.filter(([func]) => {
+			func(char, this._astVisitor);
+		}).forEach(([, captorOrDelegate]) => {
+			captorOrDelegates.push(captorOrDelegate);
+		});
+
+		const {captors, delegates} = captorOrDelegates.reduce((group, captorOrDelegate) => {
+			if (captorOrDelegate instanceof CaptorDelegate) {
+				group.delegates.push(captorOrDelegate);
+			} else {
+				group.captors.push(captorOrDelegate);
+			}
+			return group;
+		}, {captors: [], delegates: []} as { captors: Array<AstNodeCaptor>, delegates: Array<CaptorDelegate> });
+
+		if (delegates.length !== 0) {
+			const offsetOfNextChar = offset + 1;
+			const nextChar = this._astVisitor.charAt(offsetOfNextChar);
+			const captorsOfNextChar = delegates.map(delegate => {
+				return delegate.find(nextChar, offsetOfNextChar, text + nextChar);
+			}).filter(captor => captor != null);
+			if (captorsOfNextChar.length > 1) {
+				// multiple captors found
+				const captorNames = captorsOfNextChar.map(captor => captor.constructor.name).join(', ');
+				throw new Error(`Multiple captors[${captorNames}] found for text[${text}].`);
+			} else if (captorsOfNextChar.length === 1) {
+				return captorsOfNextChar[0];
+			}
+		}
+
+		if (captors.length > 1) {
+			const captorNames = captors.map(captor => captor.constructor.name).join(', ');
+			throw new Error(`Multiple captors[${captorNames}] found for text[${text}].`);
+		} else if (captors.length === 1) {
+			return captors[0];
+		}
+
+		return this._fallback;
 	}
 }
 
 export class CaptorSelector {
-	protected readonly _delegate: CaptorDelegate = new CaptorDelegate();
+	protected readonly _delegate: CaptorDelegate;
 
 	constructor(astVisitor: AstVisitor) {
-		// TODO initialize captors
-		// this._captors = {'': new UndeterminedCharsCaptor(astVisitor)};
+		this._delegate = new CaptorDelegate(astVisitor);
+		this._delegate.registerFallback(new UndeterminedCharsCaptor(astVisitor));
 		[].map(captor => this._delegate.register(captor));
 	}
 
 	select(char: Char, offset: number): AstNodeCaptor {
-		return this._delegate.find(char, offset);
+		return this._delegate.find(char, offset, char);
 	}
 }

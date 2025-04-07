@@ -141,7 +141,7 @@ export enum TokenId {
 	Identical, // ===
 	NotIdentical, // !==
 	Arrow, // -> // this also supported by java
-	NotInstanceOf, // !instanceof
+	NotInstanceof, // !instanceof
 	NotIn, // !in
 	// separators
 	LBrace, // {
@@ -181,8 +181,8 @@ export enum TokenId {
 	SubtractAssign, // -=
 	MultipleAssign, // *=
 	DivideAssign, // /=
-	AndAssign, // &=
-	OrAssign, // |=
+	BitandAssign, // &=
+	BitorAssign, // |=
 	XorAssign, // ^=
 	ModAssign, // %=
 	LshiftAssign, // <<=
@@ -378,7 +378,7 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	Identical: {id: TokenId.Identical, name: 'Identical'},
 	NotIdentical: {id: TokenId.NotIdentical, name: 'NotIdentical'},
 	Arrow: {id: TokenId.Arrow, name: 'Arrow'},
-	NotInstanceOf: {id: TokenId.NotInstanceOf, name: 'NotInstanceOf'},
+	NotInstanceof: {id: TokenId.NotInstanceof, name: 'NotInstanceof'},
 	NotIn: {id: TokenId.NotIn, name: 'NotIn'},
 	// separators
 	LBrace: {id: TokenId.LBrace, name: 'LBrace'},
@@ -418,8 +418,8 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	SubtractAssign: {id: TokenId.SubtractAssign, name: 'SubtractAssign'},
 	MultipleAssign: {id: TokenId.MultipleAssign, name: 'MultipleAssign'},
 	DivideAssign: {id: TokenId.DivideAssign, name: 'DivideAssign'},
-	AndAssign: {id: TokenId.AndAssign, name: 'AndAssign'},
-	OrAssign: {id: TokenId.OrAssign, name: 'OrAssign'},
+	BitandAssign: {id: TokenId.BitandAssign, name: 'BitandAssign'},
+	BitorAssign: {id: TokenId.BitorAssign, name: 'BitorAssign'},
 	XorAssign: {id: TokenId.XorAssign, name: 'XorAssign'},
 	ModAssign: {id: TokenId.ModAssign, name: 'ModAssign'},
 	LshiftAssign: {id: TokenId.LshiftAssign, name: 'LshiftAssign'},

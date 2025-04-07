@@ -8,6 +8,7 @@ export * from './ast-builder';
 export * from './ast-holder';
 
 export * from './node';
-export * from './visit';
+export * from './captor';
+export * from './ast-visitor';
 
 export * from './ast-defs';
