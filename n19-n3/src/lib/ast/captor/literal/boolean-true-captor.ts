@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '../../ast-node';
-import {BooleanLiteralNode} from '../../node';
 import {AstVisitor} from '../../ast-visitor';
+import {BooleanLiteralNode} from '../../node';
 import {AbstractMultipleCharsCaptor} from '../abstract';
 import {AstLiterals} from '../util';
 

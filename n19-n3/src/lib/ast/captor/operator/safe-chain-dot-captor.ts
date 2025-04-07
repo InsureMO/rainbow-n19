@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '../../ast-node';
-import {SafeChainDotNode} from '../../node';
 import {AstVisitor} from '../../ast-visitor';
+import {SafeChainDotNode} from '../../node';
 import {AbstractMultipleCharsCaptor} from '../abstract';
 import {AstOperators} from '../util';
 

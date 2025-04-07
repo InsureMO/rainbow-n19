@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '../../ast-node';
-import {BitnotNode} from '../../node';
 import {AstVisitor} from '../../ast-visitor';
+import {BitnotNode} from '../../node';
 import {AbstractSingleCharCaptor} from '../abstract';
 import {AstOperators} from '../util';
 

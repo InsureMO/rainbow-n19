@@ -1,7 +1,7 @@
 import {Optional} from '@rainbow-n19/n2';
 import {AstNode, AstNodeConstructOptions, AstNodeConstructor} from '../../ast-node';
-import {CharsNode, TabsNode, WhitespacesNode} from '../../node';
 import {AstVisitor} from '../../ast-visitor';
+import {CharsNode, TabsNode, WhitespacesNode} from '../../node';
 import {AstNodeCaptor, AstNodeCaptorCheckers} from '../captor';
 import {Char, CommentKeywords} from '../types';
 import {AstChars} from '../util';

@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '../../ast-node';
-import {DoubleNode} from '../../node';
 import {AstVisitor} from '../../ast-visitor';
+import {DoubleNode} from '../../node';
 import {AbstractMultipleCharsCaptor} from '../abstract';
 import {AstPrimitiveTypes} from '../util';
 

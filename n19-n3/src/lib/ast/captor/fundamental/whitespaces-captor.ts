@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '../../ast-node';
-import {WhitespacesNode} from '../../node';
 import {AstVisitor} from '../../ast-visitor';
+import {WhitespacesNode} from '../../node';
 import {AbstractSameCharsCaptor} from '../abstract';
 import {AstChars} from '../util';
 

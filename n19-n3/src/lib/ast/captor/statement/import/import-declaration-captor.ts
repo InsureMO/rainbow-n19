@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '../../../ast-node';
-import {ImportDeclarationNode, ImportNode} from '../../../node';
 import {AstVisitor} from '../../../ast-visitor';
+import {ImportDeclarationNode, ImportNode} from '../../../node';
 import {AbstractKeywordCaptor} from '../../keyword';
 import {Char} from '../../types';
 import {AstKeywords} from '../../util';

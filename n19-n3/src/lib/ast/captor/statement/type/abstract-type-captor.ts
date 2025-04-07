@@ -1,4 +1,5 @@
 import {AstNode, AstNodeConstructor} from '../../../ast-node';
+import {AstVisitor} from '../../../ast-visitor';
 import {
 	AtInterfaceDeclarationNode,
 	AtInterfaceNode,
@@ -14,7 +15,6 @@ import {
 	TraitNode
 } from '../../../node';
 import {TokenId} from '../../../tokens';
-import {AstVisitor} from '../../../ast-visitor';
 import {AbstractKeywordCaptor} from '../../keyword';
 import {Char} from '../../types';
 import {AstKeywords} from '../../util';
