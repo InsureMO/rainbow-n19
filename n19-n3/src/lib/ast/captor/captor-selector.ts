@@ -1,8 +1,28 @@
 import {AstVisitor} from '../ast-visitor';
 import {AstNodeCaptor, AstNodeCaptorCharChecker, AstNodeCaptorCharFuncCheck, AstNodeCaptorCharsChecker} from './captor';
-import {UndeterminedCharsCaptor} from './fundamental';
+import * as CommentCaptors from './comment';
+import * as FundamentalCaptors from './fundamental';
+import * as KeywordCaptors from './keyword';
+import * as LiteralCaptors from './literal';
+import * as OperatorCaptors from './operator';
+import * as PrimitiveTypeCaptors from './primitive-type';
+import * as StatementCaptors from './statement';
+import * as SymbolCaptors from './symbol';
 import {Char} from './types';
 import {isArrayCheck, isCharCheck, isFuncCheck, isMultiChecks} from './util';
+
+const AllCaptors = Object.values({
+	...FundamentalCaptors,
+	...SymbolCaptors,
+	...KeywordCaptors,
+	...PrimitiveTypeCaptors,
+	...LiteralCaptors,
+	...OperatorCaptors,
+	...CommentCaptors,
+	...StatementCaptors
+});
+const AllInstantiableCaptors = AllCaptors.filter(captor => !captor.name.startsWith('Abstract'));
+const CaptorsExceptUndeterminedChars = AllInstantiableCaptors.filter(captor => captor !== FundamentalCaptors.UndeterminedCharsCaptor);
 
 export class CaptorDelegate {
 	private readonly _astVisitor: AstVisitor;
@@ -38,7 +58,7 @@ export class CaptorDelegate {
 
 	registerFallback(captor: AstNodeCaptor): void {
 		if (this._fallback != null) {
-			throw new Error(`Conflict in capture check between two captors, ${this._fallback.constructor.name} and ${captor.constructor.name}.`);
+			throw new Error(`Conflict in capture check between two captors [${this._fallback.constructor.name}] and [${captor.constructor.name}].`);
 		}
 		this._fallback = captor;
 	}
@@ -69,7 +89,7 @@ export class CaptorDelegate {
 						if (rest.length === 0) {
 							// the capture check of another captor is exactly same as given one
 							// leading conflict, throw error
-							throw new Error(`Conflict in capture check between two captors, ${exists.constructor.name} and ${captor.constructor.name}.`);
+							throw new Error(`Conflict in capture check between two captors [${exists.constructor.name}] and [${captor.constructor.name}].`);
 						} else {
 							// create a delegate and register me to it
 							// using the exists as fallback
@@ -172,8 +192,9 @@ export class CaptorSelector {
 
 	constructor(astVisitor: AstVisitor) {
 		this._delegate = new CaptorDelegate(astVisitor);
-		this._delegate.registerFallback(new UndeterminedCharsCaptor(astVisitor));
-		[].map(captor => this._delegate.register(captor));
+		this._delegate.registerFallback(new FundamentalCaptors.UndeterminedCharsCaptor(astVisitor));
+		// @ts-ignore
+		CaptorsExceptUndeterminedChars.map(Captor => this._delegate.register(new Captor(astVisitor)));
 	}
 
 	select(char: Char, offset: number): AstNodeCaptor {
