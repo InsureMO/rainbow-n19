@@ -55,6 +55,8 @@ import {
 	KwNativeCaptor,
 	KwNewCaptor,
 	KwNonSealedCaptor,
+	KwNotInCaptor,
+	KwNotInstanceofCaptor,
 	KwNullCaptor,
 	KwPermitsCaptor,
 	KwPrivateCaptor,
@@ -99,8 +101,6 @@ import {
 	NotCaptor,
 	NotEqualCaptor,
 	NotIdenticalCaptor,
-	NotInCaptor,
-	NotInstanceofCaptor,
 	OrCaptor,
 	PackageDeclarationCaptor,
 	PowerAssignCaptor,
@@ -128,7 +128,6 @@ import {
 	SafeChainDotCaptor,
 	SafeDotCaptor,
 	SafeIndexCaptor,
-	SafeIndexCloseCaptor,
 	ScriptCommandCaptor,
 	SemicolonCaptor,
 	SingleLineCommentCaptor,
@@ -373,6 +372,7 @@ type TypeTokenIds =
 	| TokenId.ENUM
 	| TokenId.RECORD
 	| TokenId.TRAIT;
+type OperatorNoCaptorTokenId = TokenId.SafeIndexClose;
 type CharsNoCaptorTokenId = TokenId.Chars | TokenId.UnexpectedChars;
 type NoCaptorTokenIds =
 	| CompilationUnitTokenId
@@ -380,6 +380,7 @@ type NoCaptorTokenIds =
 	| CommentTokenIds
 	| PackageNoCaptorTokenId | ImportNoCaptorTokenId
 	| TypeTokenIds
+	| OperatorNoCaptorTokenId
 	| CharsNoCaptorTokenId;
 
 type SpecialDefTokenIds =
@@ -500,6 +501,8 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.NATIVE]: [NativeNode, KwNativeCaptor],
 	[TokenId.NEW]: [NewNode, KwNewCaptor],
 	[TokenId.NON_SEALED]: [NonSealedNode, KwNonSealedCaptor],
+	[TokenId.NOT_IN]: [NotInNode, KwNotInCaptor],
+	[TokenId.NOT_INSTANCEOF]: [NotInstanceofNode, KwNotInstanceofCaptor],
 	[TokenId.NULL]: [NullNode, KwNullCaptor],
 	[TokenId.PACKAGE]: [PackageNode],
 	[TokenId.PERMITS]: [PermitsNode, KwPermitsCaptor],
@@ -584,7 +587,7 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.SpreadDot]: [SpreadDotNode, SpreadDotCaptor],
 	[TokenId.SafeDot]: [SafeDotNode, SafeDotCaptor],
 	[TokenId.SafeIndex]: [SafeIndexNode, SafeIndexCaptor],
-	[TokenId.SafeIndexClose]: [SafeIndexCloseNode, SafeIndexCloseCaptor],
+	[TokenId.SafeIndexClose]: [SafeIndexCloseNode],
 	[TokenId.SafeChainDot]: [SafeChainDotNode, SafeChainDotCaptor],
 	[TokenId.Elvis]: [ElvisNode, ElvisCaptor],
 	[TokenId.MethodPointer]: [MethodPointerNode, MethodPointerCaptor],
@@ -597,8 +600,6 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.Identical]: [IdenticalNode, IdenticalCaptor],
 	[TokenId.NotIdentical]: [NotIdenticalNode, NotIdenticalCaptor],
 	[TokenId.Arrow]: [ArrowNode, ArrowCaptor],
-	[TokenId.NotInstanceof]: [NotInstanceofNode, NotInstanceofCaptor],
-	[TokenId.NotIn]: [NotInNode, NotInCaptor],
 	// separators
 	[TokenId.LBrace]: [LBraceNode, LBraceCaptor],
 	[TokenId.RBrace]: [RBraceNode, RBraceCaptor],

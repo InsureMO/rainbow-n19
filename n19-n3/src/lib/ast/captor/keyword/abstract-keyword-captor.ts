@@ -12,9 +12,13 @@ export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractM
 	protected constructor(keyword: string, astVisitor: AstVisitor) {
 		super(keyword, astVisitor);
 		this._keyword = keyword;
-		this._checker = [...this.charsArray, ((char) => {
-			return char == null || !Character.isJavaIdentifierPart(char.codePointAt(0));
-		}) as AstNodeCaptorCharFuncCheck];
+		this._checker = [...this.charsArray, (() => {
+			const func: AstNodeCaptorCharFuncCheck = (char) => {
+				return char == null || !Character.isJavaIdentifierPart(char.codePointAt(0));
+			};
+			func.describe = () => 'isNotJavaIdentifierPart';
+			return func;
+		})()];
 	}
 
 	protected get keyword(): string {

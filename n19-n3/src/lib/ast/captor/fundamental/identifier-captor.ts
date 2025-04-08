@@ -8,9 +8,13 @@ import {Char} from '../types';
  * accept any char, so must be the last captor.
  */
 export class IdentifierCaptor extends AbstractAstNodeCaptor {
-	private readonly _checker: AstNodeCaptorCharFuncCheck = (char) => {
-		return Character.isJavaIdentifierPartAndNotIdentifierIgnorable(char.codePointAt(0));
-	};
+	private readonly _checker: AstNodeCaptorCharFuncCheck = (() => {
+		const func: AstNodeCaptorCharFuncCheck = (char) => {
+			return Character.isJavaIdentifierPartAndNotIdentifierIgnorable(char.codePointAt(0));
+		};
+		func.describe = () => 'isJavaIdentifierPartAndNotIdentifierIgnorable';
+		return func;
+	})();
 
 	checkers(): AstNodeCaptorCheckers {
 		return this._checker;

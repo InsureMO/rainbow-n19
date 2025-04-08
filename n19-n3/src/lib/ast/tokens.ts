@@ -44,6 +44,8 @@ export enum TokenId {
 	NATIVE, // 1.0
 	NEW, // 1.0
 	NON_SEALED, // 17
+	NOT_IN, // !in
+	NOT_INSTANCEOF, // !instanceof
 	NULL, // 1.0
 	PACKAGE, // 1.0
 	PERMITS, // 17
@@ -141,8 +143,6 @@ export enum TokenId {
 	Identical, // ===
 	NotIdentical, // !==
 	Arrow, // -> // this also supported by java
-	NotInstanceof, // !instanceof
-	NotIn, // !in
 	// separators
 	LBrace, // {
 	RBrace, // }
@@ -271,6 +271,8 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	NATIVE: {id: TokenId.NATIVE, name: 'Native'},
 	NEW: {id: TokenId.NEW, name: 'New'},
 	NON_SEALED: {id: TokenId.NON_SEALED, name: 'NonSealed'},
+	NOT_IN: {id: TokenId.NOT_IN, name: 'NotIn'},
+	NOT_INSTANCEOF: {id: TokenId.NOT_INSTANCEOF, name: 'NotInstanceof'},
 	NULL: {id: TokenId.NULL, name: 'Null'},
 	PACKAGE: {id: TokenId.PACKAGE, name: 'Package'},
 	PERMITS: {id: TokenId.PERMITS, name: 'Permits'},
@@ -378,8 +380,6 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	Identical: {id: TokenId.Identical, name: 'Identical'},
 	NotIdentical: {id: TokenId.NotIdentical, name: 'NotIdentical'},
 	Arrow: {id: TokenId.Arrow, name: 'Arrow'},
-	NotInstanceof: {id: TokenId.NotInstanceof, name: 'NotInstanceof'},
-	NotIn: {id: TokenId.NotIn, name: 'NotIn'},
 	// separators
 	LBrace: {id: TokenId.LBrace, name: 'LBrace'},
 	RBrace: {id: TokenId.RBrace, name: 'RBrace'},

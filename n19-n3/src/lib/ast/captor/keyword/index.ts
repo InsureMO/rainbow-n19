@@ -24,6 +24,8 @@ export * from './kw-instanceof-captor';
 export * from './kw-native-captor';
 export * from './kw-new-captor';
 export * from './kw-non-sealed-captor';
+export * from './kw-not-in-captor';
+export * from './kw-not-instanceof-captor';
 export * from './kw-null-captor';
 export * from './kw-permits-captor';
 export * from './kw-private-captor';

@@ -1,5 +1,6 @@
 import {Optional} from '@rainbow-n19/n2';
 import {AstNode, AstNodeConstructOptions} from '../../ast-node';
+import {AstUtils} from '../../ast-utils';
 import {TokenId} from '../../tokens';
 
 export abstract class AbstractAstNode implements AstNode {
@@ -299,22 +300,13 @@ export abstract class AbstractAstNode implements AstNode {
 	}
 
 	toString(): string {
-		const specialCharMap: { [key: string]: string } = {
-			'\n': '\\n',
-			'\r': '\\r',
-			'\t': '\\t',
-			'\b': '\\b',
-			'\f': '\\f'
-		};
-		const regex = new RegExp(`[${Object.keys(specialCharMap).join('')}]`, 'g');
-
 		return [
 			TokenId[this.tokenId],
 			'[',
 			[
 				['start', this.startOffset],
 				['end', this.endOffset],
-				['text', this.text?.replace(regex, (match) => specialCharMap[match])]
+				['text', AstUtils.escapeForPrint(this.text)]
 			].map(attr => attr.join('=')).join(','),
 			']'
 		].join('');

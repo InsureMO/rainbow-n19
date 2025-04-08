@@ -2,7 +2,10 @@ import {AstVisitor} from '../ast-visitor';
 import {Char} from './types';
 
 export type AstNodeCaptorCharCheck = Char;
-export type AstNodeCaptorCharFuncCheck = (char: Char, astVisitor: AstVisitor) => boolean;
+export type AstNodeCaptorCharFuncCheck = {
+	(char: Char, astVisitor: AstVisitor): boolean;
+	describe: () => string;
+}
 export type AstNodeCaptorCharChecker = AstNodeCaptorCharCheck | AstNodeCaptorCharFuncCheck;
 export type AstNodeCaptorCharsChecker = Array<AstNodeCaptorCharChecker>;
 export type AstNodeCaptorCharsCheckers = Array<AstNodeCaptorCharChecker | AstNodeCaptorCharsChecker>;

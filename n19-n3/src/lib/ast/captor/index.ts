@@ -4,6 +4,7 @@ export * from './util';
 export * from './character';
 
 export * from './captor';
+export * from './captor-delegate';
 export * from './captor-selector';
 
 export * from './fundamental';

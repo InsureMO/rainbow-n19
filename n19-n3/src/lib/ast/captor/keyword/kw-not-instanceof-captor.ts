@@ -1,11 +1,11 @@
 import {AstNodeConstructor} from '../../ast-node';
 import {AstVisitor} from '../../ast-visitor';
 import {NotInstanceofNode} from '../../node';
-import {AbstractMultipleCharsCaptor} from '../abstract';
 import {AstOperators} from '../util';
+import {AbstractKeywordCaptor} from './abstract-keyword-captor';
 
 /** "!instanceof" */
-export class NotInstanceofCaptor extends AbstractMultipleCharsCaptor<NotInstanceofNode> {
+export class KwNotInstanceofCaptor extends AbstractKeywordCaptor<NotInstanceofNode> {
 	constructor(astVisitor: AstVisitor) {
 		super(AstOperators.NotInstanceof, astVisitor);
 	}

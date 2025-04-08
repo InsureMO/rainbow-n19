@@ -34,8 +34,6 @@ export * from './multiple-assign';
 export * from './not';
 export * from './not-equal';
 export * from './not-identical';
-export * from './not-in';
-export * from './not-instanceof';
 export * from './or';
 export * from './power';
 export * from './power-assign';

@@ -29,6 +29,8 @@ export * from './interface';
 export * from './native';
 export * from './new';
 export * from './non-sealed';
+export * from './not-in';
+export * from './not-instanceof';
 export * from './null';
 export * from './package';
 export * from './permits';

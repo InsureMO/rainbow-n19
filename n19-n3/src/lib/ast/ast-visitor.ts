@@ -200,4 +200,8 @@ export class AstVisitor {
 		// address from current cursor
 		this.address();
 	}
+
+	printDefs(): void {
+		this._captorSelector.printDefs();
+	}
 }

@@ -1,17 +1,9 @@
-import {Ast, AstNode} from '../../src';
+import {Ast, AstNode, AstUtils} from '../../src';
 
 export type NodeType = any;
 export type NodeSpec =
 	| [NodeType, number, number, number, string] // leaf node
 	| [NodeType, number, number, number, string, Array<NodeSpec>] // container node
-const specialCharMap: { [key: string]: string } = {
-	'\n': '\\n',
-	'\r': '\\r',
-	'\t': '\\t',
-	'\b': '\\b',
-	'\f': '\\f'
-};
-const regex = new RegExp(`[${Object.keys(specialCharMap).join('')}]`, 'g');
 
 export class AstChecker {
 	private readonly _ast: Ast;
@@ -44,7 +36,7 @@ export class AstChecker {
 				`startOffset=${startOffset}, `,
 				`endOffset=${endOffset}, `,
 				`startLine=${startLine}, `,
-				`text=${(text ?? '').replace(regex, (match) => specialCharMap[match])}`,
+				`text=${AstUtils.escapeForPrint(text)}`,
 				'].'
 			].join(''));
 		} catch (e) {
@@ -56,7 +48,7 @@ export class AstChecker {
 				`startOffset=${startOffset}, `,
 				`endOffset=${endOffset}, `,
 				`startLine=${startLine}, `,
-				`text=${(text ?? '').replace(regex, (match) => specialCharMap[match])}`,
+				`text=${AstUtils.escapeForPrint(text)}`,
 				'].'
 			].join(''));
 			this.print();
