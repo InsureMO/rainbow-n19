@@ -2,7 +2,7 @@ import {Optional} from '@rainbow-n19/n2';
 import {Ast} from './ast';
 import {AstNode} from './ast-node';
 import {CaptorSelector, Char, CommentKeyword, CommentKeywords} from './captor';
-import {AstBuildCommentKeywordOption, AstBuildOptions, AstBuildVisitor} from './types';
+import {AstBuildCommentKeywordOption, AstBuildVisitor, AstVisitOptions} from './types';
 
 export class AstVisitor {
 	private readonly _ast: Ast;
@@ -17,7 +17,7 @@ export class AstVisitor {
 	/** line starts with 1, initial value is 1 */
 	private _line: number = 1;
 
-	constructor(ast: Ast, options?: AstBuildOptions) {
+	constructor(ast: Ast, options?: AstVisitOptions) {
 		this._ast = ast;
 		this._captorSelector = new CaptorSelector(this);
 		this._buildVisitor = options?.visitor;
@@ -29,7 +29,7 @@ export class AstVisitor {
 	}
 
 	// initializing
-	protected initializeCommentKeywords(keywords?: AstBuildOptions['commentKeywords']): CommentKeywords {
+	protected initializeCommentKeywords(keywords?: AstVisitOptions['commentKeywords']): CommentKeywords {
 		keywords = keywords ?? {};
 
 		let todoConfigured = false;
@@ -87,7 +87,7 @@ export class AstVisitor {
 	}
 
 	// static visit
-	static visit(document?: string, options?: AstBuildOptions): Ast {
+	static visit(document?: string, options?: AstVisitOptions): Ast {
 		const ast = new Ast(document);
 		const visitor = new AstVisitor(ast, options);
 		visitor.visit();

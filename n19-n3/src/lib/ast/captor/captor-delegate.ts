@@ -127,7 +127,7 @@ export class CaptorDelegate {
 
 		// find by checker
 		this._byFunc.filter(([func]) => {
-			func(char, this._astVisitor);
+			return func(char, this._astVisitor);
 		}).forEach(([, captorOrDelegate]) => {
 			captorOrDelegates.push(captorOrDelegate);
 		});
@@ -178,6 +178,10 @@ export class CaptorDelegate {
 			if (k1 === '#fallback') {
 				return 1;
 			} else if (k2 === '#fallback') {
+				return -1;
+			} else if (k1.length !== 1 && k2.length === 1) {
+				return 1;
+			} else if (k1.length === 1 && k2.length !== 1) {
 				return -1;
 			} else {
 				return k1.localeCompare(k2, (void 0), {sensitivity: 'base'});

@@ -22,7 +22,11 @@ export interface AstBuildCommentKeywords {
 	[key: string]: AstBuildCommentKeywordOption;
 }
 
-export interface AstBuildOptions {
+export interface AstVisitOptions {
 	visitor?: AstBuildVisitor;
 	commentKeywords?: AstBuildCommentKeywords;
+}
+
+export interface AstBuildOptions extends AstVisitOptions {
+	timeSpentLogEnabled?: boolean;
 }

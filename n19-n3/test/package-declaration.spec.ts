@@ -4,25 +4,28 @@ import {
 	CompilationUnitNode,
 	DotNode,
 	IdentifierNode,
-	KwPackageNode,
 	MultipleLinesCommentEndMarkNode,
 	MultipleLinesCommentNode,
 	MultipleLinesCommentStartMarkNode,
 	NewLineNode,
 	PackageDeclarationNode,
+	PackageNode,
 	SemicolonNode,
 	WhitespacesNode
 } from '../src';
 import {AstChecker} from './utils/ast-checker';
 
 describe('Package declaration test', () => {
+	beforeAll(() => {
+		AstBuilder.enableTimeSpentLog();
+	});
 	test('Package declaration #1', async () => {
 		const text = 'package\n';
 		const ast = AstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 8, 0, text, [
 				[PackageDeclarationNode, 0, 7, 1, 'package', [
-					[KwPackageNode, 0, 7, 1, 'package']
+					[PackageNode, 0, 7, 1, 'package']
 				]],
 				[NewLineNode, 7, 8, 1, '\n']
 			]
@@ -43,7 +46,7 @@ describe('Package declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 8, 0, text, [
 				[PackageDeclarationNode, 0, 8, 1, text, [
-					[KwPackageNode, 0, 7, 1, 'package'],
+					[PackageNode, 0, 7, 1, 'package'],
 					[DotNode, 7, 8, 1, '.']
 				]]
 			]
@@ -55,7 +58,7 @@ describe('Package declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 15, 0, text, [
 				[PackageDeclarationNode, 0, 15, 1, text, [
-					[KwPackageNode, 0, 7, 1, 'package'],
+					[PackageNode, 0, 7, 1, 'package'],
 					[WhitespacesNode, 7, 8, 1, ' '],
 					[IdentifierNode, 8, 11, 1, 'abc'],
 					[DotNode, 11, 12, 1, '.'],
@@ -70,7 +73,7 @@ describe('Package declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 39, 0, text, [
 				[PackageDeclarationNode, 0, 38, 1, 'package/* a */ abc/*b*/. /*c*/1df/*d*/', [
-					[KwPackageNode, 0, 7, 1, 'package'],
+					[PackageNode, 0, 7, 1, 'package'],
 					[MultipleLinesCommentNode, 7, 14, 1, '/* a */', [
 						[MultipleLinesCommentStartMarkNode, 7, 9, 1, '/*'],
 						[WhitespacesNode, 9, 10, 1, ' '],
@@ -109,7 +112,7 @@ describe('Package declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 41, 0, text, [
 				[PackageDeclarationNode, 0, 26, 1, 'package/* a */ abc/*b\n*/.;', [
-					[KwPackageNode, 0, 7, 1, 'package'],
+					[PackageNode, 0, 7, 1, 'package'],
 					[MultipleLinesCommentNode, 7, 14, 1, '/* a */', [
 						[MultipleLinesCommentStartMarkNode, 7, 9, 1, '/*'],
 						[WhitespacesNode, 9, 10, 1, ' '],

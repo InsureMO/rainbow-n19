@@ -1,29 +1,29 @@
 import {
+	AbstractNode,
 	AstBuilder,
 	CharsNode,
 	ClassDeclarationNode,
+	ClassNode,
 	CompilationUnitNode,
+	FinalNode,
 	IdentifierNode,
 	InterfaceDeclarationNode,
-	KwAbstractNode,
-	KwClassNode,
-	KwFinalNode,
-	KwInterfaceNode,
-	KwNonSealedNode,
-	KwPrivateNode,
-	KwProtectedNode,
-	KwPublicNode,
-	KwSealedNode,
-	KwStaticNode,
-	KwStrictfpNode,
+	InterfaceNode,
 	LBraceNode,
 	MultipleLinesCommentEndMarkNode,
 	MultipleLinesCommentNode,
 	MultipleLinesCommentStartMarkNode,
 	NewLineNode,
+	NonSealedNode,
+	PrivateNode,
+	ProtectedNode,
+	PublicNode,
 	RBraceNode,
+	SealedNode,
 	SingleLineCommentNode,
 	SingleLineCommentStartMarkNode,
+	StaticNode,
+	StrictfpNode,
 	TabsNode,
 	WhitespacesNode
 } from '../src';
@@ -36,9 +36,9 @@ describe('Type declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 16, 0, text, [
 				[InterfaceDeclarationNode, 0, 16, 1, text, [
-					[KwPublicNode, 0, 6, 1, 'public'],
+					[PublicNode, 0, 6, 1, 'public'],
 					[WhitespacesNode, 6, 7, 1, ' '],
-					[KwInterfaceNode, 7, 16, 1, 'interface']
+					[InterfaceNode, 7, 16, 1, 'interface']
 				]]
 			]
 		]);
@@ -49,17 +49,17 @@ describe('Type declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 98, 0, text, [
 				[ClassDeclarationNode, 0, 98, 1, text, [
-					[KwSealedNode, 0, 6, 1, 'sealed'],
+					[SealedNode, 0, 6, 1, 'sealed'],
 					[WhitespacesNode, 6, 7, 1, ' '],
-					[KwPublicNode, 7, 13, 1, 'public'],
+					[PublicNode, 7, 13, 1, 'public'],
 					[WhitespacesNode, 13, 14, 1, ' '],
-					[KwAbstractNode, 14, 22, 1, 'abstract'],
+					[AbstractNode, 14, 22, 1, 'abstract'],
 					[WhitespacesNode, 22, 23, 1, ' '],
-					[KwProtectedNode, 23, 32, 1, 'protected'],
+					[ProtectedNode, 23, 32, 1, 'protected'],
 					[WhitespacesNode, 32, 33, 1, ' '],
-					[KwPrivateNode, 33, 40, 1, 'private'],
+					[PrivateNode, 33, 40, 1, 'private'],
 					[WhitespacesNode, 40, 41, 1, ' '],
-					[KwStaticNode, 41, 47, 1, 'static'],
+					[StaticNode, 41, 47, 1, 'static'],
 					[WhitespacesNode, 47, 48, 1, ' '],
 					[SingleLineCommentNode, 48, 53, 1, '// sl', [
 						[SingleLineCommentStartMarkNode, 48, 50, 1, '//'],
@@ -68,7 +68,7 @@ describe('Type declaration test', () => {
 					]],
 					[NewLineNode, 53, 54, 1, '\n'],
 					[TabsNode, 54, 55, 2, '\t'],
-					[KwFinalNode, 55, 60, 2, 'final'],
+					[FinalNode, 55, 60, 2, 'final'],
 					[WhitespacesNode, 60, 61, 2, ' '],
 					[MultipleLinesCommentNode, 61, 67, 2, '/*a\n*/', [
 						[MultipleLinesCommentStartMarkNode, 61, 63, 2, '/*'],
@@ -77,14 +77,14 @@ describe('Type declaration test', () => {
 						[MultipleLinesCommentEndMarkNode, 65, 67, 3, '*/']
 					]],
 					[WhitespacesNode, 67, 68, 3, ' '],
-					[KwStrictfpNode, 68, 76, 3, 'strictfp'],
+					[StrictfpNode, 68, 76, 3, 'strictfp'],
 					[WhitespacesNode, 76, 77, 3, ' '],
 					[NewLineNode, 77, 78, 3, '\n'],
-					[KwNonSealedNode, 78, 88, 4, 'non-sealed'],
+					[NonSealedNode, 78, 88, 4, 'non-sealed'],
 					[WhitespacesNode, 88, 91, 4, '   '],
 					[TabsNode, 91, 92, 4, '\t'],
 					[WhitespacesNode, 92, 93, 4, ' '],
-					[KwClassNode, 93, 98, 4, 'class']
+					[ClassNode, 93, 98, 4, 'class']
 				]]
 			]
 		]);
@@ -95,11 +95,11 @@ describe('Type declaration test', () => {
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 35, 0, text, [
 				[ClassDeclarationNode, 0, 35, 1, text, [
-					[KwPublicNode, 0, 6, 1, 'public'],
+					[PublicNode, 0, 6, 1, 'public'],
 					[WhitespacesNode, 6, 7, 1, ' '],
-					[KwAbstractNode, 7, 15, 1, 'abstract'],
+					[AbstractNode, 7, 15, 1, 'abstract'],
 					[WhitespacesNode, 15, 16, 1, ' '],
-					[KwClassNode, 16, 21, 1, 'class'],
+					[ClassNode, 16, 21, 1, 'class'],
 					[WhitespacesNode, 21, 22, 1, ' '],
 					[IdentifierNode, 22, 31, 1, 'AbstractA'],
 					[WhitespacesNode, 31, 32, 1, ' '],

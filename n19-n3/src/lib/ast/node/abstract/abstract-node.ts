@@ -244,8 +244,7 @@ export abstract class AbstractAstNode implements AstNode {
 	 * so make sure the node has parent.
 	 */
 	append(node: AstNode): AstNode {
-		this._parent.append(node);
-		return node;
+		return this._parent.append(node);
 	}
 
 	appendText(text: string): void {

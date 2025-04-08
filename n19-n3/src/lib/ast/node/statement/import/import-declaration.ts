@@ -21,7 +21,8 @@ export class ImportDeclarationNode extends AbstractEndBySemicolonAstNode {
 			TokenId.STATIC,
 			TokenId.Identifier,
 			TokenId.AS,
-			TokenId.ImportAllMark,
+			// TokenId.ImportAllMark, this check occurs at #append, so node is Multiple.
+			TokenId.Multiple,
 			TokenId.Semicolon,
 			TokenId.MultipleLinesComment
 		].includes(node.tokenId);
