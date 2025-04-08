@@ -1,5 +1,3 @@
-export * from './type-declaration-body-status';
-
 export * from './abstract-type-declaration';
 
 export * from './interface-declaration';

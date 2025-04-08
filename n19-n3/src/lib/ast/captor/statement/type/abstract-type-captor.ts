@@ -79,6 +79,8 @@ export abstract class AbstractTypeCaptor<T extends TypeDefs> extends AbstractKey
 		const modifierConcatenatorNodes: Array<AstNode> = [];
 		const modifierNodes: Array<AstNode> = [];
 		let nodeBeforeMe = this.latestNode();
+		// find all modifier and concatenator nodes before me, from closest to farthest
+		// please note not all these nodes are belongs to me, will be removed later
 		// eslint-disable-next-line no-constant-condition
 		while (true) {
 			if (this.isModifierConcatenator(nodeBeforeMe)) {
@@ -95,14 +97,29 @@ export abstract class AbstractTypeCaptor<T extends TypeDefs> extends AbstractKey
 				break;
 			}
 		}
-		// detach from parent, from nearest
+		// now remove nodes which not belongs to me
+		let removeStartIndex = 0;
+		for (let index = modifierNodes.length - 1; index >= 0; index--) {
+			const node = modifierNodes[index];
+			if (node.tokenId !== TokenId.AnnotationDeclaration && !this.isModifier(node)) {
+				removeStartIndex = index;
+			} else {
+				break;
+			}
+		}
+		if (removeStartIndex !== 0) {
+			modifierNodes.splice(removeStartIndex, modifierNodes.length - removeStartIndex);
+		}
+
+		// detach from parent, from closest
 		modifierNodes.forEach(modifierNode => this.detachFromAst(modifierNode));
-		// prepare for appending to ast, from most distant
+		// prepare for appending to ast, from farthest
 		modifierNodes.reverse();
-		// create node
+		// create type declaration node
 		const node = this.createAndAppendToAst(this.getAstNodeConstructor(), {
 			startOffset: modifierNodes.length === 0 ? offset : modifierNodes[0].startOffset
 		});
+		// append modifier nodes to type declaration node
 		modifierNodes.forEach(modifierNode => this.appendToAst(modifierNode));
 
 		this.moveCursorTo(this.createChildAstNodes(node, char, offset));

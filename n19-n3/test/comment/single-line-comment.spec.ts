@@ -12,6 +12,10 @@ import {
 import {AstChecker} from '../utils/ast-checker';
 
 describe('Single line comment test', () => {
+	beforeAll(() => {
+		AstBuilder.enableTimeSpentLog();
+	});
+
 	test('Single line comment #1', async () => {
 		const text = '// todo abc';
 		const ast = AstBuilder.ast(text);

@@ -30,6 +30,10 @@ import {
 import {AstChecker} from './utils/ast-checker';
 
 describe('Type declaration test', () => {
+	beforeAll(() => {
+		AstBuilder.enableTimeSpentLog();
+	});
+
 	test('Interface declaration #1', async () => {
 		const text = 'public interface';
 		const ast = AstBuilder.ast(text);
@@ -106,6 +110,23 @@ describe('Type declaration test', () => {
 					[LBraceNode, 32, 33, 1, '{'],
 					[NewLineNode, 33, 34, 1, '\n'],
 					[RBraceNode, 34, 35, 1, '}']
+				]]
+			]
+		]);
+	});
+	test('Interface declaration #4', async () => {
+		const text = '/**/public interface';
+		const ast = AstBuilder.ast(text);
+		AstChecker.check(ast, [
+			CompilationUnitNode, 0, 20, 0, text, [
+				[MultipleLinesCommentNode, 0, 4, 1, '/**/', [
+					[MultipleLinesCommentStartMarkNode, 0, 2, 1, '/*'],
+					[MultipleLinesCommentEndMarkNode, 2, 4, 1, '*/']
+				]],
+				[InterfaceDeclarationNode, 4, 20, 1, 'public interface', [
+					[PublicNode, 4, 10, 1, 'public'],
+					[WhitespacesNode, 10, 11, 1, ' '],
+					[InterfaceNode, 11, 20, 1, 'interface']
 				]]
 			]
 		]);

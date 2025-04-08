@@ -304,6 +304,7 @@ import {
 	SlashyGStringQuotationMarkNode,
 	SpaceshipNode,
 	SpreadDotNode,
+	StaticBlockNode,
 	StaticNode,
 	StrictfpNode,
 	StringBackslashEscapeNode,
@@ -386,7 +387,7 @@ type NoCaptorTokenIds =
 type SpecialDefTokenIds =
 	| TokenId.NewLine
 	| TokenId.BooleanLiteral;
-type CaptorNotDefinedYetTokenIds =
+type CaptorNotDefinedYetTokenIds /* TODO CaptorNotDefinedYetTokenIds */ =
 // numeric
 	| TokenId.NumericSignPart
 	| TokenId.NumericBasePart
@@ -437,9 +438,12 @@ type CaptorNotDefinedYetTokenIds =
 	| TokenId.GStringLiteral
 	| TokenId.SlashyGStringLiteral
 	| TokenId.DollarSlashyGStringLiteral
+	// static block
+	| TokenId.StaticBlock
 	// annotation
 	| TokenId.AnnotationDeclaration;
-type StandardDefTokenIds = Exclude<TokenId, NoCaptorTokenIds | SpecialDefTokenIds | CaptorNotDefinedYetTokenIds>;
+type NothingDefinedTokenIds /* TODO NothingDefinedTokenIds */ = undefined;
+type StandardDefTokenIds = Exclude<TokenId, NoCaptorTokenIds | SpecialDefTokenIds | CaptorNotDefinedYetTokenIds | NothingDefinedTokenIds>;
 type TokenAstDefsType = {
 	[key in StandardDefTokenIds]: [ClassImplementsAstNode, ClassImplementsAstNodeCaptor]
 } & {
@@ -452,6 +456,8 @@ type TokenAstDefsType = {
 	[key in TokenId.BooleanLiteral]: [ClassImplementsAstNode, ClassImplementsAstNodeCaptor, ClassImplementsAstNodeCaptor]
 } & {
 	[key in CaptorNotDefinedYetTokenIds]: [ClassImplementsAstNode]
+} & {
+	[key in NothingDefinedTokenIds]: []
 }
 
 /**
@@ -676,5 +682,6 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.EnumClassDeclaration]: [EnumClassDeclarationNode, EnumClassDeclarationCaptor],
 	[TokenId.RecordClassDeclaration]: [RecordClassDeclarationNode, RecordClassDeclarationCaptor],
 	[TokenId.TraitClassDeclaration]: [TraitClassDeclarationNode, TraitClassDeclarationCaptor],
+	[TokenId.StaticBlock]: [StaticBlockNode],
 	[TokenId.AnnotationDeclaration]: [AnnotationDeclarationNode]
 } as const;

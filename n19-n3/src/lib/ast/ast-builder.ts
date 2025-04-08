@@ -14,7 +14,7 @@ export class AstBuilder {
 	}
 
 	private static logTimeSpent(source: string, options?: AstVisitOptions): Ast {
-		let label: string = `Parse source[length=${(source ?? '').length}]`;
+		const label: string = `Parse source[length=${(source ?? '').length}]`;
 		console.time(label);
 		try {
 			return AstVisitor.visit(source, options);

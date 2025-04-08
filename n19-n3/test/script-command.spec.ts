@@ -10,6 +10,10 @@ import {
 import {AstChecker} from './utils/ast-checker';
 
 describe('Script command test', () => {
+	beforeAll(() => {
+		AstBuilder.enableTimeSpentLog();
+	});
+
 	test('Script command #1', async () => {
 		const text = '#!/bin/sh\n';
 		const ast = AstBuilder.ast(text);

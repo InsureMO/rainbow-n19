@@ -19,6 +19,7 @@ describe('Package declaration test', () => {
 	beforeAll(() => {
 		AstBuilder.enableTimeSpentLog();
 	});
+
 	test('Package declaration #1', async () => {
 		const text = 'package\n';
 		const ast = AstBuilder.ast(text);

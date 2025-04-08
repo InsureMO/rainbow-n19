@@ -13,6 +13,10 @@ import {
 import {AstChecker} from '../utils/ast-checker';
 
 describe('Multiple lines comment test', () => {
+	beforeAll(() => {
+		AstBuilder.enableTimeSpentLog();
+	});
+
 	test('Multiple lines comment #1', async () => {
 		const text = '/* todo abc\n * def\r\n * xyz\r */';
 		const ast = AstBuilder.ast(text);

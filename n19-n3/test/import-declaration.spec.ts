@@ -19,6 +19,10 @@ import {
 import {AstChecker} from './utils/ast-checker';
 
 describe('Import declaration test', () => {
+	beforeAll(() => {
+		AstBuilder.enableTimeSpentLog();
+	});
+
 	test('Import declaration #1', async () => {
 		const text = 'import\n';
 		const ast = AstBuilder.ast(text);
