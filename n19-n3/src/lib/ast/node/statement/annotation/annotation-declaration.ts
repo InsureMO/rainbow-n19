@@ -12,13 +12,11 @@ export class AnnotationDeclarationNode extends AbstractEndBySthAstNode {
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	protected couldBeChildOfMe(_node: AstNode): boolean {
-		// TODO
 		return false;
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	protected endBy(_node: AstNode): boolean {
-		// TODO
 		return false;
 	}
 }

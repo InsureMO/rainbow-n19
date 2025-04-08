@@ -442,7 +442,7 @@ type CaptorNotDefinedYetTokenIds /* TODO CaptorNotDefinedYetTokenIds */ =
 	| TokenId.StaticBlockDeclaration
 	// annotation
 	| TokenId.AnnotationDeclaration;
-type NothingDefinedTokenIds /* TODO NothingDefinedTokenIds */ = undefined;
+type NothingDefinedTokenIds = undefined;
 type StandardDefTokenIds = Exclude<TokenId, NoCaptorTokenIds | SpecialDefTokenIds | CaptorNotDefinedYetTokenIds | NothingDefinedTokenIds>;
 type TokenAstDefsType = {
 	[key in StandardDefTokenIds]: [ClassImplementsAstNode, ClassImplementsAstNodeCaptor]

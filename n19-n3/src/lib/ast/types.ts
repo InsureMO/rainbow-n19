@@ -7,16 +7,19 @@ export interface AstBuildVisitor {
 }
 
 export enum AstBuildCommentKeywordOption {
-	DISABLE = 0,
+	DISABLED = 0,
 	ENABLE_AND_CASE_INSENSITIVE = 1,
 	ENABLE_AND_CASE_SENSITIVE = 2
 }
 
 /**
  * key and case-sensitive.
- * a keyword "todo" is default enabled and case insensitive.
- * to disable it, pass {@code {todo: AstBuildCommentKeywordOption.DISABLE}}
- * or pass {@code {Todo: AstBuildCommentKeywordOption.ENABLE_AND_CASE_SENSITIVE}} to change it to case sensitive, if want to let the keyword to be "Todo"
+ * a keyword "t odo" is default enabled and case-insensitive.
+ * to disable it, pass {@code {t odo: AstBuildCommentKeywordOption#DISABLED}}
+ * or pass {@code {T odo: AstBuildCommentKeywordOption.ENABLE_AND_CASE_SENSITIVE}} to change it to case-sensitive
+ * when change the keyword tobe "T odo"
+ *
+ * a blank to avoid IDE highlight detecting, for "t odo", "T odo".
  */
 export interface AstBuildCommentKeywords {
 	[key: string]: AstBuildCommentKeywordOption;

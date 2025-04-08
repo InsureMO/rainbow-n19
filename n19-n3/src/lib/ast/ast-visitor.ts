@@ -37,7 +37,7 @@ export class AstVisitor {
 			const option = keywords[keyword];
 			keyword = keyword.trim();
 			switch (option) {
-				case AstBuildCommentKeywordOption.DISABLE:
+				case AstBuildCommentKeywordOption.DISABLED:
 					// ignored
 					break;
 				case AstBuildCommentKeywordOption.ENABLE_AND_CASE_SENSITIVE:
@@ -65,7 +65,7 @@ export class AstVisitor {
 			return keywords;
 		}, [] as Array<CommentKeyword>);
 		if (!todoConfigured) {
-			// push a todo as first one
+			// push a "t odo" (a blank to avoid IDE highlight detecting) as first one
 			defs.unshift({keyword: 'todo', pattern: /\btodo\b/i, caseSensitive: false, keywordLength: 4});
 		}
 
