@@ -304,7 +304,7 @@ import {
 	SlashyGStringQuotationMarkNode,
 	SpaceshipNode,
 	SpreadDotNode,
-	StaticBlockNode,
+	StaticBlockDeclarationNode,
 	StaticNode,
 	StrictfpNode,
 	StringBackslashEscapeNode,
@@ -439,7 +439,7 @@ type CaptorNotDefinedYetTokenIds /* TODO CaptorNotDefinedYetTokenIds */ =
 	| TokenId.SlashyGStringLiteral
 	| TokenId.DollarSlashyGStringLiteral
 	// static block
-	| TokenId.StaticBlock
+	| TokenId.StaticBlockDeclaration
 	// annotation
 	| TokenId.AnnotationDeclaration;
 type NothingDefinedTokenIds /* TODO NothingDefinedTokenIds */ = undefined;
@@ -682,6 +682,6 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.EnumClassDeclaration]: [EnumClassDeclarationNode, EnumClassDeclarationCaptor],
 	[TokenId.RecordClassDeclaration]: [RecordClassDeclarationNode, RecordClassDeclarationCaptor],
 	[TokenId.TraitClassDeclaration]: [TraitClassDeclarationNode, TraitClassDeclarationCaptor],
-	[TokenId.StaticBlock]: [StaticBlockNode],
+	[TokenId.StaticBlockDeclaration]: [StaticBlockDeclarationNode],
 	[TokenId.AnnotationDeclaration]: [AnnotationDeclarationNode]
 } as const;

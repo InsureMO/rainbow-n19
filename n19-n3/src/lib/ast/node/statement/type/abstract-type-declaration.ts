@@ -1,8 +1,8 @@
 import {AstNode} from '../../../ast-node';
 import {TokenId} from '../../../tokens';
-import {AbstractBraceBlockNode} from '../../abstract';
+import {AbstractBraceBlockDeclarationNode} from '../../abstract';
 
-export abstract class AbstractTypeDeclarationNode extends AbstractBraceBlockNode {
+export abstract class AbstractTypeDeclarationNode extends AbstractBraceBlockDeclarationNode {
 	protected couldBeChildOfMeOnBlockNotStarted(node: AstNode): boolean {
 		return [
 			// comment nodes

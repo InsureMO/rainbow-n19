@@ -1,10 +1,10 @@
 import {AstNode} from '../../../ast-node';
 import {TokenId} from '../../../tokens';
-import {AbstractBraceBlockNode} from '../../abstract';
+import {AbstractBraceBlockDeclarationNode} from '../../abstract';
 
-export class StaticBlockNode extends AbstractBraceBlockNode {
+export class StaticBlockDeclarationNode extends AbstractBraceBlockDeclarationNode {
 	get tokenId(): TokenId {
-		return TokenId.StaticBlock;
+		return TokenId.StaticBlockDeclaration;
 	}
 
 	protected couldBeChildOfMeOnBlockNotStarted(node: AstNode): boolean {

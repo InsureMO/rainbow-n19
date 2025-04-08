@@ -8,7 +8,7 @@ export enum BraceBlockStatus {
 	ENDED = 'ended'
 }
 
-export abstract class AbstractBraceBlockNode extends AbstractEndByRBraceAstNode {
+export abstract class AbstractBraceBlockDeclarationNode extends AbstractEndByRBraceAstNode {
 	private _blockStatus: BraceBlockStatus = BraceBlockStatus.NOT_STARTED;
 
 	protected get blockStatus(): BraceBlockStatus {

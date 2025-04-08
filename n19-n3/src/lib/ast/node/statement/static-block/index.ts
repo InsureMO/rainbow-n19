@@ -1,1 +1,1 @@
-export * from './static-block';
+export * from './static-block-declaration';

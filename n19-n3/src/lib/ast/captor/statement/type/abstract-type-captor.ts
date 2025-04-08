@@ -27,6 +27,11 @@ export type TypeDefs =
 	| [AstKeywords.Record, RecordClassDeclarationNode, RecordNode]
 	| [AstKeywords.Trait, TraitClassDeclarationNode, TraitNode]
 
+/**
+ * capture type keywords to create type declaration node,
+ * and will grab previous nodes (modifier keywords, tabs, whitespaces, newlines, comments and annotations)
+ * if they are belongs to this type declaration.
+ */
 export abstract class AbstractTypeCaptor<T extends TypeDefs> extends AbstractKeywordCaptor<T[1]> {
 	protected constructor(keyword: T[0], astVisitor: AstVisitor) {
 		super(keyword, astVisitor);
