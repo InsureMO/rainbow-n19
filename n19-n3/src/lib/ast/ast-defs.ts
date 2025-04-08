@@ -455,7 +455,8 @@ type TokenAstDefsType = {
 }
 
 /**
- * list all token ids, nodes and captors
+ * list all token ids, nodes and captors.
+ * for verification in dev phase.
  */
 export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.COMPILATION_UNIT]: [CompilationUnitNode],
