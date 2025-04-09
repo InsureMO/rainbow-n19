@@ -16,7 +16,7 @@ export class StaticBlockDeclarationNode extends AbstractBraceBlockDeclarationNod
 			// block keyword
 			TokenId.STATIC,
 			// start block
-			TokenId.LBrace
+			TokenId.StaticBlockBody
 		].includes(node.tokenId);
 	}
 }

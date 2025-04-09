@@ -24,7 +24,7 @@ export abstract class AbstractTypeDeclarationNode extends AbstractBraceBlockDecl
 			// annotation
 			TokenId.AnnotationDeclaration,
 			// start block
-			TokenId.LBrace
+			TokenId.ClassBody
 		].includes(node.tokenId);
 	}
 }

@@ -8,6 +8,11 @@ export enum BraceBlockStatus {
 	ENDED = 'ended'
 }
 
+/**
+ * brace block declaration carries more child nodes before the {@link AbstractBraceBlockNode},
+ * it is important that the brace block declaration node should have zero or one brace block node,
+ * and if there is a brace block node existing, it is the last child of declaration.
+ */
 export abstract class AbstractBraceBlockDeclarationNode extends AbstractEndByRBraceAstNode {
 	private _blockStatus: BraceBlockStatus = BraceBlockStatus.NOT_STARTED;
 
@@ -15,16 +20,12 @@ export abstract class AbstractBraceBlockDeclarationNode extends AbstractEndByRBr
 		return this._blockStatus;
 	}
 
-	protected startBlockIfCan(node: AstNode): void {
-		if (node.tokenId === TokenId.LBrace) {
-			this._blockStatus = BraceBlockStatus.STARTED;
-		}
+	protected shouldStartBlock(node: AstNode): boolean {
+		return node.tokenId === TokenId.LBrace;
 	}
 
-	protected endBlockIfCan(node: AstNode): void {
-		if (node.tokenId === TokenId.RBrace) {
-			this._blockStatus = BraceBlockStatus.ENDED;
-		}
+	protected shouldEndBlock(node: AstNode): boolean {
+		return node.tokenId === TokenId.RBrace;
 	}
 
 	protected abstract couldBeChildOfMeOnBlockNotStarted(node: AstNode): boolean;
@@ -67,13 +68,17 @@ export abstract class AbstractBraceBlockDeclarationNode extends AbstractEndByRBr
 
 	protected appendAsLastChildOnBodyNotStarted(node: AstNode): AstNode {
 		const ret = super.appendAsLastChild(node);
-		this.startBlockIfCan(node);
+		if (this.shouldStartBlock(node)) {
+			this._blockStatus = BraceBlockStatus.STARTED;
+		}
 		return ret;
 	}
 
 	protected appendAsLastChildOnBlockStarted(node: AstNode): AstNode {
 		const ret = super.appendAsLastChild(node);
-		this.endBlockIfCan(node);
+		if (this.shouldEndBlock(node)) {
+			this._blockStatus = BraceBlockStatus.ENDED;
+		}
 		return ret;
 	}
 

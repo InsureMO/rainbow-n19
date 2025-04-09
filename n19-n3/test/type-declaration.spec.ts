@@ -2,6 +2,7 @@ import {
 	AbstractNode,
 	AstBuilder,
 	CharsNode,
+	ClassBodyNode,
 	ClassDeclarationNode,
 	ClassNode,
 	CompilationUnitNode,
@@ -22,6 +23,8 @@ import {
 	SealedNode,
 	SingleLineCommentNode,
 	SingleLineCommentStartMarkNode,
+	StaticBlockBodyNode,
+	StaticBlockDeclarationNode,
 	StaticNode,
 	StrictfpNode,
 	TabsNode,
@@ -107,9 +110,11 @@ describe('Type declaration test', () => {
 					[WhitespacesNode, 21, 22, 1, ' '],
 					[IdentifierNode, 22, 31, 1, 'AbstractA'],
 					[WhitespacesNode, 31, 32, 1, ' '],
-					[LBraceNode, 32, 33, 1, '{'],
-					[NewLineNode, 33, 34, 1, '\n'],
-					[RBraceNode, 34, 35, 1, '}']
+					[ClassBodyNode, 32, 35, 1, '{\n}', [
+						[LBraceNode, 32, 33, 1, '{'],
+						[NewLineNode, 33, 34, 1, '\n'],
+						[RBraceNode, 34, 35, 1, '}']
+					]]
 				]]
 			]
 		]);
@@ -119,14 +124,56 @@ describe('Type declaration test', () => {
 		const ast = AstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 20, 0, text, [
-				[MultipleLinesCommentNode, 0, 4, 1, '/**/', [
-					[MultipleLinesCommentStartMarkNode, 0, 2, 1, '/*'],
-					[MultipleLinesCommentEndMarkNode, 2, 4, 1, '*/']
-				]],
-				[InterfaceDeclarationNode, 4, 20, 1, 'public interface', [
+				[InterfaceDeclarationNode, 0, 20, 1, text, [
+					[MultipleLinesCommentNode, 0, 4, 1, '/**/', [
+						[MultipleLinesCommentStartMarkNode, 0, 2, 1, '/*'],
+						[MultipleLinesCommentEndMarkNode, 2, 4, 1, '*/']
+					]],
 					[PublicNode, 4, 10, 1, 'public'],
 					[WhitespacesNode, 10, 11, 1, ' '],
 					[InterfaceNode, 11, 20, 1, 'interface']
+				]]
+			]
+		]);
+	});
+	test('Class declaration #5', async () => {
+		const text = 'public abstract class AbstractA {\n\tstatic /* abc */{\n\t}\n}';
+		const ast = AstBuilder.ast(text);
+		AstChecker.check(ast, [
+			CompilationUnitNode, 0, 57, 0, text, [
+				[ClassDeclarationNode, 0, 57, 1, text, [
+					[PublicNode, 0, 6, 1, 'public'],
+					[WhitespacesNode, 6, 7, 1, ' '],
+					[AbstractNode, 7, 15, 1, 'abstract'],
+					[WhitespacesNode, 15, 16, 1, ' '],
+					[ClassNode, 16, 21, 1, 'class'],
+					[WhitespacesNode, 21, 22, 1, ' '],
+					[IdentifierNode, 22, 31, 1, 'AbstractA'],
+					[WhitespacesNode, 31, 32, 1, ' '],
+					[ClassBodyNode, 32, 57, 1, '{\n}', [
+						[LBraceNode, 32, 33, 1, '{'],
+						[NewLineNode, 33, 34, 1, '\n'],
+						[TabsNode, 34, 35, 2, '\t'],
+						[StaticBlockDeclarationNode, 35, 55, 2, 'static /* abc */{\n\t}', [
+							[StaticNode, 35, 41, 2, 'static'],
+							[WhitespacesNode, 41, 42, 2, ' '],
+							[MultipleLinesCommentNode, 42, 51, 2, '/* abc */', [
+								[MultipleLinesCommentStartMarkNode, 42, 44, 2, '/*'],
+								[WhitespacesNode, 44, 45, 2, ' '],
+								[CharsNode, 45, 48, 2, 'abc'],
+								[WhitespacesNode, 48, 49, 2, ' '],
+								[MultipleLinesCommentEndMarkNode, 49, 51, 2, '*/']
+							]],
+							[StaticBlockBodyNode, 51, 55, 2, '{\n\t}', [
+								[LBraceNode, 51, 52, 2, '{'],
+								[NewLineNode, 52, 53, 2, '\n'],
+								[TabsNode, 53, 54, 3, '\t'],
+								[RBraceNode, 54, 55, 3, '}']
+							]]
+						]],
+						[NewLineNode, 55, 56, 3, '\n'],
+						[RBraceNode, 56, 57, 4, '}']
+					]]
 				]]
 			]
 		]);

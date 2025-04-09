@@ -1,4 +1,8 @@
+import {Optional} from '@rainbow-n19/n2';
+import {Ast} from '../ast';
+import {AstNode, AstNodeConstructOptions, AstNodeConstructor} from '../ast-node';
 import {AstVisitor} from '../ast-visitor';
+import {AbstractContainerAstNode, CompilationUnitNode} from '../node';
 import {Char} from './types';
 
 export type AstNodeCaptorCharCheck = Char;
@@ -23,4 +27,57 @@ export interface AstNodeCaptor {
 	 * or returns false if no node visited.
 	 */
 	visit(char: Char, offset: number): boolean;
+
+	// operators
+	/**
+	 * get char of given offset
+	 */
+	charAt(offset: number): Optional<Char>;
+
+	/**
+	 * slice text from given start offset to given end offset
+	 */
+	sliceText(startOffset: number, endOffset: number): Optional<string>;
+
+	/**
+	 * get current line number
+	 */
+	currentLine(): number;
+
+	ast(): Ast;
+	
+	/**
+	 * get current node in ast
+	 */
+	currentNode(): AstNode;
+	/**
+	 * get latest node in ast
+	 */
+	latestNode(): AstNode;
+
+	/**
+	 * get latest open node by given node, or use latest node if node not given.
+	 * the latest open node is:
+	 * 1. if node is {@link CompilationUnitNode}, it is itself
+	 * 2. if node is {@link AbstractContainerAstNode} and not closed, it is itself,
+	 * 3. recursively find from its ancestor nodes, till found.
+	 */
+	latestOpenContainerNode(node?: AstNode): CompilationUnitNode | AbstractContainerAstNode;
+
+	/**
+	 * last direct child of latest open container node, or latest open container node itself if it has no child
+	 */
+	latestOpenNode(node?: AstNode): AstNode;
+
+	moveCursorTo(offset: number): void;
+
+	moveToNextLine(): void;
+
+	appendToAst(node: AstNode): void;
+
+	detachFromAst(node: AstNode): void;
+
+	createAstNode<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N;
+
+	createAndAppendToAst<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N;
 }
