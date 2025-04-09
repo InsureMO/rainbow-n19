@@ -129,7 +129,6 @@ describe('Type declaration test', () => {
 						[MultipleLinesCommentStartMarkNode, 0, 2, 1, '/*'],
 						[MultipleLinesCommentEndMarkNode, 2, 4, 1, '*/']
 					]],
-				]],
 					[PublicNode, 4, 10, 1, 'public'],
 					[WhitespacesNode, 10, 11, 1, ' '],
 					[InterfaceNode, 11, 20, 1, 'interface']
@@ -151,7 +150,7 @@ describe('Type declaration test', () => {
 					[WhitespacesNode, 21, 22, 1, ' '],
 					[IdentifierNode, 22, 31, 1, 'AbstractA'],
 					[WhitespacesNode, 31, 32, 1, ' '],
-					[ClassBodyNode, 32, 57, 1, '{\n}', [
+					[ClassBodyNode, 32, 57, 1, '{\n\tstatic /* abc */{\n\t}\n}', [
 						[LBraceNode, 32, 33, 1, '{'],
 						[NewLineNode, 33, 34, 1, '\n'],
 						[TabsNode, 34, 35, 2, '\t'],
