@@ -1,7 +1,9 @@
 import {Optional} from '@rainbow-n19/n2';
+import {Ast} from '../../ast';
 import {AstNode, AstNodeConstructOptions, AstNodeConstructor} from '../../ast-node';
 import {AstVisitor} from '../../ast-visitor';
-import {CharsNode, TabsNode, WhitespacesNode} from '../../node';
+import {AbstractContainerAstNode, CharsNode, CompilationUnitNode, TabsNode, WhitespacesNode} from '../../node';
+import {TokenId} from '../../tokens';
 import {AstNodeCaptor, AstNodeCaptorCheckers} from '../captor';
 import {Char, CommentKeywords} from '../types';
 import {AstChars} from '../util';
@@ -14,35 +16,63 @@ export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
 	}
 
 	// delegators of ast visitor
-	protected charAt(offset: number): Optional<Char> {
+	charAt(offset: number): Optional<Char> {
 		return this._astVisitor.charAt(offset);
 	}
 
-	protected sliceText(startOffset: number, endOffset: number): Optional<string> {
+	sliceText(startOffset: number, endOffset: number): Optional<string> {
 		return this._astVisitor.document.substring(startOffset, endOffset);
 	}
 
-	protected currentLine(): number {
+	currentLine(): number {
 		return this._astVisitor.currentLine();
 	}
 
-	protected latestNode(): AstNode {
+	ast(): Ast {
+		return this._astVisitor.ast;
+	}
+
+	currentNode(): AstNode {
+		return this._astVisitor.currentNode();
+	}
+
+	latestNode(): AstNode {
 		return this._astVisitor.latestNode();
 	}
 
-	protected moveCursorTo(offset: number): void {
+	latestOpenContainerNode(node: AstNode = this.latestNode()): CompilationUnitNode | AbstractContainerAstNode {
+		if (node.tokenId === TokenId.COMPILATION_UNIT) {
+			return node as CompilationUnitNode;
+		}
+		if (node instanceof AbstractContainerAstNode && !node.closed) {
+			return node;
+		}
+		return this.latestOpenContainerNode(node.parent);
+	}
+
+	latestOpenNode(node: AstNode = this.latestNode()): AstNode {
+		const latestOpenContainerNode = this.latestOpenContainerNode(node);
+		const children = latestOpenContainerNode.children;
+		if (children == null || children.length === 0) {
+			return latestOpenContainerNode;
+		} else {
+			return children[children.length - 1];
+		}
+	}
+
+	moveCursorTo(offset: number): void {
 		this._astVisitor.moveCursorTo(offset);
 	}
 
-	protected moveToNextLine(): void {
+	moveToNextLine(): void {
 		this._astVisitor.moveToNextLine();
 	}
 
-	protected appendToAst(node: AstNode): void {
+	appendToAst(node: AstNode): void {
 		this._astVisitor.appendToAst(node);
 	}
 
-	protected detachFromAst(node: AstNode): void {
+	detachFromAst(node: AstNode): void {
 		this._astVisitor.detachFromAst(node);
 	}
 
@@ -51,11 +81,11 @@ export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
 	}
 
 	// mine
-	protected createAstNode<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N {
+	createAstNode<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N {
 		return new Constructor({...options, startLine: this.currentLine()});
 	}
 
-	protected createAndAppendToAst<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N {
+	createAndAppendToAst<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N {
 		const node = this.createAstNode(Constructor, options);
 		this.appendToAst(node);
 		return node;

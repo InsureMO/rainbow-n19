@@ -7,3 +7,4 @@ export * from './abstract-end-by-rbrace';
 export * from './abstract-end-by-semicolon';
 
 export * from './abstract-brace-block-declaration';
+export * from './abstract-brace-block';

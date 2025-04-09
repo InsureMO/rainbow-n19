@@ -218,7 +218,9 @@ export enum TokenId {
 	EnumClassDeclaration,
 	RecordClassDeclaration,
 	TraitClassDeclaration,
+	ClassBody,
 	StaticBlockDeclaration,
+	StaticBlockBody,
 	AnnotationDeclaration,
 }
 
@@ -456,7 +458,9 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	EnumClassDeclaration: {id: TokenId.EnumClassDeclaration, name: 'EnumClassDeclaration'},
 	RecordClassDeclaration: {id: TokenId.RecordClassDeclaration, name: 'RecordClassDeclaration'},
 	TraitClassDeclaration: {id: TokenId.TraitClassDeclaration, name: 'TraitClassDeclaration'},
+	ClassBody: {id: TokenId.ClassBody, name: 'ClassBody'},
 	StaticBlockDeclaration: {id: TokenId.StaticBlockDeclaration, name: 'StaticBlockDeclaration'},
+	StaticBlockBody: {id: TokenId.StaticBlockBody, name: 'StaticBlockBody'},
 	AnnotationDeclaration: {id: TokenId.AnnotationDeclaration, name: 'AnnotationDeclaration'}
 };
 

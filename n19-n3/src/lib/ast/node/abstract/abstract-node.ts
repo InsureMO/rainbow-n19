@@ -293,7 +293,7 @@ export abstract class AbstractAstNode implements AstNode {
 		if (text == null || text.length === 0) {
 			return;
 		}
-		this._text = this._text.substring(0, 0 - text.length);
+		this._text = this._text.slice(0, 0 - text.length);
 		this._endOffset = this._startOffset + this._text.length;
 		this.parent.detachTextFromTail(text);
 	}

@@ -153,6 +153,10 @@ export class AstVisitor {
 		return this._line;
 	}
 
+	currentNode(): AstNode {
+		return this._currentAstNode;
+	}
+
 	/**
 	 * the latest node appended to ast.
 	 */

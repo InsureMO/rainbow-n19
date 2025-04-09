@@ -171,6 +171,7 @@ import {
 	CharLiteralNode,
 	CharNode,
 	CharsNode,
+	ClassBodyNode,
 	ClassDeclarationNode,
 	ClassNode,
 	ColonNode,
@@ -304,6 +305,7 @@ import {
 	SlashyGStringQuotationMarkNode,
 	SpaceshipNode,
 	SpreadDotNode,
+	StaticBlockBodyNode,
 	StaticBlockDeclarationNode,
 	StaticNode,
 	StrictfpNode,
@@ -372,7 +374,11 @@ type TypeTokenIds =
 	| TokenId.AT_INTERFACE
 	| TokenId.ENUM
 	| TokenId.RECORD
-	| TokenId.TRAIT;
+	| TokenId.TRAIT
+	| TokenId.ClassBody;
+type StaticBlockTokenIds =
+	| TokenId.StaticBlockDeclaration
+	| TokenId.StaticBlockBody;
 type OperatorNoCaptorTokenId = TokenId.SafeIndexClose;
 type CharsNoCaptorTokenId = TokenId.Chars | TokenId.UnexpectedChars;
 type NoCaptorTokenIds =
@@ -381,6 +387,7 @@ type NoCaptorTokenIds =
 	| CommentTokenIds
 	| PackageNoCaptorTokenId | ImportNoCaptorTokenId
 	| TypeTokenIds
+	| StaticBlockTokenIds
 	| OperatorNoCaptorTokenId
 	| CharsNoCaptorTokenId;
 
@@ -438,8 +445,6 @@ type CaptorNotDefinedYetTokenIds /* TODO CaptorNotDefinedYetTokenIds */ =
 	| TokenId.GStringLiteral
 	| TokenId.SlashyGStringLiteral
 	| TokenId.DollarSlashyGStringLiteral
-	// static block
-	| TokenId.StaticBlockDeclaration
 	// annotation
 	| TokenId.AnnotationDeclaration;
 type NothingDefinedTokenIds = undefined;
@@ -682,6 +687,8 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.EnumClassDeclaration]: [EnumClassDeclarationNode, EnumClassDeclarationCaptor],
 	[TokenId.RecordClassDeclaration]: [RecordClassDeclarationNode, RecordClassDeclarationCaptor],
 	[TokenId.TraitClassDeclaration]: [TraitClassDeclarationNode, TraitClassDeclarationCaptor],
+	[TokenId.ClassBody]: [ClassBodyNode],
 	[TokenId.StaticBlockDeclaration]: [StaticBlockDeclarationNode],
+	[TokenId.StaticBlockBody]: [StaticBlockBodyNode],
 	[TokenId.AnnotationDeclaration]: [AnnotationDeclarationNode]
 } as const;

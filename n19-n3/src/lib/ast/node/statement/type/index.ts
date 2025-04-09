@@ -6,3 +6,5 @@ export * from './@interface-declaration';
 export * from './enum-class-declaration';
 export * from './record-class-declaration';
 export * from './trait-class-declaration';
+
+export * from './class-body';
