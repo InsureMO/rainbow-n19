@@ -31,7 +31,7 @@ export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker
 		];
 	}
 
-	shouldGrab(node: AstNode): boolean {
+	protected shouldGrab(node: AstNode): boolean {
 		return this.getConcatenatorTokenIds().includes(node.tokenId);
 	}
 

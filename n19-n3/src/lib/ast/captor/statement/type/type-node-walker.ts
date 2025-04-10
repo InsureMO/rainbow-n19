@@ -3,7 +3,7 @@ import {TokenId} from '../../../tokens';
 import {AbstractPreviousNodesWalker} from '../../abstract';
 
 export class TypeNodeWalker extends AbstractPreviousNodesWalker {
-	shouldGrab(node: AstNode): boolean {
+	protected shouldGrab(node: AstNode): boolean {
 		return [
 			// modifier nodes
 			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
