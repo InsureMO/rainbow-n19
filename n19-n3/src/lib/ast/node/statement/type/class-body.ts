@@ -11,6 +11,7 @@ export class ClassBodyNode extends AbstractBraceBlockNode {
 	/**
 	 * returns true, anything can be appended to me
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	protected couldBeChildOfMe(_node: AstNode): boolean {
 		return true;
 	}

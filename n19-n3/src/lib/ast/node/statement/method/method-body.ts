@@ -1,11 +1,11 @@
 import {AstNode} from '../../../ast-node';
 import {TokenId} from '../../../tokens';
 import {AbstractBraceBlockNode} from '../../abstract';
-import {StaticBlockDeclarationNode} from './static-block-declaration';
+import {MethodDeclarationNode} from './method-declaration';
 
-export class StaticBlockBodyNode extends AbstractBraceBlockNode {
+export class MethodBodyNode extends AbstractBraceBlockNode {
 	get tokenId(): TokenId {
-		return TokenId.StaticBlockBody;
+		return TokenId.MethodBody;
 	}
 
 	/**
@@ -19,6 +19,6 @@ export class StaticBlockBodyNode extends AbstractBraceBlockNode {
 	close() {
 		super.close();
 		// also close parent
-		(this.parent as StaticBlockDeclarationNode).close();
+		(this.parent as MethodDeclarationNode).close();
 	}
 }

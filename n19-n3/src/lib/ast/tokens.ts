@@ -221,6 +221,11 @@ export enum TokenId {
 	ClassBody,
 	StaticBlockDeclaration,
 	StaticBlockBody,
+	ConstructorDeclaration,
+	ConstructorBody,
+	MethodDeclaration,
+	MethodBody,
+	FieldDeclaration,
 	AnnotationDeclaration,
 }
 
@@ -461,6 +466,11 @@ export const Tokens: { [key in keyof typeof TokenId]: Token } = {
 	ClassBody: {id: TokenId.ClassBody, name: 'ClassBody'},
 	StaticBlockDeclaration: {id: TokenId.StaticBlockDeclaration, name: 'StaticBlockDeclaration'},
 	StaticBlockBody: {id: TokenId.StaticBlockBody, name: 'StaticBlockBody'},
+	ConstructorDeclaration: {id: TokenId.ConstructorDeclaration, name: 'ConstructorDeclaration'},
+	ConstructorBody: {id: TokenId.ConstructorBody, name: 'ConstructorBody'},
+	MethodDeclaration: {id: TokenId.MethodDeclaration, name: 'MethodDeclaration'},
+	MethodBody: {id: TokenId.MethodBody, name: 'MethodBody'},
+	FieldDeclaration: {id: TokenId.FieldDeclaration, name: 'FieldDeclaration'},
 	AnnotationDeclaration: {id: TokenId.AnnotationDeclaration, name: 'AnnotationDeclaration'}
 };
 

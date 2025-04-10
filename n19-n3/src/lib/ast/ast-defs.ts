@@ -179,6 +179,8 @@ import {
 	CommentKeywordNode,
 	CompilationUnitNode,
 	ConstNode,
+	ConstructorBodyNode,
+	ConstructorDeclarationNode,
 	ContinueNode,
 	DecimalExponentPartNode,
 	DecimalExponentSymbolNode,
@@ -204,6 +206,7 @@ import {
 	EnumNode,
 	EqualNode,
 	ExtendsNode,
+	FieldDeclarationNode,
 	FinallyNode,
 	FinalNode,
 	FloatNode,
@@ -241,6 +244,8 @@ import {
 	LongNode,
 	LParenNode,
 	LshiftAssignNode,
+	MethodBodyNode,
+	MethodDeclarationNode,
 	MethodPointerNode,
 	MethodReferenceNode,
 	ModAssignNode,
@@ -379,6 +384,12 @@ type TypeTokenIds =
 type StaticBlockTokenIds =
 	| TokenId.StaticBlockDeclaration
 	| TokenId.StaticBlockBody;
+type ClassMemberTokenIds =
+	| TokenId.ConstructorDeclaration
+	| TokenId.ConstructorBody
+	| TokenId.MethodDeclaration
+	| TokenId.MethodBody
+	| TokenId.FieldDeclaration;
 type OperatorNoCaptorTokenId = TokenId.SafeIndexClose;
 type CharsNoCaptorTokenId = TokenId.Chars | TokenId.UnexpectedChars;
 type NoCaptorTokenIds =
@@ -388,6 +399,7 @@ type NoCaptorTokenIds =
 	| PackageNoCaptorTokenId | ImportNoCaptorTokenId
 	| TypeTokenIds
 	| StaticBlockTokenIds
+	| ClassMemberTokenIds
 	| OperatorNoCaptorTokenId
 	| CharsNoCaptorTokenId;
 
@@ -690,5 +702,10 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.ClassBody]: [ClassBodyNode],
 	[TokenId.StaticBlockDeclaration]: [StaticBlockDeclarationNode],
 	[TokenId.StaticBlockBody]: [StaticBlockBodyNode],
+	[TokenId.ConstructorDeclaration]: [ConstructorDeclarationNode],
+	[TokenId.ConstructorBody]: [ConstructorBodyNode],
+	[TokenId.MethodDeclaration]: [MethodDeclarationNode],
+	[TokenId.MethodBody]: [MethodBodyNode],
+	[TokenId.FieldDeclaration]: [FieldDeclarationNode],
 	[TokenId.AnnotationDeclaration]: [AnnotationDeclarationNode]
 } as const;
