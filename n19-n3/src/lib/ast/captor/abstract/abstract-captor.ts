@@ -60,20 +60,23 @@ export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
 		}
 	}
 
-	moveCursorTo(offset: number): void {
+	protected moveCursorTo(offset: number): void {
 		this._astVisitor.moveCursorTo(offset);
 	}
 
-	moveToNextLine(): void {
+	protected moveToNextLine(): void {
 		this._astVisitor.moveToNextLine();
 	}
 
-	appendToAst(node: AstNode): void {
-		this._astVisitor.appendToAst(node);
+	protected appendToAst(...nodes: Array<AstNode>): void {
+		nodes.forEach(node => this._astVisitor.appendToAst(node));
 	}
 
-	detachFromAst(node: AstNode): void {
-		this._astVisitor.detachFromAst(node);
+	/**
+	 * make sure the nodes is from closest to farthest
+	 */
+	protected detachFromAst(...nodes: Array<AstNode>): void {
+		nodes.forEach(node => this._astVisitor.detachFromAst(node));
 	}
 
 	protected getCommentKeywords(): CommentKeywords {
@@ -81,11 +84,11 @@ export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
 	}
 
 	// mine
-	createAstNode<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N {
+	protected createAstNode<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N {
 		return new Constructor({...options, startLine: this.currentLine()});
 	}
 
-	createAndAppendToAst<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N {
+	protected createAndAppendToAst<N extends AstNode>(Constructor: AstNodeConstructor<N>, options: Omit<AstNodeConstructOptions, 'startLine'>): N {
 		const node = this.createAstNode(Constructor, options);
 		this.appendToAst(node);
 		return node;

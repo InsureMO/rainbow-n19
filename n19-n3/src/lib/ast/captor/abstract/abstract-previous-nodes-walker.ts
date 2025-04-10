@@ -15,15 +15,6 @@ export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker
 	}
 
 	/**
-	 * define additional modifier concatenator token ids rather than {@link #isModifierConcatenator} defined.
-	 * override this method to define additional modifier concatenator token ids.
-	 * or override {@link #isModifierConcatenator} when default behavior is unsuitable.
-	 */
-	protected additionalModifierConcatenatorTokenIds(): Array<TokenId> {
-		return [];
-	}
-
-	/**
 	 * default concatenator nodes are followings:
 	 * - {@link WhitespacesNode},
 	 * - {@link TabsNode},
@@ -31,36 +22,25 @@ export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker
 	 * - {@link SingleLineCommentNode},
 	 * - {@link MultipleLinesCommentNode}.
 	 */
-	isModifierConcatenator(node: AstNode): boolean {
+	protected getConcatenatorTokenIds(): Array<TokenId> {
 		return [
 			// comment nodes
 			TokenId.MultipleLinesComment, TokenId.SingleLineComment,
 			// new line, whitespaces and tabs
-			TokenId.NewLine, TokenId.Whitespaces, TokenId.Tabs,
-			...this.additionalModifierConcatenatorTokenIds()
-		].includes(node.tokenId);
+			TokenId.NewLine, TokenId.Whitespaces, TokenId.Tabs
+		];
 	}
 
-	abstract isModifier(node: AstNode): boolean;
-
-	/**
-	 * define additional token ids to release after grabbing rather than {@link #shouldReleaseAfterGrabbingPreviously} defined.
-	 * override this method to define additional token ids.
-	 * or override {@link #shouldReleaseAfterGrabbingPreviously} when default behavior is unsuitable.
-	 */
-	protected additionalReleaseAfterGrabbingPreviouslyTokenIds(): Array<TokenId> {
-		return [];
+	shouldGrab(node: AstNode): boolean {
+		return this.getConcatenatorTokenIds().includes(node.tokenId);
 	}
 
 	/**
 	 * Start from the farthest node, encounter a node whose check returns `true`, it is out of the scope of previously grabbing.
 	 * Keep going until reaching the first node whose check returns `false`.
 	 */
-	protected shouldReleaseAfterGrabbingPreviously(node: AstNode): boolean {
-		return [
-			TokenId.NewLine, TokenId.Whitespaces, TokenId.Tabs,
-			...this.additionalReleaseAfterGrabbingPreviouslyTokenIds()
-		].includes(node.tokenId);
+	protected shouldReleaseAfterGrabbed(node: AstNode): boolean {
+		return [TokenId.NewLine, TokenId.Whitespaces, TokenId.Tabs].includes(node.tokenId);
 	}
 
 	grabModifiersAndConcatenators(): Array<AstNode> {
@@ -71,7 +51,7 @@ export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker
 		// please note not all these nodes are belongs to me, will be removed later
 		// eslint-disable-next-line no-constant-condition
 		while (true) {
-			if (this.isModifierConcatenator(nodePrevious) || this.isModifier(nodePrevious)) {
+			if (this.shouldGrab(nodePrevious)) {
 				nodes.push(nodePrevious);
 			} else {
 				break;
@@ -86,7 +66,7 @@ export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker
 		let removeStartIndex = 0;
 		for (let index = nodes.length - 1; index >= 0; index--) {
 			const node = nodes[index];
-			if (this.shouldReleaseAfterGrabbingPreviously(node)) {
+			if (this.shouldReleaseAfterGrabbed(node)) {
 				removeStartIndex = index;
 			} else {
 				break;
@@ -97,16 +77,5 @@ export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker
 		}
 
 		return nodes.reverse();
-	}
-
-	detachPreviousNodes(nodes: Array<AstNode>): void {
-		const captor = this.captor;
-		// detach from parent, from closest to farthest, copy and reverse first
-		nodes.slice().reverse().forEach(node => captor.detachFromAst(node));
-	}
-
-	attachPreviousNodes(nodes: Array<AstNode>): void {
-		const captor = this.captor;
-		nodes.forEach(node => captor.appendToAst(node));
 	}
 }

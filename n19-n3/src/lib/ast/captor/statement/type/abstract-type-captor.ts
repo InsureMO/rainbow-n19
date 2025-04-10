@@ -64,13 +64,13 @@ export abstract class AbstractTypeCaptor<T extends TypeDefs> extends AbstractKey
 		const modifierNodes = nodeWalker.grabModifiersAndConcatenators();
 
 		// detach from parent, from closest to farthest, copy and reverse first
-		nodeWalker.detachPreviousNodes(modifierNodes);
+		this.detachFromAst(...(modifierNodes.slice().reverse()));
 		// create type declaration node
 		const node = this.createAndAppendToAst(this.getAstNodeConstructor(), {
 			startOffset: modifierNodes.length === 0 ? offset : modifierNodes[0].startOffset
 		});
 		// append modifier nodes to type declaration node
-		nodeWalker.attachPreviousNodes(modifierNodes);
+		this.appendToAst(...modifierNodes);
 
 		this.moveCursorTo(this.createChildAstNodes(node, char, offset));
 		return true;
