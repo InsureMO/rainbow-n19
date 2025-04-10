@@ -149,6 +149,7 @@ import {
 	AddNode,
 	AndNode,
 	AnnotationDeclarationNode,
+	ArrayInitializerNode,
 	ArrowNode,
 	AsNode,
 	AssertNode,
@@ -174,6 +175,8 @@ import {
 	ClassBodyNode,
 	ClassDeclarationNode,
 	ClassNode,
+	ClosureNode,
+	CodeBlockNode,
 	ColonNode,
 	CommaNode,
 	CommentKeywordNode,
@@ -198,6 +201,8 @@ import {
 	DoNode,
 	DotNode,
 	DoubleNode,
+	DoWhileBodyNode,
+	DoWhileDeclarationNode,
 	EllipsisNode,
 	ElseNode,
 	ElvisAssignNode,
@@ -210,7 +215,10 @@ import {
 	FinallyNode,
 	FinalNode,
 	FloatNode,
+	ForBodyNode,
+	ForDeclarationNode,
 	ForNode,
+	GenericTypeDeclarationNode,
 	GotoNode,
 	GreaterThanNode,
 	GreaterThanOrEqualNode,
@@ -225,6 +233,13 @@ import {
 	HexadecimalStartMarkNode,
 	IdenticalNode,
 	IdentifierNode,
+	IfDeclarationNode,
+	IfElseBodyNode,
+	IfElseDeclarationNode,
+	IfElseIfBodyNode,
+	IfElseIfDeclarationNode,
+	IfIfBodyNode,
+	IfIfDeclarationNode,
 	IfNode,
 	ImplementsNode,
 	ImportAllMarkNode,
@@ -237,6 +252,8 @@ import {
 	InterfaceDeclarationNode,
 	InterfaceNode,
 	IntNode,
+	LambdaBodyNode,
+	LambdaDeclarationNode,
 	LBraceNode,
 	LBrackNode,
 	LessThanNode,
@@ -334,6 +351,11 @@ import {
 	SubtractAssignNode,
 	SubtractNode,
 	SuperNode,
+	SwitchCaseBodyNode,
+	SwitchCaseDeclarationNode,
+	SwitchDeclarationNode,
+	SwitchDefaultBodyNode,
+	SwitchDefaultDeclarationNode,
 	SwitchNode,
 	SynchronizedNode,
 	TabsNode,
@@ -351,6 +373,8 @@ import {
 	VarNode,
 	VoidNode,
 	VolatileNode,
+	WhileBodyNode,
+	WhileDeclarationNode,
 	WhileNode,
 	WhitespacesNode,
 	XorAssignNode,
@@ -458,7 +482,31 @@ type CaptorNotDefinedYetTokenIds /* TODO CaptorNotDefinedYetTokenIds */ =
 	| TokenId.SlashyGStringLiteral
 	| TokenId.DollarSlashyGStringLiteral
 	// annotation
-	| TokenId.AnnotationDeclaration;
+	| TokenId.AnnotationDeclaration
+	| TokenId.GenericTypeDeclaration
+	| TokenId.IfDeclaration
+	| TokenId.IfIfDeclaration
+	| TokenId.IfIfBody
+	| TokenId.IfElseIfDeclaration
+	| TokenId.IfElseIfBody
+	| TokenId.IfElseDeclaration
+	| TokenId.IfElseBody
+	| TokenId.SwitchDeclaration
+	| TokenId.SwitchCaseDeclaration
+	| TokenId.SwitchCaseBody
+	| TokenId.SwitchDefaultDeclaration
+	| TokenId.SwitchDefaultBody
+	| TokenId.WhileDeclaration
+	| TokenId.WhileBody
+	| TokenId.DoWhileDeclaration
+	| TokenId.DoWhileBody
+	| TokenId.ForDeclaration
+	| TokenId.ForBody
+	| TokenId.Closure
+	| TokenId.LambdaDeclaration
+	| TokenId.LambdaBody
+	| TokenId.CodeBlock
+	| TokenId.ArrayInitializer
 type NothingDefinedTokenIds = undefined;
 type StandardDefTokenIds = Exclude<TokenId, NoCaptorTokenIds | SpecialDefTokenIds | CaptorNotDefinedYetTokenIds | NothingDefinedTokenIds>;
 type TokenAstDefsType = {
@@ -707,5 +755,29 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.MethodDeclaration]: [MethodDeclarationNode],
 	[TokenId.MethodBody]: [MethodBodyNode],
 	[TokenId.FieldDeclaration]: [FieldDeclarationNode],
-	[TokenId.AnnotationDeclaration]: [AnnotationDeclarationNode]
+	[TokenId.AnnotationDeclaration]: [AnnotationDeclarationNode],
+	[TokenId.GenericTypeDeclaration]: [GenericTypeDeclarationNode],
+	[TokenId.IfDeclaration]: [IfDeclarationNode],
+	[TokenId.IfIfDeclaration]: [IfIfDeclarationNode],
+	[TokenId.IfIfBody]: [IfIfBodyNode],
+	[TokenId.IfElseIfDeclaration]: [IfElseIfDeclarationNode],
+	[TokenId.IfElseIfBody]: [IfElseIfBodyNode],
+	[TokenId.IfElseDeclaration]: [IfElseDeclarationNode],
+	[TokenId.IfElseBody]: [IfElseBodyNode],
+	[TokenId.SwitchDeclaration]: [SwitchDeclarationNode],
+	[TokenId.SwitchCaseDeclaration]: [SwitchCaseDeclarationNode],
+	[TokenId.SwitchCaseBody]: [SwitchCaseBodyNode],
+	[TokenId.SwitchDefaultDeclaration]: [SwitchDefaultDeclarationNode],
+	[TokenId.SwitchDefaultBody]: [SwitchDefaultBodyNode],
+	[TokenId.WhileDeclaration]: [WhileDeclarationNode],
+	[TokenId.WhileBody]: [WhileBodyNode],
+	[TokenId.DoWhileDeclaration]: [DoWhileDeclarationNode],
+	[TokenId.DoWhileBody]: [DoWhileBodyNode],
+	[TokenId.ForDeclaration]: [ForDeclarationNode],
+	[TokenId.ForBody]: [ForBodyNode],
+	[TokenId.Closure]: [ClosureNode],
+	[TokenId.LambdaDeclaration]: [LambdaDeclarationNode],
+	[TokenId.LambdaBody]: [LambdaBodyNode],
+	[TokenId.CodeBlock]: [CodeBlockNode],
+	[TokenId.ArrayInitializer]: [ArrayInitializerNode]
 } as const;

@@ -1,39 +1,21 @@
 import {AstNodeConstructor} from '../../ast-node';
 import {AstVisitor} from '../../ast-visitor';
 import {AbstractTypeDeclarationNode, ClassBodyNode, LBraceNode} from '../../node';
-import {AbstractSingleCharCaptor, PreviousNodesWalkerAndVisitor} from '../abstract';
-import {PredictedClassOrMethodOrFieldDeclarationNodeWalker, StaticBlockNodeWalker} from '../statement';
+import {AbstractSingleCharCaptor} from '../abstract';
 import {Char} from '../types';
 import {AstChars} from '../util';
+import {LBraceNodeWalker} from './lbrace-node-walker';
 
-/**
- * "{"
- *
- * Lbrace could lead following nodes:
- * 1. {@link StaticBlockDeclarationNode},
- * 2. {@link ClassBodyNode}
- */
+/** "{" */
 export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
-	protected readonly _predictedClassDeclarationNodeWalker = new PredictedClassOrMethodOrFieldDeclarationNodeWalker(this);
-	protected readonly _staticBlockNodeWalker = new StaticBlockNodeWalker(this);
+	protected readonly nodeWalker = new LBraceNodeWalker(this);
 
 	constructor(astVisitor: AstVisitor) {
 		super(AstChars.LBrace, astVisitor);
 	}
 
-	protected getPredictedClassDeclarationNodeWalker(): PredictedClassOrMethodOrFieldDeclarationNodeWalker {
-		return this._predictedClassDeclarationNodeWalker;
-	}
-
-	protected getStaticBlockNodeWalker(): StaticBlockNodeWalker {
-		return this._staticBlockNodeWalker;
-	}
-
-	protected getNodeWalkers(): Array<PreviousNodesWalkerAndVisitor> {
-		return [
-			this.getPredictedClassDeclarationNodeWalker(),
-			this.getStaticBlockNodeWalker()
-		];
+	protected getNodeWalker(): LBraceNodeWalker {
+		return this.nodeWalker;
 	}
 
 	protected getAstNodeConstructor(): AstNodeConstructor<LBraceNode> {
@@ -50,7 +32,7 @@ export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
 	 * 99. if not anyone of above, should be {@link LBraceNode}.
 	 */
 	visit(char: Char, offset: number): boolean {
-		const visited: boolean = this.getNodeWalkers().some(walker => walker.visit(char, offset));
+		const visited: boolean = this.getNodeWalker().visit(char, offset);
 
 		// not accepted by any node walker
 		if (!visited) {
