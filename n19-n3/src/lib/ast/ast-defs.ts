@@ -168,6 +168,8 @@ import {
 	BreakNode,
 	ByteNode,
 	CaseNode,
+	CatchBodyNode,
+	CatchDeclarationNode,
 	CatchNode,
 	CharLiteralNode,
 	CharNode,
@@ -212,6 +214,8 @@ import {
 	EqualNode,
 	ExtendsNode,
 	FieldDeclarationNode,
+	FinallyBodyNode,
+	FinallyDeclarationNode,
 	FinallyNode,
 	FinalNode,
 	FloatNode,
@@ -366,6 +370,9 @@ import {
 	TraitClassDeclarationNode,
 	TraitNode,
 	TransientNode,
+	TryBodyNode,
+	TryCatchDeclarationNode,
+	TryDeclarationNode,
 	TryNode,
 	UndeterminedCharsNode,
 	UnexpectedCharsNode,
@@ -502,11 +509,18 @@ type CaptorNotDefinedYetTokenIds /* TODO CaptorNotDefinedYetTokenIds */ =
 	| TokenId.DoWhileBody
 	| TokenId.ForDeclaration
 	| TokenId.ForBody
+	| TokenId.TryCatchDeclaration
+	| TokenId.TryDeclaration
+	| TokenId.TryBody
+	| TokenId.CatchDeclaration
+	| TokenId.CatchBody
+	| TokenId.FinallyDeclaration
+	| TokenId.FinallyBody
 	| TokenId.Closure
 	| TokenId.LambdaDeclaration
 	| TokenId.LambdaBody
 	| TokenId.CodeBlock
-	| TokenId.ArrayInitializer
+	| TokenId.ArrayInitializer;
 type NothingDefinedTokenIds = undefined;
 type StandardDefTokenIds = Exclude<TokenId, NoCaptorTokenIds | SpecialDefTokenIds | CaptorNotDefinedYetTokenIds | NothingDefinedTokenIds>;
 type TokenAstDefsType = {
@@ -775,6 +789,13 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.DoWhileBody]: [DoWhileBodyNode],
 	[TokenId.ForDeclaration]: [ForDeclarationNode],
 	[TokenId.ForBody]: [ForBodyNode],
+	[TokenId.TryCatchDeclaration]: [TryCatchDeclarationNode],
+	[TokenId.TryDeclaration]: [TryDeclarationNode],
+	[TokenId.TryBody]: [TryBodyNode],
+	[TokenId.CatchDeclaration]: [CatchDeclarationNode],
+	[TokenId.CatchBody]: [CatchBodyNode],
+	[TokenId.FinallyDeclaration]: [FinallyDeclarationNode],
+	[TokenId.FinallyBody]: [FinallyBodyNode],
 	[TokenId.Closure]: [ClosureNode],
 	[TokenId.LambdaDeclaration]: [LambdaDeclarationNode],
 	[TokenId.LambdaBody]: [LambdaBodyNode],

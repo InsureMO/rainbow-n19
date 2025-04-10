@@ -17,6 +17,7 @@ export * from './switch';
 export * from './while';
 export * from './do-while';
 export * from './for';
+export * from './try-catch';
 
 export * from './closure';
 export * from './lambda';

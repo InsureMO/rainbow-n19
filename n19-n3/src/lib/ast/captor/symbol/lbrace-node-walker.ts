@@ -31,7 +31,7 @@ export class LBraceNodeWalker extends AbstractPreviousNodesWalker implements Pre
 			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
 			TokenId.ABSTRACT, TokenId.STATIC,
 			TokenId.SEALED, TokenId.NON_SEALED, TokenId.STRICTFP,
-			// not for interface
+			// not for interface, could be type or method
 			TokenId.FINAL,
 			// for class only
 			TokenId.EXTENDS, TokenId.IMPLEMENTS, TokenId.PERMITS,
