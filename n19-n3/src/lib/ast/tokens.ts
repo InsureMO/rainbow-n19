@@ -266,14 +266,17 @@ interface Token {
 	top?: boolean;
 }
 
-export const Tokens =
-	Object.keys(TokenId).reduce((ret, key) => {
-		ret[key] = {id: TokenId[key], name: key};
-		if (TokenId[key] === TokenId.COMPILATION_UNIT) {
-			ret[key].top = true;
-		}
+// key is value of enumeration, according to typescript standard
+export const Tokens: Readonly<{ [key in Exclude<keyof typeof TokenId, number>]: Token }> = Object.keys(TokenId).reduce((ret, key) => {
+	if ('0123456789'.includes(`${key}`[0])) {
 		return ret;
-	}, {} as { [key in keyof typeof TokenId]: Token });
+	}
+	ret[key] = {id: TokenId[key], name: key};
+	if (ret[key].id === TokenId.COMPILATION_UNIT) {
+		ret[key].top = true;
+	}
+	return ret;
+}, {} as { [key in Exclude<keyof typeof TokenId, number>]: Token });
 
 export const TokenToNodeTypes: Array<NodeType> = (() => {
 	const tokens = Object.values(Tokens);

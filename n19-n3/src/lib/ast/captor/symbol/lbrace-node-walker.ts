@@ -1,5 +1,4 @@
 import {AstNode} from '../../ast-node';
-import {TokenId} from '../../tokens';
 import {AbstractPreviousNodesWalker, PreviousNodesWalkerAndVisitor} from '../abstract';
 import {Char} from '../types';
 
@@ -9,41 +8,22 @@ import {Char} from '../types';
  * - {@link ClassBodyNode},
  * - {@link StaticBlockBodyNode},
  * - {@link MethodBodyNode},
- * - closure
- * - lambda body block
- * - switch body block
- * - code block
- * - array initializer block
+ * - {@link ClosureNode},
+ * - {@link LambdaBodyNode},
+ * - {@link IfIfBodyNode}, {@link IfElseIfBodyNode} and {@link IfElseBodyNode},
+ * - {@link WhileBodyNode}, {@link DoWhileBodyNode},
+ * - {@link ForBodyNode},
+ * - {@link TryBodyNode}, {@link CatchBodyNode}, {@link FinallyBodyNode},
+ * - {@link CodeBlock},
+ * - {@link ArrayInitializer}
  */
 export class LBraceNodeWalker extends AbstractPreviousNodesWalker implements PreviousNodesWalkerAndVisitor {
-	protected additionalModifierConcatenatorTokenIds(): Array<TokenId> {
-		return [
-			// identifier
-			TokenId.Dot, TokenId.Identifier,
-			// annotation
-			TokenId.AnnotationDeclaration
-		];
-	}
-
-	isModifier(node: AstNode): boolean {
-		return [
-			// modifier nodes
-			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
-			TokenId.ABSTRACT, TokenId.STATIC,
-			TokenId.SEALED, TokenId.NON_SEALED, TokenId.STRICTFP,
-			// not for interface, could be type or method
-			TokenId.FINAL,
-			// for class only
-			TokenId.EXTENDS, TokenId.IMPLEMENTS, TokenId.PERMITS,
-			// for method only
-			TokenId.SYNCHRONIZED, TokenId.NATIVE,
-			// for field only
-			TokenId.TRANSIENT | TokenId.VOLATILE,
-			// for lambda
-			TokenId.Arrow,
-			// for switch
-			TokenId.SWITCH
-		].includes(node.tokenId);
+	/**
+	 * could be any kind, returns true
+	 */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	isModifier(_node: AstNode): boolean {
+		return true;
 	}
 
 	visit(char: Char, offset: number): boolean {

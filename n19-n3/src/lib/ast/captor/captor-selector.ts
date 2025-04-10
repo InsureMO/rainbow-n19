@@ -20,9 +20,15 @@ const AllCaptors = Object.values({
 	...OperatorCaptors,
 	...CommentCaptors,
 	...StatementCaptors
-});
-const AllInstantiableCaptors = AllCaptors.filter(captor => !captor.name.startsWith('Abstract'));
-const CaptorsExceptUndeterminedChars = AllInstantiableCaptors.filter(captor => captor !== FundamentalCaptors.UndeterminedCharsCaptor);
+}).filter(cls => cls.name.endsWith('Captor'));
+const AllInstantiableCaptors =
+	AllCaptors.filter(captor => {
+		return !captor.name.startsWith('Abstract');
+	});
+const CaptorsExceptUndeterminedChars =
+	AllInstantiableCaptors.filter(captor => {
+		return captor !== FundamentalCaptors.UndeterminedCharsCaptor;
+	});
 
 export class CaptorSelector {
 	protected readonly _delegate: CaptorDelegate;
