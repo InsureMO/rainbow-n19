@@ -8,4 +8,3 @@ export * from './record-class-declaration-captor';
 export * from './trait-class-declaration-captor';
 
 export * from './type-node-walker';
-
