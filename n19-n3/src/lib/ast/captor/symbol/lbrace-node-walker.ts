@@ -6,7 +6,8 @@ export class LBraceNodeWalker extends AbstractPreviousNodesWalker {
 	 * could be any kind, returns true
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	isModifier(_node: AstNode): boolean {
+	protected shouldGrab(_node: AstNode): boolean {
+		// TODO grab nodes
 		return true;
 	}
 }

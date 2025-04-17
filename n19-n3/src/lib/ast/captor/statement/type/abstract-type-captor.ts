@@ -61,7 +61,7 @@ export abstract class AbstractTypeCaptor<T extends TypeDefs> extends AbstractKey
 	visit(char: Char, offset: number): boolean {
 		const nodeWalker = this.getNodeWalker();
 		// to find all keywords which in front of me and can be grabbed as my child
-		const modifierNodes = nodeWalker.grabModifiersAndConcatenators();
+		const modifierNodes = nodeWalker.grabNodes();
 
 		// detach from parent, from closest to farthest, copy and reverse first
 		this.detachFromAst(...(modifierNodes.slice().reverse()));

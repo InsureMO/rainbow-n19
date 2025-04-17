@@ -39,7 +39,8 @@ export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
 	}
 
 	visit(char: Char, offset: number): boolean {
-		const previousNodes = this.getNodeWalker().grabModifiersAndConcatenators();
+		// TODO deal with nodes
+		const previousNodes = this.getNodeWalker().grabNodes();
 
 		// as single char
 		return super.visit(char, offset);

@@ -6,5 +6,5 @@ export interface PreviousNodesWalker {
 	 * The returned nodes are sorted in the order of their natural appearance.
 	 * Note that only sibling nodes will be grabbed, and it will not traverse up to the parent node.
 	 */
-	grabModifiersAndConcatenators(): Array<AstNode>;
+	grabNodes(): Array<AstNode>;
 }

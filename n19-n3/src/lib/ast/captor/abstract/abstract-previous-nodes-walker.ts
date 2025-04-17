@@ -5,6 +5,29 @@ import {PreviousNodesWalker} from './previous-nodes-walker';
 
 export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker {
 	private readonly _captor: AstNodeCaptor;
+	/**
+	 * default grabbed nodes are followings:
+	 * - {@link WhitespacesNode},
+	 * - {@link TabsNode},
+	 * - {@link NewLineNode},
+	 * - {@link SingleLineCommentNode},
+	 * - {@link MultipleLinesCommentNode}.
+	 */
+	protected readonly _defaultGrabbedTokenIds: Array<TokenId> = [
+		// comment nodes
+		TokenId.MultipleLinesComment, TokenId.SingleLineComment,
+		// new line, whitespaces and tabs
+		TokenId.NewLine, TokenId.Whitespaces, TokenId.Tabs
+	];
+	/**
+	 * default release nodes after grabbed are followings:
+	 * - {@link WhitespacesNode},
+	 * - {@link TabsNode},
+	 * - {@link NewLineNode},
+	 */
+	protected readonly _defaultReleaseTokenIdsAfterGrabbed: Array<TokenId> = [
+		TokenId.NewLine, TokenId.Whitespaces, TokenId.Tabs
+	];
 
 	constructor(captor: AstNodeCaptor) {
 		this._captor = captor;
@@ -14,25 +37,16 @@ export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker
 		return this._captor;
 	}
 
-	/**
-	 * default concatenator nodes are followings:
-	 * - {@link WhitespacesNode},
-	 * - {@link TabsNode},
-	 * - {@link NewLineNode},
-	 * - {@link SingleLineCommentNode},
-	 * - {@link MultipleLinesCommentNode}.
-	 */
-	protected getConcatenatorTokenIds(): Array<TokenId> {
-		return [
-			// comment nodes
-			TokenId.MultipleLinesComment, TokenId.SingleLineComment,
-			// new line, whitespaces and tabs
-			TokenId.NewLine, TokenId.Whitespaces, TokenId.Tabs
-		];
+	protected getGrabbedTokenIds(): Array<TokenId> {
+		return this._defaultGrabbedTokenIds;
 	}
 
 	protected shouldGrab(node: AstNode): boolean {
-		return this.getConcatenatorTokenIds().includes(node.tokenId);
+		return this.getGrabbedTokenIds().includes(node.tokenId);
+	}
+
+	protected getReleaseTokenIdsAfterGrabbed(): Array<TokenId> {
+		return this._defaultReleaseTokenIdsAfterGrabbed;
 	}
 
 	/**
@@ -40,10 +54,10 @@ export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker
 	 * Keep going until reaching the first node whose check returns `false`.
 	 */
 	protected shouldReleaseAfterGrabbed(node: AstNode): boolean {
-		return [TokenId.NewLine, TokenId.Whitespaces, TokenId.Tabs].includes(node.tokenId);
+		return this.getReleaseTokenIdsAfterGrabbed().includes(node.tokenId);
 	}
 
-	grabModifiersAndConcatenators(): Array<AstNode> {
+	grabNodes(): Array<AstNode> {
 		// to find all keywords which in front of me and can be grabbed as my child
 		const nodes: Array<AstNode> = [];
 		let nodePrevious = this.captor.latestOpenNode();

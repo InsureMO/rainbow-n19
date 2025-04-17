@@ -25,7 +25,9 @@ export class AstBuilder {
 
 	static ast(document: string, options?: AstBuildOptions): Ast {
 		const {timeSpentLogEnabled, ...restOptions} = options ?? {};
-		return (timeSpentLogEnabled ?? AstBuilder.TIME_SPENT_LOG_ENABLED) ? this.logTimeSpent(document, restOptions) : AstVisitor.visit(document, restOptions);
+		return (timeSpentLogEnabled ?? AstBuilder.TIME_SPENT_LOG_ENABLED)
+			? this.logTimeSpent(document, restOptions)
+			: AstVisitor.visit(document, restOptions);
 	}
 
 	static printDefs(): void {
