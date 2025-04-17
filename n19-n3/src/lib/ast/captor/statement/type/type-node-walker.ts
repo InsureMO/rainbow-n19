@@ -1,7 +1,6 @@
 import {AstNode} from '../../../ast-node';
 import {TokenId} from '../../../tokens';
 import {AbstractPreviousNodesWalker} from '../../abstract';
-import {AstNodeCaptor} from '../../captor';
 
 export class TypeNodeWalker extends AbstractPreviousNodesWalker {
 	protected shouldGrab(node: AstNode): boolean {
