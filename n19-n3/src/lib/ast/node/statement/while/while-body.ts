@@ -1,11 +1,8 @@
 import {AstNode} from '../../../ast-node';
 import {TokenId} from '../../../tokens';
-import {AbstractContainerAstNode} from '../../abstract';
+import {AbstractBraceBlockNode} from '../../abstract';
 
-/**
- * TODO define while body node
- */
-export class WhileBodyNode extends AbstractContainerAstNode {
+export class WhileBodyNode extends AbstractBraceBlockNode {
 	get tokenId(): TokenId {
 		return TokenId.WhileBody;
 	}
