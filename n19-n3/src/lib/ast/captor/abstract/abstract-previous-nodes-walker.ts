@@ -37,6 +37,10 @@ export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker
 		return this._captor;
 	}
 
+	isDefaultGrabbedTokenId(tokenId: TokenId): boolean {
+		return this._defaultGrabbedTokenIds.includes(tokenId);
+	}
+
 	protected getGrabbedTokenIds(): Array<TokenId> {
 		return this._defaultGrabbedTokenIds;
 	}
@@ -57,10 +61,10 @@ export abstract class AbstractPreviousNodesWalker implements PreviousNodesWalker
 		return this.getReleaseTokenIdsAfterGrabbed().includes(node.tokenId);
 	}
 
-	grabNodes(): Array<AstNode> {
+	grabNodes(latestOpenNode?: AstNode): Array<AstNode> {
 		// to find all keywords which in front of me and can be grabbed as my child
 		const nodes: Array<AstNode> = [];
-		let nodePrevious = this.captor.latestOpenNode();
+		let nodePrevious = latestOpenNode ?? this.captor.latestOpenNode();
 		// find all modifier and concatenator nodes before me, from closest to farthest
 		// please note not all these nodes are belongs to me, will be removed later
 		// eslint-disable-next-line no-constant-condition

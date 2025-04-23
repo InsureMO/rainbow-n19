@@ -236,6 +236,7 @@ export enum TokenId {
 	IfElseDeclaration,
 	IfElseBody,
 	SwitchDeclaration,
+	SwitchBody,
 	SwitchCaseDeclaration,
 	SwitchCaseBody,
 	SwitchDefaultDeclaration,

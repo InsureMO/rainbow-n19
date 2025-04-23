@@ -1,4 +1,5 @@
 export * from './switch-declaration';
+export * from './switch-body';
 
 export * from './switch-case-declaration';
 export * from './switch-case-body';

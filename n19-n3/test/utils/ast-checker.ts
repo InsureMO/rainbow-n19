@@ -31,7 +31,7 @@ export class AstChecker {
 			this._logs.push([
 				indent,
 				bullet,
-				' ✅ ',
+				' ✅  ',
 				`Check [type=${type.name}, `,
 				`startOffset=${startOffset}, `,
 				`endOffset=${endOffset}, `,
@@ -55,7 +55,18 @@ export class AstChecker {
 			throw e;
 		}
 		if (children != null) {
-			expect(node.children.length).toBe(children.length);
+			try {
+				expect(node.children.length).toBe(children.length);
+			} catch (e) {
+				this._logs.push([
+					indent,
+					bullet,
+					' 💔 ',
+					`Check children count[type=${type.name}].`
+				].join(''));
+				this.print();
+				throw e;
+			}
 			children.forEach((child, index) => {
 				if (bullet === '0.') {
 					this.doCheck(node.children[index], children[index], `${index + 1}.`);

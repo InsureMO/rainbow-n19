@@ -1,13 +1,22 @@
-import {AstNode} from '../../ast-node';
+import {TokenId} from '../../tokens';
 import {AbstractPreviousNodesWalker} from '../abstract';
 
 export class LBraceNodeWalker extends AbstractPreviousNodesWalker {
-	/**
-	 * could be any kind, returns true
-	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected shouldGrab(_node: AstNode): boolean {
-		// TODO grab nodes
-		return true;
+	private _grabbedTokenIds: Array<TokenId> = [
+		...this._defaultGrabbedTokenIds,
+		// type, constructor, method, field
+		TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
+		// type, method
+		TokenId.ABSTRACT,
+		// type, method, field
+		TokenId.STATIC, TokenId.FINAL,
+		// type, constructor, method, field
+		TokenId.STRICTFP,
+		// type, constructor, method, field
+		TokenId.AnnotationDeclaration, TokenId.GenericTypeDeclaration
+	];
+
+	protected getGrabbedTokenIds(): Array<TokenId> {
+		return this._grabbedTokenIds;
 	}
 }

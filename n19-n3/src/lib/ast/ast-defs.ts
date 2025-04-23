@@ -354,7 +354,7 @@ import {
 	StringUnicodeEscapeNode,
 	SubtractAssignNode,
 	SubtractNode,
-	SuperNode,
+	SuperNode, SwitchBodyNode,
 	SwitchCaseBodyNode,
 	SwitchCaseDeclarationNode,
 	SwitchDeclarationNode,
@@ -500,6 +500,7 @@ type CaptorNotDefinedYetTokenIds /* TODO CaptorNotDefinedYetTokenIds */ =
 	| TokenId.IfElseBody
 	| TokenId.SwitchDeclaration
 	| TokenId.SwitchCaseDeclaration
+	| TokenId.SwitchBody
 	| TokenId.SwitchCaseBody
 	| TokenId.SwitchDefaultDeclaration
 	| TokenId.SwitchDefaultBody
@@ -779,6 +780,7 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.IfElseDeclaration]: [IfElseDeclarationNode],
 	[TokenId.IfElseBody]: [IfElseBodyNode],
 	[TokenId.SwitchDeclaration]: [SwitchDeclarationNode],
+	[TokenId.SwitchBody]: [SwitchBodyNode],
 	[TokenId.SwitchCaseDeclaration]: [SwitchCaseDeclarationNode],
 	[TokenId.SwitchCaseBody]: [SwitchCaseBodyNode],
 	[TokenId.SwitchDefaultDeclaration]: [SwitchDefaultDeclarationNode],
