@@ -1,6 +1,6 @@
 import {AstNodeConstructor} from '@rainbow-n19/n3-ast';
 import {AstVisitor} from '../../ast-visitor';
-import {WhileDeclarationNode, WhileNode} from '../../node';
+import {DoWhileDeclarationNode, WhileDeclarationNode, WhileNode} from '../../node';
 import {TokenId} from '../../tokens';
 import {Char} from '../types';
 import {AstKeywords} from '../util';
@@ -35,7 +35,20 @@ export class KwWhileCaptor extends AbstractKeywordCaptor<WhileDeclarationNode> {
 	 */
 	visit(char: Char, offset: number): boolean {
 		const latestOpenContainerNode = this.latestOpenContainerNode();
+		let isDoWhile = false;
 		if (latestOpenContainerNode.tokenId === TokenId.DoWhileDeclaration) {
+			// check while keyword in this do-while block or not
+			// only while keyword not exists, this while keyword is allowed to be appended to do-while declaration
+			// otherwise treated as a new while declaration, and close do-while declaration node
+			const exists = latestOpenContainerNode.children.some(child => child.tokenId === TokenId.WHILE);
+			if (exists) {
+				(latestOpenContainerNode as DoWhileDeclarationNode).close();
+				isDoWhile = false;
+			} else {
+				isDoWhile = true;
+			}
+		}
+		if (isDoWhile) {
 			super.createAndAppendToAst(WhileNode, {text: this.keyword, startOffset: offset});
 			this.moveCursorTo(offset + this.charsLength);
 			return true;

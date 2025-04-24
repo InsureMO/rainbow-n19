@@ -1,11 +1,12 @@
 import {AstNode} from '@rainbow-n19/n3-ast';
 import {TokenId} from '../../../tokens';
-import {AbstractContainerAstNode} from '../../abstract';
+import {AbstractMightBeBraceBlockNode} from '../../abstract';
+import {SwitchCaseDeclarationNode} from './switch-case-declaration';
 
 /**
  * TODO define switch-case body node
  */
-export class SwitchCaseBodyNode extends AbstractContainerAstNode {
+export class SwitchCaseBodyNode extends AbstractMightBeBraceBlockNode {
 	get tokenId(): TokenId {
 		return TokenId.SwitchCaseBody;
 	}
@@ -13,5 +14,11 @@ export class SwitchCaseBodyNode extends AbstractContainerAstNode {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	protected couldBeChildOfMe(_node: AstNode): boolean {
 		return true;
+	}
+
+	close() {
+		super.close();
+		// also close parent
+		(this.parent as SwitchCaseDeclarationNode).close();
 	}
 }

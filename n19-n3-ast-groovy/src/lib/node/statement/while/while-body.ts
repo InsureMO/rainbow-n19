@@ -1,8 +1,9 @@
 import {AstNode} from '@rainbow-n19/n3-ast';
 import {TokenId} from '../../../tokens';
-import {AbstractBraceBlockNode} from '../../abstract';
+import {AbstractMightBeBraceBlockNode} from '../../abstract';
+import {WhileDeclarationNode} from './while-declaration';
 
-export class WhileBodyNode extends AbstractBraceBlockNode {
+export class WhileBodyNode extends AbstractMightBeBraceBlockNode {
 	get tokenId(): TokenId {
 		return TokenId.WhileBody;
 	}
@@ -10,5 +11,11 @@ export class WhileBodyNode extends AbstractBraceBlockNode {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	protected couldBeChildOfMe(_node: AstNode): boolean {
 		return true;
+	}
+
+	close() {
+		super.close();
+		// also close parent
+		(this.parent as WhileDeclarationNode).close();
 	}
 }

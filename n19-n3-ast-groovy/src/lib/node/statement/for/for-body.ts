@@ -1,11 +1,12 @@
 import {AstNode} from '@rainbow-n19/n3-ast';
 import {TokenId} from '../../../tokens';
-import {AbstractContainerAstNode} from '../../abstract';
+import {AbstractMightBeBraceBlockNode} from '../../abstract';
+import {ForDeclarationNode} from './for-declaration';
 
 /**
  * TODO define for body node
  */
-export class ForBodyNode extends AbstractContainerAstNode {
+export class ForBodyNode extends AbstractMightBeBraceBlockNode {
 	get tokenId(): TokenId {
 		return TokenId.ForBody;
 	}
@@ -13,5 +14,11 @@ export class ForBodyNode extends AbstractContainerAstNode {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	protected couldBeChildOfMe(_node: AstNode): boolean {
 		return true;
+	}
+
+	close() {
+		super.close();
+		// also close parent
+		(this.parent as ForDeclarationNode).close();
 	}
 }

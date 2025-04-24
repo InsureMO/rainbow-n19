@@ -47,13 +47,13 @@ export class TypeNodeWalker extends AbstractPreviousNodesWalker {
  * if they are belongs to this type declaration.
  */
 export abstract class AbstractTypeCaptor<T extends TypeDefs> extends AbstractKeywordCaptor<T[1]> {
-	protected readonly _nodeWalker = new TypeNodeWalker(this);
+	private readonly _nodeWalker = new TypeNodeWalker(this);
 
 	protected constructor(keyword: T[0], astVisitor: AstVisitor) {
 		super(keyword, astVisitor);
 	}
 
-	protected getNodeWalker(): TypeNodeWalker {
+	protected get nodeWalker(): TypeNodeWalker {
 		return this._nodeWalker;
 	}
 
@@ -73,7 +73,7 @@ export abstract class AbstractTypeCaptor<T extends TypeDefs> extends AbstractKey
 	}
 
 	visit(char: Char, offset: number): boolean {
-		const nodeWalker = this.getNodeWalker();
+		const nodeWalker = this.nodeWalker;
 		// to find all keywords which in front of me and can be grabbed as my child
 		const modifierNodes = nodeWalker.grabNodes();
 

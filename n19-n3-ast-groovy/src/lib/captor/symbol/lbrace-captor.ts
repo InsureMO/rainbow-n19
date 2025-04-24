@@ -92,8 +92,7 @@ export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
 		// if else
 		[TokenId.IfIfDeclaration]: IfIfBodyNode,
 		[TokenId.IfElseIfDeclaration]: IfElseIfBodyNode,
-		// never know it, since always can append an "if" to make it as an "else-if" declaration
-		// [TokenId.IfElseDeclaration]: IfElseBodyNode,
+		[TokenId.IfElseDeclaration]: IfElseBodyNode,
 		// while loop
 		[TokenId.WhileDeclaration]: WhileBodyNode,
 		// do-while loop
@@ -110,14 +109,14 @@ export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
 		[TokenId.FinallyDeclaration]: FinallyBodyNode
 		// TODO left brace after array creator, which is an array initializer
 	};
-	protected readonly nodeWalker = new LBraceNodeWalker(this);
+	private readonly _nodeWalker = new LBraceNodeWalker(this);
 
 	constructor(astVisitor: AstVisitor) {
 		super(AstChars.LBrace, astVisitor);
 	}
 
-	protected getNodeWalker(): LBraceNodeWalker {
-		return this.nodeWalker;
+	protected get nodeWalker(): LBraceNodeWalker {
+		return this._nodeWalker;
 	}
 
 	protected getAstNodeConstructor(): AstNodeConstructor<LBraceNode> {
@@ -150,7 +149,7 @@ export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
 
 	protected visitWhenAllExpectedSituationsFallThrough(offset: number): void {
 		// check the previous nodes
-		const nodeWalker = this.getNodeWalker();
+		const nodeWalker = this.nodeWalker;
 		const previousNodes = nodeWalker.grabNodes();
 		// if the nearest keyword is "static"
 		// it will be recognized as a static block. and nodes before static node will not be collected into static block.
