@@ -1,4 +1,6 @@
-import {ClassCreateHelper, JREClassLoader, Modifier} from '../src/lib/Java';
+import {Java} from '../src';
+
+const {ClassCreateHelper, JREClassLoader, Modifier} = Java;
 
 describe('ClassLoader Test', () => {
 	const classLoader = new JREClassLoader('17');

@@ -1,7 +1,7 @@
-import {Ast, AstBuilder, AstBuildOptions} from '../ast';
+import {GroovyAst, GroovyAstBuilder, GroovyAstBuildOptions} from '@rainbow-n19/n3-ast-groovy';
 
 export interface GroovyLanguageServerOptions {
-	buildOptions?: AstBuildOptions;
+	buildOptions?: GroovyAstBuildOptions;
 }
 
 type PracticalGroovyLanguageServerOptions = GroovyLanguageServerOptions;
@@ -13,7 +13,7 @@ export class GroovyLanguageServer {
 		this._options = {...(options ?? {})};
 	}
 
-	parse(source: string): Ast {
-		return AstBuilder.ast(source, this._options.buildOptions);
+	parse(source: string): GroovyAst {
+		return GroovyAstBuilder.ast(source, this._options.buildOptions);
 	}
 }

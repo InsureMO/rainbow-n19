@@ -2,7 +2,7 @@ import {LanguageSupport} from '@codemirror/language';
 import {Compartment, Extension, StateEffect} from '@codemirror/state';
 import {EditorView} from '@codemirror/view';
 import {EditingClassLoader} from '@rainbow-n19/n2';
-import {AstHolder, DefaultAstHolder} from './ast';
+import {AstHolder, DefaultAstHolder} from '@rainbow-n19/n3-ast-groovy';
 import {createGroovyLanguage, GroovyLanguageServerOptions} from './language';
 import {ClickablePlugin, GroovyFacet, HelpToggle, KeymapCommentPlugin, KeymapHelpPlugin} from './plugins';
 

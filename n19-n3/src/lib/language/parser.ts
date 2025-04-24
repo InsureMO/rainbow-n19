@@ -1,5 +1,7 @@
 import {Input, NodeSet as LezerNodeSet, Parser, PartialParse, Tree} from '@lezer/common';
-import {AstHolder, AstNode, TokenId, TokenToNodeTypes} from '../ast';
+import {AstNode} from '@rainbow-n19/n3-ast';
+import {AstHolder, TokenId} from '@rainbow-n19/n3-ast-groovy';
+import {TokenToNodeTypes} from '../groovy';
 import {GroovyLanguageServer, GroovyLanguageServerOptions} from './server';
 
 export interface GroovyParserOptions extends GroovyLanguageServerOptions {

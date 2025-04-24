@@ -133,7 +133,7 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 		const themeCompartment = new Compartment();
 		const help = new ContextBasedEditorHelp(context);
 		const language = groovy({
-			languageOptions: {timeSpentLogEnabled: true},
+			languageOptions: {buildOptions: {timeSpentLogEnabled: true}},
 			classLoader: () => context.current.classLoader,
 			helpToggle: help
 		}).reconfigurable();
@@ -211,7 +211,7 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 			context.current.classLoader = options.classLoader;
 			context.current.classDocs = options.classDocs;
 			state.reconfigureLanguage(state.editor, {
-				languageOptions: {timeSpentLogEnabled: true},
+				languageOptions: {buildOptions: {timeSpentLogEnabled: true}},
 				classLoader: () => context.current.classLoader,
 				helpToggle: state.help
 			});

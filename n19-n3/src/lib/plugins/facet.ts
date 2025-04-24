@@ -1,6 +1,6 @@
 import {combineConfig, Facet} from '@codemirror/state';
 import {EditingClassLoader} from '@rainbow-n19/n2';
-import {AstHolder} from '../ast';
+import {AstHolder} from '@rainbow-n19/n3-ast-groovy';
 
 export interface HelpToggle {
 	toggle(): void;

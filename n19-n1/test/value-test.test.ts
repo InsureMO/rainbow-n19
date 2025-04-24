@@ -1,9 +1,8 @@
 // noinspection ES6PreferShortImport
 
 import Decimal from 'decimal.js';
-import '../src/lib/decimaljs-init';
-import {ValueOperator as VO} from '../src/lib/value-operator';
-import {FormatType, Rounding} from '../src/lib/value-operators';
+import '../src';
+import {FormatType, Rounding, ValueOperator as VO} from '../src';
 
 Decimal.set({precision: 200, rounding: Decimal.ROUND_HALF_UP});
 describe('Value test chain', () => {
@@ -51,7 +50,7 @@ describe('Value test chain', () => {
 		const y = -1;
 		expect(VO.from(y).isPositive().orUseDefault(0).value()).toBe(0);
 		expect(VO.from(y).isNegative.isInteger.replaceWith((n: number) => {
-			return n * 10
+			return n * 10;
 		}).toNumber.value()).toBe(-10);
 
 		// VO.of(null).x.isNumber.toNumber.orUseDefault(0).value();

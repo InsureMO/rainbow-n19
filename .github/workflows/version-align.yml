@@ -42,6 +42,18 @@ jobs:
         with:
           module-name: n19-n2
           target-version: ${{ inputs.version }}
+      - name: Change Version of n19-n3-ast
+        uses: ./.github/actions/change-node-version/
+        id: change-node-version-n19-n3-ast
+        with:
+          module-name: n19-n3-ast
+          target-version: ${{ inputs.version }}
+      - name: Change Version of n19-n3-ast-groovy
+        uses: ./.github/actions/change-node-version/
+        id: change-node-version-n19-n3-ast-groovy
+        with:
+          module-name: n19-n3-ast-groovy
+          target-version: ${{ inputs.version }}
       - name: Change Version of n19-n3
         uses: ./.github/actions/change-node-version/
         id: change-node-version-n19-n3
