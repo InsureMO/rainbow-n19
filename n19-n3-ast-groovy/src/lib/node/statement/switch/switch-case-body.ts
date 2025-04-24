@@ -4,7 +4,8 @@ import {AbstractMightBeBraceBlockNode} from '../../abstract';
 import {SwitchCaseDeclarationNode} from './switch-case-declaration';
 
 /**
- * TODO define switch-case body node
+ * switch-case body node
+ * can start/end by brace pair, or not
  */
 export class SwitchCaseBodyNode extends AbstractMightBeBraceBlockNode {
 	get tokenId(): TokenId {

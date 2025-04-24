@@ -3,6 +3,10 @@ import {TokenId} from '../../../tokens';
 import {AbstractMightBeBraceBlockNode} from '../../abstract';
 import {WhileDeclarationNode} from './while-declaration';
 
+/**
+ * while body node
+ * can start/end by brace pair, or not
+ */
 export class WhileBodyNode extends AbstractMightBeBraceBlockNode {
 	get tokenId(): TokenId {
 		return TokenId.WhileBody;

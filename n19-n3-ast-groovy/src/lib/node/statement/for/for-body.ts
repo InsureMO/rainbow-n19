@@ -4,7 +4,8 @@ import {AbstractMightBeBraceBlockNode} from '../../abstract';
 import {ForDeclarationNode} from './for-declaration';
 
 /**
- * TODO define for body node
+ * define for body node.
+ * can start/end by brace pair, or not
  */
 export class ForBodyNode extends AbstractMightBeBraceBlockNode {
 	get tokenId(): TokenId {

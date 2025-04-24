@@ -4,7 +4,8 @@ import {AbstractMightBeBraceBlockNode} from '../../abstract';
 import {IfIfDeclarationNode} from './if-if-declaration';
 
 /**
- * TODO define if-if body node
+ * if-if body node
+ * can start/end by brace pair, or not
  */
 export class IfIfBodyNode extends AbstractMightBeBraceBlockNode {
 	get tokenId(): TokenId {

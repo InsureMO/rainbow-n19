@@ -4,7 +4,8 @@ import {AbstractMightBeBraceBlockNode} from '../../abstract';
 import {SwitchDefaultDeclarationNode} from './switch-default-declaration';
 
 /**
- * TODO define switch-default body node
+ * switch-default body node
+ * can start/end by brace pair, or not
  */
 export class SwitchDefaultBodyNode extends AbstractMightBeBraceBlockNode {
 	get tokenId(): TokenId {

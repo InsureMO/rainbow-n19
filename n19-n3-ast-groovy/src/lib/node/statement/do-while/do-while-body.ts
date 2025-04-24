@@ -3,7 +3,9 @@ import {TokenId} from '../../../tokens';
 import {AbstractMightBeBraceBlockNode} from '../../abstract';
 
 /**
- * TODO define do-while body node
+ * do-while body node
+ * can start/end by brace pair, or not
+ * after do-while body, there should be a while keyword and a condition-in-paren node
  */
 export class DoWhileBodyNode extends AbstractMightBeBraceBlockNode {
 	get tokenId(): TokenId {
