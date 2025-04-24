@@ -1,10 +1,10 @@
 import {AstNodeConstructor} from '@rainbow-n19/n3-ast';
-import {AstVisitor} from '../../../ast-visitor';
-import {EnumClassDeclarationNode, EnumNode} from '../../../node';
-import {AstKeywords} from '../../util';
+import {AstVisitor} from '../../ast-visitor';
+import {EnumClassDeclarationNode, EnumNode} from '../../node';
+import {AstKeywords} from '../util';
 import {AbstractTypeCaptor} from './abstract-type-captor';
 
-export class EnumClassDeclarationCaptor extends AbstractTypeCaptor<[AstKeywords.Enum, EnumClassDeclarationNode, EnumNode]> {
+export class KwEnumCaptor extends AbstractTypeCaptor<[AstKeywords.Enum, EnumClassDeclarationNode, EnumNode]> {
 	constructor(astVisitor: AstVisitor) {
 		super(AstKeywords.Enum, astVisitor);
 	}

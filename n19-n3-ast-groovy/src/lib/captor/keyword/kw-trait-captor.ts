@@ -1,10 +1,10 @@
 import {AstNodeConstructor} from '@rainbow-n19/n3-ast';
-import {AstVisitor} from '../../../ast-visitor';
-import {TraitClassDeclarationNode, TraitNode} from '../../../node';
-import {AstKeywords} from '../../util';
+import {AstVisitor} from '../../ast-visitor';
+import {TraitClassDeclarationNode, TraitNode} from '../../node';
+import {AstKeywords} from '../util';
 import {AbstractTypeCaptor} from './abstract-type-captor';
 
-export class TraitClassDeclarationCaptor extends AbstractTypeCaptor<[AstKeywords.Trait, TraitClassDeclarationNode, TraitNode]> {
+export class KwTraitCaptor extends AbstractTypeCaptor<[AstKeywords.Trait, TraitClassDeclarationNode, TraitNode]> {
 	constructor(astVisitor: AstVisitor) {
 		super(AstKeywords.Trait, astVisitor);
 	}

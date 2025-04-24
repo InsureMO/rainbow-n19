@@ -25,10 +25,31 @@ import {
 	WhileBodyNode
 } from '../../node';
 import {TokenId} from '../../tokens';
-import {AbstractSingleCharCaptor} from '../abstract';
+import {AbstractPreviousNodesWalker, AbstractSingleCharCaptor} from '../abstract';
 import {Char} from '../types';
 import {AstChars} from '../util';
-import {LBraceNodeWalker} from './lbrace-node-walker';
+
+export class LBraceNodeWalker extends AbstractPreviousNodesWalker {
+	private _grabbedTokenIds: Array<TokenId> = [
+		...this._defaultGrabbedTokenIds,
+		// type, constructor, method, field
+		TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
+		// type, method
+		TokenId.ABSTRACT,
+		// type, method, field
+		TokenId.STATIC, TokenId.FINAL,
+		// type, constructor, method, field
+		TokenId.STRICTFP,
+		// method in interface
+		TokenId.DEFAULT,
+		// type, constructor, method, field
+		TokenId.AnnotationDeclaration, TokenId.GenericTypeDeclaration
+	];
+
+	protected getGrabbedTokenIds(): Array<TokenId> {
+		return this._grabbedTokenIds;
+	}
+}
 
 /**
  * "{"
@@ -71,7 +92,8 @@ export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
 		// if else
 		[TokenId.IfIfDeclaration]: IfIfBodyNode,
 		[TokenId.IfElseIfDeclaration]: IfElseIfBodyNode,
-		[TokenId.IfElseDeclaration]: IfElseBodyNode,
+		// never know it, since always can append an "if" to make it as an "else-if" declaration
+		// [TokenId.IfElseDeclaration]: IfElseBodyNode,
 		// while loop
 		[TokenId.WhileDeclaration]: WhileBodyNode,
 		// do-while loop
@@ -107,6 +129,7 @@ export class LBraceCaptor extends AbstractSingleCharCaptor<LBraceNode> {
 		const tokenIdOfLatestOpenContainerNode = latestOpenContainerNode.tokenId;
 
 		const performed = this.tryToPerformCreateAndAppendSingleNode(tokenIdOfLatestOpenContainerNode, offset);
+		// TODO visit when it is IfDeclaration
 		if (!performed) {
 			// compilation unit, class body or something else
 			this.visitWhenAllExpectedSituationsFallThrough(offset);

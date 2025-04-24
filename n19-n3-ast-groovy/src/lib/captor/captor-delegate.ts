@@ -94,15 +94,45 @@ export class CaptorDelegate {
 				break;
 			}
 			case isFuncCheck(first, type): {
-				// cannot compare function in definition phase, simply add
-				if (rest.length === 0) {
-					// my check ends by this char, register captor directly
-					this._byFunc.push([first, captor]);
+				// compare function
+				const exists = this._byFunc.find(([f]) => f === first);
+				if (exists != null) {
+					const [, existsCaptorOrDelegate] = exists;
+					if (existsCaptorOrDelegate instanceof CaptorDelegate) {
+						// the function has already been registered by at least one other captor,
+						// and the capture check for one of the existing Captors that contains at least two or more chars.
+						if (rest.length === 0) {
+							// register me as the fallback of exists delegate
+							existsCaptorOrDelegate.registerFallback(captor);
+						} else {
+							// register me to existing delegate
+							existsCaptorOrDelegate.registerCaptorByCharsChecker(captor, checker, index + 1);
+						}
+					} else {
+						// this char already registered by another captor
+						if (rest.length === 0) {
+							// the capture check of another captor is exactly same as given one
+							// leading conflict, throw error
+							throw new Error(`Conflict in capture check between two captors [${existsCaptorOrDelegate.constructor.name}] and [${captor.constructor.name}].`);
+						} else {
+							// create a delegate and register me to it
+							// using the exists as fallback
+							const delegate = new CaptorDelegate(this._astVisitor);
+							delegate.registerCaptorByCharsChecker(captor, checker, index + 1);
+							delegate.registerFallback(existsCaptorOrDelegate);
+							this._byFunc.push([first, delegate]);
+						}
+					}
 				} else {
-					// my check has more chars, create a delegate and register me to it
-					const delegate = new CaptorDelegate(this._astVisitor);
-					delegate.registerCaptorByCharsChecker(captor, checker, index + 1);
-					this._byFunc.push([first, delegate]);
+					if (rest.length === 0) {
+						// my check ends by this function, register captor directly
+						this._byFunc.push([first, captor]);
+					} else {
+						// my check has more, create a delegate and register me to it
+						const delegate = new CaptorDelegate(this._astVisitor);
+						delegate.registerCaptorByCharsChecker(captor, checker, index + 1);
+						this._byFunc.push([first, delegate]);
+					}
 				}
 				break;
 			}

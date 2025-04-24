@@ -1,5 +1,5 @@
-import {AstNodeConstructor} from '@rainbow-n19/n3-ast';
-import {AstVisitor} from '../../../ast-visitor';
+import {AstNode, AstNodeConstructor} from '@rainbow-n19/n3-ast';
+import {AstVisitor} from '../../ast-visitor';
 import {
 	AtInterfaceDeclarationNode,
 	AtInterfaceNode,
@@ -13,11 +13,12 @@ import {
 	RecordNode,
 	TraitClassDeclarationNode,
 	TraitNode
-} from '../../../node';
-import {AbstractKeywordCaptor} from '../../keyword';
-import {Char} from '../../types';
-import {AstKeywords} from '../../util';
-import {TypeNodeWalker} from './type-node-walker';
+} from '../../node';
+import {TokenId} from '../../tokens';
+import {AbstractPreviousNodesWalker} from '../abstract';
+import {Char} from '../types';
+import {AstKeywords} from '../util';
+import {AbstractKeywordCaptor} from './index';
 
 export type TypeDefs =
 	| [AstKeywords.Interface, InterfaceDeclarationNode, InterfaceNode]
@@ -26,6 +27,19 @@ export type TypeDefs =
 	| [AstKeywords.Enum, EnumClassDeclarationNode, EnumNode]
 	| [AstKeywords.Record, RecordClassDeclarationNode, RecordNode]
 	| [AstKeywords.Trait, TraitClassDeclarationNode, TraitNode]
+
+export class TypeNodeWalker extends AbstractPreviousNodesWalker {
+	protected shouldGrab(node: AstNode): boolean {
+		return super.shouldGrab(node) || [
+			// modifier nodes
+			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
+			TokenId.ABSTRACT, TokenId.FINAL, TokenId.STATIC,
+			TokenId.SEALED, TokenId.NON_SEALED, TokenId.STRICTFP,
+			// annotation
+			TokenId.AnnotationDeclaration
+		].includes(node.tokenId);
+	}
+}
 
 /**
  * capture type keywords to create type declaration node,

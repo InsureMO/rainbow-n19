@@ -1,8 +1,8 @@
 import {AstNode, AstNodeConstructor} from '@rainbow-n19/n3-ast';
 import {AstVisitor} from '../../ast-visitor';
 import {AbstractMultipleCharsCaptor} from '../abstract';
-import {AstNodeCaptorCharFuncCheck, AstNodeCaptorCheckers} from '../captor';
-import {Character} from '../character';
+import {AstNodeCaptorCheckers} from '../captor';
+import {isNotJavaIdentifierPart} from '../captor-func-checkers';
 import {Char} from '../types';
 
 export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractMultipleCharsCaptor<N> {
@@ -12,13 +12,7 @@ export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractM
 	protected constructor(keyword: string, astVisitor: AstVisitor) {
 		super(keyword, astVisitor);
 		this._keyword = keyword;
-		this._checker = [...this.charsArray, (() => {
-			const func: AstNodeCaptorCharFuncCheck = (char) => {
-				return char == null || !Character.isJavaIdentifierPart(char.codePointAt(0));
-			};
-			func.describe = () => 'isNotJavaIdentifierPart';
-			return func;
-		})()];
+		this._checker = [...this.charsArray, isNotJavaIdentifierPart];
 	}
 
 	protected get keyword(): string {

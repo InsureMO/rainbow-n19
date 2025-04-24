@@ -6,6 +6,7 @@ export * from './character';
 export * from './captor';
 export * from './captor-delegate';
 export * from './captor-selector';
+export * from './captor-func-checkers';
 
 export * from './fundamental';
 export * from './symbol';

@@ -7,13 +7,11 @@ import {
 	ArrowCaptor,
 	AssignCaptor,
 	AstNodeCaptor,
-	AtInterfaceDeclarationCaptor,
 	BitandAssignCaptor,
 	BitandCaptor,
 	BitnotCaptor,
 	BitorAssignCaptor,
 	BitorCaptor,
-	ClassDeclarationCaptor,
 	ColonCaptor,
 	CommaCaptor,
 	DecreaseCaptor,
@@ -22,26 +20,27 @@ import {
 	DotCaptor,
 	EllipsisCaptor,
 	ElvisCaptor,
-	EnumClassDeclarationCaptor,
 	EqualCaptor,
 	GreaterThanCaptor,
 	GreaterThanOrEqualCaptor,
 	IdenticalCaptor,
 	IdentifierCaptor,
 	IncreaseCaptor,
-	InterfaceDeclarationCaptor,
 	KwAbstractCaptor,
 	KwAsCaptor,
 	KwAssertCaptor,
+	KwAtInterfaceCaptor,
 	KwBreakCaptor,
 	KwCaseCaptor,
 	KwCatchCaptor,
+	KwClassCaptor,
 	KwConstCaptor,
 	KwContinueCaptor,
 	KwDefaultCaptor,
 	KwDefCaptor,
 	KwDoCaptor,
 	KwElseCaptor,
+	KwEnumCaptor,
 	KwExtendsCaptor,
 	KwFinalCaptor,
 	KwFinallyCaptor,
@@ -51,6 +50,7 @@ import {
 	KwImplementsCaptor,
 	KwInCaptor,
 	KwInstanceofCaptor,
+	KwInterfaceCaptor,
 	KwNativeCaptor,
 	KwNewCaptor,
 	KwNonSealedCaptor,
@@ -62,6 +62,7 @@ import {
 	KwPrivateCaptor,
 	KwProtectedCaptor,
 	KwPublicCaptor,
+	KwRecordCaptor,
 	KwReturnCaptor,
 	KwSealedCaptor,
 	KwStaticCaptor,
@@ -73,6 +74,7 @@ import {
 	KwThreadsafeCaptor,
 	KwThrowCaptor,
 	KwThrowsCaptor,
+	KwTraitCaptor,
 	KwTransientCaptor,
 	KwTryCaptor,
 	KwVarCaptor,
@@ -119,7 +121,6 @@ import {
 	RangeInclusiveCaptor,
 	RBraceCaptor,
 	RBrackCaptor,
-	RecordClassDeclarationCaptor,
 	RegexFindCaptor,
 	RegexMatchCaptor,
 	RParenCaptor,
@@ -135,7 +136,6 @@ import {
 	SubtractAssignCaptor,
 	SubtractCaptor,
 	TabsCaptor,
-	TraitClassDeclarationCaptor,
 	UndeterminedCharsCaptor,
 	UrshiftAssignCaptor,
 	WhitespacesCaptor,
@@ -421,6 +421,15 @@ type ClassMemberTokenIds =
 	| TokenId.MethodDeclaration
 	| TokenId.MethodBody
 	| TokenId.FieldDeclaration;
+type LogicBlockTokenIds =
+	| TokenId.IfIfDeclaration | TokenId.IfIfBody
+	| TokenId.IfElseIfDeclaration | TokenId.IfElseIfBody
+	| TokenId.IfElseDeclaration | TokenId.IfElseBody
+	| TokenId.WhileBody | TokenId.DoWhileBody
+	| TokenId.SwitchBody | TokenId.SwitchCaseBody | TokenId.SwitchDefaultBody
+	| TokenId.ForBody
+	| TokenId.TryBody | TokenId.CatchBody | TokenId.FinallyBody
+	;
 type OperatorNoCaptorTokenId = TokenId.SafeIndexClose;
 type CharsNoCaptorTokenId = TokenId.Chars | TokenId.UnexpectedChars;
 type NoCaptorTokenIds =
@@ -431,6 +440,7 @@ type NoCaptorTokenIds =
 	| TypeTokenIds
 	| StaticBlockTokenIds
 	| ClassMemberTokenIds
+	| LogicBlockTokenIds
 	| OperatorNoCaptorTokenId
 	| CharsNoCaptorTokenId;
 
@@ -491,32 +501,6 @@ type CaptorNotDefinedYetTokenIds /* TODO CaptorNotDefinedYetTokenIds */ =
 	// annotation
 	| TokenId.AnnotationDeclaration
 	| TokenId.GenericTypeDeclaration
-	| TokenId.IfDeclaration
-	| TokenId.IfIfDeclaration
-	| TokenId.IfIfBody
-	| TokenId.IfElseIfDeclaration
-	| TokenId.IfElseIfBody
-	| TokenId.IfElseDeclaration
-	| TokenId.IfElseBody
-	| TokenId.SwitchDeclaration
-	| TokenId.SwitchCaseDeclaration
-	| TokenId.SwitchBody
-	| TokenId.SwitchCaseBody
-	| TokenId.SwitchDefaultDeclaration
-	| TokenId.SwitchDefaultBody
-	| TokenId.WhileDeclaration
-	| TokenId.WhileBody
-	| TokenId.DoWhileDeclaration
-	| TokenId.DoWhileBody
-	| TokenId.ForDeclaration
-	| TokenId.ForBody
-	| TokenId.TryCatchDeclaration
-	| TokenId.TryDeclaration
-	| TokenId.TryBody
-	| TokenId.CatchDeclaration
-	| TokenId.CatchBody
-	| TokenId.FinallyDeclaration
-	| TokenId.FinallyBody
 	| TokenId.Closure
 	| TokenId.LambdaDeclaration
 	| TokenId.LambdaBody
@@ -756,12 +740,12 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.PackageDeclaration]: [PackageDeclarationNode, KwPackageCaptor],
 	[TokenId.ImportDeclaration]: [ImportDeclarationNode, KwImplementsCaptor],
 	[TokenId.ImportAllMark]: [ImportAllMarkNode],
-	[TokenId.InterfaceDeclaration]: [InterfaceDeclarationNode, InterfaceDeclarationCaptor],
-	[TokenId.ClassDeclaration]: [ClassDeclarationNode, ClassDeclarationCaptor],
-	[TokenId.AtInterfaceClassDeclaration]: [AtInterfaceDeclarationNode, AtInterfaceDeclarationCaptor],
-	[TokenId.EnumClassDeclaration]: [EnumClassDeclarationNode, EnumClassDeclarationCaptor],
-	[TokenId.RecordClassDeclaration]: [RecordClassDeclarationNode, RecordClassDeclarationCaptor],
-	[TokenId.TraitClassDeclaration]: [TraitClassDeclarationNode, TraitClassDeclarationCaptor],
+	[TokenId.InterfaceDeclaration]: [InterfaceDeclarationNode, KwInterfaceCaptor],
+	[TokenId.ClassDeclaration]: [ClassDeclarationNode, KwClassCaptor],
+	[TokenId.AtInterfaceClassDeclaration]: [AtInterfaceDeclarationNode, KwAtInterfaceCaptor],
+	[TokenId.EnumClassDeclaration]: [EnumClassDeclarationNode, KwEnumCaptor],
+	[TokenId.RecordClassDeclaration]: [RecordClassDeclarationNode, KwRecordCaptor],
+	[TokenId.TraitClassDeclaration]: [TraitClassDeclarationNode, KwTraitCaptor],
 	[TokenId.ClassBody]: [ClassBodyNode],
 	[TokenId.StaticBlockDeclaration]: [StaticBlockDeclarationNode],
 	[TokenId.StaticBlockBody]: [StaticBlockBodyNode],
@@ -772,31 +756,31 @@ export const TokenAstDefs: TokenAstDefsType = {
 	[TokenId.FieldDeclaration]: [FieldDeclarationNode],
 	[TokenId.AnnotationDeclaration]: [AnnotationDeclarationNode],
 	[TokenId.GenericTypeDeclaration]: [GenericTypeDeclarationNode],
-	[TokenId.IfDeclaration]: [IfDeclarationNode],
+	[TokenId.IfDeclaration]: [IfDeclarationNode, KwIfCaptor],
 	[TokenId.IfIfDeclaration]: [IfIfDeclarationNode],
 	[TokenId.IfIfBody]: [IfIfBodyNode],
 	[TokenId.IfElseIfDeclaration]: [IfElseIfDeclarationNode],
 	[TokenId.IfElseIfBody]: [IfElseIfBodyNode],
 	[TokenId.IfElseDeclaration]: [IfElseDeclarationNode],
 	[TokenId.IfElseBody]: [IfElseBodyNode],
-	[TokenId.SwitchDeclaration]: [SwitchDeclarationNode],
+	[TokenId.SwitchDeclaration]: [SwitchDeclarationNode, KwSwitchCaptor],
 	[TokenId.SwitchBody]: [SwitchBodyNode],
-	[TokenId.SwitchCaseDeclaration]: [SwitchCaseDeclarationNode],
+	[TokenId.SwitchCaseDeclaration]: [SwitchCaseDeclarationNode, KwCaseCaptor],
 	[TokenId.SwitchCaseBody]: [SwitchCaseBodyNode],
-	[TokenId.SwitchDefaultDeclaration]: [SwitchDefaultDeclarationNode],
+	[TokenId.SwitchDefaultDeclaration]: [SwitchDefaultDeclarationNode, KwDefaultCaptor],
 	[TokenId.SwitchDefaultBody]: [SwitchDefaultBodyNode],
-	[TokenId.WhileDeclaration]: [WhileDeclarationNode],
+	[TokenId.WhileDeclaration]: [WhileDeclarationNode, KwWhileCaptor],
 	[TokenId.WhileBody]: [WhileBodyNode],
-	[TokenId.DoWhileDeclaration]: [DoWhileDeclarationNode],
+	[TokenId.DoWhileDeclaration]: [DoWhileDeclarationNode, KwDoCaptor],
 	[TokenId.DoWhileBody]: [DoWhileBodyNode],
-	[TokenId.ForDeclaration]: [ForDeclarationNode],
+	[TokenId.ForDeclaration]: [ForDeclarationNode, KwForCaptor],
 	[TokenId.ForBody]: [ForBodyNode],
-	[TokenId.TryCatchDeclaration]: [TryCatchDeclarationNode],
-	[TokenId.TryDeclaration]: [TryDeclarationNode],
+	[TokenId.TryCatchDeclaration]: [TryCatchDeclarationNode, KwTryCaptor],
+	[TokenId.TryDeclaration]: [TryDeclarationNode, KwTryCaptor],
 	[TokenId.TryBody]: [TryBodyNode],
-	[TokenId.CatchDeclaration]: [CatchDeclarationNode],
+	[TokenId.CatchDeclaration]: [CatchDeclarationNode, KwCatchCaptor],
 	[TokenId.CatchBody]: [CatchBodyNode],
-	[TokenId.FinallyDeclaration]: [FinallyDeclarationNode],
+	[TokenId.FinallyDeclaration]: [FinallyDeclarationNode, KwFinallyCaptor],
 	[TokenId.FinallyBody]: [FinallyBodyNode],
 	[TokenId.Closure]: [ClosureNode],
 	[TokenId.LambdaDeclaration]: [LambdaDeclarationNode],
