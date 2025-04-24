@@ -1,17 +1,16 @@
-import {AstNodeConstructor} from '../../../ast-node';
-import {AstVisitor} from '../../../ast-visitor';
-import {PackageDeclarationNode, PackageNode} from '../../../node';
-import {AbstractKeywordCaptor} from '../../keyword';
-import {Char} from '../../types';
-import {AstKeywords} from '../../util';
+import {AstNodeConstructor} from '../../ast-node';
+import {AstVisitor} from '../../ast-visitor';
+import {PackageDeclarationNode, PackageNode} from '../../node';
+import {Char} from '../types';
+import {AstKeywords} from '../util';
+import {AbstractKeywordCaptor} from './abstract-keyword-captor';
 
 /**
- * package declaration.
  * in Groovy, there are multiple scenarios for declaring a package:
  * 1. in same line, ends with ";" or new line.
  * 2. in multiple lines, ends with ";" or new line. and lines must be connected by ML comment.
  */
-export class PackageDeclarationCaptor extends AbstractKeywordCaptor<PackageDeclarationNode> {
+export class KwPackageCaptor extends AbstractKeywordCaptor<PackageDeclarationNode> {
 	constructor(astVisitor: AstVisitor) {
 		super(AstKeywords.Package, astVisitor);
 	}

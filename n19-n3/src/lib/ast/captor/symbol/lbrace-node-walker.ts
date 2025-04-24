@@ -12,6 +12,8 @@ export class LBraceNodeWalker extends AbstractPreviousNodesWalker {
 		TokenId.STATIC, TokenId.FINAL,
 		// type, constructor, method, field
 		TokenId.STRICTFP,
+		// method in interface
+		TokenId.DEFAULT,
 		// type, constructor, method, field
 		TokenId.AnnotationDeclaration, TokenId.GenericTypeDeclaration
 	];
