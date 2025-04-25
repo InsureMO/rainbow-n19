@@ -1,4 +1,5 @@
-import {AstChars, AstKeywords, AstLiterals, AstMarks, AstOperators, AstPrimitiveTypes, Char} from '../captor';
+import {Char} from '../types';
+import {AstChars, AstKeywords, AstLiterals, AstMarks, AstOperators, AstPrimitiveTypes} from '../util';
 import {AstNodeCaptorConstructor, AstNodeConstructor} from './types';
 
 export enum AtomicTokenType {

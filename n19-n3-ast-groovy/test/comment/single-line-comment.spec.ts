@@ -1,14 +1,4 @@
-import {
-	CharsNode,
-	CommentKeywordNode,
-	CompilationUnitNode,
-	GroovyAstBuilder,
-	NewLineNode,
-	SingleLineCommentNode,
-	SingleLineCommentStartMarkNode,
-	TabsNode,
-	WhitespacesNode
-} from '../../src';
+import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../../src';
 import {AstChecker} from '../utils/ast-checker';
 
 describe('Single line comment test', () => {
@@ -21,12 +11,12 @@ describe('Single line comment test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 11, 0, text, [
-				[SingleLineCommentNode, 0, 11, 1, text, [
-					[SingleLineCommentStartMarkNode, 0, 2, 1, '//'],
-					[WhitespacesNode, 2, 3, 1, ' '],
-					[CommentKeywordNode, 3, 7, 1, 'todo'],
-					[WhitespacesNode, 7, 8, 1, ' '],
-					[CharsNode, 8, 11, 1, 'abc']
+				[TokenId.SingleLineComment, 0, 11, 1, text, [
+					[TokenId.SingleLineCommentStartMark, 0, 2, 1, '//'],
+					[TokenId.Whitespaces, 2, 3, 1, ' '],
+					[TokenId.CommentKeyword, 3, 7, 1, 'todo'],
+					[TokenId.Whitespaces, 7, 8, 1, ' '],
+					[TokenId.Chars, 8, 11, 1, 'abc']
 				]]
 			]
 		]);
@@ -36,14 +26,14 @@ describe('Single line comment test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 15, 0, text, [
-				[SingleLineCommentNode, 0, 15, 1, text, [
-					[SingleLineCommentStartMarkNode, 0, 2, 1, '//'],
-					[WhitespacesNode, 2, 3, 1, ' '],
-					[CharsNode, 3, 6, 1, 'abc'],
-					[TabsNode, 6, 8, 1, '\t\t'],
-					[CharsNode, 8, 11, 1, 'def'],
-					[WhitespacesNode, 11, 12, 1, ' '],
-					[CharsNode, 12, 15, 1, 'xyz']
+				[TokenId.SingleLineComment, 0, 15, 1, text, [
+					[TokenId.SingleLineCommentStartMark, 0, 2, 1, '//'],
+					[TokenId.Whitespaces, 2, 3, 1, ' '],
+					[TokenId.Chars, 3, 6, 1, 'abc'],
+					[TokenId.Tabs, 6, 8, 1, '\t\t'],
+					[TokenId.Chars, 8, 11, 1, 'def'],
+					[TokenId.Whitespaces, 11, 12, 1, ' '],
+					[TokenId.Chars, 12, 15, 1, 'xyz']
 				]]
 			]
 		]);
@@ -54,23 +44,23 @@ describe('Single line comment test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 28, 0, text, [
-				[SingleLineCommentNode, 0, 15, 1, '// abc\t\tdef xyz', [
-					[SingleLineCommentStartMarkNode, 0, 2, 1, '//'],
-					[WhitespacesNode, 2, 3, 1, ' '],
-					[CharsNode, 3, 6, 1, 'abc'],
-					[TabsNode, 6, 8, 1, '\t\t'],
-					[CharsNode, 8, 11, 1, 'def'],
-					[WhitespacesNode, 11, 12, 1, ' '],
-					[CharsNode, 12, 15, 1, 'xyz']
+				[TokenId.SingleLineComment, 0, 15, 1, '// abc\t\tdef xyz', [
+					[TokenId.SingleLineCommentStartMark, 0, 2, 1, '//'],
+					[TokenId.Whitespaces, 2, 3, 1, ' '],
+					[TokenId.Chars, 3, 6, 1, 'abc'],
+					[TokenId.Tabs, 6, 8, 1, '\t\t'],
+					[TokenId.Chars, 8, 11, 1, 'def'],
+					[TokenId.Whitespaces, 11, 12, 1, ' '],
+					[TokenId.Chars, 12, 15, 1, 'xyz']
 				]],
-				[NewLineNode, 15, 16, 1, '\n'],
-				[TabsNode, 16, 17, 2, '\t'],
-				[SingleLineCommentNode, 17, 28, 2, '// 2nd line', [
-					[SingleLineCommentStartMarkNode, 17, 19, 2, '//'],
-					[WhitespacesNode, 19, 20, 2, ' '],
-					[CharsNode, 20, 23, 2, '2nd'],
-					[WhitespacesNode, 23, 24, 2, ' '],
-					[CharsNode, 24, 28, 2, 'line']
+				[TokenId.NewLine, 15, 16, 1, '\n'],
+				[TokenId.Tabs, 16, 17, 2, '\t'],
+				[TokenId.SingleLineComment, 17, 28, 2, '// 2nd line', [
+					[TokenId.SingleLineCommentStartMark, 17, 19, 2, '//'],
+					[TokenId.Whitespaces, 19, 20, 2, ' '],
+					[TokenId.Chars, 20, 23, 2, '2nd'],
+					[TokenId.Whitespaces, 23, 24, 2, ' '],
+					[TokenId.Chars, 24, 28, 2, 'line']
 				]]
 			]
 		]);

@@ -1,15 +1,4 @@
-import {
-	CharsNode,
-	CommentKeywordNode,
-	CompilationUnitNode,
-	GroovyAstBuilder,
-	MultipleLinesCommentEndMarkNode,
-	MultipleLinesCommentNode,
-	MultipleLinesCommentStartMarkNode,
-	MultipleNode,
-	NewLineNode,
-	WhitespacesNode
-} from '../../src';
+import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../../src';
 import {AstChecker} from '../utils/ast-checker';
 
 describe('Multiple lines comment test', () => {
@@ -22,25 +11,25 @@ describe('Multiple lines comment test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 30, 0, text, [
-				[MultipleLinesCommentNode, 0, 30, 1, text, [
-					[MultipleLinesCommentStartMarkNode, 0, 2, 1, '/*'],
-					[WhitespacesNode, 2, 3, 1, ' '],
-					[CommentKeywordNode, 3, 7, 1, 'todo'],
-					[WhitespacesNode, 7, 8, 1, ' '],
-					[CharsNode, 8, 11, 1, 'abc'],
-					[NewLineNode, 11, 12, 1, '\n'],
-					[WhitespacesNode, 12, 13, 2, ' '],
-					[MultipleNode, 13, 14, 2, '*'],
-					[WhitespacesNode, 14, 15, 2, ' '],
-					[CharsNode, 15, 18, 2, 'def'],
-					[NewLineNode, 18, 20, 2, '\r\n'],
-					[WhitespacesNode, 20, 21, 3, ' '],
-					[MultipleNode, 21, 22, 3, '*'],
-					[WhitespacesNode, 22, 23, 3, ' '],
-					[CharsNode, 23, 26, 3, 'xyz'],
-					[NewLineNode, 26, 27, 3, '\r'],
-					[WhitespacesNode, 27, 28, 4, ' '],
-					[MultipleLinesCommentEndMarkNode, 28, 30, 4, '*/']
+				[TokenId.MultipleLinesComment, 0, 30, 1, text, [
+					[TokenId.MultipleLinesCommentStartMark, 0, 2, 1, '/*'],
+					[TokenId.Whitespaces, 2, 3, 1, ' '],
+					[TokenId.CommentKeyword, 3, 7, 1, 'todo'],
+					[TokenId.Whitespaces, 7, 8, 1, ' '],
+					[TokenId.Chars, 8, 11, 1, 'abc'],
+					[TokenId.NewLine, 11, 12, 1, '\n'],
+					[TokenId.Whitespaces, 12, 13, 2, ' '],
+					[TokenId.Multiple, 13, 14, 2, '*'],
+					[TokenId.Whitespaces, 14, 15, 2, ' '],
+					[TokenId.Chars, 15, 18, 2, 'def'],
+					[TokenId.NewLine, 18, 20, 2, '\r\n'],
+					[TokenId.Whitespaces, 20, 21, 3, ' '],
+					[TokenId.Multiple, 21, 22, 3, '*'],
+					[TokenId.Whitespaces, 22, 23, 3, ' '],
+					[TokenId.Chars, 23, 26, 3, 'xyz'],
+					[TokenId.NewLine, 26, 27, 3, '\r'],
+					[TokenId.Whitespaces, 27, 28, 4, ' '],
+					[TokenId.MultipleLinesCommentEndMark, 28, 30, 4, '*/']
 				]]
 			]
 		]);
@@ -50,12 +39,12 @@ describe('Multiple lines comment test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 11, 0, text, [
-				[MultipleLinesCommentNode, 0, 11, 1, text, [
-					[MultipleLinesCommentStartMarkNode, 0, 2, 1, '/*'],
-					[WhitespacesNode, 2, 3, 1, ' '],
-					[CommentKeywordNode, 3, 7, 1, 'todo'],
-					[WhitespacesNode, 7, 8, 1, ' '],
-					[CharsNode, 8, 11, 1, 'abc']
+				[TokenId.MultipleLinesComment, 0, 11, 1, text, [
+					[TokenId.MultipleLinesCommentStartMark, 0, 2, 1, '/*'],
+					[TokenId.Whitespaces, 2, 3, 1, ' '],
+					[TokenId.CommentKeyword, 3, 7, 1, 'todo'],
+					[TokenId.Whitespaces, 7, 8, 1, ' '],
+					[TokenId.Chars, 8, 11, 1, 'abc']
 				]]
 			]
 		]);

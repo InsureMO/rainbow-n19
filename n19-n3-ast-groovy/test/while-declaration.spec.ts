@@ -1,14 +1,4 @@
-import {
-	CompilationUnitNode,
-	GroovyAstBuilder,
-	LBraceNode,
-	NewLineNode,
-	RBraceNode,
-	WhileBodyNode,
-	WhileDeclarationNode,
-	WhileNode,
-	WhitespacesNode
-} from '../src';
+import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../src';
 import {AstChecker} from './utils/ast-checker';
 
 describe('While declaration test', () => {
@@ -21,8 +11,8 @@ describe('While declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 5, 0, text, [
-				[WhileDeclarationNode, 0, 5, 1, 'while', [
-					[WhileNode, 0, 5, 1, 'while']
+				[TokenId.WhileDeclaration, 0, 5, 1, 'while', [
+					[TokenId.WHILE, 0, 5, 1, 'while']
 				]]
 			]
 		]);
@@ -32,12 +22,12 @@ describe('While declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 8, 0, text, [
-				[WhileDeclarationNode, 0, 8, 1, 'while {}', [
-					[WhileNode, 0, 5, 1, 'while'],
-					[WhitespacesNode, 5, 6, 1, ' '],
-					[WhileBodyNode, 6, 8, 1, '{}', [
-						[LBraceNode, 6, 7, 1, '{'],
-						[RBraceNode, 7, 8, 1, '}']
+				[TokenId.WhileDeclaration, 0, 8, 1, 'while {}', [
+					[TokenId.WHILE, 0, 5, 1, 'while'],
+					[TokenId.Whitespaces, 5, 6, 1, ' '],
+					[TokenId.WhileBody, 6, 8, 1, '{}', [
+						[TokenId.LBrace, 6, 7, 1, '{'],
+						[TokenId.RBrace, 7, 8, 1, '}']
 					]]
 				]]
 			]
@@ -48,15 +38,15 @@ describe('While declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 9, 0, text, [
-				[WhileDeclarationNode, 0, 8, 1, 'while {}', [
-					[WhileNode, 0, 5, 1, 'while'],
-					[WhitespacesNode, 5, 6, 1, ' '],
-					[WhileBodyNode, 6, 8, 1, '{}', [
-						[LBraceNode, 6, 7, 1, '{'],
-						[RBraceNode, 7, 8, 1, '}']
+				[TokenId.WhileDeclaration, 0, 8, 1, 'while {}', [
+					[TokenId.WHILE, 0, 5, 1, 'while'],
+					[TokenId.Whitespaces, 5, 6, 1, ' '],
+					[TokenId.WhileBody, 6, 8, 1, '{}', [
+						[TokenId.LBrace, 6, 7, 1, '{'],
+						[TokenId.RBrace, 7, 8, 1, '}']
 					]]
 				]],
-				[NewLineNode, 8, 9, 1, '\n']
+				[TokenId.NewLine, 8, 9, 1, '\n']
 			]
 		]);
 	});

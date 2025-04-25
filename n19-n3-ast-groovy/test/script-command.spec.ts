@@ -1,12 +1,4 @@
-import {
-	GroovyAstBuilder,
-	CharsNode,
-	CompilationUnitNode,
-	NewLineNode,
-	ScriptCommandNode,
-	ScriptCommandStartMarkNode,
-	TabsNode
-} from '../src';
+import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../src';
 import {AstChecker} from './utils/ast-checker';
 
 describe('Script command test', () => {
@@ -19,11 +11,11 @@ describe('Script command test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 10, 0, text, [
-				[ScriptCommandNode, 0, 9, 1, '#!/bin/sh', [
-					[ScriptCommandStartMarkNode, 0, 2, 1, '#!'],
-					[CharsNode, 2, 9, 1, '/bin/sh']
+				[TokenId.ScriptCommand, 0, 9, 1, '#!/bin/sh', [
+					[TokenId.ScriptCommandStartMark, 0, 2, 1, '#!'],
+					[TokenId.Chars, 2, 9, 1, '/bin/sh']
 				]],
-				[NewLineNode, 9, 10, 1, '\n']
+				[TokenId.NewLine, 9, 10, 1, '\n']
 			]
 		]);
 	});
@@ -32,12 +24,12 @@ describe('Script command test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 11, 0, text, [
-				[TabsNode, 0, 1, 1, '\t'],
-				[ScriptCommandNode, 1, 10, 1, '#!/bin/sh', [
-					[ScriptCommandStartMarkNode, 1, 3, 1, '#!'],
-					[CharsNode, 3, 10, 1, '/bin/sh']
+				[TokenId.Tabs, 0, 1, 1, '\t'],
+				[TokenId.ScriptCommand, 1, 10, 1, '#!/bin/sh', [
+					[TokenId.ScriptCommandStartMark, 1, 3, 1, '#!'],
+					[TokenId.Chars, 3, 10, 1, '/bin/sh']
 				]],
-				[NewLineNode, 10, 11, 1, '\n']
+				[TokenId.NewLine, 10, 11, 1, '\n']
 			]
 		]);
 	});
@@ -46,12 +38,12 @@ describe('Script command test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 11, 0, text, [
-				[NewLineNode, 0, 1, 1, '\n'],
-				[ScriptCommandNode, 1, 10, 1, '#!/bin/sh', [
-					[ScriptCommandStartMarkNode, 1, 3, 1, '#!'],
-					[CharsNode, 3, 10, 1, '/bin/sh']
+				[TokenId.NewLine, 0, 1, 1, '\n'],
+				[TokenId.ScriptCommand, 1, 10, 1, '#!/bin/sh', [
+					[TokenId.ScriptCommandStartMark, 1, 3, 1, '#!'],
+					[TokenId.Chars, 3, 10, 1, '/bin/sh']
 				]],
-				[NewLineNode, 10, 11, 1, '\n']
+				[TokenId.NewLine, 10, 11, 1, '\n']
 			]
 		]);
 	});

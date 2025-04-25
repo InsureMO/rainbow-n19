@@ -1,11 +1,4 @@
-import {AstVisitor} from '../ast-visitor';
-import {
-	AbstractKeywordCaptor,
-	AbstractMultipleCharsCaptor,
-	AbstractSameCharsCaptor,
-	AbstractSingleCharCaptor,
-	Char
-} from '../captor';
+import {AstVisitor} from '../../ast-visitor';
 import {
 	AbstractAstNode,
 	AbstractKeywordNode,
@@ -14,8 +7,13 @@ import {
 	AbstractPrimitiveTypeNode,
 	AbstractSameCharsNode,
 	AbstractSymbolNode
-} from '../node';
-import {TokenId} from '../tokens';
+} from '../../node';
+import {TokenId} from '../../tokens';
+import {AbstractKeywordCaptor} from '../abstract-keyword-captor';
+import {AbstractMultipleCharsCaptor} from '../abstract-multiple-chars-captor';
+import {AbstractSameCharsCaptor} from '../abstract-same-chars-captor';
+import {AbstractSingleCharCaptor} from '../abstract-single-char-captor';
+import {Char} from '../types';
 import {AtomicTokenDefOfDualCaptors, AtomicTokenDefOfMultiCaptors, AtomicTokenDefOfSingleCaptor} from './internal';
 import {AstNodeCaptorConstructor, AstNodeConstructor} from './types';
 import {capitalize} from './utils';

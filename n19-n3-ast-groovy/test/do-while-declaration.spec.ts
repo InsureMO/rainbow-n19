@@ -1,15 +1,4 @@
-import {
-	CompilationUnitNode,
-	DoNode,
-	DoWhileBodyNode,
-	DoWhileDeclarationNode,
-	GroovyAstBuilder,
-	LBraceNode,
-	NewLineNode,
-	RBraceNode,
-	WhileNode,
-	WhitespacesNode
-} from '../src';
+import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../src';
 import {AstChecker} from './utils/ast-checker';
 
 describe('Do-While declaration test', () => {
@@ -22,8 +11,8 @@ describe('Do-While declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 2, 0, text, [
-				[DoWhileDeclarationNode, 0, 2, 1, 'do', [
-					[DoNode, 0, 2, 1, 'do']
+				[TokenId.DoWhileDeclaration, 0, 2, 1, 'do', [
+					[TokenId.DO, 0, 2, 1, 'do']
 				]]
 			]
 		]);
@@ -33,12 +22,12 @@ describe('Do-While declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 5, 0, text, [
-				[DoWhileDeclarationNode, 0, 5, 1, 'do {}', [
-					[DoNode, 0, 2, 1, 'do'],
-					[WhitespacesNode, 2, 3, 1, ' '],
-					[DoWhileBodyNode, 3, 5, 1, '{}', [
-						[LBraceNode, 3, 4, 1, '{'],
-						[RBraceNode, 4, 5, 1, '}']
+				[TokenId.DoWhileDeclaration, 0, 5, 1, 'do {}', [
+					[TokenId.DO, 0, 2, 1, 'do'],
+					[TokenId.Whitespaces, 2, 3, 1, ' '],
+					[TokenId.DoWhileBody, 3, 5, 1, '{}', [
+						[TokenId.LBrace, 3, 4, 1, '{'],
+						[TokenId.RBrace, 4, 5, 1, '}']
 					]]
 				]]
 			]
@@ -49,14 +38,14 @@ describe('Do-While declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 6, 0, text, [
-				[DoWhileDeclarationNode, 0, 6, 1, 'do {}\n', [
-					[DoNode, 0, 2, 1, 'do'],
-					[WhitespacesNode, 2, 3, 1, ' '],
-					[DoWhileBodyNode, 3, 5, 1, '{}', [
-						[LBraceNode, 3, 4, 1, '{'],
-						[RBraceNode, 4, 5, 1, '}']
+				[TokenId.DoWhileDeclaration, 0, 6, 1, 'do {}\n', [
+					[TokenId.DO, 0, 2, 1, 'do'],
+					[TokenId.Whitespaces, 2, 3, 1, ' '],
+					[TokenId.DoWhileBody, 3, 5, 1, '{}', [
+						[TokenId.LBrace, 3, 4, 1, '{'],
+						[TokenId.RBrace, 4, 5, 1, '}']
 					]],
-					[NewLineNode, 5, 6, 1, '\n']
+					[TokenId.NewLine, 5, 6, 1, '\n']
 				]]
 			]
 		]);
@@ -66,10 +55,10 @@ describe('Do-While declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 8, 0, text, [
-				[DoWhileDeclarationNode, 0, 8, 1, 'do while', [
-					[DoNode, 0, 2, 1, 'do'],
-					[WhitespacesNode, 2, 3, 1, ' '],
-					[WhileNode, 3, 8, 1, 'while']
+				[TokenId.DoWhileDeclaration, 0, 8, 1, 'do while', [
+					[TokenId.DO, 0, 2, 1, 'do'],
+					[TokenId.Whitespaces, 2, 3, 1, ' '],
+					[TokenId.WHILE, 3, 8, 1, 'while']
 				]]
 			]
 		]);

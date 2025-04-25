@@ -1,6 +1,7 @@
-import {IdentifierCaptor, UndeterminedCharsCaptor} from '../captor';
-import {IdentifierNode, UndeterminedCharsNode} from '../node';
-import {TokenId} from '../tokens';
+import {IdentifierNode, UndeterminedCharsNode} from '../../node';
+import {TokenId} from '../../tokens';
+import {IdentifierCaptor} from '../identifier-captor';
+import {UndeterminedCharsCaptor} from '../undetermined-chars-captor';
 import {AtomicTokenBasisType, KwCh, KwKw, KwLt, KwMk, KwOp, KwPt, Tt} from './internal';
 
 export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenBasisType }>> = {
@@ -85,7 +86,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.SpreadDot]: [Tt.Go, KwOp.SpreadDot, 'GoSpreadDot'],
 	[TokenId.SafeDot]: [Tt.Go, KwOp.SafeDot, 'GoSafeDot'],
 	[TokenId.SafeIndex]: [Tt.Go, KwOp.SafeIndex, 'GoSafeIndex'],
-	[TokenId.SafeIndexClose]: [Tt.Go, KwOp.SafeIndexClose, 'GoSafeIndexClose'],
+	// TODO duplicated with rbrack [TokenId.SafeIndexClose]: [Tt.Go, KwOp.SafeIndexClose, 'GoSafeIndexClose'],
 	[TokenId.SafeChainDot]: [Tt.Go, KwOp.SafeChainDot, 'GoSafeChainDot'],
 	[TokenId.Elvis]: [Tt.Go, KwOp.Elvis, 'GoElvis'],
 	[TokenId.MethodPointer]: [Tt.Go, KwOp.MethodPointer, 'GoMethodPointer'],

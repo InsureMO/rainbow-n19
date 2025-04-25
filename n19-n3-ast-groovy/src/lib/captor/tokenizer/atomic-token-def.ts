@@ -1,4 +1,4 @@
-import {TokenId} from '../tokens';
+import {TokenId} from '../../tokens';
 import {AtomicTokenBasis} from './atomic-token';
 import {
 	createCommentsMarkDefClasses,

@@ -1,18 +1,4 @@
-import {
-	GroovyAstBuilder,
-	CharsNode,
-	CompilationUnitNode,
-	DotNode,
-	IdentifierNode,
-	MultipleLinesCommentEndMarkNode,
-	MultipleLinesCommentNode,
-	MultipleLinesCommentStartMarkNode,
-	NewLineNode,
-	PackageDeclarationNode,
-	PackageNode,
-	SemicolonNode,
-	WhitespacesNode
-} from '../src';
+import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../src';
 import {AstChecker} from './utils/ast-checker';
 
 describe('Package declaration test', () => {
@@ -25,10 +11,10 @@ describe('Package declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 8, 0, text, [
-				[PackageDeclarationNode, 0, 7, 1, 'package', [
-					[PackageNode, 0, 7, 1, 'package']
+				[TokenId.PackageDeclaration, 0, 7, 1, 'package', [
+					[TokenId.PACKAGE, 0, 7, 1, 'package']
 				]],
-				[NewLineNode, 7, 8, 1, '\n']
+				[TokenId.NewLine, 7, 8, 1, '\n']
 			]
 		]);
 	});
@@ -37,7 +23,7 @@ describe('Package declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 8, 0, text, [
-				[IdentifierNode, 0, 8, 1, 'package$']
+				[TokenId.Identifier, 0, 8, 1, 'package$']
 			]
 		]);
 	});
@@ -46,9 +32,9 @@ describe('Package declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 8, 0, text, [
-				[PackageDeclarationNode, 0, 8, 1, text, [
-					[PackageNode, 0, 7, 1, 'package'],
-					[DotNode, 7, 8, 1, '.']
+				[TokenId.PackageDeclaration, 0, 8, 1, text, [
+					[TokenId.PACKAGE, 0, 7, 1, 'package'],
+					[TokenId.Dot, 7, 8, 1, '.']
 				]]
 			]
 		]);
@@ -58,12 +44,12 @@ describe('Package declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 15, 0, text, [
-				[PackageDeclarationNode, 0, 15, 1, text, [
-					[PackageNode, 0, 7, 1, 'package'],
-					[WhitespacesNode, 7, 8, 1, ' '],
-					[IdentifierNode, 8, 11, 1, 'abc'],
-					[DotNode, 11, 12, 1, '.'],
-					[IdentifierNode, 12, 15, 1, '1df']
+				[TokenId.PackageDeclaration, 0, 15, 1, text, [
+					[TokenId.PACKAGE, 0, 7, 1, 'package'],
+					[TokenId.Whitespaces, 7, 8, 1, ' '],
+					[TokenId.Identifier, 8, 11, 1, 'abc'],
+					[TokenId.Dot, 11, 12, 1, '.'],
+					[TokenId.Identifier, 12, 15, 1, '1df']
 				]]
 			]
 		]);
@@ -73,37 +59,37 @@ describe('Package declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 39, 0, text, [
-				[PackageDeclarationNode, 0, 38, 1, 'package/* a */ abc/*b*/. /*c*/1df/*d*/', [
-					[PackageNode, 0, 7, 1, 'package'],
-					[MultipleLinesCommentNode, 7, 14, 1, '/* a */', [
-						[MultipleLinesCommentStartMarkNode, 7, 9, 1, '/*'],
-						[WhitespacesNode, 9, 10, 1, ' '],
-						[CharsNode, 10, 11, 1, 'a'],
-						[WhitespacesNode, 11, 12, 1, ' '],
-						[MultipleLinesCommentEndMarkNode, 12, 14, 1, '*/']
+				[TokenId.PackageDeclaration, 0, 38, 1, 'package/* a */ abc/*b*/. /*c*/1df/*d*/', [
+					[TokenId.PACKAGE, 0, 7, 1, 'package'],
+					[TokenId.MultipleLinesComment, 7, 14, 1, '/* a */', [
+						[TokenId.MultipleLinesCommentStartMark, 7, 9, 1, '/*'],
+						[TokenId.Whitespaces, 9, 10, 1, ' '],
+						[TokenId.Chars, 10, 11, 1, 'a'],
+						[TokenId.Whitespaces, 11, 12, 1, ' '],
+						[TokenId.MultipleLinesCommentEndMark, 12, 14, 1, '*/']
 					]],
-					[WhitespacesNode, 14, 15, 1, ' '],
-					[IdentifierNode, 15, 18, 1, 'abc'],
-					[MultipleLinesCommentNode, 18, 23, 1, '/*b*/', [
-						[MultipleLinesCommentStartMarkNode, 18, 20, 1, '/*'],
-						[CharsNode, 20, 21, 1, 'b'],
-						[MultipleLinesCommentEndMarkNode, 21, 23, 1, '*/']
+					[TokenId.Whitespaces, 14, 15, 1, ' '],
+					[TokenId.Identifier, 15, 18, 1, 'abc'],
+					[TokenId.MultipleLinesComment, 18, 23, 1, '/*b*/', [
+						[TokenId.MultipleLinesCommentStartMark, 18, 20, 1, '/*'],
+						[TokenId.Chars, 20, 21, 1, 'b'],
+						[TokenId.MultipleLinesCommentEndMark, 21, 23, 1, '*/']
 					]],
-					[DotNode, 23, 24, 1, '.'],
-					[WhitespacesNode, 24, 25, 1, ' '],
-					[MultipleLinesCommentNode, 25, 30, 1, '/*c*/', [
-						[MultipleLinesCommentStartMarkNode, 25, 27, 1, '/*'],
-						[CharsNode, 27, 28, 1, 'c'],
-						[MultipleLinesCommentEndMarkNode, 28, 30, 1, '*/']
+					[TokenId.Dot, 23, 24, 1, '.'],
+					[TokenId.Whitespaces, 24, 25, 1, ' '],
+					[TokenId.MultipleLinesComment, 25, 30, 1, '/*c*/', [
+						[TokenId.MultipleLinesCommentStartMark, 25, 27, 1, '/*'],
+						[TokenId.Chars, 27, 28, 1, 'c'],
+						[TokenId.MultipleLinesCommentEndMark, 28, 30, 1, '*/']
 					]],
-					[IdentifierNode, 30, 33, 1, '1df'],
-					[MultipleLinesCommentNode, 33, 38, 1, '/*d*/', [
-						[MultipleLinesCommentStartMarkNode, 33, 35, 1, '/*'],
-						[CharsNode, 35, 36, 1, 'd'],
-						[MultipleLinesCommentEndMarkNode, 36, 38, 1, '*/']
+					[TokenId.Identifier, 30, 33, 1, '1df'],
+					[TokenId.MultipleLinesComment, 33, 38, 1, '/*d*/', [
+						[TokenId.MultipleLinesCommentStartMark, 33, 35, 1, '/*'],
+						[TokenId.Chars, 35, 36, 1, 'd'],
+						[TokenId.MultipleLinesCommentEndMark, 36, 38, 1, '*/']
 					]]
 				]],
-				[NewLineNode, 38, 39, 1, '\n']
+				[TokenId.NewLine, 38, 39, 1, '\n']
 			]
 		]);
 	});
@@ -112,39 +98,39 @@ describe('Package declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			CompilationUnitNode, 0, 41, 0, text, [
-				[PackageDeclarationNode, 0, 26, 1, 'package/* a */ abc/*b\n*/.;', [
-					[PackageNode, 0, 7, 1, 'package'],
-					[MultipleLinesCommentNode, 7, 14, 1, '/* a */', [
-						[MultipleLinesCommentStartMarkNode, 7, 9, 1, '/*'],
-						[WhitespacesNode, 9, 10, 1, ' '],
-						[CharsNode, 10, 11, 1, 'a'],
-						[WhitespacesNode, 11, 12, 1, ' '],
-						[MultipleLinesCommentEndMarkNode, 12, 14, 1, '*/']
+				[TokenId.PackageDeclaration, 0, 26, 1, 'package/* a */ abc/*b\n*/.;', [
+					[TokenId.PACKAGE, 0, 7, 1, 'package'],
+					[TokenId.MultipleLinesComment, 7, 14, 1, '/* a */', [
+						[TokenId.MultipleLinesCommentStartMark, 7, 9, 1, '/*'],
+						[TokenId.Whitespaces, 9, 10, 1, ' '],
+						[TokenId.Chars, 10, 11, 1, 'a'],
+						[TokenId.Whitespaces, 11, 12, 1, ' '],
+						[TokenId.MultipleLinesCommentEndMark, 12, 14, 1, '*/']
 					]],
-					[WhitespacesNode, 14, 15, 1, ' '],
-					[IdentifierNode, 15, 18, 1, 'abc'],
-					[MultipleLinesCommentNode, 18, 24, 1, '/*b\n*/', [
-						[MultipleLinesCommentStartMarkNode, 18, 20, 1, '/*'],
-						[CharsNode, 20, 21, 1, 'b'],
-						[NewLineNode, 21, 22, 1, '\n'],
-						[MultipleLinesCommentEndMarkNode, 22, 24, 2, '*/']
+					[TokenId.Whitespaces, 14, 15, 1, ' '],
+					[TokenId.Identifier, 15, 18, 1, 'abc'],
+					[TokenId.MultipleLinesComment, 18, 24, 1, '/*b\n*/', [
+						[TokenId.MultipleLinesCommentStartMark, 18, 20, 1, '/*'],
+						[TokenId.Chars, 20, 21, 1, 'b'],
+						[TokenId.NewLine, 21, 22, 1, '\n'],
+						[TokenId.MultipleLinesCommentEndMark, 22, 24, 2, '*/']
 					]],
-					[DotNode, 24, 25, 2, '.'],
-					[SemicolonNode, 25, 26, 2, ';']
+					[TokenId.Dot, 24, 25, 2, '.'],
+					[TokenId.Semicolon, 25, 26, 2, ';']
 				]],
-				[WhitespacesNode, 26, 27, 2, ' '],
-				[MultipleLinesCommentNode, 27, 32, 2, '/*c*/', [
-					[MultipleLinesCommentStartMarkNode, 27, 29, 2, '/*'],
-					[CharsNode, 29, 30, 2, 'c'],
-					[MultipleLinesCommentEndMarkNode, 30, 32, 2, '*/']
+				[TokenId.Whitespaces, 26, 27, 2, ' '],
+				[TokenId.MultipleLinesComment, 27, 32, 2, '/*c*/', [
+					[TokenId.MultipleLinesCommentStartMark, 27, 29, 2, '/*'],
+					[TokenId.Chars, 29, 30, 2, 'c'],
+					[TokenId.MultipleLinesCommentEndMark, 30, 32, 2, '*/']
 				]],
-				[IdentifierNode, 32, 35, 2, '1df'],
-				[MultipleLinesCommentNode, 35, 40, 2, '/*d*/', [
-					[MultipleLinesCommentStartMarkNode, 35, 37, 2, '/*'],
-					[CharsNode, 37, 38, 2, 'd'],
-					[MultipleLinesCommentEndMarkNode, 38, 40, 2, '*/']
+				[TokenId.Identifier, 32, 35, 2, '1df'],
+				[TokenId.MultipleLinesComment, 35, 40, 2, '/*d*/', [
+					[TokenId.MultipleLinesCommentStartMark, 35, 37, 2, '/*'],
+					[TokenId.Chars, 37, 38, 2, 'd'],
+					[TokenId.MultipleLinesCommentEndMark, 38, 40, 2, '*/']
 				]],
-				[NewLineNode, 40, 41, 2, '\n']
+				[TokenId.NewLine, 40, 41, 2, '\n']
 			]
 		]);
 	});
