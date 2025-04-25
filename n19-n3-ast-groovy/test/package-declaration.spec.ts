@@ -1,4 +1,4 @@
-import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../src';
+import {GroovyAstBuilder, TokenId} from '../src';
 import {AstChecker} from './utils/ast-checker';
 
 describe('Package declaration test', () => {
@@ -10,7 +10,7 @@ describe('Package declaration test', () => {
 		const text = 'package\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 8, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 8, 0, text, [
 				[TokenId.PackageDeclaration, 0, 7, 1, 'package', [
 					[TokenId.PACKAGE, 0, 7, 1, 'package']
 				]],
@@ -22,7 +22,7 @@ describe('Package declaration test', () => {
 		const text = 'package$';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 8, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 8, 0, text, [
 				[TokenId.Identifier, 0, 8, 1, 'package$']
 			]
 		]);
@@ -31,7 +31,7 @@ describe('Package declaration test', () => {
 		const text = 'package.';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 8, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 8, 0, text, [
 				[TokenId.PackageDeclaration, 0, 8, 1, text, [
 					[TokenId.PACKAGE, 0, 7, 1, 'package'],
 					[TokenId.Dot, 7, 8, 1, '.']
@@ -43,7 +43,7 @@ describe('Package declaration test', () => {
 		const text = 'package abc.1df';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 15, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 15, 0, text, [
 				[TokenId.PackageDeclaration, 0, 15, 1, text, [
 					[TokenId.PACKAGE, 0, 7, 1, 'package'],
 					[TokenId.Whitespaces, 7, 8, 1, ' '],
@@ -58,7 +58,7 @@ describe('Package declaration test', () => {
 		const text = 'package/* a */ abc/*b*/. /*c*/1df/*d*/\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 39, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 39, 0, text, [
 				[TokenId.PackageDeclaration, 0, 38, 1, 'package/* a */ abc/*b*/. /*c*/1df/*d*/', [
 					[TokenId.PACKAGE, 0, 7, 1, 'package'],
 					[TokenId.MultipleLinesComment, 7, 14, 1, '/* a */', [
@@ -97,7 +97,7 @@ describe('Package declaration test', () => {
 		const text = 'package/* a */ abc/*b\n*/.; /*c*/1df/*d*/\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 41, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 41, 0, text, [
 				[TokenId.PackageDeclaration, 0, 26, 1, 'package/* a */ abc/*b\n*/.;', [
 					[TokenId.PACKAGE, 0, 7, 1, 'package'],
 					[TokenId.MultipleLinesComment, 7, 14, 1, '/* a */', [

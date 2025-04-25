@@ -1,4 +1,4 @@
-import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../src';
+import {GroovyAstBuilder, TokenId} from '../src';
 import {AstChecker} from './utils/ast-checker';
 
 describe('Type declaration test', () => {
@@ -10,7 +10,7 @@ describe('Type declaration test', () => {
 		const text = 'public interface';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 16, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 16, 0, text, [
 				[TokenId.InterfaceDeclaration, 0, 16, 1, text, [
 					[TokenId.PUBLIC, 0, 6, 1, 'public'],
 					[TokenId.Whitespaces, 6, 7, 1, ' '],
@@ -23,7 +23,7 @@ describe('Type declaration test', () => {
 		const text = 'sealed public abstract protected private static // sl\n\tfinal /*a\n*/ strictfp \nnon-sealed   \t class';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 98, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 98, 0, text, [
 				[TokenId.ClassDeclaration, 0, 98, 1, text, [
 					[TokenId.SEALED, 0, 6, 1, 'sealed'],
 					[TokenId.Whitespaces, 6, 7, 1, ' '],
@@ -69,7 +69,7 @@ describe('Type declaration test', () => {
 		const text = 'public abstract class AbstractA {\n}';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 35, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 35, 0, text, [
 				[TokenId.ClassDeclaration, 0, 35, 1, text, [
 					[TokenId.PUBLIC, 0, 6, 1, 'public'],
 					[TokenId.Whitespaces, 6, 7, 1, ' '],
@@ -92,7 +92,7 @@ describe('Type declaration test', () => {
 		const text = '/**/public interface';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 20, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 20, 0, text, [
 				[TokenId.InterfaceDeclaration, 0, 20, 1, text, [
 					[TokenId.MultipleLinesComment, 0, 4, 1, '/**/', [
 						[TokenId.MultipleLinesCommentStartMark, 0, 2, 1, '/*'],
@@ -109,7 +109,7 @@ describe('Type declaration test', () => {
 		const text = 'public abstract class AbstractA {\n\tstatic /* abc */{\n\t}\n}';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 57, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 57, 0, text, [
 				[TokenId.ClassDeclaration, 0, 57, 1, text, [
 					[TokenId.PUBLIC, 0, 6, 1, 'public'],
 					[TokenId.Whitespaces, 6, 7, 1, ' '],

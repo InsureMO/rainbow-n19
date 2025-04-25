@@ -1,4 +1,4 @@
-import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../src';
+import {GroovyAstBuilder, TokenId} from '../src';
 import {AstChecker} from './utils/ast-checker';
 
 describe('Script command test', () => {
@@ -10,7 +10,7 @@ describe('Script command test', () => {
 		const text = '#!/bin/sh\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 10, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 10, 0, text, [
 				[TokenId.ScriptCommand, 0, 9, 1, '#!/bin/sh', [
 					[TokenId.ScriptCommandStartMark, 0, 2, 1, '#!'],
 					[TokenId.Chars, 2, 9, 1, '/bin/sh']
@@ -23,7 +23,7 @@ describe('Script command test', () => {
 		const text = '\t#!/bin/sh\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 11, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 11, 0, text, [
 				[TokenId.Tabs, 0, 1, 1, '\t'],
 				[TokenId.ScriptCommand, 1, 10, 1, '#!/bin/sh', [
 					[TokenId.ScriptCommandStartMark, 1, 3, 1, '#!'],
@@ -37,7 +37,7 @@ describe('Script command test', () => {
 		const text = '\n#!/bin/sh\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 11, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 11, 0, text, [
 				[TokenId.NewLine, 0, 1, 1, '\n'],
 				[TokenId.ScriptCommand, 1, 10, 1, '#!/bin/sh', [
 					[TokenId.ScriptCommandStartMark, 1, 3, 1, '#!'],

@@ -5,8 +5,8 @@ describe('Class create test', () => {
 				get name(): string {
 					return name;
 				}
-			}
-		}
+			};
+		};
 		const X = abc('x');
 		const x = new X();
 		console.log(x);

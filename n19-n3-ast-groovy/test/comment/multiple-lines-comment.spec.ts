@@ -1,4 +1,4 @@
-import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../../src';
+import {GroovyAstBuilder, TokenId} from '../../src';
 import {AstChecker} from '../utils/ast-checker';
 
 describe('Multiple lines comment test', () => {
@@ -10,7 +10,7 @@ describe('Multiple lines comment test', () => {
 		const text = '/* todo abc\n * def\r\n * xyz\r */';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 30, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 30, 0, text, [
 				[TokenId.MultipleLinesComment, 0, 30, 1, text, [
 					[TokenId.MultipleLinesCommentStartMark, 0, 2, 1, '/*'],
 					[TokenId.Whitespaces, 2, 3, 1, ' '],
@@ -38,7 +38,7 @@ describe('Multiple lines comment test', () => {
 		const text = '/* todo abc';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 11, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 11, 0, text, [
 				[TokenId.MultipleLinesComment, 0, 11, 1, text, [
 					[TokenId.MultipleLinesCommentStartMark, 0, 2, 1, '/*'],
 					[TokenId.Whitespaces, 2, 3, 1, ' '],

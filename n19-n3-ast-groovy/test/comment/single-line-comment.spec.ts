@@ -1,4 +1,4 @@
-import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../../src';
+import {GroovyAstBuilder, TokenId} from '../../src';
 import {AstChecker} from '../utils/ast-checker';
 
 describe('Single line comment test', () => {
@@ -10,7 +10,7 @@ describe('Single line comment test', () => {
 		const text = '// todo abc';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 11, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 11, 0, text, [
 				[TokenId.SingleLineComment, 0, 11, 1, text, [
 					[TokenId.SingleLineCommentStartMark, 0, 2, 1, '//'],
 					[TokenId.Whitespaces, 2, 3, 1, ' '],
@@ -25,7 +25,7 @@ describe('Single line comment test', () => {
 		const text = '// abc\t\tdef xyz';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 15, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 15, 0, text, [
 				[TokenId.SingleLineComment, 0, 15, 1, text, [
 					[TokenId.SingleLineCommentStartMark, 0, 2, 1, '//'],
 					[TokenId.Whitespaces, 2, 3, 1, ' '],
@@ -43,7 +43,7 @@ describe('Single line comment test', () => {
 	// 2nd line`;
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 28, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 28, 0, text, [
 				[TokenId.SingleLineComment, 0, 15, 1, '// abc\t\tdef xyz', [
 					[TokenId.SingleLineCommentStartMark, 0, 2, 1, '//'],
 					[TokenId.Whitespaces, 2, 3, 1, ' '],

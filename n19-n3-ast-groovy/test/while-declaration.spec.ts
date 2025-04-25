@@ -1,4 +1,4 @@
-import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../src';
+import {GroovyAstBuilder, TokenId} from '../src';
 import {AstChecker} from './utils/ast-checker';
 
 describe('While declaration test', () => {
@@ -10,7 +10,7 @@ describe('While declaration test', () => {
 		const text = 'while';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 5, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 5, 0, text, [
 				[TokenId.WhileDeclaration, 0, 5, 1, 'while', [
 					[TokenId.WHILE, 0, 5, 1, 'while']
 				]]
@@ -21,7 +21,7 @@ describe('While declaration test', () => {
 		const text = 'while {}';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 8, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 8, 0, text, [
 				[TokenId.WhileDeclaration, 0, 8, 1, 'while {}', [
 					[TokenId.WHILE, 0, 5, 1, 'while'],
 					[TokenId.Whitespaces, 5, 6, 1, ' '],
@@ -37,7 +37,7 @@ describe('While declaration test', () => {
 		const text = 'while {}\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 9, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 9, 0, text, [
 				[TokenId.WhileDeclaration, 0, 8, 1, 'while {}', [
 					[TokenId.WHILE, 0, 5, 1, 'while'],
 					[TokenId.Whitespaces, 5, 6, 1, ' '],

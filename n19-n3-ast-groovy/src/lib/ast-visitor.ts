@@ -121,14 +121,17 @@ export class AstVisitor {
 
 	// visit
 	visit(): void {
-		const char = this.charAt(this._cursor);
+		let char = this.charAt(this._cursor);
 		if (char == null) {
 			// nothing exists, no need to parse ast
 			return;
 		}
 		// move to first line
 		this._line = 1;
-		this.address(char);
+		do {
+			this.address(char);
+			char = this.charAt(this._cursor);
+		} while (char != null);
 	}
 
 	/**
@@ -192,16 +195,9 @@ export class AstVisitor {
 		this.onNodeDetached(node);
 	}
 
-	protected address(char: Char = this.charAt(this._cursor)): void {
-		if (char == null) {
-			// stop visiting
-			return;
-		}
-
+	protected address(char: Char): void {
 		const captor = this._captorSelector.select(char, this._cursor);
 		captor.visit(char, this._cursor);
-		// address from current cursor
-		this.address();
 	}
 
 	printDefs(): void {

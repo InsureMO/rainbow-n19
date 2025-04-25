@@ -1,4 +1,4 @@
-import {CompilationUnitNode, GroovyAstBuilder, TokenId} from '../src';
+import {GroovyAstBuilder, TokenId} from '../src';
 import {AstChecker} from './utils/ast-checker';
 
 describe('Import declaration test', () => {
@@ -10,7 +10,7 @@ describe('Import declaration test', () => {
 		const text = 'import\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 7, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 7, 0, text, [
 				[TokenId.ImportDeclaration, 0, 6, 1, 'import', [
 					[TokenId.IMPORT, 0, 6, 1, 'import']
 				]],
@@ -22,7 +22,7 @@ describe('Import declaration test', () => {
 		const text = 'import$';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 7, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 7, 0, text, [
 				[TokenId.Identifier, 0, 7, 1, 'import$']
 			]
 		]);
@@ -31,7 +31,7 @@ describe('Import declaration test', () => {
 		const text = 'import.';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 7, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 7, 0, text, [
 				[TokenId.ImportDeclaration, 0, 7, 1, text, [
 					[TokenId.IMPORT, 0, 6, 1, 'import'],
 					[TokenId.Dot, 6, 7, 1, '.']
@@ -43,7 +43,7 @@ describe('Import declaration test', () => {
 		const text = 'import abc.1df';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 14, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 14, 0, text, [
 				[TokenId.ImportDeclaration, 0, 14, 1, text, [
 					[TokenId.IMPORT, 0, 6, 1, 'import'],
 					[TokenId.Whitespaces, 6, 7, 1, ' '],
@@ -58,7 +58,7 @@ describe('Import declaration test', () => {
 		const text = 'import/* a */ abc/*b*/. /*c*/1df/*d*/\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 38, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 38, 0, text, [
 				[TokenId.ImportDeclaration, 0, 37, 1, 'import/* a */ abc/*b*/. /*c*/1df/*d*/', [
 					[TokenId.IMPORT, 0, 6, 1, 'import'],
 					[TokenId.MultipleLinesComment, 6, 13, 1, '/* a */', [
@@ -97,7 +97,7 @@ describe('Import declaration test', () => {
 		const text = 'import/* a */ abc/*b\n*/.; /*c*/1df/*d*/\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 40, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 40, 0, text, [
 				[TokenId.ImportDeclaration, 0, 25, 1, 'import/* a */ abc/*b\n*/.;', [
 					[TokenId.IMPORT, 0, 6, 1, 'import'],
 					[TokenId.MultipleLinesComment, 6, 13, 1, '/* a */', [
@@ -138,7 +138,7 @@ describe('Import declaration test', () => {
 		const text = 'import /* 0 */ static/* a */ abc/*b\n*/. /*c*/1df/*d*/ as $1\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 60, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 60, 0, text, [
 				[TokenId.ImportDeclaration, 0, 59, 1, 'import /* 0 */ static/* a */ abc/*b\n*/. /*c*/1df/*d*/ as $1', [
 					[TokenId.IMPORT, 0, 6, 1, 'import'],
 					[TokenId.Whitespaces, 6, 7, 1, ' '],
@@ -192,7 +192,7 @@ describe('Import declaration test', () => {
 		const text = 'import /* 0 */ static/* a */ abc/*b\n*/. /*c*/1df/*d*/ . *\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			CompilationUnitNode, 0, 58, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 58, 0, text, [
 				[TokenId.ImportDeclaration, 0, 57, 1, 'import /* 0 */ static/* a */ abc/*b\n*/. /*c*/1df/*d*/ . *', [
 					[TokenId.IMPORT, 0, 6, 1, 'import'],
 					[TokenId.Whitespaces, 6, 7, 1, ' '],
