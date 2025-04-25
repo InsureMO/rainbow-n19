@@ -72,7 +72,7 @@ const createAtomicTokenDef = (tokenId: TokenId, basis: AtomicTokenBasisType): At
 
 export const AtomicTokenDef: Readonly<{ [key in keyof typeof AtomicTokenBasis]: AtomicTokenDefType }> = (() => {
 	return Object.keys(AtomicTokenBasis).reduce((defs, tokenId) => {
-		defs[tokenId] = createAtomicTokenDef(tokenId as unknown as TokenId, AtomicTokenBasis[tokenId]);
+		defs[tokenId] = createAtomicTokenDef(Number(tokenId) as TokenId, AtomicTokenBasis[tokenId]);
 		return defs;
 	}, {});
 })();

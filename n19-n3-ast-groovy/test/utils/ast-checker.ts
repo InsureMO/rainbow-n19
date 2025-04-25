@@ -1,10 +1,10 @@
 import {AstNode} from '@rainbow-n19/n3-ast';
-import {AstUtils, GroovyAst} from '../../src';
+import {AstUtils, GroovyAst, TokenId} from '../../src';
 
 export type NodeType = any;
 export type NodeSpec =
-	| [NodeType, number, number, number, string] // leaf node
-	| [NodeType, number, number, number, string, Array<NodeSpec>] // container node
+	| [TokenId, number, number, number, string] // leaf node
+	| [TokenId, number, number, number, string, Array<NodeSpec>] // container node
 
 export class AstChecker {
 	private readonly _ast: GroovyAst;
@@ -25,7 +25,7 @@ export class AstChecker {
 		const indent = new Array(bullet.split('.').length - 2).fill('\t').join('');
 		try {
 			expect(node).not.toBeNull();
-			expect(node).toBeInstanceOf(type);
+			expect(node.tokenId).toBe(type);
 			expect(node.startOffset).toBe(startOffset);
 			expect(node.endOffset).toBe(endOffset);
 			expect(node.text).toBe(text);
@@ -33,7 +33,7 @@ export class AstChecker {
 				indent,
 				bullet,
 				' ✅  ',
-				`Check [type=${type.name}, `,
+				`Check [type=${TokenId[type]}, `,
 				`startOffset=${startOffset}, `,
 				`endOffset=${endOffset}, `,
 				`startLine=${startLine}, `,
@@ -45,7 +45,7 @@ export class AstChecker {
 				indent,
 				bullet,
 				' 💔 ',
-				`Check [type=${type.name}, `,
+				`Check [type=${TokenId[type]}, `,
 				`startOffset=${startOffset}, `,
 				`endOffset=${endOffset}, `,
 				`startLine=${startLine}, `,
@@ -63,7 +63,7 @@ export class AstChecker {
 					indent,
 					bullet,
 					' 💔 ',
-					`Check children count[type=${type.name}].`
+					`Check children count[type=${TokenId[type]}].`
 				].join(''));
 				this.print();
 				throw e;
