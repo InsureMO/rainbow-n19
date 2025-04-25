@@ -1,5 +1,4 @@
-import {Optional} from '@rainbow-n19/n2';
-import {AstNode} from '@rainbow-n19/n3-ast';
+import {AstNode, Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAst} from './ast';
 import {CaptorSelector, Char, CommentKeyword, CommentKeywords} from './captor';
 import {AstBuildCommentKeywordOption, AstBuildVisitor, AstVisitOptions} from './types';

@@ -8,12 +8,11 @@ export * from './captor-delegate';
 export * from './captor-selector';
 export * from './captor-func-checkers';
 
-export * from './fundamental';
-export * from './symbol';
-export * from './keyword';
-export * from './primitive-type';
-export * from './literal';
-export * from './operator';
+export * from './abstract-captor';
+export * from './abstract-single-char-captor';
+export * from './abstract-same-chars-captor';
+export * from './abstract-multiple-chars-captor';
+export * from './abstract-keyword-captor';
 
-export * from './comment';
-export * from './statement';
+export * from './identifier-captor';
+export * from './undetermined-chars-captor';

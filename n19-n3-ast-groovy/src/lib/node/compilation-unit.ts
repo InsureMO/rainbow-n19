@@ -1,7 +1,6 @@
-import {Optional} from '@rainbow-n19/n2';
-import {AstNode, AstNodeConstructOptions, ProgramNode} from '@rainbow-n19/n3-ast';
-import {TokenId} from '../../tokens';
-import {AbstractAstNode} from '../abstract';
+import {AstNode, AstNodeConstructOptions, Optional, ProgramNode} from '@rainbow-n19/n3-ast';
+import {TokenId} from '../tokens';
+import {AbstractAstNode} from './abstract-node';
 
 /**
  * compilation unit, root.

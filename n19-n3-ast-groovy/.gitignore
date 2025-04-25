@@ -12,4 +12,6 @@ yarn-error.log*
 /index.js
 /index.cjs
 /lib/
+/.backup/
+
 

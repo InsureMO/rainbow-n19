@@ -1,7 +1,6 @@
-import {Optional} from '@rainbow-n19/n2';
-import {AstNode, AstNodeConstructOptions} from '@rainbow-n19/n3-ast';
-import {AstUtils} from '../../ast-utils';
-import {TokenId} from '../../tokens';
+import {AstNode, AstNodeConstructOptions, Optional} from '@rainbow-n19/n3-ast';
+import {AstUtils} from '../ast-utils';
+import {TokenId} from '../tokens';
 
 export abstract class AbstractAstNode implements AstNode {
 	private _text: string;

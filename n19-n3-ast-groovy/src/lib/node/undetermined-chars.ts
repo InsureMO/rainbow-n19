@@ -1,6 +1,6 @@
 import {AstNode} from '@rainbow-n19/n3-ast';
-import {TokenId} from '../../tokens';
-import {AbstractAstNode} from '../abstract';
+import {TokenId} from '../tokens';
+import {AbstractAstNode} from './abstract-node';
 
 /**
  * undetermined chars, depends on parent

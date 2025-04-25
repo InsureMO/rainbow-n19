@@ -1,10 +1,10 @@
 import {AstNode, AstNodeConstructor} from '@rainbow-n19/n3-ast';
-import {AstVisitor} from '../../ast-visitor';
-import {AstNodeCaptorCheckers} from '../captor';
-import {Char} from '../types';
+import {AstVisitor} from '../ast-visitor';
 import {AbstractAstNodeCaptor} from './abstract-captor';
+import {AstNodeCaptorCheckers} from './captor';
+import {Char} from './types';
 
-export abstract class AbstractMultipleCharsCaptor<N extends AstNode> extends AbstractAstNodeCaptor {
+export abstract class AbstractMultipleCharsCaptor extends AbstractAstNodeCaptor {
 	private readonly _chars: string;
 	private readonly _charsArray: Array<Char>;
 	private readonly _charsLength: number;
@@ -32,7 +32,7 @@ export abstract class AbstractMultipleCharsCaptor<N extends AstNode> extends Abs
 		return this._charsArray;
 	}
 
-	protected abstract getAstNodeConstructor(): AstNodeConstructor<N>;
+	protected abstract getAstNodeConstructor(): AstNodeConstructor<AstNode>;
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	visit(_char: Char, offset: number): boolean {

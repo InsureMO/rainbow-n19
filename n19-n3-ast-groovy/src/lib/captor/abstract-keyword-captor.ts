@@ -1,11 +1,11 @@
 import {AstNode, AstNodeConstructor} from '@rainbow-n19/n3-ast';
-import {AstVisitor} from '../../ast-visitor';
-import {AbstractMultipleCharsCaptor} from '../abstract';
-import {AstNodeCaptorCheckers} from '../captor';
-import {isNotJavaIdentifierPart} from '../captor-func-checkers';
-import {Char} from '../types';
+import {AstVisitor} from '../ast-visitor';
+import {AbstractMultipleCharsCaptor} from './abstract-multiple-chars-captor';
+import {AstNodeCaptorCheckers} from './captor';
+import {isNotJavaIdentifierPart} from './captor-func-checkers';
+import {Char} from './types';
 
-export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractMultipleCharsCaptor<N> {
+export abstract class AbstractKeywordCaptor extends AbstractMultipleCharsCaptor {
 	private readonly _keyword: string;
 	private readonly _checker: AstNodeCaptorCheckers;
 
@@ -23,7 +23,7 @@ export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractM
 		return this._checker;
 	}
 
-	protected abstract getAstNodeConstructor(): AstNodeConstructor<N>;
+	protected abstract getAstNodeConstructor(): AstNodeConstructor<AstNode>;
 
 	/**
 	 * ignore text when node is {@link AbstractContainerAstNode}
@@ -36,7 +36,7 @@ export abstract class AbstractKeywordCaptor<N extends AstNode> extends AbstractM
 	 * create child ast nodes and returns end offset of last one.
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected createChildAstNodes(_node: N, _char: Char, offset: number): number {
+	protected createChildAstNodes(_node: AstNode, _char: Char, offset: number): number {
 		return offset + this.charsLength;
 	}
 

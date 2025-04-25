@@ -10,5 +10,4 @@ export * from './node';
 export * from './captor';
 export * from './ast-visitor';
 
-export * from './ast-defs';
 export * from './ast-utils';

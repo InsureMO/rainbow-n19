@@ -1,4 +1,4 @@
-import {Optional} from '@rainbow-n19/n2';
+import {Optional} from '@rainbow-n19/n3-ast';
 
 export class AstUtils {
 	private static readonly ESCAPE_CHARS_FOR_PRINT: { [key: string]: string } = {
