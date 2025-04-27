@@ -1,14 +1,14 @@
 import {AstNode, Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAst} from './ast';
-import {CaptorSelector, Char, CommentKeyword, CommentKeywords} from './captor';
-import {NodeRecognizer} from './recognizer';
-import {AstBuildCommentKeywordOption, AstBuildVisitor, AstVisitOptions} from './types';
+import {CaptorSelector, Char} from './captor';
+import {AstRecognizer, AstRecognizerOptions} from './recognizer';
+import {AstBuildVisitor, AstVisitOptions} from './types';
 
 export class AstVisitor {
 	private readonly _ast: GroovyAst;
 	private readonly _captorSelector: CaptorSelector;
 	private readonly _buildVisitor: Optional<AstBuildVisitor>;
-	private readonly _buildCommentKeywords: CommentKeywords;
+	private readonly _recognizerOptions: AstRecognizerOptions;
 
 	private _currentAstNode: AstNode;
 	private _latestAstNode: AstNode;
@@ -20,70 +20,12 @@ export class AstVisitor {
 	constructor(ast: GroovyAst, options?: AstVisitOptions) {
 		this._ast = ast;
 		this._captorSelector = new CaptorSelector(this);
-		this._buildVisitor = options?.visitor;
-		// build comment keywords
-		this._buildCommentKeywords = this.initializeCommentKeywords(options?.commentKeywords);
+		const {visitor, ...restOptions} = options || {};
+		this._buildVisitor = visitor;
+		this._recognizerOptions = restOptions;
 
 		this._currentAstNode = ast.compilationUnit;
 		this._latestAstNode = ast.compilationUnit;
-	}
-
-	// initializing
-	protected initializeCommentKeywords(keywords?: AstVisitOptions['commentKeywords']): CommentKeywords {
-		keywords = keywords ?? {};
-
-		let todoConfigured = false;
-		const defs = Object.keys(keywords).reduce((keywords, keyword) => {
-			const option = keywords[keyword];
-			keyword = keyword.trim();
-			switch (option) {
-				case AstBuildCommentKeywordOption.DISABLED:
-					// ignored
-					break;
-				case AstBuildCommentKeywordOption.ENABLE_AND_CASE_SENSITIVE:
-					keywords.push({
-						keyword,
-						pattern: new RegExp(`\\b${keyword}\\b`),
-						caseSensitive: true,
-						keywordLength: keyword.length
-					});
-					break;
-				case AstBuildCommentKeywordOption.ENABLE_AND_CASE_INSENSITIVE:
-				default:
-					// default treated as case-insensitive
-					keywords.push({
-						keyword,
-						pattern: new RegExp(`\\b${keyword}\\b`, 'i'),
-						caseSensitive: false,
-						keywordLength: keyword.length
-					});
-
-			}
-			if (keyword.toLowerCase() === 'todo') {
-				todoConfigured = true;
-			}
-			return keywords;
-		}, [] as Array<CommentKeyword>);
-		if (!todoConfigured) {
-			// push a "t odo" (a blank to avoid IDE highlight detecting) as first one
-			defs.unshift({keyword: 'todo', pattern: /\btodo\b/i, caseSensitive: false, keywordLength: 4});
-		}
-
-		const maxLength = Math.max(...defs.map(({keywordLength: length}) => length));
-		const filtered: { [key in number]: Array<CommentKeyword> } = {};
-		return {
-			minLength: Math.min(...defs.map(({keywordLength: length}) => length)),
-			available: (contentLength: number) => {
-				if (contentLength >= maxLength) {
-					return defs;
-				}
-				if (filtered[contentLength] == null) {
-					filtered[contentLength] = defs.filter(({keywordLength: length}) => length <= contentLength);
-				}
-				return filtered[contentLength];
-			},
-			all: defs
-		};
 	}
 
 	// static visit
@@ -103,8 +45,8 @@ export class AstVisitor {
 		return this.ast.document;
 	}
 
-	get commentKeywords(): CommentKeywords {
-		return this._buildCommentKeywords;
+	get recognizerOptions(): AstRecognizerOptions {
+		return this._recognizerOptions;
 	}
 
 	// event dispatcher
@@ -135,7 +77,7 @@ export class AstVisitor {
 		} while (char != null);
 
 		// recognize nodes structure
-		new NodeRecognizer().recognize(this.ast);
+		new AstRecognizer(this.recognizerOptions).recognize(this.ast);
 	}
 
 	/**
@@ -188,6 +130,7 @@ export class AstVisitor {
 	appendToAst(node: AstNode): void {
 		this.onNodeDetermined(node);
 		this._currentAstNode = this._currentAstNode.append(node);
+		this._latestAstNode.asPreviousOf(node);
 		this._latestAstNode = node;
 		this.onNodeAppended(node);
 	}

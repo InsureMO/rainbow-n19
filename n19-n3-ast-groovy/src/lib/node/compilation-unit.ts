@@ -46,6 +46,14 @@ export class CompilationUnitNode extends AbstractAstNode implements ProgramNode 
 		return this;
 	}
 
+	clearAndShallowCloneChildren(): Array<AstNode> {
+		const children = [...this._children ?? []];
+		if (this._children != null) {
+			this._children.length = 0;
+		}
+		return children;
+	}
+
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	asNextOf(_previous: AstNode) {
 		throw new Error('It is not allowed to set the compilation unit node as the subsequent node of any other node.');

@@ -13,7 +13,7 @@ export abstract class AbstractAstNode implements AstNode {
 	/** next in global level */
 	private _next: Optional<AstNode>;
 	private _parent: Optional<AstNode>;
-	private _children: Array<AstNode>;
+	protected _children: Array<AstNode>;
 
 	constructor(options: AstNodeConstructOptions) {
 		this._text = options.text ?? '';
@@ -185,57 +185,16 @@ export abstract class AbstractAstNode implements AstNode {
 	}
 
 	asParentOf(lastChild: AstNode): void {
-		if (this._children?.includes(lastChild)) {
-			if (lastChild !== this._children[this._children.length - 1]) {
-				throw new Error('It is not allowed that the child is already a direct child of its parent and is not the last one when establishing a parent-child relationship.');
-			}
+		if (lastChild.parent != this) {
+			lastChild.asLastChildOf(this);
 		} else {
 			this.pushAsLastChild(lastChild);
-		}
-		if (lastChild.parent !== this) {
-			lastChild.asLastChildOf(this);
-		}
-		if (this._children.length == 1) {
-			// given one is the only child of this,
-			// set this as previous node of given one
-			this.asPreviousOf(lastChild);
-		} else {
-			// find the previous sibling of given one
-			// and get last descendant, to set as previous of given one
-			let node = this._children[this._children.length - 2];
-			while (node.children.length !== 0) {
-				node = node.children[node.children.length - 1];
-			}
-			node.asPreviousOf(lastChild);
 		}
 	}
 
 	asLastChildOf(parent: AstNode): void {
-		if (this._parent !== parent) {
-			this._parent = parent;
-		}
-		let childrenOfParent = parent.children;
-		if (childrenOfParent.includes(this)) {
-			if (this !== childrenOfParent[childrenOfParent.length - 1]) {
-				throw new Error('It is not allowed that the child is already a direct child of its parent and is not the last one when establishing a parent-child relationship.');
-			}
-		} else {
-			parent.asParentOf(this);
-		}
-		childrenOfParent = parent.children;
-		if (childrenOfParent.length == 1) {
-			// this is the only child of given one,
-			// set given one as previous node of this
-			parent.asPreviousOf(this);
-		} else {
-			// find the previous sibling of this
-			// and get last descendant, to set as previous of this
-			let node = childrenOfParent[childrenOfParent.length - 2];
-			while (node.children.length !== 0) {
-				node = node.children[node.children.length - 1];
-			}
-			node.asPreviousOf(this);
-		}
+		this._parent = parent;
+		parent.asParentOf(this);
 	}
 
 	/**
