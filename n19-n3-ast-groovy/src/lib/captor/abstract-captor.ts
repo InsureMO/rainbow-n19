@@ -4,7 +4,7 @@ import {AstVisitor} from '../ast-visitor';
 import {AbstractContainerAstNode, CompilationUnitNode} from '../node';
 import {TokenId} from '../tokens';
 import {AstNodeCaptor, AstNodeCaptorCheckers} from './captor';
-import {Char, CommentKeywords} from './types';
+import {Char} from './types';
 
 export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
 	private readonly _astVisitor: AstVisitor;
@@ -68,17 +68,6 @@ export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
 
 	protected appendToAst(...nodes: Array<AstNode>): void {
 		nodes.forEach(node => this._astVisitor.appendToAst(node));
-	}
-
-	/**
-	 * make sure the nodes is from closest to farthest
-	 */
-	protected detachFromAst(...nodes: Array<AstNode>): void {
-		nodes.forEach(node => this._astVisitor.detachFromAst(node));
-	}
-
-	protected getCommentKeywords(): CommentKeywords {
-		return this._astVisitor.commentKeywords;
 	}
 
 	// mine

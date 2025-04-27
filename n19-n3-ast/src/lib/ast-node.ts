@@ -103,20 +103,4 @@ export interface AstNode {
 	 * also will change parent's {@link #text} and {@link #endOffset}.
 	 */
 	appendText(text: string): void;
-
-	/**
-	 * detach from parent
-	 */
-	detachFromParent(): void;
-
-	/**
-	 * detach last child from this
-	 */
-	detachLastChild(lastNode: AstNode): void;
-
-	/**
-	 * detach given text from tail of this, will change {@link #text} and {@link #endOffset}.
-	 * also will change parent's {@link #text} and {@link #endOffset}.
-	 */
-	detachTextFromTail(text: string): void;
 }

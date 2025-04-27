@@ -76,23 +76,4 @@ export class CompilationUnitNode extends AbstractAstNode implements ProgramNode 
 	appendText(_text: string): void {
 		// do nothing
 	}
-
-	/**
-	 * do nothing, compilation unit node is root node
-	 */
-	detachFromParent() {
-		// do nothing
-	}
-
-	detachLastChild(lastNode: AstNode) {
-		super.detachLastChild(lastNode);
-	}
-
-	/**
-	 * do nothing, text of this is frozen on constructing
-	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	detachTextFromTail(_text: string) {
-		// do nothing
-	}
 }

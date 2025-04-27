@@ -1,6 +1,7 @@
 import {AstNode, Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAst} from './ast';
 import {CaptorSelector, Char, CommentKeyword, CommentKeywords} from './captor';
+import {NodeRecognizer} from './recognizer';
 import {AstBuildCommentKeywordOption, AstBuildVisitor, AstVisitOptions} from './types';
 
 export class AstVisitor {
@@ -132,6 +133,9 @@ export class AstVisitor {
 			this.address(char);
 			char = this.charAt(this._cursor);
 		} while (char != null);
+
+		// recognize nodes structure
+		new NodeRecognizer().recognize(this.ast);
 	}
 
 	/**
@@ -186,13 +190,6 @@ export class AstVisitor {
 		this._currentAstNode = this._currentAstNode.append(node);
 		this._latestAstNode = node;
 		this.onNodeAppended(node);
-	}
-
-	detachFromAst(node: AstNode): void {
-		this._currentAstNode = node.previousSibling ?? node.parent;
-		this._latestAstNode = node.previous;
-		node.detachFromParent();
-		this.onNodeDetached(node);
 	}
 
 	protected address(char: Char): void {
