@@ -9,7 +9,7 @@ import {Char} from './types';
 export abstract class AbstractSameCharsCaptor extends AbstractSingleCharCaptor {
 	protected abstract getAstNodeConstructor(): AstNodeConstructor<AstNode>;
 
-	visit(given: Char, offsetOfGiven: number): boolean {
+	visit(given: Char, offsetOfGiven: number): void {
 		// starts from next character
 		const startOffset = offsetOfGiven + 1;
 		let offset = startOffset;
@@ -31,6 +31,5 @@ export abstract class AbstractSameCharsCaptor extends AbstractSingleCharCaptor {
 
 		// move cursor
 		this.moveCursorTo(offset);
-		return true;
 	}
 }

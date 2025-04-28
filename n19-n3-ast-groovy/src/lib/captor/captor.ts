@@ -22,10 +22,9 @@ export interface AstNodeCaptor {
 	/**
 	 * start to visit the char sequence from given offset.
 	 * and given char is the char of given offset.
-	 * nodes visited should be appended to ast in this function, and returns true if any node visited.
-	 * or returns false if no node visited.
+	 * nodes visited should be appended to ast in this function
 	 */
-	visit(char: Char, offset: number): boolean;
+	visit(char: Char, offset: number): void;
 
 	// operators
 	/**

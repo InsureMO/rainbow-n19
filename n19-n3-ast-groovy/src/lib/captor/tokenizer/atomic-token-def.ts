@@ -34,11 +34,11 @@ const createAtomicTokenDef = (tokenId: TokenId, basis: AtomicTokenBasisType): At
 			return createDualKeywordsDefClasses(name, tokenId, keywords);
 		}
 		case Tt.Nl: {
-			const [, keywordOrNodeClass, nameOrCaptorClass] = basis;
+			const [, keywordOrNodeClass, nameOrCaptorClasses] = basis;
 			if (typeof keywordOrNodeClass === 'string') {
-				return createKeywordDefClasses(nameOrCaptorClass, tokenId, keywordOrNodeClass);
+				return createKeywordDefClasses(nameOrCaptorClasses, tokenId, keywordOrNodeClass);
 			} else {
-				return [keywordOrNodeClass, nameOrCaptorClass];
+				return [keywordOrNodeClass, nameOrCaptorClasses];
 			}
 		}
 		case Tt.Sl: {

@@ -35,9 +35,8 @@ export abstract class AbstractMultipleCharsCaptor extends AbstractAstNodeCaptor 
 	protected abstract getAstNodeConstructor(): AstNodeConstructor<AstNode>;
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	visit(_char: Char, offset: number): boolean {
+	visit(_char: Char, offset: number): void {
 		this.createAndAppendToAst(this.getAstNodeConstructor(), {text: this.chars, startOffset: offset});
 		this.moveCursorTo(offset + this.charsLength);
-		return true;
 	}
 }

@@ -59,7 +59,7 @@ export type AtomicJavaKeywordTokenBasis = [AtomicTokenType.JavaKeyword, AstKeywo
 export type AtomicBooleanLiteralBasis = [AtomicTokenType.BooleanLiteral, [AstLiterals, AstLiterals], AtomicTokenName];
 export type AtomicNumericLiteralBasis =
 	| [AtomicTokenType.NumericLiteral, AstLiterals, AtomicTokenName]
-	| [AtomicTokenType.NumericLiteral, AstNodeConstructor, AstNodeCaptorConstructor];
+	| [AtomicTokenType.NumericLiteral, AstNodeConstructor, Array<AstNodeCaptorConstructor>];
 export type AtomicStringLiteralBasic = [AtomicTokenType.StringLiteral, AstLiterals, AtomicTokenName];
 export type AtomicGroovyOperatorTokenBasis = [AtomicTokenType.GroovyOperator, AstOperators, AtomicTokenName];
 export type AtomicJavaOperatorTokenBasis = [AtomicTokenType.JavaOperator, AstOperators, AtomicTokenName];

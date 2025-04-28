@@ -20,7 +20,7 @@ export class IdentifierCaptor extends AbstractAstNodeCaptor {
 		return this._checker;
 	}
 
-	visit(given: Char, offsetOfGiven: number): boolean {
+	visit(given: Char, offsetOfGiven: number): void {
 		// starts from next character
 		const startOffset = offsetOfGiven + 1;
 		let offset = startOffset;
@@ -42,6 +42,5 @@ export class IdentifierCaptor extends AbstractAstNodeCaptor {
 
 		// move cursor
 		this.moveCursorTo(offset);
-		return true;
 	}
 }

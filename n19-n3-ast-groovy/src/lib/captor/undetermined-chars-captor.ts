@@ -11,9 +11,8 @@ export class UndeterminedCharsCaptor extends AbstractAstNodeCaptor {
 		return [];
 	}
 
-	visit(char: Char, offset: number): boolean {
+	visit(char: Char, offset: number): void {
 		this.createAndAppendToAst(UndeterminedCharsNode, {text: char, startOffset: offset});
 		this.moveCursorTo(offset + 1);
-		return true;
 	}
 }

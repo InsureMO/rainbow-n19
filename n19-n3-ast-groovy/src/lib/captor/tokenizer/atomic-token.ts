@@ -1,7 +1,19 @@
 import {IdentifierNode, NumericBasePartNode, UndeterminedCharsNode} from '../../node';
 import {TokenId} from '../../tokens';
 import {IdentifierCaptor} from '../identifier-captor';
-import {LtNumericBasePartCaptor} from '../numeric-base-part-captor';
+import {
+	LtNumericBasePartCaptorStartsWith0,
+	LtNumericBasePartCaptorStartsWith1,
+	LtNumericBasePartCaptorStartsWith2,
+	LtNumericBasePartCaptorStartsWith3,
+	LtNumericBasePartCaptorStartsWith4,
+	LtNumericBasePartCaptorStartsWith5,
+	LtNumericBasePartCaptorStartsWith6,
+	LtNumericBasePartCaptorStartsWith7,
+	LtNumericBasePartCaptorStartsWith8,
+	LtNumericBasePartCaptorStartsWith9,
+	LtNumericBasePartCaptorStartsWithDot
+} from '../numeric-base-part-captor';
 import {UndeterminedCharsCaptor} from '../undetermined-chars-captor';
 import {AtomicTokenBasisType, KwCh, KwKw, KwLt, KwMk, KwOp, KwPt, Tt} from './internal';
 
@@ -77,7 +89,13 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	// boolean
 	[TokenId.BooleanLiteral]: [Tt.Bl, [KwLt.TRUE, KwLt.FALSE], 'LtBoolean'],
 	// numeric
-	[TokenId.NumericBasePart]: [Tt.Nl, NumericBasePartNode, LtNumericBasePartCaptor],
+	[TokenId.NumericBasePart]: [Tt.Nl, NumericBasePartNode, [
+		LtNumericBasePartCaptorStartsWith0, LtNumericBasePartCaptorStartsWith1, LtNumericBasePartCaptorStartsWith2,
+		LtNumericBasePartCaptorStartsWith3, LtNumericBasePartCaptorStartsWith4, LtNumericBasePartCaptorStartsWith5,
+		LtNumericBasePartCaptorStartsWith6, LtNumericBasePartCaptorStartsWith7, LtNumericBasePartCaptorStartsWith8,
+		LtNumericBasePartCaptorStartsWith9,
+		LtNumericBasePartCaptorStartsWithDot
+	]],
 	[TokenId.BinaryStartMark]: [Tt.Nl, KwLt.BinaryStartMark, 'LtBinaryStartMark'],
 	[TokenId.HexadecimalStartMark]: [Tt.Nl, KwLt.HexadecimalStartMark, 'LtHexadecimalStartMark'],
 	// string and gstring

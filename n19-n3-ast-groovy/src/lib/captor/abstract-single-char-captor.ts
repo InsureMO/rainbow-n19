@@ -22,9 +22,8 @@ export abstract class AbstractSingleCharCaptor extends AbstractAstNodeCaptor {
 
 	protected abstract getAstNodeConstructor(): AstNodeConstructor<AstNode>;
 
-	visit(char: Char, offset: number): boolean {
+	visit(char: Char, offset: number): void {
 		this.createAndAppendToAst(this.getAstNodeConstructor(), {text: char, startOffset: offset});
 		this.moveCursorTo(offset + 1);
-		return true;
 	}
 }

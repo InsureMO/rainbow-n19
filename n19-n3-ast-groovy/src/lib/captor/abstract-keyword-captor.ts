@@ -40,13 +40,12 @@ export abstract class AbstractKeywordCaptor extends AbstractMultipleCharsCaptor 
 		return offset + this.charsLength;
 	}
 
-	visit(char: Char, offset: number): boolean {
+	visit(char: Char, offset: number): void {
 		// create node
 		const node = this.createAndAppendToAst(this.getAstNodeConstructor(), {
 			text: this.isContainerNode() ? '' : this.keyword, startOffset: offset
 		});
 
 		this.moveCursorTo(this.createChildAstNodes(node, char, offset));
-		return true;
 	}
 }

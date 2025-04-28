@@ -83,5 +83,5 @@ export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
 
 	abstract checkers(): AstNodeCaptorCheckers;
 
-	abstract visit(char: Char, offset: number): boolean;
+	abstract visit(char: Char, offset: number): void;
 }
