@@ -7,6 +7,7 @@ export class ScriptCommandRecognizer implements NodeRecognizer {
 	}
 
 	recognize(recognition: AstRecognition): number {
+		// TODO
 		return 0;
 	}
 }

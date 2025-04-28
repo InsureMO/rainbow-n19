@@ -15,4 +15,5 @@ export * from './abstract-multiple-chars-captor';
 export * from './abstract-keyword-captor';
 
 export * from './identifier-captor';
+export * from './numeric-base-part-captor';
 export * from './undetermined-chars-captor';

@@ -4448,9 +4448,10 @@ public final class String
 `;
 		console.time('spent');
 		for (let i = 0; i < 100; i++) {
-			const ast = GroovyAstBuilder.ast(text);
+			const ast = GroovyAstBuilder.ast(text, {timeSpentLogEnabled: false});
 		}
 		console.timeEnd('spent');
-		// console.log(ast.nodes.length)
+		const ast = GroovyAstBuilder.ast(text);
+		console.log(ast.nodes.length)
 	});
 });

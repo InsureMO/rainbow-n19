@@ -33,6 +33,18 @@ const createAtomicTokenDef = (tokenId: TokenId, basis: AtomicTokenBasisType): At
 			const [, keywords, name] = basis;
 			return createDualKeywordsDefClasses(name, tokenId, keywords);
 		}
+		case Tt.Nl: {
+			const [, keywordOrNodeClass, nameOrCaptorClass] = basis;
+			if (typeof keywordOrNodeClass === 'string') {
+				return createKeywordDefClasses(nameOrCaptorClass, tokenId, keywordOrNodeClass);
+			} else {
+				return [keywordOrNodeClass, nameOrCaptorClass];
+			}
+		}
+		case Tt.Sl: {
+			const [, keyword, name] = basis;
+			return createKeywordDefClasses(name, tokenId, keyword);
+		}
 		// groovy operator
 		case Tt.Go:
 		// eslint-disable-next-line no-fallthrough

@@ -7,6 +7,8 @@ export enum AtomicTokenType {
 	GroovyKeyword,
 	JavaKeyword,
 	BooleanLiteral,
+	NumericLiteral,
+	StringLiteral,
 	GroovyOperator,
 	JavaOperator,
 	Separator,
@@ -23,6 +25,8 @@ export const Tt = {
 	Gk: AtomicTokenType.GroovyKeyword as AtomicTokenType.GroovyKeyword,
 	Jk: AtomicTokenType.JavaKeyword as AtomicTokenType.JavaKeyword,
 	Bl: AtomicTokenType.BooleanLiteral as AtomicTokenType.BooleanLiteral,
+	Nl: AtomicTokenType.NumericLiteral as AtomicTokenType.NumericLiteral,
+	Sl: AtomicTokenType.StringLiteral as AtomicTokenType.StringLiteral,
 	Go: AtomicTokenType.GroovyOperator as AtomicTokenType.GroovyOperator,
 	Jo: AtomicTokenType.JavaOperator as AtomicTokenType.JavaOperator,
 	Sp: AtomicTokenType.Separator as AtomicTokenType.Separator,
@@ -53,6 +57,10 @@ export type AtomicPrimitiveTokenBasis = [AtomicTokenType.PrimitiveType, AstPrimi
 export type AtomicGroovyKeywordTokenBasis = [AtomicTokenType.GroovyKeyword, AstKeywords, AtomicTokenName];
 export type AtomicJavaKeywordTokenBasis = [AtomicTokenType.JavaKeyword, AstKeywords, AtomicTokenName];
 export type AtomicBooleanLiteralBasis = [AtomicTokenType.BooleanLiteral, [AstLiterals, AstLiterals], AtomicTokenName];
+export type AtomicNumericLiteralBasis =
+	| [AtomicTokenType.NumericLiteral, AstLiterals, AtomicTokenName]
+	| [AtomicTokenType.NumericLiteral, AstNodeConstructor, AstNodeCaptorConstructor];
+export type AtomicStringLiteralBasic = [AtomicTokenType.StringLiteral, AstLiterals, AtomicTokenName];
 export type AtomicGroovyOperatorTokenBasis = [AtomicTokenType.GroovyOperator, AstOperators, AtomicTokenName];
 export type AtomicJavaOperatorTokenBasis = [AtomicTokenType.JavaOperator, AstOperators, AtomicTokenName];
 export type AtomicSeparatorTokenBasis = [AtomicTokenType.Separator, AstChars, AtomicTokenName];
@@ -64,7 +72,7 @@ export type AtomicCustomTokenBasis = [AtomicTokenType.Custom, AstNodeConstructor
 export type AtomicTokenBasisType =
 	| AtomicPrimitiveTokenBasis
 	| AtomicGroovyKeywordTokenBasis | AtomicJavaKeywordTokenBasis
-	| AtomicBooleanLiteralBasis
+	| AtomicBooleanLiteralBasis | AtomicNumericLiteralBasis | AtomicStringLiteralBasic
 	| AtomicGroovyOperatorTokenBasis | AtomicJavaOperatorTokenBasis
 	| AtomicSeparatorTokenBasis
 	| AtomicCommentsMarkTokenBasis

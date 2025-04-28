@@ -10,9 +10,9 @@ import {Char} from './types';
 export class IdentifierCaptor extends AbstractAstNodeCaptor {
 	private readonly _checker: AstNodeCaptorCharFuncCheck = (() => {
 		const func: AstNodeCaptorCharFuncCheck = (char) => {
-			return Character.isJavaIdentifierPartAndNotIdentifierIgnorable(char.codePointAt(0));
+			return Character.isJavaIdentifierStartAndNotIdentifierIgnorable(char.codePointAt(0));
 		};
-		func.describe = () => 'isJavaIdentifierPartAndNotIdentifierIgnorable';
+		func.describe = () => 'isJavaIdentifierStartAndNotIdentifierIgnorable';
 		return func;
 	})();
 

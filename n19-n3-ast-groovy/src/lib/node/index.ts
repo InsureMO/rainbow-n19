@@ -13,4 +13,5 @@ export * from './abstract-same-chars';
 export * from './literal-node';
 
 export * from './identifier-node';
+export * from './numeric-base-part-node';
 export * from './undetermined-chars';

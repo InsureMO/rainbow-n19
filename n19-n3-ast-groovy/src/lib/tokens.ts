@@ -108,8 +108,8 @@ export enum TokenId {
 	GStringQuotationMark, // "
 	GStringQuotationMarkML, // """
 	SlashyGStringQuotationMark, // /
-	DollarSlashyGStringQuotationMarkBegin, // $/
-	DollarSlashyGStringQuotationMarkEnd, // /$
+	DollarSlashyGStringQuotationStartMark, // $/
+	DollarSlashyGStringQuotationEndMark, // /$
 	SlashyGStringBackslashEscape, // \/
 	DollarSlashyGStringDollarEscape, // $$
 	DollarSlashyGStringSlashEscape, // $/

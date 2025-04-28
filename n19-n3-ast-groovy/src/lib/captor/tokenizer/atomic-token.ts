@@ -1,6 +1,7 @@
-import {IdentifierNode, UndeterminedCharsNode} from '../../node';
+import {IdentifierNode, NumericBasePartNode, UndeterminedCharsNode} from '../../node';
 import {TokenId} from '../../tokens';
 import {IdentifierCaptor} from '../identifier-captor';
+import {LtNumericBasePartCaptor} from '../numeric-base-part-captor';
 import {UndeterminedCharsCaptor} from '../undetermined-chars-captor';
 import {AtomicTokenBasisType, KwCh, KwKw, KwLt, KwMk, KwOp, KwPt, Tt} from './internal';
 
@@ -75,9 +76,32 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.YIELD]: [Tt.Jk, KwKw.Yield, 'JkYield'],
 	// boolean
 	[TokenId.BooleanLiteral]: [Tt.Bl, [KwLt.TRUE, KwLt.FALSE], 'LtBoolean'],
-	// TODO numeric
-	// TODO char
-	// TODO string and gstring
+	// numeric
+	[TokenId.NumericBasePart]: [Tt.Nl, NumericBasePartNode, LtNumericBasePartCaptor],
+	[TokenId.BinaryStartMark]: [Tt.Nl, KwLt.BinaryStartMark, 'LtBinaryStartMark'],
+	[TokenId.HexadecimalStartMark]: [Tt.Nl, KwLt.HexadecimalStartMark, 'LtHexadecimalStartMark'],
+	// string and gstring
+	[TokenId.StringQuotationMark]: [Tt.Sl, KwLt.StringQuotationMark, 'LtStringQuotationMark'],
+	[TokenId.StringQuotationMarkML]: [Tt.Sl, KwLt.StringQuotationMarkML, 'LtStringQuotationMarkML'],
+	[TokenId.StringBackspaceEscape]: [Tt.Sl, KwLt.StringBackspaceEscape, 'LtStringBackspaceEscape'],
+	[TokenId.StringFormFeedEscape]: [Tt.Sl, KwLt.StringFormFeedEscape, 'LtStringFormFeedEscape'],
+	[TokenId.StringNewLineEscape]: [Tt.Sl, KwLt.StringNewLineEscape, 'LtStringNewLineEscape'],
+	[TokenId.StringCarriageReturnEscape]: [Tt.Sl, KwLt.StringCarriageReturnEscape, 'LtStringCarriageReturnEscape'],
+	[TokenId.StringSingleSpaceEscape]: [Tt.Sl, KwLt.StringSingleSpaceEscape, 'LtStringSingleSpaceEscape'],
+	[TokenId.StringTabulationEscape]: [Tt.Sl, KwLt.StringTabulationEscape, 'LtStringTabulationEscape'],
+	[TokenId.StringBackslashEscape]: [Tt.Sl, KwLt.StringBackslashEscape, 'LtStringBackslashEscape'],
+	[TokenId.StringSingleQuoteEscape]: [Tt.Sl, KwLt.StringSingleQuoteEscape, 'LtStringSingleQuoteEscape'],
+	[TokenId.StringDoubleQuoteEscape]: [Tt.Sl, KwLt.StringDoubleQuoteEscape, 'LtStringDoubleQuoteEscape'],
+	[TokenId.StringDollarEscape]: [Tt.Sl, KwLt.StringDollarEscape, 'LtStringDollarEscape'],
+	[TokenId.StringUnicodeEscapeMark]: [Tt.Sl, KwLt.StringUnicodeEscapeMark, 'LtStringUnicodeEscapeMark'],
+	[TokenId.GStringQuotationMark]: [Tt.Sl, KwLt.GStringQuotationMark, 'LtGStringQuotationMark'],
+	[TokenId.GStringQuotationMarkML]: [Tt.Sl, KwLt.GStringQuotationMarkML, 'LtGStringQuotationMarkML'],
+	[TokenId.SlashyGStringQuotationMark]: [Tt.Sl, KwLt.SlashyGStringQuotationMark, 'LtSlashyGStringQuotationMark'],
+	[TokenId.DollarSlashyGStringQuotationStartMark]: [Tt.Sl, KwLt.DollarSlashyGStringQuotationStartMark, 'LtDollarSlashyGStringQuotationStartMark'],
+	[TokenId.DollarSlashyGStringQuotationEndMark]: [Tt.Sl, KwLt.DollarSlashyGStringQuotationEndMark, 'LtDollarSlashyGStringQuotationEndMark'],
+	[TokenId.SlashyGStringBackslashEscape]: [Tt.Sl, KwLt.SlashyGStringBackslashEscape, 'LtSlashyGStringBackslashEscape'],
+	[TokenId.DollarSlashyGStringDollarEscape]: [Tt.Sl, KwLt.DollarSlashyGStringDollarEscape, 'LtDollarSlashyGStringDollarEscape'],
+	[TokenId.GStringInterpolationSymbol]: [Tt.Sl, KwLt.GStringInterpolationSymbol, 'LtGStringInterpolationSymbol'],
 	// Groovy Operators
 	[TokenId.RangeInclusive]: [Tt.Go, KwOp.RangeInclusive, 'GoRangeInclusive'],
 	[TokenId.RangeExclusiveLeft]: [Tt.Go, KwOp.RangeExclusiveLeft, 'GoRangeExclusiveLeft'],
