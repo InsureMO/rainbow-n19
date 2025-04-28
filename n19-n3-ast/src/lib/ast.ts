@@ -6,7 +6,6 @@ export interface Ast {
 	readonly document: string;
 	readonly documentLength: number;
 	readonly nodes: ReadonlyArray<AstNode>;
-	readonly leafNodes: ReadonlyArray<AstNode>;
 }
 
 export abstract class AbstractAst implements Ast {
@@ -32,11 +31,7 @@ export abstract class AbstractAst implements Ast {
 	}
 
 	get nodes(): Array<AstNode> {
-		return this._compilationUnit.nextNodes;
-	}
-
-	get leafNodes(): Array<AstNode> {
-		return this._compilationUnit.nextNodes.filter(node => node.children.length === 0);
+		return this._compilationUnit.children ?? [];
 	}
 
 	toString() {

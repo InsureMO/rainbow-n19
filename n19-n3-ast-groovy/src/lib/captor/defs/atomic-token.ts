@@ -1,5 +1,6 @@
 import {TokenId, TokenType} from '../../tokens';
 import {IdentifierCaptor} from '../identifier-captor';
+import {Newline1CharCaptor, Newline2CharsCaptor} from '../newline-captors';
 import {
 	LtNumericBasePartCaptorStartsWith0,
 	LtNumericBasePartCaptorStartsWith1,
@@ -196,7 +197,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	// char(s)
 	[TokenId.Whitespaces]: [Tt.Sch, KwCh.Whitespace, 'Whitespaces', TokenType.WhitespaceOrTabs],
 	[TokenId.Tabs]: [Tt.Sch, KwCh.Tab, 'Tabs', TokenType.WhitespaceOrTabs],
-	[TokenId.NewLine]: [Tt.Mcp, [KwCh.NewLine, KwMk.CarriageReturnNewLine], 'NewLine', TokenType.NewLine],
+	[TokenId.NewLine]: [Tt.Snl, [Newline1CharCaptor, Newline2CharsCaptor]],
 	[TokenId.Identifier]: [Tt.Ct, IdentifierCaptor],
 	[TokenId.UndeterminedChars]: [Tt.Ct, UndeterminedCharsCaptor]
 };

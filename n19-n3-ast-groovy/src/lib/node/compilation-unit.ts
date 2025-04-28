@@ -20,14 +20,6 @@ export class CompilationUnitNode extends GroovyAstNode implements ProgramNode {
 		// do nothing
 	}
 
-	get previous(): Optional<GroovyAstNode> {
-		return (void 0);
-	}
-
-	get previousNodes(): Array<GroovyAstNode> {
-		return [];
-	}
-
 	get previousSibling(): Optional<GroovyAstNode> {
 		return (void 0);
 	}
@@ -58,11 +50,6 @@ export class CompilationUnitNode extends GroovyAstNode implements ProgramNode {
 			this._children.length = 0;
 		}
 		return children;
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	asNextOf(_previous: GroovyAstNode): void {
-		throw new Error('It is not allowed to set the compilation unit node as the subsequent node of any other node.');
 	}
 
 	protected pushAsLastChild(lastChild: GroovyAstNode): void {

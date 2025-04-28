@@ -79,13 +79,3 @@ export const createOperatorCaptorClass =
 			? createSingleCharCaptorClass(className, operator, tokenId, TokenType.Operator)
 			: createMultiCharsCaptorClass(className, operator, tokenId, TokenType.Operator);
 	};
-
-// multi-chars matches
-export const createMultiCharPatternsCaptorClasses =
-	(className: string, patterns: Array<string>, tokenId: TokenId, tokenType: TokenType): AtomicTokenDefOfMultiCaptors => {
-		return patterns.map(pattern => {
-			return (pattern.length === 1)
-				? createSingleCharCaptorClass(className, pattern, tokenId, tokenType)
-				: createMultiCharsCaptorClass(className, pattern, tokenId, tokenType);
-		});
-	};

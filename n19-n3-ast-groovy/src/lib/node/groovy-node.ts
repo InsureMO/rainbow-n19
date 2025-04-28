@@ -15,12 +15,11 @@ export class GroovyAstNode implements AstNode {
 	private _endOffset: number;
 	private readonly _startLine: number;
 
-	/** previous in global level */
-	private _previous: Optional<GroovyAstNode>;
-	/** next in global level */
-	private _next: Optional<GroovyAstNode>;
 	private _parent: Optional<GroovyAstNode>;
 	protected _children: Array<GroovyAstNode>;
+
+	// special behaviors
+	private _mergeTextWhenSameTokenIdAppended: boolean = false;
 
 	constructor(options: GroovyAstNodeConstructOptions) {
 		this._tokenId = options.tokenId;
@@ -50,6 +49,11 @@ export class GroovyAstNode implements AstNode {
 		this._endOffset = this._startOffset + this._text.length;
 	}
 
+	// special behaviors
+	mergeTextWhenSameTokenIdAppended(enabled: boolean): void {
+		this._mergeTextWhenSameTokenIdAppended = enabled;
+	}
+
 	get text(): string {
 		return this._text ?? '';
 	}
@@ -64,34 +68,6 @@ export class GroovyAstNode implements AstNode {
 
 	get startLine(): number {
 		return this._startLine;
-	}
-
-	get previous(): Optional<GroovyAstNode> {
-		return this._previous;
-	}
-
-	get previousNodes(): Array<GroovyAstNode> {
-		const nodes: Array<GroovyAstNode> = [];
-		let previous = this.previous;
-		while (previous != null) {
-			nodes.push(previous);
-			previous = previous.previous;
-		}
-		return nodes.reverse();
-	}
-
-	get next(): Optional<GroovyAstNode> {
-		return this._next;
-	}
-
-	get nextNodes(): Array<GroovyAstNode> {
-		const nodes: Array<GroovyAstNode> = [];
-		let next = this.next;
-		while (next != null) {
-			nodes.push(next);
-			next = next.next;
-		}
-		return nodes;
 	}
 
 	get parent(): Optional<GroovyAstNode> {
@@ -176,24 +152,6 @@ export class GroovyAstNode implements AstNode {
 		return this._children ?? [];
 	}
 
-	asPreviousOf(next: GroovyAstNode): void {
-		if (this._next !== next) {
-			this._next = next;
-		}
-		if (next.previous !== this) {
-			next.asNextOf(this);
-		}
-	}
-
-	asNextOf(previous: GroovyAstNode): void {
-		if (this._previous !== previous) {
-			this._previous = previous;
-		}
-		if (previous.next !== this) {
-			previous.asPreviousOf(this);
-		}
-	}
-
 	protected defendChildren() {
 		if (this._children == null) {
 			this._children = [];
@@ -228,8 +186,13 @@ export class GroovyAstNode implements AstNode {
 	 * so make sure the node has parent.
 	 */
 	append(node: GroovyAstNode): GroovyAstNode {
-		node.asLastChildOf(this.parent);
-		return node;
+		if (this._mergeTextWhenSameTokenIdAppended && node.tokenId === this.tokenId) {
+			this.appendText(node.text);
+			return this;
+		} else {
+			node.asLastChildOf(this.parent);
+			return node;
+		}
 	}
 
 	appendText(text: string): void {

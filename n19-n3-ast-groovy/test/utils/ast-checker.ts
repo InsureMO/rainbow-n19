@@ -32,7 +32,7 @@ export class AstChecker {
 			this._logs.push([
 				indent,
 				bullet,
-				' ✅  ',
+				' ✅ ',
 				`Check [type=${TokenId[type]}, `,
 				`startOffset=${startOffset}, `,
 				`endOffset=${endOffset}, `,

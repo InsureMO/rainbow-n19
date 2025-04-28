@@ -18,22 +18,6 @@ export interface AstNode {
 	get startOffset(): number;
 	get endOffset(): number;
 	get startLine(): number;
-
-	// relationship
-	/** previous node, global level */
-	get previous(): NonNullable<AstNode>;
-	/**
-	 * all previous nodes, global level, empty when this is first node.
-	 * the returned data conforms to the natural order.
-	 */
-	get previousNodes(): Array<AstNode>;
-	/** next node, global level */
-	get next(): Optional<AstNode>;
-	/**
-	 * all next nodes, global level, empty when this is last node.
-	 * the returned data conforms to the natural order.
-	 */
-	get nextNodes(): Array<AstNode>;
 	/** parent node */
 	get parent(): Optional<AstNode>;
 	/**
@@ -64,20 +48,6 @@ export interface AstNode {
 	get children(): Array<AstNode>;
 
 	// operations
-	// all relationship operations do relationship build only, will not break any existing relationship
-	// e.g. A's previous is B, B's next is A.
-	// after performed B.asPreviousOf(C), B's next is C and C's previous is B,
-	// but A's previous is still B, will not be removed.
-	/**
-	 * set given one as next node of this in global level.
-	 * and also set this as previous node of given one in global level.
-	 */
-	asPreviousOf(next: AstNode): void;
-	/**
-	 * set given one as previous node of this in global level.
-	 * and also set this as next node of given one in global level.
-	 */
-	asNextOf(previous: AstNode): void;
 	/**
 	 * set given one as last child of this.
 	 * set this as parent of given one.

@@ -41,21 +41,24 @@ export class ScriptCommandRecognizer implements NodeRecognizer {
 					text: '', startOffset: node.startOffset, startLine: nodeStartLine
 				});
 				scriptCommandNode.asParentOf(node);
+				astRecognizer.createParent(scriptCommandNode);
+				let latestNode = node;
 				let nextNodeIndex = nodeIndex + 1;
 				let nextNode = nodes[nextNodeIndex];
 				while (nextNode != null) {
 					if (nextNode.tokenId !== TokenId.NewLine) {
 						if (nextNode.tokenType !== TokenType.WhitespaceOrTabs) {
 							nextNode.replaceTokenNature(TokenId.Chars, TokenType.Chars);
+							nextNode.mergeTextWhenSameTokenIdAppended(true);
 						}
-						scriptCommandNode.asParentOf(nextNode);
+						latestNode = latestNode.append(nextNode);
 						nextNodeIndex++;
 						nextNode = nodes[nextNodeIndex];
 					} else {
 						break;
 					}
 				}
-				astRecognizer.createParent(scriptCommandNode);
+				astRecognizer.closeParent();
 				return nextNodeIndex;
 			}
 		} else if ([

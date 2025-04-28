@@ -2,7 +2,6 @@ import {TokenId, TokenType} from '../../tokens';
 import {AtomicTokenBasis} from './atomic-token';
 import {
 	createKeywordCaptorClass,
-	createMultiCharPatternsCaptorClasses,
 	createMultiCharsCaptorClass,
 	createOperatorCaptorClass,
 	createSameCharsCaptorClass,
@@ -69,9 +68,9 @@ const createAtomicTokenDef = (tokenId: TokenId, basis: AtomicTokenBasisType): At
 			const [, char, name, tokenType] = basis;
 			return createSameCharsCaptorClass(name, char, tokenId, tokenType);
 		}
-		case Tt.Mcp: {
-			const [, matches, name, tokenType] = basis;
-			return createMultiCharPatternsCaptorClasses(name, matches, tokenId, tokenType);
+		case Tt.Snl: {
+			const [, CaptorClasses] = basis;
+			return CaptorClasses;
 		}
 		case Tt.Ct: {
 			const [, CaptorClasses] = basis;
