@@ -1,5 +1,4 @@
-import {IdentifierNode, NumericBasePartNode, UndeterminedCharsNode} from '../../node';
-import {TokenId} from '../../tokens';
+import {TokenId, TokenType} from '../../tokens';
 import {IdentifierCaptor} from '../identifier-captor';
 import {
 	LtNumericBasePartCaptorStartsWith0,
@@ -89,7 +88,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	// boolean
 	[TokenId.BooleanLiteral]: [Tt.Bl, [KwLt.TRUE, KwLt.FALSE], 'LtBoolean'],
 	// numeric
-	[TokenId.NumericBasePart]: [Tt.Nl, NumericBasePartNode, [
+	[TokenId.NumericBasePart]: [Tt.Nl, [
 		LtNumericBasePartCaptorStartsWith0, LtNumericBasePartCaptorStartsWith1, LtNumericBasePartCaptorStartsWith2,
 		LtNumericBasePartCaptorStartsWith3, LtNumericBasePartCaptorStartsWith4, LtNumericBasePartCaptorStartsWith5,
 		LtNumericBasePartCaptorStartsWith6, LtNumericBasePartCaptorStartsWith7, LtNumericBasePartCaptorStartsWith8,
@@ -195,9 +194,9 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	// script comment mark
 	[TokenId.ScriptCommandStartMark]: [Tt.Scm, KwMk.ScriptCommandStart, 'ScriptCommandStartMark'],
 	// char(s)
-	[TokenId.Whitespaces]: [Tt.Sch, KwCh.Whitespace, 'Whitespaces'],
-	[TokenId.Tabs]: [Tt.Sch, KwCh.Tab, 'Tabs'],
-	[TokenId.NewLine]: [Tt.Mcp, [KwCh.NewLine, KwMk.CarriageReturnNewLine], 'NewLine'],
-	[TokenId.Identifier]: [Tt.Ct, IdentifierNode, IdentifierCaptor],
-	[TokenId.UndeterminedChars]: [Tt.Ct, UndeterminedCharsNode, UndeterminedCharsCaptor]
+	[TokenId.Whitespaces]: [Tt.Sch, KwCh.Whitespace, 'Whitespaces', TokenType.WhitespaceOrTabs],
+	[TokenId.Tabs]: [Tt.Sch, KwCh.Tab, 'Tabs', TokenType.WhitespaceOrTabs],
+	[TokenId.NewLine]: [Tt.Mcp, [KwCh.NewLine, KwMk.CarriageReturnNewLine], 'NewLine', TokenType.NewLine],
+	[TokenId.Identifier]: [Tt.Ct, IdentifierCaptor],
+	[TokenId.UndeterminedChars]: [Tt.Ct, UndeterminedCharsCaptor]
 };

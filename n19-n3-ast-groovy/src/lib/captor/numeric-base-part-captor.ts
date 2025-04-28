@@ -1,6 +1,6 @@
-import {AstVisitor} from '../ast-visitor';
-import {NumericBasePartNode} from '../node';
+import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
+import {AstTokenizer} from './ast-tokenizer';
 import {
 	AstNodeCaptorCharCheck,
 	AstNodeCaptorCharFuncCheck,
@@ -16,8 +16,8 @@ import {AstChars} from './util';
 export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends AbstractAstNodeCaptor {
 	private readonly _numericChecker: AstNodeCaptorCharCheck;
 
-	protected constructor(number: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9', astVisitor: AstVisitor) {
-		super(astVisitor);
+	protected constructor(number: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9', tokenizer: AstTokenizer) {
+		super(tokenizer);
 		this._numericChecker = number;
 	}
 
@@ -48,69 +48,72 @@ export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends Ab
 			c = this.charAt(offset);
 		}
 
-		this.createAndAppendToAst(NumericBasePartNode, {text, startOffset: offsetOfGiven});
+		this.createAndAppendToAst({
+			tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+			text, startOffset: offsetOfGiven
+		});
 		// move cursor
 		this.moveCursorTo(offset);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith0 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(astVisitor: AstVisitor) {
-		super('0', astVisitor);
+	constructor(tokenizer: AstTokenizer) {
+		super('0', tokenizer);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith1 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(astVisitor: AstVisitor) {
-		super('1', astVisitor);
+	constructor(tokenizer: AstTokenizer) {
+		super('1', tokenizer);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith2 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(astVisitor: AstVisitor) {
-		super('2', astVisitor);
+	constructor(tokenizer: AstTokenizer) {
+		super('2', tokenizer);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith3 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(astVisitor: AstVisitor) {
-		super('3', astVisitor);
+	constructor(tokenizer: AstTokenizer) {
+		super('3', tokenizer);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith4 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(astVisitor: AstVisitor) {
-		super('4', astVisitor);
+	constructor(tokenizer: AstTokenizer) {
+		super('4', tokenizer);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith5 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(astVisitor: AstVisitor) {
-		super('5', astVisitor);
+	constructor(tokenizer: AstTokenizer) {
+		super('5', tokenizer);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith6 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(astVisitor: AstVisitor) {
-		super('6', astVisitor);
+	constructor(tokenizer: AstTokenizer) {
+		super('6', tokenizer);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith7 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(astVisitor: AstVisitor) {
-		super('7', astVisitor);
+	constructor(tokenizer: AstTokenizer) {
+		super('7', tokenizer);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith8 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(astVisitor: AstVisitor) {
-		super('8', astVisitor);
+	constructor(tokenizer: AstTokenizer) {
+		super('8', tokenizer);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith9 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(astVisitor: AstVisitor) {
-		super('9', astVisitor);
+	constructor(tokenizer: AstTokenizer) {
+		super('9', tokenizer);
 	}
 }
 
@@ -146,7 +149,10 @@ export class LtNumericBasePartCaptorStartsWithDot extends AbstractAstNodeCaptor 
 			c = this.charAt(offset);
 		}
 
-		this.createAndAppendToAst(NumericBasePartNode, {text, startOffset: offsetOfGiven});
+		this.createAndAppendToAst({
+			tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+			text, startOffset: offsetOfGiven
+		});
 		// move cursor
 		this.moveCursorTo(offset);
 	}

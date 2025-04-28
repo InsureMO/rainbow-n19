@@ -1,52 +1,58 @@
-import {AstNode, AstNodeConstructOptions, Optional, ProgramNode} from '@rainbow-n19/n3-ast';
-import {TokenId} from '../tokens';
-import {AbstractAstNode} from './abstract-node';
+import {AstNodeConstructOptions, Optional, ProgramNode} from '@rainbow-n19/n3-ast';
+import {TokenId, TokenType} from '../tokens';
+import {GroovyAstNode} from './groovy-node';
 
 /**
  * compilation unit, root.
  */
-export class CompilationUnitNode extends AbstractAstNode implements ProgramNode {
+export class CompilationUnitNode extends GroovyAstNode implements ProgramNode {
 	constructor(options: Omit<AstNodeConstructOptions, 'startLine'>) {
-		super({...options, startLine: 0});
+		super({...options, tokenId: TokenId.COMPILATION_UNIT, tokenType: TokenType.CompilationUnit, startLine: 0});
 	}
 
-	get tokenId(): TokenId {
-		return TokenId.COMPILATION_UNIT;
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	replaceTokenNature(_tokenId: TokenId, _tokenType: TokenType) {
+		// do nothing
 	}
 
-	get previous(): Optional<AstNode> {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	replaceTokenNatureAndText(_tokenId: TokenId, _tokenType: TokenType, _text: string): void {
+		// do nothing
+	}
+
+	get previous(): Optional<GroovyAstNode> {
 		return (void 0);
 	}
 
-	get previousNodes(): Array<AstNode> {
+	get previousNodes(): Array<GroovyAstNode> {
 		return [];
 	}
 
-	get previousSibling(): Optional<AstNode> {
+	get previousSibling(): Optional<GroovyAstNode> {
 		return (void 0);
 	}
 
-	get previousSiblings(): Array<AstNode> {
+	get previousSiblings(): Array<GroovyAstNode> {
 		return [];
 	}
 
-	get nextSibling(): Optional<AstNode> {
+	get nextSibling(): Optional<GroovyAstNode> {
 		return (void 0);
 	}
 
-	get nextSiblings(): Array<AstNode> {
+	get nextSiblings(): Array<GroovyAstNode> {
 		return [];
 	}
 
-	get parent(): Optional<AstNode> {
+	get parent(): Optional<GroovyAstNode> {
 		return (void 0);
 	}
 
-	get root(): AstNode {
+	get root(): GroovyAstNode {
 		return this;
 	}
 
-	clearAndShallowCloneChildren(): Array<AstNode> {
+	clearAndShallowCloneChildren(): Array<GroovyAstNode> {
 		const children = [...this._children ?? []];
 		if (this._children != null) {
 			this._children.length = 0;
@@ -55,24 +61,24 @@ export class CompilationUnitNode extends AbstractAstNode implements ProgramNode 
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	asNextOf(_previous: AstNode) {
+	asNextOf(_previous: GroovyAstNode): void {
 		throw new Error('It is not allowed to set the compilation unit node as the subsequent node of any other node.');
 	}
 
-	protected pushAsLastChild(lastChild: AstNode) {
+	protected pushAsLastChild(lastChild: GroovyAstNode): void {
 		this.defendChildren();
 		this.doPushAsLastChild(lastChild);
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	asLastChildOf(_parent: AstNode) {
+	asLastChildOf(_parent: GroovyAstNode): void {
 		throw new Error('It is not allowed to set the compilation unit node as a child node of any other node.');
 	}
 
 	/**
 	 * always append as child, and returns given one
 	 */
-	append(node: AstNode): AstNode {
+	append(node: GroovyAstNode): GroovyAstNode {
 		node.asLastChildOf(this);
 		return node;
 	}

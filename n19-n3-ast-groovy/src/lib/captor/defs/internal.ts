@@ -1,6 +1,7 @@
+import {TokenType} from '../../tokens';
 import {Char} from '../types';
 import {AstChars, AstKeywords, AstLiterals, AstMarks, AstOperators, AstPrimitiveTypes} from '../util';
-import {AstNodeCaptorConstructor, AstNodeConstructor} from './types';
+import {GroovyAstNodeCaptorConstructor} from './types';
 
 export enum AtomicTokenType {
 	PrimitiveType,
@@ -45,10 +46,10 @@ export const KwMk = AstMarks;
 
 export type AtomicTokenName = string;
 
-export type AtomicTokenDefOfSingleCaptor = [AstNodeConstructor, AstNodeCaptorConstructor];
-export type AtomicTokenDefOfDualCaptors = [AstNodeConstructor, [AstNodeCaptorConstructor, AstNodeCaptorConstructor]];
-export type AtomicTokenDefOfMultiCaptors = [AstNodeConstructor, Array<AstNodeCaptorConstructor>];
-export type AtomicTokenDefType =
+export type AtomicTokenDefOfSingleCaptor = GroovyAstNodeCaptorConstructor;
+export type AtomicTokenDefOfDualCaptors = [GroovyAstNodeCaptorConstructor, GroovyAstNodeCaptorConstructor];
+export type AtomicTokenDefOfMultiCaptors = Array<GroovyAstNodeCaptorConstructor>;
+export type AtomicTokenCaptors =
 	| AtomicTokenDefOfSingleCaptor
 	| AtomicTokenDefOfDualCaptors
 	| AtomicTokenDefOfMultiCaptors;
@@ -59,16 +60,16 @@ export type AtomicJavaKeywordTokenBasis = [AtomicTokenType.JavaKeyword, AstKeywo
 export type AtomicBooleanLiteralBasis = [AtomicTokenType.BooleanLiteral, [AstLiterals, AstLiterals], AtomicTokenName];
 export type AtomicNumericLiteralBasis =
 	| [AtomicTokenType.NumericLiteral, AstLiterals, AtomicTokenName]
-	| [AtomicTokenType.NumericLiteral, AstNodeConstructor, Array<AstNodeCaptorConstructor>];
+	| [AtomicTokenType.NumericLiteral, Array<GroovyAstNodeCaptorConstructor>];
 export type AtomicStringLiteralBasic = [AtomicTokenType.StringLiteral, AstLiterals, AtomicTokenName];
 export type AtomicGroovyOperatorTokenBasis = [AtomicTokenType.GroovyOperator, AstOperators, AtomicTokenName];
 export type AtomicJavaOperatorTokenBasis = [AtomicTokenType.JavaOperator, AstOperators, AtomicTokenName];
 export type AtomicSeparatorTokenBasis = [AtomicTokenType.Separator, AstChars, AtomicTokenName];
 export type AtomicCommentsMarkTokenBasis = [AtomicTokenType.CommentsMark, AstMarks, AtomicTokenName];
 export type AtomicScriptCommentMarkTokenBasis = [AtomicTokenType.ScriptCommentMark, AstMarks, AtomicTokenName];
-export type AtomicSameCharsTokenBasis = [AtomicTokenType.SameChars, Char, AtomicTokenName];
-export type AtomicMultiCharPatternsTokenBasis = [AtomicTokenType.MultiCharPatterns, Array<Char | string>, AtomicTokenName];
-export type AtomicCustomTokenBasis = [AtomicTokenType.Custom, AstNodeConstructor, AstNodeCaptorConstructor];
+export type AtomicSameCharsTokenBasis = [AtomicTokenType.SameChars, Char, AtomicTokenName, TokenType];
+export type AtomicMultiCharPatternsTokenBasis = [AtomicTokenType.MultiCharPatterns, Array<Char | string>, AtomicTokenName, TokenType];
+export type AtomicCustomTokenBasis = [AtomicTokenType.Custom, AtomicTokenCaptors];
 export type AtomicTokenBasisType =
 	| AtomicPrimitiveTokenBasis
 	| AtomicGroovyKeywordTokenBasis | AtomicJavaKeywordTokenBasis

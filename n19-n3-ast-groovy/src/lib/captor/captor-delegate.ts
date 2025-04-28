@@ -1,18 +1,18 @@
 import {AstUtils} from '../ast-utils';
-import {AstVisitor} from '../ast-visitor';
+import {AstTokenizer} from './ast-tokenizer';
 import {AstNodeCaptor, AstNodeCaptorCharChecker, AstNodeCaptorCharFuncCheck, AstNodeCaptorCharsChecker} from './captor';
 import {Char} from './types';
 import {isArrayCheck, isCharCheck, isFuncCheck, isMultiChecks} from './util';
 
 export class CaptorDelegate {
-	private readonly _astVisitor: AstVisitor;
+	private readonly _tokenizer: AstTokenizer;
 
 	private readonly _byCharMap: Record<Char, AstNodeCaptor | CaptorDelegate> = {};
 	private readonly _byFunc: Array<[AstNodeCaptorCharFuncCheck, AstNodeCaptor | CaptorDelegate]> = [];
 	private _fallback?: AstNodeCaptor;
 
-	constructor(astVisitor: AstVisitor) {
-		this._astVisitor = astVisitor;
+	constructor(tokenizer: AstTokenizer) {
+		this._tokenizer = tokenizer;
 	}
 
 	protected standardizeCheckers(captor: AstNodeCaptor): Array<AstNodeCaptorCharsChecker> {
@@ -73,7 +73,7 @@ export class CaptorDelegate {
 						} else {
 							// create a delegate and register me to it
 							// using the exists as fallback
-							const delegate = new CaptorDelegate(this._astVisitor);
+							const delegate = new CaptorDelegate(this._tokenizer);
 							delegate.registerCaptorByCharsChecker(captor, checker, index + 1);
 							delegate.registerFallback(exists);
 							this._byCharMap[first] = delegate;
@@ -86,7 +86,7 @@ export class CaptorDelegate {
 						this._byCharMap[first] = captor;
 					} else {
 						// my check has more chars, create a delegate and register me to it
-						const delegate = new CaptorDelegate(this._astVisitor);
+						const delegate = new CaptorDelegate(this._tokenizer);
 						delegate.registerCaptorByCharsChecker(captor, checker, index + 1);
 						this._byCharMap[first] = delegate;
 					}
@@ -117,7 +117,7 @@ export class CaptorDelegate {
 						} else {
 							// create a delegate and register me to it
 							// using the exists as fallback
-							const delegate = new CaptorDelegate(this._astVisitor);
+							const delegate = new CaptorDelegate(this._tokenizer);
 							delegate.registerCaptorByCharsChecker(captor, checker, index + 1);
 							delegate.registerFallback(existsCaptorOrDelegate);
 							this._byFunc.push([first, delegate]);
@@ -129,7 +129,7 @@ export class CaptorDelegate {
 						this._byFunc.push([first, captor]);
 					} else {
 						// my check has more, create a delegate and register me to it
-						const delegate = new CaptorDelegate(this._astVisitor);
+						const delegate = new CaptorDelegate(this._tokenizer);
 						delegate.registerCaptorByCharsChecker(captor, checker, index + 1);
 						this._byFunc.push([first, delegate]);
 					}
@@ -157,7 +157,7 @@ export class CaptorDelegate {
 
 		// find by checker
 		this._byFunc.filter(([func]) => {
-			return func(char, this._astVisitor);
+			return func(char, this._tokenizer);
 		}).forEach(([, captorOrDelegate]) => {
 			captorOrDelegates.push(captorOrDelegate);
 		});
@@ -173,7 +173,7 @@ export class CaptorDelegate {
 
 		if (delegates.length !== 0) {
 			const offsetOfNextChar = offset + 1;
-			const nextChar = this._astVisitor.charAt(offsetOfNextChar);
+			const nextChar = this._tokenizer.charAt(offsetOfNextChar);
 			const captorsOfNextChar = delegates.map(delegate => {
 				return delegate.find(nextChar, offsetOfNextChar, text + nextChar);
 			}).filter(captor => captor != null);

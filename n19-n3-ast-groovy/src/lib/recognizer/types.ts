@@ -1,5 +1,4 @@
-import {AstNode} from '@rainbow-n19/n3-ast';
-import {CompilationUnitNode} from '../node';
+import {CompilationUnitNode, GroovyAstNode} from '../node';
 import {TokenId} from '../tokens';
 import {AstRecognizer} from './ast-recognizer';
 
@@ -23,9 +22,9 @@ export interface AstRecognitionCommentKeywords {
 }
 
 export interface AstRecognition {
-	node: AstNode;
+	node: GroovyAstNode;
 	nodeIndex: number;
-	nodes: Array<AstNode>;
+	nodes: Array<GroovyAstNode>;
 	compilationUnit: CompilationUnitNode;
 	astRecognizer: AstRecognizer;
 }

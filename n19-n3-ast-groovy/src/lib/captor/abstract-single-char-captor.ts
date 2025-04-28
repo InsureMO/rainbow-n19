@@ -1,14 +1,14 @@
-import {AstNode, AstNodeConstructor} from '@rainbow-n19/n3-ast';
-import {AstVisitor} from '../ast-visitor';
+import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
+import {AstTokenizer} from './ast-tokenizer';
 import {AstNodeCaptorCheckers} from './captor';
 import {Char} from './types';
 
 export abstract class AbstractSingleCharCaptor extends AbstractAstNodeCaptor {
 	private readonly _singleChar: Char;
 
-	constructor(char: Char, astVisitor: AstVisitor) {
-		super(astVisitor);
+	constructor(char: Char, tokenizer: AstTokenizer) {
+		super(tokenizer);
 		this._singleChar = char;
 	}
 
@@ -20,10 +20,11 @@ export abstract class AbstractSingleCharCaptor extends AbstractAstNodeCaptor {
 		return [this._singleChar];
 	}
 
-	protected abstract getAstNodeConstructor(): AstNodeConstructor<AstNode>;
+	protected abstract getTokenNature(): [TokenId, TokenType];
 
 	visit(char: Char, offset: number): void {
-		this.createAndAppendToAst(this.getAstNodeConstructor(), {text: char, startOffset: offset});
+		const [tokenId, tokenType] = this.getTokenNature();
+		this.createAndAppendToAst({tokenId, tokenType, text: char, startOffset: offset});
 		this.moveCursorTo(offset + 1);
 	}
 }

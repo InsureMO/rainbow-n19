@@ -1,14 +1,20 @@
-import {AstBuilder} from '@rainbow-n19/n3-ast';
+import {AstBuilder, AstBuildOptions} from '@rainbow-n19/n3-ast';
 import {GroovyAst} from './ast';
-import {AstVisitor} from './ast-visitor';
-import {AstVisitOptions, GroovyAstBuildOptions} from './types';
+import {AstTokenizer, AstTokenizerOptions} from './captor';
+import {AstRecognizer, AstRecognizerOptions} from './recognizer';
+
+export interface GroovyAstBuildOptions extends AstTokenizerOptions, AstRecognizerOptions, AstBuildOptions {
+}
 
 export class GroovyAstBuilderInstance implements AstBuilder {
-	private logTimeSpent(source: string, options?: AstVisitOptions): GroovyAst {
+	private logTimeSpent(source: string, options?: GroovyAstBuildOptions): GroovyAst {
 		const label: string = `Parse source[length=${(source ?? '').length}]`;
 		console.time(label);
 		try {
-			return AstVisitor.visit(source, options);
+			const ast = AstTokenizer.visit(source, options);
+			// recognize nodes structure
+			new AstRecognizer(options).recognize(ast);
+			return ast;
 		} finally {
 			console.timeEnd(label);
 		}
@@ -18,7 +24,7 @@ export class GroovyAstBuilderInstance implements AstBuilder {
 		const {timeSpentLogEnabled, ...restOptions} = options ?? {};
 		return (timeSpentLogEnabled ?? GroovyAstBuilder.TIME_SPENT_LOG_ENABLED)
 			? this.logTimeSpent(document, restOptions)
-			: AstVisitor.visit(document, restOptions);
+			: AstTokenizer.visit(document, restOptions);
 	}
 }
 
@@ -43,6 +49,6 @@ export class GroovyAstBuilder {
 	}
 
 	static printDefs(): void {
-		return new AstVisitor(new GroovyAst('')).printDefs();
+		return new AstTokenizer(new GroovyAst('')).printDefs();
 	}
 }

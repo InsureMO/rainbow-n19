@@ -1,28 +1,54 @@
 import {AstNode, AstNodeConstructOptions, Optional} from '@rainbow-n19/n3-ast';
 import {AstUtils} from '../ast-utils';
-import {TokenId} from '../tokens';
+import {TokenId, TokenType} from '../tokens';
 
-export abstract class AbstractAstNode implements AstNode {
+export interface GroovyAstNodeConstructOptions extends Omit<AstNodeConstructOptions, 'endOffset'> {
+	tokenId: TokenId;
+	tokenType: TokenType;
+}
+
+export class GroovyAstNode implements AstNode {
+	private _tokenId: TokenId;
+	private _tokenType: TokenType;
 	private _text: string;
 	private readonly _startOffset: number;
 	private _endOffset: number;
 	private readonly _startLine: number;
 
 	/** previous in global level */
-	private _previous: Optional<AstNode>;
+	private _previous: Optional<GroovyAstNode>;
 	/** next in global level */
-	private _next: Optional<AstNode>;
-	private _parent: Optional<AstNode>;
-	protected _children: Array<AstNode>;
+	private _next: Optional<GroovyAstNode>;
+	private _parent: Optional<GroovyAstNode>;
+	protected _children: Array<GroovyAstNode>;
 
-	constructor(options: AstNodeConstructOptions) {
+	constructor(options: GroovyAstNodeConstructOptions) {
+		this._tokenId = options.tokenId;
+		this._tokenType = options.tokenType;
 		this._text = options.text ?? '';
 		this._startOffset = options.startOffset;
-		this._endOffset = options.endOffset ?? (options.startOffset + this._text.length);
+		this._endOffset = options.startOffset + this._text.length;
 		this._startLine = options.startLine;
 	}
 
-	abstract get tokenId(): TokenId;
+	get tokenId(): TokenId {
+		return this._tokenId;
+	}
+
+	get tokenType(): TokenType {
+		return this._tokenType;
+	}
+
+	replaceTokenNature(tokenId: TokenId, tokenType: TokenType): void {
+		this._tokenId = tokenId;
+		this._tokenType = tokenType;
+	}
+
+	replaceTokenNatureAndText(tokenId: TokenId, tokenType: TokenType, text: string): void {
+		this.replaceTokenNature(tokenId, tokenType);
+		this._text = text;
+		this._endOffset = this._startOffset + this._text.length;
+	}
 
 	get text(): string {
 		return this._text ?? '';
@@ -40,12 +66,12 @@ export abstract class AbstractAstNode implements AstNode {
 		return this._startLine;
 	}
 
-	get previous(): Optional<AstNode> {
+	get previous(): Optional<GroovyAstNode> {
 		return this._previous;
 	}
 
-	get previousNodes(): Array<AstNode> {
-		const nodes: Array<AstNode> = [];
+	get previousNodes(): Array<GroovyAstNode> {
+		const nodes: Array<GroovyAstNode> = [];
 		let previous = this.previous;
 		while (previous != null) {
 			nodes.push(previous);
@@ -54,12 +80,12 @@ export abstract class AbstractAstNode implements AstNode {
 		return nodes.reverse();
 	}
 
-	get next(): Optional<AstNode> {
+	get next(): Optional<GroovyAstNode> {
 		return this._next;
 	}
 
-	get nextNodes(): Array<AstNode> {
-		const nodes: Array<AstNode> = [];
+	get nextNodes(): Array<GroovyAstNode> {
+		const nodes: Array<GroovyAstNode> = [];
 		let next = this.next;
 		while (next != null) {
 			nodes.push(next);
@@ -68,12 +94,12 @@ export abstract class AbstractAstNode implements AstNode {
 		return nodes;
 	}
 
-	get parent(): Optional<AstNode> {
+	get parent(): Optional<GroovyAstNode> {
 		return this._parent;
 	}
 
-	get ancestors(): Array<AstNode> {
-		const nodes: Array<AstNode> = [];
+	get ancestors(): Array<GroovyAstNode> {
+		const nodes: Array<GroovyAstNode> = [];
 		let parent = this._parent;
 		while (parent != null) {
 			nodes.push(parent);
@@ -82,11 +108,11 @@ export abstract class AbstractAstNode implements AstNode {
 		return nodes.reverse();
 	}
 
-	get root(): AstNode {
+	get root(): GroovyAstNode {
 		return this._parent != null ? this._parent.root : this;
 	}
 
-	get previousSibling(): Optional<AstNode> {
+	get previousSibling(): Optional<GroovyAstNode> {
 		const parent = this.parent;
 		if (parent == null) {
 			return (void 0);
@@ -100,7 +126,7 @@ export abstract class AbstractAstNode implements AstNode {
 		}
 	}
 
-	get previousSiblings(): Array<AstNode> {
+	get previousSiblings(): Array<GroovyAstNode> {
 		const parent = this.parent;
 		if (parent == null) {
 			return [];
@@ -114,7 +140,7 @@ export abstract class AbstractAstNode implements AstNode {
 		}
 	}
 
-	get nextSibling(): Optional<AstNode> {
+	get nextSibling(): Optional<GroovyAstNode> {
 		const parent = this.parent;
 		if (parent == null) {
 			return (void 0);
@@ -130,7 +156,7 @@ export abstract class AbstractAstNode implements AstNode {
 		}
 	}
 
-	get nextSiblings(): Array<AstNode> {
+	get nextSiblings(): Array<GroovyAstNode> {
 		const parent = this.parent;
 		if (parent == null) {
 			return [];
@@ -146,11 +172,11 @@ export abstract class AbstractAstNode implements AstNode {
 		}
 	}
 
-	get children(): Array<AstNode> {
+	get children(): Array<GroovyAstNode> {
 		return this._children ?? [];
 	}
 
-	asPreviousOf(next: AstNode): void {
+	asPreviousOf(next: GroovyAstNode): void {
 		if (this._next !== next) {
 			this._next = next;
 		}
@@ -159,7 +185,7 @@ export abstract class AbstractAstNode implements AstNode {
 		}
 	}
 
-	asNextOf(previous: AstNode): void {
+	asNextOf(previous: GroovyAstNode): void {
 		if (this._previous !== previous) {
 			this._previous = previous;
 		}
@@ -174,17 +200,17 @@ export abstract class AbstractAstNode implements AstNode {
 		}
 	}
 
-	protected doPushAsLastChild(lastChild: AstNode): void {
+	protected doPushAsLastChild(lastChild: GroovyAstNode): void {
 		this._children.push(lastChild);
 	}
 
-	protected pushAsLastChild(lastChild: AstNode): void {
+	protected pushAsLastChild(lastChild: GroovyAstNode): void {
 		this.defendChildren();
 		this.doPushAsLastChild(lastChild);
 		this.appendText(lastChild.text);
 	}
 
-	asParentOf(lastChild: AstNode): void {
+	asParentOf(lastChild: GroovyAstNode): void {
 		if (lastChild.parent != this) {
 			lastChild.asLastChildOf(this);
 		} else {
@@ -192,7 +218,7 @@ export abstract class AbstractAstNode implements AstNode {
 		}
 	}
 
-	asLastChildOf(parent: AstNode): void {
+	asLastChildOf(parent: GroovyAstNode): void {
 		this._parent = parent;
 		parent.asParentOf(this);
 	}
@@ -201,8 +227,9 @@ export abstract class AbstractAstNode implements AstNode {
 	 * default set given node as last child of my parent, and return given one.
 	 * so make sure the node has parent.
 	 */
-	append(node: AstNode): AstNode {
-		return this._parent.append(node);
+	append(node: GroovyAstNode): GroovyAstNode {
+		node.asLastChildOf(this.parent);
+		return node;
 	}
 
 	appendText(text: string): void {
@@ -226,5 +253,9 @@ export abstract class AbstractAstNode implements AstNode {
 			].map(attr => attr.join('=')).join(','),
 			']'
 		].join('');
+	}
+
+	static createAstNode(options: GroovyAstNodeConstructOptions) {
+		return new GroovyAstNode(options);
 	}
 }

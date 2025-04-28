@@ -1094,7 +1094,7 @@ public interface List<E> extends Collection<E> {
 }
 `;
 		const ast = GroovyAstBuilder.ast(text);
-		console.log(ast.nodes.length);
+		console.log(ast.compilationUnit.children.length);
 	});
 
 	test('Token #3', async () => {
@@ -4452,6 +4452,6 @@ public final class String
 		}
 		console.timeEnd('spent');
 		const ast = GroovyAstBuilder.ast(text);
-		console.log(ast.nodes.length)
+		console.log(ast.compilationUnit.children.length);
 	});
 });

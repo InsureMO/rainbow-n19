@@ -1,12 +1,12 @@
-import {AstNode, Optional} from '@rainbow-n19/n3-ast';
+import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAst} from '../ast';
-import {AstVisitor} from '../ast-visitor';
-import {AbstractContainerAstNode, CompilationUnitNode} from '../node';
+import {GroovyAstNode} from '../node';
+import {AstTokenizer} from './ast-tokenizer';
 import {Char} from './types';
 
 export type AstNodeCaptorCharCheck = Char;
 export type AstNodeCaptorCharFuncCheck = {
-	(char: Char, astVisitor: AstVisitor): boolean;
+	(char: Char, tokenizer: AstTokenizer): boolean;
 	describe: () => string;
 }
 export type AstNodeCaptorCharChecker = AstNodeCaptorCharCheck | AstNodeCaptorCharFuncCheck;
@@ -25,45 +25,25 @@ export interface AstNodeCaptor {
 	 * nodes visited should be appended to ast in this function
 	 */
 	visit(char: Char, offset: number): void;
-
 	// operators
 	/**
 	 * get char of given offset
 	 */
 	charAt(offset: number): Optional<Char>;
-
 	/**
 	 * slice text from given start offset to given end offset
 	 */
 	sliceText(startOffset: number, endOffset: number): Optional<string>;
-
 	/**
 	 * get current line number
 	 */
 	currentLine(): number;
-
-	ast(): GroovyAst;
-
 	/**
-	 * get current node in ast
+	 * get ast
 	 */
-	currentNode(): AstNode;
+	ast(): GroovyAst;
 	/**
 	 * get latest node in ast
 	 */
-	latestNode(): AstNode;
-
-	/**
-	 * get latest open node by given node, or use latest node if node not given.
-	 * the latest open node is:
-	 * 1. if node is {@link CompilationUnitNode}, it is itself
-	 * 2. if node is {@link AbstractContainerAstNode} and not closed, it is itself,
-	 * 3. recursively find from its ancestor nodes, till found.
-	 */
-	latestOpenContainerNode(node?: AstNode): CompilationUnitNode | AbstractContainerAstNode;
-
-	/**
-	 * last direct child of latest open container node, or latest open container node itself if it has no child
-	 */
-	latestOpenNode(node?: AstNode): AstNode;
+	latestNode(): GroovyAstNode;
 }

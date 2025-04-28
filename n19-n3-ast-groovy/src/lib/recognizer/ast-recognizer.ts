@@ -1,7 +1,6 @@
 import {GroovyAst} from '../ast';
 import {CommentKeyword, CommentKeywords} from '../captor';
-import {CompilationUnitNode} from '../node';
-import {AstVisitOptions} from '../types';
+import {CompilationUnitNode, GroovyAstNode} from '../node';
 import {NodeRecognizerRepo} from './node-recognizer-repo';
 import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types';
 
@@ -13,6 +12,10 @@ export class AstRecognizer {
 	private readonly _buildCommentKeywords: CommentKeywords;
 	private readonly _recognizerRepo: NodeRecognizerRepo;
 
+	// recognition
+	// ancestors, closest is 0, root is the last
+	private readonly _currentAncestors: Array<GroovyAstNode> = [];
+
 	constructor(options?: AstRecognizerOptions) {
 		const {scriptCommandEnabled, commentKeywords, ...restOptions} = options ?? {};
 		this._scriptCommandEnabled = scriptCommandEnabled ?? true;
@@ -23,7 +26,7 @@ export class AstRecognizer {
 	}
 
 	// initializing
-	protected initializeCommentKeywords(keywords?: AstVisitOptions['commentKeywords']): CommentKeywords {
+	protected initializeCommentKeywords(keywords?: AstRecognizerOptions['commentKeywords']): CommentKeywords {
 		keywords = keywords ?? {};
 
 		let todoConfigured = false;
@@ -92,6 +95,24 @@ export class AstRecognizer {
 		return this._scriptCommandEnabled;
 	}
 
+	// recognition
+	getCurrentAncestors(): Array<GroovyAstNode> {
+		return this._currentAncestors;
+	}
+
+	getCurrentParent(): GroovyAstNode {
+		return this._currentAncestors[0];
+	}
+
+	closeParent(): void {
+		this._currentAncestors.shift();
+	}
+
+	createParent(node: GroovyAstNode): void {
+		this._currentAncestors[0].asParentOf(node);
+		this._currentAncestors.unshift(node);
+	}
+
 	recognize(ast: GroovyAst): void {
 		const complicationUnitNode = ast.compilationUnit as CompilationUnitNode;
 		const nodes = complicationUnitNode.clearAndShallowCloneChildren();
@@ -99,6 +120,7 @@ export class AstRecognizer {
 			return;
 		}
 
+		this._currentAncestors.push(complicationUnitNode);
 		const nodeCount = nodes.length;
 		let nodeIndex = 0;
 		while (nodeIndex < nodeCount) {

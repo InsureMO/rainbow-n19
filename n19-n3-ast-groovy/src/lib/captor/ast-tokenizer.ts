@@ -1,37 +1,41 @@
 import {AstNode, Optional} from '@rainbow-n19/n3-ast';
-import {GroovyAst} from './ast';
-import {CaptorSelector, Char} from './captor';
-import {AstRecognizer, AstRecognizerOptions} from './recognizer';
-import {AstBuildVisitor, AstVisitOptions} from './types';
+import {GroovyAst} from '../ast';
+import {GroovyAstNode} from '../node';
+import {CaptorSelector, Char} from './index';
 
-export class AstVisitor {
+export interface AstTokenVisitor {
+	onDetermined?: (node: AstNode) => void;
+	onNodeAppended?: (node: AstNode) => void;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface AstTokenizerOptions extends AstTokenVisitor {
+}
+
+/**
+ * The tokenizer is responsible for parsing the document into an array of tokens according to the defined rules,
+ * without considering whether the semantics of the tokens are correct.
+ */
+export class AstTokenizer {
 	private readonly _ast: GroovyAst;
 	private readonly _captorSelector: CaptorSelector;
-	private readonly _buildVisitor: Optional<AstBuildVisitor>;
-	private readonly _recognizerOptions: AstRecognizerOptions;
+	private readonly _options: Optional<AstTokenizerOptions>;
 
-	private _currentAstNode: AstNode;
-	private _latestAstNode: AstNode;
 	/** char cursor. The cursor position is not always within the current line. */
 	private _cursor: number = 0;
 	/** line starts with 1, initial value is 1 */
 	private _line: number = 1;
 
-	constructor(ast: GroovyAst, options?: AstVisitOptions) {
+	constructor(ast: GroovyAst, options?: AstTokenizerOptions) {
 		this._ast = ast;
 		this._captorSelector = new CaptorSelector(this);
-		const {visitor, ...restOptions} = options || {};
-		this._buildVisitor = visitor;
-		this._recognizerOptions = restOptions;
-
-		this._currentAstNode = ast.compilationUnit;
-		this._latestAstNode = ast.compilationUnit;
+		this._options = options;
 	}
 
 	// static visit
-	static visit(document?: string, options?: AstVisitOptions): GroovyAst {
+	static visit(document?: string, options?: AstTokenizerOptions): GroovyAst {
 		const ast = new GroovyAst(document);
-		const visitor = new AstVisitor(ast, options);
+		const visitor = new AstTokenizer(ast, options);
 		visitor.visit();
 		return ast;
 	}
@@ -45,21 +49,17 @@ export class AstVisitor {
 		return this.ast.document;
 	}
 
-	get recognizerOptions(): AstRecognizerOptions {
-		return this._recognizerOptions;
+	protected get options(): Optional<AstTokenizerOptions> {
+		return this._options;
 	}
 
 	// event dispatcher
 	protected onNodeDetermined(node: AstNode): void {
-		this._buildVisitor?.onDetermined?.(node);
+		this._options?.onDetermined?.(node);
 	}
 
 	protected onNodeAppended(node: AstNode): void {
-		this._buildVisitor?.onNodeAppended?.(node);
-	}
-
-	protected onNodeDetached(node: AstNode): void {
-		this._buildVisitor?.onNodeDetached?.(node);
+		this._options?.onNodeAppended?.(node);
 	}
 
 	// visit
@@ -75,9 +75,6 @@ export class AstVisitor {
 			this.address(char);
 			char = this.charAt(this._cursor);
 		} while (char != null);
-
-		// recognize nodes structure
-		new AstRecognizer(this.recognizerOptions).recognize(this.ast);
 	}
 
 	/**
@@ -101,17 +98,6 @@ export class AstVisitor {
 		return this._line;
 	}
 
-	currentNode(): AstNode {
-		return this._currentAstNode;
-	}
-
-	/**
-	 * the latest node appended to ast.
-	 */
-	latestNode(): AstNode {
-		return this._latestAstNode;
-	}
-
 	/**
 	 * move cursor to given offset.
 	 * it is important to know that move cursor will not impact value of line.
@@ -127,11 +113,18 @@ export class AstVisitor {
 		this._line += 1;
 	}
 
-	appendToAst(node: AstNode): void {
+	/**
+	 * the latest node appended to ast.
+	 */
+	latestNode(): GroovyAstNode {
+		const compilationUnit = this.ast.compilationUnit;
+		const children = compilationUnit.children;
+		return (children == null || children.length === 0) ? compilationUnit : children[children.length - 1];
+	}
+
+	appendToAst(node: GroovyAstNode): void {
 		this.onNodeDetermined(node);
-		this._currentAstNode = this._currentAstNode.append(node);
-		this._latestAstNode.asPreviousOf(node);
-		this._latestAstNode = node;
+		this.ast.compilationUnit.asParentOf(node);
 		this.onNodeAppended(node);
 	}
 

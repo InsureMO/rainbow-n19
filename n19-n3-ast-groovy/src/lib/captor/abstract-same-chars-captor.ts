@@ -1,4 +1,3 @@
-import {AstNode, AstNodeConstructor} from '@rainbow-n19/n3-ast';
 import {AbstractSingleCharCaptor} from './abstract-single-char-captor';
 import {Char} from './types';
 
@@ -7,8 +6,6 @@ import {Char} from './types';
  * Note that this Captor will only perform capturing based on the specified single character by {@link AbstractSingleCharCaptor#singleChar}.
  */
 export abstract class AbstractSameCharsCaptor extends AbstractSingleCharCaptor {
-	protected abstract getAstNodeConstructor(): AstNodeConstructor<AstNode>;
-
 	visit(given: Char, offsetOfGiven: number): void {
 		// starts from next character
 		const startOffset = offsetOfGiven + 1;
@@ -19,12 +16,16 @@ export abstract class AbstractSameCharsCaptor extends AbstractSingleCharCaptor {
 			c = this.charAt(offset);
 		}
 
+		const [tokenId, tokenType] = this.getTokenNature();
 		if (offset === startOffset) {
 			// no more same character determined
-			this.createAndAppendToAst(this.getAstNodeConstructor(), {text: given, startOffset: offsetOfGiven});
+			this.createAndAppendToAst({
+				tokenId, tokenType, text: given, startOffset: offsetOfGiven
+			});
 		} else {
 			// gather all same characters
-			this.createAndAppendToAst(this.getAstNodeConstructor(), {
+			this.createAndAppendToAst({
+				tokenId, tokenType,
 				text: this.sliceText(offsetOfGiven, offset), startOffset: offsetOfGiven
 			});
 		}

@@ -276,3 +276,14 @@ export const Tokens: Readonly<{ [key in Exclude<keyof typeof TokenId, number>]: 
 	}
 	return ret;
 }, {} as { [key in Exclude<keyof typeof TokenId, number>]: Token });
+
+export enum TokenType {
+	CompilationUnit,
+	Separator, WhitespaceOrTabs, NewLine,
+	Keyword, Mark, Operator, PrimitiveType, Symbol,
+	Identifier,
+	BooleanLiteral, NumberLiteral, StringLiteral,
+	Chars, UndeterminedChars,
+	// statement
+	ScriptCommand,
+}

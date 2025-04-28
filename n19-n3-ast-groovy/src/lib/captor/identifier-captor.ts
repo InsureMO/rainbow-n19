@@ -1,4 +1,4 @@
-import {IdentifierNode} from '../node';
+import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
 import {AstNodeCaptorCharFuncCheck, AstNodeCaptorCheckers} from './captor';
 import {Character} from './character';
@@ -32,10 +32,14 @@ export class IdentifierCaptor extends AbstractAstNodeCaptor {
 
 		if (offset === startOffset) {
 			// no more char allowed as java identifier part found
-			this.createAndAppendToAst(IdentifierNode, {text: given, startOffset: offsetOfGiven});
+			this.createAndAppendToAst({
+				tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
+				text: given, startOffset: offsetOfGiven
+			});
 		} else {
 			// gather all consecutive characters that are allowed to be part of java identifier.
-			this.createAndAppendToAst(IdentifierNode, {
+			this.createAndAppendToAst({
+				tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
 				text: this.sliceText(offsetOfGiven, offset), startOffset: offsetOfGiven
 			});
 		}
