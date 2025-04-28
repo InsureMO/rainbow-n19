@@ -5,7 +5,7 @@ import {AbstractSameCharsCaptor} from '../abstract-same-chars-captor';
 import {AbstractSingleCharCaptor} from '../abstract-single-char-captor';
 import {AstTokenizer} from '../ast-tokenizer';
 import {Char} from '../types';
-import {AtomicTokenDefOfMultiCaptors, AtomicTokenDefOfSingleCaptor} from './internal';
+import {AtomicTokenDefOfSingleCaptor} from './internal';
 import {GroovyAstNodeCaptorConstructor} from './types';
 
 // single-char captor
