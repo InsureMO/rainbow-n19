@@ -18,6 +18,7 @@ export interface AstNode {
 	get startOffset(): number;
 	get endOffset(): number;
 	get startLine(): number;
+	get startColumn(): number;
 	/** parent node */
 	get parent(): Optional<AstNode>;
 	/**

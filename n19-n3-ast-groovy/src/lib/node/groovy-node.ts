@@ -5,6 +5,7 @@ import {TokenId, TokenType} from '../tokens';
 export interface GroovyAstNodeConstructOptions extends Omit<AstNodeConstructOptions, 'endOffset'> {
 	tokenId: TokenId;
 	tokenType: TokenType;
+	startColumn: number;
 }
 
 export class GroovyAstNode implements AstNode {
@@ -14,6 +15,7 @@ export class GroovyAstNode implements AstNode {
 	private readonly _startOffset: number;
 	private _endOffset: number;
 	private readonly _startLine: number;
+	private readonly _startColumn: number;
 
 	private _parent: Optional<GroovyAstNode>;
 	protected _children: Array<GroovyAstNode>;
@@ -29,6 +31,7 @@ export class GroovyAstNode implements AstNode {
 		this._startOffset = options.startOffset;
 		this._endOffset = options.startOffset + this._text.length;
 		this._startLine = options.startLine;
+		this._startColumn = options.startColumn;
 	}
 
 	/**
@@ -87,6 +90,10 @@ export class GroovyAstNode implements AstNode {
 
 	get startLine(): number {
 		return this._startLine;
+	}
+
+	get startColumn(): number {
+		return this._startColumn;
 	}
 
 	get parent(): Optional<GroovyAstNode> {
@@ -229,8 +236,8 @@ export class GroovyAstNode implements AstNode {
 			TokenId[this.tokenId],
 			'[',
 			[
-				['start', this.startOffset],
-				['end', this.endOffset],
+				['offsetInDoc', `${this.startOffset}, ${this.endOffset}`],
+				['xyInDoc', `${this.startLine}, ${this.startColumn}`],
 				['text', AstUtils.escapeForPrint(this.text)]
 			].map(attr => attr.join('=')).join(','),
 			']'

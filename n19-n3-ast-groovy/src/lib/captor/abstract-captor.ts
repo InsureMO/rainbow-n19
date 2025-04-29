@@ -14,11 +14,14 @@ export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
 	}
 
 	// mine
-	protected createAstNode(tokenizer: AstTokenizer, options: Omit<GroovyAstNodeConstructOptions, 'startLine'>): GroovyAstNode {
-		return GroovyAstNode.createAstNode({...options, startLine: tokenizer.currentLine()});
+	protected createAstNode(tokenizer: AstTokenizer, options: Omit<GroovyAstNodeConstructOptions, 'startLine' | 'startColumn'>): GroovyAstNode {
+		return GroovyAstNode.createAstNode({
+			...options,
+			startLine: tokenizer.currentLine(), startColumn: tokenizer.currentColumnInLine()
+		});
 	}
 
-	protected createAndAppendToAst(tokenizer: AstTokenizer, options: Omit<GroovyAstNodeConstructOptions, 'startLine'>): GroovyAstNode {
+	protected createAndAppendToAst(tokenizer: AstTokenizer, options: Omit<GroovyAstNodeConstructOptions, 'startLine' | 'startColumn'>): GroovyAstNode {
 		const node = this.createAstNode(tokenizer, options);
 		this.appendToAst(tokenizer, node);
 		return node;

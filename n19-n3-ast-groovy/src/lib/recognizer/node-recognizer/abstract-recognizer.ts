@@ -38,8 +38,8 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 
 	/**
 	 * create statement node, grab following nodes till new line.
-	 * the given node will be appended as first child of created statement node.
-	 * all following nodes, except whitespace and tab, token nature will be reset to {@link TokenId.Chars}.
+	 * The given original node and the nodes following it till node with given till token id,
+	 * are processed by the revise function and then added to the created statement node.
 	 * returns the created statement node, and node index of the next node waiting to be processed.
 	 */
 	protected createStatementAndGrabNodesTill(
@@ -51,7 +51,8 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 		const situation: Partial<NodeReviseSituation> = {grabbedNodes: [], nodes};
 		const statementNode = new GroovyAstNode({
 			tokenId: statementTokenId, tokenType: statementTokenType,
-			text: '', startOffset: node.startOffset, startLine: node.startLine
+			text: '', startOffset: node.startOffset,
+			startLine: node.startLine, startColumn: node.startColumn
 		});
 		statementNode.asParentOf(node);
 		situation.grabbedNodes.push(node);
@@ -85,9 +86,9 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 	}
 
 	/**
-	 * create statement node, grab following nodes till new line.
-	 * the given node will be appended as first child of created statement node.
-	 * all following nodes, except whitespace and tab, token nature will be reset to {@link TokenId.Chars}.
+	 * create statement node,
+	 * The given original node and the nodes following it till new line node,
+	 * are processed by the revise function and then added to the created statement node.
 	 * returns the created statement node, and node index of the next node waiting to be processed.
 	 */
 	protected createStatementAndGrabNodesTillNewLine(

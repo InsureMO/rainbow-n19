@@ -1,5 +1,4 @@
-import {AstNode} from '@rainbow-n19/n3-ast';
-import {AstUtils, GroovyAst, TokenId} from '../../src';
+import {AstUtils, GroovyAst, GroovyAstNode, TokenId} from '../../src';
 
 export type NodeType = any;
 export type NodeSpec =
@@ -20,7 +19,7 @@ export class AstChecker {
 		this._spec = spec;
 	}
 
-	private doCheck(node: AstNode, spec: NodeSpec, bullet: string) {
+	private doCheck(node: GroovyAstNode, spec: NodeSpec, bullet: string) {
 		const [type, startOffset, endOffset, startLine, text, children] = spec;
 		const indent = new Array(bullet.split('.').length - 2).fill('\t').join('');
 		try {
@@ -28,15 +27,15 @@ export class AstChecker {
 			expect(node.tokenId).toBe(type);
 			expect(node.startOffset).toBe(startOffset);
 			expect(node.endOffset).toBe(endOffset);
+			expect(node.startLine).toBe(startLine);
 			expect(node.text).toBe(text);
 			this._logs.push([
 				indent,
 				bullet,
 				' ✅ ',
 				`Check [type=${TokenId[type]}, `,
-				`startOffset=${startOffset}, `,
-				`endOffset=${endOffset}, `,
-				`startLine=${startLine}, `,
+				`offsetInDoc=[${startOffset}, ${endOffset}], `,
+				`xyInDoc=[${startLine}, ${node.startColumn}], `,
 				`text=${AstUtils.escapeForPrint(text)}`,
 				'].'
 			].join(''));
@@ -46,9 +45,8 @@ export class AstChecker {
 				bullet,
 				' 💔 ',
 				`Check [type=${TokenId[type]}, `,
-				`startOffset=${startOffset}, `,
-				`endOffset=${endOffset}, `,
-				`startLine=${startLine}, `,
+				`offsetInDoc=[${startOffset}, ${endOffset}], `,
+				`xyInDoc=[${startLine}, ${node.startColumn}], `,
 				`text=${AstUtils.escapeForPrint(text)}`,
 				'].'
 			].join(''));

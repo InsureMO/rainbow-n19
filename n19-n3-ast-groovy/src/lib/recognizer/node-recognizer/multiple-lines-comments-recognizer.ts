@@ -70,7 +70,8 @@ export class MultipleLinesCommentsRecognizer extends AbstractCommentsRecognizer 
 					revisedNodes.push(new GroovyAstNode({
 						tokenId: TokenId.Chars, tokenType: TokenType.Chars,
 						text: leftStr,
-						startOffset: node.endOffset + 1, startLine: node.startLine
+						startOffset: node.endOffset + 1,
+						startLine: node.startLine, startColumn: node.startColumn + 1
 					}));
 					break;
 				}
@@ -91,12 +92,14 @@ export class MultipleLinesCommentsRecognizer extends AbstractCommentsRecognizer 
 				revisedNodes: [
 					new GroovyAstNode({
 						tokenId: TokenId.MultipleLinesCommentsHeadAsterisks, tokenType: TokenType.Comments,
-						text: asterisks, startOffset: node.startOffset, startLine: node.startLine
+						text: asterisks, startOffset: node.startOffset,
+						startLine: node.startLine, startColumn: node.startColumn
 					}),
 					new GroovyAstNode({
 						tokenId: TokenId.Chars, tokenType: TokenType.Chars,
 						text: leftStr,
-						startOffset: node.startOffset + asterisks.length, startLine: node.startLine
+						startOffset: node.startOffset + asterisks.length,
+						startLine: node.startLine, startColumn: node.startColumn + asterisks.length
 					})
 				], consumedNodeCount: 1
 			};

@@ -28,6 +28,8 @@ export class AstTokenizer {
 	private _cursor: number = 0;
 	/** line starts with 1, initial value is 1 */
 	private _line: number = 1;
+	/** column of line starts with 1, initial value is 1 */
+	private _columnInLine: number = 1;
 
 	constructor(ast: GroovyAst, options?: AstTokenizerOptions) {
 		this._ast = ast;
@@ -102,6 +104,13 @@ export class AstTokenizer {
 	}
 
 	/**
+	 * get current column of line
+	 */
+	currentColumnInLine(): number {
+		return this._columnInLine;
+	}
+
+	/**
 	 * move cursor to given offset.
 	 * it is important to know that move cursor will not impact value of line.
 	 */
@@ -114,6 +123,7 @@ export class AstTokenizer {
 	 */
 	moveToNextLine(): void {
 		this._line += 1;
+		this._columnInLine = 1;
 	}
 
 	/**
@@ -128,6 +138,7 @@ export class AstTokenizer {
 	appendToAst(node: GroovyAstNode): void {
 		this.onNodeDetermined(node);
 		this.ast.compilationUnit.asParentOf(node);
+		this._columnInLine += (node.text ?? '').length;
 		this.onNodeAppended(node);
 	}
 

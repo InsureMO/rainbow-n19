@@ -7,7 +7,11 @@ import {GroovyAstNode} from './groovy-node';
  */
 export class CompilationUnitNode extends GroovyAstNode implements ProgramNode {
 	constructor(options: Omit<AstNodeConstructOptions, 'startLine'>) {
-		super({...options, tokenId: TokenId.COMPILATION_UNIT, tokenType: TokenType.CompilationUnit, startLine: 0});
+		super({
+			...options,
+			tokenId: TokenId.COMPILATION_UNIT, tokenType: TokenType.CompilationUnit,
+			startLine: 0, startColumn: 0
+		});
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
