@@ -14,16 +14,20 @@ describe('Token test', () => {
 				[TokenId.Whitespaces, 2, 3, 1, ' '],
 				[TokenId.PUBLIC, 3, 9, 1, 'public'],
 				[TokenId.Whitespaces, 9, 10, 1, ' '],
-				[TokenId.SingleLineCommentStartMark, 10, 12, 1, '//'],
-				[TokenId.Identifier, 12, 15, 1, 'abc'],
+				[TokenId.SingleLineComment, 10, 15, 1, '//abc', [
+					[TokenId.SingleLineCommentStartMark, 10, 12, 1, '//'],
+					[TokenId.Chars, 12, 15, 1, 'abc']
+				]],
 				[TokenId.NewLine, 15, 16, 1, '\n'],
 				[TokenId.NewLine, 16, 18, 2, '\r\n'],
 				[TokenId.NewLine, 18, 19, 3, '\n'],
-				[TokenId.MultipleLinesCommentStartMark, 19, 21, 4, '/*'],
-				[TokenId.Whitespaces, 21, 23, 4, '  '],
-				[TokenId.DEF, 23, 26, 4, 'def'],
-				[TokenId.Whitespaces, 26, 27, 4, ' '],
-				[TokenId.MultipleLinesCommentEndMark, 27, 29, 4, '*/']
+				[TokenId.MultipleLinesComment, 19, 29, 4, '/*  def */', [
+					[TokenId.MultipleLinesCommentStartMark, 19, 21, 4, '/*'],
+					[TokenId.Whitespaces, 21, 23, 4, '  '],
+					[TokenId.Chars, 23, 26, 4, 'def'],
+					[TokenId.Whitespaces, 26, 27, 4, ' '],
+					[TokenId.MultipleLinesCommentEndMark, 27, 29, 4, '*/']
+				]]
 			]
 		]);
 	});
@@ -1093,6 +1097,13 @@ public interface List<E> extends Collection<E> {
     }
 }
 `;
+		const start = process.hrtime();
+		for (let i = 0; i < 100; i++) {
+			const ast = GroovyAstBuilder.ast(text, {timeSpentLogEnabled: false});
+		}
+		const end = process.hrtime(start);
+		const spent = (end[0] * 1e9 + end[1]) / 1_000_000 / 100;
+		console.log(`Spent ${spent}ms each time.`)
 		const ast = GroovyAstBuilder.ast(text);
 		console.log(ast.compilationUnit.children.length);
 	});
@@ -4446,11 +4457,13 @@ public final class String
     }
 }
 `;
-		console.time('spent');
+		const start = process.hrtime();
 		for (let i = 0; i < 100; i++) {
 			const ast = GroovyAstBuilder.ast(text, {timeSpentLogEnabled: false});
 		}
-		console.timeEnd('spent');
+		const end = process.hrtime(start);
+		const spent = (end[0] * 1e9 + end[1]) / 1_000_000 / 100;
+		console.log(`Spent ${spent}ms each time.`)
 		const ast = GroovyAstBuilder.ast(text);
 		console.log(ast.compilationUnit.children.length);
 	});

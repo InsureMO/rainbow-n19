@@ -1,5 +1,4 @@
 import {MultipleLinesCommentsRecognizer} from './multiple-lines-comments-recognizer';
-import {KwPackageRecognizer} from './package-recognizer';
 import {ScriptCommandRecognizer} from './script-command-recognizer';
 import {SingleLineCommentsRecognizer} from './single-line-comments-recognizer';
 
@@ -19,7 +18,7 @@ export const AllNodeRecognizers = [
 	new ScriptCommandRecognizer(),
 	// comment
 	new SingleLineCommentsRecognizer(),
-	new MultipleLinesCommentsRecognizer(),
+	new MultipleLinesCommentsRecognizer()
 	// keyword
-	new KwPackageRecognizer()
+	// new KwPackageRecognizer()
 ];
