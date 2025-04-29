@@ -26,33 +26,39 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 		};
 	}
 
-	protected finalizeHighlightCharsSegments(statementNode: GroovyAstNode): void {
+	protected finalizeHighlightCharsSegments(statementNode: GroovyAstNode, astRecognizer: AstRecognizer): void {
+		if (!astRecognizer.isMultipleCommentHighlightEnabled) {
+			return;
+		}
 		// ignore the start mark
 		const [, ...restNodes] = statementNode.children;
 		if (restNodes.length === 0) {
 			return;
 		}
 		let hasCommentKeyword = false;
-		let firstCharsNode: Optional<GroovyAstNode>;
-		let firstCharsNodeIndex: number = -1;
+		let firstCharsNode: Optional<GroovyAstNode> = (void 0);
+		let firstCharsNodeIndex: Optional<number> = (void 0);
 		for (let index = 0, count = restNodes.length; index < count; index++) {
 			const node = restNodes[index];
 			if (node.tokenId === TokenId.CommentKeyword) {
+				statementNode.attrs('highlightColumn', node.startColumn);
 				hasCommentKeyword = true;
 				break;
 			} else if (node.tokenId === TokenId.Chars) {
-				firstCharsNode = node;
-				firstCharsNodeIndex = index;
+				firstCharsNode = firstCharsNode ?? node;
+				firstCharsNodeIndex = firstCharsNodeIndex ?? index;
 			}
 		}
-		if (hasCommentKeyword) {
-			// has comment keyword, no need to finalize highlight based on previous line
+
+		if (hasCommentKeyword || firstCharsNode == null) {
+			// has comment keyword, or no content found
+			// no need to finalize highlight based on previous line
 			return;
 		}
 
 		const previousSiblingsOfStatementNode = statementNode.previousSiblings;
 		let detectedNewLineCount = 0;
-		let previousCommentsNode: Optional<GroovyAstNode>;
+		let previousCommentsNode: Optional<GroovyAstNode> = (void 0);
 		for (let index = previousSiblingsOfStatementNode.length - 1; index >= 0; index--) {
 			const previousNode = previousSiblingsOfStatementNode[index];
 			if (previousNode.tokenId === TokenId.SingleLineComment) {
@@ -65,13 +71,24 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 				}
 			}
 		}
-		if (detectedNewLineCount === 2) {
-			// no comment node on previous line, do nothing
+		if (previousCommentsNode == null) {
+			// no clingy comment node from previous siblings, do nothing
 			return;
 		}
-		if (previousCommentsNode == null) {
-			// no comment node from previous siblings, do nothing
+		const highlightColumn = previousCommentsNode.attr<number>('highlightColumn');
+		if (highlightColumn == null) {
+			// previous comment node has no highlight
 			return;
+		}
+		statementNode.attrs('highlightColumn', highlightColumn);
+		// compare the start column
+		if (firstCharsNode.startColumn > highlightColumn) {
+			// change all chars node to highlight
+			restNodes.slice(firstCharsNodeIndex).forEach(node => {
+				if (node.tokenId === TokenId.Chars) {
+					node.replaceTokenNature(TokenId.CommentHighlightChars, TokenType.Chars);
+				}
+			});
 		}
 	}
 
@@ -81,7 +98,7 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 			TokenId.SingleLineComment, TokenType.Comments,
 			node, nodeIndex, nodes,
 			astRecognizer, this.createNodeReviser(astRecognizer));
-		this.finalizeHighlightCharsSegments(statementNode);
+		this.finalizeHighlightCharsSegments(statementNode, astRecognizer);
 		return nextNodeIndex;
 	}
 }

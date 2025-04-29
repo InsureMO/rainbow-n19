@@ -67,7 +67,9 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 
 		const currentParent = astRecognizer.getCurrentParent();
 		const currentParentTokenId = currentParent.tokenId;
-		if (currentParentTokenId === TokenId.COMPILATION_UNIT) {
+		if (!astRecognizer.isScriptCommandEnabled) {
+			return this.degenerate(node, nodeIndex, nodes, currentParent);
+		} else if (currentParentTokenId === TokenId.COMPILATION_UNIT) {
 			return this.doRecognizeInCompilationUnit(node, nodeIndex, nodes, astRecognizer, currentParent);
 		} else {
 			return this.degenerate(node, nodeIndex, nodes, currentParent);

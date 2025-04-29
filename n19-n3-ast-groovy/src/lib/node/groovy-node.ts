@@ -22,6 +22,7 @@ export class GroovyAstNode implements AstNode {
 
 	// special behaviors
 	private _mergeTextWhenSameTokenIdAppended: boolean = false;
+	private _extraAttrs: Record<string, any>;
 
 	constructor(options: GroovyAstNodeConstructOptions) {
 		this._tokenId = options.tokenId;
@@ -74,6 +75,17 @@ export class GroovyAstNode implements AstNode {
 	// special behaviors
 	mergeTextWhenSameTokenIdAppended(enabled: boolean): void {
 		this._mergeTextWhenSameTokenIdAppended = enabled;
+	}
+
+	attrs(key: string, value: any): void {
+		if (this._extraAttrs == null) {
+			this._extraAttrs = {};
+		}
+		this._extraAttrs[key] = value;
+	}
+
+	attr<V = any>(key: string): Optional<V> {
+		return this._extraAttrs?.[key];
 	}
 
 	get text(): string {

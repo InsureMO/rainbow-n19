@@ -38,9 +38,8 @@ describe('Single line comment test', () => {
 			]
 		]);
 	});
-	test('Single line comment #2', async () => {
-		const text = `// abc\t\tdef xyz
-	// 2nd line`;
+	test('Single line comment #3', async () => {
+		const text = `// abc\t\tdef xyz\n\t// 2nd line`;
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 28, 0, text, [
@@ -64,6 +63,29 @@ describe('Single line comment test', () => {
 				]]
 			]
 		]);
-
+	});
+	test('Single line comment #4', async () => {
+		const text = `// todo\t\tdef\n\t// 2nd line`;
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 25, 0, text, [
+				[TokenId.SingleLineComment, 0, 12, 1, '// todo\t\tdef', [
+					[TokenId.SingleLineCommentStartMark, 0, 2, 1, '//'],
+					[TokenId.Whitespaces, 2, 3, 1, ' '],
+					[TokenId.CommentKeyword, 3, 7, 1, 'todo'],
+					[TokenId.Tabs, 7, 9, 1, '\t\t'],
+					[TokenId.CommentHighlightChars, 9, 12, 1, 'def'],
+				]],
+				[TokenId.NewLine, 12, 13, 1, '\n'],
+				[TokenId.Tabs, 13, 14, 2, '\t'],
+				[TokenId.SingleLineComment, 14, 25, 2, '// 2nd line', [
+					[TokenId.SingleLineCommentStartMark, 14, 16, 2, '//'],
+					[TokenId.Whitespaces, 16, 17, 2, ' '],
+					[TokenId.CommentHighlightChars, 17, 20, 2, '2nd'],
+					[TokenId.Whitespaces, 20, 21, 2, ' '],
+					[TokenId.CommentHighlightChars, 21, 25, 2, 'line']
+				]]
+			]
+		]);
 	});
 });
