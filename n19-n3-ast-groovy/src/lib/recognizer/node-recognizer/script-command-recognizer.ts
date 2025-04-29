@@ -34,7 +34,7 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 	}
 
 	protected doRecognizeInCompilationUnit(node: GroovyAstNode, nodeIndex: number, nodes: Array<GroovyAstNode>,
-	                                       astRecognizer: AstRecognizer, currentParent: GroovyAstNode) {
+	                                       astRecognizer: AstRecognizer, currentParent: GroovyAstNode): number {
 		// check node not whitespaces and tabs before this node and in same line
 		const nodeStartLine = node.startLine;
 		let hasNotWhitespaceAndTabBeforeInSameLine = false;
@@ -51,29 +51,10 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 			previousNodeIndex--;
 		}
 		if (!hasNotWhitespaceAndTabBeforeInSameLine) {
-			const scriptCommandNode = new GroovyAstNode({
-				tokenId: TokenId.ScriptCommand, tokenType: TokenType.ScriptCommand,
-				text: '', startOffset: node.startOffset, startLine: nodeStartLine
-			});
-			scriptCommandNode.asParentOf(node);
-			astRecognizer.createParent(scriptCommandNode);
-			let latestNode = node;
-			let nextNodeIndex = nodeIndex + 1;
-			let nextNode = nodes[nextNodeIndex];
-			while (nextNode != null) {
-				if (nextNode.tokenId !== TokenId.NewLine) {
-					if (nextNode.tokenType !== TokenType.WhitespaceOrTabs) {
-						nextNode.replaceTokenNature(TokenId.Chars, TokenType.Chars);
-						nextNode.mergeTextWhenSameTokenIdAppended(true);
-					}
-					latestNode = latestNode.append(nextNode);
-					nextNodeIndex++;
-					nextNode = nodes[nextNodeIndex];
-				} else {
-					break;
-				}
-			}
-			astRecognizer.closeParent();
+			const [, nextNodeIndex] = this.createStatementAndGrabNodesTillNewLine(
+				TokenId.ScriptCommand, TokenType.ScriptCommand,
+				node, nodeIndex, nodes,
+				astRecognizer, ScriptCommandRecognizer.reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToStatement);
 			return nextNodeIndex;
 		} else {
 			return this.degenerate(node, nodeIndex, nodes, currentParent);

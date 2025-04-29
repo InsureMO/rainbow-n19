@@ -24,10 +24,25 @@ export class GroovyAstNode implements AstNode {
 	constructor(options: GroovyAstNodeConstructOptions) {
 		this._tokenId = options.tokenId;
 		this._tokenType = options.tokenType;
+		this.proceedTokenNature();
 		this._text = options.text ?? '';
 		this._startOffset = options.startOffset;
 		this._endOffset = options.startOffset + this._text.length;
 		this._startLine = options.startLine;
+	}
+
+	/**
+	 * call after token id set
+	 */
+	protected proceedTokenNature() {
+		switch (this._tokenId) {
+			case TokenId.Chars:
+			case TokenId.UndeterminedChars:
+				this.mergeTextWhenSameTokenIdAppended(true);
+				break;
+			default:
+				break;
+		}
 	}
 
 	get tokenId(): TokenId {
@@ -41,8 +56,12 @@ export class GroovyAstNode implements AstNode {
 	replaceTokenNature(tokenId: TokenId, tokenType: TokenType): void {
 		this._tokenId = tokenId;
 		this._tokenType = tokenType;
+		this.proceedTokenNature();
 	}
 
+	/**
+	 * call before node append to new parent
+	 */
 	replaceTokenNatureAndText(tokenId: TokenId, tokenType: TokenType, text: string): void {
 		this.replaceTokenNature(tokenId, tokenType);
 		this._text = text;

@@ -16,18 +16,17 @@ describe('Multiple lines comment test', () => {
 					[TokenId.Whitespaces, 2, 3, 1, ' '],
 					[TokenId.CommentKeyword, 3, 7, 1, 'todo'],
 					[TokenId.Whitespaces, 7, 8, 1, ' '],
-					[TokenId.Chars, 8, 11, 1, 'abc'],
+					[TokenId.CommentHighlightChars, 8, 11, 1, 'abc'],
 					[TokenId.NewLine, 11, 12, 1, '\n'],
 					[TokenId.Whitespaces, 12, 13, 2, ' '],
-					[TokenId.Multiple, 13, 14, 2, '*'],
+					[TokenId.MultipleLinesCommentsHeadAsterisks, 13, 14, 2, '*'],
 					[TokenId.Whitespaces, 14, 15, 2, ' '],
 					[TokenId.Chars, 15, 18, 2, 'def'],
 					[TokenId.NewLine, 18, 20, 2, '\r\n'],
 					[TokenId.Whitespaces, 20, 21, 3, ' '],
-					[TokenId.Multiple, 21, 22, 3, '*'],
+					[TokenId.MultipleLinesCommentsHeadAsterisks, 21, 22, 3, '*'],
 					[TokenId.Whitespaces, 22, 23, 3, ' '],
-					[TokenId.Chars, 23, 26, 3, 'xyz'],
-					[TokenId.NewLine, 26, 27, 3, '\r'],
+					[TokenId.Chars, 23, 27, 3, 'xyz\r'],
 					[TokenId.Whitespaces, 27, 28, 4, ' '],
 					[TokenId.MultipleLinesCommentEndMark, 28, 30, 4, '*/']
 				]]
@@ -44,7 +43,7 @@ describe('Multiple lines comment test', () => {
 					[TokenId.Whitespaces, 2, 3, 1, ' '],
 					[TokenId.CommentKeyword, 3, 7, 1, 'todo'],
 					[TokenId.Whitespaces, 7, 8, 1, ' '],
-					[TokenId.Chars, 8, 11, 1, 'abc']
+					[TokenId.CommentHighlightChars, 8, 11, 1, 'abc']
 				]]
 			]
 		]);

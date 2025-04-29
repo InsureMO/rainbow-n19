@@ -16,7 +16,7 @@ describe('Single line comment test', () => {
 					[TokenId.Whitespaces, 2, 3, 1, ' '],
 					[TokenId.CommentKeyword, 3, 7, 1, 'todo'],
 					[TokenId.Whitespaces, 7, 8, 1, ' '],
-					[TokenId.Chars, 8, 11, 1, 'abc']
+					[TokenId.CommentHighlightChars, 8, 11, 1, 'abc']
 				]]
 			]
 		]);

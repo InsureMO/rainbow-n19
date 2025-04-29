@@ -190,10 +190,12 @@ export enum TokenId {
 	Ellipsis, // ...
 	// comment
 	CommentKeyword,
+	CommentHighlightChars, // chars after comment keyword
 	SingleLineCommentStartMark,
 	SingleLineComment,
 	MultipleLinesCommentStartMark,
 	MultipleLinesCommentEndMark,
+	MultipleLinesCommentsHeadAsterisks,  // asterisks in head of line
 	MultipleLinesComment,
 	// shebang command
 	ScriptCommandStartMark, // #!
@@ -286,4 +288,5 @@ export enum TokenType {
 	Chars, UndeterminedChars,
 	// statement
 	ScriptCommand,
+	Comments
 }

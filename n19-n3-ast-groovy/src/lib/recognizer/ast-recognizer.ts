@@ -49,7 +49,7 @@ export class AstRecognizer {
 				default:
 					// default treated as case-insensitive
 					keywords.push({
-						keyword,
+						keyword: keyword.toLowerCase(),
 						pattern: new RegExp(`\\b${keyword}\\b`, 'i'),
 						caseSensitive: false,
 						keywordLength: keyword.length

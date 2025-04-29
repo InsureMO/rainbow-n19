@@ -2,6 +2,7 @@
 export type Char = string;
 
 export interface CommentKeyword {
+	/** lower case keyword when case-sensitive is false. */
 	keyword: string;
 	pattern: RegExp;
 	caseSensitive: boolean;

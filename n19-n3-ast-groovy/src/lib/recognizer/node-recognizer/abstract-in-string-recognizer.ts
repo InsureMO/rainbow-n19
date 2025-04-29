@@ -1,11 +1,12 @@
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition} from '../types';
+import {AbstractRecognizer} from './abstract-recognizer';
 
 /**
  * If the current token is in a String context, it degenerates into a chars node.
  * If it is not in a String context, the processing continues.
  */
-export abstract class AbstractInStringRecognizer {
+export abstract class AbstractInStringRecognizer extends AbstractRecognizer {
 	protected abstract doRecognize(recognition: AstRecognition): number;
 
 	recognize(recognition: AstRecognition): number {
