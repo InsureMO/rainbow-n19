@@ -3,7 +3,6 @@ import {AbstractKeywordCaptor} from '../abstract-keyword-captor';
 import {AbstractMultipleCharsCaptor} from '../abstract-multiple-chars-captor';
 import {AbstractSameCharsCaptor} from '../abstract-same-chars-captor';
 import {AbstractSingleCharCaptor} from '../abstract-single-char-captor';
-import {AstTokenizer} from '../ast-tokenizer';
 import {Char} from '../types';
 import {AtomicTokenDefOfSingleCaptor} from './internal';
 import {GroovyAstNodeCaptorConstructor} from './types';
@@ -12,8 +11,8 @@ import {GroovyAstNodeCaptorConstructor} from './types';
 export const createSingleCharCaptorClass =
 	(className: string, char: Char, tokenId: TokenId, tokenType: TokenType): GroovyAstNodeCaptorConstructor => {
 		const CaptorClass = class extends AbstractSingleCharCaptor {
-			constructor(tokenizer: AstTokenizer) {
-				super(char, tokenizer);
+			constructor() {
+				super(char);
 			}
 
 			protected getTokenNature(): [TokenId, TokenType] {
@@ -28,8 +27,8 @@ export const createSingleCharCaptorClass =
 export const createSameCharsCaptorClass =
 	(className: string, char: Char, tokenId: TokenId, tokenType: TokenType): GroovyAstNodeCaptorConstructor => {
 		const CaptorClass = class extends AbstractSameCharsCaptor {
-			constructor(tokenizer: AstTokenizer) {
-				super(char, tokenizer);
+			constructor() {
+				super(char);
 			}
 
 			protected getTokenNature(): [TokenId, TokenType] {
@@ -44,8 +43,8 @@ export const createSameCharsCaptorClass =
 export const createMultiCharsCaptorClass =
 	(className: string, operator: string, tokenId: TokenId, tokenType: TokenType): GroovyAstNodeCaptorConstructor => {
 		const CaptorClass = class extends AbstractMultipleCharsCaptor {
-			constructor(tokenizer: AstTokenizer) {
-				super(operator, tokenizer);
+			constructor() {
+				super(operator);
 			}
 
 			protected getTokenNature(): [TokenId, TokenType] {
@@ -60,8 +59,8 @@ export const createMultiCharsCaptorClass =
 export const createKeywordCaptorClass =
 	(className: string, keyword: string, tokenId: TokenId, tokenType: TokenType): GroovyAstNodeCaptorConstructor => {
 		const CaptorClass = class extends AbstractKeywordCaptor {
-			constructor(tokenizer: AstTokenizer) {
-				super(keyword, tokenizer);
+			constructor() {
+				super(keyword);
 			}
 
 			protected getTokenNature(): [TokenId, TokenType] {

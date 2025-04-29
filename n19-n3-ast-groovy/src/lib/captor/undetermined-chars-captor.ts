@@ -1,6 +1,7 @@
 import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
-import {AstNodeCaptorCheckers} from './index';
+import {AstTokenizer} from './ast-tokenizer';
+import {AstNodeCaptorCheckers} from './captor';
 import {Char} from './types';
 
 /**
@@ -11,11 +12,11 @@ export class UndeterminedCharsCaptor extends AbstractAstNodeCaptor {
 		return [];
 	}
 
-	visit(char: Char, offset: number): void {
-		this.createAndAppendToAst({
+	visit(char: Char, offset: number, tokenizer: AstTokenizer): void {
+		this.createAndAppendToAst(tokenizer, {
 			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
 			text: char, startOffset: offset
 		});
-		this.moveCursorTo(offset + 1);
+		tokenizer.moveCursorTo(offset + 1);
 	}
 }

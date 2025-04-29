@@ -53,13 +53,17 @@ export class MultipleLinesCommentsRecognizer extends AbstractCommentsRecognizer 
 			node.replaceTokenNature(TokenId.MultipleLinesCommentsHeadAsterisks, TokenType.Comments);
 			const revisedNodes = [node];
 			let consumedNodeCount = 1;
-			let nodeIndex = situation.nodeIndex + 1;
-			let nextNode = situation.nodes[nodeIndex];
-			let {text: nextNodeText} = nextNode;
+			let nextNodeIndex = situation.nodeIndex + 1;
+			let nextNode = situation.nodes[nextNodeIndex];
+			let nextNodeText = nextNode?.text;
 			while (nextNode != null && nextNodeText.startsWith(AstOperators.Multiple)) {
 				consumedNodeCount++;
 				if (nextNodeText.length === 1 || node.tokenId === TokenId.Power) {
 					node.appendText(nextNodeText);
+					// continue find next node
+					nextNodeIndex++;
+					nextNode = situation.nodes[nextNodeIndex];
+					nextNodeText = nextNode?.text;
 				} else {
 					const [asterisks, leftStr] = this.splitStrToAsterisksAnd(nextNodeText);
 					node.appendText(asterisks);

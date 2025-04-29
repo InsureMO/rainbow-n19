@@ -6,31 +6,31 @@ import {Char} from './types';
 import {AstChars, AstMarks} from './util';
 
 export class Newline1CharCaptor extends AbstractSingleCharCaptor {
-	constructor(tokenizer: AstTokenizer) {
-		super(AstChars.NewLine, tokenizer);
+	constructor() {
+		super(AstChars.NewLine);
 	}
 
 	protected getTokenNature(): [TokenId, TokenType] {
 		return [TokenId.NewLine, TokenType.NewLine];
 	}
 
-	visit(char: Char, offset: number) {
-		super.visit(char, offset);
-		this.moveToNextLine();
+	visit(char: Char, offset: number, tokenizer: AstTokenizer) {
+		super.visit(char, offset, tokenizer);
+		tokenizer.moveToNextLine();
 	}
 }
 
 export class Newline2CharsCaptor extends AbstractMultipleCharsCaptor {
-	constructor(tokenizer: AstTokenizer) {
-		super(AstMarks.CarriageReturnNewLine, tokenizer);
+	constructor() {
+		super(AstMarks.CarriageReturnNewLine);
 	}
 
 	protected getTokenNature(): [TokenId, TokenType] {
 		return [TokenId.NewLine, TokenType.NewLine];
 	}
 
-	visit(char: Char, offset: number) {
-		super.visit(char, offset);
-		this.moveToNextLine();
+	visit(char: Char, offset: number, tokenizer: AstTokenizer) {
+		super.visit(char, offset, tokenizer);
+		tokenizer.moveToNextLine();
 	}
 }

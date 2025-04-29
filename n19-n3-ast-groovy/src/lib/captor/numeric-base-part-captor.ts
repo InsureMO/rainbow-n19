@@ -16,8 +16,8 @@ import {AstChars} from './util';
 export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends AbstractAstNodeCaptor {
 	private readonly _numericChecker: AstNodeCaptorCharCheck;
 
-	protected constructor(number: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9', tokenizer: AstTokenizer) {
-		super(tokenizer);
+	protected constructor(number: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9') {
+		super();
 		this._numericChecker = number;
 	}
 
@@ -25,10 +25,10 @@ export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends Ab
 		return this._numericChecker;
 	}
 
-	visit(given: Char, offsetOfGiven: number): void {
+	visit(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
 		// starts from next character
 		let offset = offsetOfGiven + 1;
-		let c = this.charAt(offset);
+		let c = tokenizer.charAt(offset);
 		let text = given;
 		let hasDot = text.includes(AstChars.Dot);
 		while (c != null) {
@@ -45,75 +45,75 @@ export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends Ab
 				break;
 			}
 			text = text + c;
-			c = this.charAt(offset);
+			c = tokenizer.charAt(offset);
 		}
 
-		this.createAndAppendToAst({
+		this.createAndAppendToAst(tokenizer, {
 			tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
 			text, startOffset: offsetOfGiven
 		});
 		// move cursor
-		this.moveCursorTo(offset);
+		tokenizer.moveCursorTo(offset);
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith0 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(tokenizer: AstTokenizer) {
-		super('0', tokenizer);
+	constructor() {
+		super('0');
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith1 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(tokenizer: AstTokenizer) {
-		super('1', tokenizer);
+	constructor() {
+		super('1');
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith2 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(tokenizer: AstTokenizer) {
-		super('2', tokenizer);
+	constructor() {
+		super('2');
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith3 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(tokenizer: AstTokenizer) {
-		super('3', tokenizer);
+	constructor() {
+		super('3');
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith4 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(tokenizer: AstTokenizer) {
-		super('4', tokenizer);
+	constructor() {
+		super('4');
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith5 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(tokenizer: AstTokenizer) {
-		super('5', tokenizer);
+	constructor() {
+		super('5');
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith6 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(tokenizer: AstTokenizer) {
-		super('6', tokenizer);
+	constructor() {
+		super('6');
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith7 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(tokenizer: AstTokenizer) {
-		super('7', tokenizer);
+	constructor() {
+		super('7');
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith8 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(tokenizer: AstTokenizer) {
-		super('8', tokenizer);
+	constructor() {
+		super('8');
 	}
 }
 
 export class LtNumericBasePartCaptorStartsWith9 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
-	constructor(tokenizer: AstTokenizer) {
-		super('9', tokenizer);
+	constructor() {
+		super('9');
 	}
 }
 
@@ -134,10 +134,10 @@ export class LtNumericBasePartCaptorStartsWithDot extends AbstractAstNodeCaptor 
 		return this._checkers;
 	}
 
-	visit(given: Char, offsetOfGiven: number): void {
+	visit(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
 		// starts from next character
 		let offset = offsetOfGiven + 1;
-		let c = this.charAt(offset);
+		let c = tokenizer.charAt(offset);
 		let text = given;
 		while (c != null) {
 			if ('0123456789_'.includes(c)) {
@@ -146,14 +146,14 @@ export class LtNumericBasePartCaptorStartsWithDot extends AbstractAstNodeCaptor 
 				break;
 			}
 			text = text + c;
-			c = this.charAt(offset);
+			c = tokenizer.charAt(offset);
 		}
 
-		this.createAndAppendToAst({
+		this.createAndAppendToAst(tokenizer, {
 			tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
 			text, startOffset: offsetOfGiven
 		});
 		// move cursor
-		this.moveCursorTo(offset);
+		tokenizer.moveCursorTo(offset);
 	}
 }

@@ -7,24 +7,43 @@ import {UndeterminedCharsCaptor} from './undetermined-chars-captor';
 
 const AllCaptors = Object.values(AtomicTokenDef);
 const AllButUndeterminedCharsCaptors = AllCaptors.filter(Captor => Captor !== UndeterminedCharsCaptor);
+const DefaultCaptorDelegate: { instance?: CaptorDelegate } = {};
+
+const createDefaultCaptorDelegateInstance = () => {
+	const delegate = new CaptorDelegate();
+	AllButUndeterminedCharsCaptors.map(Captors => {
+		if (Array.isArray(Captors)) {
+			Captors.forEach(Captor => delegate.register(new Captor()));
+		} else {
+			delegate.register(new Captors());
+		}
+	});
+	delegate.registerFallback(new UndeterminedCharsCaptor());
+	return delegate;
+};
 
 export class CaptorSelector {
-	protected readonly _delegate: CaptorDelegate;
+	private readonly _tokenizer: AstTokenizer;
+	private readonly _delegate: CaptorDelegate;
 
-	constructor(tokenizer: AstTokenizer) {
-		this._delegate = new CaptorDelegate(tokenizer);
-		AllButUndeterminedCharsCaptors.map(Captors => {
-			if (Array.isArray(Captors)) {
-				Captors.forEach(Captor => this._delegate.register(new Captor(tokenizer)));
-			} else {
-				this._delegate.register(new Captors(tokenizer));
-			}
-		});
-		this._delegate.registerFallback(new UndeterminedCharsCaptor(tokenizer));
+	constructor(tokenizer: AstTokenizer, captors?: CaptorDelegate) {
+		this._tokenizer = tokenizer;
+		this._delegate = captors ?? DefaultCaptorDelegate.instance ?? (() => {
+			DefaultCaptorDelegate.instance = createDefaultCaptorDelegateInstance();
+			return DefaultCaptorDelegate.instance;
+		})();
+	}
+
+	protected get tokenizer(): AstTokenizer {
+		return this._tokenizer;
+	}
+
+	protected get delegate(): CaptorDelegate {
+		return this._delegate;
 	}
 
 	select(char: Char, offset: number): AstNodeCaptor {
-		return this._delegate.find(char, offset, char);
+		return this._delegate.find(char, offset, char, this._tokenizer);
 	}
 
 	printDefs(): void {

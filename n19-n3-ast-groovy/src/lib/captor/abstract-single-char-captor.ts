@@ -7,8 +7,8 @@ import {Char} from './types';
 export abstract class AbstractSingleCharCaptor extends AbstractAstNodeCaptor {
 	private readonly _singleChar: Char;
 
-	constructor(char: Char, tokenizer: AstTokenizer) {
-		super(tokenizer);
+	constructor(char: Char) {
+		super();
 		this._singleChar = char;
 	}
 
@@ -22,9 +22,9 @@ export abstract class AbstractSingleCharCaptor extends AbstractAstNodeCaptor {
 
 	protected abstract getTokenNature(): [TokenId, TokenType];
 
-	visit(char: Char, offset: number): void {
+	visit(char: Char, offset: number, tokenizer: AstTokenizer): void {
 		const [tokenId, tokenType] = this.getTokenNature();
-		this.createAndAppendToAst({tokenId, tokenType, text: char, startOffset: offset});
-		this.moveCursorTo(offset + 1);
+		this.createAndAppendToAst(tokenizer, {tokenId, tokenType, text: char, startOffset: offset});
+		tokenizer.moveCursorTo(offset + 1);
 	}
 }

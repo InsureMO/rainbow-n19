@@ -1,15 +1,18 @@
 import {AstNode, Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAst} from '../ast';
 import {GroovyAstNode} from '../node';
-import {CaptorSelector, Char} from './index';
+import {CaptorDelegate} from './captor-delegate';
+import {CaptorSelector} from './captor-selector';
+import {Char} from './types';
 
 export interface AstTokenVisitor {
 	onDetermined?: (node: AstNode) => void;
 	onNodeAppended?: (node: AstNode) => void;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface AstTokenizerOptions extends AstTokenVisitor {
+	/** replace the captors delegate */
+	captors?: CaptorDelegate;
 }
 
 /**
@@ -28,7 +31,7 @@ export class AstTokenizer {
 
 	constructor(ast: GroovyAst, options?: AstTokenizerOptions) {
 		this._ast = ast;
-		this._captorSelector = new CaptorSelector(this);
+		this._captorSelector = new CaptorSelector(this, options?.captors);
 		this._options = options;
 	}
 
@@ -130,7 +133,7 @@ export class AstTokenizer {
 
 	protected address(char: Char): void {
 		const captor = this._captorSelector.select(char, this._cursor);
-		captor.visit(char, this._cursor);
+		captor.visit(char, this._cursor, this);
 	}
 
 	printDefs(): void {

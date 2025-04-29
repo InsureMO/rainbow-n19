@@ -1,4 +1,5 @@
 import {AbstractSingleCharCaptor} from './abstract-single-char-captor';
+import {AstTokenizer} from './ast-tokenizer';
 import {Char} from './types';
 
 /**
@@ -6,31 +7,31 @@ import {Char} from './types';
  * Note that this Captor will only perform capturing based on the specified single character by {@link AbstractSingleCharCaptor#singleChar}.
  */
 export abstract class AbstractSameCharsCaptor extends AbstractSingleCharCaptor {
-	visit(given: Char, offsetOfGiven: number): void {
+	visit(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
 		// starts from next character
 		const startOffset = offsetOfGiven + 1;
 		let offset = startOffset;
-		let c = this.charAt(offset);
+		let c = tokenizer.charAt(offset);
 		while (c === given) {
 			offset += 1;
-			c = this.charAt(offset);
+			c = tokenizer.charAt(offset);
 		}
 
 		const [tokenId, tokenType] = this.getTokenNature();
 		if (offset === startOffset) {
 			// no more same character determined
-			this.createAndAppendToAst({
+			this.createAndAppendToAst(tokenizer, {
 				tokenId, tokenType, text: given, startOffset: offsetOfGiven
 			});
 		} else {
 			// gather all same characters
-			this.createAndAppendToAst({
+			this.createAndAppendToAst(tokenizer, {
 				tokenId, tokenType,
-				text: this.sliceText(offsetOfGiven, offset), startOffset: offsetOfGiven
+				text: this.sliceText(tokenizer, offsetOfGiven, offset), startOffset: offsetOfGiven
 			});
 		}
 
 		// move cursor
-		this.moveCursorTo(offset);
+		tokenizer.moveCursorTo(offset);
 	}
 }

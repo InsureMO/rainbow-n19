@@ -1,5 +1,4 @@
 import {AstNode} from '@rainbow-n19/n3-ast';
-import {AstTokenizer} from '../ast-tokenizer';
 import {GroovyAstNodeConstructOptions} from '../../node';
 import {AstNodeCaptor} from '../captor';
 
@@ -8,5 +7,5 @@ export interface GroovyAstNodeConstructor<N extends AstNode = AstNode> {
 }
 
 export interface GroovyAstNodeCaptorConstructor<N extends AstNodeCaptor = AstNodeCaptor> {
-	new(tokenizer: AstTokenizer): N;
+	new(): N;
 }
