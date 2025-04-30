@@ -21,7 +21,7 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 		const {startOffset, startLine, startColumn} = node;
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.WellNumber);
 		// push well-number mark
-		this.resetToAppropriateParentNode(astRecognizer).asParentOf(node);
+		this.resetToAppropriateParentNode(astRecognizer, [TokenId.UndeterminedChars, TokenType.UndeterminedChars]).asParentOf(node);
 		// push not operator, and will start to recognize from this new node
 		const node2 = GroovyAstNode.createAstNode({
 			tokenId: TokenId.Not, tokenType: TokenType.Operator,
@@ -34,8 +34,8 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 		return nodeIndex + 1;
 	}
 
-	protected doRecognizeInCompilationUnit(recognition: AstRecognition, currentParent: GroovyAstNode): number {
-		const {node, nodeIndex, nodes, astRecognizer} = recognition;
+	protected doRecognizeInCompilationUnit(recognition: AstRecognition): number {
+		const {node, nodeIndex, nodes} = recognition;
 
 		// check node not whitespaces and tabs before this node and in same line
 		const nodeStartLine = node.startLine;
@@ -70,7 +70,7 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 		if (!astRecognizer.isScriptCommandEnabled) {
 			return this.degenerate(recognition);
 		} else if (currentParentTokenId === TokenId.COMPILATION_UNIT) {
-			return this.doRecognizeInCompilationUnit(recognition, currentParent);
+			return this.doRecognizeInCompilationUnit(recognition);
 		} else {
 			return this.degenerate(recognition);
 		}

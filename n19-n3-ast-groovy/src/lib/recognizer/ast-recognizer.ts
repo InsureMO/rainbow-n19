@@ -147,7 +147,8 @@ export class AstRecognizer {
 					compilationUnit: complicationUnitNode, astRecognizer: this
 				});
 			} else {
-				complicationUnitNode.append(node);
+				// append to current parent
+				this.getCurrentParent().asParentOf(node);
 				nodeIndex++;
 			}
 		}

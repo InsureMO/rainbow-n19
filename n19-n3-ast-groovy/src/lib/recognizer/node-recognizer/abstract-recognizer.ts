@@ -150,14 +150,14 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 	 * e.g. when you have a package declaration statement node to append to ast,
 	 * call this to shift nodes from the current ancestors if they cannot be the parent of package declaration.
 	 */
-	protected resetToAppropriateParentNode(astRecognizer: AstRecognizer): GroovyAstNode {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	protected resetToAppropriateParentNode(astRecognizer: AstRecognizer, _token: [TokenId, TokenType]): GroovyAstNode {
 		const ancestors = astRecognizer.getCurrentAncestors();
 		// the last node is compilation unit, can be the parent of anything
 		while (ancestors.length > 1) {
 			const ancestor = ancestors[0];
 			const {tokenId} = ancestor;
-			if (tokenId === TokenId.PackageDeclaration
-				|| tokenId === TokenId.ImportDeclaration) {
+			if (tokenId === TokenId.PackageDeclaration || tokenId === TokenId.ImportDeclaration) {
 				ancestors.shift();
 				break;
 			}
