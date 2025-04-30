@@ -133,12 +133,71 @@ export class MultipleLinesCommentsRecognizer extends AbstractCommentsRecognizer 
 		};
 	}
 
+	protected finalizeHighlightCharsSegments(statementNode: GroovyAstNode, astRecognizer: AstRecognizer): void {
+		if (!astRecognizer.isMultipleLinesCommentHighlightEnabled) {
+			return;
+		}
+		// split to lines
+		const lines: Array<{ highlightColumn: number, nodes: Array<GroovyAstNode> }> = [];
+		const children = statementNode.children;
+		let currentLine: number = -1;
+		for (let index = 0, count = children.length; index < count; index++) {
+			const node = children[index];
+			const startLine = node.startLine;
+			if (startLine !== currentLine) {
+				lines.push({highlightColumn: -1, nodes: []});
+				currentLine = startLine;
+			}
+			const line = lines[lines.length - 1];
+			line.nodes.push(node);
+			if (node.tokenId === TokenId.CommentKeyword) {
+				line.highlightColumn = node.startColumn;
+			}
+		}
+		// go through lines
+
+		lines.forEach((line, lineIndex) => {
+			if (lineIndex === 0) {
+				// first line, do nothing
+				return;
+			}
+			if (line.highlightColumn !== -1) {
+				// comment keyword found (highlight column not equal -1), do nothing
+				return;
+			}
+			// find the first chars node, compare column with previous line
+			const firstCharsNodeIndex = line.nodes.findIndex(node => node.tokenId === TokenId.Chars);
+			if (firstCharsNodeIndex === -1) {
+				// no chars node found, do nothing
+				return;
+			}
+			// compare the start column of first chars node and previous line's highlight column
+			const previousHighlightColumn = lines[lineIndex - 1].highlightColumn;
+			if (previousHighlightColumn === -1) {
+				// previous line no highlight, do nothing
+				return;
+			}
+			const firstCharsNode = line.nodes[firstCharsNodeIndex];
+			if (firstCharsNode.startColumn > previousHighlightColumn) {
+				// inherit highlight column from previous line
+				line.highlightColumn = previousHighlightColumn;
+				// do highlight
+				line.nodes.slice(firstCharsNodeIndex).forEach(node => {
+					if (node.tokenId === TokenId.Chars) {
+						node.replaceTokenNature(TokenId.CommentHighlightChars, TokenType.Chars);
+					}
+				});
+			}
+		});
+	}
+
 	protected doRecognize(recognition: AstRecognition): number {
 		const {node, nodeIndex, nodes, astRecognizer} = recognition;
-		const [, nextNodeIndex] = this.createStatementAndGrabNodesTill(
+		const [statementNode, nextNodeIndex] = this.createStatementAndGrabNodesTill(
 			TokenId.MultipleLinesComment, TokenType.Comments,
 			node, nodeIndex, nodes,
 			astRecognizer, TokenId.MultipleLinesCommentEndMark, true, this.createNodeReviser(astRecognizer));
+		this.finalizeHighlightCharsSegments(statementNode, astRecognizer);
 		return nextNodeIndex;
 	}
 }

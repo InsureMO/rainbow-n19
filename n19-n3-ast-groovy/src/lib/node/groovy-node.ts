@@ -22,6 +22,7 @@ export class GroovyAstNode implements AstNode {
 
 	// special behaviors
 	private _mergeTextWhenSameTokenIdAppended: boolean = false;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private _extraAttrs: Record<string, any>;
 
 	constructor(options: GroovyAstNodeConstructOptions) {
@@ -77,13 +78,15 @@ export class GroovyAstNode implements AstNode {
 		this._mergeTextWhenSameTokenIdAppended = enabled;
 	}
 
-	attrs(key: string, value: any): void {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	attrs<V = any>(key: string, value: V): void {
 		if (this._extraAttrs == null) {
 			this._extraAttrs = {};
 		}
 		this._extraAttrs[key] = value;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	attr<V = any>(key: string): Optional<V> {
 		return this._extraAttrs?.[key];
 	}

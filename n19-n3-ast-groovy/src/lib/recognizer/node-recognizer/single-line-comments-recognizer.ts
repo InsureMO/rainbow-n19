@@ -27,7 +27,7 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 	}
 
 	protected finalizeHighlightCharsSegments(statementNode: GroovyAstNode, astRecognizer: AstRecognizer): void {
-		if (!astRecognizer.isMultipleCommentHighlightEnabled) {
+		if (!astRecognizer.isMultipleLinesCommentHighlightEnabled) {
 			return;
 		}
 		// ignore the start mark

@@ -10,7 +10,7 @@ import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types'
 export class AstRecognizer {
 	private readonly _scriptCommandEnabled: boolean;
 	private readonly _buildCommentKeywords: CommentKeywords;
-	private readonly _multipleCommentHighlightEnabled: boolean;
+	private readonly _multipleLinesCommentHighlightEnabled: boolean;
 	private readonly _recognizerRepo: NodeRecognizerRepo;
 
 	// recognition
@@ -20,13 +20,13 @@ export class AstRecognizer {
 	constructor(options?: AstRecognizerOptions) {
 		const {
 			scriptCommandEnabled,
-			commentKeywords, multipleCommentHighlightEnabled,
+			commentKeywords, multipleLinesCommentHighlightEnabled,
 			...restOptions
 		} = options ?? {};
 		this._scriptCommandEnabled = scriptCommandEnabled ?? true;
 		// build comment keywords
 		this._buildCommentKeywords = this.initializeCommentKeywords(commentKeywords);
-		this._multipleCommentHighlightEnabled = multipleCommentHighlightEnabled ?? true;
+		this._multipleLinesCommentHighlightEnabled = multipleLinesCommentHighlightEnabled ?? true;
 		// recognizers
 		this._recognizerRepo = new NodeRecognizerRepo(restOptions);
 	}
@@ -101,8 +101,8 @@ export class AstRecognizer {
 		return this._scriptCommandEnabled;
 	}
 
-	get isMultipleCommentHighlightEnabled(): boolean {
-		return this._multipleCommentHighlightEnabled;
+	get isMultipleLinesCommentHighlightEnabled(): boolean {
+		return this._multipleLinesCommentHighlightEnabled;
 	}
 
 	// recognition
