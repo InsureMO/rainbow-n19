@@ -24,6 +24,7 @@ export class KwPackageRecognizer extends AbstractInStringRecognizer {
 				startLine: node.startLine, startColumn: node.startColumn
 			});
 			statementNode.asParentOf(node);
+			this.resetToAppropriateParentNode(astRecognizer);
 			astRecognizer.createParent(statementNode);
 			return nodeIndex + 1;
 		} else {

@@ -94,6 +94,7 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 
 	protected doRecognize(recognition: AstRecognition): number {
 		const {astRecognizer} = recognition;
+		this.resetToAppropriateParentNode(astRecognizer);
 		const [statementNode, nextNodeIndex] = this.createStatementAndGrabNodesTillNewLine(
 			TokenId.SingleLineComment, TokenType.Comments,
 			recognition, this.createNodeReviser(astRecognizer));

@@ -114,8 +114,12 @@ export class AstRecognizer {
 		return this._currentAncestors[0];
 	}
 
-	closeParent(): void {
+	/**
+	 * return current parent
+	 */
+	closeParent(): GroovyAstNode {
 		this._currentAncestors.shift();
+		return this._currentAncestors[0];
 	}
 
 	createParent(node: GroovyAstNode): void {

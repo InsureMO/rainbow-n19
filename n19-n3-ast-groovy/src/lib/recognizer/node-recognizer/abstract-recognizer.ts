@@ -1,5 +1,6 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
+import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition, NodeRecognizer} from '../types';
 
 export interface NodeReviseSituation {
@@ -140,5 +141,28 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 
 		// no previous sibling or all siblings are newline, whitespaces, tabs or comments
 		return [currentParent, -1];
+	}
+
+	/**
+	 * for some nodes, they cannot accept other statement node as child.
+	 * typically, other statement node not includes multiple-lines comments node.
+	 *
+	 * e.g. when you have a package declaration statement node to append to ast,
+	 * call this to shift nodes from the current ancestors if they cannot be the parent of package declaration.
+	 */
+	protected resetToAppropriateParentNode(astRecognizer: AstRecognizer): GroovyAstNode {
+		const ancestors = astRecognizer.getCurrentAncestors();
+		// the last node is compilation unit, can be the parent of anything
+		while (ancestors.length > 1) {
+			const ancestor = ancestors[0];
+			const {tokenId} = ancestor;
+			if (tokenId === TokenId.PackageDeclaration
+				|| tokenId === TokenId.ImportDeclaration) {
+				ancestors.shift();
+				break;
+			}
+		}
+
+		return ancestors[0];
 	}
 }

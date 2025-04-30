@@ -15,13 +15,13 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 		return TokenId.ScriptCommandStartMark;
 	}
 
-	protected degenerate(recognition: AstRecognition, currentParent: GroovyAstNode): number {
-		const {node, nodeIndex, nodes} = recognition;
+	protected degenerate(recognition: AstRecognition): number {
+		const {node, nodeIndex, nodes, astRecognizer} = recognition;
 
 		const {startOffset, startLine, startColumn} = node;
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.WellNumber);
 		// push well-number mark
-		currentParent.asParentOf(node);
+		this.resetToAppropriateParentNode(astRecognizer).asParentOf(node);
 		// push not operator, and will start to recognize from this new node
 		const node2 = GroovyAstNode.createAstNode({
 			tokenId: TokenId.Not, tokenType: TokenType.Operator,
@@ -35,7 +35,7 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 	}
 
 	protected doRecognizeInCompilationUnit(recognition: AstRecognition, currentParent: GroovyAstNode): number {
-		const {node, nodeIndex, nodes} = recognition;
+		const {node, nodeIndex, nodes, astRecognizer} = recognition;
 
 		// check node not whitespaces and tabs before this node and in same line
 		const nodeStartLine = node.startLine;
@@ -58,7 +58,7 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 				recognition, ScriptCommandRecognizer.reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToStatement);
 			return nextNodeIndex;
 		} else {
-			return this.degenerate(recognition, currentParent);
+			return this.degenerate(recognition);
 		}
 	}
 
@@ -68,11 +68,11 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 		const currentParent = astRecognizer.getCurrentParent();
 		const currentParentTokenId = currentParent.tokenId;
 		if (!astRecognizer.isScriptCommandEnabled) {
-			return this.degenerate(recognition, currentParent);
+			return this.degenerate(recognition);
 		} else if (currentParentTokenId === TokenId.COMPILATION_UNIT) {
 			return this.doRecognizeInCompilationUnit(recognition, currentParent);
 		} else {
-			return this.degenerate(recognition, currentParent);
+			return this.degenerate(recognition);
 		}
 	}
 }
