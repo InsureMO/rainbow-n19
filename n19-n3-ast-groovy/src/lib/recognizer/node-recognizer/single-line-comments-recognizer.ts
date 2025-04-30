@@ -56,11 +56,11 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 			return;
 		}
 
-		const previousSiblingsOfStatementNode = statementNode.previousSiblings;
+		const childrenOfParent = statementNode.parent.children;
 		let detectedNewLineCount = 0;
 		let previousCommentsNode: Optional<GroovyAstNode> = (void 0);
-		for (let index = previousSiblingsOfStatementNode.length - 1; index >= 0; index--) {
-			const previousNode = previousSiblingsOfStatementNode[index];
+		for (let index = childrenOfParent.length - 2; index >= 0; index--) {
+			const previousNode = childrenOfParent[index];
 			if (previousNode.tokenId === TokenId.SingleLineComment) {
 				previousCommentsNode = previousNode;
 				break;
@@ -93,11 +93,10 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 	}
 
 	protected doRecognize(recognition: AstRecognition): number {
-		const {node, nodeIndex, nodes, astRecognizer} = recognition;
+		const {astRecognizer} = recognition;
 		const [statementNode, nextNodeIndex] = this.createStatementAndGrabNodesTillNewLine(
 			TokenId.SingleLineComment, TokenType.Comments,
-			node, nodeIndex, nodes,
-			astRecognizer, this.createNodeReviser(astRecognizer));
+			recognition, this.createNodeReviser(astRecognizer));
 		this.finalizeHighlightCharsSegments(statementNode, astRecognizer);
 		return nextNodeIndex;
 	}

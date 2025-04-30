@@ -192,11 +192,10 @@ export class MultipleLinesCommentsRecognizer extends AbstractCommentsRecognizer 
 	}
 
 	protected doRecognize(recognition: AstRecognition): number {
-		const {node, nodeIndex, nodes, astRecognizer} = recognition;
+		const {astRecognizer} = recognition;
 		const [statementNode, nextNodeIndex] = this.createStatementAndGrabNodesTill(
 			TokenId.MultipleLinesComment, TokenType.Comments,
-			node, nodeIndex, nodes,
-			astRecognizer, TokenId.MultipleLinesCommentEndMark, true, this.createNodeReviser(astRecognizer));
+			recognition, TokenId.MultipleLinesCommentEndMark, true, this.createNodeReviser(astRecognizer));
 		this.finalizeHighlightCharsSegments(statementNode, astRecognizer);
 		return nextNodeIndex;
 	}

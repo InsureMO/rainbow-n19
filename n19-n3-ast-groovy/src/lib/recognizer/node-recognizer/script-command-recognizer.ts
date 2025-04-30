@@ -1,7 +1,6 @@
 import {AstChars, AstOperators} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition} from '../types';
 import {AbstractInStringRecognizer} from './abstract-in-string-recognizer';
 
@@ -16,8 +15,9 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 		return TokenId.ScriptCommandStartMark;
 	}
 
-	protected degenerate(node: GroovyAstNode, nodeIndex: number, nodes: Array<GroovyAstNode>,
-	                     currentParent: GroovyAstNode): number {
+	protected degenerate(recognition: AstRecognition, currentParent: GroovyAstNode): number {
+		const {node, nodeIndex, nodes} = recognition;
+
 		const {startOffset, startLine, startColumn} = node;
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.WellNumber);
 		// push well-number mark
@@ -34,8 +34,9 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 		return nodeIndex + 1;
 	}
 
-	protected doRecognizeInCompilationUnit(node: GroovyAstNode, nodeIndex: number, nodes: Array<GroovyAstNode>,
-	                                       astRecognizer: AstRecognizer, currentParent: GroovyAstNode): number {
+	protected doRecognizeInCompilationUnit(recognition: AstRecognition, currentParent: GroovyAstNode): number {
+		const {node, nodeIndex, nodes} = recognition;
+
 		// check node not whitespaces and tabs before this node and in same line
 		const nodeStartLine = node.startLine;
 		let hasNotWhitespaceAndTabBeforeInSameLine = false;
@@ -54,25 +55,24 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 		if (!hasNotWhitespaceAndTabBeforeInSameLine) {
 			const [, nextNodeIndex] = this.createStatementAndGrabNodesTillNewLine(
 				TokenId.ScriptCommand, TokenType.ScriptCommand,
-				node, nodeIndex, nodes,
-				astRecognizer, ScriptCommandRecognizer.reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToStatement);
+				recognition, ScriptCommandRecognizer.reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToStatement);
 			return nextNodeIndex;
 		} else {
-			return this.degenerate(node, nodeIndex, nodes, currentParent);
+			return this.degenerate(recognition, currentParent);
 		}
 	}
 
 	protected doRecognize(recognition: AstRecognition): number {
-		const {node, nodeIndex, nodes, astRecognizer} = recognition;
+		const {astRecognizer} = recognition;
 
 		const currentParent = astRecognizer.getCurrentParent();
 		const currentParentTokenId = currentParent.tokenId;
 		if (!astRecognizer.isScriptCommandEnabled) {
-			return this.degenerate(node, nodeIndex, nodes, currentParent);
+			return this.degenerate(recognition, currentParent);
 		} else if (currentParentTokenId === TokenId.COMPILATION_UNIT) {
-			return this.doRecognizeInCompilationUnit(node, nodeIndex, nodes, astRecognizer, currentParent);
+			return this.doRecognizeInCompilationUnit(recognition, currentParent);
 		} else {
-			return this.degenerate(node, nodeIndex, nodes, currentParent);
+			return this.degenerate(recognition, currentParent);
 		}
 	}
 }

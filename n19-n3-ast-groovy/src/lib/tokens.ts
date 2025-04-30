@@ -281,12 +281,17 @@ export const Tokens: Readonly<{ [key in Exclude<keyof typeof TokenId, number>]: 
 
 export enum TokenType {
 	CompilationUnit,
-	Separator, WhitespaceOrTabs, NewLine,
+	WhitespaceOrTabs, NewLine,
+	Separator,
 	Keyword, Mark, Operator, PrimitiveType, Symbol,
 	Identifier,
-	BooleanLiteral, NumberLiteral, StringLiteral,
+	// literal
+	BooleanLiteral,
+	NumberLiteral,
+	StringLiteral,
+	// chars only
 	Chars, UndeterminedChars,
 	// statement
-	ScriptCommand,
-	Comments
+	ScriptCommand, Comments,
+	PackageDeclaration, ImportDeclaration
 }
