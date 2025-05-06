@@ -1,5 +1,5 @@
-import {GroovyAstBuilder, TokenId} from '../src';
-import {AstChecker} from './utils/ast-checker';
+import {GroovyAstBuilder, TokenId} from '../../src';
+import {AstChecker} from '../utils/ast-checker';
 
 describe('Package declaration test', () => {
 	beforeAll(() => {
@@ -40,7 +40,7 @@ describe('Package declaration test', () => {
 		]);
 	});
 	test('Package declaration #4', async () => {
-		const text = 'package abc.1df';
+		const text = 'package abc.edf';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 15, 0, text, [
@@ -49,17 +49,17 @@ describe('Package declaration test', () => {
 					[TokenId.Whitespaces, 7, 8, 1, ' '],
 					[TokenId.Identifier, 8, 11, 1, 'abc'],
 					[TokenId.Dot, 11, 12, 1, '.'],
-					[TokenId.Identifier, 12, 15, 1, '1df']
+					[TokenId.Identifier, 12, 15, 1, 'edf']
 				]]
 			]
 		]);
 	});
 	test('Package declaration #5', async () => {
-		const text = 'package/* a */ abc/*b*/. /*c*/1df/*d*/\n';
+		const text = 'package/* a */ abc/*b*/. /*c*/edf/*d*/\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 39, 0, text, [
-				[TokenId.PackageDeclaration, 0, 38, 1, 'package/* a */ abc/*b*/. /*c*/1df/*d*/', [
+				[TokenId.PackageDeclaration, 0, 33, 1, 'package/* a */ abc/*b*/. /*c*/edf', [
 					[TokenId.PACKAGE, 0, 7, 1, 'package'],
 					[TokenId.MultipleLinesComment, 7, 14, 1, '/* a */', [
 						[TokenId.MultipleLinesCommentStartMark, 7, 9, 1, '/*'],
@@ -82,19 +82,19 @@ describe('Package declaration test', () => {
 						[TokenId.Chars, 27, 28, 1, 'c'],
 						[TokenId.MultipleLinesCommentEndMark, 28, 30, 1, '*/']
 					]],
-					[TokenId.Identifier, 30, 33, 1, '1df'],
-					[TokenId.MultipleLinesComment, 33, 38, 1, '/*d*/', [
-						[TokenId.MultipleLinesCommentStartMark, 33, 35, 1, '/*'],
-						[TokenId.Chars, 35, 36, 1, 'd'],
-						[TokenId.MultipleLinesCommentEndMark, 36, 38, 1, '*/']
-					]]
+					[TokenId.Identifier, 30, 33, 1, 'edf']
+				]],
+				[TokenId.MultipleLinesComment, 33, 38, 1, '/*d*/', [
+					[TokenId.MultipleLinesCommentStartMark, 33, 35, 1, '/*'],
+					[TokenId.Chars, 35, 36, 1, 'd'],
+					[TokenId.MultipleLinesCommentEndMark, 36, 38, 1, '*/']
 				]],
 				[TokenId.NewLine, 38, 39, 1, '\n']
 			]
 		]);
 	});
 	test('Package declaration #6', async () => {
-		const text = 'package/* a */ abc/*b\n*/.; /*c*/1df/*d*/\n';
+		const text = 'package/* a */ abc/*b\n*/.; /*c*/edf/*d*/\n';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 41, 0, text, [
@@ -124,7 +124,7 @@ describe('Package declaration test', () => {
 					[TokenId.Chars, 29, 30, 2, 'c'],
 					[TokenId.MultipleLinesCommentEndMark, 30, 32, 2, '*/']
 				]],
-				[TokenId.Identifier, 32, 35, 2, '1df'],
+				[TokenId.Identifier, 32, 35, 2, 'edf'],
 				[TokenId.MultipleLinesComment, 35, 40, 2, '/*d*/', [
 					[TokenId.MultipleLinesCommentStartMark, 35, 37, 2, '/*'],
 					[TokenId.Chars, 37, 38, 2, 'd'],

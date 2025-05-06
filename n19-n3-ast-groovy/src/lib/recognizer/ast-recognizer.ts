@@ -115,14 +115,6 @@ export class AstRecognizer {
 	}
 
 	/**
-	 * return current parent
-	 */
-	closeParent(): GroovyAstNode {
-		this._currentAncestors.shift();
-		return this._currentAncestors[0];
-	}
-
-	/**
 	 * for some nodes, they cannot accept other statement node as child.
 	 * typically, other statement node not includes multiple-lines comments node.
 	 *
@@ -135,9 +127,16 @@ export class AstRecognizer {
 		while (ancestors.length > 1) {
 			const ancestor = ancestors[0];
 			const childAcceptableCheck = $NAF.ChildAcceptableCheck.get(ancestor);
-			if (childAcceptableCheck != null && !childAcceptableCheck(node)) {
-				ancestors.shift();
-				break;
+			if (childAcceptableCheck != null) {
+				if (childAcceptableCheck(node, this)) {
+					// given node can be accepted by current parent, break the check
+					break;
+				} else {
+					// given node cannot be accepted by current parent
+					// shift current parent
+					ancestors.shift();
+					$NAF.OnNodeClosed.get(ancestor)?.(ancestor, this);
+				}
 			}
 		}
 
@@ -170,7 +169,36 @@ export class AstRecognizer {
 		if (checkParent) {
 			this.resetToAppropriateParentNode(node);
 		}
-		this._currentAncestors[0].asParentOf(node);
+		const parent = this._currentAncestors[0];
+		parent.asParentOf(node);
+		$NAF.OnChildAppended.get(parent)?.(node, this);
+	}
+
+	/**
+	 * return current parent
+	 */
+	closeParent(): GroovyAstNode {
+		const node = this._currentAncestors.shift();
+		$NAF.OnNodeClosed.get(node)?.(node, this);
+		const parent = this._currentAncestors[0];
+		$NAF.OnChildClosed.get(parent)?.(node, this);
+		return parent;
+	}
+
+	moveToParent(nodes: Array<GroovyAstNode>): void {
+		if (nodes.length === 0) {
+			return;
+		}
+		const oldParent = nodes[0].parent;
+		const parent = this._currentAncestors[0];
+		const length = nodes.reduce((length, node) => {
+			parent.asParentOf(node);
+			return length + (node.text?.length ?? 0);
+		}, 0);
+		if (oldParent != null) {
+			oldParent.chopOffTrailingNodes(nodes);
+			oldParent.chopOffTrailingText(length);
+		}
 	}
 
 	recognize(ast: GroovyAst): void {

@@ -22,6 +22,8 @@ export abstract class AbstractEagerRecognizer extends AbstractInStringRecognizer
 	 * are processed by the revise function and then added to the created statement node.
 	 * returns the created statement node, and node index of the next node waiting to be processed.
 	 *
+	 * Note that the created statement node has been closed, and it no longer accepts new child nodes.
+	 *
 	 * @param statementTokenId token id of statement to create
 	 * @param statementTokenType token type of statement to create
 	 * @param recognition ast recognition

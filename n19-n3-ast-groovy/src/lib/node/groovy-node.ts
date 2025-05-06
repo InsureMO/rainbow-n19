@@ -210,6 +210,26 @@ export class GroovyAstNode implements AstNode {
 		this.parent?.appendText(text);
 	}
 
+	/**
+	 * chop off trailing text by given length.
+	 * will not impact parent node
+	 */
+	chopOffTrailingText(length: number): void {
+		if (length <= 0) {
+			return;
+		}
+		this._text = this._text.slice(0, -length);
+		this._endOffset = this._startOffset + this._text.length;
+	}
+
+	chopOffTrailingNodes(nodes: Array<GroovyAstNode>): void {
+		const length = (nodes ?? []).length;
+		if (length === 0) {
+			return;
+		}
+		this._children.splice(-length, length);
+	}
+
 	toString(): string {
 		return [
 			TokenId[this.tokenId],
