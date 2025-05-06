@@ -15,7 +15,7 @@ export class KwPackageRecognizer extends AbstractInStringRecognizer {
 
 	protected doRecognize(recognition: AstRecognition): number {
 		const {node, nodeIndex, astRecognizer} = recognition;
-		const [currentParent, dotNodeIndex] = this.isAfterDotDirectly(recognition);
+		const [, dotNodeIndex] = this.isAfterDotDirectly(recognition);
 		if (dotNodeIndex === -1) {
 			// not after dot node, starts a package declaration statement
 			const statementNode = new GroovyAstNode({
@@ -24,13 +24,13 @@ export class KwPackageRecognizer extends AbstractInStringRecognizer {
 				startLine: node.startLine, startColumn: node.startColumn
 			});
 			statementNode.asParentOf(node);
-			this.resetToAppropriateParentNode(astRecognizer, [TokenId.PackageDeclaration, TokenType.PackageDeclaration]);
-			astRecognizer.createParent(statementNode);
+			this.appendAsCurrentParent(astRecognizer, statementNode);
 			return nodeIndex + 1;
 		} else {
 			// kind of property name, it is an identifier
 			node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
-			currentParent.asParentOf(node);
+			// TODO append identifier node, need check parent acceptable or not?
+			this.appendAsLeaf(astRecognizer, node, false);
 			return nodeIndex + 1;
 		}
 	}

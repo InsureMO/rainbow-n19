@@ -2,6 +2,7 @@ import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition, NodeRecognizer} from '../types';
+import {ChildAcceptableCheckFunc, ExtraAttrs} from './extra-attrs';
 
 export interface NodeReviseSituation {
 	/* grabbed nodes, already appended to statement */
@@ -28,14 +29,12 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 
 	abstract recognize(recognition: AstRecognition): number;
 
-	static reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToStatement(situation: NodeReviseSituation): NodeReviseResult {
-		const {node} = situation;
-		if (node.tokenType !== TokenType.WhitespaceOrTabs) {
-			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
-		}
-		return {revisedNodes: [node], consumedNodeCount: 1};
-	}
-
+	/**
+	 * When both the given node and the previous sibling node are of type {@link TokenId.Chars},
+	 * or both are of type {@link TokenId.UndeterminedChars},
+	 * the given node is merged into the previous sibling node, and the previous sibling node is returned.
+	 * Otherwise, the given node is set as the next node of the previous sibling node, and the given node is returned.
+	 */
 	protected appendToPreviousSibling(node: GroovyAstNode, previousSiblingNode: GroovyAstNode): GroovyAstNode {
 		const {tokenId: previousSiblingTokenId} = previousSiblingNode;
 		if (previousSiblingTokenId !== node.tokenId) {
@@ -49,81 +48,6 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 			previousSiblingNode.parent.asParentOf(node);
 			return node;
 		}
-	}
-
-	/**
-	 * create statement node, grab following nodes till new line.
-	 * The given original node and the nodes following it till node with given till token id,
-	 * are processed by the revise function and then added to the created statement node.
-	 * returns the created statement node, and node index of the next node waiting to be processed.
-	 *
-	 * @param statementTokenId token id of statement to create
-	 * @param statementTokenType token type of statement to create
-	 * @param recognition ast recognition
-	 * @param tillTokenId grab original node till this token id appears
-	 * @param includeTillToken grab till token node or not
-	 * @param reviseGrabbedNode function to revise grabbed nodes, from node starts from nodeIndex + 1 (include), ends by till token node (exclude)
-	 */
-	protected createStatementAndGrabNodesTill(
-		statementTokenId: TokenId, statementTokenType: TokenType,
-		recognition: AstRecognition,
-		tillTokenId: TokenId, includeTillToken: boolean,
-		reviseGrabbedNode?: NodeReviseFunc): [GroovyAstNode, number] {
-		const {node, nodeIndex, nodes, astRecognizer} = recognition;
-
-		const situation: Partial<NodeReviseSituation> = {grabbedNodes: [], nodes};
-		const statementNode = new GroovyAstNode({
-			tokenId: statementTokenId, tokenType: statementTokenType,
-			text: '', startOffset: node.startOffset,
-			startLine: node.startLine, startColumn: node.startColumn
-		});
-		statementNode.asParentOf(node);
-		situation.grabbedNodes.push(node);
-		astRecognizer.createParent(statementNode);
-		let latestNode = node;
-		let nextNodeIndex = nodeIndex + 1;
-		let nextNode = nodes[nextNodeIndex];
-		while (nextNode != null) {
-			if (nextNode.tokenId !== tillTokenId) {
-				situation.node = nextNode;
-				situation.nodeIndex = nextNodeIndex;
-				const revisedResult = reviseGrabbedNode == null
-					? {revisedNodes: [nextNode], consumedNodeCount: 1} as NodeReviseResult
-					: reviseGrabbedNode(situation as NodeReviseSituation);
-				revisedResult.revisedNodes.forEach(node => {
-					latestNode = this.appendToPreviousSibling(node, latestNode);
-					situation.grabbedNodes.push(node);
-				});
-				nextNodeIndex = nextNodeIndex + revisedResult.consumedNodeCount;
-				nextNode = nodes[nextNodeIndex];
-			} else {
-				if (includeTillToken) {
-					this.appendToPreviousSibling(nextNode, latestNode);
-					nextNodeIndex++;
-				}
-				break;
-			}
-		}
-		astRecognizer.closeParent();
-		return [statementNode, nextNodeIndex];
-	}
-
-	/**
-	 * create statement node,
-	 * The given original node and the nodes following it till new line node,
-	 * are processed by the revise function and then added to the created statement node.
-	 * returns the created statement node, and node index of the next node waiting to be processed.
-	 *
-	 * @param statementTokenId token id of statement to create
-	 * @param statementTokenType token type of statement to create
-	 * @param recognition ast recognition
-	 * @param reviseGrabbedNode function to revise grabbed nodes, from node starts from nodeIndex + 1 (include), ends by new line node (exclude)
-	 */
-	protected createStatementAndGrabNodesTillNewLine(
-		statementTokenId: TokenId, statementTokenType: TokenType,
-		recognition: AstRecognition,
-		reviseGrabbedNode?: NodeReviseFunc): [GroovyAstNode, number] {
-		return this.createStatementAndGrabNodesTill(statementTokenId, statementTokenType, recognition, TokenId.NewLine, false, reviseGrabbedNode);
 	}
 
 	/**
@@ -166,18 +90,46 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 	 * call this to shift nodes from the current ancestors if they cannot be the parent of package declaration.
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected resetToAppropriateParentNode(astRecognizer: AstRecognizer, _token: [TokenId, TokenType]): GroovyAstNode {
+	protected resetToAppropriateParentNode(astRecognizer: AstRecognizer, token: [TokenId, TokenType]): GroovyAstNode {
 		const ancestors = astRecognizer.getCurrentAncestors();
 		// the last node is compilation unit, can be the parent of anything
 		while (ancestors.length > 1) {
 			const ancestor = ancestors[0];
-			const {tokenId} = ancestor;
-			if (tokenId === TokenId.PackageDeclaration || tokenId === TokenId.ImportDeclaration) {
+			const childAcceptableCheck = ancestor.attr<ChildAcceptableCheckFunc>(ExtraAttrs.CHILD_ACCEPTABLE_CHECK);
+			if (!childAcceptableCheck(token[0], token[1])) {
 				ancestors.shift();
 				break;
 			}
 		}
 
 		return ancestors[0];
+	}
+
+	/**
+	 * Add the given node to the AST.
+	 * The given node must be able to exist as a parent node (no check will be performed).
+	 * Before adding, check whether the current parent node can accept the given node as a child node.
+	 * If not, pop the current parent node and perform the check iteratively
+	 * until the current parent node can accept the given node as a child node.
+	 * Then add the given node as the new current parent node.
+	 */
+	protected appendAsCurrentParent(astRecognizer: AstRecognizer, node: GroovyAstNode): void {
+		this.resetToAppropriateParentNode(astRecognizer, [node.tokenId, node.tokenType]);
+		astRecognizer.appendAsCurrentParent(node);
+	}
+
+	/**
+	 * Add the given node to AST.
+	 * The given node is a leaf node.
+	 * Before adding, if {@link checkParent} is true, check whether the current parent node can accept the given node as a child node.
+	 * If not, pop the current parent node and perform the check iteratively
+	 * until the current parent node can accept the given node as a child node.
+	 * Then add the given node as the new current parent node.
+	 */
+	protected appendAsLeaf(astRecognizer: AstRecognizer, node: GroovyAstNode, checkParent: boolean): void {
+		if (checkParent) {
+			this.resetToAppropriateParentNode(astRecognizer, [node.tokenId, node.tokenType]);
+		}
+		astRecognizer.getCurrentParent().asParentOf(node);
 	}
 }

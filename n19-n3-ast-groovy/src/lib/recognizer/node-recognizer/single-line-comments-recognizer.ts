@@ -5,6 +5,7 @@ import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition} from '../types';
 import {AbstractCommentsRecognizer, CommentsReviseSituation} from './abstract-comments-recognizer';
 import {NodeReviseFunc, NodeReviseResult} from './abstract-recognizer';
+import {ExtraAttrs} from './extra-attrs';
 
 export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 	acceptTokenId(): TokenId {
@@ -41,7 +42,7 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 		for (let index = 0, count = restNodes.length; index < count; index++) {
 			const node = restNodes[index];
 			if (node.tokenId === TokenId.CommentKeyword) {
-				statementNode.attrs('highlightColumn', node.startColumn);
+				statementNode.attrs(ExtraAttrs.SL_COMMENT_HIGHLIGHT_COLUMN, node.startColumn);
 				hasCommentKeyword = true;
 				break;
 			} else if (node.tokenId === TokenId.Chars) {
@@ -75,12 +76,12 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 			// no clingy comment node from previous siblings, do nothing
 			return;
 		}
-		const highlightColumn = previousCommentsNode.attr<number>('highlightColumn');
+		const highlightColumn = previousCommentsNode.attr<number>(ExtraAttrs.SL_COMMENT_HIGHLIGHT_COLUMN);
 		if (highlightColumn == null) {
 			// previous comment node has no highlight
 			return;
 		}
-		statementNode.attrs('highlightColumn', highlightColumn);
+		statementNode.attrs(ExtraAttrs.SL_COMMENT_HIGHLIGHT_COLUMN, highlightColumn);
 		// compare the start column
 		if (firstCharsNode.startColumn > highlightColumn) {
 			// change all chars node to highlight
@@ -94,7 +95,6 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 
 	protected doRecognize(recognition: AstRecognition): number {
 		const {astRecognizer} = recognition;
-		this.resetToAppropriateParentNode(astRecognizer, [TokenId.SingleLineComment, TokenType.Comments]);
 		const [statementNode, nextNodeIndex] = this.createStatementAndGrabNodesTillNewLine(
 			TokenId.SingleLineComment, TokenType.Comments,
 			recognition, this.createNodeReviser(astRecognizer));

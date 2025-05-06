@@ -2,7 +2,7 @@ import {AstChars, AstOperators} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition} from '../types';
-import {AbstractInStringRecognizer} from './abstract-in-string-recognizer';
+import {AbstractEagerRecognizer} from './abstract-eager-recognizer';
 
 /**
  * 1. parent must be compilation unit and only whitespaces and tabs before start mark in this line,
@@ -10,7 +10,7 @@ import {AbstractInStringRecognizer} from './abstract-in-string-recognizer';
  * 2. parent is string or gstring, replace with chars,
  * 3. otherwise split to '#' (undetermined chars) and '!', and return index of '!',
  */
-export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
+export class ScriptCommandRecognizer extends AbstractEagerRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.ScriptCommandStartMark;
 	}
@@ -21,7 +21,7 @@ export class ScriptCommandRecognizer extends AbstractInStringRecognizer {
 		const {startOffset, startLine, startColumn} = node;
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.WellNumber);
 		// push well-number mark
-		this.resetToAppropriateParentNode(astRecognizer, [TokenId.UndeterminedChars, TokenType.UndeterminedChars]).asParentOf(node);
+		this.appendAsLeaf(astRecognizer, node, false);
 		// push not operator, and will start to recognize from this new node
 		const node2 = GroovyAstNode.createAstNode({
 			tokenId: TokenId.Not, tokenType: TokenType.Operator,

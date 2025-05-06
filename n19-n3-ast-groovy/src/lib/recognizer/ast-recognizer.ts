@@ -122,7 +122,7 @@ export class AstRecognizer {
 		return this._currentAncestors[0];
 	}
 
-	createParent(node: GroovyAstNode): void {
+	appendAsCurrentParent(node: GroovyAstNode): void {
 		this._currentAncestors[0].asParentOf(node);
 		this._currentAncestors.unshift(node);
 	}
@@ -147,7 +147,7 @@ export class AstRecognizer {
 					compilationUnit: complicationUnitNode, astRecognizer: this
 				});
 			} else {
-				// append to current parent
+				// TODO append to current parent, need check parent acceptable or not?
 				this.getCurrentParent().asParentOf(node);
 				nodeIndex++;
 			}

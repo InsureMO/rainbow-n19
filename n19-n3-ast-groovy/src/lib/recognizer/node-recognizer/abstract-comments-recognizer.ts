@@ -1,13 +1,13 @@
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {AbstractInStringRecognizer} from './abstract-in-string-recognizer';
+import {AbstractEagerRecognizer} from './abstract-eager-recognizer';
 import {NodeReviseFunc, NodeReviseSituation} from './abstract-recognizer';
 
 export interface CommentsReviseSituation extends NodeReviseSituation {
 	keywordFound?: boolean;
 }
 
-export abstract class AbstractCommentsRecognizer extends AbstractInStringRecognizer {
+export abstract class AbstractCommentsRecognizer extends AbstractEagerRecognizer {
 	protected matchCommentKeyword(situation: CommentsReviseSituation,
 	                              astRecognizer: AstRecognizer): ReturnType<NodeReviseFunc> {
 		const {node} = situation;
