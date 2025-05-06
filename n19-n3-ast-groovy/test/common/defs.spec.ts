@@ -1,4 +1,4 @@
-import {GroovyAstBuilder} from '../src';
+import {GroovyAstBuilder} from '../../src';
 
 describe('Ast defs test', () => {
 	test('Ast defs #1', async () => {

@@ -36,6 +36,21 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 		return {revisedNodes: [node], consumedNodeCount: 1};
 	}
 
+	protected appendToPreviousSibling(node: GroovyAstNode, previousSiblingNode: GroovyAstNode): GroovyAstNode {
+		const {tokenId: previousSiblingTokenId} = previousSiblingNode;
+		if (previousSiblingTokenId !== node.tokenId) {
+			previousSiblingNode.parent.asParentOf(node);
+			return node;
+		} else if (previousSiblingTokenId === TokenId.Chars
+			|| previousSiblingTokenId === TokenId.UndeterminedChars) {
+			previousSiblingNode.appendText(node.text);
+			return previousSiblingNode;
+		} else {
+			previousSiblingNode.parent.asParentOf(node);
+			return node;
+		}
+	}
+
 	/**
 	 * create statement node, grab following nodes till new line.
 	 * The given original node and the nodes following it till node with given till token id,
@@ -76,14 +91,14 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 					? {revisedNodes: [nextNode], consumedNodeCount: 1} as NodeReviseResult
 					: reviseGrabbedNode(situation as NodeReviseSituation);
 				revisedResult.revisedNodes.forEach(node => {
-					latestNode = latestNode.append(node);
+					latestNode = this.appendToPreviousSibling(node, latestNode);
 					situation.grabbedNodes.push(node);
 				});
 				nextNodeIndex = nextNodeIndex + revisedResult.consumedNodeCount;
 				nextNode = nodes[nextNodeIndex];
 			} else {
 				if (includeTillToken) {
-					latestNode.append(nextNode);
+					this.appendToPreviousSibling(nextNode, latestNode);
 					nextNodeIndex++;
 				}
 				break;

@@ -21,33 +21,17 @@ export class GroovyAstNode implements AstNode {
 	protected _children: Array<GroovyAstNode>;
 
 	// special behaviors
-	private _mergeTextWhenSameTokenIdAppended: boolean = false;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private _extraAttrs: Record<string, any>;
 
 	constructor(options: GroovyAstNodeConstructOptions) {
 		this._tokenId = options.tokenId;
 		this._tokenType = options.tokenType;
-		this.proceedTokenNature();
 		this._text = options.text ?? '';
 		this._startOffset = options.startOffset;
 		this._endOffset = options.startOffset + this._text.length;
 		this._startLine = options.startLine;
 		this._startColumn = options.startColumn;
-	}
-
-	/**
-	 * call after token id set
-	 */
-	protected proceedTokenNature() {
-		switch (this._tokenId) {
-			case TokenId.Chars:
-			case TokenId.UndeterminedChars:
-				this.mergeTextWhenSameTokenIdAppended(true);
-				break;
-			default:
-				break;
-		}
 	}
 
 	get tokenId(): TokenId {
@@ -61,7 +45,6 @@ export class GroovyAstNode implements AstNode {
 	replaceTokenNature(tokenId: TokenId, tokenType: TokenType): void {
 		this._tokenId = tokenId;
 		this._tokenType = tokenType;
-		this.proceedTokenNature();
 	}
 
 	/**
@@ -71,11 +54,6 @@ export class GroovyAstNode implements AstNode {
 		this.replaceTokenNature(tokenId, tokenType);
 		this._text = text;
 		this._endOffset = this._startOffset + this._text.length;
-	}
-
-	// special behaviors
-	mergeTextWhenSameTokenIdAppended(enabled: boolean): void {
-		this._mergeTextWhenSameTokenIdAppended = enabled;
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -220,20 +198,6 @@ export class GroovyAstNode implements AstNode {
 	asLastChildOf(parent: GroovyAstNode): void {
 		this._parent = parent;
 		parent.asParentOf(this);
-	}
-
-	/**
-	 * default set given node as last child of my parent, and return given one.
-	 * so make sure the node has parent.
-	 */
-	append(node: GroovyAstNode): GroovyAstNode {
-		if (this._mergeTextWhenSameTokenIdAppended && node.tokenId === this.tokenId) {
-			this.appendText(node.text);
-			return this;
-		} else {
-			node.asLastChildOf(this.parent);
-			return node;
-		}
 	}
 
 	appendText(text: string): void {

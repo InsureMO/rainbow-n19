@@ -64,12 +64,6 @@ export interface AstNode {
 	 */
 	asLastChildOf(parent: AstNode): void;
 	/**
-	 * append a node.
-	 * given node could be child of this, or next of this, or modify this node.
-	 * depends on current situation of this node.
-	 */
-	append(node: AstNode): AstNode;
-	/**
 	 * append given text to this, will change {@link #text} and {@link #endOffset}.
 	 * also will change parent's {@link #text} and {@link #endOffset}.
 	 */

@@ -67,14 +67,6 @@ export class CompilationUnitNode extends GroovyAstNode implements ProgramNode {
 	}
 
 	/**
-	 * always append as child, and returns given one
-	 */
-	append(node: GroovyAstNode): GroovyAstNode {
-		node.asLastChildOf(this);
-		return node;
-	}
-
-	/**
 	 * do nothing, text of this is frozen on constructing
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
