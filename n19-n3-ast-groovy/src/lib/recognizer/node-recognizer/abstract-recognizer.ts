@@ -1,8 +1,6 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition, NodeRecognizer} from '../types';
-import {ChildAcceptableCheckFunc, ExtraAttrs} from './extra-attrs';
 
 export interface NodeReviseSituation {
 	/* grabbed nodes, already appended to statement */
@@ -80,56 +78,5 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 
 		// no previous sibling or all siblings are newline, whitespaces, tabs or comments
 		return [currentParent, -1];
-	}
-
-	/**
-	 * for some nodes, they cannot accept other statement node as child.
-	 * typically, other statement node not includes multiple-lines comments node.
-	 *
-	 * e.g. when you have a package declaration statement node to append to ast,
-	 * call this to shift nodes from the current ancestors if they cannot be the parent of package declaration.
-	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected resetToAppropriateParentNode(astRecognizer: AstRecognizer, token: [TokenId, TokenType]): GroovyAstNode {
-		const ancestors = astRecognizer.getCurrentAncestors();
-		// the last node is compilation unit, can be the parent of anything
-		while (ancestors.length > 1) {
-			const ancestor = ancestors[0];
-			const childAcceptableCheck = ancestor.attr<ChildAcceptableCheckFunc>(ExtraAttrs.CHILD_ACCEPTABLE_CHECK);
-			if (!childAcceptableCheck(token[0], token[1])) {
-				ancestors.shift();
-				break;
-			}
-		}
-
-		return ancestors[0];
-	}
-
-	/**
-	 * Add the given node to the AST.
-	 * The given node must be able to exist as a parent node (no check will be performed).
-	 * Before adding, check whether the current parent node can accept the given node as a child node.
-	 * If not, pop the current parent node and perform the check iteratively
-	 * until the current parent node can accept the given node as a child node.
-	 * Then add the given node as the new current parent node.
-	 */
-	protected appendAsCurrentParent(astRecognizer: AstRecognizer, node: GroovyAstNode): void {
-		this.resetToAppropriateParentNode(astRecognizer, [node.tokenId, node.tokenType]);
-		astRecognizer.appendAsCurrentParent(node);
-	}
-
-	/**
-	 * Add the given node to AST.
-	 * The given node is a leaf node.
-	 * Before adding, if {@link checkParent} is true, check whether the current parent node can accept the given node as a child node.
-	 * If not, pop the current parent node and perform the check iteratively
-	 * until the current parent node can accept the given node as a child node.
-	 * Then add the given node as the new current parent node.
-	 */
-	protected appendAsLeaf(astRecognizer: AstRecognizer, node: GroovyAstNode, checkParent: boolean): void {
-		if (checkParent) {
-			this.resetToAppropriateParentNode(astRecognizer, [node.tokenId, node.tokenType]);
-		}
-		astRecognizer.getCurrentParent().asParentOf(node);
 	}
 }

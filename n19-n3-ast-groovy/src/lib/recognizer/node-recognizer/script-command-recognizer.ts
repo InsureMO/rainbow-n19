@@ -21,7 +21,7 @@ export class ScriptCommandRecognizer extends AbstractEagerRecognizer {
 		const {startOffset, startLine, startColumn} = node;
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.WellNumber);
 		// push well-number mark
-		this.appendAsLeaf(astRecognizer, node, false);
+		astRecognizer.appendAsLeaf(node, true);
 		// push not operator, and will start to recognize from this new node
 		const node2 = GroovyAstNode.createAstNode({
 			tokenId: TokenId.Not, tokenType: TokenType.Operator,

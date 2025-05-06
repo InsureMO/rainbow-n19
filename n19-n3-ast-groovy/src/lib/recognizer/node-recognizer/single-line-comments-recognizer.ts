@@ -1,11 +1,10 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {GroovyAstNode} from '../../node';
+import {$NAF, GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition} from '../types';
 import {AbstractCommentsRecognizer, CommentsReviseSituation} from './abstract-comments-recognizer';
 import {NodeReviseFunc, NodeReviseResult} from './abstract-recognizer';
-import {ExtraAttrs} from './extra-attrs';
 
 export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 	acceptTokenId(): TokenId {
@@ -42,7 +41,7 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 		for (let index = 0, count = restNodes.length; index < count; index++) {
 			const node = restNodes[index];
 			if (node.tokenId === TokenId.CommentKeyword) {
-				statementNode.attrs(ExtraAttrs.SL_COMMENT_HIGHLIGHT_COLUMN, node.startColumn);
+				$NAF.SLCommentHighlightColumn.set(statementNode, node.startColumn);
 				hasCommentKeyword = true;
 				break;
 			} else if (node.tokenId === TokenId.Chars) {
@@ -76,12 +75,12 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 			// no clingy comment node from previous siblings, do nothing
 			return;
 		}
-		const highlightColumn = previousCommentsNode.attr<number>(ExtraAttrs.SL_COMMENT_HIGHLIGHT_COLUMN);
+		const highlightColumn = $NAF.SLCommentHighlightColumn.get(previousCommentsNode);
 		if (highlightColumn == null) {
 			// previous comment node has no highlight
 			return;
 		}
-		statementNode.attrs(ExtraAttrs.SL_COMMENT_HIGHLIGHT_COLUMN, highlightColumn);
+		$NAF.SLCommentHighlightColumn.set(statementNode, highlightColumn);
 		// compare the start column
 		if (firstCharsNode.startColumn > highlightColumn) {
 			// change all chars node to highlight

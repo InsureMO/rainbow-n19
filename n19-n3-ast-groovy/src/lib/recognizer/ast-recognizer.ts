@@ -1,6 +1,6 @@
 import {GroovyAst} from '../ast';
 import {CommentKeyword, CommentKeywords} from '../captor';
-import {CompilationUnitNode, GroovyAstNode} from '../node';
+import {$NAF, CompilationUnitNode, GroovyAstNode} from '../node';
 import {NodeRecognizerRepo} from './node-recognizer-repo';
 import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types';
 
@@ -122,9 +122,55 @@ export class AstRecognizer {
 		return this._currentAncestors[0];
 	}
 
+	/**
+	 * for some nodes, they cannot accept other statement node as child.
+	 * typically, other statement node not includes multiple-lines comments node.
+	 *
+	 * e.g. when you have a package declaration statement node to append to ast,
+	 * call this to shift nodes from the current ancestors if they cannot be the parent of package declaration.
+	 */
+	protected resetToAppropriateParentNode(node: GroovyAstNode): GroovyAstNode {
+		const ancestors = this.getCurrentAncestors();
+		// the last node is compilation unit, can be the parent of anything
+		while (ancestors.length > 1) {
+			const ancestor = ancestors[0];
+			const childAcceptableCheck = $NAF.ChildAcceptableCheck.get(ancestor);
+			if (childAcceptableCheck != null && !childAcceptableCheck(node)) {
+				ancestors.shift();
+				break;
+			}
+		}
+
+		return ancestors[0];
+	}
+
+	/**
+	 * Add the given node to the AST.
+	 * The given node must be able to exist as a parent node (no check will be performed).
+	 * Before adding, check whether the current parent node can accept the given node as a child node.
+	 * If not, pop the current parent node and perform the check iteratively
+	 * until the current parent node can accept the given node as a child node.
+	 * Then add the given node as the new current parent node.
+	 */
 	appendAsCurrentParent(node: GroovyAstNode): void {
+		this.resetToAppropriateParentNode(node);
 		this._currentAncestors[0].asParentOf(node);
 		this._currentAncestors.unshift(node);
+	}
+
+	/**
+	 * Add the given node to AST.
+	 * The given node is a leaf node.
+	 * Before adding, if {@link checkParent} is true, check whether the current parent node can accept the given node as a child node.
+	 * If not, pop the current parent node and perform the check iteratively
+	 * until the current parent node can accept the given node as a child node.
+	 * Then add the given node as the new current parent node.
+	 */
+	appendAsLeaf(node: GroovyAstNode, checkParent: boolean): void {
+		if (checkParent) {
+			this.resetToAppropriateParentNode(node);
+		}
+		this._currentAncestors[0].asParentOf(node);
 	}
 
 	recognize(ast: GroovyAst): void {
@@ -141,14 +187,15 @@ export class AstRecognizer {
 			const node = nodes[nodeIndex];
 			const nodeRecognizer = this.nodeRecognizers().find(node);
 			if (nodeRecognizer != null) {
+				// handle by node recognizer
 				nodeIndex = nodeRecognizer.recognize({
 					node, nodeIndex,
 					nodes,
 					compilationUnit: complicationUnitNode, astRecognizer: this
 				});
 			} else {
-				// TODO append to current parent, need check parent acceptable or not?
-				this.getCurrentParent().asParentOf(node);
+				// append to current parent
+				this.appendAsLeaf(node, true);
 				nodeIndex++;
 			}
 		}

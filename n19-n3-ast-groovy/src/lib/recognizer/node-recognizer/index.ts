@@ -3,7 +3,6 @@ import {KwPackageRecognizer} from './package-recognizer';
 import {ScriptCommandRecognizer} from './script-command-recognizer';
 import {SingleLineCommentsRecognizer} from './single-line-comments-recognizer';
 
-export * from './extra-attrs';
 // abstract
 export * from './abstract-recognizer';
 export * from './abstract-scene-based-recognizer';

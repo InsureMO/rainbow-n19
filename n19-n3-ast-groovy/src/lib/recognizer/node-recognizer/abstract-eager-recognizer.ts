@@ -42,7 +42,7 @@ export abstract class AbstractEagerRecognizer extends AbstractInStringRecognizer
 			text: '', startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
 		});
-		this.appendAsCurrentParent(astRecognizer, statementNode);
+		astRecognizer.appendAsCurrentParent(statementNode);
 		statementNode.asParentOf(node);
 		situation.grabbedNodes.push(node);
 		let latestNode = node;
