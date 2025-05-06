@@ -59,7 +59,7 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 	 *
 	 * @return [current parent node, dot node index], or [current parent node, -1] when not after dot directly
 	 */
-	protected isAfterDotDirectly(recognition: AstRecognition): [GroovyAstNode, number] {
+	protected static isAfterDotDirectly(recognition: AstRecognition): [GroovyAstNode, number] {
 		const {astRecognizer} = recognition;
 		const currentParent = astRecognizer.getCurrentParent();
 		const children = currentParent.children;

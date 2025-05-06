@@ -1,13 +1,13 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition} from '../types';
-import {AbstractInStringRecognizer} from './abstract-in-string-recognizer';
 import {NodeReviseFunc, NodeReviseResult, NodeReviseSituation} from './abstract-recognizer';
+import {AbstractSceneBasedRecognizer} from './abstract-scene-based-recognizer';
 
 /**
  * Collect nodes eagerly until the specified node appears.
  */
-export abstract class AbstractEagerRecognizer extends AbstractInStringRecognizer {
+export abstract class AbstractEagerRecognizer extends AbstractSceneBasedRecognizer {
 	static reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToStatement(situation: NodeReviseSituation): NodeReviseResult {
 		const {node} = situation;
 		if (node.tokenType !== TokenType.WhitespaceOrTabs) {

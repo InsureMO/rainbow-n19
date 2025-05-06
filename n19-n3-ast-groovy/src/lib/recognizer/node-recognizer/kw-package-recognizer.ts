@@ -2,18 +2,19 @@ import {$NAF, GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition} from '../types';
-import {AbstractInStringRecognizer} from './abstract-in-string-recognizer';
+import {AbstractSceneBasedRecognizer, RehydrateFunc} from './abstract-scene-based-recognizer';
 
 /**
  * multiple cases:
  * - not next to dot, start of package declaration
  * - next to dot, property name, object is before dot
  */
-export class KwPackageRecognizer extends AbstractInStringRecognizer {
+export class KwPackageRecognizer extends AbstractSceneBasedRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.PACKAGE;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	static childAcceptableCheck(mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
 		return [
 			TokenId.PACKAGE,
@@ -47,6 +48,13 @@ export class KwPackageRecognizer extends AbstractInStringRecognizer {
 		astRecognizer.moveToParent(removeNodes);
 	}
 
+	protected getRehydrateFunctions(): Array<RehydrateFunc> {
+		return [
+			KwPackageRecognizer.rehydrateToCharsWhenInString,
+			KwPackageRecognizer.rehydrateToIdentifierWhenAfterDotDirectly
+		];
+	}
+
 	protected createDeclarationNode(node: GroovyAstNode): GroovyAstNode {
 		const statementNode = new GroovyAstNode({
 			tokenId: TokenId.PackageDeclaration, tokenType: TokenType.PackageDeclaration,
@@ -62,18 +70,10 @@ export class KwPackageRecognizer extends AbstractInStringRecognizer {
 
 	protected doRecognize(recognition: AstRecognition): number {
 		const {node, nodeIndex, astRecognizer} = recognition;
-		const [, dotNodeIndex] = this.isAfterDotDirectly(recognition);
-		if (dotNodeIndex === -1) {
-			// not after dot node, starts a package declaration statement
-			const statementNode = this.createDeclarationNode(node);
-			statementNode.asParentOf(node);
-			astRecognizer.appendAsCurrentParent(statementNode);
-			return nodeIndex + 1;
-		} else {
-			// kind of property name, it is an identifier
-			node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
-			// do nothing, will handle by identifier recognizer
-			return nodeIndex;
-		}
+		// not after dot node, starts a package declaration statement
+		const statementNode = this.createDeclarationNode(node);
+		statementNode.asParentOf(node);
+		astRecognizer.appendAsCurrentParent(statementNode);
+		return nodeIndex + 1;
 	}
 }

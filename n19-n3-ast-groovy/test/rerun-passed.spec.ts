@@ -1,5 +1,4 @@
-import './script-command';
-import './comment';
+import './statement';
 
 describe('Rerun all passed test', () => {
 });
