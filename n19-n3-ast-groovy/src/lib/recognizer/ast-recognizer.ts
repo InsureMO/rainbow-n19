@@ -127,16 +127,13 @@ export class AstRecognizer {
 		while (ancestors.length > 1) {
 			const ancestor = ancestors[0];
 			const childAcceptableCheck = $NAF.ChildAcceptableCheck.get(ancestor);
-			if (childAcceptableCheck != null) {
-				if (childAcceptableCheck(node, this)) {
-					// given node can be accepted by current parent, break the check
-					break;
-				} else {
-					// given node cannot be accepted by current parent
-					// shift current parent
-					ancestors.shift();
-					$NAF.OnNodeClosed.get(ancestor)?.(ancestor, this);
-				}
+			if (childAcceptableCheck == null || childAcceptableCheck(node, this)) {
+				// given node can be accepted by current parent, break the check
+				break;
+			} else {
+				// given node cannot be accepted by current parent
+				// shift current parent
+				this.closeCurrentParent();
 			}
 		}
 
@@ -177,7 +174,7 @@ export class AstRecognizer {
 	/**
 	 * return current parent
 	 */
-	closeParent(): GroovyAstNode {
+	closeCurrentParent(): GroovyAstNode {
 		const node = this._currentAncestors.shift();
 		$NAF.OnNodeClosed.get(node)?.(node, this);
 		const parent = this._currentAncestors[0];

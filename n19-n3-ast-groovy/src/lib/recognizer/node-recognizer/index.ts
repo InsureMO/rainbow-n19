@@ -1,5 +1,7 @@
+import {KwImportRecognizer} from './kw-import-recognizer';
 import {KwPackageRecognizer} from './kw-package-recognizer';
 import {MultipleLinesCommentsRecognizer} from './multiple-lines-comments-recognizer';
+import {OpMultipleRecognizer} from './op-multiple-recognizer';
 import {ScriptCommandRecognizer} from './script-command-recognizer';
 import {SingleLineCommentsRecognizer} from './single-line-comments-recognizer';
 
@@ -15,6 +17,9 @@ export * from './single-line-comments-recognizer';
 export * from './multiple-lines-comments-recognizer';
 // keyword
 export * from './kw-package-recognizer';
+export * from './kw-import-recognizer';
+// operator
+export * from './op-multiple-recognizer';
 
 export const AllNodeRecognizers = [
 	// script command
@@ -23,5 +28,8 @@ export const AllNodeRecognizers = [
 	new SingleLineCommentsRecognizer(),
 	new MultipleLinesCommentsRecognizer(),
 	// keyword
-	new KwPackageRecognizer()
+	new KwPackageRecognizer(),
+	new KwImportRecognizer(),
+	// operator
+	new OpMultipleRecognizer()
 ];

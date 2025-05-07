@@ -1,5 +1,6 @@
-import {GroovyAstNode} from '../../node';
+import {$NAF, GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
+import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition} from '../types';
 import {AbstractSceneBasedRecognizer, RehydrateFunc} from './abstract-scene-based-recognizer';
 
@@ -11,6 +12,23 @@ import {AbstractSceneBasedRecognizer, RehydrateFunc} from './abstract-scene-base
 export class KwImportRecognizer extends AbstractSceneBasedRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.IMPORT;
+	}
+
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static childAcceptableCheck(mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
+		return [
+			TokenId.IMPORT,
+			TokenId.Whitespaces,
+			TokenId.Tabs,
+			TokenId.Dot,
+			TokenId.STATIC,
+			TokenId.Identifier,
+			TokenId.AS,
+			// alias of TokenId.Multiple, only in import declaration
+			TokenId.ImportAllMark,
+			TokenId.Semicolon,
+			TokenId.MultipleLinesComment
+		].includes(mightBeChildNode.tokenId);
 	}
 
 	protected getRehydrateFunctions(): Array<RehydrateFunc> {
@@ -26,9 +44,9 @@ export class KwImportRecognizer extends AbstractSceneBasedRecognizer {
 			text: '', startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
 		});
-		// $NAF.ChildAcceptableCheck.set(statementNode, KwPackageRecognizer.childAcceptableCheck);
-		// $NAF.OnChildAppended.set(statementNode, KwPackageRecognizer.onChildAppended);
-		// $NAF.OnNodeClosed.set(statementNode, KwPackageRecognizer.onNodeClosed);
+		$NAF.ChildAcceptableCheck.set(statementNode, KwImportRecognizer.childAcceptableCheck);
+		$NAF.OnChildAppended.set(statementNode, KwImportRecognizer.closeCurrentParentOnSemicolonAppended);
+		$NAF.OnNodeClosed.set(statementNode, KwImportRecognizer.moveTrailingMLCommentsToParentOnNodeClosed);
 
 		return statementNode;
 	}

@@ -1105,7 +1105,7 @@ public interface List<E> extends Collection<E> {
 		const spent = (end[0] * 1e9 + end[1]) / 1_000_000 / 100;
 		console.log(`Spent ${spent}ms each time.`)
 		const ast = GroovyAstBuilder.ast(text);
-		console.log(ast.compilationUnit.children.length);
+		console.log(`Token count: ${ast.compilationUnit.children.length}`);
 	});
 
 	test('Token #3', async () => {
@@ -4465,6 +4465,6 @@ public final class String
 		const spent = (end[0] * 1e9 + end[1]) / 1_000_000 / 100;
 		console.log(`Spent ${spent}ms each time.`)
 		const ast = GroovyAstBuilder.ast(text);
-		console.log(ast.compilationUnit.children.length);
+		console.log(`Token count: ${ast.compilationUnit.children.length}`);
 	});
 });

@@ -1,5 +1,6 @@
-import {GroovyAstNode} from '../../node';
+import {GroovyAstNode, OnChildAppendedFunc} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
+import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition, NodeRecognizer} from '../types';
 
 export interface NodeReviseSituation {
@@ -33,7 +34,7 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 	 * the given node is merged into the previous sibling node, and the previous sibling node is returned.
 	 * Otherwise, the given node is set as the next node of the previous sibling node, and the given node is returned.
 	 */
-	protected appendToPreviousSibling(node: GroovyAstNode, previousSiblingNode: GroovyAstNode): GroovyAstNode {
+	protected static appendToPreviousSibling(node: GroovyAstNode, previousSiblingNode: GroovyAstNode): GroovyAstNode {
 		const {tokenId: previousSiblingTokenId} = previousSiblingNode;
 		if (previousSiblingTokenId !== node.tokenId) {
 			previousSiblingNode.parent.asParentOf(node);
@@ -78,5 +79,30 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 
 		// no previous sibling or all siblings are newline, whitespaces, tabs or comments
 		return [currentParent, -1];
+	}
+
+	protected static createCloseCurrentParentOnChildAppended(check: (lastChildNode: GroovyAstNode) => boolean): OnChildAppendedFunc {
+		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+			if (check(lastChildNode)) {
+				astRecognizer.closeCurrentParent();
+			}
+		};
+	}
+
+	protected static closeCurrentParentOnSemicolonAppended =
+		AbstractRecognizer.createCloseCurrentParentOnChildAppended((lastChildNode) => lastChildNode.tokenId === TokenId.Semicolon);
+
+	protected static moveTrailingMLCommentsToParentOnNodeClosed(node: GroovyAstNode, astRecognizer: AstRecognizer): void {
+		const {children = []} = node;
+		const removeNodes: Array<GroovyAstNode> = [];
+		for (let index = children.length - 1; index >= 0; --index) {
+			const child = children[index];
+			if (child.tokenId === TokenId.MultipleLinesComment) {
+				removeNodes.unshift(child);
+			} else {
+				break;
+			}
+		}
+		astRecognizer.moveToParent(removeNodes);
 	}
 }

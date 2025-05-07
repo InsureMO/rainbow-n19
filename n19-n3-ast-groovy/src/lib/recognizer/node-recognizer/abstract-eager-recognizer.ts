@@ -58,20 +58,20 @@ export abstract class AbstractEagerRecognizer extends AbstractSceneBasedRecogniz
 					? {revisedNodes: [nextNode], consumedNodeCount: 1} as NodeReviseResult
 					: reviseGrabbedNode(situation as NodeReviseSituation);
 				revisedResult.revisedNodes.forEach(node => {
-					latestNode = this.appendToPreviousSibling(node, latestNode);
+					latestNode = AbstractEagerRecognizer.appendToPreviousSibling(node, latestNode);
 					situation.grabbedNodes.push(node);
 				});
 				nextNodeIndex = nextNodeIndex + revisedResult.consumedNodeCount;
 				nextNode = nodes[nextNodeIndex];
 			} else {
 				if (includeTillToken) {
-					this.appendToPreviousSibling(nextNode, latestNode);
+					AbstractEagerRecognizer.appendToPreviousSibling(nextNode, latestNode);
 					nextNodeIndex++;
 				}
 				break;
 			}
 		}
-		astRecognizer.closeParent();
+		astRecognizer.closeCurrentParent();
 		return [statementNode, nextNodeIndex];
 	}
 

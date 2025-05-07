@@ -27,27 +27,6 @@ export class KwPackageRecognizer extends AbstractSceneBasedRecognizer {
 		].includes(mightBeChildNode.tokenId);
 	}
 
-	static onChildAppended(lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void {
-		const {tokenId} = lastChildNode;
-		if (tokenId === TokenId.Semicolon) {
-			astRecognizer.closeParent();
-		}
-	}
-
-	static onNodeClosed(node: GroovyAstNode, astRecognizer: AstRecognizer): void {
-		const {children = []} = node;
-		const removeNodes: Array<GroovyAstNode> = [];
-		for (let index = children.length - 1; index >= 0; --index) {
-			const child = children[index];
-			if (child.tokenId === TokenId.MultipleLinesComment) {
-				removeNodes.unshift(child);
-			} else {
-				break;
-			}
-		}
-		astRecognizer.moveToParent(removeNodes);
-	}
-
 	protected getRehydrateFunctions(): Array<RehydrateFunc> {
 		return [
 			KwPackageRecognizer.rehydrateToCharsWhenInString,
@@ -62,8 +41,8 @@ export class KwPackageRecognizer extends AbstractSceneBasedRecognizer {
 			startLine: node.startLine, startColumn: node.startColumn
 		});
 		$NAF.ChildAcceptableCheck.set(statementNode, KwPackageRecognizer.childAcceptableCheck);
-		$NAF.OnChildAppended.set(statementNode, KwPackageRecognizer.onChildAppended);
-		$NAF.OnNodeClosed.set(statementNode, KwPackageRecognizer.onNodeClosed);
+		$NAF.OnChildAppended.set(statementNode, KwPackageRecognizer.closeCurrentParentOnSemicolonAppended);
+		$NAF.OnNodeClosed.set(statementNode, KwPackageRecognizer.moveTrailingMLCommentsToParentOnNodeClosed);
 
 		return statementNode;
 	}
