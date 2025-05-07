@@ -78,6 +78,7 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 			].includes(mightBeChildNode.tokenId);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	protected static onClassKeywordAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
 		const {tokenId} = lastChildNode;
 		const statementNode = lastChildNode.parent;
