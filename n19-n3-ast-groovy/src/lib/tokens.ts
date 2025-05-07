@@ -258,7 +258,11 @@ export enum TokenId {
 	LambdaDeclaration,
 	LambdaBody,
 	CodeBlock,
-	ArrayInitializer
+	ArrayInitializer,
+	// temporary tokens are only used during the AST parsing process
+	// and will be replaced with official tokens before the parsing is completed
+	// name starts with "$Tmp"
+	Tmp$OneOfClassConstructorMethodFieldDeclaration
 }
 
 interface Token {
@@ -267,9 +271,17 @@ interface Token {
 	top?: boolean;
 }
 
+export type TokenIdKeys = Exclude<keyof typeof TokenId, number>
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export type ExcludeTemporaryTokenId<S extends TokenIdKeys> = S extends `Tmp$${infer _}` ? never : S;
+export type TokenKeys = ExcludeTemporaryTokenId<TokenIdKeys>;
+export type TokenRecord = { [key in TokenKeys]: Token }
+
 // key is value of enumeration, according to typescript standard
-export const Tokens: Readonly<{ [key in Exclude<keyof typeof TokenId, number>]: Token }> = Object.keys(TokenId).reduce((ret, key) => {
-	if ('0123456789'.includes(`${key}`[0])) {
+export const Tokens: Readonly<TokenRecord> = Object.keys(TokenId).reduce((ret, key) => {
+	if ('0123456789'.includes(`${key}`[0]) || key.startsWith('Tmp$')) {
+		// keys are indexes and names
+		// ignore index keys and temporary token keys
 		return ret;
 	}
 	ret[key] = {id: TokenId[key], name: key};
@@ -277,7 +289,7 @@ export const Tokens: Readonly<{ [key in Exclude<keyof typeof TokenId, number>]: 
 		ret[key].top = true;
 	}
 	return ret;
-}, {} as { [key in Exclude<keyof typeof TokenId, number>]: Token });
+}, {} as TokenRecord);
 
 export enum TokenType {
 	CompilationUnit,
@@ -293,5 +305,8 @@ export enum TokenType {
 	Chars, UndeterminedChars,
 	// statement
 	ScriptCommand, Comments,
-	PackageDeclaration, ImportDeclaration
+	PackageDeclaration, ImportDeclaration,
+	ClassDeclaration, ConstructorDeclaration, MethodDeclaration, FieldDeclaration,
+	// temporary
+	TemporaryStatement
 }

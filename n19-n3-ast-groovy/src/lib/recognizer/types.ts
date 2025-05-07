@@ -48,4 +48,5 @@ export interface AstRecognizerOptions extends Partial<NodeRecognizersOptions> {
 	scriptCommandEnabled?: boolean;
 	commentKeywords?: AstRecognitionCommentKeywords;
 	multipleLinesCommentHighlightEnabled?: boolean;
+	jdkVersion?: number;
 }

@@ -1,21 +1,21 @@
-import {$NAF, GroovyAstNode} from '../../node';
-import {TokenId, TokenType} from '../../tokens';
-import {AstRecognizer} from '../ast-recognizer';
-import {AstRecognition} from '../types';
-import {AbstractSceneBasedRecognizer, RehydrateFunc} from './abstract-scene-based-recognizer';
+import {$NAF, GroovyAstNode} from '../../../node';
+import {TokenId, TokenType} from '../../../tokens';
+import {AstRecognizer} from '../../ast-recognizer';
+import {AstRecognition} from '../../types';
+import {AbstractRehydratableRecognizer, RehydrateFunc} from '../abstract';
 
 /**
  * multiple cases:
  * - not next to dot, start of package declaration
  * - next to dot, property name, object is before dot
  */
-export class KwImportRecognizer extends AbstractSceneBasedRecognizer {
+export class KwImportRecognizer extends AbstractRehydratableRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.IMPORT;
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static childAcceptableCheck(mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
+	protected static childAcceptableCheck(mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
 		return [
 			TokenId.IMPORT,
 			TokenId.Whitespaces,

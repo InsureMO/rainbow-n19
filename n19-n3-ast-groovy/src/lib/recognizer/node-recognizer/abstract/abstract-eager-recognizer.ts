@@ -1,13 +1,32 @@
-import {GroovyAstNode} from '../../node';
-import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition} from '../types';
-import {NodeReviseFunc, NodeReviseResult, NodeReviseSituation} from './abstract-recognizer';
-import {AbstractSceneBasedRecognizer} from './abstract-scene-based-recognizer';
+import {GroovyAstNode} from '../../../node';
+import {TokenId, TokenType} from '../../../tokens';
+import {AstRecognition} from '../../types';
+import {AbstractRehydratableRecognizer} from './abstract-rehydratable-recognizer';
+
+export interface NodeReviseSituation {
+	/* grabbed nodes, already appended to statement */
+	grabbedNodes: Array<GroovyAstNode>;
+	/** node to revise */
+	node: GroovyAstNode;
+	/** index of node to revise */
+	nodeIndex: number;
+	/** origin nodes */
+	nodes: Array<GroovyAstNode>;
+}
+
+export interface NodeReviseResult {
+	/** revised nodes by given node */
+	revisedNodes: Array<GroovyAstNode>;
+	/* consumed nodes count. default consume given node */
+	consumedNodeCount: number;
+}
+
+export type NodeReviseFunc = (situation: NodeReviseSituation) => NodeReviseResult;
 
 /**
  * Collect nodes eagerly until the specified node appears.
  */
-export abstract class AbstractEagerRecognizer extends AbstractSceneBasedRecognizer {
+export abstract class AbstractEagerRecognizer extends AbstractRehydratableRecognizer {
 	static reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToStatement(situation: NodeReviseSituation): NodeReviseResult {
 		const {node} = situation;
 		if (node.tokenType !== TokenType.WhitespaceOrTabs) {
@@ -47,7 +66,6 @@ export abstract class AbstractEagerRecognizer extends AbstractSceneBasedRecogniz
 		astRecognizer.appendAsCurrentParent(statementNode);
 		statementNode.asParentOf(node);
 		situation.grabbedNodes.push(node);
-		let latestNode = node;
 		let nextNodeIndex = nodeIndex + 1;
 		let nextNode = nodes[nextNodeIndex];
 		while (nextNode != null) {
@@ -58,14 +76,14 @@ export abstract class AbstractEagerRecognizer extends AbstractSceneBasedRecogniz
 					? {revisedNodes: [nextNode], consumedNodeCount: 1} as NodeReviseResult
 					: reviseGrabbedNode(situation as NodeReviseSituation);
 				revisedResult.revisedNodes.forEach(node => {
-					latestNode = AbstractEagerRecognizer.appendToPreviousSibling(node, latestNode);
+					astRecognizer.appendAsLeafAndTryToMerge(node);
 					situation.grabbedNodes.push(node);
 				});
 				nextNodeIndex = nextNodeIndex + revisedResult.consumedNodeCount;
 				nextNode = nodes[nextNodeIndex];
 			} else {
 				if (includeTillToken) {
-					AbstractEagerRecognizer.appendToPreviousSibling(nextNode, latestNode);
+					astRecognizer.appendAsLeafAndTryToMerge(nextNode);
 					nextNodeIndex++;
 				}
 				break;

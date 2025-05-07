@@ -1,6 +1,7 @@
 import {GroovyAst} from '../ast';
 import {CommentKeyword, CommentKeywords} from '../captor';
 import {$NAF, CompilationUnitNode, GroovyAstNode} from '../node';
+import {TokenId} from '../tokens';
 import {NodeRecognizerRepo} from './node-recognizer-repo';
 import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types';
 
@@ -11,6 +12,7 @@ export class AstRecognizer {
 	private readonly _scriptCommandEnabled: boolean;
 	private readonly _buildCommentKeywords: CommentKeywords;
 	private readonly _multipleLinesCommentHighlightEnabled: boolean;
+	private readonly _jdkVersion: number;
 	private readonly _recognizerRepo: NodeRecognizerRepo;
 
 	// recognition
@@ -21,12 +23,15 @@ export class AstRecognizer {
 		const {
 			scriptCommandEnabled,
 			commentKeywords, multipleLinesCommentHighlightEnabled,
+			jdkVersion,
 			...restOptions
 		} = options ?? {};
 		this._scriptCommandEnabled = scriptCommandEnabled ?? true;
-		// build comment keywords
 		this._buildCommentKeywords = this.initializeCommentKeywords(commentKeywords);
+		// default enabled
 		this._multipleLinesCommentHighlightEnabled = multipleLinesCommentHighlightEnabled ?? true;
+		// default use 17
+		this._jdkVersion = jdkVersion ?? 17;
 		// recognizers
 		this._recognizerRepo = new NodeRecognizerRepo(restOptions);
 	}
@@ -105,6 +110,38 @@ export class AstRecognizer {
 		return this._multipleLinesCommentHighlightEnabled;
 	}
 
+	get jdkVersion(): number {
+		return this._jdkVersion;
+	}
+
+	/**
+	 * preview in 14 and 15, formal release in 16
+	 */
+	get isRecordClassSupported(): boolean {
+		return this._jdkVersion >= 14;
+	}
+
+	/**
+	 * preview in 15 and 16, formal release in 17
+	 */
+	get isSealedClassSupported(): boolean {
+		return this._jdkVersion >= 15;
+	}
+
+	/**
+	 * no preview in 15 and 16, formal release in 17
+	 */
+	get isNonSealedKeywordSupported(): boolean {
+		return this._jdkVersion >= 17;
+	}
+
+	/**
+	 * preview in 12 and 13, formal release in 14
+	 */
+	get isYieldKeywordSupported(): boolean {
+		return this._jdkVersion >= 12;
+	}
+
 	// recognition
 	getCurrentAncestors(): Array<GroovyAstNode> {
 		return this._currentAncestors;
@@ -169,6 +206,29 @@ export class AstRecognizer {
 		const parent = this._currentAncestors[0];
 		parent.asParentOf(node);
 		$NAF.OnChildAppended.get(parent)?.(node, this);
+	}
+
+	/**
+	 * no parent checking, but will try to merge to last child of current parent.
+	 * and will not trigger on child appended function
+	 */
+	appendAsLeafAndTryToMerge(node: GroovyAstNode): void {
+		const parent = this._currentAncestors[0];
+		const children = parent.children;
+		if (children.length === 0) {
+			parent.asParentOf(node);
+			return;
+		}
+
+		const previousSiblingNode = children[children.length - 1];
+		const {tokenId: previousSiblingTokenId} = previousSiblingNode;
+		if (previousSiblingTokenId !== node.tokenId) {
+			parent.asParentOf(node);
+		} else if (previousSiblingTokenId === TokenId.Chars || previousSiblingTokenId === TokenId.UndeterminedChars) {
+			previousSiblingNode.appendText(node.text);
+		} else {
+			parent.asParentOf(node);
+		}
 	}
 
 	/**

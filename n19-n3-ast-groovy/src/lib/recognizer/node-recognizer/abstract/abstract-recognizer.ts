@@ -1,53 +1,12 @@
-import {GroovyAstNode, OnChildAppendedFunc} from '../../node';
-import {TokenId, TokenType} from '../../tokens';
-import {AstRecognizer} from '../ast-recognizer';
-import {AstRecognition, NodeRecognizer} from '../types';
-
-export interface NodeReviseSituation {
-	/* grabbed nodes, already appended to statement */
-	grabbedNodes: Array<GroovyAstNode>;
-	/** node to revise */
-	node: GroovyAstNode;
-	/** index of node to revise */
-	nodeIndex: number;
-	/** origin nodes */
-	nodes: Array<GroovyAstNode>;
-}
-
-export interface NodeReviseResult {
-	/** revised nodes by given node */
-	revisedNodes: Array<GroovyAstNode>;
-	/* consumed nodes count. default consume given node */
-	consumedNodeCount: number;
-}
-
-export type NodeReviseFunc = (situation: NodeReviseSituation) => NodeReviseResult;
+import {GroovyAstNode, OnChildAppendedFunc} from '../../../node';
+import {TokenId, TokenType} from '../../../tokens';
+import {AstRecognizer} from '../../ast-recognizer';
+import {AstRecognition, NodeRecognizer} from '../../types';
 
 export abstract class AbstractRecognizer implements NodeRecognizer {
 	abstract acceptTokenId(): TokenId;
 
 	abstract recognize(recognition: AstRecognition): number;
-
-	/**
-	 * When both the given node and the previous sibling node are of type {@link TokenId.Chars},
-	 * or both are of type {@link TokenId.UndeterminedChars},
-	 * the given node is merged into the previous sibling node, and the previous sibling node is returned.
-	 * Otherwise, the given node is set as the next node of the previous sibling node, and the given node is returned.
-	 */
-	protected static appendToPreviousSibling(node: GroovyAstNode, previousSiblingNode: GroovyAstNode): GroovyAstNode {
-		const {tokenId: previousSiblingTokenId} = previousSiblingNode;
-		if (previousSiblingTokenId !== node.tokenId) {
-			previousSiblingNode.parent.asParentOf(node);
-			return node;
-		} else if (previousSiblingTokenId === TokenId.Chars
-			|| previousSiblingTokenId === TokenId.UndeterminedChars) {
-			previousSiblingNode.appendText(node.text);
-			return previousSiblingNode;
-		} else {
-			previousSiblingNode.parent.asParentOf(node);
-			return node;
-		}
-	}
 
 	/**
 	 * Check whether, among the currently recognized nodes,

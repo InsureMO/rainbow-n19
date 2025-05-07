@@ -1,6 +1,6 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition} from '../types';
+import {TokenId, TokenType} from '../../../tokens';
+import {AstRecognition} from '../../types';
 import {AbstractRecognizer} from './abstract-recognizer';
 
 /**
@@ -9,9 +9,10 @@ import {AbstractRecognizer} from './abstract-recognizer';
  */
 export type RehydrateFunc = (recognition: AstRecognition) => Optional<number>;
 
-export abstract class AbstractSceneBasedRecognizer extends AbstractRecognizer {
-	protected abstract doRecognize(recognition: AstRecognition): number;
-
+export abstract class AbstractRehydratableRecognizer extends AbstractRecognizer {
+	/**
+	 * node is rehydrated, and append to parent as leaf
+	 */
 	protected static rehydrateToCharsWhenInString(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, astRecognizer} = recognition;
 
@@ -19,15 +20,20 @@ export abstract class AbstractSceneBasedRecognizer extends AbstractRecognizer {
 		const currentParentTokenType = currentParent.tokenType;
 		if (currentParentTokenType === TokenType.StringLiteral) {
 			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
+			// append to parent
+			astRecognizer.appendAsLeaf(node, true);
 			return nodeIndex + 1;
 		} else {
 			return (void 0);
 		}
 	}
 
+	/**
+	 * node is rehydrated, and not append to parent, waiting for identifier recognizer to decide
+	 */
 	protected static rehydrateToIdentifierWhenAfterDotDirectly(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex} = recognition;
-		const [, dotNodeIndex] = AbstractSceneBasedRecognizer.isAfterDotDirectly(recognition);
+		const [, dotNodeIndex] = AbstractRehydratableRecognizer.isAfterDotDirectly(recognition);
 		if (dotNodeIndex === -1) {
 			return (void 0);
 		} else {
@@ -42,14 +48,16 @@ export abstract class AbstractSceneBasedRecognizer extends AbstractRecognizer {
 	 * default returns in-string recognizer
 	 */
 	protected getRehydrateFunctions(): Array<RehydrateFunc> {
-		return [AbstractSceneBasedRecognizer.rehydrateToCharsWhenInString];
+		return [AbstractRehydratableRecognizer.rehydrateToCharsWhenInString];
 	}
+
+	protected abstract doRecognize(recognition: AstRecognition): number;
 
 	recognize(recognition: AstRecognition): number {
 		let nextNodeIndex: Optional<number>;
-		const recognizers = this.getRehydrateFunctions();
-		for (let index = 0, count = recognizers.length; index < count; index++) {
-			nextNodeIndex = recognizers[index](recognition);
+		const rehydrateFuncs = this.getRehydrateFunctions();
+		for (let index = 0, count = rehydrateFuncs.length; index < count; index++) {
+			nextNodeIndex = rehydrateFuncs[index](recognition);
 			if (nextNodeIndex != null) {
 				return nextNodeIndex;
 			}

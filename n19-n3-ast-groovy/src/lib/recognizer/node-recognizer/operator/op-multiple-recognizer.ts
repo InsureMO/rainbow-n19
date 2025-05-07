@@ -1,8 +1,8 @@
-import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition} from '../types';
-import {AbstractSceneBasedRecognizer} from './abstract-scene-based-recognizer';
+import {TokenId, TokenType} from '../../../tokens';
+import {AstRecognition} from '../../types';
+import {AbstractRehydratableRecognizer} from '../abstract';
 
-export class OpMultipleRecognizer extends AbstractSceneBasedRecognizer {
+export class OpMultipleRecognizer extends AbstractRehydratableRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.Multiple;
 	}

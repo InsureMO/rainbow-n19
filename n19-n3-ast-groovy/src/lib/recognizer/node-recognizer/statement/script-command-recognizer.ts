@@ -1,8 +1,8 @@
-import {AstChars, AstOperators} from '../../captor';
-import {GroovyAstNode} from '../../node';
-import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition} from '../types';
-import {AbstractEagerRecognizer} from './abstract-eager-recognizer';
+import {AstChars, AstOperators} from '../../../captor';
+import {GroovyAstNode} from '../../../node';
+import {TokenId, TokenType} from '../../../tokens';
+import {AstRecognition} from '../../types';
+import {AbstractEagerRecognizer} from '../abstract';
 
 /**
  * 1. parent must be compilation unit and only whitespaces and tabs before start mark in this line,

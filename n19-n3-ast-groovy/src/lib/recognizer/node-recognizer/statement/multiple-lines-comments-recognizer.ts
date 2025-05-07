@@ -1,11 +1,10 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {AstOperators} from '../../captor';
-import {GroovyAstNode} from '../../node';
-import {TokenId, TokenType} from '../../tokens';
-import {AstRecognizer} from '../ast-recognizer';
-import {AstRecognition} from '../types';
-import {AbstractCommentsRecognizer, CommentsReviseSituation} from './abstract-comments-recognizer';
-import {NodeReviseFunc, NodeReviseResult} from './abstract-recognizer';
+import {AstOperators} from '../../../captor';
+import {GroovyAstNode} from '../../../node';
+import {TokenId, TokenType} from '../../../tokens';
+import {AstRecognizer} from '../../ast-recognizer';
+import {AstRecognition} from '../../types';
+import {AbstractCommentsRecognizer, CommentsReviseSituation, NodeReviseFunc, NodeReviseResult} from '../abstract';
 
 export class MultipleLinesCommentsRecognizer extends AbstractCommentsRecognizer {
 	acceptTokenId(): TokenId {

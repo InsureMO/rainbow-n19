@@ -1,7 +1,6 @@
-import {TokenId, TokenType} from '../../tokens';
-import {AstRecognizer} from '../ast-recognizer';
-import {AbstractEagerRecognizer} from './abstract-eager-recognizer';
-import {NodeReviseFunc, NodeReviseSituation} from './abstract-recognizer';
+import {TokenId, TokenType} from '../../../tokens';
+import {AstRecognizer} from '../../ast-recognizer';
+import {AbstractEagerRecognizer, NodeReviseFunc, NodeReviseSituation} from './abstract-eager-recognizer';
 
 export interface CommentsReviseSituation extends NodeReviseSituation {
 	keywordFound?: boolean;

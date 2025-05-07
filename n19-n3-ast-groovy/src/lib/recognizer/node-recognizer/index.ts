@@ -1,35 +1,21 @@
-import {KwImportRecognizer} from './kw-import-recognizer';
-import {KwPackageRecognizer} from './kw-package-recognizer';
-import {MultipleLinesCommentsRecognizer} from './multiple-lines-comments-recognizer';
-import {OpMultipleRecognizer} from './op-multiple-recognizer';
-import {ScriptCommandRecognizer} from './script-command-recognizer';
-import {SingleLineCommentsRecognizer} from './single-line-comments-recognizer';
+import * as KeywordRecognizers from './keyword';
+import * as OperatorRecognizers from './operator';
+import * as StatementRecognizers from './statement';
 
 // abstract
-export * from './abstract-recognizer';
-export * from './abstract-scene-based-recognizer';
-export * from './abstract-eager-recognizer';
-export * from './abstract-comments-recognizer';
-// script command
-export * from './script-command-recognizer';
-// comment
-export * from './single-line-comments-recognizer';
-export * from './multiple-lines-comments-recognizer';
+export * from './abstract';
 // keyword
-export * from './kw-package-recognizer';
-export * from './kw-import-recognizer';
+export * from './keyword';
 // operator
-export * from './op-multiple-recognizer';
+export * from './operator';
+// statement
+export * from './statement';
 
 export const AllNodeRecognizers = [
-	// script command
-	new ScriptCommandRecognizer(),
-	// comment
-	new SingleLineCommentsRecognizer(),
-	new MultipleLinesCommentsRecognizer(),
 	// keyword
-	new KwPackageRecognizer(),
-	new KwImportRecognizer(),
+	...Object.values(KeywordRecognizers),
 	// operator
-	new OpMultipleRecognizer()
-];
+	...Object.values(OperatorRecognizers),
+	// statement
+	...Object.values(StatementRecognizers)
+].map(Recognizer => new Recognizer());
