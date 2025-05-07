@@ -4,8 +4,10 @@ import {AstRecognition} from '../../types';
 import {AbstractRecognizer} from './abstract-recognizer';
 
 /**
- * returns next node index when rehydration applied,
- * or return undefined when do nothing inside.
+ * 1. return undefined when no rehydration applied,
+ * 2. return current node index if only rehydration applied and no node appended to ast,
+ * 3. return corresponding node index, typically somewhere after given node index,
+ *    when original nodes have been consumed, rehydrated and appended to ast.
  */
 export type RehydrateFunc = (recognition: AstRecognition) => Optional<number>;
 
@@ -20,9 +22,7 @@ export abstract class AbstractRehydratableRecognizer extends AbstractRecognizer 
 		const currentParentTokenType = currentParent.tokenType;
 		if (currentParentTokenType === TokenType.StringLiteral) {
 			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
-			// append to parent
-			astRecognizer.appendAsLeaf(node, true);
-			return nodeIndex + 1;
+			return nodeIndex;
 		} else {
 			return (void 0);
 		}
@@ -39,7 +39,6 @@ export abstract class AbstractRehydratableRecognizer extends AbstractRecognizer 
 		} else {
 			// kind of property name, it is an identifier
 			node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
-			// do nothing, will handle by identifier recognizer
 			return nodeIndex;
 		}
 	}

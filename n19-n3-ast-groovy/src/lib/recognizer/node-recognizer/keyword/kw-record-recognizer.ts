@@ -18,7 +18,6 @@ export class KwRecordRecognizer extends AbstractRehydratableRecognizer {
 		}
 
 		node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
-		// do nothing, will handle by identifier recognizer
 		return nodeIndex;
 	}
 
