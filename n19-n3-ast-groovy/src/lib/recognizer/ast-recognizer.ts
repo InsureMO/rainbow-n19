@@ -232,30 +232,29 @@ export class AstRecognizer {
 	}
 
 	/**
-	 * return current parent
+	 * close current parent
 	 */
-	closeCurrentParent(): GroovyAstNode {
+	closeCurrentParent(): void {
 		const node = this._currentAncestors.shift();
 		$NAF.OnNodeClosed.get(node)?.(node, this);
 		const parent = this._currentAncestors[0];
 		$NAF.OnChildClosed.get(parent)?.(node, this);
-		return parent;
 	}
 
-	moveToParent(nodes: Array<GroovyAstNode>): void {
+	/**
+	 * move given nodes to old parent, and append them as child of current parent.
+	 * will not perform the parent-child rationality check
+	 */
+	chopOffFromOldParentAndMoveToCurrentParent(nodes: Array<GroovyAstNode>): void {
 		if (nodes.length === 0) {
 			return;
 		}
 		const oldParent = nodes[0].parent;
-		const parent = this._currentAncestors[0];
-		const length = nodes.reduce((length, node) => {
-			parent.asParentOf(node);
-			return length + (node.text?.length ?? 0);
-		}, 0);
 		if (oldParent != null) {
 			oldParent.chopOffTrailingNodes(nodes);
-			oldParent.chopOffTrailingText(length);
 		}
+		const currentParent = this._currentAncestors[0];
+		nodes.forEach(node => currentParent.asParentOf(node));
 	}
 
 	recognize(ast: GroovyAst): void {

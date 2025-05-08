@@ -214,7 +214,7 @@ export class GroovyAstNode implements AstNode {
 	 * chop off trailing text by given length.
 	 * will not impact parent node
 	 */
-	chopOffTrailingText(length: number): void {
+	protected chopOffTrailingText(length: number): void {
 		if (length <= 0) {
 			return;
 		}
@@ -223,11 +223,13 @@ export class GroovyAstNode implements AstNode {
 	}
 
 	chopOffTrailingNodes(nodes: Array<GroovyAstNode>): void {
-		const length = (nodes ?? []).length;
-		if (length === 0) {
+		const count = (nodes ?? []).length;
+		if (count === 0) {
 			return;
 		}
-		this._children.splice(-length, length);
+		this._children.splice(-count, count);
+		const length = nodes.reduce((length, node) => length + (node.text?.length ?? 0), 0);
+		this.chopOffTrailingText(length);
 	}
 
 	toString(): string {

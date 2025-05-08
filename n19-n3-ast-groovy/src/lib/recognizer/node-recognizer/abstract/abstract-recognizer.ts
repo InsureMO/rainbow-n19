@@ -62,6 +62,6 @@ export abstract class AbstractRecognizer implements NodeRecognizer {
 				break;
 			}
 		}
-		astRecognizer.moveToParent(removeNodes);
+		astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
 	}
 }

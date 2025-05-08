@@ -306,7 +306,8 @@ export enum TokenType {
 	// statement
 	ScriptCommand, Comments,
 	PackageDeclaration, ImportDeclaration,
-	ClassDeclaration, ConstructorDeclaration, MethodDeclaration, FieldDeclaration,
+	TypeDeclaration, ConstructorDeclaration, MethodDeclaration, FieldDeclaration,
+	LogicBlockDeclaration, LogicBlock,
 	// temporary
 	TemporaryStatement
 }
