@@ -262,7 +262,8 @@ export enum TokenId {
 	// temporary tokens are only used during the AST parsing process
 	// and will be replaced with official tokens before the parsing is completed
 	// name starts with "$Tmp"
-	Tmp$OneOfClassConstructorMethodFieldDeclaration
+	/** "cscmf" means: class, static block, constructor, method and field */
+	Tmp$OneOfCscmfDeclaration
 }
 
 interface Token {

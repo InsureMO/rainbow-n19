@@ -1,43 +1,103 @@
-import {$NAF, GroovyAstNode} from '../../../node';
-import {TokenId, TokenType} from '../../../tokens';
-import {AstRecognizer} from '../../ast-recognizer';
-import {AstRecognition} from '../../types';
-import {AbstractRehydratableRecognizer, RehydrateFunc} from './abstract-rehydratable-recognizer';
+import {
+	$NAF,
+	ChildAcceptableCheckFunc,
+	GroovyAstNode,
+	OnChildAppendedFunc,
+	OnChildClosedFunc,
+	OnNodeClosedFunc
+} from '../../../../node';
+import {TokenId, TokenType} from '../../../../tokens';
+import {AstRecognizer} from '../../../ast-recognizer';
+import {ConstructorDeclaration} from './constructor-declaration';
+import {FieldDeclaration} from './field-declaration';
+import {MethodDeclaration} from './method-declaration';
+import {OneOfOnChildAppendedFunc, SharedNodePointcut} from './shared';
+import {StaticBlockDeclaration} from './static-block-declaration';
 
-export abstract class AbstractModifierRecognizer extends AbstractRehydratableRecognizer {
-	protected getRehydrateFunctions(): Array<RehydrateFunc> {
-		return [
-			AbstractModifierRecognizer.rehydrateToCharsWhenInString,
-			AbstractModifierRecognizer.rehydrateToIdentifierWhenAfterDotDirectly
-		];
-	}
-
-	// noinspection JSUnusedGlobalSymbols
-	protected static isAccessModifier(tokenId: TokenId): boolean {
+// noinspection JSUnusedGlobalSymbols
+const Utils = {
+	isAccessModifier: (tokenId: TokenId): boolean => {
 		return [TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE].includes(tokenId);
-	}
-
-	// noinspection JSUnusedGlobalSymbols
-	protected static isClassKeyword(tokenId: TokenId): boolean {
+	},
+	isClassKeyword: (tokenId: TokenId): boolean => {
 		return [
 			TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
 			TokenId.CLASS, TokenId.INTERFACE, TokenId.AT_INTERFACE, TokenId.ENUM, TokenId.RECORD, TokenId.TRAIT
 		].includes(tokenId);
-	}
-
-	protected static isMethodKeyword(tokenId: TokenId): boolean {
+	},
+	isMethodKeyword: (tokenId: TokenId): boolean => {
 		return [
 			TokenId.NATIVE, TokenId.SYNCHRONIZED, TokenId.DEFAULT,
 			TokenId.VOID
 		].includes(tokenId);
-	}
-
-	protected static isFieldKeyword(tokenId: TokenId): boolean {
+	},
+	isFieldKeyword: (tokenId: TokenId): boolean => {
 		return [TokenId.TRANSIENT, TokenId.VOLATILE].includes(tokenId);
-	}
-
+	},
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static childAcceptableCheck(mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
+	standardTypeChildAcceptableCheck: ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+		// TODO need the 6 type declaration keywords or not?
+		return [
+			// class, constructor, method, field
+			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
+			// class
+			TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
+			// class, method
+			TokenId.ABSTRACT,
+			// class, static block, method, field
+			TokenId.STATIC,
+			// class, method, field (only field in groovy, it is not allowed in java)
+			TokenId.STRICTFP,
+			// class
+			TokenId.EXTENDS, TokenId.IMPLEMENTS,
+			// class, method, field
+			TokenId.FINAL,
+			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+			/*
+			 * could be
+			 * 1. name,
+			 * 2. return type of method,
+			 * 3. type of field
+			 */
+			TokenId.Identifier,
+			TokenId.GenericTypeDeclaration, TokenId.AnnotationDeclaration,
+			// sure to class or static block
+			TokenId.LBrace,
+			// end
+			TokenId.Semicolon,
+			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
+			// of course class body can be child of any type declaration
+			TokenId.ClassBody
+		].includes(mightBeChildNode.tokenId);
+	}) as ChildAcceptableCheckFunc,
+	standardTypeOnLBraceAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+		if (lastChildNode.tokenId !== TokenId.LBrace) {
+			return false;
+		}
+		SharedNodePointcut.createLogicBlockNode(lastChildNode.parent, lastChildNode, TokenId.ClassBody, astRecognizer);
+		return true;
+	}) as OneOfOnChildAppendedFunc,
+	standardTypeOnChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+		const onChildAppendedFuncs = [
+			Utils.standardTypeOnLBraceAppended,
+			SharedNodePointcut.closeCurrentParentOnSemicolonAppendedAndReturn
+		];
+		for (let index = 0, count = onChildAppendedFuncs.length; index < count; index++) {
+			if (onChildAppendedFuncs[index](lastChildNode, astRecognizer)) {
+				break;
+			}
+		}
+	}) as OnChildAppendedFunc,
+	onClassBodyClosed: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+		if (lastChildNode.tokenId === TokenId.ClassBody) {
+			astRecognizer.closeCurrentParent();
+		}
+	}) as OnChildClosedFunc
+} as const;
+
+const CscmfDeclaration = {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	childAcceptableCheck: ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		return mightBeChildNode.tokenType === TokenType.PrimitiveType /* could be 1. return type of method, 2. type of field */
 			|| [
 				// class, constructor, method, field
@@ -50,6 +110,8 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 				TokenId.STATIC,
 				// class, method, field (only field in groovy, it is not allowed in java)
 				TokenId.STRICTFP,
+				// class
+				TokenId.EXTENDS, TokenId.IMPLEMENTS,
 				// sure to method
 				TokenId.NATIVE, TokenId.SYNCHRONIZED, TokenId.DEFAULT,
 				// class, method, field
@@ -58,7 +120,7 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 				TokenId.TRANSIENT, TokenId.VOLATILE,
 				// constructor, method, field
 				TokenId.DEF,
-				TokenId.Whitespaces, TokenId.Tabs,
+				TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 				/*
 				 * could be
 				 * 1. name,
@@ -82,41 +144,15 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 				TokenId.Comma,
 				// end
 				TokenId.Semicolon,
-				TokenId.MultipleLinesComment
+				TokenId.SingleLineComment, TokenId.MultipleLinesComment
 			].includes(mightBeChildNode.tokenId);
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static switchExtraAttrsForTypeDeclaration(_node: GroovyAstNode): void {
-		// TODO switch extra attributes for type declaration node
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static switchExtraAttrsForStaticBlockDeclaration(_node: GroovyAstNode): void {
-		// TODO switch extra attributes for static block declaration node
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static switchExtraAttrsForConstructorDeclaration(_node: GroovyAstNode): void {
-		// TODO switch extra attributes for constructor declaration node
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static switchExtraAttrsForMethodDeclaration(_node: GroovyAstNode): void {
-		// TODO switch extra attributes for method declaration node
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static switchExtraAttrsForFieldDeclaration(_node: GroovyAstNode): void {
-		// TODO switch extra attributes for field declaration node
-	}
-
+	}) as ChildAcceptableCheckFunc,
 	/**
 	 * check the given child node can be identified as type declaration or not,
 	 * replace token nature when it is.
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static onClassKeywordAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
+	onClassKeywordAppended: ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		const statementNode = lastChildNode.parent;
 		// need to check which keyword
 		switch (lastChildNode.tokenId) {
@@ -157,47 +193,44 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 				return false;
 			}
 		}
-		AbstractModifierRecognizer.switchExtraAttrsForTypeDeclaration(statementNode);
+		TypeDeclaration.extra(statementNode);
 		return true;
-	}
-
+	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * check the given child node can be identified as method declaration or not,
 	 * replace token nature when it is.
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static onMethodKeywordAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
-		if (!AbstractModifierRecognizer.isMethodKeyword(lastChildNode.tokenId)) {
+	onMethodKeywordAppended: ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+		if (!Utils.isMethodKeyword(lastChildNode.tokenId)) {
 			return false;
 		}
 
 		const statementNode = lastChildNode.parent;
 		statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-		AbstractModifierRecognizer.switchExtraAttrsForMethodDeclaration(statementNode);
+		MethodDeclaration.extra(statementNode);
 		return true;
-	}
-
+	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * check the given child node can be identified as field declaration or not,
 	 * replace token nature when it is.
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static onFieldKeywordAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
-		if (!AbstractModifierRecognizer.isFieldKeyword(lastChildNode.tokenId)) {
+	onFieldKeywordAppended: ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+		if (!Utils.isFieldKeyword(lastChildNode.tokenId)) {
 			return false;
 		}
 
 		const statementNode = lastChildNode.parent;
 		statementNode.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
-		AbstractModifierRecognizer.switchExtraAttrsForFieldDeclaration(statementNode);
+		FieldDeclaration.extra(statementNode);
 		return true;
-	}
-
+	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * check the given child node can be identified as identifier or not,
 	 * increase the identifier count if it is
 	 */
-	protected static onIdentifierAppended(lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean {
+	onIdentifierAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.Identifier) {
 			return false;
 		}
@@ -212,28 +245,13 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 			astRecognizer.chopOffFromOldParentAndMoveToCurrentParent([lastChildNode]);
 		}
 		return true;
-	}
-
-	protected static createBodyStatementNode(declarationNode: GroovyAstNode, lbraceNode: GroovyAstNode, bodyTokenId: TokenId) {
-		declarationNode.chopOffTrailingNodes([lbraceNode]);
-		const bodyStatementNode = new GroovyAstNode({
-			tokenId: bodyTokenId, tokenType: TokenType.LogicBlock,
-			text: '',
-			startOffset: lbraceNode.startOffset,
-			startLine: lbraceNode.startLine, startColumn: lbraceNode.startColumn
-		});
-		bodyStatementNode.asParentOf(lbraceNode);
-		declarationNode.asParentOf(bodyStatementNode);
-		return true;
-	}
-
+	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * check the given child node can be identified as left brace or not,
 	 * if so, when the existing previous siblings contains identifier or any keyword rather than static,
 	 * then it is a class declaration. otherwise, it is identified to be a static block.
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static onLBraceAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
+	onLBraceAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.LBrace) {
 			return false;
 		}
@@ -244,8 +262,8 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 		if ($NAF.IdentifierChildCount.get(statementNode) > 0) {
 			// has identifier
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
-			AbstractModifierRecognizer.switchExtraAttrsForTypeDeclaration(statementNode);
-			AbstractModifierRecognizer.createBodyStatementNode(statementNode, lastChildNode, TokenId.ClassBody);
+			ClassDeclaration.extra(statementNode);
+			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.ClassBody, astRecognizer);
 			return true;
 		}
 
@@ -260,17 +278,16 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 
 		if (isStaticBlockStart) {
 			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicBlockDeclaration);
-			AbstractModifierRecognizer.switchExtraAttrsForStaticBlockDeclaration(statementNode);
-			AbstractModifierRecognizer.createBodyStatementNode(statementNode, lastChildNode, TokenId.StaticBlockBody);
+			StaticBlockDeclaration.extra(statementNode);
+			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.StaticBlockBody, astRecognizer);
 		} else {
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
-			AbstractModifierRecognizer.switchExtraAttrsForTypeDeclaration(statementNode);
-			AbstractModifierRecognizer.createBodyStatementNode(statementNode, lastChildNode, TokenId.ClassBody);
+			ClassDeclaration.extra(statementNode);
+			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.ClassBody, astRecognizer);
 		}
 
 		return true;
-	}
-
+	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * check the given child node can be identified as left parenthesis or not,
 	 * if so, find identifier in previous siblings. if not exists, it is identified as method declaration.
@@ -281,8 +298,7 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 	 * Therefore, if it is determined that they are in other positions, they are simply considered as an incorrect method definitions,
 	 * and the rationality of the names will no longer be checked.
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static onLParenAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
+	onLParenAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.LParen) {
 			return false;
 		}
@@ -292,8 +308,8 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 		if (identifierCount === 0) {
 			// no identifier exists, identified as method declaration
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-			AbstractModifierRecognizer.switchExtraAttrsForMethodDeclaration(statementNode);
-			AbstractModifierRecognizer.createBodyStatementNode(statementNode, lastChildNode, TokenId.MethodBody);
+			MethodDeclaration.extra(statementNode);
+			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.MethodBody, astRecognizer);
 			return true;
 		}
 
@@ -302,8 +318,8 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 		if (parentOfStatementNode.tokenId !== TokenId.ClassBody) {
 			// simply treated as method declaration
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-			AbstractModifierRecognizer.switchExtraAttrsForMethodDeclaration(statementNode);
-			AbstractModifierRecognizer.createBodyStatementNode(statementNode, lastChildNode, TokenId.MethodBody);
+			MethodDeclaration.extra(statementNode);
+			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.MethodBody, astRecognizer);
 			return true;
 		}
 
@@ -313,42 +329,40 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 		if (identifierNode.text === className) {
 			// constructor
 			statementNode.replaceTokenNature(TokenId.ConstructorDeclaration, TokenType.ConstructorDeclaration);
-			AbstractModifierRecognizer.switchExtraAttrsForConstructorDeclaration(statementNode);
-			AbstractModifierRecognizer.createBodyStatementNode(statementNode, lastChildNode, TokenId.ConstructorBody);
+			ConstructorDeclaration.extra(statementNode);
+			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.ConstructorBody, astRecognizer);
 		} else {
 			// method
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-			AbstractModifierRecognizer.switchExtraAttrsForMethodDeclaration(statementNode);
-			AbstractModifierRecognizer.createBodyStatementNode(statementNode, lastChildNode, TokenId.MethodBody);
+			MethodDeclaration.extra(statementNode);
+			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.MethodBody, astRecognizer);
 		}
 
 		return true;
-	}
-
+	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * check the given child node can be identified as left parenthesis or not,
 	 * if so, find identifier in previous siblings. if not exists, it is identified as method declaration.
 	 * if identifier is same as class name, it is identified as constructor declaration, otherwise as method declaration.
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static onEqualAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
+	onEqualAppended: ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.Equal) {
 			return false;
 		}
 
 		const statementNode = lastChildNode.parent;
 		statementNode.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
-		AbstractModifierRecognizer.switchExtraAttrsForFieldDeclaration(statementNode);
+		FieldDeclaration.extra(statementNode);
 		return true;
-	}
-
+	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * comma appended, and currently the exact type of declaration is still not determined.
 	 * check the previous sibling nodes, if there is keyword def, or primitive types,
 	 * then it will be identified as field.
 	 * otherwise simply close current parent, and move the comma node to my parent
 	 */
-	protected static onCommaAppended(lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean {
+	onCommaAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.Comma) {
 			return false;
 		}
@@ -359,50 +373,35 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 		if (hasDefOrPrimitiveType) {
 			const statementNode = lastChildNode.parent;
 			statementNode.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
-			AbstractModifierRecognizer.switchExtraAttrsForFieldDeclaration(statementNode);
+			FieldDeclaration.extra(statementNode);
 		} else {
 			// simply close, will invoke onNodeClosed to determine that what I am
 			astRecognizer.closeCurrentParent();
 		}
 		return true;
-	}
-
-	/**
-	 * semicolon appended, close declaration
-	 */
-	protected static onSemicolonAppended(lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean {
-		if (lastChildNode.tokenId !== TokenId.Semicolon) {
-			return false;
-		}
-
-		// simply close, will invoke onNodeClosed to determine that what I am
-		astRecognizer.closeCurrentParent();
-		return true;
-	}
-
+	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * No modifier can determine the exact type of statement.
 	 * Therefore, it is necessary to make judgments based on different scenarios.
 	 */
-	protected static onChildAppended(lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void {
+	onChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const onChildAppendedFuncs = [
-			AbstractModifierRecognizer.onClassKeywordAppended,
-			AbstractModifierRecognizer.onMethodKeywordAppended,
-			AbstractModifierRecognizer.onFieldKeywordAppended,
-			AbstractModifierRecognizer.onIdentifierAppended,
-			AbstractModifierRecognizer.onLBraceAppended,
-			AbstractModifierRecognizer.onLParenAppended,
-			AbstractModifierRecognizer.onEqualAppended,
-			AbstractModifierRecognizer.onCommaAppended,
-			AbstractModifierRecognizer.onSemicolonAppended
+			CscmfDeclaration.onClassKeywordAppended,
+			CscmfDeclaration.onMethodKeywordAppended,
+			CscmfDeclaration.onFieldKeywordAppended,
+			CscmfDeclaration.onIdentifierAppended,
+			CscmfDeclaration.onLBraceAppended,
+			CscmfDeclaration.onLParenAppended,
+			CscmfDeclaration.onEqualAppended,
+			CscmfDeclaration.onCommaAppended,
+			SharedNodePointcut.closeCurrentParentOnSemicolonAppendedAndReturn
 		];
 		for (let index = 0, count = onChildAppendedFuncs.length; index < count; index++) {
 			if (onChildAppendedFuncs[index](lastChildNode, astRecognizer)) {
 				break;
 			}
 		}
-	}
-
+	}) as OnChildAppendedFunc,
 	/**
 	 * The node is not recognized as any of type, static block, constructor, method, or field declaration.
 	 * This means that no child nodes that can be used for identification have appeared.
@@ -418,7 +417,7 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 	 * 4. has generic type declaration -> cannot be field,
 	 * 5. parent is not class body -> cannot be method or field.
 	 */
-	protected static onNodeClosed(node: GroovyAstNode, astRecognizer: AstRecognizer): void {
+	onNodeClosed: ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const possibilities = {class: true, method: true, field: true};
 		node.children.forEach(node => {
 			const {tokenId, tokenType} = node;
@@ -427,6 +426,9 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 			} else if (tokenId === TokenId.DEF || tokenType === TokenType.PrimitiveType) {
 				possibilities.class = false;
 			} else if (tokenId === TokenId.GenericTypeDeclaration) {
+				possibilities.field = false;
+			} else if (tokenId === TokenId.EXTENDS || tokenId === TokenId.IMPLEMENTS) {
+				possibilities.method = false;
 				possibilities.field = false;
 			}
 		});
@@ -449,6 +451,10 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 				node.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
 				break;
 			}
+			case !possibilities.class && !possibilities.method && !possibilities.field: {
+				// TODO split nodes to multiple declarations
+				break;
+			}
 			default: {
 				// method in incorrect position
 				node.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
@@ -456,34 +462,111 @@ export abstract class AbstractModifierRecognizer extends AbstractRehydratableRec
 			}
 		}
 
-		AbstractModifierRecognizer.moveTrailingMLCommentsToParentOnNodeClosed(node, astRecognizer);
+		SharedNodePointcut.moveTrailingMLCommentsToParentOnNodeClosed(node, astRecognizer);
+	}) as OnNodeClosedFunc,
+	extra: (node: GroovyAstNode): void => {
+		$NAF.ChildAcceptableCheck.set(node, CscmfDeclaration.childAcceptableCheck);
+		$NAF.OnChildAppended.set(node, CscmfDeclaration.onChildAppended);
+		$NAF.OnNodeClosed.set(node, CscmfDeclaration.onNodeClosed);
 	}
+} as const;
 
-	protected createDeclarationNode(node: GroovyAstNode): GroovyAstNode {
-		const statementNode = new GroovyAstNode({
-			tokenId: TokenId.Tmp$OneOfClassConstructorMethodFieldDeclaration, tokenType: TokenType.TemporaryStatement,
-			text: '', startOffset: node.startOffset,
-			startLine: node.startLine, startColumn: node.startColumn
-		});
-		$NAF.ChildAcceptableCheck.set(statementNode, AbstractModifierRecognizer.childAcceptableCheck);
-		$NAF.OnChildAppended.set(statementNode, AbstractModifierRecognizer.onChildAppended);
-		$NAF.OnNodeClosed.set(statementNode, AbstractModifierRecognizer.onNodeClosed);
-
-		return statementNode;
+const ClassDeclaration = {
+	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
+	onChildAppended: Utils.standardTypeOnChildAppended,
+	onChildClosed: Utils.onClassBodyClosed,
+	extra: (node: GroovyAstNode): void => {
+		$NAF.ChildAcceptableCheck.set(node, ClassDeclaration.childAcceptableCheck);
+		$NAF.OnChildAppended.set(node, ClassDeclaration.onChildAppended);
+		$NAF.OnChildClosed.set(node, ClassDeclaration.onChildClosed);
 	}
-
-	protected doRecognize(recognition: AstRecognition): number {
-		const {node, nodeIndex, astRecognizer} = recognition;
-
-		const currentParent = astRecognizer.getCurrentParent();
-		if (currentParent.tokenId === TokenId.Tmp$OneOfClassConstructorMethodFieldDeclaration) {
-			astRecognizer.appendAsLeaf(node, false);
-		} else {
-			const statementNode = this.createDeclarationNode(node);
-			statementNode.asParentOf(node);
-			astRecognizer.appendAsCurrentParent(statementNode);
+} as const;
+const InterfaceDeclaration = {
+	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
+	onChildAppended: Utils.standardTypeOnChildAppended,
+	onChildClosed: Utils.onClassBodyClosed,
+	extra: (node: GroovyAstNode): void => {
+		$NAF.ChildAcceptableCheck.set(node, InterfaceDeclaration.childAcceptableCheck);
+		$NAF.OnChildAppended.set(node, InterfaceDeclaration.onChildAppended);
+		$NAF.OnChildClosed.set(node, InterfaceDeclaration.onChildClosed);
+	}
+} as const;
+const AtInterfaceClassDeclaration = {
+	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
+	onChildAppended: Utils.standardTypeOnChildAppended,
+	onChildClosed: Utils.onClassBodyClosed,
+	extra: (node: GroovyAstNode): void => {
+		$NAF.ChildAcceptableCheck.set(node, AtInterfaceClassDeclaration.childAcceptableCheck);
+		$NAF.OnChildAppended.set(node, AtInterfaceClassDeclaration.onChildAppended);
+		$NAF.OnChildClosed.set(node, AtInterfaceClassDeclaration.onChildClosed);
+	}
+} as const;
+const EnumClassDeclaration = {
+	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
+	onChildAppended: Utils.standardTypeOnChildAppended,
+	onChildClosed: Utils.onClassBodyClosed,
+	extra: (node: GroovyAstNode): void => {
+		$NAF.ChildAcceptableCheck.set(node, EnumClassDeclaration.childAcceptableCheck);
+		$NAF.OnChildAppended.set(node, EnumClassDeclaration.onChildAppended);
+		$NAF.OnChildClosed.set(node, EnumClassDeclaration.onChildClosed);
+	}
+} as const;
+const RecordClassDeclaration = {
+	// TODO record has formal parameters part, enclose with parentheses
+	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
+	onChildAppended: Utils.standardTypeOnChildAppended,
+	onChildClosed: Utils.onClassBodyClosed,
+	extra: (node: GroovyAstNode): void => {
+		$NAF.ChildAcceptableCheck.set(node, RecordClassDeclaration.childAcceptableCheck);
+		$NAF.OnChildAppended.set(node, RecordClassDeclaration.onChildAppended);
+		$NAF.OnChildClosed.set(node, RecordClassDeclaration.onChildClosed);
+	}
+} as const;
+const TraitClassDeclaration = {
+	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
+	onChildAppended: Utils.standardTypeOnChildAppended,
+	onChildClosed: Utils.onClassBodyClosed,
+	extra: (node: GroovyAstNode): void => {
+		$NAF.ChildAcceptableCheck.set(node, TraitClassDeclaration.childAcceptableCheck);
+		$NAF.OnChildAppended.set(node, TraitClassDeclaration.onChildAppended);
+		$NAF.OnChildClosed.set(node, TraitClassDeclaration.onChildClosed);
+	}
+} as const;
+export const TypeDeclaration = {
+	Utils,
+	Cscmf: CscmfDeclaration,
+	Class: ClassDeclaration,
+	Interface: InterfaceDeclaration,
+	AtInterface: AtInterfaceClassDeclaration,
+	Enum: EnumClassDeclaration,
+	Record: RecordClassDeclaration,
+	Trait: TraitClassDeclaration,
+	extra: (node: GroovyAstNode): void => {
+		switch (node.tokenId) {
+			case TokenId.ClassDeclaration:
+				ClassDeclaration.extra(node);
+				break;
+			case TokenId.InterfaceDeclaration:
+				InterfaceDeclaration.extra(node);
+				break;
+			case TokenId.AtInterfaceClassDeclaration:
+				AtInterfaceClassDeclaration.extra(node);
+				break;
+			case TokenId.EnumClassDeclaration:
+				EnumClassDeclaration.extra(node);
+				break;
+			case TokenId.RecordClassDeclaration:
+				RecordClassDeclaration.extra(node);
+				break;
+			case TokenId.TraitClassDeclaration:
+				TraitClassDeclaration.extra(node);
+				break;
+			case TokenId.Tmp$OneOfCscmfDeclaration:
+				CscmfDeclaration.extra(node);
+				break;
+			default:
+				// do nothing
+				break;
 		}
-
-		return nodeIndex + 1;
 	}
-}
+} as const;

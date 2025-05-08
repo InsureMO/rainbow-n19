@@ -61,7 +61,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.INTERFACE]: [Tt.Jk, KwKw.Interface, 'JkInterface'],
 	[TokenId.NATIVE]: [Tt.Jk, KwKw.Native, 'JkNative'],
 	[TokenId.NEW]: [Tt.Jk, KwKw.New, 'JkNew'],
-	[TokenId.NON_SEALED]: [Tt.Jk, KwKw.NonSealed, 'JkNon_sealed'],
+	[TokenId.NON_SEALED]: [Tt.Jk, KwKw.NonSealed, 'JkNonSealed'],
 	[TokenId.NULL]: [Tt.Jk, KwKw.Null, 'JkNull'],
 	[TokenId.PACKAGE]: [Tt.Jk, KwKw.Package, 'JkPackage'],
 	[TokenId.PERMITS]: [Tt.Jk, KwKw.Permits, 'JkPermits'],

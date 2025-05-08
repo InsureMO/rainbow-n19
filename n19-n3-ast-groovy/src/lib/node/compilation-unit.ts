@@ -73,4 +73,12 @@ export class CompilationUnitNode extends GroovyAstNode implements ProgramNode {
 	appendText(_text: string): void {
 		// do nothing
 	}
+
+	/**
+	 * do nothing, text of this is frozen on constructing
+	 */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	protected chopOffTrailingText(_length: number): void {
+		// do nothing
+	}
 }

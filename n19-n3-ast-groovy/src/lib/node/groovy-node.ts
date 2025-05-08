@@ -220,6 +220,8 @@ export class GroovyAstNode implements AstNode {
 		}
 		this._text = this._text.slice(0, -length);
 		this._endOffset = this._startOffset + this._text.length;
+		// also change parent's text and offset
+		this.parent?.chopOffTrailingText(length);
 	}
 
 	chopOffTrailingNodes(nodes: Array<GroovyAstNode>): void {

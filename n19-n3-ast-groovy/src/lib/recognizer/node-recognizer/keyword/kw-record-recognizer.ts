@@ -1,39 +1,29 @@
-import {Optional} from '@rainbow-n19/n3-ast';
+import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
-import {AstRecognition} from '../../types';
-import {AbstractRehydratableRecognizer, RehydrateFunc} from '../abstract';
+import {AbstractOneOfCscmfDeclarationRecognizer, RehydrateFunc} from '../abstract';
+import {NodePointcuts, RecognizeRehydration} from '../shared';
 
-export class KwRecordRecognizer extends AbstractRehydratableRecognizer {
+export class KwRecordRecognizer extends AbstractOneOfCscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.RECORD;
 	}
 
-	/**
-	 * node is rehydrated, and not append to parent, waiting for identifier recognizer to decide
-	 */
-	protected static rehydrateToIdentifierWhenKeywordNotSupported(recognition: AstRecognition): Optional<number> {
-		const {node, nodeIndex, astRecognizer} = recognition;
-		if (astRecognizer.isRecordClassSupported) {
-			return (void 0);
-		}
-
-		node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
-		return nodeIndex;
-	}
-
 	protected getRehydrateFunctions(): Array<RehydrateFunc> {
 		return [
-			KwRecordRecognizer.rehydrateToCharsWhenInString,
-			KwRecordRecognizer.rehydrateToIdentifierWhenKeywordNotSupported,
-			KwRecordRecognizer.rehydrateToIdentifierWhenAfterDotDirectly
+			RecognizeRehydration.rehydrateToCharsWhenInString,
+			RecognizeRehydration.rehydrateToIdentifierWhenKeywordRecordNotSupported,
+			RecognizeRehydration.rehydrateToIdentifierWhenAfterDotDirectly
 		];
 	}
 
-	protected doRecognize(recognition: AstRecognition): number {
-		const {node, nodeIndex, astRecognizer} = recognition;
+	protected createDeclarationNode(node: GroovyAstNode): GroovyAstNode {
+		const statementNode = new GroovyAstNode({
+			tokenId: TokenId.RecordClassDeclaration, tokenType: TokenType.TypeDeclaration,
+			text: '', startOffset: node.startOffset,
+			startLine: node.startLine, startColumn: node.startColumn
+		});
+		NodePointcuts.TypeDeclaration.Record.extra(statementNode);
 
-		astRecognizer.appendAsLeaf(node, true);
-
-		return nodeIndex + 1;
+		return statementNode;
 	}
 }

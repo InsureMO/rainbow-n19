@@ -1,8 +1,8 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
-import {AstRecognizer} from '../../ast-recognizer';
 import {AstRecognition} from '../../types';
 import {AbstractRehydratableRecognizer, RehydrateFunc} from '../abstract';
+import {NodePointcuts, RecognizeRehydration} from '../shared';
 
 /**
  * multiple cases:
@@ -14,23 +14,10 @@ export class KwPackageRecognizer extends AbstractRehydratableRecognizer {
 		return TokenId.PACKAGE;
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected static childAcceptableCheck(mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
-		return [
-			TokenId.PACKAGE,
-			TokenId.Whitespaces,
-			TokenId.Tabs,
-			TokenId.Dot,
-			TokenId.Identifier,
-			TokenId.Semicolon,
-			TokenId.MultipleLinesComment
-		].includes(mightBeChildNode.tokenId);
-	}
-
 	protected getRehydrateFunctions(): Array<RehydrateFunc> {
 		return [
-			KwPackageRecognizer.rehydrateToCharsWhenInString,
-			KwPackageRecognizer.rehydrateToIdentifierWhenAfterDotDirectly
+			RecognizeRehydration.rehydrateToCharsWhenInString,
+			RecognizeRehydration.rehydrateToIdentifierWhenAfterDotDirectly
 		];
 	}
 
@@ -40,9 +27,7 @@ export class KwPackageRecognizer extends AbstractRehydratableRecognizer {
 			text: '', startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
 		});
-		$NAF.ChildAcceptableCheck.set(statementNode, KwPackageRecognizer.childAcceptableCheck);
-		$NAF.OnChildAppended.set(statementNode, KwPackageRecognizer.closeCurrentParentOnSemicolonAppended);
-		$NAF.OnNodeClosed.set(statementNode, KwPackageRecognizer.moveTrailingMLCommentsToParentOnNodeClosed);
+		NodePointcuts.PackageDeclaration.extra(statementNode);
 
 		return statementNode;
 	}

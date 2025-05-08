@@ -82,7 +82,7 @@ describe('Type declaration test', () => {
 					[TokenId.ClassBody, 32, 35, 1, '{\n}', [
 						[TokenId.LBrace, 32, 33, 1, '{'],
 						[TokenId.NewLine, 33, 34, 1, '\n'],
-						[TokenId.RBrace, 34, 35, 1, '}']
+						[TokenId.RBrace, 34, 35, 2, '}']
 					]]
 				]]
 			]
@@ -93,11 +93,11 @@ describe('Type declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 20, 0, text, [
-				[TokenId.InterfaceDeclaration, 0, 20, 1, text, [
-					[TokenId.MultipleLinesComment, 0, 4, 1, '/**/', [
-						[TokenId.MultipleLinesCommentStartMark, 0, 2, 1, '/*'],
-						[TokenId.MultipleLinesCommentEndMark, 2, 4, 1, '*/']
-					]],
+				[TokenId.MultipleLinesComment, 0, 4, 1, '/**/', [
+					[TokenId.MultipleLinesCommentStartMark, 0, 2, 1, '/*'],
+					[TokenId.MultipleLinesCommentEndMark, 2, 4, 1, '*/']
+				]],
+				[TokenId.InterfaceDeclaration, 4, 20, 1, 'public interface', [
 					[TokenId.PUBLIC, 4, 10, 1, 'public'],
 					[TokenId.Whitespaces, 10, 11, 1, ' '],
 					[TokenId.INTERFACE, 11, 20, 1, 'interface']
