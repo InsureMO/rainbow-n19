@@ -71,28 +71,12 @@ const Utils = {
 			TokenId.ClassBody
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc,
-	standardTypeOnLBraceAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		if (lastChildNode.tokenId !== TokenId.LBrace) {
-			return false;
-		}
-		LogicBlock.create({
-			declarationNode: lastChildNode.parent,
-			lbraceNode: lastChildNode,
-			bodyTokenId: TokenId.ClassBody,
-			astRecognizer
-		});
-		return true;
-	}) as OneOfOnChildAppendedFunc,
+	standardTypeOnLBraceAppended: LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.ClassBody),
 	standardTypeOnChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
-		const onChildAppendedFuncs = [
+		SharedNodePointcut.onChildAppendedOfFirstOrNone(lastChildNode, astRecognizer, [
 			Utils.standardTypeOnLBraceAppended,
 			SharedNodePointcut.closeCurrentParentOnSemicolonAppendedAndReturn
-		];
-		for (let index = 0, count = onChildAppendedFuncs.length; index < count; index++) {
-			if (onChildAppendedFuncs[index](lastChildNode, astRecognizer)) {
-				break;
-			}
-		}
+		]);
 	}) as OnChildAppendedFunc,
 	onClassBodyClosed: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		if (lastChildNode.tokenId === TokenId.ClassBody) {
@@ -422,7 +406,7 @@ const CscmfDeclaration = {
 	 * Therefore, it is necessary to make judgments based on different scenarios.
 	 */
 	onChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
-		const onChildAppendedFuncs = [
+		SharedNodePointcut.onChildAppendedOfFirstOrNone(lastChildNode, astRecognizer, [
 			CscmfDeclaration.onClassKeywordAppended,
 			CscmfDeclaration.onMethodKeywordAppended,
 			CscmfDeclaration.onFieldKeywordAppended,
@@ -432,12 +416,7 @@ const CscmfDeclaration = {
 			CscmfDeclaration.onEqualAppended,
 			CscmfDeclaration.onCommaAppended,
 			SharedNodePointcut.closeCurrentParentOnSemicolonAppendedAndReturn
-		];
-		for (let index = 0, count = onChildAppendedFuncs.length; index < count; index++) {
-			if (onChildAppendedFuncs[index](lastChildNode, astRecognizer)) {
-				break;
-			}
-		}
+		]);
 	}) as OnChildAppendedFunc,
 	/**
 	 * The node is not recognized as any of type, static block, constructor, method, or field declaration.

@@ -2,7 +2,7 @@ import {$NAF, ChildAcceptableCheckFunc, GroovyAstNode, OnChildAppendedFunc, OnCh
 import {TokenId} from '../../../../tokens';
 import {AstRecognizer} from '../../../ast-recognizer';
 import {LogicBlock} from './logic-block';
-import {OneOfOnChildAppendedFunc, SharedNodePointcut} from './shared';
+import {SharedNodePointcut} from './shared';
 
 export const StaticBlockDeclaration = {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -18,28 +18,12 @@ export const StaticBlockDeclaration = {
 			TokenId.StaticBlockBody
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc,
-	onLBraceAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		if (lastChildNode.tokenId !== TokenId.LBrace) {
-			return false;
-		}
-		LogicBlock.create({
-			declarationNode: lastChildNode.parent,
-			lbraceNode: lastChildNode,
-			bodyTokenId: TokenId.StaticBlockBody,
-			astRecognizer
-		});
-		return true;
-	}) as OneOfOnChildAppendedFunc,
+	onLBraceAppended: LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.StaticBlockBody),
 	onChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
-		const onChildAppendedFuncs = [
+		SharedNodePointcut.onChildAppendedOfFirstOrNone(lastChildNode, astRecognizer, [
 			StaticBlockDeclaration.onLBraceAppended,
 			SharedNodePointcut.closeCurrentParentOnSemicolonAppendedAndReturn
-		];
-		for (let index = 0, count = onChildAppendedFuncs.length; index < count; index++) {
-			if (onChildAppendedFuncs[index](lastChildNode, astRecognizer)) {
-				break;
-			}
-		}
+		]);
 	}) as OnChildAppendedFunc,
 	onChildClosed: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		if (lastChildNode.tokenId === TokenId.StaticBlockBody) {

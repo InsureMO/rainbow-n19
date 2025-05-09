@@ -1,7 +1,7 @@
 import {$NAF, GroovyAstNode} from '../../../../node';
 import {TokenId, TokenType} from '../../../../tokens';
 import {AstRecognizer} from '../../../ast-recognizer';
-import {SharedNodePointcut} from './shared';
+import {OneOfOnChildAppendedFunc, SharedNodePointcut} from './shared';
 
 export interface LogicBlockCreationOptions {
 	declarationNode: GroovyAstNode;
@@ -38,5 +38,20 @@ export const LogicBlock = {
 		logicBlockNode.asParentOf(lbraceNode);
 		astRecognizer.appendAsCurrentParent(logicBlockNode);
 		return logicBlockNode;
+	},
+	createOnLBraceAppendedFuncForDeclaration: (tokenId: TokenId, bodyNodePointcuts?: LogicBlockCreationOptions['bodyNodePointcuts']): OneOfOnChildAppendedFunc => {
+		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+			if (lastChildNode.tokenId !== TokenId.LBrace) {
+				return false;
+			}
+			LogicBlock.create({
+				declarationNode: lastChildNode.parent,
+				lbraceNode: lastChildNode,
+				bodyTokenId: tokenId,
+				bodyNodePointcuts,
+				astRecognizer
+			});
+			return true;
+		};
 	}
 } as const;

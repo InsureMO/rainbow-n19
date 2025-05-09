@@ -39,5 +39,12 @@ export const SharedNodePointcut = {
 			}
 		}
 		astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
-	}) as OnNodeClosedFunc
+	}) as OnNodeClosedFunc,
+	onChildAppendedOfFirstOrNone: (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer, funcs: Array<OneOfOnChildAppendedFunc>): void => {
+		for (let index = 0, count = funcs.length; index < count; index++) {
+			if (funcs[index](lastChildNode, astRecognizer)) {
+				break;
+			}
+		}
+	}
 } as const;
