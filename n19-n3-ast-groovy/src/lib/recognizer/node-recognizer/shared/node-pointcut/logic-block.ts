@@ -4,7 +4,6 @@ import {AstRecognizer} from '../../../ast-recognizer';
 import {OneOfOnChildAppendedFunc, SharedNodePointcut} from './shared';
 
 export interface LogicBlockCreationOptions {
-	declarationNode: GroovyAstNode;
 	lbraceNode: GroovyAstNode;
 	bodyTokenId: TokenId;
 	/** default use {@link LogicBlock#extra}, if no pointcuts function passed */
@@ -22,7 +21,8 @@ export const LogicBlock = {
 		$NAF.OnNodeClosed.clear(node);
 	},
 	create: (options: LogicBlockCreationOptions): GroovyAstNode => {
-		const {declarationNode, lbraceNode, bodyTokenId, bodyNodePointcuts, astRecognizer} = options;
+		const {lbraceNode, bodyTokenId, bodyNodePointcuts, astRecognizer} = options;
+		const declarationNode = lbraceNode.parent;
 		declarationNode.chopOffTrailingNodes([lbraceNode]);
 		const logicBlockNode = new GroovyAstNode({
 			tokenId: bodyTokenId, tokenType: TokenType.LogicBlock,
@@ -45,7 +45,6 @@ export const LogicBlock = {
 				return false;
 			}
 			LogicBlock.create({
-				declarationNode: lastChildNode.parent,
 				lbraceNode: lastChildNode,
 				bodyTokenId: tokenId,
 				bodyNodePointcuts,

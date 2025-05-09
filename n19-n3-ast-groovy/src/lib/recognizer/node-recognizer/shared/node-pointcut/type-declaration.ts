@@ -253,12 +253,7 @@ const CscmfDeclaration = {
 			// has identifier
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
-			LogicBlock.create({
-				declarationNode: statementNode,
-				lbraceNode: lastChildNode,
-				bodyTokenId: TokenId.ClassBody,
-				astRecognizer
-			});
+			Utils.standardTypeOnLBraceAppended(lastChildNode, astRecognizer);
 			return true;
 		}
 
@@ -275,16 +270,11 @@ const CscmfDeclaration = {
 			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicBlockDeclaration);
 			StaticBlockDeclaration.extra(statementNode);
 			// lbrace already appended, invoke onChildAppended manually
-			StaticBlockDeclaration.onChildAppended(lastChildNode, astRecognizer);
+			StaticBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
 		} else {
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
-			LogicBlock.create({
-				declarationNode: statementNode,
-				lbraceNode: lastChildNode,
-				bodyTokenId: TokenId.ClassBody,
-				astRecognizer
-			});
+			Utils.standardTypeOnLBraceAppended(lastChildNode, astRecognizer);
 		}
 
 		return true;
@@ -310,12 +300,7 @@ const CscmfDeclaration = {
 			// no identifier exists, identified as method declaration
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 			MethodDeclaration.extra(statementNode);
-			LogicBlock.create({
-				declarationNode: statementNode,
-				lbraceNode: lastChildNode,
-				bodyTokenId: TokenId.MethodBody,
-				astRecognizer
-			});
+			MethodDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
 			return true;
 		}
 
@@ -325,12 +310,7 @@ const CscmfDeclaration = {
 			// simply treated as method declaration
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 			MethodDeclaration.extra(statementNode);
-			LogicBlock.create({
-				declarationNode: statementNode,
-				lbraceNode: lastChildNode,
-				bodyTokenId: TokenId.MethodBody,
-				astRecognizer
-			});
+			MethodDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
 			return true;
 		}
 
@@ -341,22 +321,12 @@ const CscmfDeclaration = {
 			// constructor
 			statementNode.replaceTokenNature(TokenId.ConstructorDeclaration, TokenType.ConstructorDeclaration);
 			ConstructorDeclaration.extra(statementNode);
-			LogicBlock.create({
-				declarationNode: statementNode,
-				lbraceNode: lastChildNode,
-				bodyTokenId: TokenId.ConstructorBody,
-				astRecognizer
-			});
+			ConstructorDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
 		} else {
 			// method
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 			MethodDeclaration.extra(statementNode);
-			LogicBlock.create({
-				declarationNode: statementNode,
-				lbraceNode: lastChildNode,
-				bodyTokenId: TokenId.MethodBody,
-				astRecognizer
-			});
+			MethodDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
 		}
 
 		return true;

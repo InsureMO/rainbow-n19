@@ -2,7 +2,7 @@ import {$NAF, GroovyAstNode, OnChildAppendedFunc, OnChildClosedFunc} from '../..
 import {TokenId} from '../../../../tokens';
 import {AstRecognizer} from '../../../ast-recognizer';
 import {LogicBlock} from './logic-block';
-import {OneOfOnChildAppendedFunc, SharedNodePointcut} from './shared';
+import {SharedNodePointcut} from './shared';
 
 export const MethodDeclaration = {
 	onLBraceAppended: LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.MethodBody),
