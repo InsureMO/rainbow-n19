@@ -1,7 +1,7 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {AstRecognition} from '../../types';
 import {RecognizeRehydration} from '../shared';
-import {AbstractRecognizer} from './abstract-recognizer';
+import {AbstractAttemptableRecognizer} from './abstract-attemptable-recognizer';
 
 /**
  * 1. return undefined when no rehydration applied,
@@ -11,7 +11,7 @@ import {AbstractRecognizer} from './abstract-recognizer';
  */
 export type RehydrateFunc = (recognition: AstRecognition) => Optional<number>;
 
-export abstract class AbstractRehydratableRecognizer extends AbstractRecognizer {
+export abstract class AbstractRehydratableRecognizer extends AbstractAttemptableRecognizer {
 	/**
 	 * default returns in-string recognizer
 	 */
@@ -31,13 +31,7 @@ export abstract class AbstractRehydratableRecognizer extends AbstractRecognizer 
 		return (void 0);
 	}
 
-	protected abstract doRecognize(recognition: AstRecognition): number;
-
-	recognize(recognition: AstRecognition): number {
-		const nodeIndex = this.rehydrate(recognition);
-		if (nodeIndex != null) {
-			return nodeIndex;
-		}
-		return this.doRecognize(recognition);
+	protected attemptToRecognize(recognition: AstRecognition): Optional<number> {
+		return this.rehydrate(recognition);
 	}
 }

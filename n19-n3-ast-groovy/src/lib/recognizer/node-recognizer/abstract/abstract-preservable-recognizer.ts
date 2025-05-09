@@ -12,12 +12,7 @@ export type PreservableCheckFunc = (recognition: AstRecognition) => boolean;
 export abstract class AbstractPreservableRecognizer extends AbstractRehydratableRecognizer {
 	protected abstract getPreservableCheckFunctions(): Array<PreservableCheckFunc>;
 
-	protected rehydrate(recognition: AstRecognition): Optional<number> {
-		const nodeIndex: Optional<number> = super.rehydrate(recognition);
-		if (nodeIndex != null) {
-			return nodeIndex;
-		}
-
+	protected preserve(recognition: AstRecognition): Optional<number> {
 		const preservableCheckFuncs = this.getPreservableCheckFunctions();
 		for (let index = 0, count = preservableCheckFuncs.length; index < count; index++) {
 			if (preservableCheckFuncs[index](recognition) === true) {
@@ -27,5 +22,13 @@ export abstract class AbstractPreservableRecognizer extends AbstractRehydratable
 			}
 		}
 		return (void 0);
+	}
+
+	protected attemptToRecognize(recognition: AstRecognition): Optional<number> {
+		const nodeIndex = super.attemptToRecognize(recognition);
+		if (nodeIndex != null) {
+			return nodeIndex;
+		}
+		return this.preserve(recognition);
 	}
 }

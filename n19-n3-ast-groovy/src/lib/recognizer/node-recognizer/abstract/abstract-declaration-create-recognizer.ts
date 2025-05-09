@@ -1,6 +1,8 @@
 import {GroovyAstNode} from '../../../node';
 import {AstRecognition} from '../../types';
+import {RecognizeRehydration} from '../shared';
 import {AbstractPreservableRecognizer} from './abstract-preservable-recognizer';
+import {RehydrateFunc} from './abstract-rehydratable-recognizer';
 
 /**
  * If it is not completed in the two stages of rehydration and preservation,
@@ -8,6 +10,13 @@ import {AbstractPreservableRecognizer} from './abstract-preservable-recognizer';
  * and then return the index value of the next node.
  */
 export abstract class AbstractDeclarationCreateRecognizer extends AbstractPreservableRecognizer {
+	protected getRehydrateFunctions(): Array<RehydrateFunc> {
+		return [
+			RecognizeRehydration.rehydrateToCharsWhenInString,
+			RecognizeRehydration.rehydrateToIdentifierWhenAfterDotDirectly
+		];
+	}
+
 	protected abstract createDeclarationNode(node: GroovyAstNode): GroovyAstNode;
 
 	protected doRecognize(recognition: AstRecognition): number {

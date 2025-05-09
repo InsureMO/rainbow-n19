@@ -3,6 +3,9 @@ import {AstRecognition} from '../../types';
 import {PreservableCheckFunc} from '../abstract';
 
 export const RecognizePreservation = {
+	parentIsImportDeclaration: ((recognition: AstRecognition) => {
+		return recognition.astRecognizer.getCurrentParent().tokenId === TokenId.ImportDeclaration;
+	}) as PreservableCheckFunc,
 	parentIsCscmfDeclaration: ((recognition: AstRecognition) => {
 		return recognition.astRecognizer.getCurrentParent().tokenId === TokenId.Tmp$CscmfDeclaration;
 	}) as PreservableCheckFunc,

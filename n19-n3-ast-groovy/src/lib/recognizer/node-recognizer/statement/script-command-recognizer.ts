@@ -15,7 +15,7 @@ export class ScriptCommandRecognizer extends AbstractEagerRecognizer {
 		return TokenId.ScriptCommandStartMark;
 	}
 
-	protected rehydrate(recognition: AstRecognition): number {
+	protected rehydrateTo2Parts(recognition: AstRecognition): number {
 		const {node, nodeIndex, nodes, astRecognizer} = recognition;
 
 		const {startOffset, startLine, startColumn} = node;
@@ -58,7 +58,7 @@ export class ScriptCommandRecognizer extends AbstractEagerRecognizer {
 				recognition, ScriptCommandRecognizer.reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToStatement);
 			return nextNodeIndex;
 		} else {
-			return this.rehydrate(recognition);
+			return this.rehydrateTo2Parts(recognition);
 		}
 	}
 
@@ -68,11 +68,11 @@ export class ScriptCommandRecognizer extends AbstractEagerRecognizer {
 		const currentParent = astRecognizer.getCurrentParent();
 		const currentParentTokenId = currentParent.tokenId;
 		if (!astRecognizer.isScriptCommandEnabled) {
-			return this.rehydrate(recognition);
+			return this.rehydrateTo2Parts(recognition);
 		} else if (currentParentTokenId === TokenId.COMPILATION_UNIT) {
 			return this.doRecognizeInCompilationUnit(recognition);
 		} else {
-			return this.rehydrate(recognition);
+			return this.rehydrateTo2Parts(recognition);
 		}
 	}
 }

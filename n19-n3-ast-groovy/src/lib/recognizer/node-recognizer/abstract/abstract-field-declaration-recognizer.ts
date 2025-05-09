@@ -9,13 +9,6 @@ import {RehydrateFunc} from './abstract-rehydratable-recognizer';
  * could be identified as field
  */
 export abstract class AbstractFieldDeclarationRecognizer extends AbstractDeclarationCreateRecognizer {
-	protected getRehydrateFunctions(): Array<RehydrateFunc> {
-		return [
-			RecognizeRehydration.rehydrateToCharsWhenInString,
-			RecognizeRehydration.rehydrateToIdentifierWhenAfterDotDirectly
-		];
-	}
-
 	protected getPreservableCheckFunctions(): Array<PreservableCheckFunc> {
 		return [
 			RecognizePreservation.parentIsCscmfDeclaration,
