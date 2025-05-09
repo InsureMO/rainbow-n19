@@ -1,6 +1,7 @@
 import {ConstructorDeclaration} from './constructor-declaration';
 import {FieldDeclaration} from './field-declaration';
 import {ImportDeclaration} from './import-declaration';
+import {LogicBlock} from './logic-block';
 import {MethodDeclaration} from './method-declaration';
 import {PackageDeclaration} from './package-declaration';
 import {SharedNodePointcut} from './shared';
@@ -12,5 +13,6 @@ export const NodePointcuts = {
 	ImportDeclaration,
 	PackageDeclaration,
 	TypeDeclaration, StaticBlockDeclaration,
-	ConstructorDeclaration, MethodDeclaration, FieldDeclaration
+	ConstructorDeclaration, MethodDeclaration, FieldDeclaration,
+	LogicBlock
 } as const;

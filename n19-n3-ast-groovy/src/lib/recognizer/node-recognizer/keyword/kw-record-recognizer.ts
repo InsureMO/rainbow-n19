@@ -1,9 +1,9 @@
 import {GroovyAstNode} from '../../../node';
-import {TokenId} from '../../../tokens';
-import {AbstractTypeDeclarationRecognizer, RehydrateFunc} from '../abstract';
+import {TokenId, TokenType} from '../../../tokens';
+import {AbstractCscmfDeclarationRecognizer, RehydrateFunc} from '../abstract';
 import {NodePointcuts, RecognizeRehydration} from '../shared';
 
-export class KwRecordRecognizer extends AbstractTypeDeclarationRecognizer {
+export class KwRecordRecognizer extends AbstractCscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.RECORD;
 	}
@@ -16,11 +16,11 @@ export class KwRecordRecognizer extends AbstractTypeDeclarationRecognizer {
 		];
 	}
 
-	protected getDeclarationTokenId(): TokenId {
-		return TokenId.RecordClassDeclaration;
+	protected getDeclarationTokenNature(): [TokenId, TokenType] {
+		return [TokenId.RecordClassDeclaration, TokenType.TypeDeclaration];
 	}
 
-	protected extra(node: GroovyAstNode): void {
+	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {
 		NodePointcuts.TypeDeclaration.Record.extra(node);
 	}
 }

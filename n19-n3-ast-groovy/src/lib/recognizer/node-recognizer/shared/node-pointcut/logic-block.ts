@@ -1,0 +1,38 @@
+import {$NAF, GroovyAstNode} from '../../../../node';
+import {TokenId, TokenType} from '../../../../tokens';
+import {AstRecognizer} from '../../../ast-recognizer';
+import {SharedNodePointcut} from './shared';
+
+export interface LogicBlockCreationOptions {
+	declarationNode: GroovyAstNode;
+	lbraceNode: GroovyAstNode;
+	bodyTokenId: TokenId;
+	/** default use {@link LogicBlock#extra}, if no pointcuts function passed */
+	bodyNodePointcuts?: (node: GroovyAstNode) => void;
+	astRecognizer: AstRecognizer;
+}
+
+export const LogicBlock = {
+	onChildAppended: SharedNodePointcut.closeCurrentParentOnRBraceAppended,
+	extra: (node: GroovyAstNode): void => {
+		$NAF.OnChildAppended.set(node, LogicBlock.onChildAppended);
+	},
+	create: (options: LogicBlockCreationOptions): GroovyAstNode => {
+		const {declarationNode, lbraceNode, bodyTokenId, bodyNodePointcuts, astRecognizer} = options;
+		declarationNode.chopOffTrailingNodes([lbraceNode]);
+		const logicBlockNode = new GroovyAstNode({
+			tokenId: bodyTokenId, tokenType: TokenType.LogicBlock,
+			text: '',
+			startOffset: lbraceNode.startOffset,
+			startLine: lbraceNode.startLine, startColumn: lbraceNode.startColumn
+		});
+		if (bodyNodePointcuts != null) {
+			bodyNodePointcuts(logicBlockNode);
+		} else {
+			LogicBlock.extra(logicBlockNode);
+		}
+		logicBlockNode.asParentOf(lbraceNode);
+		astRecognizer.appendAsCurrentParent(logicBlockNode);
+		return logicBlockNode;
+	}
+} as const;

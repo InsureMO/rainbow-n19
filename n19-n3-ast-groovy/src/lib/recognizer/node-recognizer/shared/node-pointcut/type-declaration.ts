@@ -10,6 +10,7 @@ import {TokenId, TokenType} from '../../../../tokens';
 import {AstRecognizer} from '../../../ast-recognizer';
 import {ConstructorDeclaration} from './constructor-declaration';
 import {FieldDeclaration} from './field-declaration';
+import {LogicBlock} from './logic-block';
 import {MethodDeclaration} from './method-declaration';
 import {OneOfOnChildAppendedFunc, SharedNodePointcut} from './shared';
 import {StaticBlockDeclaration} from './static-block-declaration';
@@ -74,7 +75,12 @@ const Utils = {
 		if (lastChildNode.tokenId !== TokenId.LBrace) {
 			return false;
 		}
-		SharedNodePointcut.createLogicBlockNode(lastChildNode.parent, lastChildNode, TokenId.ClassBody, astRecognizer);
+		LogicBlock.create({
+			declarationNode: lastChildNode.parent,
+			lbraceNode: lastChildNode,
+			bodyTokenId: TokenId.ClassBody,
+			astRecognizer
+		});
 		return true;
 	}) as OneOfOnChildAppendedFunc,
 	standardTypeOnChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
@@ -263,7 +269,12 @@ const CscmfDeclaration = {
 			// has identifier
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
-			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.ClassBody, astRecognizer);
+			LogicBlock.create({
+				declarationNode: statementNode,
+				lbraceNode: lastChildNode,
+				bodyTokenId: TokenId.ClassBody,
+				astRecognizer
+			});
 			return true;
 		}
 
@@ -279,11 +290,21 @@ const CscmfDeclaration = {
 		if (isStaticBlockStart) {
 			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicBlockDeclaration);
 			StaticBlockDeclaration.extra(statementNode);
-			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.StaticBlockBody, astRecognizer);
+			LogicBlock.create({
+				declarationNode: statementNode,
+				lbraceNode: lastChildNode,
+				bodyTokenId: TokenId.StaticBlockBody,
+				astRecognizer
+			});
 		} else {
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
-			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.ClassBody, astRecognizer);
+			LogicBlock.create({
+				declarationNode: statementNode,
+				lbraceNode: lastChildNode,
+				bodyTokenId: TokenId.ClassBody,
+				astRecognizer
+			});
 		}
 
 		return true;
@@ -309,7 +330,12 @@ const CscmfDeclaration = {
 			// no identifier exists, identified as method declaration
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 			MethodDeclaration.extra(statementNode);
-			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.MethodBody, astRecognizer);
+			LogicBlock.create({
+				declarationNode: statementNode,
+				lbraceNode: lastChildNode,
+				bodyTokenId: TokenId.MethodBody,
+				astRecognizer
+			});
 			return true;
 		}
 
@@ -319,7 +345,12 @@ const CscmfDeclaration = {
 			// simply treated as method declaration
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 			MethodDeclaration.extra(statementNode);
-			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.MethodBody, astRecognizer);
+			LogicBlock.create({
+				declarationNode: statementNode,
+				lbraceNode: lastChildNode,
+				bodyTokenId: TokenId.MethodBody,
+				astRecognizer
+			});
 			return true;
 		}
 
@@ -330,12 +361,22 @@ const CscmfDeclaration = {
 			// constructor
 			statementNode.replaceTokenNature(TokenId.ConstructorDeclaration, TokenType.ConstructorDeclaration);
 			ConstructorDeclaration.extra(statementNode);
-			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.ConstructorBody, astRecognizer);
+			LogicBlock.create({
+				declarationNode: statementNode,
+				lbraceNode: lastChildNode,
+				bodyTokenId: TokenId.ConstructorBody,
+				astRecognizer
+			});
 		} else {
 			// method
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 			MethodDeclaration.extra(statementNode);
-			SharedNodePointcut.createLogicBlockNode(statementNode, lastChildNode, TokenId.MethodBody, astRecognizer);
+			LogicBlock.create({
+				declarationNode: statementNode,
+				lbraceNode: lastChildNode,
+				bodyTokenId: TokenId.MethodBody,
+				astRecognizer
+			});
 		}
 
 		return true;

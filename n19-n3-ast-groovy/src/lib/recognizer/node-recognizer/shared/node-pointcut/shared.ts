@@ -1,5 +1,5 @@
 import {GroovyAstNode, OnChildAppendedFunc, OnNodeClosedFunc} from '../../../../node';
-import {TokenId, TokenType} from '../../../../tokens';
+import {TokenId} from '../../../../tokens';
 import {AstRecognizer} from '../../../ast-recognizer';
 
 export type OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
@@ -22,6 +22,11 @@ export const SharedNodePointcut = {
 		astRecognizer.closeCurrentParent();
 		return true;
 	}) as OneOfOnChildAppendedFunc,
+	closeCurrentParentOnRBraceAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+		if (lastChildNode.tokenId === TokenId.RBrace) {
+			astRecognizer.closeCurrentParent();
+		}
+	}) as OnChildAppendedFunc,
 	moveTrailingMLCommentsToParentOnNodeClosed: ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const {children = []} = node;
 		const removeNodes: Array<GroovyAstNode> = [];
@@ -34,18 +39,5 @@ export const SharedNodePointcut = {
 			}
 		}
 		astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
-	}) as OnNodeClosedFunc,
-	createLogicBlockNode: (declarationNode: GroovyAstNode, lbraceNode: GroovyAstNode, bodyTokenId: TokenId, astRecognizer: AstRecognizer): GroovyAstNode => {
-		declarationNode.chopOffTrailingNodes([lbraceNode]);
-		const logicBlockNode = new GroovyAstNode({
-			tokenId: bodyTokenId, tokenType: TokenType.LogicBlock,
-			text: '',
-			startOffset: lbraceNode.startOffset,
-			startLine: lbraceNode.startLine, startColumn: lbraceNode.startColumn
-		});
-		// TODO ends with right brace
-		logicBlockNode.asParentOf(lbraceNode);
-		astRecognizer.appendAsCurrentParent(logicBlockNode);
-		return logicBlockNode;
-	}
+	}) as OnNodeClosedFunc
 } as const;

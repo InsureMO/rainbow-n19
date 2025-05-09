@@ -1,6 +1,7 @@
 import {$NAF, ChildAcceptableCheckFunc, GroovyAstNode, OnChildAppendedFunc, OnChildClosedFunc} from '../../../../node';
 import {TokenId} from '../../../../tokens';
 import {AstRecognizer} from '../../../ast-recognizer';
+import {LogicBlock} from './logic-block';
 import {OneOfOnChildAppendedFunc, SharedNodePointcut} from './shared';
 
 export const StaticBlockDeclaration = {
@@ -21,7 +22,12 @@ export const StaticBlockDeclaration = {
 		if (lastChildNode.tokenId !== TokenId.LBrace) {
 			return false;
 		}
-		SharedNodePointcut.createLogicBlockNode(lastChildNode.parent, lastChildNode, TokenId.StaticBlockBody, astRecognizer);
+		LogicBlock.create({
+			declarationNode: lastChildNode.parent,
+			lbraceNode: lastChildNode,
+			bodyTokenId: TokenId.StaticBlockBody,
+			astRecognizer
+		});
 		return true;
 	}) as OneOfOnChildAppendedFunc,
 	onChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {

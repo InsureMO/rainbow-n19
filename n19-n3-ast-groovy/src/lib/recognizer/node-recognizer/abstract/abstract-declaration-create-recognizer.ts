@@ -1,4 +1,5 @@
 import {GroovyAstNode} from '../../../node';
+import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognition} from '../../types';
 import {RecognizeRehydration} from '../shared';
 import {AbstractPreservableRecognizer} from './abstract-preservable-recognizer';
@@ -17,14 +18,26 @@ export abstract class AbstractDeclarationCreateRecognizer extends AbstractPreser
 		];
 	}
 
-	protected abstract createDeclarationNode(node: GroovyAstNode): GroovyAstNode;
+	protected abstract getDeclarationTokenNature(): [TokenId, TokenType];
+
+	protected abstract setDeclarationNodeExtraAttrs(node: GroovyAstNode): void;
+
+	protected createDeclarationNode(node: GroovyAstNode): GroovyAstNode {
+		const [tokenId, tokenType] = this.getDeclarationTokenNature();
+		const declarationNode = new GroovyAstNode({
+			tokenId, tokenType,
+			text: '', startOffset: node.startOffset,
+			startLine: node.startLine, startColumn: node.startColumn
+		});
+		this.setDeclarationNodeExtraAttrs(declarationNode);
+		return declarationNode;
+	}
 
 	protected doRecognize(recognition: AstRecognition): number {
 		const {node, nodeIndex, astRecognizer} = recognition;
 		const statementNode = this.createDeclarationNode(node);
 		statementNode.asParentOf(node);
 		astRecognizer.appendAsCurrentParent(statementNode);
-
 		return nodeIndex + 1;
 	}
 }

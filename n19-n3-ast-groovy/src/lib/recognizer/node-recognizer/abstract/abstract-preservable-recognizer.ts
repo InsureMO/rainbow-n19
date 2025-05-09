@@ -10,7 +10,12 @@ import {AbstractRehydratableRecognizer} from './abstract-rehydratable-recognizer
 export type PreservableCheckFunc = (recognition: AstRecognition) => boolean;
 
 export abstract class AbstractPreservableRecognizer extends AbstractRehydratableRecognizer {
-	protected abstract getPreservableCheckFunctions(): Array<PreservableCheckFunc>;
+	/**
+	 * default no preservable check function returned
+	 */
+	protected getPreservableCheckFunctions(): Array<PreservableCheckFunc> {
+		return [];
+	}
 
 	protected preserve(recognition: AstRecognition): Optional<number> {
 		const preservableCheckFuncs = this.getPreservableCheckFunctions();

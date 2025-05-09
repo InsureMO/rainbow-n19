@@ -1,18 +1,18 @@
 import {GroovyAstNode} from '../../../node';
-import {TokenId} from '../../../tokens';
-import {AbstractTypeDeclarationRecognizer} from '../abstract';
+import {TokenId, TokenType} from '../../../tokens';
+import {AbstractCscmfDeclarationRecognizer} from '../abstract';
 import {NodePointcuts} from '../shared';
 
-export class KwEnumRecognizer extends AbstractTypeDeclarationRecognizer {
+export class KwEnumRecognizer extends AbstractCscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.ENUM;
 	}
 
-	protected getDeclarationTokenId(): TokenId {
-		return TokenId.EnumClassDeclaration;
+	protected getDeclarationTokenNature(): [TokenId, TokenType] {
+		return [TokenId.EnumClassDeclaration, TokenType.TypeDeclaration];
 	}
 
-	protected extra(node: GroovyAstNode): void {
+	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {
 		NodePointcuts.TypeDeclaration.Enum.extra(node);
 	}
 }

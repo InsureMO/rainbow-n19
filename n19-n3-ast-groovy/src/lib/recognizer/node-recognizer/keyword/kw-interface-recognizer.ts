@@ -1,18 +1,18 @@
 import {GroovyAstNode} from '../../../node';
-import {TokenId} from '../../../tokens';
-import {AbstractTypeDeclarationRecognizer} from '../abstract';
+import {TokenId, TokenType} from '../../../tokens';
+import {AbstractCscmfDeclarationRecognizer} from '../abstract';
 import {NodePointcuts} from '../shared';
 
-export class KwInterfaceRecognizer extends AbstractTypeDeclarationRecognizer {
+export class KwInterfaceRecognizer extends AbstractCscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.INTERFACE;
 	}
 
-	protected getDeclarationTokenId(): TokenId {
-		return TokenId.InterfaceDeclaration;
+	protected getDeclarationTokenNature(): [TokenId, TokenType] {
+		return [TokenId.InterfaceDeclaration, TokenType.TypeDeclaration];
 	}
 
-	protected extra(node: GroovyAstNode): void {
+	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {
 		NodePointcuts.TypeDeclaration.Interface.extra(node);
 	}
 }
