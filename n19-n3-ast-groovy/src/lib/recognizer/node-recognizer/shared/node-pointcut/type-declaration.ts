@@ -290,12 +290,8 @@ const CscmfDeclaration = {
 		if (isStaticBlockStart) {
 			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicBlockDeclaration);
 			StaticBlockDeclaration.extra(statementNode);
-			LogicBlock.create({
-				declarationNode: statementNode,
-				lbraceNode: lastChildNode,
-				bodyTokenId: TokenId.StaticBlockBody,
-				astRecognizer
-			});
+			// lbrace already appended, invoke onChildAppended manually
+			StaticBlockDeclaration.onChildAppended(lastChildNode, astRecognizer);
 		} else {
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
@@ -508,6 +504,7 @@ const CscmfDeclaration = {
 	extra: (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, CscmfDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, CscmfDeclaration.onChildAppended);
+		$NAF.OnChildClosed.clear(node);
 		$NAF.OnNodeClosed.set(node, CscmfDeclaration.onNodeClosed);
 	}
 } as const;
@@ -520,6 +517,7 @@ const ClassDeclaration = {
 		$NAF.ChildAcceptableCheck.set(node, ClassDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, ClassDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, ClassDeclaration.onChildClosed);
+		$NAF.OnNodeClosed.clear(node);
 	}
 } as const;
 const InterfaceDeclaration = {
@@ -530,6 +528,7 @@ const InterfaceDeclaration = {
 		$NAF.ChildAcceptableCheck.set(node, InterfaceDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, InterfaceDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, InterfaceDeclaration.onChildClosed);
+		$NAF.OnNodeClosed.clear(node);
 	}
 } as const;
 const AtInterfaceClassDeclaration = {
@@ -540,6 +539,7 @@ const AtInterfaceClassDeclaration = {
 		$NAF.ChildAcceptableCheck.set(node, AtInterfaceClassDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, AtInterfaceClassDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, AtInterfaceClassDeclaration.onChildClosed);
+		$NAF.OnNodeClosed.clear(node);
 	}
 } as const;
 const EnumClassDeclaration = {
@@ -550,6 +550,7 @@ const EnumClassDeclaration = {
 		$NAF.ChildAcceptableCheck.set(node, EnumClassDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, EnumClassDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, EnumClassDeclaration.onChildClosed);
+		$NAF.OnNodeClosed.clear(node);
 	}
 } as const;
 const RecordClassDeclaration = {
@@ -561,6 +562,7 @@ const RecordClassDeclaration = {
 		$NAF.ChildAcceptableCheck.set(node, RecordClassDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, RecordClassDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, RecordClassDeclaration.onChildClosed);
+		$NAF.OnNodeClosed.clear(node);
 	}
 } as const;
 const TraitClassDeclaration = {
@@ -571,6 +573,7 @@ const TraitClassDeclaration = {
 		$NAF.ChildAcceptableCheck.set(node, TraitClassDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, TraitClassDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, TraitClassDeclaration.onChildClosed);
+		$NAF.OnNodeClosed.clear(node);
 	}
 } as const;
 export const TypeDeclaration = {

@@ -53,6 +53,7 @@ export class GroovyAstBuilder {
 	}
 
 	static printDefs(): void {
-		return new AstTokenizer(new GroovyAst('')).printDefs();
+		new AstTokenizer(new GroovyAst('')).printDefs();
+		new AstRecognizer().printDefs();
 	}
 }

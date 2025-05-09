@@ -21,6 +21,7 @@ export const PackageDeclaration = {
 	extra: (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, PackageDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, PackageDeclaration.onChildAppended);
+		$NAF.OnChildClosed.clear(node);
 		$NAF.OnNodeClosed.set(node, PackageDeclaration.onNodeClosed);
 	}
 } as const;

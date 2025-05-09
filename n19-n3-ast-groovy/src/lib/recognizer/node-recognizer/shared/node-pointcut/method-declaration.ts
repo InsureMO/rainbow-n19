@@ -10,6 +10,9 @@ export const MethodDeclaration = {
 	}) as OnChildClosedFunc,
 	extra: (node: GroovyAstNode): void => {
 		// TODO method node pointcuts
+		$NAF.ChildAcceptableCheck.clear(node);
+		$NAF.OnChildAppended.clear(node);
 		$NAF.OnChildClosed.set(node, MethodDeclaration.onChildClosed);
+		$NAF.OnNodeClosed.clear(node);
 	}
 } as const;

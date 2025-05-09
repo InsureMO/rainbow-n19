@@ -23,12 +23,14 @@ export type OnNodeClosedFunc = (node: GroovyAstNode, astRecognizer: AstRecognize
 export interface GroovyAstNodeWithExtraAttrGS<V> {
 	get: (node: GroovyAstNode) => V;
 	set: (node: GroovyAstNode, value: V) => void;
+	clear: (node: GroovyAstNode) => void;
 }
 
 const createGetterAndSetter = <V>(key: GroovyAstNodeExtraAttrs): GroovyAstNodeWithExtraAttrGS<V> => {
 	return {
 		get: (node: GroovyAstNode) => node.attr<V>(key),
-		set: (node: GroovyAstNode, value: V) => node.attrs<V>(key, value)
+		set: (node: GroovyAstNode, value: V) => node.attrs<V>(key, value),
+		clear: (node: GroovyAstNode) => node.attrs<undefined>(key, (void 0))
 	};
 };
 
@@ -44,6 +46,7 @@ const createNumberAccumulator = (key: GroovyAstNodeExtraAttrs): GroovyAstNodeWit
 	return {
 		get: (node: GroovyAstNode) => node.attr<number>(key) ?? 0,
 		set: (node: GroovyAstNode, value: number) => node.attrs<number>(key, value),
+		clear: (node: GroovyAstNode) => node.attrs<undefined>(key, (void 0)),
 		increase: (node: GroovyAstNode) => node.attrs<number>(key, (node.attr<number>(key) ?? 0) + 1),
 		decrease: (node: GroovyAstNode) => node.attrs<number>(key, (node.attr<number>(key) ?? 0) - 1),
 		reset: (node: GroovyAstNode) => node.attrs<number>(key, 0)

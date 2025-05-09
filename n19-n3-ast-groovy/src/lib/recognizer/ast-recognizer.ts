@@ -284,4 +284,8 @@ export class AstRecognizer {
 			}
 		}
 	}
+
+	printDefs(): void {
+		this._recognizerRepo.printDefs();
+	}
 }

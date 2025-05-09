@@ -10,6 +10,9 @@ export const ConstructorDeclaration = {
 	}) as OnChildClosedFunc,
 	extra: (node: GroovyAstNode): void => {
 		// TODO constructor node pointcuts
+		$NAF.ChildAcceptableCheck.clear(node);
+		$NAF.OnChildAppended.clear(node);
 		$NAF.OnChildClosed.set(node, ConstructorDeclaration.onChildClosed);
+		$NAF.OnNodeClosed.clear(node);
 	}
 } as const;

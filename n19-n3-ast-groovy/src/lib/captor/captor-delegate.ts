@@ -190,8 +190,7 @@ export class CaptorDelegate {
 		return this._fallback;
 	}
 
-	protected doPrint(buf: Array<string>, indent: number = 0): void {
-		const lineIndent = new Array(indent).fill('\t').join('');
+	protected doPrint(buf: Array<string>, indent: Array<string> = []): void {
 		const forks: Array<[string, AstNodeCaptor | CaptorDelegate]> = [];
 		Object.keys(this._byCharMap).forEach(char => forks.push([char, this._byCharMap[char]]));
 		this._byFunc.forEach(([func, captorOrDelegate]) => forks.push([func.describe(), captorOrDelegate]));
@@ -221,12 +220,13 @@ export class CaptorDelegate {
 				buf[buf.length - 1] = buf[buf.length - 1].slice(0, -3) + `·${AstUtils.escapeForPrint(key)} => ${captorOrDelegate.constructor.name}`;
 			}
 		} else {
-			forks.forEach(([key, captorOrDelegate]) => {
+			forks.forEach(([key, captorOrDelegate], index, array) => {
+				const lineIndent = [...indent, buf.length === 0 ? '┌ ' : (index === array.length - 1 ? '└ ' : '├ ')];
 				if (captorOrDelegate instanceof CaptorDelegate) {
-					buf.push(`${lineIndent}${AstUtils.escapeForPrint(key)} =>`);
-					captorOrDelegate.doPrint(buf, indent + 1);
+					buf.push(`${lineIndent.join('')}${AstUtils.escapeForPrint(key)} =>`);
+					captorOrDelegate.doPrint(buf, lineIndent.map(ch => ch === '└ ' ? '  ' : ((ch === '├ ' || ch === '┌ ') ? '│ ' : ch)));
 				} else {
-					buf.push(`${lineIndent}${AstUtils.escapeForPrint(key)} => ${captorOrDelegate.constructor.name}`);
+					buf.push(`${lineIndent.join('')}${AstUtils.escapeForPrint(key)} => ${captorOrDelegate.constructor.name}`);
 				}
 			});
 		}

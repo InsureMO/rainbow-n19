@@ -25,6 +25,7 @@ export const ImportDeclaration = {
 	extra: (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, ImportDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, ImportDeclaration.onChildAppended);
+		$NAF.OnChildClosed.clear(node);
 		$NAF.OnNodeClosed.set(node, ImportDeclaration.onNodeClosed);
 	}
 } as const;

@@ -15,7 +15,11 @@ export interface LogicBlockCreationOptions {
 export const LogicBlock = {
 	onChildAppended: SharedNodePointcut.closeCurrentParentOnRBraceAppended,
 	extra: (node: GroovyAstNode): void => {
+		// TODO logic block node pointcuts
+		$NAF.ChildAcceptableCheck.clear(node);
 		$NAF.OnChildAppended.set(node, LogicBlock.onChildAppended);
+		$NAF.OnChildClosed.clear(node);
+		$NAF.OnNodeClosed.clear(node);
 	},
 	create: (options: LogicBlockCreationOptions): GroovyAstNode => {
 		const {declarationNode, lbraceNode, bodyTokenId, bodyNodePointcuts, astRecognizer} = options;

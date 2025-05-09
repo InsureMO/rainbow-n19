@@ -50,5 +50,6 @@ export const StaticBlockDeclaration = {
 		$NAF.ChildAcceptableCheck.set(node, StaticBlockDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, StaticBlockDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, StaticBlockDeclaration.onChildClosed);
+		$NAF.OnNodeClosed.clear(node);
 	}
 } as const;
