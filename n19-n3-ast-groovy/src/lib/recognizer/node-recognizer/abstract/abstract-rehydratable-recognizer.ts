@@ -19,9 +19,7 @@ export abstract class AbstractRehydratableRecognizer extends AbstractRecognizer 
 		return [RecognizeRehydration.rehydrateToCharsWhenInString];
 	}
 
-	protected abstract doRecognize(recognition: AstRecognition): number;
-
-	recognize(recognition: AstRecognition): number {
+	protected rehydrate(recognition: AstRecognition): Optional<number> {
 		let nextNodeIndex: Optional<number>;
 		const rehydrateFuncs = this.getRehydrateFunctions();
 		for (let index = 0, count = rehydrateFuncs.length; index < count; index++) {
@@ -29,6 +27,16 @@ export abstract class AbstractRehydratableRecognizer extends AbstractRecognizer 
 			if (nextNodeIndex != null) {
 				return nextNodeIndex;
 			}
+		}
+		return (void 0);
+	}
+
+	protected abstract doRecognize(recognition: AstRecognition): number;
+
+	recognize(recognition: AstRecognition): number {
+		const nodeIndex = this.rehydrate(recognition);
+		if (nodeIndex != null) {
+			return nodeIndex;
 		}
 		return this.doRecognize(recognition);
 	}

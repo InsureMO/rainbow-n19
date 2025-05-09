@@ -1,9 +1,9 @@
 import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
-import {AbstractOneOfCscmfDeclarationRecognizer} from '../abstract';
+import {AbstractCscmfDeclarationRecognizer} from '../abstract';
 import {NodePointcuts} from '../shared';
 
-export class KwAtInterfaceRecognizer extends AbstractOneOfCscmfDeclarationRecognizer {
+export class KwAtInterfaceRecognizer extends AbstractCscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.AT_INTERFACE;
 	}

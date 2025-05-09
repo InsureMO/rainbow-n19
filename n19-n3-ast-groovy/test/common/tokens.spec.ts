@@ -25,13 +25,13 @@ describe('Token test', () => {
 	});
 
 	test('Token #1', async () => {
-		const text = 'do public //abc\n\r\n\n/*  def */';
+		const text = 'd1 p12345 //abc\n\r\n\n/*  def */';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 29, 0, text, [
-				[TokenId.DO, 0, 2, 1, 'do'],
+				[TokenId.Identifier, 0, 2, 1, 'd1'],
 				[TokenId.Whitespaces, 2, 3, 1, ' '],
-				[TokenId.PUBLIC, 3, 9, 1, 'public'],
+				[TokenId.Identifier, 3, 9, 1, 'p12345'],
 				[TokenId.Whitespaces, 9, 10, 1, ' '],
 				[TokenId.SingleLineComment, 10, 15, 1, '//abc', [
 					[TokenId.SingleLineCommentStartMark, 10, 12, 1, '//'],

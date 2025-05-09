@@ -561,7 +561,7 @@ export const TypeDeclaration = {
 			case TokenId.TraitClassDeclaration:
 				TraitClassDeclaration.extra(node);
 				break;
-			case TokenId.Tmp$OneOfCscmfDeclaration:
+			case TokenId.Tmp$CscmfDeclaration:
 				CscmfDeclaration.extra(node);
 				break;
 			default:

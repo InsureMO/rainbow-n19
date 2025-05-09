@@ -1,7 +1,7 @@
 import {TokenId} from '../../../tokens';
-import {AbstractOneOfCscmfDeclarationRecognizer} from '../abstract';
+import {AbstractCscmfDeclarationRecognizer} from '../abstract';
 
-export class KwProtectedRecognizer extends AbstractOneOfCscmfDeclarationRecognizer {
+export class KwProtectedRecognizer extends AbstractCscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.PROTECTED;
 	}

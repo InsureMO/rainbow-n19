@@ -5,3 +5,5 @@ export * from './multiple-lines-comment.spec';
 
 export * from './package-declaration.spec';
 export * from './import-declaration.spec';
+
+export * from './type-declaration.spec';

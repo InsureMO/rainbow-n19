@@ -6,9 +6,9 @@ import {PreservableCheckFunc} from './abstract-preservable-recognizer';
 import {RehydrateFunc} from './abstract-rehydratable-recognizer';
 
 /**
- * could be identified as method
+ * "cscmf" means: class, static block, constructor, method and field
  */
-export abstract class AbstractMethodDeclarationRecognizer extends AbstractDeclarationCreateRecognizer {
+export abstract class AbstractCscmfDeclarationRecognizer extends AbstractDeclarationCreateRecognizer {
 	protected getRehydrateFunctions(): Array<RehydrateFunc> {
 		return [
 			RecognizeRehydration.rehydrateToCharsWhenInString,
@@ -19,17 +19,17 @@ export abstract class AbstractMethodDeclarationRecognizer extends AbstractDeclar
 	protected getPreservableCheckFunctions(): Array<PreservableCheckFunc> {
 		return [
 			RecognizePreservation.parentIsCscmfDeclaration,
-			RecognizePreservation.parentIsMethodDeclaration
+			RecognizePreservation.parentIsTypeDeclaration
 		];
 	}
 
 	protected createDeclarationNode(node: GroovyAstNode): GroovyAstNode {
 		const statementNode = new GroovyAstNode({
-			tokenId: TokenId.MethodDeclaration, tokenType: TokenType.MethodDeclaration,
+			tokenId: TokenId.Tmp$CscmfDeclaration, tokenType: TokenType.TemporaryStatement,
 			text: '', startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
 		});
-		NodePointcuts.MethodDeclaration.extra(statementNode);
+		NodePointcuts.TypeDeclaration.Cscmf.extra(statementNode);
 		return statementNode;
 	}
 }
