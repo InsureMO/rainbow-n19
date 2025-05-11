@@ -10,7 +10,7 @@ import {PreservableCheckFunc} from './abstract-preservable-recognizer';
 export abstract class AbstractMethodDeclarationRecognizer extends AbstractDeclarationCreateRecognizer {
 	protected getPreservableCheckFunctions(): Array<PreservableCheckFunc> {
 		return [
-			RecognizePreservation.parentIsCscmfDeclaration,
+			RecognizePreservation.parentIsCsscmfDeclaration,
 			RecognizePreservation.parentIsMethodDeclaration
 		];
 	}

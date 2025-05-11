@@ -10,7 +10,7 @@ import {PreservableCheckFunc} from './abstract-preservable-recognizer';
 export abstract class AbstractCsscmfDeclarationRecognizer extends AbstractDeclarationCreateRecognizer {
 	protected getPreservableCheckFunctions(): Array<PreservableCheckFunc> {
 		return [
-			RecognizePreservation.parentIsCscmfDeclaration,
+			RecognizePreservation.parentIsCsscmfDeclaration,
 			RecognizePreservation.parentIsTypeDeclaration
 		];
 	}
@@ -20,6 +20,6 @@ export abstract class AbstractCsscmfDeclarationRecognizer extends AbstractDeclar
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {
-		NodePointcuts.TypeDeclaration.Cscmf.extra(node);
+		NodePointcuts.TypeDeclaration.Csscmf.extra(node);
 	}
 }

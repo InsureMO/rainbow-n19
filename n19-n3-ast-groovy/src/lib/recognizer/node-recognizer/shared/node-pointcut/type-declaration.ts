@@ -85,7 +85,7 @@ const Utils = {
 	}) as OnChildClosedFunc
 } as const;
 
-const CscmfDeclaration = {
+const CsscmfDeclaration = {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	childAcceptableCheck: ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		return mightBeChildNode.tokenType === TokenType.PrimitiveType /* could be 1. return type of method, 2. type of field */
@@ -399,14 +399,14 @@ const CscmfDeclaration = {
 	 */
 	onChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		SharedNodePointcut.onChildAppendedOfFirstOrNone(lastChildNode, astRecognizer, [
-			CscmfDeclaration.onClassKeywordAppended,
-			CscmfDeclaration.onMethodKeywordAppended,
-			CscmfDeclaration.onFieldKeywordAppended,
-			CscmfDeclaration.onIdentifierAppended,
-			CscmfDeclaration.onLBraceAppended,
-			CscmfDeclaration.onLParenAppended,
-			CscmfDeclaration.onEqualAppended,
-			CscmfDeclaration.onCommaAppended,
+			CsscmfDeclaration.onClassKeywordAppended,
+			CsscmfDeclaration.onMethodKeywordAppended,
+			CsscmfDeclaration.onFieldKeywordAppended,
+			CsscmfDeclaration.onIdentifierAppended,
+			CsscmfDeclaration.onLBraceAppended,
+			CsscmfDeclaration.onLParenAppended,
+			CsscmfDeclaration.onEqualAppended,
+			CsscmfDeclaration.onCommaAppended,
 			SharedNodePointcut.closeCurrentParentOnSemicolonAppendedAndReturn
 		]);
 	}) as OnChildAppendedFunc,
@@ -473,10 +473,10 @@ const CscmfDeclaration = {
 		SharedNodePointcut.moveTrailingMLCommentsToParentOnNodeClosed(node, astRecognizer);
 	}) as OnNodeClosedFunc,
 	extra: (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, CscmfDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, CscmfDeclaration.onChildAppended);
+		$NAF.ChildAcceptableCheck.set(node, CsscmfDeclaration.childAcceptableCheck);
+		$NAF.OnChildAppended.set(node, CsscmfDeclaration.onChildAppended);
 		$NAF.OnChildClosed.clear(node);
-		$NAF.OnNodeClosed.set(node, CscmfDeclaration.onNodeClosed);
+		$NAF.OnNodeClosed.set(node, CsscmfDeclaration.onNodeClosed);
 	}
 } as const;
 
@@ -549,7 +549,7 @@ const TraitClassDeclaration = {
 } as const;
 export const TypeDeclaration = {
 	Utils,
-	Cscmf: CscmfDeclaration,
+	Csscmf: CsscmfDeclaration,
 	Class: ClassDeclaration,
 	Interface: InterfaceDeclaration,
 	AtInterface: AtInterfaceClassDeclaration,
@@ -577,7 +577,7 @@ export const TypeDeclaration = {
 				TraitClassDeclaration.extra(node);
 				break;
 			case TokenId.Tmp$CsscmfDeclaration:
-				CscmfDeclaration.extra(node);
+				CsscmfDeclaration.extra(node);
 				break;
 			default:
 				// do nothing

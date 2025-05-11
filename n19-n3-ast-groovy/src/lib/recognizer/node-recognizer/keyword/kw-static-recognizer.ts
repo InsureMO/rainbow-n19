@@ -13,7 +13,7 @@ export class KwStaticRecognizer extends AbstractCsscmfDeclarationRecognizer {
 
 	protected getPreservableCheckFunctions(): Array<PreservableCheckFunc> {
 		return [
-			RecognizePreservation.parentIsCscmfDeclaration,
+			RecognizePreservation.parentIsCsscmfDeclaration,
 			RecognizePreservation.parentIsTypeDeclaration,
 			RecognizePreservation.parentIsImportDeclaration
 		];
