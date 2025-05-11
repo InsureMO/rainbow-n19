@@ -1,9 +1,9 @@
 import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
-import {AbstractCscmfDeclarationRecognizer, RehydrateFunc} from '../abstract';
+import {AbstractCsscmfDeclarationRecognizer, RehydrateFunc} from '../abstract';
 import {NodePointcuts, RecognizeRehydration} from '../shared';
 
-export class KwRecordRecognizer extends AbstractCscmfDeclarationRecognizer {
+export class KwRecordRecognizer extends AbstractCsscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.RECORD;
 	}

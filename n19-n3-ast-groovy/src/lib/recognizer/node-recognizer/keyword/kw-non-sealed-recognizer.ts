@@ -1,8 +1,8 @@
 import {TokenId} from '../../../tokens';
-import {AbstractCscmfDeclarationRecognizer, RehydrateFunc} from '../abstract';
+import {AbstractCsscmfDeclarationRecognizer, RehydrateFunc} from '../abstract';
 import {RecognizeRehydration} from '../shared';
 
-export class KwNonSealedRecognizer extends AbstractCscmfDeclarationRecognizer {
+export class KwNonSealedRecognizer extends AbstractCsscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.NON_SEALED;
 	}

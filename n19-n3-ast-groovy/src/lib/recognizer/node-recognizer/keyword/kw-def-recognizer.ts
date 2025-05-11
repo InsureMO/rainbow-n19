@@ -1,11 +1,11 @@
 import {TokenId} from '../../../tokens';
-import {AbstractCscmfDeclarationRecognizer} from '../abstract';
+import {AbstractCsscmfDeclarationRecognizer} from '../abstract';
 
 /**
- * keyword def could be in front of a cscmf(method or field) declaration,
+ * keyword def could be in front of a csscmf (method or field only) declaration,
  * TODO or start a variable declaration
  */
-export class KwDefRecognizer extends AbstractCscmfDeclarationRecognizer {
+export class KwDefRecognizer extends AbstractCsscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.DEF;
 	}

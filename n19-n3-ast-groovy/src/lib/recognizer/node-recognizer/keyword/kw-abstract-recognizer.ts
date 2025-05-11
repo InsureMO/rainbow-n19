@@ -1,7 +1,7 @@
 import {TokenId} from '../../../tokens';
-import {AbstractCscmfDeclarationRecognizer} from '../abstract';
+import {AbstractCsscmfDeclarationRecognizer} from '../abstract';
 
-export class KwAbstractRecognizer extends AbstractCscmfDeclarationRecognizer {
+export class KwAbstractRecognizer extends AbstractCsscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.ABSTRACT;
 	}

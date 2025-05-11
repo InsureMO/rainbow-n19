@@ -1,12 +1,12 @@
 import {TokenId} from '../../../tokens';
-import {AbstractCscmfDeclarationRecognizer, PreservableCheckFunc} from '../abstract';
+import {AbstractCsscmfDeclarationRecognizer, PreservableCheckFunc} from '../abstract';
 import {RecognizePreservation} from '../shared';
 
 /**
  * keyword static could be in front of a type declaration or static block,
  * or after import keyword in import declaration
  */
-export class KwStaticRecognizer extends AbstractCscmfDeclarationRecognizer {
+export class KwStaticRecognizer extends AbstractCsscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.STATIC;
 	}

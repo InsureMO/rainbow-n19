@@ -25,9 +25,10 @@ export class NodeRecognizerRepo {
 	}
 
 	printDefs(): void {
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 		const map: Map<Function, Array<Function>> = new Map();
 		for (const recognizer of this._recognizers.values()) {
-			let proto = Object.getPrototypeOf(recognizer);
+			const proto = Object.getPrototypeOf(recognizer);
 			let ancestors = map.get(proto.constructor);
 			if (ancestors == null) {
 				ancestors = [];
@@ -57,9 +58,10 @@ export class NodeRecognizerRepo {
 		const buf: Array<string> = [];
 		buf.push('┌ NodeRecognizer');
 
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type, @typescript-eslint/no-explicit-any
 		const print = (proto: Function, derivation: Map<any, any>, level: Array<'└' | '├' | ' ' | '│'>): void => {
 			try {
-				// @ts-ignore
+				// @ts-expect-error it is a constructor function, and is NodeRecognizer
 				const tokenId = new proto().acceptTokenId();
 				const tokenName = TokenId[tokenId];
 				buf.push(`${level.join(' ')} ${proto.name} [tokenId=${tokenId}, tokenName=${tokenName}]`);
@@ -70,6 +72,7 @@ export class NodeRecognizerRepo {
 				printMap(derivation, level.map(ch => ch === '└' ? ' ' : (ch === '├' ? '│' : ch)));
 			}
 		};
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const printMap = (map: Map<any, any>, level: Array<'└' | '├' | ' ' | '│'>) => {
 			Array.from(map.entries()).sort(([proto1], [proto2]) => {
 				return (proto1.name as string).localeCompare(proto2.name, (void 0), {

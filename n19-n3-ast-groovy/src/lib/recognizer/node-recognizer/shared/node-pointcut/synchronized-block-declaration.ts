@@ -4,7 +4,7 @@ import {AstRecognizer} from '../../../ast-recognizer';
 import {LogicBlock} from './logic-block';
 import {SharedNodePointcut} from './shared';
 
-export const StaticBlockDeclaration = {
+export const SynchronizedBlockDeclaration = {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	childAcceptableCheck: ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		return [
@@ -14,25 +14,25 @@ export const StaticBlockDeclaration = {
 			TokenId.Semicolon,
 			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 			// of course block body can be child
-			TokenId.StaticBlockBody
+			TokenId.SynchronizedBlockBody
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc,
-	onLBraceAppended: LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.StaticBlockBody),
+	onLBraceAppended: LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.SynchronizedBlockBody),
 	onChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		SharedNodePointcut.onChildAppendedOfFirstOrNone(lastChildNode, astRecognizer, [
-			StaticBlockDeclaration.onLBraceAppended,
+			SynchronizedBlockDeclaration.onLBraceAppended,
 			SharedNodePointcut.closeCurrentParentOnSemicolonAppendedAndReturn
 		]);
 	}) as OnChildAppendedFunc,
 	onChildClosed: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
-		if (lastChildNode.tokenId === TokenId.StaticBlockBody) {
+		if (lastChildNode.tokenId === TokenId.SynchronizedBlockBody) {
 			astRecognizer.closeCurrentParent();
 		}
 	}) as OnChildClosedFunc,
 	extra: (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, StaticBlockDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, StaticBlockDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, StaticBlockDeclaration.onChildClosed);
+		$NAF.ChildAcceptableCheck.set(node, SynchronizedBlockDeclaration.childAcceptableCheck);
+		$NAF.OnChildAppended.set(node, SynchronizedBlockDeclaration.onChildAppended);
+		$NAF.OnChildClosed.set(node, SynchronizedBlockDeclaration.onChildClosed);
 		$NAF.OnNodeClosed.clear(node);
 	}
 } as const;

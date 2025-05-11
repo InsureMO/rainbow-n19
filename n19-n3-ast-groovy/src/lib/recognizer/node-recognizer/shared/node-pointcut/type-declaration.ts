@@ -14,6 +14,7 @@ import {LogicBlock} from './logic-block';
 import {MethodDeclaration} from './method-declaration';
 import {OneOfOnChildAppendedFunc, SharedNodePointcut} from './shared';
 import {StaticBlockDeclaration} from './static-block-declaration';
+import {SynchronizedBlockDeclaration} from './synchronized-block-declaration';
 
 // noinspection JSUnusedGlobalSymbols
 const Utils = {
@@ -28,8 +29,7 @@ const Utils = {
 	},
 	isMethodKeyword: (tokenId: TokenId): boolean => {
 		return [
-			TokenId.NATIVE, TokenId.SYNCHRONIZED, TokenId.DEFAULT,
-			TokenId.VOID
+			TokenId.NATIVE, TokenId.DEFAULT, TokenId.VOID
 		].includes(tokenId);
 	},
 	isFieldKeyword: (tokenId: TokenId): boolean => {
@@ -238,8 +238,14 @@ const CscmfDeclaration = {
 	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * check the given child node can be identified as left brace or not,
-	 * if so, when the existing previous siblings contains identifier or any keyword rather than static,
-	 * then it is a class declaration. otherwise, it is identified to be a static block.
+	 * if so, when the existing previous siblings
+	 * 1. has no identifier, has no other keyword rather than static: it is a static block,
+	 * 2. has no identifier, has no other keyword rather than synchronized: it is a synchronized block,
+	 * 3. it is a class declaration.
+
+	 * why it is not one of constructor, method or field? because if there is any evidence to prove it is,
+	 * it already be identified before the left brace appended.
+	 * e.g., left parenthesis appended, comma appended, equal appended, etc.
 	 */
 	onLBraceAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.LBrace) {
@@ -249,6 +255,7 @@ const CscmfDeclaration = {
 		const statementNode = lastChildNode.parent;
 
 		let isStaticBlockStart = true;
+		let isSynchronizedBlockStart = true;
 		if ($NAF.IdentifierChildCount.get(statementNode) > 0) {
 			// has identifier
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
@@ -261,8 +268,13 @@ const CscmfDeclaration = {
 		// the last child is given one, ignore
 		for (let index = 0; index < children.length - 1; index++) {
 			const previousSiblingNode = children[index];
-			if (previousSiblingNode.tokenType === TokenType.Keyword && previousSiblingNode.tokenId !== TokenId.STATIC) {
-				isStaticBlockStart = false;
+			if (previousSiblingNode.tokenType === TokenType.Keyword) {
+				if (previousSiblingNode.tokenId !== TokenId.STATIC) {
+					isStaticBlockStart = false;
+				}
+				if (previousSiblingNode.tokenId !== TokenId.SYNCHRONIZED) {
+					isSynchronizedBlockStart = false;
+				}
 			}
 		}
 
@@ -271,6 +283,11 @@ const CscmfDeclaration = {
 			StaticBlockDeclaration.extra(statementNode);
 			// lbrace already appended, invoke onChildAppended manually
 			StaticBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
+		} else if (isSynchronizedBlockStart) {
+			statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
+			SynchronizedBlockDeclaration.extra(statementNode);
+			// lbrace already appended, invoke onChildAppended manually
+			SynchronizedBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
 		} else {
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
@@ -281,10 +298,15 @@ const CscmfDeclaration = {
 	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * check the given child node can be identified as left parenthesis or not,
-	 * if so, find identifier in previous siblings. if not exists, it is identified as method declaration.
-	 * if identifier is same as class name, it is identified as constructor declaration, otherwise as method declaration.
+	 * if so,
+	 * 1. find identifier in previous siblings.
+	 * TODO 1.1 if not exists, and the previous keyword contains only synchronized, it is identified as synchronized block
+	 * 1.2 if not exists, it is identified as method declaration.
+	 * 1.3 if identifier is same as class name, it is identified as constructor declaration,
+	 * 1.4 otherwise as method declaration.
 	 *
-	 * It should be noted specifically that constructor and method definitions can only appear within the body of a class definition.
+	 * It should be noted specifically that constructor and method definitions can only appear within the body of a class definition,
+	 * and synchronized block cannot be appeared within class body directly.
 	 * Their appearance in other positions is unreasonable.
 	 * Therefore, if it is determined that they are in other positions, they are simply considered as an incorrect method definitions,
 	 * and the rationality of the names will no longer be checked.
@@ -554,7 +576,7 @@ export const TypeDeclaration = {
 			case TokenId.TraitClassDeclaration:
 				TraitClassDeclaration.extra(node);
 				break;
-			case TokenId.Tmp$CscmfDeclaration:
+			case TokenId.Tmp$CsscmfDeclaration:
 				CscmfDeclaration.extra(node);
 				break;
 			default:

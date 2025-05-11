@@ -7,7 +7,7 @@ export const RecognizePreservation = {
 		return recognition.astRecognizer.getCurrentParent().tokenId === TokenId.ImportDeclaration;
 	}) as PreservableCheckFunc,
 	parentIsCscmfDeclaration: ((recognition: AstRecognition) => {
-		return recognition.astRecognizer.getCurrentParent().tokenId === TokenId.Tmp$CscmfDeclaration;
+		return recognition.astRecognizer.getCurrentParent().tokenId === TokenId.Tmp$CsscmfDeclaration;
 	}) as PreservableCheckFunc,
 	parentIsTypeDeclaration: ((recognition: AstRecognition) => {
 		return recognition.astRecognizer.getCurrentParent().tokenType === TokenType.TypeDeclaration;

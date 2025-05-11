@@ -5,9 +5,9 @@ import {AbstractDeclarationCreateRecognizer} from './abstract-declaration-create
 import {PreservableCheckFunc} from './abstract-preservable-recognizer';
 
 /**
- * "cscmf" means: class, static block, constructor, method and field
+ * "csscmf" means: class, static block, synchronized block, constructor, method and field
  */
-export abstract class AbstractCscmfDeclarationRecognizer extends AbstractDeclarationCreateRecognizer {
+export abstract class AbstractCsscmfDeclarationRecognizer extends AbstractDeclarationCreateRecognizer {
 	protected getPreservableCheckFunctions(): Array<PreservableCheckFunc> {
 		return [
 			RecognizePreservation.parentIsCscmfDeclaration,
@@ -16,7 +16,7 @@ export abstract class AbstractCscmfDeclarationRecognizer extends AbstractDeclara
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.Tmp$CscmfDeclaration, TokenType.TemporaryStatement];
+		return [TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {

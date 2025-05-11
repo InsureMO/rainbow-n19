@@ -228,6 +228,8 @@ export enum TokenId {
 	FieldDeclaration,
 	AnnotationDeclaration,
 	GenericTypeDeclaration,
+	SynchronizedBlockDeclaration,
+	SynchronizedBlockBody,
 	IfDeclaration,
 	IfIfDeclaration,
 	IfIfBody,
@@ -262,8 +264,8 @@ export enum TokenId {
 	// temporary tokens are only used during the AST parsing process
 	// and will be replaced with official tokens before the parsing is completed
 	// name starts with "$Tmp"
-	/** "cscmf" means: class, static block, constructor, method and field */
-	Tmp$CscmfDeclaration
+	/** "csscmf" means: class, static block, synchronized block, constructor, method and field */
+	Tmp$CsscmfDeclaration
 }
 
 interface Token {
