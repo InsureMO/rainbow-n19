@@ -1,6 +1,7 @@
 import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
-import {NodePointcuts, RecognizePreservation} from '../shared';
+import {NodePointcuts} from '../pointcuts';
+import {RecognizePreservation} from '../shared';
 import {AbstractDeclarationCreateRecognizer} from './abstract-declaration-create-recognizer';
 import {PreservableCheckFunc} from './abstract-preservable-recognizer';
 

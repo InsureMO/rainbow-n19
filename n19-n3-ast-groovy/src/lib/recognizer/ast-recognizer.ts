@@ -135,13 +135,6 @@ export class AstRecognizer {
 		return this._jdkVersion >= 17;
 	}
 
-	/**
-	 * preview in 12 and 13, formal release in 14
-	 */
-	get isYieldKeywordSupported(): boolean {
-		return this._jdkVersion >= 12;
-	}
-
 	// recognition
 	getCurrentAncestors(): Array<GroovyAstNode> {
 		return this._currentAncestors;

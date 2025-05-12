@@ -22,6 +22,7 @@ export * from './kw-permits-recognizer';
 
 export * from './kw-native-recognizer';
 export * from './kw-void-recognizer';
+
 export * from './kw-synchronized-recognizer';
 export * from './kw-default-recognizer';
 
@@ -29,3 +30,6 @@ export * from './kw-transient-recognizer';
 export * from './kw-volatile-recognizer';
 
 export * from './kw-def-recognizer';
+
+export * from './kw-switch-recognizer';
+export * from './kw-case-recognizer';

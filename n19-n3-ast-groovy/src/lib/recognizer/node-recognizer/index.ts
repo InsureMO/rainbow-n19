@@ -2,6 +2,9 @@ import * as KeywordRecognizers from './keyword';
 import * as OperatorRecognizers from './operator';
 import * as StatementRecognizers from './statement';
 
+export * from './shared';
+export * from './pointcuts';
+
 // abstract
 export * from './abstract';
 // keyword

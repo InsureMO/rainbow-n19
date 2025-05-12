@@ -3,21 +3,16 @@ import {TokenId, TokenType} from '../../../tokens';
 import {AbstractDeclarationCreateRecognizer} from '../abstract';
 import {NodePointcuts} from '../pointcuts';
 
-/**
- * multiple cases:
- * - not next to dot, start of package declaration
- * - next to dot, property name, object is before dot
- */
-export class KwImportRecognizer extends AbstractDeclarationCreateRecognizer {
+export class KwSwitchRecognizer extends AbstractDeclarationCreateRecognizer {
 	acceptTokenId(): TokenId {
-		return TokenId.IMPORT;
+		return TokenId.SWITCH;
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.ImportDeclaration, TokenType.ImportDeclaration];
+		return [TokenId.SwitchDeclaration, TokenType.LogicDeclaration];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {
-		NodePointcuts.ImportDeclaration.extra(node);
+		NodePointcuts.SwitchDeclaration.extra(node);
 	}
 }

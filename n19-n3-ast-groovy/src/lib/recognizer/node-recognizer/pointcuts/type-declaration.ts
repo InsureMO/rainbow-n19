@@ -1,42 +1,41 @@
-import {
-	$NAF,
-	ChildAcceptableCheckFunc,
-	GroovyAstNode,
-	OnChildAppendedFunc,
-	OnChildClosedFunc,
-	OnNodeClosedFunc
-} from '../../../../node';
-import {TokenId, TokenType} from '../../../../tokens';
-import {AstRecognizer} from '../../../ast-recognizer';
+import {$NAF, ChildAcceptableCheckFunc, GroovyAstNode, OnNodeClosedFunc} from '../../../node';
+import {TokenId, TokenType} from '../../../tokens';
+import {AstRecognizer} from '../../ast-recognizer';
 import {ConstructorDeclaration} from './constructor-declaration';
 import {FieldDeclaration} from './field-declaration';
 import {LogicBlock} from './logic-block';
 import {MethodDeclaration} from './method-declaration';
-import {OneOfOnChildAppendedFunc, SharedNodePointcut} from './shared';
+import {OneOfOnChildAppendedFunc, SharedNodePointcuts} from './shared';
 import {StaticBlockDeclaration} from './static-block-declaration';
 import {SynchronizedBlockDeclaration} from './synchronized-block-declaration';
 
-// noinspection JSUnusedGlobalSymbols
-const Utils = {
-	isAccessModifier: (tokenId: TokenId): boolean => {
+class TypeDeclarationUtils {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
+	}
+
+	// noinspection JSUnusedGlobalSymbols
+	static readonly isAccessModifier = (tokenId: TokenId): boolean => {
 		return [TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE].includes(tokenId);
-	},
-	isClassKeyword: (tokenId: TokenId): boolean => {
+	};
+	// noinspection JSUnusedGlobalSymbols
+	static readonly isClassKeyword = (tokenId: TokenId): boolean => {
 		return [
 			TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
 			TokenId.CLASS, TokenId.INTERFACE, TokenId.AT_INTERFACE, TokenId.ENUM, TokenId.RECORD, TokenId.TRAIT
 		].includes(tokenId);
-	},
-	isMethodKeyword: (tokenId: TokenId): boolean => {
-		return [
-			TokenId.NATIVE, TokenId.DEFAULT, TokenId.VOID
-		].includes(tokenId);
-	},
-	isFieldKeyword: (tokenId: TokenId): boolean => {
+	};
+	static readonly isMethodKeyword = (tokenId: TokenId): boolean => {
+		return [TokenId.NATIVE, TokenId.DEFAULT, TokenId.VOID].includes(tokenId);
+	};
+	static readonly isFieldKeyword = (tokenId: TokenId): boolean => {
 		return [TokenId.TRANSIENT, TokenId.VOLATILE].includes(tokenId);
-	},
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	standardTypeChildAcceptableCheck: ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+	};
+	// standard behaviors of type declaration, one of 6.
+	/** node is one of type declaration */
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static readonly standardTypeChildAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		// TODO need the 6 type declaration keywords or not?
 		return [
 			// class, constructor, method, field
@@ -70,24 +69,23 @@ const Utils = {
 			// of course class body can be child of any type declaration
 			TokenId.ClassBody
 		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc,
-	standardTypeOnLBraceAppended: LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.ClassBody),
-	standardTypeOnChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
-		SharedNodePointcut.onChildAppendedOfFirstOrNone(lastChildNode, astRecognizer, [
-			Utils.standardTypeOnLBraceAppended,
-			SharedNodePointcut.closeCurrentParentOnSemicolonAppendedAndReturn
-		]);
-	}) as OnChildAppendedFunc,
-	onClassBodyClosed: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
-		if (lastChildNode.tokenId === TokenId.ClassBody) {
-			astRecognizer.closeCurrentParent();
-		}
-	}) as OnChildClosedFunc
-} as const;
+	}) as ChildAcceptableCheckFunc;
+	static readonly standardTypeOnLBraceAppended = LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.ClassBody);
+	static readonly standardTypeOnChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
+		TypeDeclarationUtils.standardTypeOnLBraceAppended,
+		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+	);
+	static readonly onClassBodyClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.ClassBody);
+}
 
-const CsscmfDeclaration = {
+class CsscmfDeclaration {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
+	}
+
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	childAcceptableCheck: ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		return mightBeChildNode.tokenType === TokenType.PrimitiveType /* could be 1. return type of method, 2. type of field */
 			|| [
 				// class, constructor, method, field
@@ -136,13 +134,13 @@ const CsscmfDeclaration = {
 				TokenId.Semicolon,
 				TokenId.SingleLineComment, TokenId.MultipleLinesComment
 			].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc,
+	}) as ChildAcceptableCheckFunc;
 	/**
 	 * check the given child node can be identified as type declaration or not,
 	 * replace token nature when it is.
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	onClassKeywordAppended: ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static readonly onClassKeywordAppended = ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		const statementNode = lastChildNode.parent;
 		// need to check which keyword
 		switch (lastChildNode.tokenId) {
@@ -185,14 +183,14 @@ const CsscmfDeclaration = {
 		}
 		TypeDeclaration.extra(statementNode);
 		return true;
-	}) as OneOfOnChildAppendedFunc,
+	}) as OneOfOnChildAppendedFunc;
 	/**
 	 * check the given child node can be identified as method declaration or not,
 	 * replace token nature when it is.
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	onMethodKeywordAppended: ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		if (!Utils.isMethodKeyword(lastChildNode.tokenId)) {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static readonly onMethodKeywordAppended = ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+		if (!TypeDeclarationUtils.isMethodKeyword(lastChildNode.tokenId)) {
 			return false;
 		}
 
@@ -200,14 +198,14 @@ const CsscmfDeclaration = {
 		statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 		MethodDeclaration.extra(statementNode);
 		return true;
-	}) as OneOfOnChildAppendedFunc,
+	}) as OneOfOnChildAppendedFunc;
 	/**
 	 * check the given child node can be identified as field declaration or not,
 	 * replace token nature when it is.
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	onFieldKeywordAppended: ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		if (!Utils.isFieldKeyword(lastChildNode.tokenId)) {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static readonly onFieldKeywordAppended = ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+		if (!TypeDeclarationUtils.isFieldKeyword(lastChildNode.tokenId)) {
 			return false;
 		}
 
@@ -215,12 +213,12 @@ const CsscmfDeclaration = {
 		statementNode.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
 		FieldDeclaration.extra(statementNode);
 		return true;
-	}) as OneOfOnChildAppendedFunc,
+	}) as OneOfOnChildAppendedFunc;
 	/**
 	 * check the given child node can be identified as identifier or not,
 	 * increase the identifier count if it is
 	 */
-	onIdentifierAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+	static onIdentifierAppended = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.Identifier) {
 			return false;
 		}
@@ -235,7 +233,7 @@ const CsscmfDeclaration = {
 			astRecognizer.chopOffFromOldParentAndMoveToCurrentParent([lastChildNode]);
 		}
 		return true;
-	}) as OneOfOnChildAppendedFunc,
+	}) as OneOfOnChildAppendedFunc;
 	/**
 	 * check the given child node can be identified as left brace or not,
 	 * if so, when the existing previous siblings
@@ -247,7 +245,7 @@ const CsscmfDeclaration = {
 	 * it already be identified before the left brace appended.
 	 * e.g., left parenthesis appended, comma appended, equal appended, etc.
 	 */
-	onLBraceAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+	static readonly onLBraceAppended = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.LBrace) {
 			return false;
 		}
@@ -260,7 +258,7 @@ const CsscmfDeclaration = {
 			// has identifier
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
-			Utils.standardTypeOnLBraceAppended(lastChildNode, astRecognizer);
+			ClassDeclaration.onChildAppended(lastChildNode, astRecognizer);
 			return true;
 		}
 
@@ -291,16 +289,16 @@ const CsscmfDeclaration = {
 		} else {
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
-			Utils.standardTypeOnLBraceAppended(lastChildNode, astRecognizer);
+			ClassDeclaration.onChildAppended(lastChildNode, astRecognizer);
 		}
 
 		return true;
-	}) as OneOfOnChildAppendedFunc,
+	}) as OneOfOnChildAppendedFunc;
 	/**
 	 * check the given child node can be identified as left parenthesis or not,
 	 * if so,
 	 * 1. find identifier in previous siblings.
-	 * TODO 1.1 if not exists, and the previous keyword contains only synchronized, it is identified as synchronized block
+	 * 1.1 if not exists, and the previous keyword contains only synchronized, it is identified as synchronized block
 	 * 1.2 if not exists, it is identified as method declaration.
 	 * 1.3 if identifier is same as class name, it is identified as constructor declaration,
 	 * 1.4 otherwise as method declaration.
@@ -311,7 +309,7 @@ const CsscmfDeclaration = {
 	 * Therefore, if it is determined that they are in other positions, they are simply considered as an incorrect method definitions,
 	 * and the rationality of the names will no longer be checked.
 	 */
-	onLParenAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+	static readonly onLParenAppended = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.LParen) {
 			return false;
 		}
@@ -320,9 +318,28 @@ const CsscmfDeclaration = {
 		const identifierCount = $NAF.IdentifierChildCount.get(statementNode);
 		if (identifierCount === 0) {
 			// no identifier exists, identified as method declaration
-			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-			MethodDeclaration.extra(statementNode);
-			MethodDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
+			let isSynchronizedBlockStart = true;
+			const children = statementNode.children;
+			// the last child is given one, ignore
+			for (let index = 0; index < children.length - 1; index++) {
+				const previousSiblingNode = children[index];
+				if (previousSiblingNode.tokenType === TokenType.Keyword) {
+					if (previousSiblingNode.tokenId !== TokenId.SYNCHRONIZED) {
+						isSynchronizedBlockStart = false;
+						break;
+					}
+				}
+			}
+			if (isSynchronizedBlockStart) {
+				statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
+				SynchronizedBlockDeclaration.extra(statementNode);
+				// lbrace already appended, invoke onChildAppended manually
+				SynchronizedBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
+			} else {
+				statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
+				MethodDeclaration.extra(statementNode);
+				MethodDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
+			}
 			return true;
 		}
 
@@ -352,14 +369,14 @@ const CsscmfDeclaration = {
 		}
 
 		return true;
-	}) as OneOfOnChildAppendedFunc,
+	}) as OneOfOnChildAppendedFunc;
 	/**
 	 * check the given child node can be identified as left parenthesis or not,
 	 * if so, find identifier in previous siblings. if not exists, it is identified as method declaration.
 	 * if identifier is same as class name, it is identified as constructor declaration, otherwise as method declaration.
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	onEqualAppended: ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static readonly onEqualAppended = ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.Equal) {
 			return false;
 		}
@@ -368,14 +385,14 @@ const CsscmfDeclaration = {
 		statementNode.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
 		FieldDeclaration.extra(statementNode);
 		return true;
-	}) as OneOfOnChildAppendedFunc,
+	}) as OneOfOnChildAppendedFunc;
 	/**
 	 * comma appended, and currently the exact type of declaration is still not determined.
 	 * check the previous sibling nodes, if there is keyword def, or primitive types,
 	 * then it will be identified as field.
 	 * otherwise simply close current parent, and move the comma node to my parent
 	 */
-	onCommaAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+	static readonly onCommaAppended = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.Comma) {
 			return false;
 		}
@@ -392,24 +409,22 @@ const CsscmfDeclaration = {
 			astRecognizer.closeCurrentParent();
 		}
 		return true;
-	}) as OneOfOnChildAppendedFunc,
+	}) as OneOfOnChildAppendedFunc;
 	/**
 	 * No modifier can determine the exact type of statement.
 	 * Therefore, it is necessary to make judgments based on different scenarios.
 	 */
-	onChildAppended: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
-		SharedNodePointcut.onChildAppendedOfFirstOrNone(lastChildNode, astRecognizer, [
-			CsscmfDeclaration.onClassKeywordAppended,
-			CsscmfDeclaration.onMethodKeywordAppended,
-			CsscmfDeclaration.onFieldKeywordAppended,
-			CsscmfDeclaration.onIdentifierAppended,
-			CsscmfDeclaration.onLBraceAppended,
-			CsscmfDeclaration.onLParenAppended,
-			CsscmfDeclaration.onEqualAppended,
-			CsscmfDeclaration.onCommaAppended,
-			SharedNodePointcut.closeCurrentParentOnSemicolonAppendedAndReturn
-		]);
-	}) as OnChildAppendedFunc,
+	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
+		CsscmfDeclaration.onClassKeywordAppended,
+		CsscmfDeclaration.onMethodKeywordAppended,
+		CsscmfDeclaration.onFieldKeywordAppended,
+		CsscmfDeclaration.onIdentifierAppended,
+		CsscmfDeclaration.onLBraceAppended,
+		CsscmfDeclaration.onLParenAppended,
+		CsscmfDeclaration.onEqualAppended,
+		CsscmfDeclaration.onCommaAppended,
+		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+	);
 	/**
 	 * The node is not recognized as any of type, static block, constructor, method, or field declaration.
 	 * This means that no child nodes that can be used for identification have appeared.
@@ -425,7 +440,7 @@ const CsscmfDeclaration = {
 	 * 4. has generic type declaration -> cannot be field,
 	 * 5. parent is not class body -> cannot be method or field.
 	 */
-	onNodeClosed: ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+	static readonly onNodeClosed = ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const possibilities = {class: true, method: true, field: true};
 		node.children.forEach(node => {
 			const {tokenId, tokenType} = node;
@@ -470,93 +485,134 @@ const CsscmfDeclaration = {
 			}
 		}
 
-		SharedNodePointcut.moveTrailingMLCommentsToParentOnNodeClosed(node, astRecognizer);
-	}) as OnNodeClosedFunc,
-	extra: (node: GroovyAstNode): void => {
+		SharedNodePointcuts.moveTrailingMLCommentsToParentOnNodeClosed(node, astRecognizer);
+	}) as OnNodeClosedFunc;
+	static readonly extra = (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, CsscmfDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, CsscmfDeclaration.onChildAppended);
 		$NAF.OnChildClosed.clear(node);
 		$NAF.OnNodeClosed.set(node, CsscmfDeclaration.onNodeClosed);
-	}
-} as const;
+	};
+}
 
-const ClassDeclaration = {
-	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
-	onChildAppended: Utils.standardTypeOnChildAppended,
-	onChildClosed: Utils.onClassBodyClosed,
-	extra: (node: GroovyAstNode): void => {
+class ClassDeclaration {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
+	}
+
+	static readonly childAcceptableCheck = TypeDeclarationUtils.standardTypeChildAcceptableCheck;
+	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
+	static readonly extra = (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, ClassDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, ClassDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, ClassDeclaration.onChildClosed);
 		$NAF.OnNodeClosed.clear(node);
+	};
+}
+
+class InterfaceDeclaration {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
 	}
-} as const;
-const InterfaceDeclaration = {
-	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
-	onChildAppended: Utils.standardTypeOnChildAppended,
-	onChildClosed: Utils.onClassBodyClosed,
-	extra: (node: GroovyAstNode): void => {
+
+	static readonly childAcceptableCheck = TypeDeclarationUtils.standardTypeChildAcceptableCheck;
+	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
+	static readonly extra = (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, InterfaceDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, InterfaceDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, InterfaceDeclaration.onChildClosed);
 		$NAF.OnNodeClosed.clear(node);
+	};
+}
+
+class AtInterfaceClassDeclaration {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
 	}
-} as const;
-const AtInterfaceClassDeclaration = {
-	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
-	onChildAppended: Utils.standardTypeOnChildAppended,
-	onChildClosed: Utils.onClassBodyClosed,
-	extra: (node: GroovyAstNode): void => {
+
+	static readonly childAcceptableCheck = TypeDeclarationUtils.standardTypeChildAcceptableCheck;
+	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
+	static readonly extra = (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, AtInterfaceClassDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, AtInterfaceClassDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, AtInterfaceClassDeclaration.onChildClosed);
 		$NAF.OnNodeClosed.clear(node);
+	};
+}
+
+class EnumClassDeclaration {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
 	}
-} as const;
-const EnumClassDeclaration = {
-	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
-	onChildAppended: Utils.standardTypeOnChildAppended,
-	onChildClosed: Utils.onClassBodyClosed,
-	extra: (node: GroovyAstNode): void => {
+
+	static readonly childAcceptableCheck = TypeDeclarationUtils.standardTypeChildAcceptableCheck;
+	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
+	static readonly extra = (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, EnumClassDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, EnumClassDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, EnumClassDeclaration.onChildClosed);
 		$NAF.OnNodeClosed.clear(node);
+	};
+}
+
+class RecordClassDeclaration {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
 	}
-} as const;
-const RecordClassDeclaration = {
+
 	// TODO record has formal parameters part, enclose with parentheses
-	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
-	onChildAppended: Utils.standardTypeOnChildAppended,
-	onChildClosed: Utils.onClassBodyClosed,
-	extra: (node: GroovyAstNode): void => {
+	static readonly childAcceptableCheck = TypeDeclarationUtils.standardTypeChildAcceptableCheck;
+	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
+	static readonly extra = (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, RecordClassDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, RecordClassDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, RecordClassDeclaration.onChildClosed);
 		$NAF.OnNodeClosed.clear(node);
+	};
+}
+
+class TraitClassDeclaration {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
 	}
-} as const;
-const TraitClassDeclaration = {
-	childAcceptableCheck: Utils.standardTypeChildAcceptableCheck,
-	onChildAppended: Utils.standardTypeOnChildAppended,
-	onChildClosed: Utils.onClassBodyClosed,
-	extra: (node: GroovyAstNode): void => {
+
+	static readonly childAcceptableCheck = TypeDeclarationUtils.standardTypeChildAcceptableCheck;
+	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
+	static readonly extra = (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, TraitClassDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, TraitClassDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, TraitClassDeclaration.onChildClosed);
 		$NAF.OnNodeClosed.clear(node);
+	};
+}
+
+export class TypeDeclaration {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
 	}
-} as const;
-export const TypeDeclaration = {
-	Utils,
-	Csscmf: CsscmfDeclaration,
-	Class: ClassDeclaration,
-	Interface: InterfaceDeclaration,
-	AtInterface: AtInterfaceClassDeclaration,
-	Enum: EnumClassDeclaration,
-	Record: RecordClassDeclaration,
-	Trait: TraitClassDeclaration,
-	extra: (node: GroovyAstNode): void => {
+
+	static readonly Utils = TypeDeclarationUtils;
+	static readonly Csscmf = CsscmfDeclaration;
+	static readonly Class = ClassDeclaration;
+	static readonly Interface = InterfaceDeclaration;
+	static readonly AtInterface = AtInterfaceClassDeclaration;
+	static readonly Enum = EnumClassDeclaration;
+	static readonly Record = RecordClassDeclaration;
+	static readonly Trait = TraitClassDeclaration;
+	static readonly extra = (node: GroovyAstNode): void => {
 		switch (node.tokenId) {
 			case TokenId.ClassDeclaration:
 				ClassDeclaration.extra(node);
@@ -583,5 +639,5 @@ export const TypeDeclaration = {
 				// do nothing
 				break;
 		}
-	}
-} as const;
+	};
+}

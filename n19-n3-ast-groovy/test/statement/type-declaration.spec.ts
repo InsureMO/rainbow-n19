@@ -147,4 +147,67 @@ describe('Type declaration test', () => {
 			]
 		]);
 	});
+	test('Class declaration #6', async () => {
+		const text = 'public abstract class AbstractA {\n\tstatic /* abc */ {\n\t\tsynchronized /* abc */ {\n\t\t}\n\t}\n}'
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 89, 0, text, [
+				[TokenId.ClassDeclaration, 0, 89, 1, text, [
+					[TokenId.PUBLIC, 0, 6, 1, 'public'],
+					[TokenId.Whitespaces, 6, 7, 1, ' '],
+					[TokenId.ABSTRACT, 7, 15, 1, 'abstract'],
+					[TokenId.Whitespaces, 15, 16, 1, ' '],
+					[TokenId.CLASS, 16, 21, 1, 'class'],
+					[TokenId.Whitespaces, 21, 22, 1, ' '],
+					[TokenId.Identifier, 22, 31, 1, 'AbstractA'],
+					[TokenId.Whitespaces, 31, 32, 1, ' '],
+					[TokenId.ClassBody, 32, 89, 1, '{\n\tstatic /* abc */ {\n\t\tsynchronized /* abc */ {\n\t\t}\n\t}\n}', [
+						[TokenId.LBrace, 32, 33, 1, '{'],
+						[TokenId.NewLine, 33, 34, 1, '\n'],
+						[TokenId.Tabs, 34, 35, 2, '\t'],
+						[TokenId.StaticBlockDeclaration, 35, 87, 2, 'static /* abc */ {\n\t\tsynchronized /* abc */ {\n\t\t}\n\t}', [
+							[TokenId.STATIC, 35, 41, 2, 'static'],
+							[TokenId.Whitespaces, 41, 42, 2, ' '],
+							[TokenId.MultipleLinesComment, 42, 51, 2, '/* abc */', [
+								[TokenId.MultipleLinesCommentStartMark, 42, 44, 2, '/*'],
+								[TokenId.Whitespaces, 44, 45, 2, ' '],
+								[TokenId.Chars, 45, 48, 2, 'abc'],
+								[TokenId.Whitespaces, 48, 49, 2, ' '],
+								[TokenId.MultipleLinesCommentEndMark, 49, 51, 2, '*/']
+							]],
+							[TokenId.Whitespaces, 51, 52, 2, ' '],
+							[TokenId.StaticBlockBody, 52, 87, 2, '{\n\t\tsynchronized /* abc */ {\n\t\t}\n\t}', [
+								[TokenId.LBrace, 52, 53, 2, '{'],
+								[TokenId.NewLine, 53, 54, 2, '\n'],
+								[TokenId.Tabs, 54, 56, 3, '\t\t'],
+								[TokenId.SynchronizedBlockDeclaration, 56, 84, 3, 'synchronized /* abc */ {\n\t\t}', [
+									[TokenId.SYNCHRONIZED, 56, 68, 3, 'synchronized'],
+									[TokenId.Whitespaces, 68, 69, 3, ' '],
+									[TokenId.MultipleLinesComment, 69, 78, 3, '/* abc */', [
+										[TokenId.MultipleLinesCommentStartMark, 69, 71, 3, '/*'],
+										[TokenId.Whitespaces, 71, 72, 3, ' '],
+										[TokenId.Chars, 72, 75, 3, 'abc'],
+										[TokenId.Whitespaces, 75, 76, 3, ' '],
+										[TokenId.MultipleLinesCommentEndMark, 76, 78, 3, '*/']
+									]],
+									[TokenId.Whitespaces, 78, 79, 3, ' '],
+									[TokenId.SynchronizedBlockBody, 79, 84, 3, '{\n\t\t}', [
+										[TokenId.LBrace, 79, 80, 3, '{'],
+										[TokenId.NewLine, 80, 81, 3, '\n'],
+										[TokenId.Tabs, 81, 83, 4, '\t\t'],
+										[TokenId.RBrace, 83, 84, 4, '}']
+									]]
+								]],
+								[TokenId.NewLine, 84, 85, 4, '\n'],
+								[TokenId.Tabs, 85, 86, 5, '\t'],
+								[TokenId.RBrace, 86, 87, 5, '}']
+							]]
+						]],
+						[TokenId.NewLine, 87, 88, 5, '\n'],
+						[TokenId.RBrace, 88, 89, 6, '}']
+					]]
+				]]
+			]
+		]);
+	});
 });

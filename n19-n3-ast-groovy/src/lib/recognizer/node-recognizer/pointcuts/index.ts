@@ -4,17 +4,20 @@ import {ImportDeclaration} from './import-declaration';
 import {LogicBlock} from './logic-block';
 import {MethodDeclaration} from './method-declaration';
 import {PackageDeclaration} from './package-declaration';
-import {SharedNodePointcut} from './shared';
+import {SharedNodePointcuts} from './shared';
 import {StaticBlockDeclaration} from './static-block-declaration';
+import {SwitchDeclaration} from './switch-declaration';
 import {SynchronizedBlockDeclaration} from './synchronized-block-declaration';
 import {TypeDeclaration} from './type-declaration';
 
 export const NodePointcuts = {
-	Shared: SharedNodePointcut,
+	Shared: SharedNodePointcuts,
 	ImportDeclaration,
 	PackageDeclaration,
-	TypeDeclaration, StaticBlockDeclaration,
+	TypeDeclaration,
 	ConstructorDeclaration, MethodDeclaration, FieldDeclaration,
-	SynchronizedBlockDeclaration,
+	StaticBlockDeclaration, SynchronizedBlockDeclaration,
+
+	SwitchDeclaration,
 	LogicBlock
 } as const;

@@ -1,7 +1,7 @@
-import {$NAF, GroovyAstNode} from '../../../../node';
-import {TokenId, TokenType} from '../../../../tokens';
-import {AstRecognizer} from '../../../ast-recognizer';
-import {OneOfOnChildAppendedFunc, SharedNodePointcut} from './shared';
+import {$NAF, GroovyAstNode} from '../../../node';
+import {TokenId, TokenType} from '../../../tokens';
+import {AstRecognizer} from '../../ast-recognizer';
+import {OneOfOnChildAppendedFunc, SharedNodePointcuts} from './shared';
 
 export interface LogicBlockCreationOptions {
 	lbraceNode: GroovyAstNode;
@@ -11,16 +11,21 @@ export interface LogicBlockCreationOptions {
 	astRecognizer: AstRecognizer;
 }
 
-export const LogicBlock = {
-	onChildAppended: SharedNodePointcut.closeCurrentParentOnRBraceAppended,
-	extra: (node: GroovyAstNode): void => {
+export class LogicBlock {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
+	}
+
+	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnRBraceAppended;
+	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO logic block node pointcuts
 		$NAF.ChildAcceptableCheck.clear(node);
 		$NAF.OnChildAppended.set(node, LogicBlock.onChildAppended);
 		$NAF.OnChildClosed.clear(node);
 		$NAF.OnNodeClosed.clear(node);
-	},
-	create: (options: LogicBlockCreationOptions): GroovyAstNode => {
+	};
+	static readonly create = (options: LogicBlockCreationOptions): GroovyAstNode => {
 		const {lbraceNode, bodyTokenId, bodyNodePointcuts, astRecognizer} = options;
 		const declarationNode = lbraceNode.parent;
 		declarationNode.chopOffTrailingNodes([lbraceNode]);
@@ -38,8 +43,8 @@ export const LogicBlock = {
 		logicBlockNode.asParentOf(lbraceNode);
 		astRecognizer.appendAsCurrentParent(logicBlockNode);
 		return logicBlockNode;
-	},
-	createOnLBraceAppendedFuncForDeclaration: (tokenId: TokenId, bodyNodePointcuts?: LogicBlockCreationOptions['bodyNodePointcuts']): OneOfOnChildAppendedFunc => {
+	};
+	static readonly createOnLBraceAppendedFuncForDeclaration = (tokenId: TokenId, bodyNodePointcuts?: LogicBlockCreationOptions['bodyNodePointcuts']): OneOfOnChildAppendedFunc => {
 		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			if (lastChildNode.tokenId !== TokenId.LBrace) {
 				return false;
@@ -52,5 +57,5 @@ export const LogicBlock = {
 			});
 			return true;
 		};
-	}
-} as const;
+	};
+}

@@ -1,7 +1,7 @@
 import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AbstractCsscmfDeclarationRecognizer} from '../abstract';
-import {NodePointcuts} from '../shared';
+import {NodePointcuts} from '../pointcuts';
 
 export class KwInterfaceRecognizer extends AbstractCsscmfDeclarationRecognizer {
 	acceptTokenId(): TokenId {
