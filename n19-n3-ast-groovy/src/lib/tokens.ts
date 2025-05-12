@@ -283,6 +283,7 @@ export type TokenKeys = ExcludeTemporaryTokenId<TokenIdKeys>;
 export type TokenRecord = { [key in TokenKeys]: Token }
 
 // key is value of enumeration, according to typescript standard
+// noinspection JSUnusedGlobalSymbols
 export const Tokens: Readonly<TokenRecord> = Object.keys(TokenId).reduce((ret, key) => {
 	if ('0123456789'.includes(`${key}`[0]) || key.startsWith('Tmp$')) {
 		// keys are indexes and names
@@ -299,13 +300,28 @@ export const Tokens: Readonly<TokenRecord> = Object.keys(TokenId).reduce((ret, k
 export enum TokenType {
 	CompilationUnit,
 	WhitespaceOrTabs, NewLine,
+	/**
+	 * brace, brack, paren, comma, semicolon, dot
+	 */
 	Separator,
-	Keyword, Mark, Operator, PrimitiveType, Symbol,
+	/** java and groovy keywords */
+	Keyword,
+	/**
+	 * sl start, ml start and end, script command start, import all
+	 */
+	Mark,
+	/** java and groovy operators */
+	Operator,
+	/**
+	 * 8 types: int, long, short, float, double, boolean, char, byte
+	 */
+	PrimitiveType,
+	/**
+	 * java style identifier
+	 */
 	Identifier,
 	// literal
-	BooleanLiteral,
-	NumberLiteral,
-	StringLiteral,
+	BooleanLiteral, NumberLiteral, StringLiteral,
 	// chars only
 	Chars, UndeterminedChars,
 	// statement
@@ -314,8 +330,7 @@ export enum TokenType {
 	/**
 	 * class, interface, @interface, enum, record, trait
 	 */
-	TypeDeclaration,
-	ConstructorDeclaration, MethodDeclaration, FieldDeclaration,
+	TypeDeclaration, ConstructorDeclaration, MethodDeclaration, FieldDeclaration,
 	/**
 	 * static block, synchronized block,
 	 * switch, switch-case, switch-default,
