@@ -14,7 +14,7 @@ export class SynchronizedBlockDeclaration {
 	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		return [
 			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-			TokenId.LBrace,
+			TokenId.LBrace, TokenId.LParen,
 			// end
 			TokenId.Semicolon,
 			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
