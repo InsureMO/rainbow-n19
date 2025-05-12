@@ -9,7 +9,7 @@ export class ConstructorDeclaration {
 		// avoid extend
 	}
 
-	static readonly onLBraceAppended = LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.ConstructorBody);
+	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.ConstructorBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		ConstructorDeclaration.onLBraceAppended,
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended

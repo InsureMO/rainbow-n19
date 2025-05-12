@@ -247,6 +247,7 @@ export enum TokenId {
 	WhileBody,
 	DoWhileDeclaration,
 	DoWhileBody,
+	DoWhileCondition,
 	ForDeclaration,
 	ForBody,
 	TryCatchDeclaration,
@@ -260,6 +261,7 @@ export enum TokenId {
 	LambdaDeclaration,
 	LambdaBody,
 	CodeBlock,
+	ParenBlock,
 	ArrayInitializer,
 	// temporary tokens are only used during the AST parsing process
 	// and will be replaced with official tokens before the parsing is completed
@@ -309,9 +311,28 @@ export enum TokenType {
 	// statement
 	ScriptCommand, Comments,
 	PackageDeclaration, ImportDeclaration,
-	TypeDeclaration, ConstructorDeclaration, MethodDeclaration, FieldDeclaration,
+	/**
+	 * class, interface, @interface, enum, record, trait
+	 */
+	TypeDeclaration,
+	ConstructorDeclaration, MethodDeclaration, FieldDeclaration,
+	/**
+	 * static block, synchronized block,
+	 * switch, switch-case, switch-default,
+	 * while, do-while while ("while ()"),
+	 * if, for
+	 */
 	LogicDeclaration,
-	LogicBlockDeclaration, LogicBlock,
+	/**
+	 * class body, constructor body, method body,
+	 * static block body, synchronized block body,
+	 * switch body, switch-case body ("{}"), switch-default body ("{}"),
+	 * do-while body, do-while condition ("() of while ()")
+	 */
+	LogicBlock,
 	// temporary
+	/**
+	 * csscmf
+	 */
 	TemporaryStatement
 }

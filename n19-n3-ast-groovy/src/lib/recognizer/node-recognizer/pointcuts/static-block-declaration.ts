@@ -22,7 +22,7 @@ export class StaticBlockDeclaration {
 			TokenId.StaticBlockBody
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc;
-	static readonly onLBraceAppended = LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.StaticBlockBody);
+	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.StaticBlockBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		StaticBlockDeclaration.onLBraceAppended,
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended

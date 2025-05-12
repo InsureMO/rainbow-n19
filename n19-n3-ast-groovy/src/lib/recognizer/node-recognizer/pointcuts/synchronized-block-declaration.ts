@@ -22,7 +22,7 @@ export class SynchronizedBlockDeclaration {
 			TokenId.SynchronizedBlockBody
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc;
-	static readonly onLBraceAppended = LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.SynchronizedBlockBody);
+	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SynchronizedBlockBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		SynchronizedBlockDeclaration.onLBraceAppended,
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended

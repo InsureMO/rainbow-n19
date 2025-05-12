@@ -9,7 +9,7 @@ class SwitchCaseDeclaration {
 		// avoid extend
 	}
 
-	static readonly onLBraceAppended = LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchCaseBody);
+	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchCaseBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		SwitchCaseDeclaration.onLBraceAppended
 	);
@@ -29,7 +29,7 @@ class SwitchDefaultDeclaration {
 		// avoid extend
 	}
 
-	static readonly onLBraceAppended = LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchDefaultBody);
+	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchDefaultBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		SwitchDefaultDeclaration.onLBraceAppended
 	);
@@ -52,7 +52,7 @@ export class SwitchDeclaration {
 	static readonly Case = SwitchCaseDeclaration;
 	static readonly Default = SwitchDefaultDeclaration;
 
-	static readonly onLBraceAppended = LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchBody);
+	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		SwitchDeclaration.onLBraceAppended
 	);

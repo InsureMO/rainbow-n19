@@ -9,7 +9,7 @@ export class MethodDeclaration {
 		// avoid extend
 	}
 
-	static readonly onLBraceAppended = LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.MethodBody);
+	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.MethodBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		MethodDeclaration.onLBraceAppended,
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended

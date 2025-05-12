@@ -1,9 +1,17 @@
 import {GroovyAstNode, OnNodeClosedFunc} from '../../../node';
-import {TokenId} from '../../../tokens';
+import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
 
 export type OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
 export type OneOfOnChildClosedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
+
+export interface BlockCreationByNodeOptions {
+	node: GroovyAstNode;
+	blockTokenId: TokenId;
+	blockTokenType: TokenType;
+	blockNodePointcuts: (node: GroovyAstNode) => void;
+	astRecognizer: AstRecognizer;
+}
 
 export class SharedNodePointcuts {
 	// noinspection JSUnusedLocalSymbols
@@ -36,6 +44,11 @@ export class SharedNodePointcuts {
 	 */
 	static readonly closeCurrentParentOnRBraceAppended = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.RBrace);
 	/**
+	 * close current parent when a right parenthesis node appended,
+	 * the appended node is the last child node of current parent.
+	 */
+	static readonly closeCurrentParentOnRParenAppended = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.RParen);
+	/**
 	 * create an on child appended function by given functions.
 	 */
 	static readonly onChildAppendedOfFirstOrNone = (...funcs: Array<OneOfOnChildAppendedFunc>): OneOfOnChildAppendedFunc => {
@@ -48,6 +61,28 @@ export class SharedNodePointcuts {
 			return false;
 		};
 	};
+	/**
+	 * create a block node by given node, the given node will be the first child node of the created block node.
+	 * and the original parent node will be the parent of the created block node.
+	 */
+	static readonly createBlockByNode = (options: BlockCreationByNodeOptions): GroovyAstNode => {
+		const {node, blockTokenId, blockTokenType, blockNodePointcuts, astRecognizer} = options;
+		const parentNode = node.parent;
+		parentNode.chopOffTrailingNodes([node]);
+		const blockNode = new GroovyAstNode({
+			tokenId: blockTokenId, tokenType: blockTokenType,
+			text: '',
+			startOffset: node.startOffset,
+			startLine: node.startLine, startColumn: node.startColumn
+		});
+		blockNodePointcuts(blockNode);
+		blockNode.asParentOf(node);
+		astRecognizer.appendAsCurrentParent(blockNode);
+		return blockNode;
+	};
+	/**
+	 * create an on child closed function by given functions.
+	 */
 	static readonly onChildClosedOfFirstOrNone = (...funcs: Array<OneOfOnChildClosedFunc>): OneOfOnChildClosedFunc => {
 		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			for (let index = 0, count = funcs.length; index < count; index++) {

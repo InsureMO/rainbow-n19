@@ -70,7 +70,7 @@ class TypeDeclarationUtils {
 			TokenId.ClassBody
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc;
-	static readonly standardTypeOnLBraceAppended = LogicBlock.createOnLBraceAppendedFuncForDeclaration(TokenId.ClassBody);
+	static readonly standardTypeOnLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.ClassBody);
 	static readonly standardTypeOnChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		TypeDeclarationUtils.standardTypeOnLBraceAppended,
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
@@ -277,12 +277,12 @@ class CsscmfDeclaration {
 		}
 
 		if (isStaticBlockStart) {
-			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicBlockDeclaration);
+			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicDeclaration);
 			StaticBlockDeclaration.extra(statementNode);
 			// lbrace already appended, invoke onChildAppended manually
 			StaticBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
 		} else if (isSynchronizedBlockStart) {
-			statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
+			statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicDeclaration);
 			SynchronizedBlockDeclaration.extra(statementNode);
 			// lbrace already appended, invoke onChildAppended manually
 			SynchronizedBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
@@ -331,7 +331,7 @@ class CsscmfDeclaration {
 				}
 			}
 			if (isSynchronizedBlockStart) {
-				statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
+				statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicDeclaration);
 				SynchronizedBlockDeclaration.extra(statementNode);
 				// lbrace already appended, invoke onChildAppended manually
 				SynchronizedBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);

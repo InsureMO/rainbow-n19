@@ -27,5 +27,6 @@ export const RecognizePreservation = {
 	parentIsCsscmfDeclaration: parentIsTokenId(TokenId.Tmp$CsscmfDeclaration),
 	parentIsTypeDeclaration: parentIsTokenType(TokenType.TypeDeclaration),
 	parentIsMethodDeclaration: parentIsTokenId(TokenId.MethodDeclaration),
-	parentIsFieldDeclaration: parentIsTokenId(TokenId.FieldDeclaration)
+	parentIsFieldDeclaration: parentIsTokenId(TokenId.FieldDeclaration),
+	parentIsDoWhileDeclaration: parentIsTokenId(TokenId.DoWhileDeclaration)
 } as const;
