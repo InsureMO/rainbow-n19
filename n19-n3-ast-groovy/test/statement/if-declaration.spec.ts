@@ -19,22 +19,21 @@ describe('If declaration test', () => {
 			]
 		]);
 	});
-	const IfIfDeclarationNodesFor2And3: NodeSpec = [
-		TokenId.IfIfDeclaration, 0, 13, 1, 'if (true) {\n}', [
-			[TokenId.IF, 0, 2, 1, 'if'],
-			[TokenId.Whitespaces, 2, 3, 1, ' '],
-			[TokenId.ParenBlock, 3, 9, 1, '(true)', [
-				[TokenId.LParen, 3, 4, 1, '('],
-				[TokenId.BooleanLiteral, 4, 8, 1, 'true'],
-				[TokenId.RParen, 8, 9, 1, ')']
-			]],
-			[TokenId.Whitespaces, 9, 10, 1, ' '],
-			[TokenId.IfIfBody, 10, 13, 1, '{\n}', [
-				[TokenId.LBrace, 10, 11, 1, '{'],
-				[TokenId.NewLine, 11, 12, 1, '\n'],
-				[TokenId.RBrace, 12, 13, 2, '}']
-			]]
-		]];
+	const IfIfDeclarationNodesFor2And3: NodeSpec = [TokenId.IfIfDeclaration, 0, 13, 1, 'if (true) {\n}', [
+		[TokenId.IF, 0, 2, 1, 'if'],
+		[TokenId.Whitespaces, 2, 3, 1, ' '],
+		[TokenId.ParenBlock, 3, 9, 1, '(true)', [
+			[TokenId.LParen, 3, 4, 1, '('],
+			[TokenId.BooleanLiteral, 4, 8, 1, 'true'],
+			[TokenId.RParen, 8, 9, 1, ')']
+		]],
+		[TokenId.Whitespaces, 9, 10, 1, ' '],
+		[TokenId.IfIfBody, 10, 13, 1, '{\n}', [
+			[TokenId.LBrace, 10, 11, 1, '{'],
+			[TokenId.NewLine, 11, 12, 1, '\n'],
+			[TokenId.RBrace, 12, 13, 2, '}']
+		]]
+	]];
 	test('If declaration #2', async () => {
 		const text = 'if (true) {\n}';
 		const ast = GroovyAstBuilder.ast(text);
@@ -67,7 +66,7 @@ describe('If declaration test', () => {
 			]
 		]);
 	});
-	test('If declaration #3', async () => {
+	test('If declaration #4', async () => {
 		const text = 'if (true) {\n} else if (true) {\n} else {\n}';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
@@ -100,6 +99,50 @@ describe('If declaration test', () => {
 							[TokenId.LBrace, 38, 39, 3, '{'],
 							[TokenId.NewLine, 39, 40, 3, '\n'],
 							[TokenId.RBrace, 40, 41, 4, '}']
+						]]
+					]]
+				]]
+			]
+		]);
+	});
+	test('If declaration #5', async () => {
+		const text = 'if (true) else if (true) else else {}';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 37, 0, text, [
+				[TokenId.IfDeclaration, 0, 37, 1, 'if (true) else if (true) else else {}', [
+					[TokenId.IfIfDeclaration, 0, 9, 1, 'if (true)', [
+						[TokenId.IF, 0, 2, 1, 'if'],
+						[TokenId.Whitespaces, 2, 3, 1, ' '],
+						[TokenId.ParenBlock, 3, 9, 1, '(true)', [
+							[TokenId.LParen, 3, 4, 1, '('],
+							[TokenId.BooleanLiteral, 4, 8, 1, 'true'],
+							[TokenId.RParen, 8, 9, 1, ')']
+						]]
+					]],
+					[TokenId.Whitespaces, 9, 10, 1, ' '],
+					[TokenId.IfElseIfDeclaration, 10, 24, 1, 'else if (true)', [
+						[TokenId.ELSE, 10, 14, 1, 'else'],
+						[TokenId.Whitespaces, 14, 15, 1, ' '],
+						[TokenId.IF, 15, 17, 1, 'if'],
+						[TokenId.Whitespaces, 17, 18, 1, ' '],
+						[TokenId.ParenBlock, 18, 24, 1, '(true)', [
+							[TokenId.LParen, 18, 19, 1, '('],
+							[TokenId.BooleanLiteral, 19, 23, 1, 'true'],
+							[TokenId.RParen, 23, 24, 1, ')']
+						]]
+					]],
+					[TokenId.Whitespaces, 24, 25, 1, ' '],
+					[TokenId.IfElseDeclaration, 25, 29, 1, 'else', [
+						[TokenId.ELSE, 25, 29, 1, 'else'],
+					]],
+					[TokenId.Whitespaces, 29, 30, 1, ' '],
+					[TokenId.IfElseDeclaration, 30, 37, 1, 'else {}', [
+						[TokenId.ELSE, 30, 34, 1, 'else'],
+						[TokenId.Whitespaces, 34, 35, 1, ' '],
+						[TokenId.IfElseBody, 35, 37, 1, '{}', [
+							[TokenId.LBrace, 35, 36, 1, '{'],
+							[TokenId.RBrace, 36, 37, 1, '}']
 						]]
 					]]
 				]]
