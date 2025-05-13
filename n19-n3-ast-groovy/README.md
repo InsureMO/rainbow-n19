@@ -254,7 +254,7 @@
       │ └ ScriptCommandRecognizer [tokenId=187, tokenName=ScriptCommandStartMark]
       ├ AbstractPreservableRecognizer
       │ └ AbstractDeclarationCreateRecognizer
-      │   ├ AbstractCscmfDeclarationRecognizer
+      │   ├ AbstractCsscmfDeclarationRecognizer
       │   │ ├ KwAbstractRecognizer [tokenId=14, tokenName=ABSTRACT]
       │   │ ├ KwAtInterfaceRecognizer [tokenId=16, tokenName=AT_INTERFACE]
       │   │ ├ KwClassRecognizer [tokenId=20, tokenName=CLASS]
@@ -271,6 +271,7 @@
       │   │ ├ KwSealedRecognizer [tokenId=50, tokenName=SEALED]
       │   │ ├ KwStaticRecognizer [tokenId=51, tokenName=STATIC]
       │   │ ├ KwStrictfpRecognizer [tokenId=52, tokenName=STRICTFP]
+      │   │ ├ KwSynchronizedRecognizer [tokenId=55, tokenName=SYNCHRONIZED]
       │   │ └ KwTraitRecognizer [tokenId=12, tokenName=TRAIT]
       │   ├ AbstractFieldDeclarationRecognizer
       │   │ ├ KwTransientRecognizer [tokenId=59, tokenName=TRANSIENT]
@@ -278,9 +279,14 @@
       │   ├ AbstractMethodDeclarationRecognizer
       │   │ ├ KwDefaultRecognizer [tokenId=23, tokenName=DEFAULT]
       │   │ ├ KwNativeRecognizer [tokenId=37, tokenName=NATIVE]
-      │   │ ├ KwSynchronizedRecognizer [tokenId=55, tokenName=SYNCHRONIZED]
       │   │ └ KwVoidRecognizer [tokenId=62, tokenName=VOID]
+      │   ├ KwCaseRecognizer [tokenId=18, tokenName=CASE]
+      │   ├ KwDoRecognizer [tokenId=24, tokenName=DO]
+      │   ├ KwElseRecognizer [tokenId=25, tokenName=ELSE]
+      │   ├ KwIfRecognizer [tokenId=32, tokenName=IF]
       │   ├ KwImportRecognizer [tokenId=34, tokenName=IMPORT]
-      │   └ KwPackageRecognizer [tokenId=43, tokenName=PACKAGE]
+      │   ├ KwPackageRecognizer [tokenId=43, tokenName=PACKAGE]
+      │   ├ KwSwitchRecognizer [tokenId=54, tokenName=SWITCH]
+      │   └ KwWhileRecognizer [tokenId=64, tokenName=WHILE]
       └ OpMultipleRecognizer [tokenId=160, tokenName=Multiple]
 ```
