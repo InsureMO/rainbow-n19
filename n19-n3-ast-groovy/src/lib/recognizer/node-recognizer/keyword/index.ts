@@ -35,3 +35,4 @@ export * from './kw-switch-recognizer';
 export * from './kw-case-recognizer';
 
 export * from './kw-do-recognizer';
+export * from './kw-while-recognizer';

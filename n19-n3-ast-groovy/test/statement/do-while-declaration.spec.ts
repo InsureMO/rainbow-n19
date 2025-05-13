@@ -1,5 +1,5 @@
-import {GroovyAstBuilder, TokenId} from '../src';
-import {AstChecker} from './utils/ast-checker';
+import {GroovyAstBuilder, TokenId} from '../../src';
+import {AstChecker} from '../utils/ast-checker';
 
 describe('Do-While declaration test', () => {
 	beforeAll(() => {

@@ -7,3 +7,6 @@ export * from './package-declaration.spec';
 export * from './import-declaration.spec';
 
 export * from './type-declaration.spec';
+
+export * from './do-while-declaration.spec';
+export * from './while-declaration.spec';
