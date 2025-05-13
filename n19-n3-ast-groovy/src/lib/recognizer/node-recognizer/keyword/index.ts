@@ -39,3 +39,5 @@ export * from './kw-while-recognizer';
 
 export * from './kw-if-recognizer';
 export * from './kw-else-recognizer';
+
+export * from './kw-for-recognizer';
