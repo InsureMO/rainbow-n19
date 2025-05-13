@@ -247,7 +247,6 @@ export enum TokenId {
 	WhileBody,
 	DoWhileDeclaration,
 	DoWhileBody,
-	DoWhileCondition,
 	ForDeclaration,
 	ForBody,
 	TryCatchDeclaration,
