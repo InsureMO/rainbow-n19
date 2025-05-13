@@ -11,7 +11,7 @@ class LogicBlockWithinBrace {
 
 	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnRBraceAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO logic block node pointcuts
+		// TODO brace logic block node pointcuts
 		$NAF.ChildAcceptableCheck.clear(node);
 		$NAF.OnChildAppended.set(node, LogicBlockWithinBrace.onChildAppended);
 		$NAF.OnChildClosed.clear(node);
@@ -42,7 +42,7 @@ class LogicBlockWithinParen {
 
 	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnRParenAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO logic block node pointcuts
+		// TODO parenthesis logic block node pointcuts
 		$NAF.ChildAcceptableCheck.clear(node);
 		$NAF.OnChildAppended.set(node, LogicBlockWithinParen.onChildAppended);
 		$NAF.OnChildClosed.clear(node);
