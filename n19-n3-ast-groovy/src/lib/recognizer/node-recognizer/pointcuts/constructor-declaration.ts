@@ -15,11 +15,12 @@ export class ConstructorDeclaration {
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
 	);
 	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.ConstructorBody);
+	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO constructor node pointcuts
 		$NAF.ChildAcceptableCheck.clear(node);
 		$NAF.OnChildAppended.set(node, ConstructorDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, ConstructorDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$NAF.OnNodeClosed.set(node, ConstructorDeclaration.onNodeClosed);
 	};
 }

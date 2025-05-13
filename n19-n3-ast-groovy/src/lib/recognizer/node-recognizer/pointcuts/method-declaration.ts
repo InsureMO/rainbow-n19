@@ -15,11 +15,12 @@ export class MethodDeclaration {
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
 	);
 	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.MethodBody);
+	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO method node pointcuts
 		$NAF.ChildAcceptableCheck.clear(node);
 		$NAF.OnChildAppended.set(node, MethodDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, MethodDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$NAF.OnNodeClosed.set(node, MethodDeclaration.onNodeClosed);
 	};
 }

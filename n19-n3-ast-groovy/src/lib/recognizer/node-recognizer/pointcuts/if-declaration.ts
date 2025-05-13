@@ -38,12 +38,13 @@ class IfIfDeclaration {
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
 	);
 	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.IfIfBody);
+	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO if-if node pointcuts
 		$NAF.ChildAcceptableCheck.set(node, IfIfDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, IfIfDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, IfIfDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$NAF.OnNodeClosed.set(node, IfIfDeclaration.onNodeClosed);
 	};
 }
 
@@ -71,12 +72,13 @@ class IfElseIfDeclaration {
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
 	);
 	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.IfElseIfBody);
+	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO if-else-if node pointcuts
 		$NAF.ChildAcceptableCheck.set(node, IfElseIfDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, IfElseIfDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, IfElseIfDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$NAF.OnNodeClosed.set(node, IfElseIfDeclaration.onNodeClosed);
 	};
 }
 
@@ -116,12 +118,13 @@ class IfElseDeclaration {
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
 	);
 	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.IfElseBody);
+	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO if-else node pointcuts
 		$NAF.ChildAcceptableCheck.set(node, IfElseDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, IfElseDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, IfElseDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$NAF.OnNodeClosed.set(node, IfElseDeclaration.onNodeClosed);
 	};
 }
 
@@ -151,11 +154,12 @@ export class IfDeclaration {
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
 	);
+	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO if node pointcuts
 		$NAF.ChildAcceptableCheck.set(node, IfDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, IfDeclaration.onChildAppended);
 		$NAF.OnChildClosed.clear(node);
-		$NAF.OnNodeClosed.clear(node);
+		$NAF.OnNodeClosed.set(node, IfDeclaration.onNodeClosed);
 	};
 }

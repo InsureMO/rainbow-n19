@@ -95,11 +95,12 @@ export class SwitchDeclaration {
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
 	);
 	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.SwitchBody);
+	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO switch node pointcuts
 		$NAF.ChildAcceptableCheck.set(node, SwitchDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, SwitchDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, SwitchDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$NAF.OnNodeClosed.set(node, SwitchDeclaration.onNodeClosed);
 	};
 }

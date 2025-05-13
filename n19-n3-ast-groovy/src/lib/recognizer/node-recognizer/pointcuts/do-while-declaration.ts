@@ -30,11 +30,12 @@ export class DoWhileDeclaration {
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
 	);
 	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.ParenBlock);
+	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO do-while node pointcuts
 		$NAF.ChildAcceptableCheck.set(node, DoWhileDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, DoWhileDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, DoWhileDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$NAF.OnNodeClosed.set(node, DoWhileDeclaration.onNodeClosed);
 	};
 }

@@ -30,7 +30,7 @@ export class KwIfRecognizer extends AbstractDeclarationCreateRecognizer {
 			text: '', startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
 		});
-		NodePointcuts.IfDeclaration.If.extra(node);
+		NodePointcuts.IfDeclaration.If.extra(declarationNode);
 		return declarationNode;
 	}
 
@@ -39,7 +39,6 @@ export class KwIfRecognizer extends AbstractDeclarationCreateRecognizer {
 		const ifIfDeclarationNode = this.createIfIfDeclarationNode(node);
 		ifIfDeclarationNode.asParentOf(node);
 		const ifDeclarationNode = this.createDeclarationNode(node);
-		ifDeclarationNode.asParentOf(ifIfDeclarationNode);
 		astRecognizer.appendAsCurrentParent(ifDeclarationNode);
 		astRecognizer.appendAsCurrentParent(ifIfDeclarationNode);
 		return nodeIndex + 1;

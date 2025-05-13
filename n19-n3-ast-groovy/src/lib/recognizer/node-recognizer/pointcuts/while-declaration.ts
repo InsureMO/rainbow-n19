@@ -31,11 +31,12 @@ export class WhileDeclaration {
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
 	);
 	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.WhileBody);
+	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO do-while node pointcuts
 		$NAF.ChildAcceptableCheck.set(node, WhileDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, WhileDeclaration.onChildAppended);
 		$NAF.OnChildClosed.set(node, WhileDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$NAF.OnNodeClosed.set(node, WhileDeclaration.onNodeClosed);
 	};
 }
