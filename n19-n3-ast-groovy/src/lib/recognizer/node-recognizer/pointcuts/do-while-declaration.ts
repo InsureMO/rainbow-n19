@@ -19,7 +19,6 @@ export class DoWhileDeclaration {
 			// end
 			TokenId.Semicolon,
 			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			// of course block body and condition block can be child
 			TokenId.DoWhileBody, TokenId.ParenBlock
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc;

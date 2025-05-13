@@ -28,8 +28,10 @@ export class KwDefaultRecognizer extends AbstractMethodDeclarationRecognizer {
 
 		let statementNode: GroovyAstNode;
 		const currentParent = astRecognizer.getCurrentParent();
-		if (currentParent.tokenId === TokenId.SwitchDeclaration
-			|| currentParent.tokenId === TokenId.SwitchBody) {
+		if ([
+			TokenId.SwitchDeclaration, TokenId.SwitchBody,
+			TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration
+		].includes(currentParent.tokenId)) {
 			statementNode = this.createSwitchDefaultDeclarationNode(node);
 		} else {
 			statementNode = this.createDeclarationNode(node);

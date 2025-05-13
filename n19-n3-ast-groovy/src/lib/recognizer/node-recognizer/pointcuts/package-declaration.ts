@@ -22,7 +22,7 @@ export class PackageDeclaration {
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc;
 	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnSemicolonAppended;
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingMLCommentsToParentOnNodeClosed;
+	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, PackageDeclaration.childAcceptableCheck);
 		$NAF.OnChildAppended.set(node, PackageDeclaration.onChildAppended);

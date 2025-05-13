@@ -18,7 +18,6 @@ export class SynchronizedBlockDeclaration {
 			// end
 			TokenId.Semicolon,
 			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			// of course block body can be child
 			TokenId.SynchronizedBlockBody
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc;

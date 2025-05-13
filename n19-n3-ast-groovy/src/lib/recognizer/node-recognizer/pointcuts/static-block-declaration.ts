@@ -18,7 +18,6 @@ export class StaticBlockDeclaration {
 			// end
 			TokenId.Semicolon,
 			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			// of course block body can be child
 			TokenId.StaticBlockBody
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc;

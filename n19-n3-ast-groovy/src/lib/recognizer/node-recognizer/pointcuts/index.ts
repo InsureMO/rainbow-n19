@@ -1,6 +1,7 @@
 import {ConstructorDeclaration} from './constructor-declaration';
 import {DoWhileDeclaration} from './do-while-declaration';
 import {FieldDeclaration} from './field-declaration';
+import {IfDeclaration} from './if-declaration';
 import {ImportDeclaration} from './import-declaration';
 import {LogicBlock} from './logic-block';
 import {MethodDeclaration} from './method-declaration';
@@ -21,5 +22,6 @@ export const NodePointcuts = {
 	StaticBlockDeclaration, SynchronizedBlockDeclaration,
 
 	SwitchDeclaration, DoWhileDeclaration, WhileDeclaration,
+	IfDeclaration,
 	LogicBlock
 } as const;

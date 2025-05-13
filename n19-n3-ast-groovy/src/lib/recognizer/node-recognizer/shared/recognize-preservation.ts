@@ -28,5 +28,6 @@ export const RecognizePreservation = {
 	parentIsTypeDeclaration: parentIsTokenType(TokenType.TypeDeclaration),
 	parentIsMethodDeclaration: parentIsTokenId(TokenId.MethodDeclaration),
 	parentIsFieldDeclaration: parentIsTokenId(TokenId.FieldDeclaration),
-	parentIsDoWhileDeclaration: parentIsTokenId(TokenId.DoWhileDeclaration)
+	parentIsDoWhileDeclaration: parentIsTokenId(TokenId.DoWhileDeclaration),
+	parentIsIfElseDeclaration: parentIsTokenId(TokenId.IfElseDeclaration)
 } as const;

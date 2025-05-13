@@ -10,3 +10,4 @@ export * from './type-declaration.spec';
 
 export * from './do-while-declaration.spec';
 export * from './while-declaration.spec';
+export * from './switch-declaration.spec';

@@ -66,7 +66,6 @@ class TypeDeclarationUtils {
 			// end
 			TokenId.Semicolon,
 			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			// of course class body can be child of any type declaration
 			TokenId.ClassBody
 		].includes(mightBeChildNode.tokenId);
 	}) as ChildAcceptableCheckFunc;
@@ -485,7 +484,7 @@ class CsscmfDeclaration {
 			}
 		}
 
-		SharedNodePointcuts.moveTrailingMLCommentsToParentOnNodeClosed(node, astRecognizer);
+		SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed(node, astRecognizer);
 	}) as OnNodeClosedFunc;
 	static readonly extra = (node: GroovyAstNode): void => {
 		$NAF.ChildAcceptableCheck.set(node, CsscmfDeclaration.childAcceptableCheck);

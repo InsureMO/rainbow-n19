@@ -94,19 +94,38 @@ export class SharedNodePointcuts {
 		};
 	};
 	/**
-	 * move all trailing multiple-lines comments to parent when node closed,
-	 * typically, node closed since some node is now allowed to be child of current node.
+	 * move all trailing detachable nodes to parent when node closed,
+	 * typically, detachable nodes includes:
+	 * 1. whitespaces,
+	 * 2. tabs,
+	 * 3. newlines,
+	 * 4. single-line comments,
+	 * 5. multiple-line comments.
+	 *
+	 * nodes before first newline treated as undetachable, which means they still belongs to original parent.
 	 */
-	static readonly moveTrailingMLCommentsToParentOnNodeClosed = ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+	static readonly moveTrailingDetachableNodesToParentOnNodeClosed = ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const {children = []} = node;
-		const removeNodes: Array<GroovyAstNode> = [];
+		let removeNodes: Array<GroovyAstNode> = [];
+		let firstNewLineIndex = -1;
 		for (let index = children.length - 1; index >= 0; --index) {
 			const child = children[index];
-			if (child.tokenId === TokenId.MultipleLinesComment) {
+			const {tokenId: childTokenId} = child;
+			if ([TokenId.Whitespaces, TokenId.Tabs, TokenId.SingleLineComment, TokenId.MultipleLinesComment].includes(childTokenId)) {
 				removeNodes.unshift(child);
+				if (firstNewLineIndex >= 0) {
+					firstNewLineIndex = firstNewLineIndex + 1;
+				}
+			} else if (TokenId.NewLine === childTokenId) {
+				removeNodes.unshift(child);
+				firstNewLineIndex = 0;
 			} else {
 				break;
 			}
+		}
+		// drop nodes from start, before newline
+		if (firstNewLineIndex > 0) {
+			removeNodes = removeNodes.slice(firstNewLineIndex);
 		}
 		astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
 	}) as OnNodeClosedFunc;
