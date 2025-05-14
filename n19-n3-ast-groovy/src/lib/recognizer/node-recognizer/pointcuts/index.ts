@@ -11,6 +11,7 @@ import {SharedNodePointcuts} from './shared';
 import {StaticBlockDeclaration} from './static-block-declaration';
 import {SwitchDeclaration} from './switch-declaration';
 import {SynchronizedBlockDeclaration} from './synchronized-block-declaration';
+import {TryDeclaration} from './try-declaration';
 import {TypeDeclaration} from './type-declaration';
 import {WhileDeclaration} from './while-declaration';
 
@@ -23,6 +24,6 @@ export const NodePointcuts = {
 	StaticBlockDeclaration, SynchronizedBlockDeclaration,
 
 	SwitchDeclaration, DoWhileDeclaration, WhileDeclaration,
-	IfDeclaration, ForDeclaration,
+	IfDeclaration, ForDeclaration, TryDeclaration,
 	LogicBlock
 } as const;

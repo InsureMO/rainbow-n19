@@ -41,3 +41,7 @@ export * from './kw-if-recognizer';
 export * from './kw-else-recognizer';
 
 export * from './kw-for-recognizer';
+
+export * from './kw-try-recognizer';
+export * from './kw-catch-recognizer';
+export * from './kw-finally-recognizer';
