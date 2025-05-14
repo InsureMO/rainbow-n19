@@ -98,7 +98,6 @@ class IfElseDeclaration {
 		IfElseDeclaration.onLBraceAppended,
 		IfElseDeclaration.onIfKeywordAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.IfElseBody);
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.ChildAcceptableCheck.set(node, IfElseDeclaration.childAcceptableCheck);
 		$Neaf.EndWithSemicolon.set(node);

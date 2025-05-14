@@ -44,35 +44,6 @@ export class SharedNodePointcuts {
 		};
 	};
 	/**
-	 * close current parent when node with given token id appended or closed.
-	 * node with given token id is the last child of the closed current parent
-	 */
-	static readonly createCloseCurrentParentOnTokenId = (childTokenId: TokenId): OneOfOnChildAppendedFunc & OneOfOnChildClosedFunc => {
-		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-			if (lastChildNode.tokenId === childTokenId) {
-				astRecognizer.closeCurrentParent();
-				return true;
-			} else {
-				return false;
-			}
-		};
-	};
-	/**
-	 * close current parent when a semicolon node appended,
-	 * the appended node is the last child node of current parent.
-	 */
-	static readonly closeCurrentParentOnSemicolonAppended = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.Semicolon);
-	/**
-	 * close current parent when a right brace node appended,
-	 * the appended node is the last child node of current parent.
-	 */
-	static readonly closeCurrentParentOnRBraceAppended = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.RBrace);
-	/**
-	 * close current parent when a right parenthesis node appended,
-	 * the appended node is the last child node of current parent.
-	 */
-	static readonly closeCurrentParentOnRParenAppended = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.RParen);
-	/**
 	 * create an on child appended function by given functions.
 	 */
 	static readonly onChildAppendedOfFirstOrNone = (...funcs: Array<OneOfOnChildAppendedFunc>): OneOfOnChildAppendedFunc => {
@@ -86,18 +57,10 @@ export class SharedNodePointcuts {
 		};
 	};
 	/**
-	 * create an on child closed function by given functions.
+	 * check the given child node matches the configuration in {@link $Neaf.EndWithToken} or not.
+	 * if matched, close current parent and return true.
+	 * if not matched, do nothing and return false.
 	 */
-	static readonly onChildClosedOfFirstOrNone = (...funcs: Array<OneOfOnChildClosedFunc>): OneOfOnChildClosedFunc => {
-		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-			for (let index = 0, count = funcs.length; index < count; index++) {
-				if (funcs[index](lastChildNode, astRecognizer)) {
-					return true;
-				}
-			}
-			return false;
-		};
-	};
 	static readonly endWithToken = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		const tokenId = $Neaf.EndWithToken.get(lastChildNode.parent);
 		if (tokenId === lastChildNode.tokenId) {
@@ -106,6 +69,11 @@ export class SharedNodePointcuts {
 		}
 		return false;
 	}) as OneOfOnChildAppendedFunc;
+	/**
+	 * check the given child node matches the configuration in {@link $Neaf.CloseOnChildWithTokenClosed} or not.
+	 * if matched, close current parent and return true.
+	 * if not matched, do nothing and return false.
+	 */
 	static readonly closeOnChildWithTokenClosed = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		const tokenId = $Neaf.CloseOnChildWithTokenClosed.get(lastChildNode.parent);
 		if (tokenId === lastChildNode.tokenId) {
