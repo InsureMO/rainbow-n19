@@ -14,16 +14,14 @@ export class MethodDeclaration {
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.MethodBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		MethodDeclaration.onLParenAppended,
-		MethodDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		MethodDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.MethodBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO method node pointcuts
 		$Neaf.ChildAcceptableCheck.clear(node);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, MethodDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, MethodDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, MethodDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.MethodBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }

@@ -22,27 +22,23 @@ class IfIfDeclaration {
 
 	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-		TokenId.IF, TokenId.ELSE,
+		TokenId.IF,
 		TokenId.LBrace, TokenId.LParen,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		TokenId.IfIfBody, TokenId.ParenBlock
 	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfIfBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		IfDeclarationUtils.onLParenAppended,
-		IfIfDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		IfIfDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.IfIfBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO if-if node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, IfIfDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, IfIfDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, IfIfDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, IfIfDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.IfIfBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -55,25 +51,21 @@ class IfElseIfDeclaration {
 	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 		TokenId.LBrace, TokenId.LParen,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		TokenId.IfElseIfBody, TokenId.ParenBlock
 	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfElseIfBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		IfDeclarationUtils.onLParenAppended,
-		IfElseIfDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		IfElseIfDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.IfElseIfBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO if-else-if node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, IfElseIfDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, IfElseIfDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, IfElseIfDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, IfElseIfDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.IfElseIfBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -87,8 +79,6 @@ class IfElseDeclaration {
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 		TokenId.IF,
 		TokenId.LBrace,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		TokenId.IfElseBody
 	);
@@ -106,17 +96,16 @@ class IfElseDeclaration {
 	};
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		IfElseDeclaration.onLBraceAppended,
-		IfElseDeclaration.onIfKeywordAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		IfElseDeclaration.onIfKeywordAppended
 	);
 	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.IfElseBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO if-else node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, IfElseDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, IfElseDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, IfElseDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, IfElseDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.IfElseBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -135,20 +124,14 @@ export class IfDeclaration {
 	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 		TokenId.IF, TokenId.ELSE,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		TokenId.IfIfDeclaration, TokenId.IfElseIfDeclaration, TokenId.IfElseDeclaration
 	);
-	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
-	);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO if node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, IfDeclaration.childAcceptableCheck);
-		$Neaf.OnChildAppended.set(node, IfDeclaration.onChildAppended);
+		$Neaf.EndWithSemicolon.set(node);
+		$Neaf.OnChildAppended.clear(node);
 		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.set(node, IfDeclaration.onNodeClosed);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }

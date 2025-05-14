@@ -14,8 +14,6 @@ export class DoWhileDeclaration {
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 		TokenId.DO, TokenId.WHILE,
 		TokenId.LBrace, TokenId.LParen,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		TokenId.DoWhileBody, TokenId.ParenBlock
 	);
@@ -23,16 +21,14 @@ export class DoWhileDeclaration {
 	static readonly onLParenAppended = LogicBlock.Paren.createParenBlockOnLParenAppended;
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		DoWhileDeclaration.onLBraceAppended,
-		DoWhileDeclaration.onLParenAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		DoWhileDeclaration.onLParenAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.ParenBlock);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO do-while node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, DoWhileDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, DoWhileDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, DoWhileDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, DoWhileDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.ParenBlock);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }

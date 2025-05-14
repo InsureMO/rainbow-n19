@@ -10,11 +10,10 @@ class LogicBlockWithinBrace {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnRBraceAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO brace logic block node pointcuts
 		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.OnChildAppended.set(node, LogicBlockWithinBrace.onChildAppended);
+		$Neaf.EndWithToken.set(node, TokenId.RBrace);
+		$Neaf.OnChildAppended.clear(node);
 		$Neaf.OnChildClosed.clear(node);
 		$Neaf.OnNodeClosed.clear(node);
 	};
@@ -41,11 +40,10 @@ class LogicBlockWithinParen {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnRParenAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO parenthesis logic block node pointcuts
 		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.OnChildAppended.set(node, LogicBlockWithinParen.onChildAppended);
+		$Neaf.EndWithToken.set(node, TokenId.RParen);
+		$Neaf.OnChildAppended.clear(node);
 		$Neaf.OnChildClosed.clear(node);
 		$Neaf.OnNodeClosed.clear(node);
 	};

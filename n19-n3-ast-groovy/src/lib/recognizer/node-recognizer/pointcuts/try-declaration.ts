@@ -21,27 +21,22 @@ class TryTryDeclaration {
 
 	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-		TokenId.IF, TokenId.ELSE,
 		TokenId.LBrace, TokenId.LParen,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-		TokenId.IfIfBody, TokenId.ParenBlock
+		TokenId.TryTryBody, TokenId.ParenBlock
 	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.TryTryBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		TryDeclarationUtils.onLParenAppended,
-		TryTryDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		TryTryDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.TryTryBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO try-try node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, TryTryDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, TryTryDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, TryTryDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, TryTryDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.TryTryBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -54,25 +49,21 @@ class TryCatchDeclaration {
 	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 		TokenId.LBrace, TokenId.LParen,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		TokenId.TryCatchBody, TokenId.ParenBlock
 	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.TryCatchBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		TryDeclarationUtils.onLParenAppended,
-		TryCatchDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		TryCatchDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.TryCatchBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO try-catch node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, TryCatchDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, TryCatchDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, TryCatchDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, TryCatchDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.TryCatchBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -84,26 +75,21 @@ class TryFinallyDeclaration {
 
 	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-		TokenId.FINALLY,
 		TokenId.LBrace,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		TokenId.TryFinallyBody
 	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.TryFinallyBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		TryFinallyDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		TryFinallyDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.TryFinallyBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO try-finally node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, TryFinallyDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, TryFinallyDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, TryFinallyDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, TryFinallyDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.TryFinallyBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -121,20 +107,14 @@ export class TryDeclaration {
 	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 		TokenId.TRY, TokenId.CATCH, TokenId.FINALLY,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		TokenId.TryTryDeclaration, TokenId.TryCatchDeclaration, TokenId.TryFinallyDeclaration
 	);
-	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
-	);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO try node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, TryDeclaration.childAcceptableCheck);
-		$Neaf.OnChildAppended.set(node, TryDeclaration.onChildAppended);
+		$Neaf.EndWithSemicolon.set(node);
+		$Neaf.OnChildAppended.clear(node);
 		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.set(node, TryDeclaration.onNodeClosed);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }

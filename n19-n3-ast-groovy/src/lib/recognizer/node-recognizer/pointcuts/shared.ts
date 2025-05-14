@@ -1,6 +1,7 @@
 import {ChildAcceptableCheckFunc, GroovyAstNode, OnNodeClosedFunc} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
+import {$Neaf} from '../../neaf-wrapper';
 
 export type OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
 export type OneOfOnChildClosedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
@@ -97,6 +98,22 @@ export class SharedNodePointcuts {
 			return false;
 		};
 	};
+	static readonly endWithToken = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+		const tokenId = $Neaf.EndWithToken.get(lastChildNode.parent);
+		if (tokenId === lastChildNode.tokenId) {
+			astRecognizer.closeCurrentParent();
+			return true;
+		}
+		return false;
+	}) as OneOfOnChildAppendedFunc;
+	static readonly closeOnChildWithTokenClosed = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+		const tokenId = $Neaf.CloseOnChildWithTokenClosed.get(lastChildNode.parent);
+		if (tokenId === lastChildNode.tokenId) {
+			astRecognizer.closeCurrentParent();
+			return true;
+		}
+		return false;
+	}) as OneOfOnChildClosedFunc;
 	/**
 	 * move all trailing detachable nodes to parent when node closed,
 	 * typically, detachable nodes includes:

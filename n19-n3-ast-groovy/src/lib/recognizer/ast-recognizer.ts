@@ -112,6 +112,7 @@ export class AstRecognizer {
 		return this._multipleLinesCommentHighlightEnabled;
 	}
 
+	// noinspection JSUnusedGlobalSymbols
 	get jdkVersion(): number {
 		return this._jdkVersion;
 	}
@@ -146,13 +147,9 @@ export class AstRecognizer {
 		return this._currentAncestors[0];
 	}
 
-	protected couldEndsWithSemicolon(node: GroovyAstNode): boolean {
-		return $Neaf.CouldEndsWithSemicolon.get(node) ?? false;
-	}
-
 	protected acceptChild(parent: GroovyAstNode, child: GroovyAstNode): boolean {
 		const childAcceptableCheck = $Neaf.ChildAcceptableCheck.get(parent);
-		if (this.couldEndsWithSemicolon(parent) && child.tokenId === TokenId.Semicolon) {
+		if ($Neaf.EndWithToken.get(parent) === child.tokenId) {
 			return true;
 		}
 		return childAcceptableCheck == null || childAcceptableCheck(child, this);
@@ -184,14 +181,21 @@ export class AstRecognizer {
 	}
 
 	protected onChildAppended(parent: GroovyAstNode, child: GroovyAstNode): void {
-		if (this.couldEndsWithSemicolon(parent) && NodePointcuts.Shared.closeCurrentParentOnSemicolonAppended(child, this)) {
-			return;
+		const proceeded = [
+			NodePointcuts.Shared.endWithToken
+		].some(func => func(child, this));
+		if (!proceeded) {
+			$Neaf.OnChildAppended.get(parent)?.(child, this);
 		}
-		$Neaf.OnChildAppended.get(parent)?.(child, this);
 	}
 
 	protected onChildClosed(parent: GroovyAstNode, child: GroovyAstNode): void {
-		$Neaf.OnChildClosed.get(parent)?.(child, this);
+		const proceeded = [
+			NodePointcuts.Shared.closeOnChildWithTokenClosed
+		].some(func => func(child, this));
+		if (!proceeded) {
+			$Neaf.OnChildClosed.get(parent)?.(child, this);
+		}
 	}
 
 	protected onNodeClosed(node: GroovyAstNode): void {

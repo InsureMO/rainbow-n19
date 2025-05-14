@@ -1,6 +1,5 @@
 import {GroovyAstNode} from '../../../node';
 import {$Neaf} from '../../neaf-wrapper';
-import {SharedNodePointcuts} from './shared';
 
 export class DefStatement {
 	// noinspection JSUnusedLocalSymbols
@@ -8,14 +7,11 @@ export class DefStatement {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
-	);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO def node pointcuts
 		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.OnChildAppended.set(node, DefStatement.onChildAppended);
-		$Neaf.OnNodeClosed.set(node, DefStatement.onNodeClosed);
+		$Neaf.EndWithSemicolon.set(node);
+		$Neaf.OnChildAppended.clear(node);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }

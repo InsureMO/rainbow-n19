@@ -19,7 +19,7 @@ export class ImportDeclaration {
 	);
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.ChildAcceptableCheck.set(node, ImportDeclaration.childAcceptableCheck);
-		$Neaf.CouldEndsWithSemicolon.set(node, true);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.clear(node);
 		$Neaf.OnChildClosed.clear(node);
 		$Neaf.OnNodeClosed.clear(node);

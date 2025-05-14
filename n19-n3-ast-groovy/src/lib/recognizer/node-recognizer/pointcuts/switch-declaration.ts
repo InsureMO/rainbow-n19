@@ -24,17 +24,15 @@ class SwitchCaseDeclaration {
 	static readonly childAcceptableCheck = SwitchDeclarationUtils.caseOrDefaultDeclarationChildAcceptableCheck;
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchCaseBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		SwitchCaseDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		SwitchCaseDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.SwitchCaseBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO switch case and default node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, SwitchCaseDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, SwitchCaseDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, SwitchCaseDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, SwitchCaseDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.SwitchCaseBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -47,17 +45,15 @@ class SwitchDefaultDeclaration {
 	static readonly childAcceptableCheck = SwitchDeclarationUtils.caseOrDefaultDeclarationChildAcceptableCheck;
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchDefaultBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		SwitchDefaultDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		SwitchDefaultDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.SwitchDefaultBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO switch case and default node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, SwitchDefaultDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, SwitchDefaultDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, SwitchDefaultDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, SwitchDefaultDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.SwitchDefaultBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -75,8 +71,6 @@ export class SwitchDeclaration {
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 		TokenId.SWITCH,
 		TokenId.LParen, TokenId.LBrace,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		TokenId.SwitchBody, TokenId.ParenBlock,
 		TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration
@@ -85,16 +79,14 @@ export class SwitchDeclaration {
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		SwitchDeclaration.onLParenAppended,
-		SwitchDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		SwitchDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.SwitchBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO switch node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, SwitchDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, SwitchDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, SwitchDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, SwitchDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.SwitchBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }

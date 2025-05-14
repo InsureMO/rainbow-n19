@@ -14,8 +14,6 @@ export class WhileDeclaration {
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 		TokenId.WHILE,
 		TokenId.LBrace, TokenId.LParen,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		// of course block body and condition block can be child
 		TokenId.WhileBody, TokenId.ParenBlock
@@ -24,16 +22,14 @@ export class WhileDeclaration {
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.WhileBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		WhileDeclaration.onLParenAppended,
-		WhileDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		WhileDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.WhileBody);
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// TODO while node pointcuts
 		$Neaf.ChildAcceptableCheck.set(node, WhileDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, WhileDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, WhileDeclaration.onChildClosed);
-		$Neaf.OnNodeClosed.set(node, WhileDeclaration.onNodeClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.WhileBody);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }

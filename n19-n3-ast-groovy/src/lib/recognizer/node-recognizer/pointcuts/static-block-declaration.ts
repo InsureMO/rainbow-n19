@@ -13,21 +13,19 @@ export class StaticBlockDeclaration {
 	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 		TokenId.LBrace,
-		// end
-		TokenId.Semicolon,
 		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
 		TokenId.StaticBlockBody
 	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.StaticBlockBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		StaticBlockDeclaration.onLBraceAppended,
-		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
+		StaticBlockDeclaration.onLBraceAppended
 	);
-	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.StaticBlockBody);
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.ChildAcceptableCheck.set(node, StaticBlockDeclaration.childAcceptableCheck);
+		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, StaticBlockDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.set(node, StaticBlockDeclaration.onChildClosed);
+		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.StaticBlockBody);
+		$Neaf.OnChildClosed.clear(node);
 		$Neaf.OnNodeClosed.clear(node);
 	};
 }
