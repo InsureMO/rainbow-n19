@@ -9,7 +9,7 @@ export class KwFinallyRecognizer extends AbstractDeclarationCreateRecognizer {
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.TryFinallyDeclaration, TokenType.LogicDeclaration];
+		return [TokenId.TryFinallyDeclaration, TokenType.LogicBlockDeclaration];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {

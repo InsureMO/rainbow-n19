@@ -103,6 +103,8 @@ class CsscmfDeclaration {
 			TokenId.TRANSIENT, TokenId.VOLATILE,
 			// constructor, method, field
 			TokenId.DEF,
+			// constructor, method
+			TokenId.THROWS,
 			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 			/*
 			 * could be
@@ -271,12 +273,12 @@ class CsscmfDeclaration {
 		}
 
 		if (isStaticBlockStart) {
-			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicDeclaration);
+			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicBlockDeclaration);
 			StaticBlockDeclaration.extra(statementNode);
 			// lbrace already appended, invoke onChildAppended manually
 			StaticBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
 		} else if (isSynchronizedBlockStart) {
-			statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicDeclaration);
+			statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
 			SynchronizedBlockDeclaration.extra(statementNode);
 			// lbrace already appended, invoke onChildAppended manually
 			SynchronizedBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
@@ -325,7 +327,7 @@ class CsscmfDeclaration {
 				}
 			}
 			if (isSynchronizedBlockStart) {
-				statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicDeclaration);
+				statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
 				SynchronizedBlockDeclaration.extra(statementNode);
 				// lbrace already appended, invoke onChildAppended manually
 				SynchronizedBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);

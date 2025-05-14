@@ -16,7 +16,7 @@ export class KwWhileRecognizer extends AbstractDeclarationCreateRecognizer {
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.WhileDeclaration, TokenType.LogicDeclaration];
+		return [TokenId.WhileDeclaration, TokenType.LogicBlockDeclaration];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {

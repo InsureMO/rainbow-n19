@@ -3,16 +3,16 @@ import {TokenId, TokenType} from '../../../tokens';
 import {AbstractDeclarationCreateRecognizer} from '../abstract';
 import {NodePointcuts} from '../pointcuts';
 
-export class KwSwitchRecognizer extends AbstractDeclarationCreateRecognizer {
+export class KwAssertRecognizer extends AbstractDeclarationCreateRecognizer {
 	acceptTokenId(): TokenId {
-		return TokenId.SWITCH;
+		return TokenId.ASSERT;
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.SwitchDeclaration, TokenType.LogicBlockDeclaration];
+		return [TokenId.AssertStatement, TokenType.LogicStatement];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {
-		NodePointcuts.SwitchDeclaration.extra(node);
+		NodePointcuts.AssertStatement.extra(node);
 	}
 }

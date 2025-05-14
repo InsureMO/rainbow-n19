@@ -17,7 +17,7 @@ export class KwIfRecognizer extends AbstractDeclarationCreateRecognizer {
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.IfDeclaration, TokenType.LogicDeclaration];
+		return [TokenId.IfDeclaration, TokenType.LogicBlockDeclaration];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {
@@ -26,7 +26,7 @@ export class KwIfRecognizer extends AbstractDeclarationCreateRecognizer {
 
 	protected createIfIfDeclarationNode(node: GroovyAstNode): GroovyAstNode {
 		const declarationNode = new GroovyAstNode({
-			tokenId: TokenId.IfIfDeclaration, tokenType: TokenType.LogicDeclaration,
+			tokenId: TokenId.IfIfDeclaration, tokenType: TokenType.LogicBlockDeclaration,
 			text: '', startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
 		});

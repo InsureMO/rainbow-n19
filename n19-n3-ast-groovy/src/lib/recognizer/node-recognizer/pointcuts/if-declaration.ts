@@ -99,7 +99,7 @@ class IfElseDeclaration {
 		}
 		// change parent to else-if
 		const currentParent = lastChildNode.parent;
-		currentParent.replaceTokenNature(TokenId.IfElseIfDeclaration, TokenType.LogicDeclaration);
+		currentParent.replaceTokenNature(TokenId.IfElseIfDeclaration, TokenType.LogicBlockDeclaration);
 		IfElseIfDeclaration.extra(currentParent);
 		return true;
 	};

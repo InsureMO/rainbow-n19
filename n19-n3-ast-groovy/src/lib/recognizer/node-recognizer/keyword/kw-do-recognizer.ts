@@ -9,7 +9,7 @@ export class KwDoRecognizer extends AbstractDeclarationCreateRecognizer {
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.DoWhileDeclaration, TokenType.LogicDeclaration];
+		return [TokenId.DoWhileDeclaration, TokenType.LogicBlockDeclaration];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {

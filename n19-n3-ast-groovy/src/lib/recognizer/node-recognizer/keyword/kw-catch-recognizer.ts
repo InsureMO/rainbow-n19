@@ -9,7 +9,7 @@ export class KwCatchRecognizer extends AbstractDeclarationCreateRecognizer {
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.TryCatchDeclaration, TokenType.LogicDeclaration];
+		return [TokenId.TryCatchDeclaration, TokenType.LogicBlockDeclaration];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {

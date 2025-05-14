@@ -261,6 +261,12 @@ export enum TokenId {
 	LambdaBody,
 	CodeBlock,
 	ParenBlock,
+	AssertStatement,
+	BreakStatement,
+	ContinueStatement,
+	DefStatement,
+	VarStatement,
+	NewExpression,
 	ArrayInitializer,
 	// temporary tokens are only used during the AST parsing process
 	// and will be replaced with official tokens before the parsing is completed
@@ -333,10 +339,13 @@ export enum TokenType {
 	/**
 	 * static block, synchronized block,
 	 * switch, switch-case, switch-default,
-	 * while, do-while while ("while ()"),
-	 * if, for
+	 * while,
+	 * do-while,
+	 * if, if-if, if-else-if, if-else
+	 * for,
+	 * try, try-try, try-catch, try-finally
 	 */
-	LogicDeclaration,
+	LogicBlockDeclaration,
 	/**
 	 * class body, constructor body, method body,
 	 * static block body, synchronized block body,
@@ -344,6 +353,10 @@ export enum TokenType {
 	 * do-while body, do-while condition ("() of while ()")
 	 */
 	LogicBlock,
+	/**
+	 * assert
+	 */
+	LogicStatement,
 	// temporary
 	/**
 	 * csscmf

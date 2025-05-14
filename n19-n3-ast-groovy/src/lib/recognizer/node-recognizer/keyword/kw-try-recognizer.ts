@@ -10,7 +10,7 @@ export class KwTryRecognizer extends AbstractDeclarationCreateRecognizer {
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.TryDeclaration, TokenType.LogicDeclaration];
+		return [TokenId.TryDeclaration, TokenType.LogicBlockDeclaration];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {
@@ -19,7 +19,7 @@ export class KwTryRecognizer extends AbstractDeclarationCreateRecognizer {
 
 	protected createTryTryDeclarationNode(node: GroovyAstNode): GroovyAstNode {
 		const declarationNode = new GroovyAstNode({
-			tokenId: TokenId.TryTryDeclaration, tokenType: TokenType.LogicDeclaration,
+			tokenId: TokenId.TryTryDeclaration, tokenType: TokenType.LogicBlockDeclaration,
 			text: '', startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
 		});

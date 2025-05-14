@@ -9,7 +9,7 @@ export class KwElseRecognizer extends AbstractDeclarationCreateRecognizer {
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.IfElseDeclaration, TokenType.LogicDeclaration];
+		return [TokenId.IfElseDeclaration, TokenType.LogicBlockDeclaration];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {

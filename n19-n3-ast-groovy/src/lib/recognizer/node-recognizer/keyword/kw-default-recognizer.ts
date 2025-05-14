@@ -15,7 +15,7 @@ export class KwDefaultRecognizer extends AbstractMethodDeclarationRecognizer {
 
 	protected createSwitchDefaultDeclarationNode(node: GroovyAstNode): GroovyAstNode {
 		const declarationNode = new GroovyAstNode({
-			tokenId: TokenId.SwitchDefaultDeclaration, tokenType: TokenType.LogicDeclaration,
+			tokenId: TokenId.SwitchDefaultDeclaration, tokenType: TokenType.LogicBlockDeclaration,
 			text: '', startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
 		});

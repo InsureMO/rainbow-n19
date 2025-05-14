@@ -45,3 +45,7 @@ export * from './kw-for-recognizer';
 export * from './kw-try-recognizer';
 export * from './kw-catch-recognizer';
 export * from './kw-finally-recognizer';
+
+export * from './kw-assert-recognizer';
+export * from './kw-break-recognizer';
+export * from './kw-continue-recognizer';

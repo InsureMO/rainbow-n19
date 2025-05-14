@@ -9,7 +9,7 @@ export class KwCaseRecognizer extends AbstractDeclarationCreateRecognizer {
 	}
 
 	protected getDeclarationTokenNature(): [TokenId, TokenType] {
-		return [TokenId.SwitchCaseDeclaration, TokenType.LogicDeclaration];
+		return [TokenId.SwitchCaseDeclaration, TokenType.LogicBlockDeclaration];
 	}
 
 	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {
