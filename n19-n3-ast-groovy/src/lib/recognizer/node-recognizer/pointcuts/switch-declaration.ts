@@ -1,6 +1,5 @@
-import {$NAF, ChildAcceptableCheckFunc, GroovyAstNode} from '../../../node';
+import {$NAF, GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
-import {AstRecognizer} from '../../ast-recognizer';
 import {LogicBlock} from './logic-block';
 import {SharedNodePointcuts} from './shared';
 
@@ -10,12 +9,9 @@ class SwitchDeclarationUtils {
 		// avoid extend
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly caseOrDefaultDeclarationChildAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		return ![
-			TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration, TokenId.RBrace
-		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
+	static readonly caseOrDefaultDeclarationChildAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnUnacceptTokenIds(
+		TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration, TokenId.RBrace
+	);
 }
 
 class SwitchCaseDeclaration {
@@ -74,20 +70,17 @@ export class SwitchDeclaration {
 	static readonly Case = SwitchCaseDeclaration;
 	static readonly Default = SwitchDefaultDeclaration;
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		return [
-			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-			TokenId.SWITCH,
-			TokenId.LParen, TokenId.LBrace,
-			// end
-			TokenId.Semicolon,
-			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			TokenId.SwitchBody, TokenId.ParenBlock,
-			TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration
-		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
-	static readonly onLParenAppended = LogicBlock.Paren.createOnLParenAppendedFuncForDeclaration(TokenId.ParenBlock);
+	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
+		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+		TokenId.SWITCH,
+		TokenId.LParen, TokenId.LBrace,
+		// end
+		TokenId.Semicolon,
+		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
+		TokenId.SwitchBody, TokenId.ParenBlock,
+		TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration
+	);
+	static readonly onLParenAppended = LogicBlock.Paren.createParenBlockOnLParenAppended;
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		SwitchDeclaration.onLParenAppended,

@@ -6,6 +6,7 @@ export class FieldDeclaration {
 	private constructor() {
 		// avoid extend
 	}
+
 	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnSemicolonAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO field node pointcuts

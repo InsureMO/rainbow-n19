@@ -1,6 +1,5 @@
-import {$NAF, ChildAcceptableCheckFunc, GroovyAstNode} from '../../../node';
+import {$NAF, GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
-import {AstRecognizer} from '../../ast-recognizer';
 import {SharedNodePointcuts} from './shared';
 
 export class PackageDeclaration {
@@ -9,18 +8,13 @@ export class PackageDeclaration {
 		// avoid extend
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		return [
-			TokenId.PACKAGE,
-			TokenId.Whitespaces,
-			TokenId.Tabs,
-			TokenId.Dot,
-			TokenId.Identifier,
-			TokenId.Semicolon,
-			TokenId.MultipleLinesComment
-		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
+	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
+		TokenId.PACKAGE,
+		TokenId.Whitespaces, TokenId.Tabs, TokenId.Dot,
+		TokenId.Identifier,
+		TokenId.Semicolon,
+		TokenId.MultipleLinesComment
+	);
 	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnSemicolonAppended;
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {

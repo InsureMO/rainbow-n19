@@ -1,4 +1,4 @@
-import {$NAF, ChildAcceptableCheckFunc, GroovyAstNode} from '../../../node';
+import {$NAF, GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
 import {LogicBlock} from './logic-block';
@@ -10,7 +10,7 @@ class IfDeclarationUtils {
 		// avoid extend
 	}
 
-	static readonly onLParenAppended = LogicBlock.Paren.createOnLParenAppendedFuncForDeclaration(TokenId.ParenBlock);
+	static readonly onLParenAppended = LogicBlock.Paren.createParenBlockOnLParenAppended;
 }
 
 class IfIfDeclaration {
@@ -19,18 +19,15 @@ class IfIfDeclaration {
 		// avoid extend
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		return [
-			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-			TokenId.IF, TokenId.ELSE,
-			TokenId.LBrace, TokenId.LParen,
-			// end
-			TokenId.Semicolon,
-			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			TokenId.IfIfBody, TokenId.ParenBlock
-		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
+	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
+		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+		TokenId.IF, TokenId.ELSE,
+		TokenId.LBrace, TokenId.LParen,
+		// end
+		TokenId.Semicolon,
+		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
+		TokenId.IfIfBody, TokenId.ParenBlock
+	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfIfBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		IfDeclarationUtils.onLParenAppended,
@@ -54,17 +51,14 @@ class IfElseIfDeclaration {
 		// avoid extend
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		return [
-			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-			TokenId.LBrace, TokenId.LParen,
-			// end
-			TokenId.Semicolon,
-			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			TokenId.IfElseIfBody, TokenId.ParenBlock
-		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
+	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
+		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+		TokenId.LBrace, TokenId.LParen,
+		// end
+		TokenId.Semicolon,
+		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
+		TokenId.IfElseIfBody, TokenId.ParenBlock
+	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfElseIfBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		IfDeclarationUtils.onLParenAppended,
@@ -88,18 +82,15 @@ class IfElseDeclaration {
 		// avoid extend
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		return [
-			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-			TokenId.IF,
-			TokenId.LBrace,
-			// end
-			TokenId.Semicolon,
-			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			TokenId.IfElseBody
-		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
+	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
+		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+		TokenId.IF,
+		TokenId.LBrace,
+		// end
+		TokenId.Semicolon,
+		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
+		TokenId.IfElseBody
+	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfElseBody);
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	static readonly onIfKeywordAppended = (lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
@@ -140,17 +131,14 @@ export class IfDeclaration {
 	static readonly ElseIf = IfElseIfDeclaration;
 	static readonly Else = IfElseDeclaration;
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		return [
-			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-			TokenId.IF, TokenId.ELSE,
-			// end
-			TokenId.Semicolon,
-			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			TokenId.IfIfDeclaration, TokenId.IfElseIfDeclaration, TokenId.IfElseDeclaration
-		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
+	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
+		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+		TokenId.IF, TokenId.ELSE,
+		// end
+		TokenId.Semicolon,
+		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
+		TokenId.IfIfDeclaration, TokenId.IfElseIfDeclaration, TokenId.IfElseDeclaration
+	);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		SharedNodePointcuts.closeCurrentParentOnSemicolonAppended
 	);

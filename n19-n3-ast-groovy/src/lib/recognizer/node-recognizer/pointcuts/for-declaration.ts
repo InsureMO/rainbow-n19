@@ -1,6 +1,5 @@
-import {$NAF, ChildAcceptableCheckFunc, GroovyAstNode} from '../../../node';
+import {$NAF, GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
-import {AstRecognizer} from '../../ast-recognizer';
 import {LogicBlock} from './logic-block';
 import {SharedNodePointcuts} from './shared';
 
@@ -10,20 +9,17 @@ export class ForDeclaration {
 		// avoid extend
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		return [
-			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-			TokenId.FOR,
-			TokenId.LBrace, TokenId.LParen,
-			// end
-			TokenId.Semicolon,
-			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			// of course block body and condition block can be child
-			TokenId.ForBody, TokenId.ParenBlock
-		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
-	static readonly onLParenAppended = LogicBlock.Paren.createOnLParenAppendedFuncForDeclaration(TokenId.ParenBlock);
+	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
+		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+		TokenId.FOR,
+		TokenId.LBrace, TokenId.LParen,
+		// end
+		TokenId.Semicolon,
+		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
+		// of course block body and condition block can be child
+		TokenId.ForBody, TokenId.ParenBlock
+	);
+	static readonly onLParenAppended = LogicBlock.Paren.createParenBlockOnLParenAppended;
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.ForBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		ForDeclaration.onLParenAppended,

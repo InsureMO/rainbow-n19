@@ -1,4 +1,4 @@
-import {GroovyAstNode, OnNodeClosedFunc} from '../../../node';
+import {ChildAcceptableCheckFunc, GroovyAstNode, OnNodeClosedFunc} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
 
@@ -19,6 +19,29 @@ export class SharedNodePointcuts {
 		// avoid extend
 	}
 
+	static readonly createChildAcceptableCheckFuncOnAcceptTokenIds = (...tokenIds: Array<TokenId>): ChildAcceptableCheckFunc => {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+			return tokenIds.includes(mightBeChildNode.tokenId);
+		};
+	};
+	static readonly createChildAcceptableCheckFuncOnUnacceptTokenIds = (...tokenIds: Array<TokenId>): ChildAcceptableCheckFunc => {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+			return !tokenIds.includes(mightBeChildNode.tokenId);
+		};
+	};
+	static readonly createChildAcceptableCheckFuncOnAcceptTokenTypes = (...tokenTypes: Array<TokenType>): ChildAcceptableCheckFunc => {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+			return tokenTypes.includes(mightBeChildNode.tokenType);
+		};
+	};
+	static readonly createChildAcceptableCheckFuncOnFirstOrNone = (...funcs: Array<ChildAcceptableCheckFunc>): ChildAcceptableCheckFunc => {
+		return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+			return funcs.some(func => func(mightBeChildNode, astRecognizer));
+		};
+	};
 	/**
 	 * close current parent when node with given token id appended or closed.
 	 * node with given token id is the last child of the closed current parent
@@ -60,25 +83,6 @@ export class SharedNodePointcuts {
 			}
 			return false;
 		};
-	};
-	/**
-	 * create a block node by given node, the given node will be the first child node of the created block node.
-	 * and the original parent node will be the parent of the created block node.
-	 */
-	static readonly createBlockByNode = (options: BlockCreationByNodeOptions): GroovyAstNode => {
-		const {node, blockTokenId, blockTokenType, blockNodePointcuts, astRecognizer} = options;
-		const parentNode = node.parent;
-		parentNode.chopOffTrailingNodes([node]);
-		const blockNode = new GroovyAstNode({
-			tokenId: blockTokenId, tokenType: blockTokenType,
-			text: '',
-			startOffset: node.startOffset,
-			startLine: node.startLine, startColumn: node.startColumn
-		});
-		blockNodePointcuts(blockNode);
-		blockNode.asParentOf(node);
-		astRecognizer.appendAsCurrentParent(blockNode);
-		return blockNode;
 	};
 	/**
 	 * create an on child closed function by given functions.
@@ -129,4 +133,23 @@ export class SharedNodePointcuts {
 		}
 		astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
 	}) as OnNodeClosedFunc;
+	/**
+	 * create a block node by given node, the given node will be the first child node of the created block node.
+	 * and the original parent node will be the parent of the created block node.
+	 */
+	static readonly createBlockByNode = (options: BlockCreationByNodeOptions): GroovyAstNode => {
+		const {node, blockTokenId, blockTokenType, blockNodePointcuts, astRecognizer} = options;
+		const parentNode = node.parent;
+		parentNode.chopOffTrailingNodes([node]);
+		const blockNode = new GroovyAstNode({
+			tokenId: blockTokenId, tokenType: blockTokenType,
+			text: '',
+			startOffset: node.startOffset,
+			startLine: node.startLine, startColumn: node.startColumn
+		});
+		blockNodePointcuts(blockNode);
+		blockNode.asParentOf(node);
+		astRecognizer.appendAsCurrentParent(blockNode);
+		return blockNode;
+	};
 }

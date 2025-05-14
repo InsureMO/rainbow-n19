@@ -63,6 +63,7 @@ class LogicBlockWithinParen {
 			return true;
 		};
 	};
+	static readonly createParenBlockOnLParenAppended = LogicBlockWithinParen.createOnLParenAppendedFuncForDeclaration(TokenId.ParenBlock);
 }
 
 export class LogicBlock {

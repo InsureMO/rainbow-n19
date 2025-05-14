@@ -1,6 +1,5 @@
-import {$NAF, ChildAcceptableCheckFunc, GroovyAstNode} from '../../../node';
+import {$NAF, GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
-import {AstRecognizer} from '../../ast-recognizer';
 import {LogicBlock} from './logic-block';
 import {SharedNodePointcuts} from './shared';
 
@@ -10,17 +9,14 @@ export class SynchronizedBlockDeclaration {
 		// avoid extend
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		return [
-			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-			TokenId.LBrace, TokenId.LParen,
-			// end
-			TokenId.Semicolon,
-			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			TokenId.SynchronizedBlockBody
-		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
+	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
+		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+		TokenId.LBrace, TokenId.LParen,
+		// end
+		TokenId.Semicolon,
+		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
+		TokenId.SynchronizedBlockBody
+	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SynchronizedBlockBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		SynchronizedBlockDeclaration.onLBraceAppended,

@@ -1,4 +1,4 @@
-import {$NAF, ChildAcceptableCheckFunc, GroovyAstNode, OnNodeClosedFunc} from '../../../node';
+import {$NAF, GroovyAstNode, OnNodeClosedFunc} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
 import {ConstructorDeclaration} from './constructor-declaration';
@@ -34,41 +34,38 @@ class TypeDeclarationUtils {
 	};
 	// standard behaviors of type declaration, one of 6.
 	/** node is one of type declaration */
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly standardTypeChildAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		// TODO need the 6 type declaration keywords or not?
-		return [
-			// class, constructor, method, field
-			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
-			// class
-			TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
-			// class, method
-			TokenId.ABSTRACT,
-			// class, static block, method, field
-			TokenId.STATIC,
-			// class, method, field (only field in groovy, it is not allowed in java)
-			TokenId.STRICTFP,
-			// class
-			TokenId.EXTENDS, TokenId.IMPLEMENTS,
-			// class, method, field
-			TokenId.FINAL,
-			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-			/*
-			 * could be
-			 * 1. name,
-			 * 2. return type of method,
-			 * 3. type of field
-			 */
-			TokenId.Identifier,
-			TokenId.GenericTypeDeclaration, TokenId.AnnotationDeclaration,
-			// sure to class or static block
-			TokenId.LBrace,
-			// end
-			TokenId.Semicolon,
-			TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-			TokenId.ClassBody
-		].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
+
+	static readonly standardTypeChildAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
+		// class, constructor, method, field
+		TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
+		// class
+		TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
+		// class, method
+		TokenId.ABSTRACT,
+		// class, static block, method, field
+		TokenId.STATIC,
+		// class, method, field (only field in groovy, it is not allowed in java)
+		TokenId.STRICTFP,
+		// class
+		TokenId.EXTENDS, TokenId.IMPLEMENTS,
+		// class, method, field
+		TokenId.FINAL,
+		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+		/*
+		 * could be
+		 * 1. name,
+		 * 2. return type of method,
+		 * 3. type of field
+		 */
+		TokenId.Identifier,
+		TokenId.GenericTypeDeclaration, TokenId.AnnotationDeclaration,
+		// sure to class or static block
+		TokenId.LBrace,
+		// end
+		TokenId.Semicolon,
+		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
+		TokenId.ClassBody
+	);
 	static readonly standardTypeOnLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.ClassBody);
 	static readonly standardTypeOnChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		TypeDeclarationUtils.standardTypeOnLBraceAppended,
@@ -83,57 +80,55 @@ class CsscmfDeclaration {
 		// avoid extend
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly childAcceptableCheck = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		return mightBeChildNode.tokenType === TokenType.PrimitiveType /* could be 1. return type of method, 2. type of field */
-			|| [
-				// class, constructor, method, field
-				TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
-				// class
-				TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
-				// class, method
-				TokenId.ABSTRACT,
-				// class, static block, method, field
-				TokenId.STATIC,
-				// class, method, field (only field in groovy, it is not allowed in java)
-				TokenId.STRICTFP,
-				// class
-				TokenId.EXTENDS, TokenId.IMPLEMENTS,
-				// sure to method
-				TokenId.NATIVE, TokenId.SYNCHRONIZED, TokenId.DEFAULT,
-				// class, method, field
-				TokenId.FINAL,
-				// sure to field
-				TokenId.TRANSIENT, TokenId.VOLATILE,
-				// constructor, method, field
-				TokenId.DEF,
-				TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-				/*
-				 * could be
-				 * 1. name,
-				 * 2. return type of method,
-				 * 3. type of field
-				 */
-				TokenId.Identifier,
-				TokenId.GenericTypeDeclaration, TokenId.AnnotationDeclaration,
-				// method
-				TokenId.VOID,
-				// sure to class
-				TokenId.CLASS, TokenId.INTERFACE, TokenId.AT_INTERFACE, TokenId.ENUM, TokenId.RECORD, TokenId.TRAIT,
-				// sure to class or static block
-				TokenId.LBrace,
-				// sure to constructor or method.
-				// record class also has paren pair, but it is after record keyword. and it is determined as record class declaration already.
-				TokenId.LParen,
-				// sure to field, it is value assigning
-				TokenId.Equal,
-				// sure to field, end this part
-				TokenId.Comma,
-				// end
-				TokenId.Semicolon,
-				TokenId.SingleLineComment, TokenId.MultipleLinesComment
-			].includes(mightBeChildNode.tokenId);
-	}) as ChildAcceptableCheckFunc;
+	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnFirstOrNone(
+		// could be 1. return type of method, 2. type of field
+		SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenTypes(TokenType.PrimitiveType),
+		SharedNodePointcuts.createChildAcceptableCheckFuncOnUnacceptTokenIds(// class, constructor, method, field
+			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
+			// class
+			TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
+			// class, method
+			TokenId.ABSTRACT,
+			// class, static block, method, field
+			TokenId.STATIC,
+			// class, method, field (only field in groovy, it is not allowed in java)
+			TokenId.STRICTFP,
+			// class
+			TokenId.EXTENDS, TokenId.IMPLEMENTS,
+			// sure to method
+			TokenId.NATIVE, TokenId.SYNCHRONIZED, TokenId.DEFAULT,
+			// class, method, field
+			TokenId.FINAL,
+			// sure to field
+			TokenId.TRANSIENT, TokenId.VOLATILE,
+			// constructor, method, field
+			TokenId.DEF,
+			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+			/*
+			 * could be
+			 * 1. name,
+			 * 2. return type of method,
+			 * 3. type of field
+			 */
+			TokenId.Identifier,
+			TokenId.GenericTypeDeclaration, TokenId.AnnotationDeclaration,
+			// method
+			TokenId.VOID,
+			// sure to class
+			TokenId.CLASS, TokenId.INTERFACE, TokenId.AT_INTERFACE, TokenId.ENUM, TokenId.RECORD, TokenId.TRAIT,
+			// sure to class or static block
+			TokenId.LBrace,
+			// sure to constructor or method.
+			// record class also has paren pair, but it is after record keyword. and it is determined as record class declaration already.
+			TokenId.LParen,
+			// sure to field, it is value assigning
+			TokenId.Equal,
+			// sure to field, end this part
+			TokenId.Comma,
+			// end
+			TokenId.Semicolon,
+			TokenId.SingleLineComment, TokenId.MultipleLinesComment)
+	);
 	/**
 	 * check the given child node can be identified as type declaration or not,
 	 * replace token nature when it is.
