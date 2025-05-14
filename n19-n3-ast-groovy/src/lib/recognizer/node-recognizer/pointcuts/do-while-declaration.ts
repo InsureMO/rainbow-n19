@@ -1,5 +1,6 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
+import {$Neaf} from '../../neaf-wrapper';
 import {LogicBlock} from './logic-block';
 import {SharedNodePointcuts} from './shared';
 
@@ -29,9 +30,9 @@ export class DoWhileDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO do-while node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, DoWhileDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, DoWhileDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, DoWhileDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, DoWhileDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, DoWhileDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, DoWhileDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, DoWhileDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, DoWhileDeclaration.onNodeClosed);
 	};
 }

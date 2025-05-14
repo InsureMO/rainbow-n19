@@ -127,11 +127,11 @@ export class SharedNodePointcuts {
 				break;
 			}
 		}
-		// drop nodes from start, before newline
-		if (firstNewLineIndex > 0) {
+		if (firstNewLineIndex >= 0) {
+			// drop nodes only when they are after newline
 			removeNodes = removeNodes.slice(firstNewLineIndex);
+			astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
 		}
-		astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
 	}) as OnNodeClosedFunc;
 	/**
 	 * create a block node by given node, the given node will be the first child node of the created block node.

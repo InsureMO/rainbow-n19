@@ -1,5 +1,6 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
+import {$Neaf} from '../../neaf-wrapper';
 import {LogicBlock} from './logic-block';
 import {SharedNodePointcuts} from './shared';
 
@@ -20,9 +21,9 @@ export class MethodDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO method node pointcuts
-		$NAF.ChildAcceptableCheck.clear(node);
-		$NAF.OnChildAppended.set(node, MethodDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, MethodDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, MethodDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.clear(node);
+		$Neaf.OnChildAppended.set(node, MethodDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, MethodDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, MethodDeclaration.onNodeClosed);
 	};
 }

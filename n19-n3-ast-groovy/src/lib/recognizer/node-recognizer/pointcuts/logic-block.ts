@@ -1,6 +1,7 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
+import {$Neaf} from '../../neaf-wrapper';
 import {BlockCreationByNodeOptions, OneOfOnChildAppendedFunc, SharedNodePointcuts} from './shared';
 
 class LogicBlockWithinBrace {
@@ -12,10 +13,10 @@ class LogicBlockWithinBrace {
 	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnRBraceAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO brace logic block node pointcuts
-		$NAF.ChildAcceptableCheck.clear(node);
-		$NAF.OnChildAppended.set(node, LogicBlockWithinBrace.onChildAppended);
-		$NAF.OnChildClosed.clear(node);
-		$NAF.OnNodeClosed.clear(node);
+		$Neaf.ChildAcceptableCheck.clear(node);
+		$Neaf.OnChildAppended.set(node, LogicBlockWithinBrace.onChildAppended);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 	static readonly createOnLBraceAppendedFuncForDeclaration = (tokenId: TokenId, bodyNodePointcuts?: BlockCreationByNodeOptions['blockNodePointcuts']): OneOfOnChildAppendedFunc => {
 		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
@@ -43,10 +44,10 @@ class LogicBlockWithinParen {
 	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnRParenAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO parenthesis logic block node pointcuts
-		$NAF.ChildAcceptableCheck.clear(node);
-		$NAF.OnChildAppended.set(node, LogicBlockWithinParen.onChildAppended);
-		$NAF.OnChildClosed.clear(node);
-		$NAF.OnNodeClosed.clear(node);
+		$Neaf.ChildAcceptableCheck.clear(node);
+		$Neaf.OnChildAppended.set(node, LogicBlockWithinParen.onChildAppended);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 	static readonly createOnLParenAppendedFuncForDeclaration = (tokenId: TokenId, bodyNodePointcuts?: BlockCreationByNodeOptions['blockNodePointcuts']): OneOfOnChildAppendedFunc => {
 		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {

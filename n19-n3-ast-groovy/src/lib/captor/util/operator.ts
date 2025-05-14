@@ -35,6 +35,8 @@ export enum AstOperators {
 	UrshiftAssign = '>>>=',
 	ElvisAssign = '?=',
 	Ellipsis = '...',
+	Arrow = '->',
+	Instanceof = 'instanceof',
 	// groovy
 	RangeInclusive = '..',
 	RangeExclusiveLeft = '<..',
@@ -55,7 +57,7 @@ export enum AstOperators {
 	Spaceship = '<=>',
 	Identical = '===',
 	NotIdentical = '!==',
-	Arrow = '->',
+	In = 'in',
 	NotInstanceof = '!instanceof',
 	NotIn = '!in'
 }

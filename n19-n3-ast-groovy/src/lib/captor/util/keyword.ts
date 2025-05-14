@@ -23,15 +23,11 @@ export enum AstKeywords {
 	If = 'if',
 	Implements = 'implements',
 	Import = 'import',
-	In = 'in', // TODO ⁉️
-	Instanceof = 'instanceof', // TODO ⁉️
 	Interface = 'interface',
 	Null = 'null', // TODO ⁉️
 	Native = 'native',
 	New = 'new',
 	NonSealed = 'non-sealed',
-	NotInstanceof = '!instanceof', // TODO ⁉️
-	NotIn = '!in', // TODO ⁉️
 	Package = 'package',
 	Permits = 'permits',
 	Private = 'private',

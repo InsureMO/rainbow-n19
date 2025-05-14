@@ -1,5 +1,6 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
+import {$Neaf} from '../../neaf-wrapper';
 import {LogicBlock} from './logic-block';
 import {SharedNodePointcuts} from './shared';
 
@@ -37,10 +38,10 @@ class TryTryDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO try-try node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, TryTryDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, TryTryDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, TryTryDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, TryTryDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, TryTryDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, TryTryDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, TryTryDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, TryTryDeclaration.onNodeClosed);
 	};
 }
 
@@ -68,10 +69,10 @@ class TryCatchDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO try-catch node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, TryCatchDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, TryCatchDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, TryCatchDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, TryCatchDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, TryCatchDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, TryCatchDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, TryCatchDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, TryCatchDeclaration.onNodeClosed);
 	};
 }
 
@@ -99,10 +100,10 @@ class TryFinallyDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO try-finally node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, TryFinallyDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, TryFinallyDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, TryFinallyDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, TryFinallyDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, TryFinallyDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, TryFinallyDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, TryFinallyDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, TryFinallyDeclaration.onNodeClosed);
 	};
 }
 
@@ -131,9 +132,9 @@ export class TryDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO try node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, TryDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, TryDeclaration.onChildAppended);
-		$NAF.OnChildClosed.clear(node);
-		$NAF.OnNodeClosed.set(node, TryDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, TryDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, TryDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.set(node, TryDeclaration.onNodeClosed);
 	};
 }

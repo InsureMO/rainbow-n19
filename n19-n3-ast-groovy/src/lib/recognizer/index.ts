@@ -5,3 +5,6 @@ export * from './node-recognizer-repo';
 
 export * from './node-recognizer';
 
+import {$Neaf} from './neaf-wrapper';
+
+export const $NeafForRecognizer = $Neaf;

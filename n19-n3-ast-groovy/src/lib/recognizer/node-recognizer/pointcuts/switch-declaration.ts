@@ -1,5 +1,6 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
+import {$Neaf} from '../../neaf-wrapper';
 import {LogicBlock} from './logic-block';
 import {SharedNodePointcuts} from './shared';
 
@@ -30,10 +31,10 @@ class SwitchCaseDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO switch case and default node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, SwitchCaseDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, SwitchCaseDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, SwitchCaseDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, SwitchCaseDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, SwitchCaseDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, SwitchCaseDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, SwitchCaseDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, SwitchCaseDeclaration.onNodeClosed);
 	};
 }
 
@@ -53,10 +54,10 @@ class SwitchDefaultDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO switch case and default node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, SwitchDefaultDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, SwitchDefaultDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, SwitchDefaultDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, SwitchDefaultDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, SwitchDefaultDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, SwitchDefaultDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, SwitchDefaultDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, SwitchDefaultDeclaration.onNodeClosed);
 	};
 }
 
@@ -91,9 +92,9 @@ export class SwitchDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO switch node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, SwitchDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, SwitchDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, SwitchDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, SwitchDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, SwitchDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, SwitchDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, SwitchDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, SwitchDeclaration.onNodeClosed);
 	};
 }

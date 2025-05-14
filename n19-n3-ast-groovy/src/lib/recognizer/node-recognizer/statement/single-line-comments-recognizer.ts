@@ -1,7 +1,8 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
+import {$Neaf} from '../../neaf-wrapper';
 import {AstRecognition} from '../../types';
 import {AbstractCommentsRecognizer, CommentsReviseSituation, NodeReviseFunc, NodeReviseResult} from '../abstract';
 
@@ -40,7 +41,7 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 		for (let index = 0, count = restNodes.length; index < count; index++) {
 			const node = restNodes[index];
 			if (node.tokenId === TokenId.CommentKeyword) {
-				$NAF.SLCommentHighlightColumn.set(statementNode, node.startColumn);
+				$Neaf.SLCommentHighlightColumn.set(statementNode, node.startColumn);
 				hasCommentKeyword = true;
 				break;
 			} else if (node.tokenId === TokenId.Chars) {
@@ -74,12 +75,12 @@ export class SingleLineCommentsRecognizer extends AbstractCommentsRecognizer {
 			// no clingy comment node from previous siblings, do nothing
 			return;
 		}
-		const highlightColumn = $NAF.SLCommentHighlightColumn.get(previousCommentsNode);
+		const highlightColumn = $Neaf.SLCommentHighlightColumn.get(previousCommentsNode);
 		if (highlightColumn == null) {
 			// previous comment node has no highlight
 			return;
 		}
-		$NAF.SLCommentHighlightColumn.set(statementNode, highlightColumn);
+		$Neaf.SLCommentHighlightColumn.set(statementNode, highlightColumn);
 		// compare the start column
 		if (firstCharsNode.startColumn > highlightColumn) {
 			// change all chars node to highlight

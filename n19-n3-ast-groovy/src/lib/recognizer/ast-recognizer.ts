@@ -1,7 +1,9 @@
 import {GroovyAst} from '../ast';
 import {CommentKeyword, CommentKeywords} from '../captor';
-import {$NAF, CompilationUnitNode, GroovyAstNode} from '../node';
+import {CompilationUnitNode, GroovyAstNode} from '../node';
 import {TokenId} from '../tokens';
+import {$Neaf} from './neaf-wrapper';
+import {NodePointcuts} from './node-recognizer';
 import {NodeRecognizerRepo} from './node-recognizer-repo';
 import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types';
 
@@ -144,6 +146,18 @@ export class AstRecognizer {
 		return this._currentAncestors[0];
 	}
 
+	protected couldEndsWithSemicolon(node: GroovyAstNode): boolean {
+		return $Neaf.CouldEndsWithSemicolon.get(node) ?? false;
+	}
+
+	protected acceptChild(parent: GroovyAstNode, child: GroovyAstNode): boolean {
+		const childAcceptableCheck = $Neaf.ChildAcceptableCheck.get(parent);
+		if (this.couldEndsWithSemicolon(parent) && child.tokenId === TokenId.Semicolon) {
+			return true;
+		}
+		return childAcceptableCheck == null || childAcceptableCheck(child, this);
+	}
+
 	/**
 	 * for some nodes, they cannot accept other statement node as child.
 	 * typically, other statement node not includes multiple-lines comments node.
@@ -156,8 +170,7 @@ export class AstRecognizer {
 		// the last node is compilation unit, can be the parent of anything
 		while (ancestors.length > 1) {
 			const ancestor = ancestors[0];
-			const childAcceptableCheck = $NAF.ChildAcceptableCheck.get(ancestor);
-			if (childAcceptableCheck == null || childAcceptableCheck(node, this)) {
+			if (this.acceptChild(ancestor, node)) {
 				// given node can be accepted by current parent, break the check
 				break;
 			} else {
@@ -168,6 +181,24 @@ export class AstRecognizer {
 		}
 
 		return ancestors[0];
+	}
+
+	protected onChildAppended(parent: GroovyAstNode, child: GroovyAstNode): void {
+		if (this.couldEndsWithSemicolon(parent) && NodePointcuts.Shared.closeCurrentParentOnSemicolonAppended(child, this)) {
+			return;
+		}
+		$Neaf.OnChildAppended.get(parent)?.(child, this);
+	}
+
+	protected onChildClosed(parent: GroovyAstNode, child: GroovyAstNode): void {
+		$Neaf.OnChildClosed.get(parent)?.(child, this);
+	}
+
+	protected onNodeClosed(node: GroovyAstNode): void {
+		$Neaf.OnNodeClosed.get(node)?.(node, this);
+		if ($Neaf.ElevateTrailingDetachableOnNodeClosed.get(node) ?? true) {
+			NodePointcuts.Shared.moveTrailingDetachableNodesToParentOnNodeClosed(node, this);
+		}
 	}
 
 	/**
@@ -198,7 +229,7 @@ export class AstRecognizer {
 		}
 		const parent = this._currentAncestors[0];
 		parent.asParentOf(node);
-		$NAF.OnChildAppended.get(parent)?.(node, this);
+		this.onChildAppended(parent, node);
 	}
 
 	/**
@@ -229,9 +260,8 @@ export class AstRecognizer {
 	 */
 	closeCurrentParent(): void {
 		const node = this._currentAncestors.shift();
-		$NAF.OnNodeClosed.get(node)?.(node, this);
-		const parent = this._currentAncestors[0];
-		$NAF.OnChildClosed.get(parent)?.(node, this);
+		this.onNodeClosed(node);
+		this.onChildClosed(this._currentAncestors[0], node);
 	}
 
 	/**

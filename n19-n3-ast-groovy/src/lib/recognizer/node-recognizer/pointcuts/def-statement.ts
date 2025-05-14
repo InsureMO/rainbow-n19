@@ -1,4 +1,5 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
+import {$Neaf} from '../../neaf-wrapper';
 import {SharedNodePointcuts} from './shared';
 
 export class DefStatement {
@@ -13,8 +14,8 @@ export class DefStatement {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO def node pointcuts
-		$NAF.ChildAcceptableCheck.clear(node);
-		$NAF.OnChildAppended.set(node, DefStatement.onChildAppended);
-		$NAF.OnNodeClosed.set(node, DefStatement.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.clear(node);
+		$Neaf.OnChildAppended.set(node, DefStatement.onChildAppended);
+		$Neaf.OnNodeClosed.set(node, DefStatement.onNodeClosed);
 	};
 }

@@ -6,6 +6,6 @@ export * from './ast-holder';
 
 export * from './node';
 export * from './captor';
-export * from './captor/ast-tokenizer';
+export * from './recognizer';
 
 export * from './ast-utils';

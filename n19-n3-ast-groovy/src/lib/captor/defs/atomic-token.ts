@@ -30,9 +30,6 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	// groovy keywords
 	[TokenId.AS]: [Tt.Gk, KwKw.As, 'GkAs'],
 	[TokenId.DEF]: [Tt.Gk, KwKw.Def, 'GkDef'],
-	[TokenId.IN]: [Tt.Gk, KwKw.In, 'GkIn'],
-	[TokenId.NOT_IN]: [Tt.Gk, KwKw.NotIn, 'GkNotIn'],
-	[TokenId.NOT_INSTANCEOF]: [Tt.Gk, KwKw.NotInstanceof, 'GkNotInstanceof'],
 	[TokenId.TRAIT]: [Tt.Gk, KwKw.Trait, 'GkTrait'],
 	[TokenId.THREADSAFE]: [Tt.Gk, KwKw.AtThreadsafe, 'GkAtThreadSafe'],
 	// java keywords
@@ -57,7 +54,6 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.IF]: [Tt.Jk, KwKw.If, 'JkIf'],
 	[TokenId.IMPLEMENTS]: [Tt.Jk, KwKw.Implements, 'JkImplements'],
 	[TokenId.IMPORT]: [Tt.Jk, KwKw.Import, 'JkImport'],
-	[TokenId.INSTANCEOF]: [Tt.Jk, KwKw.Instanceof, 'JkInstanceof'],
 	[TokenId.INTERFACE]: [Tt.Jk, KwKw.Interface, 'JkInterface'],
 	[TokenId.NATIVE]: [Tt.Jk, KwKw.Native, 'JkNative'],
 	[TokenId.NEW]: [Tt.Jk, KwKw.New, 'JkNew'],
@@ -140,6 +136,9 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.Spaceship]: [Tt.Go, KwOp.Spaceship, 'GoSpaceship'],
 	[TokenId.Identical]: [Tt.Go, KwOp.Identical, 'GoIdentical'],
 	[TokenId.NotIdentical]: [Tt.Go, KwOp.NotIdentical, 'GoNotIdentical'],
+	[TokenId.IN]: [Tt.Go, KwOp.In, 'GoIn'],
+	[TokenId.NOT_IN]: [Tt.Go, KwOp.NotIn, 'GoNotIn'],
+	[TokenId.NOT_INSTANCEOF]: [Tt.Go, KwOp.NotInstanceof, 'GoNotInstanceof'],
 	// operators
 	[TokenId.Assign]: [Tt.Jo, KwOp.Assign, 'JoAssign'],
 	[TokenId.GreaterThan]: [Tt.Jo, KwOp.GreaterThan, 'JoGreaterThan'],
@@ -178,6 +177,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.ElvisAssign]: [Tt.Jo, KwOp.ElvisAssign, 'JoElvisAssign'],
 	[TokenId.Ellipsis]: [Tt.Jo, KwOp.Ellipsis, 'JoEllipsis'],
 	[TokenId.Arrow]: [Tt.Jo, KwOp.Arrow, 'JoArrow'],
+	[TokenId.INSTANCEOF]: [Tt.Jo, KwOp.Instanceof, 'JoInstanceof'],
 	// separators
 	[TokenId.LBrace]: [Tt.Sp, KwCh.LBrace, 'SpLBrace'],
 	[TokenId.RBrace]: [Tt.Sp, KwCh.RBrace, 'SpRBrace'],

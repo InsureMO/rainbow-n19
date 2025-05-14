@@ -1,5 +1,6 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
+import {$Neaf} from '../../neaf-wrapper';
 import {SharedNodePointcuts} from './shared';
 
 export class PackageDeclaration {
@@ -12,15 +13,13 @@ export class PackageDeclaration {
 		TokenId.PACKAGE,
 		TokenId.Whitespaces, TokenId.Tabs, TokenId.Dot,
 		TokenId.Identifier,
-		TokenId.Semicolon,
 		TokenId.MultipleLinesComment
 	);
-	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnSemicolonAppended;
-	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, PackageDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, PackageDeclaration.onChildAppended);
-		$NAF.OnChildClosed.clear(node);
-		$NAF.OnNodeClosed.set(node, PackageDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, PackageDeclaration.childAcceptableCheck);
+		$Neaf.CouldEndsWithSemicolon.set(node, true);
+		$Neaf.OnChildAppended.clear(node);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }

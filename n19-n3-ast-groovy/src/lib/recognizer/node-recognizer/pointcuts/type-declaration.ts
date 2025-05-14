@@ -1,6 +1,7 @@
-import {$NAF, GroovyAstNode, OnNodeClosedFunc} from '../../../node';
+import {GroovyAstNode, OnNodeClosedFunc} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
+import {$Neaf} from '../../neaf-wrapper';
 import {ConstructorDeclaration} from './constructor-declaration';
 import {FieldDeclaration} from './field-declaration';
 import {LogicBlock} from './logic-block';
@@ -83,7 +84,7 @@ class CsscmfDeclaration {
 	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnFirstOrNone(
 		// could be 1. return type of method, 2. type of field
 		SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenTypes(TokenType.PrimitiveType),
-		SharedNodePointcuts.createChildAcceptableCheckFuncOnUnacceptTokenIds(// class, constructor, method, field
+		SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(// class, constructor, method, field
 			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
 			// class
 			TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
@@ -220,9 +221,9 @@ class CsscmfDeclaration {
 		}
 
 		const statementNode = lastChildNode.parent;
-		const identifierCount = $NAF.IdentifierChildCount.get(statementNode);
+		const identifierCount = $Neaf.IdentifierChildCount.get(statementNode);
 		if (identifierCount === 0) {
-			$NAF.IdentifierChildCount.set(statementNode, 1);
+			$Neaf.IdentifierChildCount.set(statementNode, 1);
 		} else {
 			// multiple identifiers, close declaration and chop-off the identifier node, move to parent
 			astRecognizer.closeCurrentParent();
@@ -250,7 +251,7 @@ class CsscmfDeclaration {
 
 		let isStaticBlockStart = true;
 		let isSynchronizedBlockStart = true;
-		if ($NAF.IdentifierChildCount.get(statementNode) > 0) {
+		if ($Neaf.IdentifierChildCount.get(statementNode) > 0) {
 			// has identifier
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
@@ -311,7 +312,7 @@ class CsscmfDeclaration {
 		}
 
 		const statementNode = lastChildNode.parent;
-		const identifierCount = $NAF.IdentifierChildCount.get(statementNode);
+		const identifierCount = $Neaf.IdentifierChildCount.get(statementNode);
 		if (identifierCount === 0) {
 			// no identifier exists, identified as method declaration
 			let isSynchronizedBlockStart = true;
@@ -484,10 +485,10 @@ class CsscmfDeclaration {
 		SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed(node, astRecognizer);
 	}) as OnNodeClosedFunc;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, CsscmfDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, CsscmfDeclaration.onChildAppended);
-		$NAF.OnChildClosed.clear(node);
-		$NAF.OnNodeClosed.set(node, CsscmfDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, CsscmfDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, CsscmfDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.set(node, CsscmfDeclaration.onNodeClosed);
 	};
 }
 
@@ -501,10 +502,10 @@ class ClassDeclaration {
 	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
 	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, ClassDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, ClassDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, ClassDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$Neaf.ChildAcceptableCheck.set(node, ClassDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, ClassDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, ClassDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -518,10 +519,10 @@ class InterfaceDeclaration {
 	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
 	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, InterfaceDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, InterfaceDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, InterfaceDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$Neaf.ChildAcceptableCheck.set(node, InterfaceDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, InterfaceDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, InterfaceDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -535,10 +536,10 @@ class AtInterfaceClassDeclaration {
 	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
 	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, AtInterfaceClassDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, AtInterfaceClassDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, AtInterfaceClassDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$Neaf.ChildAcceptableCheck.set(node, AtInterfaceClassDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, AtInterfaceClassDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, AtInterfaceClassDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -552,10 +553,10 @@ class EnumClassDeclaration {
 	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
 	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, EnumClassDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, EnumClassDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, EnumClassDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$Neaf.ChildAcceptableCheck.set(node, EnumClassDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, EnumClassDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, EnumClassDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -570,10 +571,10 @@ class RecordClassDeclaration {
 	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
 	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, RecordClassDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, RecordClassDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, RecordClassDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$Neaf.ChildAcceptableCheck.set(node, RecordClassDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, RecordClassDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, RecordClassDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 
@@ -587,10 +588,10 @@ class TraitClassDeclaration {
 	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
 	static readonly onChildClosed = TypeDeclarationUtils.onClassBodyClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, TraitClassDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, TraitClassDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, TraitClassDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$Neaf.ChildAcceptableCheck.set(node, TraitClassDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, TraitClassDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, TraitClassDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
 

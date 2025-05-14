@@ -15,6 +15,46 @@ export class ScriptCommandRecognizer extends AbstractEagerRecognizer {
 		return TokenId.ScriptCommandStartMark;
 	}
 
+	protected createOperatorNotNode(startOffset: number, startLine: number, startColumn: number): GroovyAstNode {
+		return GroovyAstNode.createAstNode({
+			tokenId: TokenId.Not, tokenType: TokenType.Operator,
+			text: AstOperators.Not,
+			startOffset, startLine, startColumn
+		});
+	}
+
+	protected createOperatorNotIdentical(startOffset: number, startLine: number, startColumn: number): GroovyAstNode {
+		return GroovyAstNode.createAstNode({
+			tokenId: TokenId.NotIdentical, tokenType: TokenType.Operator,
+			text: AstOperators.NotIdentical,
+			startOffset, startLine, startColumn
+		});
+	}
+
+	protected createOperatorNotEqual(startOffset: number, startLine: number, startColumn: number): GroovyAstNode {
+		return GroovyAstNode.createAstNode({
+			tokenId: TokenId.NotEqual, tokenType: TokenType.Operator,
+			text: AstOperators.NotEqual,
+			startOffset, startLine, startColumn
+		});
+	}
+
+	protected createOperatorNotIn(startOffset: number, startLine: number, startColumn: number): GroovyAstNode {
+		return GroovyAstNode.createAstNode({
+			tokenId: TokenId.NOT_IN, tokenType: TokenType.Operator,
+			text: AstOperators.NotIn,
+			startOffset, startLine, startColumn
+		});
+	}
+
+	protected createOperatorNotInstanceOf(startOffset: number, startLine: number, startColumn: number): GroovyAstNode {
+		return GroovyAstNode.createAstNode({
+			tokenId: TokenId.NOT_INSTANCEOF, tokenType: TokenType.Operator,
+			text: AstOperators.NotInstanceof,
+			startOffset, startLine, startColumn
+		});
+	}
+
 	protected rehydrateTo2Parts(recognition: AstRecognition): number {
 		const {node, nodeIndex, nodes, astRecognizer} = recognition;
 
@@ -22,15 +62,29 @@ export class ScriptCommandRecognizer extends AbstractEagerRecognizer {
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.WellNumber);
 		// push well-number mark
 		astRecognizer.appendAsLeaf(node, true);
-		// push not operator, and will start to recognize from this new node
-		const node2 = GroovyAstNode.createAstNode({
-			tokenId: TokenId.Not, tokenType: TokenType.Operator,
-			text: AstOperators.Not, startOffset: startOffset + 1,
-			startLine, startColumn: startColumn + 1
-		});
-
+		// to check the next index can merge to mark ! or not
+		let node2: GroovyAstNode;
+		let replaceNextNode = false;
+		const nextNode = nodes[nodeIndex + 1];
+		if (nextNode == null) {
+			node2 = this.createOperatorNotNode(startOffset + 1, startLine, startColumn + 1);
+		} else if (nextNode.tokenId === TokenId.Equal) {
+			node2 = this.createOperatorNotIdentical(startOffset + 1, startLine, startColumn + 1);
+			replaceNextNode = true;
+		} else if (nextNode.tokenId === TokenId.Assign) {
+			node2 = this.createOperatorNotEqual(startOffset + 1, startLine, startColumn + 1);
+			replaceNextNode = true;
+		} else if (nextNode.tokenId === TokenId.IN) {
+			node2 = this.createOperatorNotIn(startOffset + 1, startLine, startColumn + 1);
+			replaceNextNode = true;
+		} else if (nextNode.tokenId === TokenId.INSTANCEOF) {
+			node2 = this.createOperatorNotInstanceOf(startOffset + 1, startLine, startColumn + 1);
+			replaceNextNode = true;
+		} else {
+			node2 = this.createOperatorNotNode(startOffset + 1, startLine, startColumn + 1);
+		}
 		// push node2
-		nodes.splice(nodeIndex, 0, node2);
+		nodes.splice(nodeIndex + 1, replaceNextNode ? 0 : 1, node2);
 		return nodeIndex + 1;
 	}
 

@@ -1,4 +1,5 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
+import {$Neaf} from '../../neaf-wrapper';
 import {SharedNodePointcuts} from './shared';
 
 export class FieldDeclaration {
@@ -10,9 +11,9 @@ export class FieldDeclaration {
 	static readonly onChildAppended = SharedNodePointcuts.closeCurrentParentOnSemicolonAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO field node pointcuts
-		$NAF.ChildAcceptableCheck.clear(node);
-		$NAF.OnChildAppended.set(node, FieldDeclaration.onChildAppended);
-		$NAF.OnChildClosed.clear(node);
-		$NAF.OnNodeClosed.clear(node);
+		$Neaf.ChildAcceptableCheck.clear(node);
+		$Neaf.OnChildAppended.set(node, FieldDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }

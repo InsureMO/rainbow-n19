@@ -59,7 +59,7 @@ describe('Import declaration test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 38, 0, text, [
-				[TokenId.ImportDeclaration, 0, 32, 1, 'import/* a */ abc/*b*/. /*c*/edf', [
+				[TokenId.ImportDeclaration, 0, 37, 1, 'import/* a */ abc/*b*/. /*c*/edf/*d*/', [
 					[TokenId.IMPORT, 0, 6, 1, 'import'],
 					[TokenId.MultipleLinesComment, 6, 13, 1, '/* a */', [
 						[TokenId.MultipleLinesCommentStartMark, 6, 8, 1, '/*'],
@@ -82,12 +82,12 @@ describe('Import declaration test', () => {
 						[TokenId.Chars, 26, 27, 1, 'c'],
 						[TokenId.MultipleLinesCommentEndMark, 27, 29, 1, '*/']
 					]],
-					[TokenId.Identifier, 29, 32, 1, 'edf']
-				]],
-				[TokenId.MultipleLinesComment, 32, 37, 1, '/*d*/', [
-					[TokenId.MultipleLinesCommentStartMark, 32, 34, 1, '/*'],
-					[TokenId.Chars, 34, 35, 1, 'd'],
-					[TokenId.MultipleLinesCommentEndMark, 35, 37, 1, '*/']
+					[TokenId.Identifier, 29, 32, 1, 'edf'],
+					[TokenId.MultipleLinesComment, 32, 37, 1, '/*d*/', [
+						[TokenId.MultipleLinesCommentStartMark, 32, 34, 1, '/*'],
+						[TokenId.Chars, 34, 35, 1, 'd'],
+						[TokenId.MultipleLinesCommentEndMark, 35, 37, 1, '*/']
+					]]
 				]],
 				[TokenId.NewLine, 37, 38, 1, '\n']
 			]

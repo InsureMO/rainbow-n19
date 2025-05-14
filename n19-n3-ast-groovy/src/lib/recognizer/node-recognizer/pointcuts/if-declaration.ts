@@ -1,6 +1,7 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
+import {$Neaf} from '../../neaf-wrapper';
 import {LogicBlock} from './logic-block';
 import {SharedNodePointcuts} from './shared';
 
@@ -38,10 +39,10 @@ class IfIfDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO if-if node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, IfIfDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, IfIfDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, IfIfDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, IfIfDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, IfIfDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, IfIfDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, IfIfDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, IfIfDeclaration.onNodeClosed);
 	};
 }
 
@@ -69,10 +70,10 @@ class IfElseIfDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO if-else-if node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, IfElseIfDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, IfElseIfDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, IfElseIfDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, IfElseIfDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, IfElseIfDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, IfElseIfDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, IfElseIfDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, IfElseIfDeclaration.onNodeClosed);
 	};
 }
 
@@ -112,10 +113,10 @@ class IfElseDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO if-else node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, IfElseDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, IfElseDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, IfElseDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.set(node, IfElseDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, IfElseDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, IfElseDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, IfElseDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.set(node, IfElseDeclaration.onNodeClosed);
 	};
 }
 
@@ -145,9 +146,9 @@ export class IfDeclaration {
 	static readonly onNodeClosed = SharedNodePointcuts.moveTrailingDetachableNodesToParentOnNodeClosed;
 	static readonly extra = (node: GroovyAstNode): void => {
 		// TODO if node pointcuts
-		$NAF.ChildAcceptableCheck.set(node, IfDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, IfDeclaration.onChildAppended);
-		$NAF.OnChildClosed.clear(node);
-		$NAF.OnNodeClosed.set(node, IfDeclaration.onNodeClosed);
+		$Neaf.ChildAcceptableCheck.set(node, IfDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, IfDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.clear(node);
+		$Neaf.OnNodeClosed.set(node, IfDeclaration.onNodeClosed);
 	};
 }

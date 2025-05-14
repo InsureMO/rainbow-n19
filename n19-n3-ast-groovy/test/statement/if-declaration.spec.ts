@@ -111,17 +111,17 @@ describe('If declaration test', () => {
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 37, 0, text, [
 				[TokenId.IfDeclaration, 0, 37, 1, 'if (true) else if (true) else else {}', [
-					[TokenId.IfIfDeclaration, 0, 9, 1, 'if (true)', [
+					[TokenId.IfIfDeclaration, 0, 10, 1, 'if (true) ', [
 						[TokenId.IF, 0, 2, 1, 'if'],
 						[TokenId.Whitespaces, 2, 3, 1, ' '],
 						[TokenId.ParenBlock, 3, 9, 1, '(true)', [
 							[TokenId.LParen, 3, 4, 1, '('],
 							[TokenId.BooleanLiteral, 4, 8, 1, 'true'],
 							[TokenId.RParen, 8, 9, 1, ')']
-						]]
+						]],
+						[TokenId.Whitespaces, 9, 10, 1, ' ']
 					]],
-					[TokenId.Whitespaces, 9, 10, 1, ' '],
-					[TokenId.IfElseIfDeclaration, 10, 24, 1, 'else if (true)', [
+					[TokenId.IfElseIfDeclaration, 10, 25, 1, 'else if (true) ', [
 						[TokenId.ELSE, 10, 14, 1, 'else'],
 						[TokenId.Whitespaces, 14, 15, 1, ' '],
 						[TokenId.IF, 15, 17, 1, 'if'],
@@ -130,13 +130,13 @@ describe('If declaration test', () => {
 							[TokenId.LParen, 18, 19, 1, '('],
 							[TokenId.BooleanLiteral, 19, 23, 1, 'true'],
 							[TokenId.RParen, 23, 24, 1, ')']
-						]]
+						]],
+						[TokenId.Whitespaces, 24, 25, 1, ' ']
 					]],
-					[TokenId.Whitespaces, 24, 25, 1, ' '],
-					[TokenId.IfElseDeclaration, 25, 29, 1, 'else', [
+					[TokenId.IfElseDeclaration, 25, 30, 1, 'else ', [
 						[TokenId.ELSE, 25, 29, 1, 'else'],
+						[TokenId.Whitespaces, 29, 30, 1, ' '],
 					]],
-					[TokenId.Whitespaces, 29, 30, 1, ' '],
 					[TokenId.IfElseDeclaration, 30, 37, 1, 'else {}', [
 						[TokenId.ELSE, 30, 34, 1, 'else'],
 						[TokenId.Whitespaces, 34, 35, 1, ' '],

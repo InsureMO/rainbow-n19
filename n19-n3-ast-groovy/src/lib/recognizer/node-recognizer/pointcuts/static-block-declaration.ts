@@ -1,5 +1,6 @@
-import {$NAF, GroovyAstNode} from '../../../node';
+import {GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
+import {$Neaf} from '../../neaf-wrapper';
 import {LogicBlock} from './logic-block';
 import {SharedNodePointcuts} from './shared';
 
@@ -24,9 +25,9 @@ export class StaticBlockDeclaration {
 	);
 	static readonly onChildClosed = SharedNodePointcuts.createCloseCurrentParentOnTokenId(TokenId.StaticBlockBody);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$NAF.ChildAcceptableCheck.set(node, StaticBlockDeclaration.childAcceptableCheck);
-		$NAF.OnChildAppended.set(node, StaticBlockDeclaration.onChildAppended);
-		$NAF.OnChildClosed.set(node, StaticBlockDeclaration.onChildClosed);
-		$NAF.OnNodeClosed.clear(node);
+		$Neaf.ChildAcceptableCheck.set(node, StaticBlockDeclaration.childAcceptableCheck);
+		$Neaf.OnChildAppended.set(node, StaticBlockDeclaration.onChildAppended);
+		$Neaf.OnChildClosed.set(node, StaticBlockDeclaration.onChildClosed);
+		$Neaf.OnNodeClosed.clear(node);
 	};
 }
