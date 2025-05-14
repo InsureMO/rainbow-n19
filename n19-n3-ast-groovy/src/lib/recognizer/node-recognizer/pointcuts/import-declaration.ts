@@ -1,7 +1,6 @@
 import {GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
 import {$Neaf} from '../../neaf-wrapper';
-import {SharedNodePointcuts} from './shared';
 
 export class ImportDeclaration {
 	// noinspection JSUnusedLocalSymbols
@@ -9,16 +8,16 @@ export class ImportDeclaration {
 		// avoid extend
 	}
 
-	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
-		TokenId.IMPORT,
-		TokenId.Whitespaces, TokenId.Tabs, TokenId.Dot,
-		TokenId.STATIC, TokenId.Identifier, TokenId.AS,
-		// alias of TokenId.Multiple, only in import declaration
-		TokenId.ImportAllMark,
-		TokenId.MultipleLinesComment
-	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.set(node, ImportDeclaration.childAcceptableCheck);
+		// newline and sl comments is not allowed
+		$Neaf.Accept5BaseNodesAsChild.set(node, false);
+		$Neaf.AcceptTokenIdsAsChild.set(node, [
+			TokenId.IMPORT, TokenId.STATIC, TokenId.Identifier, TokenId.Dot, TokenId.AS,
+			// alias of TokenId.Multiple, only in import declaration
+			TokenId.ImportAllMark,
+			TokenId.Whitespaces, TokenId.Tabs, TokenId.MultipleLinesComment
+		]);
+		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.clear(node);
 		$Neaf.OnChildClosed.clear(node);

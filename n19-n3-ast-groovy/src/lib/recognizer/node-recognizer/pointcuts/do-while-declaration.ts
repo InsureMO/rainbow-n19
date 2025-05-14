@@ -10,13 +10,6 @@ export class DoWhileDeclaration {
 		// avoid extend
 	}
 
-	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
-		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-		TokenId.DO, TokenId.WHILE,
-		TokenId.LBrace, TokenId.LParen,
-		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-		TokenId.DoWhileBody, TokenId.ParenBlock
-	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.DoWhileBody);
 	static readonly onLParenAppended = LogicBlock.Paren.createParenBlockOnLParenAppended;
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
@@ -24,7 +17,12 @@ export class DoWhileDeclaration {
 		DoWhileDeclaration.onLParenAppended
 	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.set(node, DoWhileDeclaration.childAcceptableCheck);
+		$Neaf.AcceptTokenIdsAsChild.set(node, [
+			TokenId.WHILE,
+			TokenId.LBrace, TokenId.DoWhileBody,
+			TokenId.LParen, TokenId.ParenBlock
+		]);
+		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, DoWhileDeclaration.onChildAppended);
 		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.ParenBlock);

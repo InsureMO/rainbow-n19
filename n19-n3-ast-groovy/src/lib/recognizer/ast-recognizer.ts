@@ -147,12 +147,40 @@ export class AstRecognizer {
 		return this._currentAncestors[0];
 	}
 
+	protected acceptedWithEndToken(parent: GroovyAstNode, child: GroovyAstNode): boolean {
+		return $Neaf.EndWithToken.get(parent) === child.tokenId;
+	}
+
+	protected acceptedWith5BaseNodes(parent: GroovyAstNode, child: GroovyAstNode): boolean {
+		return ($Neaf.Accept5BaseNodesAsChild.get(parent) ?? true) && [
+			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+			TokenId.SingleLineComment, TokenId.MultipleLinesComment
+		].includes(child.tokenId);
+	}
+
+	protected acceptedByGivenTokenIds(parent: GroovyAstNode, child: GroovyAstNode): boolean {
+		return $Neaf.AcceptTokenIdsAsChild.get(parent)?.includes(child.tokenId) === true;
+	}
+
+	protected acceptedByGivenTokenTypes(parent: GroovyAstNode, child: GroovyAstNode): boolean {
+		return $Neaf.AcceptTokenTypesAsChild.get(parent)?.includes(child.tokenType) === true;
+	}
+
+	protected rejectedByGivenTokenIds(parent: GroovyAstNode, child: GroovyAstNode): boolean {
+		return $Neaf.RejectTokenIdsAsChild.get(parent)?.includes(child.tokenId) === true;
+	}
+
 	protected acceptChild(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		const childAcceptableCheck = $Neaf.ChildAcceptableCheck.get(parent);
-		if ($Neaf.EndWithToken.get(parent) === child.tokenId) {
+		if (this.acceptedWithEndToken(parent, child)
+			|| this.acceptedWith5BaseNodes(parent, child)
+			|| this.acceptedByGivenTokenIds(parent, child)
+			|| this.acceptedByGivenTokenTypes(parent, child)) {
 			return true;
 		}
-		return childAcceptableCheck == null || childAcceptableCheck(child, this);
+		if (this.rejectedByGivenTokenIds(parent, child)) {
+			return false;
+		}
+		return $Neaf.ChildAcceptableCheck.get(parent)?.(child, this) !== false;
 	}
 
 	/**

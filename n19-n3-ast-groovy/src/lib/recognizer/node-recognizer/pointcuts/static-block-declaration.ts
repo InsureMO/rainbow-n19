@@ -10,18 +10,18 @@ export class StaticBlockDeclaration {
 		// avoid extend
 	}
 
-	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
-		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-		TokenId.LBrace,
-		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-		TokenId.StaticBlockBody
-	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.StaticBlockBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		StaticBlockDeclaration.onLBraceAppended
 	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.set(node, StaticBlockDeclaration.childAcceptableCheck);
+		$Neaf.AcceptTokenIdsAsChild.set(node, [
+			// never happens, this node always be created as csscmf first, and change to this nature
+			// therefore, the static keyword is already appended as child
+			TokenId.STATIC,
+			TokenId.LBrace, TokenId.StaticBlockBody
+		]);
+		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, StaticBlockDeclaration.onChildAppended);
 		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.StaticBlockBody);

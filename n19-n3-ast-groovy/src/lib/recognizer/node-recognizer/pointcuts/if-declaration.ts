@@ -20,20 +20,17 @@ class IfIfDeclaration {
 		// avoid extend
 	}
 
-	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
-		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-		TokenId.IF,
-		TokenId.LBrace, TokenId.LParen,
-		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-		TokenId.IfIfBody, TokenId.ParenBlock
-	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfIfBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		IfDeclarationUtils.onLParenAppended,
 		IfIfDeclaration.onLBraceAppended
 	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.set(node, IfIfDeclaration.childAcceptableCheck);
+		$Neaf.AcceptTokenIdsAsChild.set(node, [
+			TokenId.LParen, TokenId.ParenBlock,
+			TokenId.LBrace, TokenId.IfElseIfBody
+		]);
+		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, IfIfDeclaration.onChildAppended);
 		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.IfIfBody);
@@ -48,19 +45,17 @@ class IfElseIfDeclaration {
 		// avoid extend
 	}
 
-	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
-		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-		TokenId.LBrace, TokenId.LParen,
-		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-		TokenId.IfElseIfBody, TokenId.ParenBlock
-	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfElseIfBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
 		IfDeclarationUtils.onLParenAppended,
 		IfElseIfDeclaration.onLBraceAppended
 	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.set(node, IfElseIfDeclaration.childAcceptableCheck);
+		$Neaf.AcceptTokenIdsAsChild.set(node, [
+			TokenId.LParen, TokenId.ParenBlock,
+			TokenId.LBrace, TokenId.IfElseIfBody
+		]);
+		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, IfElseIfDeclaration.onChildAppended);
 		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.IfElseIfBody);
@@ -75,13 +70,6 @@ class IfElseDeclaration {
 		// avoid extend
 	}
 
-	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
-		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-		TokenId.IF,
-		TokenId.LBrace,
-		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-		TokenId.IfElseBody
-	);
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfElseBody);
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	static readonly onIfKeywordAppended = (lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
@@ -99,7 +87,11 @@ class IfElseDeclaration {
 		IfElseDeclaration.onIfKeywordAppended
 	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.set(node, IfElseDeclaration.childAcceptableCheck);
+		$Neaf.AcceptTokenIdsAsChild.set(node, [
+			TokenId.IF,
+			TokenId.LBrace, TokenId.IfElseBody
+		]);
+		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, IfElseDeclaration.onChildAppended);
 		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.IfElseBody);
@@ -120,14 +112,11 @@ export class IfDeclaration {
 	static readonly ElseIf = IfElseIfDeclaration;
 	static readonly Else = IfElseDeclaration;
 
-	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
-		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-		TokenId.IF, TokenId.ELSE,
-		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-		TokenId.IfIfDeclaration, TokenId.IfElseIfDeclaration, TokenId.IfElseDeclaration
-	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.set(node, IfDeclaration.childAcceptableCheck);
+		$Neaf.AcceptTokenIdsAsChild.set(node, [
+			TokenId.IfIfDeclaration, TokenId.IfElseIfDeclaration, TokenId.IfElseDeclaration
+		]);
+		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.clear(node);
 		$Neaf.OnChildClosed.clear(node);
