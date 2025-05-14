@@ -47,7 +47,7 @@ export enum AstKeywords {
 	Trait = 'trait',
 	Transient = 'transient',
 	Try = 'try',
-	Var = 'var', // TODO ⁉️
+	Var = 'var',
 	Void = 'void',
 	Volatile = 'volatile',
 	While = 'while',
