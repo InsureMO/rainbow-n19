@@ -147,10 +147,6 @@ export class AstRecognizer {
 		return this._currentAncestors[0];
 	}
 
-	protected acceptedWithEndToken(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		return $Neaf.EndWithToken.get(parent) === child.tokenId;
-	}
-
 	protected acceptedWith5BaseNodes(parent: GroovyAstNode, child: GroovyAstNode): boolean {
 		return ($Neaf.Accept5BaseNodesAsChild.get(parent) ?? true) && [
 			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
@@ -158,29 +154,58 @@ export class AstRecognizer {
 		].includes(child.tokenId);
 	}
 
-	protected acceptedByGivenTokenIds(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		return $Neaf.AcceptTokenIdsAsChild.get(parent)?.includes(child.tokenId) === true;
+	protected acceptedWithEndToken(parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' {
+		const tokenId = $Neaf.EndWithToken.get(parent);
+		if (tokenId == null) {
+			return 'ignored';
+		} else {
+			return tokenId === child.tokenId;
+		}
 	}
 
-	protected acceptedByGivenTokenTypes(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		return $Neaf.AcceptTokenTypesAsChild.get(parent)?.includes(child.tokenType) === true;
+	protected acceptedByGivenTokenIds(parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' {
+		return $Neaf.AcceptTokenIdsAsChild.get(parent)?.includes(child.tokenId) ?? 'ignored';
+	}
+
+	protected acceptedByGivenTokenTypes(parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' {
+		return $Neaf.AcceptTokenTypesAsChild.get(parent)?.includes(child.tokenType) ?? 'ignored';
 	}
 
 	protected rejectedByGivenTokenIds(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		return $Neaf.RejectTokenIdsAsChild.get(parent)?.includes(child.tokenId) === true;
+		return $Neaf.RejectTokenIdsAsChild.get(parent)?.includes(child.tokenId) ?? false;
 	}
 
 	protected acceptChild(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		if (this.acceptedWithEndToken(parent, child)
-			|| this.acceptedWith5BaseNodes(parent, child)
-			|| this.acceptedByGivenTokenIds(parent, child)
-			|| this.acceptedByGivenTokenTypes(parent, child)) {
+		if (this.acceptedWith5BaseNodes(parent, child) || this.acceptedWithEndToken(parent, child)) {
 			return true;
 		}
 		if (this.rejectedByGivenTokenIds(parent, child)) {
 			return false;
 		}
-		return $Neaf.ChildAcceptableCheck.get(parent)?.(child, this) !== false;
+
+		// $Neaf.ChildAcceptableCheck.get(parent)?.(child, this) !== false;
+		let hasRule = false;
+		const acceptedByGivenTokenIds = this.acceptedByGivenTokenIds(parent, child);
+		if (acceptedByGivenTokenIds === true) {
+			return true;
+		} else if (acceptedByGivenTokenIds === false) {
+			hasRule = true;
+		}
+		const acceptedByGivenTokenTypes = this.acceptedByGivenTokenTypes(parent, child);
+		if (acceptedByGivenTokenTypes === true) {
+			return true;
+		} else if (acceptedByGivenTokenTypes === false) {
+			hasRule = true;
+		}
+		const func = $Neaf.ChildAcceptableCheck.get(parent);
+		if (func != null) {
+			return func(child, this) === true;
+		} else {
+			// not function specified, then check if there is any rule on token ids or types
+			// 1. if exists, means the given child not pass the check, return false
+			// 2. no exists, means no rule, return true, accept any token
+			return !hasRule;
+		}
 	}
 
 	/**

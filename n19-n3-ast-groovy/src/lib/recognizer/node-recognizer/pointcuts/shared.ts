@@ -1,4 +1,4 @@
-import {ChildAcceptableCheckFunc, GroovyAstNode, OnNodeClosedFunc} from '../../../node';
+import {GroovyAstNode, OnNodeClosedFunc} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
 import {$Neaf} from '../../neaf-wrapper';
@@ -20,29 +20,6 @@ export class SharedNodePointcuts {
 		// avoid extend
 	}
 
-	static readonly createChildAcceptableCheckFuncOnAcceptTokenIds = (...tokenIds: Array<TokenId>): ChildAcceptableCheckFunc => {
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-			return tokenIds.includes(mightBeChildNode.tokenId);
-		};
-	};
-	static readonly createChildAcceptableCheckFuncOnUnacceptTokenIds = (...tokenIds: Array<TokenId>): ChildAcceptableCheckFunc => {
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-			return !tokenIds.includes(mightBeChildNode.tokenId);
-		};
-	};
-	static readonly createChildAcceptableCheckFuncOnAcceptTokenTypes = (...tokenTypes: Array<TokenType>): ChildAcceptableCheckFunc => {
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-			return tokenTypes.includes(mightBeChildNode.tokenType);
-		};
-	};
-	static readonly createChildAcceptableCheckFuncOnFirstOrNone = (...funcs: Array<ChildAcceptableCheckFunc>): ChildAcceptableCheckFunc => {
-		return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-			return funcs.some(func => func(mightBeChildNode, astRecognizer));
-		};
-	};
 	/**
 	 * create an on child appended function by given functions.
 	 */

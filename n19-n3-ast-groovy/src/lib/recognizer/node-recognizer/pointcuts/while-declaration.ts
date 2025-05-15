@@ -10,14 +10,6 @@ export class WhileDeclaration {
 		// avoid extend
 	}
 
-	static readonly childAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnAcceptTokenIds(
-		TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-		TokenId.WHILE,
-		TokenId.LBrace, TokenId.LParen,
-		TokenId.SingleLineComment, TokenId.MultipleLinesComment,
-		// of course block body and condition block can be child
-		TokenId.WhileBody, TokenId.ParenBlock
-	);
 	static readonly onLParenAppended = LogicBlock.Paren.createParenBlockOnLParenAppended;
 	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.WhileBody);
 	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
@@ -25,7 +17,11 @@ export class WhileDeclaration {
 		WhileDeclaration.onLBraceAppended
 	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.set(node, WhileDeclaration.childAcceptableCheck);
+		$Neaf.AcceptTokenIdsAsChild.set(node, [
+			TokenId.LParen, TokenId.ParenBlock,
+			TokenId.LBrace, TokenId.WhileBody
+		]);
+		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, WhileDeclaration.onChildAppended);
 		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.WhileBody);

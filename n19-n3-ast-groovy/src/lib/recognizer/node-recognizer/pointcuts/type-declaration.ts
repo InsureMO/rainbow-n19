@@ -36,7 +36,7 @@ class TypeDeclarationUtils {
 	// standard behaviors of type declaration, one of 6.
 	/** node is one of type declaration */
 
-	static readonly standardTypeChildAcceptTokenIds = [
+	static readonly StandardTypeChildAcceptTokenIds = [
 		// class, constructor, method, field
 		TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
 		// class
@@ -65,9 +65,9 @@ class TypeDeclarationUtils {
 		TokenId.Semicolon,
 		TokenId.ClassBody
 	];
-	static readonly standardTypeOnLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.ClassBody);
-	static readonly standardTypeOnChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		TypeDeclarationUtils.standardTypeOnLBraceAppended
+	static readonly StandardTypeOnLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.ClassBody);
+	static readonly StandardTypeOnChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
+		TypeDeclarationUtils.StandardTypeOnLBraceAppended
 	);
 }
 
@@ -489,9 +489,9 @@ class ClassDeclaration {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.standardTypeChildAcceptTokenIds);
+		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
 		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, ClassDeclaration.onChildAppended);
@@ -507,9 +507,9 @@ class InterfaceDeclaration {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.standardTypeChildAcceptTokenIds);
+		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
 		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, InterfaceDeclaration.onChildAppended);
@@ -525,9 +525,9 @@ class AtInterfaceClassDeclaration {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.standardTypeChildAcceptTokenIds);
+		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
 		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, AtInterfaceClassDeclaration.onChildAppended);
@@ -543,9 +543,9 @@ class EnumClassDeclaration {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.standardTypeChildAcceptTokenIds);
+		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
 		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, EnumClassDeclaration.onChildAppended);
@@ -562,9 +562,9 @@ class RecordClassDeclaration {
 	}
 
 	// TODO record has formal parameters part, enclose with parentheses
-	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.standardTypeChildAcceptTokenIds);
+		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
 		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, RecordClassDeclaration.onChildAppended);
@@ -580,9 +580,9 @@ class TraitClassDeclaration {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = TypeDeclarationUtils.standardTypeOnChildAppended;
+	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.standardTypeChildAcceptTokenIds);
+		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
 		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
 		$Neaf.OnChildAppended.set(node, TraitClassDeclaration.onChildAppended);

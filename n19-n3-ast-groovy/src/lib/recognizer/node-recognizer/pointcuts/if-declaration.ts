@@ -28,7 +28,7 @@ class IfIfDeclaration {
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.AcceptTokenIdsAsChild.set(node, [
 			TokenId.LParen, TokenId.ParenBlock,
-			TokenId.LBrace, TokenId.IfElseIfBody
+			TokenId.LBrace, TokenId.IfIfBody
 		]);
 		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);

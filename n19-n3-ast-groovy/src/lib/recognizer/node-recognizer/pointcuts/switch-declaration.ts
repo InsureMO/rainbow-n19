@@ -10,9 +10,12 @@ class SwitchDeclarationUtils {
 		// avoid extend
 	}
 
-	static readonly caseOrDefaultDeclarationChildAcceptableCheck = SharedNodePointcuts.createChildAcceptableCheckFuncOnUnacceptTokenIds(
-		TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration, TokenId.RBrace
-	);
+	static readonly UnacceptedTokenIds = [
+		TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration,
+		// any legitimate right brace will be received by the block initiated by the left brace.
+		// therefore, an independent right brace must mark the end of the switch body.
+		TokenId.RBrace
+	];
 }
 
 class SwitchCaseDeclaration {
@@ -21,16 +24,11 @@ class SwitchCaseDeclaration {
 		// avoid extend
 	}
 
-	static readonly childAcceptableCheck = SwitchDeclarationUtils.caseOrDefaultDeclarationChildAcceptableCheck;
-	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchCaseBody);
-	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		SwitchCaseDeclaration.onLBraceAppended
-	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.set(node, SwitchCaseDeclaration.childAcceptableCheck);
+		$Neaf.RejectTokenIdsAsChild.set(node, SwitchDeclarationUtils.UnacceptedTokenIds);
+		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, SwitchCaseDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.SwitchCaseBody);
+		$Neaf.OnChildAppended.clear(node);
 		$Neaf.OnChildClosed.clear(node);
 		$Neaf.OnNodeClosed.clear(node);
 	};
@@ -42,16 +40,11 @@ class SwitchDefaultDeclaration {
 		// avoid extend
 	}
 
-	static readonly childAcceptableCheck = SwitchDeclarationUtils.caseOrDefaultDeclarationChildAcceptableCheck;
-	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.SwitchDefaultBody);
-	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		SwitchDefaultDeclaration.onLBraceAppended
-	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.set(node, SwitchDefaultDeclaration.childAcceptableCheck);
+		$Neaf.RejectTokenIdsAsChild.set(node, SwitchDeclarationUtils.UnacceptedTokenIds);
+		$Neaf.ChildAcceptableCheck.clear(node);
 		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, SwitchDefaultDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.SwitchDefaultBody);
+		$Neaf.OnChildAppended.clear(node);
 		$Neaf.OnChildClosed.clear(node);
 		$Neaf.OnNodeClosed.clear(node);
 	};
@@ -76,8 +69,8 @@ export class SwitchDeclaration {
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.AcceptTokenIdsAsChild.set(node, [
 			TokenId.SWITCH,
-			TokenId.LParen, TokenId.SwitchBody,
-			TokenId.LBrace, TokenId.StaticBlockBody,
+			TokenId.LParen, TokenId.ParenBlock,
+			TokenId.LBrace, TokenId.SwitchBody,
 			// sub declarations are allowed, which leads incorrect syntax
 			TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration
 		]);
