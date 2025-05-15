@@ -9,8 +9,8 @@ export class WhileDeclaration {
 	}
 
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.of(node).AcceptTokenIdsAsChild(TokenId.LParen, TokenId.ParenBlock,
-			TokenId.LBrace, TokenId.WhileBody)
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TokenId.ParenBlock, TokenId.WhileBody)
 			.TakeLBraceAs(TokenId.WhileBody)
 			.EndWithSemicolon()
 			.CloseOnChildWithTokenClosed(TokenId.WhileBody);

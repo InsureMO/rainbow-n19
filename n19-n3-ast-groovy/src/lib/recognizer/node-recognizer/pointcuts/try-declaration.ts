@@ -10,8 +10,7 @@ class TryTryDeclaration {
 
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(TokenId.LParen, TokenId.ParenBlock,
-				TokenId.LBrace, TokenId.TryTryBody)
+			.AcceptTokenIdsAsChild(TokenId.ParenBlock, TokenId.TryTryBody)
 			.TakeLBraceAs(TokenId.TryTryBody)
 			.EndWithSemicolon()
 			.CloseOnChildWithTokenClosed(TokenId.TryTryBody);
@@ -26,8 +25,7 @@ class TryCatchDeclaration {
 
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(TokenId.LParen, TokenId.ParenBlock,
-				TokenId.LBrace, TokenId.TryCatchBody)
+			.AcceptTokenIdsAsChild(TokenId.ParenBlock, TokenId.TryCatchBody)
 			.TakeLBraceAs(TokenId.TryCatchBody)
 			.EndWithSemicolon()
 			.CloseOnChildWithTokenClosed(TokenId.TryCatchBody);
@@ -42,7 +40,7 @@ class TryFinallyDeclaration {
 
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(TokenId.LBrace, TokenId.TryFinallyBody)
+			.AcceptTokenIdsAsChild(TokenId.TryFinallyBody)
 			.TakeLBraceAs(TokenId.TryFinallyBody)
 			.EndWithSemicolon()
 			.CloseOnChildWithTokenClosed(TokenId.TryFinallyBody);

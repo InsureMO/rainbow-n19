@@ -10,9 +10,7 @@ export class DoWhileDeclaration {
 
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(TokenId.WHILE,
-				TokenId.LBrace, TokenId.DoWhileBody,
-				TokenId.LParen, TokenId.ParenBlock)
+			.AcceptTokenIdsAsChild(TokenId.DoWhileBody, TokenId.WHILE, TokenId.ParenBlock)
 			.TakeLBraceAs(TokenId.DoWhileBody)
 			.EndWithSemicolon()
 			// TODO need to check the paren block is directly after while keyword?

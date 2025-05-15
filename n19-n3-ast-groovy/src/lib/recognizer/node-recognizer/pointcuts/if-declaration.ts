@@ -11,8 +11,7 @@ class IfIfDeclaration {
 
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(TokenId.LParen, TokenId.ParenBlock,
-				TokenId.LBrace, TokenId.IfIfBody)
+			.AcceptTokenIdsAsChild(TokenId.ParenBlock, TokenId.IfIfBody)
 			.TakeLBraceAs(TokenId.IfIfBody)
 			.EndWithSemicolon()
 			.CloseOnChildWithTokenClosed(TokenId.IfIfBody);
@@ -27,8 +26,7 @@ class IfElseIfDeclaration {
 
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(TokenId.LParen, TokenId.ParenBlock,
-				TokenId.LBrace, TokenId.IfElseIfBody)
+			.AcceptTokenIdsAsChild(TokenId.ParenBlock, TokenId.IfElseIfBody)
 			.TakeLBraceAs(TokenId.IfElseIfBody)
 			.EndWithSemicolon()
 			.CloseOnChildWithTokenClosed(TokenId.IfElseIfBody);
@@ -54,8 +52,7 @@ class IfElseDeclaration {
 	};
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(TokenId.IF,
-				TokenId.LBrace, TokenId.IfElseBody)
+			.AcceptTokenIdsAsChild(TokenId.IF, TokenId.IfElseBody)
 			.TakeLBraceAs(TokenId.IfElseBody)
 			.EndWithSemicolon()
 			.OnChildAppended(IfElseDeclaration.onIfKeywordAppended)

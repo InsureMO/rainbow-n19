@@ -12,7 +12,8 @@ export class ImportDeclaration {
 		$Neaf.of(node)
 			// newline and sl comments is not allowed
 			.DisableAcceptAll5BaseNodesAsChild()
-			.AcceptTokenIdsAsChild(TokenId.IMPORT, TokenId.STATIC, TokenId.Identifier, TokenId.Dot, TokenId.AS,
+			.AcceptTokenIdsAsChild(
+				TokenId.STATIC, TokenId.Identifier, TokenId.Dot, TokenId.AS,
 				// alias of TokenId.Multiple, only in import declaration
 				TokenId.ImportAllMark,
 				TokenId.Whitespaces, TokenId.Tabs, TokenId.MultipleLinesComment)

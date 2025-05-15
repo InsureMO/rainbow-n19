@@ -12,7 +12,8 @@ export class PackageDeclaration {
 		$Neaf.of(node)
 			// newline and sl comments is not allowed
 			.DisableAcceptAll5BaseNodesAsChild()
-			.AcceptTokenIdsAsChild(TokenId.PACKAGE, TokenId.Identifier, TokenId.Dot,
+			.AcceptTokenIdsAsChild(
+				TokenId.Identifier, TokenId.Dot,
 				TokenId.Whitespaces, TokenId.Tabs, TokenId.MultipleLinesComment)
 			.EndWithSemicolon();
 	};

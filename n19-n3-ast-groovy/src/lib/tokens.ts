@@ -270,7 +270,8 @@ export enum TokenId {
 	// and will be replaced with official tokens before the parsing is completed
 	// name starts with "$Tmp"
 	/** "csscmf" means: class, static block, synchronized block, constructor, method and field */
-	Tmp$CsscmfDeclaration
+	Tmp$CsscmfDeclaration,
+	Tmp$NeverHappen
 }
 
 interface Token {

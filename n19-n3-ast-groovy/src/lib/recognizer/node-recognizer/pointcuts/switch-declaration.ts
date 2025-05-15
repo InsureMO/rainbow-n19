@@ -45,10 +45,8 @@ export class SwitchDeclaration {
 
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(TokenId.SWITCH,
-				TokenId.LParen, TokenId.ParenBlock,
-				TokenId.LBrace, TokenId.SwitchBody,
-				// sub declarations are allowed, which leads incorrect syntax
+			.AcceptTokenIdsAsChild(
+				TokenId.ParenBlock, TokenId.SwitchBody,
 				TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration)
 			.TakeLBraceAs(TokenId.SwitchBody)
 			.EndWithSemicolon()

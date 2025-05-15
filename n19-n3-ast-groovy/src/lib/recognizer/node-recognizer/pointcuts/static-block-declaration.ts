@@ -10,12 +10,7 @@ export class StaticBlockDeclaration {
 
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(
-				// never happens, this node always be created as csscmf first, and change to this nature
-				// therefore, the static keyword is already appended as child
-				TokenId.STATIC,
-				TokenId.LBrace, TokenId.StaticBlockBody
-			)
+			.AcceptTokenIdsAsChild(TokenId.StaticBlockBody)
 			.TakeLBraceAs(TokenId.StaticBlockBody)
 			.EndWithSemicolon()
 			.CloseOnChildWithTokenClosed(TokenId.StaticBlockBody);

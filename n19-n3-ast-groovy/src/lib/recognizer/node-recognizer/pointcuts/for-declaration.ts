@@ -10,8 +10,7 @@ export class ForDeclaration {
 
 	static readonly extra = (node: GroovyAstNode): void => {
 		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(TokenId.LBrace, TokenId.ForBody,
-				TokenId.LParen, TokenId.ParenBlock)
+			.AcceptTokenIdsAsChild(TokenId.ParenBlock, TokenId.ForBody)
 			.TakeLBraceAs(TokenId.ForBody)
 			.EndWithSemicolon()
 			.CloseOnChildWithTokenClosed(TokenId.ForBody);
