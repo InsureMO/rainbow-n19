@@ -154,6 +154,10 @@ export class AstRecognizer {
 		].includes(child.tokenId);
 	}
 
+	protected acceptedWithLBrace(parent: GroovyAstNode, child: GroovyAstNode): boolean {
+		return $Neaf.TakeLBraceAs.get(parent) != null && child.tokenId === TokenId.LBrace;
+	}
+
 	protected acceptedWithEndToken(parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' {
 		const tokenId = $Neaf.EndWithToken.get(parent);
 		if (tokenId == null) {
@@ -176,7 +180,9 @@ export class AstRecognizer {
 	}
 
 	protected acceptChild(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		if (this.acceptedWith5BaseNodes(parent, child) || this.acceptedWithEndToken(parent, child)) {
+		if (this.acceptedWith5BaseNodes(parent, child)
+			|| this.acceptedWithLBrace(parent, child)
+			|| this.acceptedWithEndToken(parent, child)) {
 			return true;
 		}
 		if (this.rejectedByGivenTokenIds(parent, child)) {
@@ -233,8 +239,9 @@ export class AstRecognizer {
 		return ancestors[0];
 	}
 
-	protected onChildAppended(parent: GroovyAstNode, child: GroovyAstNode): void {
+	onChildAppended(parent: GroovyAstNode, child: GroovyAstNode): void {
 		const proceeded = [
+			NodePointcuts.Shared.takeLBraceAs,
 			NodePointcuts.Shared.endWithToken
 		].some(func => func(child, this));
 		if (!proceeded) {

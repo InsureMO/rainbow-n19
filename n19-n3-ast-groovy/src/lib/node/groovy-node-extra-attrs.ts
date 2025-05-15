@@ -28,28 +28,9 @@ export interface GroovyAstNodeWithExtraAttrGS<V> {
 
 const createGetterAndSetter = <V>(key: GroovyAstNodeExtraAttrs | string): GroovyAstNodeWithExtraAttrGS<V> => {
 	return {
-		get: (node: GroovyAstNode) => node.attr<V>(key),
-		set: (node: GroovyAstNode, value: V) => node.attrs<V>(key, value),
-		clear: (node: GroovyAstNode) => node.attrs<undefined>(key, (void 0))
-	};
-};
-
-export interface GroovyAstNodeWithExtraNumberAccumulator extends GroovyAstNodeWithExtraAttrGS<number> {
-	readonly increase: (node: GroovyAstNode) => void;
-	/* will not check exists number, so might introduce negative value */
-	readonly decrease: (node: GroovyAstNode) => void;
-	/* reset to 0 */
-	readonly reset: (node: GroovyAstNode) => void;
-}
-
-const createNumberAccumulator = (key: GroovyAstNodeExtraAttrs | string): GroovyAstNodeWithExtraNumberAccumulator => {
-	return {
-		get: (node: GroovyAstNode) => node.attr<number>(key) ?? 0,
-		set: (node: GroovyAstNode, value: number) => node.attrs<number>(key, value),
-		clear: (node: GroovyAstNode) => node.attrs<undefined>(key, (void 0)),
-		increase: (node: GroovyAstNode) => node.attrs<number>(key, (node.attr<number>(key) ?? 0) + 1),
-		decrease: (node: GroovyAstNode) => node.attrs<number>(key, (node.attr<number>(key) ?? 0) - 1),
-		reset: (node: GroovyAstNode) => node.attrs<number>(key, 0)
+		get: (node: GroovyAstNode) => node.getAttr<V>(key),
+		set: (node: GroovyAstNode, value: V) => node.setAttr<V>(key, value),
+		clear: (node: GroovyAstNode) => node.setAttr<undefined>(key, (void 0))
 	};
 };
 
@@ -58,7 +39,5 @@ export const $Neaf = {
 	ChildAcceptableCheck: createGetterAndSetter<ChildAcceptableCheckFunc>(GroovyAstNodeExtraAttrs.CHILD_ACCEPTABLE_CHECK),
 	OnChildAppended: createGetterAndSetter<OnChildAppendedFunc>(GroovyAstNodeExtraAttrs.ON_CHILD_APPENDED),
 	OnChildClosed: createGetterAndSetter<OnChildClosedFunc>(GroovyAstNodeExtraAttrs.ON_CHILD_CLOSED),
-	OnNodeClosed: createGetterAndSetter<OnNodeClosedFunc>(GroovyAstNodeExtraAttrs.ON_NODE_CLOSED),
-	createGetterAndSetter,
-	createNumberAccumulator
+	OnNodeClosed: createGetterAndSetter<OnNodeClosedFunc>(GroovyAstNodeExtraAttrs.ON_NODE_CLOSED)
 } as const;

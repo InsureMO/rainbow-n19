@@ -4,7 +4,6 @@ import {AstRecognizer} from '../../ast-recognizer';
 import {$Neaf} from '../../neaf-wrapper';
 import {ConstructorDeclaration} from './constructor-declaration';
 import {FieldDeclaration} from './field-declaration';
-import {LogicBlock} from './logic-block';
 import {MethodDeclaration} from './method-declaration';
 import {OneOfOnChildAppendedFunc, SharedNodePointcuts} from './shared';
 import {StaticBlockDeclaration} from './static-block-declaration';
@@ -65,10 +64,6 @@ class TypeDeclarationUtils {
 		TokenId.Semicolon,
 		TokenId.ClassBody
 	];
-	static readonly StandardTypeOnLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.ClassBody);
-	static readonly StandardTypeOnChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		TypeDeclarationUtils.StandardTypeOnLBraceAppended
-	);
 }
 
 class CsscmfDeclaration {
@@ -200,7 +195,7 @@ class CsscmfDeclaration {
 			// has identifier
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
-			ClassDeclaration.onChildAppended(lastChildNode, astRecognizer);
+			astRecognizer.onChildAppended(statementNode, lastChildNode);
 			return true;
 		}
 
@@ -222,16 +217,16 @@ class CsscmfDeclaration {
 			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicBlockDeclaration);
 			StaticBlockDeclaration.extra(statementNode);
 			// lbrace already appended, invoke onChildAppended manually
-			StaticBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
+			astRecognizer.onChildAppended(statementNode, lastChildNode);
 		} else if (isSynchronizedBlockStart) {
 			statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
 			SynchronizedBlockDeclaration.extra(statementNode);
 			// lbrace already appended, invoke onChildAppended manually
-			SynchronizedBlockDeclaration.onLBraceAppended(lastChildNode, astRecognizer);
+			astRecognizer.onChildAppended(statementNode, lastChildNode);
 		} else {
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			ClassDeclaration.extra(statementNode);
-			ClassDeclaration.onChildAppended(lastChildNode, astRecognizer);
+			astRecognizer.onChildAppended(statementNode, lastChildNode);
 		}
 
 		return true;
@@ -276,11 +271,11 @@ class CsscmfDeclaration {
 				statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
 				SynchronizedBlockDeclaration.extra(statementNode);
 				// lbrace already appended, invoke onChildAppended manually
-				SynchronizedBlockDeclaration.onLParenAppended(lastChildNode, astRecognizer);
+				astRecognizer.onChildAppended(statementNode, lastChildNode);
 			} else {
 				statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 				MethodDeclaration.extra(statementNode);
-				MethodDeclaration.onLParenAppended(lastChildNode, astRecognizer);
+				astRecognizer.onChildAppended(statementNode, lastChildNode);
 			}
 			return true;
 		}
@@ -291,7 +286,7 @@ class CsscmfDeclaration {
 			// simply treated as method declaration
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 			MethodDeclaration.extra(statementNode);
-			MethodDeclaration.onLParenAppended(lastChildNode, astRecognizer);
+			astRecognizer.onChildAppended(statementNode, lastChildNode);
 			return true;
 		}
 
@@ -302,12 +297,12 @@ class CsscmfDeclaration {
 			// constructor
 			statementNode.replaceTokenNature(TokenId.ConstructorDeclaration, TokenType.ConstructorDeclaration);
 			ConstructorDeclaration.extra(statementNode);
-			ConstructorDeclaration.onLParenAppended(lastChildNode, astRecognizer);
+			astRecognizer.onChildAppended(statementNode, lastChildNode);
 		} else {
 			// method
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 			MethodDeclaration.extra(statementNode);
-			MethodDeclaration.onLParenAppended(lastChildNode, astRecognizer);
+			astRecognizer.onChildAppended(statementNode, lastChildNode);
 		}
 
 		return true;
@@ -428,58 +423,57 @@ class CsscmfDeclaration {
 		}
 	}) as OnNodeClosedFunc;
 	static readonly extra = (node: GroovyAstNode): void => {
-		// could be 1. return type of method, 2. type of field
-		$Neaf.AcceptTokenTypesAsChild.set(node, [TokenType.PrimitiveType]);
-		$Neaf.AcceptTokenIdsAsChild.set(node, [
-			// class, constructor, method, field
-			TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
-			// class
-			TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
-			// class, method
-			TokenId.ABSTRACT,
-			// class, static block, method, field
-			TokenId.STATIC,
-			// class, method, field (only field in groovy, it is not allowed in java)
-			TokenId.STRICTFP,
-			// class
-			TokenId.EXTENDS, TokenId.IMPLEMENTS,
-			// sure to method
-			TokenId.NATIVE, TokenId.SYNCHRONIZED, TokenId.DEFAULT,
-			// class, method, field
-			TokenId.FINAL,
-			// sure to field
-			TokenId.TRANSIENT, TokenId.VOLATILE,
-			// constructor, method, field
-			TokenId.DEF,
-			// constructor, method
-			TokenId.THROWS,
-			/*
-			 * could be
-			 * 1. name,
-			 * 2. return type of method,
-			 * 3. type of field
-			 */
-			TokenId.Identifier,
-			TokenId.GenericTypeDeclaration, TokenId.AnnotationDeclaration,
-			// method
-			TokenId.VOID,
-			// sure to class
-			TokenId.CLASS, TokenId.INTERFACE, TokenId.AT_INTERFACE, TokenId.ENUM, TokenId.RECORD, TokenId.TRAIT,
-			// sure to class or static block
-			TokenId.LBrace,
-			// sure to constructor or method.
-			// record class also has paren pair, but it is after record keyword. and it is determined as record class declaration already.
-			TokenId.LParen,
-			// sure to field, it is value assigning
-			TokenId.Equal,
-			// sure to field, end this part
-			TokenId.Comma
-		]);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, CsscmfDeclaration.onChildAppended);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.set(node, CsscmfDeclaration.onNodeClosed);
+		$Neaf.of(node)
+			// could be 1. return type of method, 2. type of field
+			.AcceptTokenTypesAsChild(TokenType.PrimitiveType)
+			.AcceptTokenIdsAsChild(
+				// class, constructor, method, field
+				TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
+				// class
+				TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
+				// class, method
+				TokenId.ABSTRACT,
+				// class, static block, method, field
+				TokenId.STATIC,
+				// class, method, field (only field in groovy, it is not allowed in java)
+				TokenId.STRICTFP,
+				// class
+				TokenId.EXTENDS, TokenId.IMPLEMENTS,
+				// sure to method
+				TokenId.NATIVE, TokenId.SYNCHRONIZED, TokenId.DEFAULT,
+				// class, method, field
+				TokenId.FINAL,
+				// sure to field
+				TokenId.TRANSIENT, TokenId.VOLATILE,
+				// constructor, method, field
+				TokenId.DEF,
+				// constructor, method
+				TokenId.THROWS,
+				/*
+				 * could be
+				 * 1. name,
+				 * 2. return type of method,
+				 * 3. type of field
+				 */
+				TokenId.Identifier,
+				TokenId.GenericTypeDeclaration, TokenId.AnnotationDeclaration,
+				// method
+				TokenId.VOID,
+				// sure to class
+				TokenId.CLASS, TokenId.INTERFACE, TokenId.AT_INTERFACE, TokenId.ENUM, TokenId.RECORD, TokenId.TRAIT,
+				// sure to class or static block
+				TokenId.LBrace,
+				// sure to constructor or method.
+				// record class also has paren pair, but it is after record keyword. and it is determined as record class declaration already.
+				TokenId.LParen,
+				// sure to field, it is value assigning
+				TokenId.Equal,
+				// sure to field, end this part
+				TokenId.Comma
+			)
+			.EndWithSemicolon()
+			.OnChildAppended(CsscmfDeclaration.onChildAppended)
+			.OnNodeClosed(CsscmfDeclaration.onNodeClosed);
 	};
 }
 
@@ -489,15 +483,13 @@ class ClassDeclaration {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, ClassDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.ClassBody);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds[0],
+				...(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds.slice(1)))
+			.TakeLBraceAs(TokenId.ClassBody)
+			.EndWithSemicolon()
+			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
 	};
 }
 
@@ -507,15 +499,13 @@ class InterfaceDeclaration {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, InterfaceDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.ClassBody);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds[0],
+				...(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds.slice(1)))
+			.TakeLBraceAs(TokenId.ClassBody)
+			.EndWithSemicolon()
+			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
 	};
 }
 
@@ -525,15 +515,13 @@ class AtInterfaceClassDeclaration {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, AtInterfaceClassDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.ClassBody);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds[0],
+				...(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds.slice(1)))
+			.TakeLBraceAs(TokenId.ClassBody)
+			.EndWithSemicolon()
+			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
 	};
 }
 
@@ -543,15 +531,13 @@ class EnumClassDeclaration {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, EnumClassDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.ClassBody);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds[0],
+				...(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds.slice(1)))
+			.TakeLBraceAs(TokenId.ClassBody)
+			.EndWithSemicolon()
+			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
 	};
 }
 
@@ -562,15 +548,13 @@ class RecordClassDeclaration {
 	}
 
 	// TODO record has formal parameters part, enclose with parentheses
-	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, RecordClassDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.ClassBody);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds[0],
+				...(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds.slice(1)))
+			.TakeLBraceAs(TokenId.ClassBody)
+			.EndWithSemicolon()
+			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
 	};
 }
 
@@ -580,15 +564,13 @@ class TraitClassDeclaration {
 		// avoid extend
 	}
 
-	static readonly onChildAppended = TypeDeclarationUtils.StandardTypeOnChildAppended;
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, TypeDeclarationUtils.StandardTypeChildAcceptTokenIds);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, TraitClassDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.ClassBody);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds[0],
+				...(TypeDeclarationUtils.StandardTypeChildAcceptTokenIds.slice(1)))
+			.TakeLBraceAs(TokenId.ClassBody)
+			.EndWithSemicolon()
+			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
 	};
 }
 

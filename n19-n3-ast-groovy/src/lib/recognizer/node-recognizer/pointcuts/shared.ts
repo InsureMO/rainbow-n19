@@ -2,6 +2,7 @@ import {GroovyAstNode, OnNodeClosedFunc} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
 import {$Neaf} from '../../neaf-wrapper';
+import {LogicBlock} from './logic-block';
 
 export type OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
 export type OneOfOnChildClosedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
@@ -33,6 +34,34 @@ export class SharedNodePointcuts {
 			return false;
 		};
 	};
+	static readonly takeLBraceAs = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+		const def = $Neaf.TakeLBraceAs.get(lastChildNode.parent);
+		if (def == null) {
+			return false;
+		}
+		if (Array.isArray(def)) {
+			const [blockTokenId, when] = def;
+			if (when(astRecognizer)) {
+				SharedNodePointcuts.createBlockByNode({
+					node: lastChildNode,
+					blockTokenId, blockTokenType: TokenType.LogicBlock,
+					blockNodePointcuts: LogicBlock.Brace.extra,
+					astRecognizer
+				});
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			SharedNodePointcuts.createBlockByNode({
+				node: lastChildNode,
+				blockTokenId: def, blockTokenType: TokenType.LogicBlock,
+				blockNodePointcuts: LogicBlock.Brace.extra,
+				astRecognizer
+			});
+			return true;
+		}
+	}) as OneOfOnChildAppendedFunc;
 	/**
 	 * check the given child node matches the configuration in {@link $Neaf.EndWithToken} or not.
 	 * if matched, close current parent and return true.

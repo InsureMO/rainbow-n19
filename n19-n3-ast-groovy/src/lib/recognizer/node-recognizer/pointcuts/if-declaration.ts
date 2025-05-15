@@ -2,17 +2,6 @@ import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognizer} from '../../ast-recognizer';
 import {$Neaf} from '../../neaf-wrapper';
-import {LogicBlock} from './logic-block';
-import {SharedNodePointcuts} from './shared';
-
-class IfDeclarationUtils {
-	// noinspection JSUnusedLocalSymbols
-	private constructor() {
-		// avoid extend
-	}
-
-	static readonly onLParenAppended = LogicBlock.Paren.createParenBlockOnLParenAppended;
-}
 
 class IfIfDeclaration {
 	// noinspection JSUnusedLocalSymbols
@@ -20,22 +9,13 @@ class IfIfDeclaration {
 		// avoid extend
 	}
 
-	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfIfBody);
-	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		IfDeclarationUtils.onLParenAppended,
-		IfIfDeclaration.onLBraceAppended
-	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, [
-			TokenId.LParen, TokenId.ParenBlock,
-			TokenId.LBrace, TokenId.IfIfBody
-		]);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, IfIfDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.IfIfBody);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TokenId.LParen, TokenId.ParenBlock,
+				TokenId.LBrace, TokenId.IfIfBody)
+			.TakeLBraceAs(TokenId.IfIfBody)
+			.EndWithSemicolon()
+			.CloseOnChildWithTokenClosed(TokenId.IfIfBody);
 	};
 }
 
@@ -45,22 +25,13 @@ class IfElseIfDeclaration {
 		// avoid extend
 	}
 
-	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfElseIfBody);
-	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		IfDeclarationUtils.onLParenAppended,
-		IfElseIfDeclaration.onLBraceAppended
-	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, [
-			TokenId.LParen, TokenId.ParenBlock,
-			TokenId.LBrace, TokenId.IfElseIfBody
-		]);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, IfElseIfDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.IfElseIfBody);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TokenId.LParen, TokenId.ParenBlock,
+				TokenId.LBrace, TokenId.IfElseIfBody)
+			.TakeLBraceAs(TokenId.IfElseIfBody)
+			.EndWithSemicolon()
+			.CloseOnChildWithTokenClosed(TokenId.IfElseIfBody);
 	};
 }
 
@@ -70,7 +41,6 @@ class IfElseDeclaration {
 		// avoid extend
 	}
 
-	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.IfElseBody);
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	static readonly onIfKeywordAppended = (lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.IF) {
@@ -82,21 +52,14 @@ class IfElseDeclaration {
 		IfElseIfDeclaration.extra(currentParent);
 		return true;
 	};
-	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		IfElseDeclaration.onLBraceAppended,
-		IfElseDeclaration.onIfKeywordAppended
-	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, [
-			TokenId.IF,
-			TokenId.LBrace, TokenId.IfElseBody
-		]);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, IfElseDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.IfElseBody);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TokenId.IF,
+				TokenId.LBrace, TokenId.IfElseBody)
+			.TakeLBraceAs(TokenId.IfElseBody)
+			.EndWithSemicolon()
+			.OnChildAppended(IfElseDeclaration.onIfKeywordAppended)
+			.CloseOnChildWithTokenClosed(TokenId.IfElseBody);
 	};
 }
 
@@ -106,20 +69,14 @@ export class IfDeclaration {
 		// avoid extend
 	}
 
-	static readonly Utils = IfDeclarationUtils;
 	static readonly If = IfIfDeclaration;
 	// noinspection JSUnusedGlobalSymbols
 	static readonly ElseIf = IfElseIfDeclaration;
 	static readonly Else = IfElseDeclaration;
 
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.AcceptTokenIdsAsChild.set(node, [
-			TokenId.IfIfDeclaration, TokenId.IfElseIfDeclaration, TokenId.IfElseDeclaration
-		]);
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.clear(node);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.AcceptTokenIdsAsChild(TokenId.IfIfDeclaration, TokenId.IfElseIfDeclaration, TokenId.IfElseDeclaration)
+			.EndWithSemicolon();
 	};
 }

@@ -57,7 +57,7 @@ export class GroovyAstNode implements AstNode {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	attrs<V = any>(key: string, value: V): void {
+	setAttr<V = any>(key: string, value: V): void {
 		if (this._extraAttrs == null) {
 			this._extraAttrs = {};
 		}
@@ -65,8 +65,12 @@ export class GroovyAstNode implements AstNode {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	attr<V = any>(key: string): Optional<V> {
+	getAttr<V = any>(key: string): Optional<V> {
 		return this._extraAttrs?.[key];
+	}
+
+	clearAttrs(): void {
+		this._extraAttrs = {};
 	}
 
 	get text(): string {

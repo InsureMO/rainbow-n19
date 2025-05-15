@@ -1,8 +1,6 @@
 import {GroovyAstNode} from '../../../node';
 import {TokenId} from '../../../tokens';
 import {$Neaf} from '../../neaf-wrapper';
-import {LogicBlock} from './logic-block';
-import {SharedNodePointcuts} from './shared';
 
 export class MethodDeclaration {
 	// noinspection JSUnusedLocalSymbols
@@ -10,18 +8,10 @@ export class MethodDeclaration {
 		// avoid extend
 	}
 
-	static readonly onLParenAppended = LogicBlock.Paren.createParenBlockOnLParenAppended;
-	static readonly onLBraceAppended = LogicBlock.Brace.createOnLBraceAppendedFuncForDeclaration(TokenId.MethodBody);
-	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		MethodDeclaration.onLParenAppended,
-		MethodDeclaration.onLBraceAppended
-	);
 	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.ChildAcceptableCheck.clear(node);
-		$Neaf.EndWithSemicolon.set(node);
-		$Neaf.OnChildAppended.set(node, MethodDeclaration.onChildAppended);
-		$Neaf.CloseOnChildWithTokenClosed.set(node, TokenId.MethodBody);
-		$Neaf.OnChildClosed.clear(node);
-		$Neaf.OnNodeClosed.clear(node);
+		$Neaf.of(node)
+			.TakeLBraceAs(TokenId.MethodBody)
+			.EndWithSemicolon()
+			.CloseOnChildWithTokenClosed(TokenId.MethodBody);
 	};
 }

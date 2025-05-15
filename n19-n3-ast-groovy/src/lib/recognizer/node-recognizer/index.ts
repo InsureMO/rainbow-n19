@@ -11,6 +11,8 @@ export * from './abstract';
 export * from './keyword';
 // operator
 export * from './operator';
+// separator
+export * from './separator';
 // statement
 export * from './statement';
 
