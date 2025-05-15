@@ -239,9 +239,8 @@ export class AstRecognizer {
 		return ancestors[0];
 	}
 
-	onChildAppended(parent: GroovyAstNode, child: GroovyAstNode): void {
+	protected onChildAppended(parent: GroovyAstNode, child: GroovyAstNode): void {
 		const proceeded = [
-			NodePointcuts.Shared.takeLBraceAs,
 			NodePointcuts.Shared.endWithToken
 		].some(func => func(child, this));
 		if (!proceeded) {
@@ -275,7 +274,9 @@ export class AstRecognizer {
 	 */
 	appendAsCurrentParent(node: GroovyAstNode): void {
 		this.resetToAppropriateParentNode(node);
-		this._currentAncestors[0].asParentOf(node);
+		const parent = this._currentAncestors[0];
+		parent.asParentOf(node);
+		this.onChildAppended(parent, node);
 		this._currentAncestors.unshift(node);
 	}
 

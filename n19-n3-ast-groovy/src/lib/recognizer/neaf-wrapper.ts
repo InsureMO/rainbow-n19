@@ -1,3 +1,4 @@
+import {Optional} from '@rainbow-n19/n3-ast';
 import {
 	ChildAcceptableCheckFunc,
 	GroovyAstNode,
@@ -71,7 +72,7 @@ const createNumberAccumulator = (key: GroovyAstNodeExtraAttrs | string): Recogni
 	};
 };
 
-export type TakeSpecificTokenToAnother = TokenId | [TokenId, (astRecognizer: AstRecognizer) => boolean];
+export type TakeSpecificTokenToAnother = TokenId | ((astRecognizer: AstRecognizer) => Optional<TokenId>);
 
 class $NeafChained {
 	private readonly _node: GroovyAstNode;
@@ -121,12 +122,8 @@ class $NeafChained {
 		return this;
 	}
 
-	TakeLBraceAs(tokenId: TokenId, when?: (astRecognizer: AstRecognizer) => boolean): this {
-		if (when == null) {
-			$Neaf.TakeLBraceAs.set(this._node, tokenId);
-		} else {
-			$Neaf.TakeLBraceAs.set(this._node, [tokenId, when]);
-		}
+	TakeLBraceAs(tokenIdOrTakeFunc: TakeSpecificTokenToAnother): this {
+		$Neaf.TakeLBraceAs.set(this._node, tokenIdOrTakeFunc);
 		return this;
 	}
 

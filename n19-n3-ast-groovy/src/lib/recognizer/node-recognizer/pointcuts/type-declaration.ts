@@ -36,32 +36,16 @@ class TypeDeclarationUtils {
 	/** node is one of type declaration */
 
 	static readonly StandardTypeChildAcceptTokenIds = [
-		// class, constructor, method, field
 		TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
-		// class
 		TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
-		// class, method
 		TokenId.ABSTRACT,
-		// class, static block, method, field
 		TokenId.STATIC,
-		// class, method, field (only field in groovy, it is not allowed in java)
 		TokenId.STRICTFP,
-		// class
 		TokenId.EXTENDS, TokenId.IMPLEMENTS,
-		// class, method, field
 		TokenId.FINAL,
-		/*
-		 * could be
-		 * 1. name,
-		 * 2. return type of method,
-		 * 3. type of field
-		 */
 		TokenId.Identifier,
 		TokenId.GenericTypeDeclaration, TokenId.AnnotationDeclaration,
-		// sure to class or static block
 		TokenId.LBrace,
-		// end
-		TokenId.Semicolon,
 		TokenId.ClassBody
 	];
 }
@@ -72,6 +56,136 @@ class CsscmfDeclaration {
 		// avoid extend
 	}
 
+	/**
+	 * check the given child node can be identified as a code block or not.
+	 * if so, when the existing previous siblings
+	 * 1. has no identifier, has no other keyword rather than static: it is a static block,
+	 * 2. has no identifier, has no other keyword rather than synchronized: it is a synchronized block,
+	 * 3. it is a class declaration.
+
+	 * why it is not one of constructor, method or field? because if there is any evidence to prove it is,
+	 * it already was identified before the code block appended.
+	 * e.g., left parenthesis appended, comma appended, equal appended, etc.
+	 */
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static readonly onCodeBlockAppended = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+		if (mightBeChildNode.tokenId !== TokenId.CodeBlock) {
+			return false;
+		}
+
+		const statementNode = mightBeChildNode.parent;
+
+		let isStaticBlockStart = true;
+		let isSynchronizedBlockStart = true;
+		if ($Neaf.IdentifierChildCount.get(statementNode) > 0) {
+			// has identifier
+			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
+			ClassDeclaration.extra(statementNode);
+			mightBeChildNode.replaceTokenNature(TokenId.ClassBody, TokenType.LogicBlock);
+			return true;
+		}
+
+		const children = statementNode.children;
+		// the last child is given one, ignore
+		for (let index = 0; index < children.length - 1; index++) {
+			const previousSiblingNode = children[index];
+			if (previousSiblingNode.tokenType === TokenType.Keyword) {
+				if (previousSiblingNode.tokenId !== TokenId.STATIC) {
+					isStaticBlockStart = false;
+				}
+				if (previousSiblingNode.tokenId !== TokenId.SYNCHRONIZED) {
+					isSynchronizedBlockStart = false;
+				}
+			}
+		}
+
+		if (isStaticBlockStart) {
+			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicBlockDeclaration);
+			StaticBlockDeclaration.extra(statementNode);
+			mightBeChildNode.replaceTokenNature(TokenId.StaticBlockBody, TokenType.LogicBlock);
+		} else if (isSynchronizedBlockStart) {
+			statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
+			SynchronizedBlockDeclaration.extra(statementNode);
+			mightBeChildNode.replaceTokenNature(TokenId.SynchronizedBlockBody, TokenType.LogicBlock);
+		} else {
+			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
+			ClassDeclaration.extra(statementNode);
+			mightBeChildNode.replaceTokenNature(TokenId.ClassBody, TokenType.LogicBlock);
+		}
+
+		return true;
+	}) as OneOfOnChildAppendedFunc;
+	/**
+	 * check the given child node can be identified as left parenthesis or not,
+	 * if so,
+	 * 1. find identifier in previous siblings.
+	 * 1.1 if not exists, and the previous keyword contains only synchronized, it is identified as synchronized block
+	 * 1.2 if not exists, it is identified as method declaration.
+	 * 1.3 if identifier is same as class name, it is identified as constructor declaration,
+	 * 1.4 otherwise as method declaration.
+	 *
+	 * It should be noted specifically that constructor and method definitions can only appear within the body of a class definition,
+	 * and synchronized block cannot be appeared within class body directly.
+	 * Their appearance in other positions is unreasonable.
+	 * Therefore, if it is determined that they are in other positions, they are simply considered as an incorrect method definitions,
+	 * and the rationality of the names will no longer be checked.
+	 */
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static readonly onParenBlockAppended = ((mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+		if (mightBeChildNode.tokenId !== TokenId.LParen) {
+			return false;
+		}
+
+		const statementNode = mightBeChildNode.parent;
+		const identifierCount = $Neaf.IdentifierChildCount.get(statementNode);
+		if (identifierCount === 0) {
+			// no identifier exists, identified as method declaration
+			let isSynchronizedBlockStart = true;
+			const children = statementNode.children;
+			// the last child is given one, ignore
+			for (let index = 0; index < children.length - 1; index++) {
+				const previousSiblingNode = children[index];
+				if (previousSiblingNode.tokenType === TokenType.Keyword) {
+					if (previousSiblingNode.tokenId !== TokenId.SYNCHRONIZED) {
+						isSynchronizedBlockStart = false;
+						break;
+					}
+				}
+			}
+			if (isSynchronizedBlockStart) {
+				statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
+				SynchronizedBlockDeclaration.extra(statementNode);
+			} else {
+				statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
+				MethodDeclaration.extra(statementNode);
+			}
+			return true;
+		}
+
+		// check the parent of statement node, must be a class body.
+		const parentOfStatementNode = statementNode.parent;
+		if (parentOfStatementNode.tokenId !== TokenId.ClassBody) {
+			// simply treated as method declaration
+			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
+			MethodDeclaration.extra(statementNode);
+			return true;
+		}
+
+		// check identifier with class name
+		const identifierNode = statementNode.children.find(node => node.tokenId === TokenId.Identifier);
+		const className = parentOfStatementNode.previousSiblings.find(node => node.tokenId === TokenId.Identifier)?.text;
+		if (identifierNode.text === className) {
+			// constructor
+			statementNode.replaceTokenNature(TokenId.ConstructorDeclaration, TokenType.ConstructorDeclaration);
+			ConstructorDeclaration.extra(statementNode);
+		} else {
+			// method
+			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
+			MethodDeclaration.extra(statementNode);
+		}
+
+		return true;
+	}) as OneOfOnChildAppendedFunc;
 	/**
 	 * check the given child node can be identified as type declaration or not,
 	 * replace token nature when it is.
@@ -172,142 +286,6 @@ class CsscmfDeclaration {
 		return true;
 	}) as OneOfOnChildAppendedFunc;
 	/**
-	 * check the given child node can be identified as left brace or not,
-	 * if so, when the existing previous siblings
-	 * 1. has no identifier, has no other keyword rather than static: it is a static block,
-	 * 2. has no identifier, has no other keyword rather than synchronized: it is a synchronized block,
-	 * 3. it is a class declaration.
-
-	 * why it is not one of constructor, method or field? because if there is any evidence to prove it is,
-	 * it already was identified before the left brace appended.
-	 * e.g., left parenthesis appended, comma appended, equal appended, etc.
-	 */
-	static readonly onLBraceAppended = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		if (lastChildNode.tokenId !== TokenId.LBrace) {
-			return false;
-		}
-
-		const statementNode = lastChildNode.parent;
-
-		let isStaticBlockStart = true;
-		let isSynchronizedBlockStart = true;
-		if ($Neaf.IdentifierChildCount.get(statementNode) > 0) {
-			// has identifier
-			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
-			ClassDeclaration.extra(statementNode);
-			astRecognizer.onChildAppended(statementNode, lastChildNode);
-			return true;
-		}
-
-		const children = statementNode.children;
-		// the last child is given one, ignore
-		for (let index = 0; index < children.length - 1; index++) {
-			const previousSiblingNode = children[index];
-			if (previousSiblingNode.tokenType === TokenType.Keyword) {
-				if (previousSiblingNode.tokenId !== TokenId.STATIC) {
-					isStaticBlockStart = false;
-				}
-				if (previousSiblingNode.tokenId !== TokenId.SYNCHRONIZED) {
-					isSynchronizedBlockStart = false;
-				}
-			}
-		}
-
-		if (isStaticBlockStart) {
-			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicBlockDeclaration);
-			StaticBlockDeclaration.extra(statementNode);
-			// lbrace already appended, invoke onChildAppended manually
-			astRecognizer.onChildAppended(statementNode, lastChildNode);
-		} else if (isSynchronizedBlockStart) {
-			statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
-			SynchronizedBlockDeclaration.extra(statementNode);
-			// lbrace already appended, invoke onChildAppended manually
-			astRecognizer.onChildAppended(statementNode, lastChildNode);
-		} else {
-			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
-			ClassDeclaration.extra(statementNode);
-			astRecognizer.onChildAppended(statementNode, lastChildNode);
-		}
-
-		return true;
-	}) as OneOfOnChildAppendedFunc;
-	/**
-	 * check the given child node can be identified as left parenthesis or not,
-	 * if so,
-	 * 1. find identifier in previous siblings.
-	 * 1.1 if not exists, and the previous keyword contains only synchronized, it is identified as synchronized block
-	 * 1.2 if not exists, it is identified as method declaration.
-	 * 1.3 if identifier is same as class name, it is identified as constructor declaration,
-	 * 1.4 otherwise as method declaration.
-	 *
-	 * It should be noted specifically that constructor and method definitions can only appear within the body of a class definition,
-	 * and synchronized block cannot be appeared within class body directly.
-	 * Their appearance in other positions is unreasonable.
-	 * Therefore, if it is determined that they are in other positions, they are simply considered as an incorrect method definitions,
-	 * and the rationality of the names will no longer be checked.
-	 */
-	static readonly onLParenAppended = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		if (lastChildNode.tokenId !== TokenId.LParen) {
-			return false;
-		}
-
-		const statementNode = lastChildNode.parent;
-		const identifierCount = $Neaf.IdentifierChildCount.get(statementNode);
-		if (identifierCount === 0) {
-			// no identifier exists, identified as method declaration
-			let isSynchronizedBlockStart = true;
-			const children = statementNode.children;
-			// the last child is given one, ignore
-			for (let index = 0; index < children.length - 1; index++) {
-				const previousSiblingNode = children[index];
-				if (previousSiblingNode.tokenType === TokenType.Keyword) {
-					if (previousSiblingNode.tokenId !== TokenId.SYNCHRONIZED) {
-						isSynchronizedBlockStart = false;
-						break;
-					}
-				}
-			}
-			if (isSynchronizedBlockStart) {
-				statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
-				SynchronizedBlockDeclaration.extra(statementNode);
-				// lbrace already appended, invoke onChildAppended manually
-				astRecognizer.onChildAppended(statementNode, lastChildNode);
-			} else {
-				statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-				MethodDeclaration.extra(statementNode);
-				astRecognizer.onChildAppended(statementNode, lastChildNode);
-			}
-			return true;
-		}
-
-		// check the parent of statement node, must be a class body.
-		const parentOfStatementNode = statementNode.parent;
-		if (parentOfStatementNode.tokenId !== TokenId.ClassBody) {
-			// simply treated as method declaration
-			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-			MethodDeclaration.extra(statementNode);
-			astRecognizer.onChildAppended(statementNode, lastChildNode);
-			return true;
-		}
-
-		// check identifier with class name
-		const identifierNode = statementNode.children.find(node => node.tokenId === TokenId.Identifier);
-		const className = parentOfStatementNode.previousSiblings.find(node => node.tokenId === TokenId.Identifier)?.text;
-		if (identifierNode.text === className) {
-			// constructor
-			statementNode.replaceTokenNature(TokenId.ConstructorDeclaration, TokenType.ConstructorDeclaration);
-			ConstructorDeclaration.extra(statementNode);
-			astRecognizer.onChildAppended(statementNode, lastChildNode);
-		} else {
-			// method
-			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-			MethodDeclaration.extra(statementNode);
-			astRecognizer.onChildAppended(statementNode, lastChildNode);
-		}
-
-		return true;
-	}) as OneOfOnChildAppendedFunc;
-	/**
 	 * check the given child node can be identified as left parenthesis or not,
 	 * if so, find identifier in previous siblings. if not exists, it is identified as method declaration.
 	 * if identifier is same as class name, it is identified as constructor declaration, otherwise as method declaration.
@@ -356,8 +334,8 @@ class CsscmfDeclaration {
 		CsscmfDeclaration.onMethodKeywordAppended,
 		CsscmfDeclaration.onFieldKeywordAppended,
 		CsscmfDeclaration.onIdentifierAppended,
-		CsscmfDeclaration.onLBraceAppended,
-		CsscmfDeclaration.onLParenAppended,
+		CsscmfDeclaration.onCodeBlockAppended,
+		CsscmfDeclaration.onParenBlockAppended,
 		CsscmfDeclaration.onEqualAppended,
 		CsscmfDeclaration.onCommaAppended
 	);
@@ -462,10 +440,10 @@ class CsscmfDeclaration {
 				// sure to class
 				TokenId.CLASS, TokenId.INTERFACE, TokenId.AT_INTERFACE, TokenId.ENUM, TokenId.RECORD, TokenId.TRAIT,
 				// sure to class or static block
-				TokenId.LBrace,
+				TokenId.LBrace, TokenId.CodeBlock,
 				// sure to constructor or method.
 				// record class also has paren pair, but it is after record keyword. and it is determined as record class declaration already.
-				TokenId.LParen,
+				TokenId.LParen, TokenId.ParenBlock,
 				// sure to field, it is value assigning
 				TokenId.Equal,
 				// sure to field, end this part

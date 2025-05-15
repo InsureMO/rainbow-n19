@@ -1,19 +1,12 @@
 import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognition} from '../../types';
-import {AbstractPreservableRecognizer, PreservableCheckFunc} from '../abstract';
+import {AbstractPreservableRecognizer} from '../abstract';
 import {NodePointcuts} from '../pointcuts';
-import {RecognizePreservation} from '../shared';
 
 export class SpLParenRecognizer extends AbstractPreservableRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.LParen;
-	}
-
-	protected getPreservableCheckFunctions(): Array<PreservableCheckFunc> {
-		return [
-			RecognizePreservation.parentIsCsscmfDeclaration
-		];
 	}
 
 	protected doRecognize(recognition: AstRecognition): number {
