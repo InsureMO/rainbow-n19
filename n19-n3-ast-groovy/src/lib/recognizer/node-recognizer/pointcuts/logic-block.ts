@@ -14,6 +14,18 @@ class LogicBlockWithinBrace {
 	};
 }
 
+class LogicBlockWithinParen {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
+	}
+
+	static readonly extra = (node: GroovyAstNode): void => {
+		$Neaf.of(node)
+			.EndWithToken(TokenId.RParen);
+	};
+}
+
 export class LogicBlock {
 	// noinspection JSUnusedLocalSymbols
 	private constructor() {
@@ -21,4 +33,5 @@ export class LogicBlock {
 	}
 
 	static readonly Brace = LogicBlockWithinBrace;
+	static readonly Paren = LogicBlockWithinParen;
 }

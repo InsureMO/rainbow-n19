@@ -2,6 +2,7 @@ import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
 import {AstRecognition} from '../../types';
 import {AbstractPreservableRecognizer, PreservableCheckFunc} from '../abstract';
+import {NodePointcuts} from '../pointcuts';
 import {RecognizePreservation} from '../shared';
 
 export class SpLParenRecognizer extends AbstractPreservableRecognizer {
@@ -22,6 +23,7 @@ export class SpLParenRecognizer extends AbstractPreservableRecognizer {
 			text: '', startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
 		});
+		NodePointcuts.LogicBlock.Paren.extra(blockNode);
 		blockNode.asParentOf(node);
 		astRecognizer.appendAsCurrentParent(blockNode);
 		return nodeIndex + 1;

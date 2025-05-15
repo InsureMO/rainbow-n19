@@ -1,5 +1,6 @@
 import * as KeywordRecognizers from './keyword';
 import * as OperatorRecognizers from './operator';
+import * as SeparatorRecognizers from './separator';
 import * as StatementRecognizers from './statement';
 
 export * from './shared';
@@ -21,6 +22,8 @@ export const AllNodeRecognizers = [
 	...Object.values(KeywordRecognizers),
 	// operator
 	...Object.values(OperatorRecognizers),
+	// separator
+	...Object.values(SeparatorRecognizers),
 	// statement
 	...Object.values(StatementRecognizers)
 ].map(Recognizer => new Recognizer());

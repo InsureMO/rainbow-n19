@@ -35,6 +35,9 @@ export class SharedNodePointcuts {
 		};
 	};
 	static readonly takeLBraceAs = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+		if (lastChildNode.tokenId !== TokenId.LBrace) {
+			return false;
+		}
 		const def = $Neaf.TakeLBraceAs.get(lastChildNode.parent);
 		if (def == null) {
 			return false;
