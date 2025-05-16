@@ -34,6 +34,7 @@ class TypeDeclarationUtils {
 	};
 
 	// standard behaviors of type declaration, node must be one of 6 type declarations.
+	// TODO 6 type keywords should be added into acceptable token ids?
 	static readonly StandardTypeChildAcceptTokenIds = [
 		TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
 		TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
@@ -41,7 +42,8 @@ class TypeDeclarationUtils {
 		TokenId.STATIC,
 		TokenId.STRICTFP,
 		TokenId.EXTENDS, TokenId.IMPLEMENTS,
-		TokenId.FINAL,
+		TokenId.THROWS,
+		TokenId.FINAL, TokenId.SYNCHRONIZED,
 		TokenId.Identifier,
 		TokenId.GenericTypeDeclaration, TokenId.AnnotationDeclaration,
 		TokenId.ClassBody

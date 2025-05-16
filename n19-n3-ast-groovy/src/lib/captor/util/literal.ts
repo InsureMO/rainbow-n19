@@ -18,10 +18,11 @@ export enum AstLiterals {
 	StringUnicodeEscapeMark = '\\u',
 	GStringQuotationMark = '"',
 	GStringQuotationMarkML = '"""',
-	SlashyGStringQuotationMark = '\\',
+	SlashyGStringQuotationMark = '/',
 	DollarSlashyGStringQuotationStartMark = '$/',
 	DollarSlashyGStringQuotationEndMark = '/$',
 	SlashyGStringBackslashEscape = '\\/',
 	DollarSlashyGStringDollarEscape = '$$',
-	GStringInterpolationSymbol = '$'
+	GStringInterpolationSymbol = '$',
+	RegexpPatternStartMark = '~/',
 }

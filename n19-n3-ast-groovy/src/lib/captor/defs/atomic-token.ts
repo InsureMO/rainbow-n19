@@ -116,6 +116,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.SlashyGStringBackslashEscape]: [Tt.Sl, KwLt.SlashyGStringBackslashEscape, 'LtSlashyGStringBackslashEscape'],
 	[TokenId.DollarSlashyGStringDollarEscape]: [Tt.Sl, KwLt.DollarSlashyGStringDollarEscape, 'LtDollarSlashyGStringDollarEscape'],
 	[TokenId.GStringInterpolationSymbol]: [Tt.Sl, KwLt.GStringInterpolationSymbol, 'LtGStringInterpolationSymbol'],
+	[TokenId.RegexpPatternStartMark]: [Tt.Sl, KwLt.RegexpPatternStartMark, 'LtRegexpPatternStartMark'],
 	// Groovy Operators
 	[TokenId.RangeInclusive]: [Tt.Go, KwOp.RangeInclusive, 'GoRangeInclusive'],
 	[TokenId.RangeExclusiveLeft]: [Tt.Go, KwOp.RangeExclusiveLeft, 'GoRangeExclusiveLeft'],

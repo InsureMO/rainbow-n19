@@ -16,6 +16,7 @@ import {SharedNodePointcuts} from './shared';
 import {StaticBlockDeclaration} from './static-block-declaration';
 import {SwitchDeclaration} from './switch-declaration';
 import {SynchronizedBlockDeclaration} from './synchronized-block-declaration';
+import {ThrowStatement} from './throw-statement';
 import {TryDeclaration} from './try-declaration';
 import {TypeDeclaration} from './type-declaration';
 import {VarStatement} from './var-statement';
@@ -34,7 +35,7 @@ export const NodePointcuts = {
 
 	AssertStatement,
 	BreakStatement, ContinueStatement,
-	DefStatement, VarStatement,
+	DefStatement, VarStatement, ThrowStatement,
 
 	NewExpression,
 

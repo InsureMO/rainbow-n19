@@ -42,8 +42,8 @@ export enum AstKeywords {
 	Switch = 'switch',
 	Synchronized = 'synchronized',
 	This = 'this', // TODO ⁉️
-	Throw = 'throw', // TODO ⁉️
-	Throws = 'throws', // TODO ⁉️
+	Throw = 'throw',
+	Throws = 'throws',
 	Trait = 'trait',
 	Transient = 'transient',
 	Try = 'try',

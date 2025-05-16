@@ -117,6 +117,7 @@ export enum TokenId {
 	GStringInterpolationSymbol, // $ of ${...} or $...
 	GStringInterpolationContent, // ${...}, $..., the "..." part, any groovy expression is good for it
 	GStringInterpolation, // ${...}, $..., "..." means interpolation, any groovy expression is good for it
+	RegexpPatternStartMark,
 	GStringLiteral,
 	SlashyGStringLiteral,
 	DollarSlashyGStringLiteral,
@@ -265,6 +266,7 @@ export enum TokenId {
 	DefStatement,
 	VarStatement,
 	NewExpression,
+	ThrowStatement,
 	ArrayInitializer,
 	// temporary tokens are only used during the AST parsing process
 	// and will be replaced with official tokens before the parsing is completed
