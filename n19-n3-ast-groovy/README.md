@@ -24,8 +24,8 @@
 │ │ ├ = => GoNotIdenticalCaptor
 │ │ └ #fallback => JoNotEqualCaptor
 │ ├ i·n =>
-│ │ ├ s·t·a·n·c·e·o·f·isNotJavaIdentifierPart => GkNotInstanceofCaptor
-│ │ └ isNotJavaIdentifierPart => GkNotInCaptor
+│ │ ├ s·t·a·n·c·e·o·f·isNotJavaIdentifierPart => GoNotInstanceofCaptor
+│ │ └ isNotJavaIdentifierPart => GoNotInCaptor
 │ └ #fallback => JoNotCaptor
 ├ ? =>
 │ ├ : => GoElvisCaptor
@@ -43,11 +43,11 @@
 │ ├ isNumeric => LtNumericBasePartCaptorStartsWithDot
 │ └ #fallback => SpDotCaptor
 ├ ' =>
-│ ├ '·'·isNotJavaIdentifierPart => LtStringQuotationMarkMLCaptor
-│ └ isNotJavaIdentifierPart => LtStringQuotationMarkCaptor
+│ ├ '·' => LtStringQuotationMarkMLCaptor
+│ └ #fallback => LtStringQuotationMarkCaptor
 ├ " =>
-│ ├ "·"·isNotJavaIdentifierPart => LtGStringQuotationMarkMLCaptor
-│ └ isNotJavaIdentifierPart => LtGStringQuotationMarkCaptor
+│ ├ "·" => LtGStringQuotationMarkMLCaptor
+│ └ #fallback => LtGStringQuotationMarkCaptor
 ├ ( => SpLParenCaptor
 ├ ) => SpRParenCaptor
 ├ [ => SpLBrackCaptor
@@ -56,7 +56,8 @@
 ├ } => SpRBraceCaptor
 ├ @ =>
 │ ├ i·n·t·e·r·f·a·c·e·isNotJavaIdentifierPart => JkAtInterfaceCaptor
-│ └ T·h·r·e·a·d·S·a·f·e·isNotJavaIdentifierPart => GkAtThreadSafeCaptor
+│ ├ T·h·r·e·a·d·S·a·f·e·isNotJavaIdentifierPart => GkAtThreadSafeCaptor
+│ └ #fallback => SpAtCaptor
 ├ * =>
 │ ├ . => GoSpreadDotCaptor
 │ ├ * =>
@@ -69,22 +70,21 @@
 │ ├ * => MultipleLinesCommentStartMarkCaptor
 │ ├ / => SingleLineCommentStartMarkCaptor
 │ ├ = => JoDivideAssignCaptor
-│ ├ $·isNotJavaIdentifierPart => LtDollarSlashyGStringQuotationEndMarkCaptor
+│ ├ $ => LtDollarSlashyGStringQuotationEndMarkCaptor
 │ └ #fallback => JoDivideCaptor
 ├ \ =>
-│ ├ '·isNotJavaIdentifierPart => LtStringSingleQuoteEscapeCaptor
-│ ├ "·isNotJavaIdentifierPart => LtStringDoubleQuoteEscapeCaptor
-│ ├ /·isNotJavaIdentifierPart => LtSlashyGStringBackslashEscapeCaptor
-│ ├ \·isNotJavaIdentifierPart => LtStringBackslashEscapeCaptor
-│ ├ $·isNotJavaIdentifierPart => LtStringDollarEscapeCaptor
-│ ├ b·isNotJavaIdentifierPart => LtStringBackspaceEscapeCaptor
-│ ├ f·isNotJavaIdentifierPart => LtStringFormFeedEscapeCaptor
-│ ├ n·isNotJavaIdentifierPart => LtStringNewLineEscapeCaptor
-│ ├ r·isNotJavaIdentifierPart => LtStringCarriageReturnEscapeCaptor
-│ ├ s·isNotJavaIdentifierPart => LtStringSingleSpaceEscapeCaptor
-│ ├ t·isNotJavaIdentifierPart => LtStringTabulationEscapeCaptor
-│ ├ u·isNotJavaIdentifierPart => LtStringUnicodeEscapeMarkCaptor
-│ └ isNotJavaIdentifierPart => LtSlashyGStringQuotationMarkCaptor
+│ ├ ' => LtStringSingleQuoteEscapeCaptor
+│ ├ " => LtStringDoubleQuoteEscapeCaptor
+│ ├ / => LtSlashyGStringBackslashEscapeCaptor
+│ ├ \ => LtStringBackslashEscapeCaptor
+│ ├ $ => LtStringDollarEscapeCaptor
+│ ├ b => LtStringBackspaceEscapeCaptor
+│ ├ f => LtStringFormFeedEscapeCaptor
+│ ├ n => LtStringNewLineEscapeCaptor
+│ ├ r => LtStringCarriageReturnEscapeCaptor
+│ ├ s => LtStringSingleSpaceEscapeCaptor
+│ ├ t => LtStringTabulationEscapeCaptor
+│ └ u => LtStringUnicodeEscapeMarkCaptor
 ├ & =>
 │ ├ & => JoAndCaptor
 │ ├ = => JoBitandAssignCaptor
@@ -126,11 +126,13 @@
 │ ├ = => JoBitorAssignCaptor
 │ ├ | => JoOrCaptor
 │ └ #fallback => JoBitorCaptor
-├ ~ => JoBitnotCaptor
+├ ~ =>
+│ ├ / => LtRegexpPatternStartMarkCaptor
+│ └ #fallback => JoBitnotCaptor
 ├ $ =>
-│ ├ /·isNotJavaIdentifierPart => LtDollarSlashyGStringQuotationStartMarkCaptor
-│ ├ $·isNotJavaIdentifierPart => LtDollarSlashyGStringDollarEscapeCaptor
-│ └ isNotJavaIdentifierPart => LtGStringInterpolationSymbolCaptor
+│ ├ / => LtDollarSlashyGStringQuotationStartMarkCaptor
+│ ├ $ => LtDollarSlashyGStringDollarEscapeCaptor
+│ └ #fallback => LtGStringInterpolationSymbolCaptor
 ├ 0 =>
 │ ├ b·isNotJavaIdentifierPart => LtBinaryStartMarkCaptor
 │ ├ x·isNotJavaIdentifierPart => LtHexadecimalStartMarkCaptor
@@ -187,11 +189,11 @@
 │ │ ├ l·e·m·e·n·t·s·isNotJavaIdentifierPart => JkImplementsCaptor
 │ │ └ o·r·t·isNotJavaIdentifierPart => JkImportCaptor
 │ └ n =>
-│   ├ s·t·a·n·c·e·o·f·isNotJavaIdentifierPart => JkInstanceofCaptor
+│   ├ s·t·a·n·c·e·o·f·isNotJavaIdentifierPart => JoInstanceofCaptor
 │   ├ t =>
 │   │ ├ e·r·f·a·c·e·isNotJavaIdentifierPart => JkInterfaceCaptor
 │   │ └ isNotJavaIdentifierPart => PtIntCaptor
-│   └ isNotJavaIdentifierPart => GkInCaptor
+│   └ isNotJavaIdentifierPart => GoInCaptor
 ├ l·o·n·g·isNotJavaIdentifierPart => PtLongCaptor
 ├ n =>
 │ ├ a·t·i·v·e·isNotJavaIdentifierPart => JkNativeCaptor
@@ -249,9 +251,9 @@
     └ AbstractRehydratableRecognizer
       ├ AbstractEagerRecognizer
       │ ├ AbstractCommentsRecognizer
-      │ │ ├ MultipleLinesCommentsRecognizer [tokenId=183, tokenName=MultipleLinesCommentStartMark]
-      │ │ └ SingleLineCommentsRecognizer [tokenId=181, tokenName=SingleLineCommentStartMark]
-      │ └ ScriptCommandRecognizer [tokenId=187, tokenName=ScriptCommandStartMark]
+      │ │ ├ MultipleLinesCommentsRecognizer [tokenId=185, tokenName=MultipleLinesCommentStartMark]
+      │ │ └ SingleLineCommentsRecognizer [tokenId=183, tokenName=SingleLineCommentStartMark]
+      │ └ ScriptCommandRecognizer [tokenId=189, tokenName=ScriptCommandStartMark]
       ├ AbstractPreservableRecognizer
       │ └ AbstractDeclarationCreateRecognizer
       │   ├ AbstractCsscmfDeclarationRecognizer
@@ -280,13 +282,23 @@
       │   │ ├ KwDefaultRecognizer [tokenId=23, tokenName=DEFAULT]
       │   │ ├ KwNativeRecognizer [tokenId=37, tokenName=NATIVE]
       │   │ └ KwVoidRecognizer [tokenId=62, tokenName=VOID]
+      │   ├ KwAssertRecognizer [tokenId=15, tokenName=ASSERT]
+      │   ├ KwBreakRecognizer [tokenId=17, tokenName=BREAK]
       │   ├ KwCaseRecognizer [tokenId=18, tokenName=CASE]
+      │   ├ KwCatchRecognizer [tokenId=19, tokenName=CATCH]
+      │   ├ KwContinueRecognizer [tokenId=22, tokenName=CONTINUE]
       │   ├ KwDoRecognizer [tokenId=24, tokenName=DO]
       │   ├ KwElseRecognizer [tokenId=25, tokenName=ELSE]
+      │   ├ KwFinallyRecognizer [tokenId=29, tokenName=FINALLY]
+      │   ├ KwForRecognizer [tokenId=30, tokenName=FOR]
       │   ├ KwIfRecognizer [tokenId=32, tokenName=IF]
       │   ├ KwImportRecognizer [tokenId=34, tokenName=IMPORT]
       │   ├ KwPackageRecognizer [tokenId=43, tokenName=PACKAGE]
       │   ├ KwSwitchRecognizer [tokenId=54, tokenName=SWITCH]
-      │   └ KwWhileRecognizer [tokenId=64, tokenName=WHILE]
-      └ OpMultipleRecognizer [tokenId=160, tokenName=Multiple]
+      │   ├ KwTryRecognizer [tokenId=60, tokenName=TRY]
+      │   ├ KwWhileRecognizer [tokenId=64, tokenName=WHILE]
+      │   ├ SpAtRecognizer [tokenId=141, tokenName=At]
+      │   ├ SpLBraceRecognizer [tokenId=135, tokenName=LBrace]
+      │   └ SpLParenRecognizer [tokenId=137, tokenName=LParen]
+      └ OpMultipleRecognizer [tokenId=162, tokenName=Multiple]
 ```

@@ -309,7 +309,7 @@ export enum TokenType {
 	CompilationUnit,
 	WhitespaceOrTabs, NewLine,
 	/**
-	 * brace, brack, paren, comma, semicolon, dot
+	 * brace, brack, paren, comma, semicolon, dot, at
 	 */
 	Separator,
 	/** java and groovy keywords */
