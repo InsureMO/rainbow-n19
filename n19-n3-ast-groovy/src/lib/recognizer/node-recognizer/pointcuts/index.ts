@@ -1,4 +1,6 @@
+import {AnnotationDeclaration} from './annotation-declaration';
 import {AssertStatement} from './assert-statement';
+import {AtFieldPathElement} from './at-field-path-element';
 import {BreakStatement} from './break-statement';
 import {ConstructorDeclaration} from './constructor-declaration';
 import {ContinueStatement} from './continue-statement';
@@ -26,6 +28,7 @@ export const NodePointcuts = {
 	Shared: SharedNodePointcuts,
 	ImportDeclaration,
 	PackageDeclaration,
+	AnnotationDeclaration,
 	TypeDeclaration,
 	ConstructorDeclaration, MethodDeclaration, FieldDeclaration,
 	StaticBlockDeclaration, SynchronizedBlockDeclaration,
@@ -38,6 +41,8 @@ export const NodePointcuts = {
 	DefStatement, VarStatement, ThrowStatement,
 
 	NewExpression,
+
+	AtFieldPathElement,
 
 	LogicBlock
 } as const;

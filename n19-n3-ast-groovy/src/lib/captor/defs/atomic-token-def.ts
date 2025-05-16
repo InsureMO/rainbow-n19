@@ -5,7 +5,8 @@ import {
 	createMultiCharsCaptorClass,
 	createOperatorCaptorClass,
 	createSameCharsCaptorClass,
-	createSingleCharCaptorClass
+	createSingleCharCaptorClass,
+	createStringLiteralMarkCaptorClass
 } from './create-token-classes';
 import {AtomicTokenBasisType, AtomicTokenCaptors, Tt} from './internal';
 
@@ -42,14 +43,18 @@ const createAtomicTokenDef = (tokenId: TokenId, basis: AtomicTokenBasisType): At
 		}
 		case Tt.Sl: {
 			const [, keyword, name] = basis;
-			return createKeywordCaptorClass(name, keyword, tokenId, TokenType.StringLiteral);
+			return createStringLiteralMarkCaptorClass(name, keyword, tokenId);
 		}
 		// groovy operator
 		case Tt.Go:
 		// eslint-disable-next-line no-fallthrough
 		case Tt.Jo: { // java operator
 			const [, keyword, name] = basis;
-			return createOperatorCaptorClass(name, keyword, tokenId);
+			if ([TokenId.IN, TokenId.INSTANCEOF, TokenId.NOT_IN, TokenId.NOT_INSTANCEOF].includes(tokenId)) {
+				return createKeywordCaptorClass(name, keyword, tokenId, TokenType.Operator);
+			} else {
+				return createOperatorCaptorClass(name, keyword, tokenId);
+			}
 		}
 		// separator
 		case Tt.Sp: {

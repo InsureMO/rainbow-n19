@@ -1,24 +1,25 @@
 import {GroovyAstNode} from '../../../node';
 import {TokenId, TokenType} from '../../../tokens';
-import {AstRecognition} from '../../types';
-import {AbstractPreservableRecognizer} from '../abstract';
+import {AbstractDeclarationCreateRecognizer, RehydrateFunc} from '../abstract';
 import {NodePointcuts} from '../pointcuts';
+import {RecognizeRehydration} from '../shared';
 
-export class SpLParenRecognizer extends AbstractPreservableRecognizer {
+export class SpLParenRecognizer extends AbstractDeclarationCreateRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.LParen;
 	}
 
-	protected doRecognize(recognition: AstRecognition): number {
-		const {node, nodeIndex, astRecognizer} = recognition;
-		const blockNode = new GroovyAstNode({
-			tokenId: TokenId.ParenBlock, tokenType: TokenType.LogicBlock,
-			text: '', startOffset: node.startOffset,
-			startLine: node.startLine, startColumn: node.startColumn
-		});
-		NodePointcuts.LogicBlock.Paren.extra(blockNode);
-		blockNode.asParentOf(node);
-		astRecognizer.appendAsCurrentParent(blockNode);
-		return nodeIndex + 1;
+	protected getRehydrateFunctions(): Array<RehydrateFunc> {
+		return [
+			RecognizeRehydration.rehydrateToCharsWhenInString
+		];
+	}
+
+	protected getDeclarationTokenNature(): [TokenId, TokenType] {
+		return [TokenId.ParenBlock, TokenType.LogicBlock];
+	}
+
+	protected setDeclarationNodeExtraAttrs(node: GroovyAstNode): void {
+		NodePointcuts.LogicBlock.Paren.extra(node);
 	}
 }

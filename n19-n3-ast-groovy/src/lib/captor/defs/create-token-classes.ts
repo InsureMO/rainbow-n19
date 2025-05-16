@@ -72,6 +72,13 @@ export const createKeywordCaptorClass =
 	};
 
 // operator
+export const createStringLiteralMarkCaptorClass =
+	(className: string, operator: string, tokenId: TokenId): AtomicTokenDefOfSingleCaptor => {
+		return (operator.length === 1)
+			? createSingleCharCaptorClass(className, operator, tokenId, TokenType.Mark)
+			: createMultiCharsCaptorClass(className, operator, tokenId, TokenType.Mark);
+	};
+// operator
 export const createOperatorCaptorClass =
 	(className: string, operator: string, tokenId: TokenId): AtomicTokenDefOfSingleCaptor => {
 		return (operator.length === 1)

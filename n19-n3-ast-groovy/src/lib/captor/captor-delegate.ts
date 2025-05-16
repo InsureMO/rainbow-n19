@@ -1,6 +1,8 @@
 import {AstUtils} from '../ast-utils';
 import {AstTokenizer} from './ast-tokenizer';
 import {AstNodeCaptor, AstNodeCaptorCharChecker, AstNodeCaptorCharFuncCheck, AstNodeCaptorCharsChecker} from './captor';
+import {Character} from './character';
+import {IdentifierCaptor} from './identifier-captor';
 import {Char} from './types';
 import {isArrayCheck, isCharCheck, isFuncCheck, isMultiChecks} from './util';
 
@@ -171,12 +173,77 @@ export class CaptorDelegate {
 			const captorsOfNextChar = delegates.map(delegate => {
 				return delegate.find(nextChar, offsetOfNextChar, text + nextChar, tokenizer);
 			}).filter(captor => captor != null);
-			if (captorsOfNextChar.length > 1) {
-				// multiple captors found
-				const captorNames = captorsOfNextChar.map(captor => captor.constructor.name).join(', ');
-				throw new Error(`Multiple captors[${captorNames}] found for text[${text}].`);
-			} else if (captorsOfNextChar.length === 1) {
-				return captorsOfNextChar[0];
+			// of next char doesn't stand for the captor can accept next char
+			// it just stands for the captor can accept current char
+			// because it might be just the fallback captor
+			captors.push(...captorsOfNextChar);
+		}
+
+		if (captors.length > 1) {
+			// Overall, this would be an incorrect definition.
+			// However, there are still some special scenarios, so a check needs to be carried out first.
+			// Basically, for a delegate and a captor at the same level, if they both meet the conditions,
+			// the delegate always has a higher priority than the captor.
+			// Since the matching is based on single characters,
+			// the delegate will always match at least one more character than the captor (refer to the registration logic).
+			//
+			// The tricky part is that the matching of some captors is incomplete.
+			// Apart from the matching of the starting characters, there is also some logic in the #visit method.
+			// Typical examples are Identifier, Whitespaces, Tabs, and NumberBasePart.
+			// Fortunately, except for Identifier, the first characters of other captors can be distinguished from those of other captors.
+			// Therefore, here we only deal with the situation where the matched captors include IdentifierCaptor.
+			const identifierCaptorIndex = captors.findIndex(captor => captor.constructor.name === IdentifierCaptor.name);
+			if (identifierCaptorIndex !== -1) {
+				// identifier captor is at level one, so the given char is the first char
+				if (char === '$') {
+					// there are 2 possibilities:
+					// 1. LtDollarSlashyGStringDollarEscapeCaptor (the next char is still $)
+					// 2. LtGStringInterpolationSymbolCaptor (if the next char is not $)
+					let winner: AstNodeCaptor;
+					const nextChar = tokenizer.charAt(offset + 1);
+					if (nextChar === '$') {
+						// must be LtDollarSlashyGStringDollarEscapeCaptor
+						// compare the next char of next char
+						const nextCharOfNext = tokenizer.charAt(offset + 2);
+						if (nextCharOfNext == null) {
+							// no more char
+							// LtGStringInterpolationSymbolCaptor wins
+							winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationSymbolCaptor');
+						} else {
+							if (Character.isJavaIdentifierPartAndNotIdentifierIgnorable(nextCharOfNext.codePointAt(0))) {
+								// identifier wins
+								winner = captors[identifierCaptorIndex];
+							} else {
+								// LtGStringInterpolationSymbolCaptor wins
+								winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationSymbolCaptor');
+							}
+						}
+					} else if (nextChar == null) {
+						// no more char
+						// LtGStringInterpolationSymbolCaptor wins
+						winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationSymbolCaptor');
+					} else {
+						// must be LtGStringInterpolationSymbolCaptor
+						if (Character.isJavaIdentifierPartAndNotIdentifierIgnorable(nextChar.codePointAt(0))) {
+							// identifier wins
+							winner = captors[identifierCaptorIndex];
+						} else {
+							// LtGStringInterpolationSymbolCaptor wins
+							winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationSymbolCaptor');
+						}
+					}
+					if (captors.length > 2) {
+						// assume never happen, but we should know this
+						const captorNames = captors.map(captor => captor.constructor.name).join(', ');
+						throw new Error(`Multiple captors[${captorNames}] found for text[${text}].`);
+					}
+					captors.length = 0;
+					captors.push(winner);
+				} else {
+					// first char is not $, keyword always has higher priority
+					// remove the identifier captor
+					captors.splice(identifierCaptorIndex, 1);
+				}
 			}
 		}
 

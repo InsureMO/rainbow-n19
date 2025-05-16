@@ -149,6 +149,7 @@ export enum TokenId {
 	RParen, // )
 	LBrack, // [
 	RBrack, // ]
+	At, // @
 	Semicolon, // ;
 	Comma, // ,
 	Dot, // .
@@ -268,6 +269,7 @@ export enum TokenId {
 	NewExpression,
 	ThrowStatement,
 	ArrayInitializer,
+	AtFieldPathElement,
 	// temporary tokens are only used during the AST parsing process
 	// and will be replaced with official tokens before the parsing is completed
 	// name starts with "$Tmp"
@@ -333,6 +335,7 @@ export enum TokenType {
 	// statement
 	ScriptCommand, Comments,
 	PackageDeclaration, ImportDeclaration,
+	AnnotationDeclaration, GenericTypeDeclaration,
 	/**
 	 * class, interface, @interface, enum, record, trait
 	 */
@@ -358,6 +361,7 @@ export enum TokenType {
 	 * assert
 	 */
 	LogicStatement,
+	PathElement,
 	// temporary
 	/**
 	 * csscmf
