@@ -28,7 +28,7 @@ export abstract class AbstractCommentsRecognizer extends AbstractEagerRecognizer
 			}
 		}
 		if (matched) {
-			node.replaceTokenNature(TokenId.CommentKeyword, TokenType.Comments);
+			node.replaceTokenNature(TokenId.CommentKeyword, TokenType.Chars);
 			situation.keywordFound = true;
 		} else {
 			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);

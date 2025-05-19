@@ -30,22 +30,31 @@ export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends Ab
 		let offset = offsetOfGiven + 1;
 		let c = tokenizer.charAt(offset);
 		let text = given;
-		let hasDot = text.includes(AstChars.Dot);
+		let hasDot = false;
 		while (c != null) {
 			if (c === AstChars.Dot) {
 				if (hasDot) {
 					break;
 				} else {
 					hasDot = true;
-					offset += 1;
+					const nc = tokenizer.charAt(offset + 1);
+					if ('0123456789'.includes(c)) {
+						offset += 2;
+						text = text + AstChars.Dot + nc;
+						c = tokenizer.charAt(offset);
+					} else {
+						// the next char after dot is not 0-9, which means the dot is a dot to get property or something
+						// e.g. 1._1 means get _1 from 1, dot is not a decimal point in this case.
+						break;
+					}
 				}
 			} else if ('0123456789_'.includes(c)) {
 				offset += 1;
+				text = text + c;
+				c = tokenizer.charAt(offset);
 			} else {
 				break;
 			}
-			text = text + c;
-			c = tokenizer.charAt(offset);
 		}
 
 		this.createAndAppendToAst(tokenizer, {

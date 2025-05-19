@@ -9,6 +9,7 @@ import {
 	createStringLiteralMarkCaptorClass
 } from './create-token-classes';
 import {AtomicTokenBasisType, AtomicTokenCaptors, Tt} from './internal';
+import {capitalize} from './utils';
 
 const createAtomicTokenDef = (tokenId: TokenId, basis: AtomicTokenBasisType): AtomicTokenCaptors => {
 	const [type] = basis;
@@ -29,14 +30,14 @@ const createAtomicTokenDef = (tokenId: TokenId, basis: AtomicTokenBasisType): At
 		case Tt.Bl: {
 			const [, keywords, name] = basis;
 			return [
-				createKeywordCaptorClass(name, keywords[0], tokenId, TokenType.BooleanLiteral),
-				createKeywordCaptorClass(name, keywords[1], tokenId, TokenType.BooleanLiteral)
+				createKeywordCaptorClass(name + capitalize(keywords[0]), keywords[0], tokenId, TokenType.BooleanLiteral),
+				createKeywordCaptorClass(name + capitalize(keywords[1]), keywords[1], tokenId, TokenType.BooleanLiteral)
 			];
 		}
 		case Tt.Nl: {
 			const [, keywordOrCaptors, name] = basis;
 			if (typeof keywordOrCaptors === 'string') {
-				return createKeywordCaptorClass(name, keywordOrCaptors, tokenId, TokenType.NumberLiteral);
+				return createKeywordCaptorClass(name, keywordOrCaptors, tokenId, TokenType.Mark);
 			} else {
 				return keywordOrCaptors;
 			}

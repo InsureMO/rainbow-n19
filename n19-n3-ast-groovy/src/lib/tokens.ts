@@ -114,8 +114,9 @@ export enum TokenId {
 	DollarSlashyGStringDollarEscape, // $$
 	DollarSlashyGStringSlashEscape, // $/
 	GStringContent, // string part in gstring
-	GStringInterpolationSymbol, // $ of ${...} or $...
-	GStringInterpolationContent, // ${...}, $..., the "..." part, any groovy expression is good for it
+	GStringInterpolationStartMark, // $ of $...
+	GStringInterpolationLBraceStartMark, // ${ of ${...}
+	GStringInterpolationRBraceEndMark, // } of ${...}
 	GStringInterpolation, // ${...}, $..., "..." means interpolation, any groovy expression is good for it
 	RegexpPatternStartMark,
 	GStringLiteral,

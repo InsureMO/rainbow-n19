@@ -49,7 +49,7 @@ export class MultipleLinesCommentsRecognizer extends AbstractCommentsRecognizer 
 		}
 		if (nodeText.length === 1 || node.tokenId === TokenId.Power) {
 			// only asterisks in text, continue finding trailing nodes
-			node.replaceTokenNature(TokenId.MultipleLinesCommentsHeadAsterisks, TokenType.Comments);
+			node.replaceTokenNature(TokenId.MultipleLinesCommentsHeadAsterisks, TokenType.Chars);
 			const revisedNodes = [node];
 			let consumedNodeCount = 1;
 			let nextNodeIndex = situation.nodeIndex + 1;
@@ -83,14 +83,14 @@ export class MultipleLinesCommentsRecognizer extends AbstractCommentsRecognizer 
 		// split to 2 nodes
 		const [asterisks, leftStr] = this.splitStrToAsterisksAnd(nodeText);
 		if (leftStr.length === 0) {
-			node.replaceTokenNature(TokenId.MultipleLinesCommentsHeadAsterisks, TokenType.Comments);
+			node.replaceTokenNature(TokenId.MultipleLinesCommentsHeadAsterisks, TokenType.Chars);
 			return {revisedNodes: [node], consumedNodeCount: 1};
 		} else {
 			// split to asterisks and chars, create 2 new node
 			return {
 				revisedNodes: [
 					new GroovyAstNode({
-						tokenId: TokenId.MultipleLinesCommentsHeadAsterisks, tokenType: TokenType.Comments,
+						tokenId: TokenId.MultipleLinesCommentsHeadAsterisks, tokenType: TokenType.Chars,
 						text: asterisks, startOffset: node.startOffset,
 						startLine: node.startLine, startColumn: node.startColumn
 					}),

@@ -23,6 +23,8 @@ export enum AstLiterals {
 	DollarSlashyGStringQuotationEndMark = '/$',
 	SlashyGStringBackslashEscape = '\\/',
 	DollarSlashyGStringDollarEscape = '$$',
-	GStringInterpolationSymbol = '$',
+	GStringInterpolationStartMark = '$',
+	GStringInterpolationLBraceStartMark = `\${`,
+	GStringInterpolationRBraceEndMark = '}',
 	RegexpPatternStartMark = '~/',
 }
