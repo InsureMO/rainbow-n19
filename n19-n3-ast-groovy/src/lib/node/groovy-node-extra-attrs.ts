@@ -18,26 +18,3 @@ export type ChildAcceptableCheckFunc = (mightBeChildNode: GroovyAstNode, astReco
 export type OnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => void;
 export type OnChildClosedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => void;
 export type OnNodeClosedFunc = (node: GroovyAstNode, astRecognizer: AstRecognizer) => void;
-
-/** attribute getter and setter */
-export interface GroovyAstNodeWithExtraAttrGS<V> {
-	readonly get: (node: GroovyAstNode) => V;
-	readonly set: (node: GroovyAstNode, value: V) => void;
-	readonly clear: (node: GroovyAstNode) => void;
-}
-
-const createGetterAndSetter = <V>(key: GroovyAstNodeExtraAttrs | string): GroovyAstNodeWithExtraAttrGS<V> => {
-	return {
-		get: (node: GroovyAstNode) => node.getAttr<V>(key),
-		set: (node: GroovyAstNode, value: V) => node.setAttr<V>(key, value),
-		clear: (node: GroovyAstNode) => node.setAttr<undefined>(key, (void 0))
-	};
-};
-
-/** Node extra attrs facade */
-export const $Neaf = {
-	ChildAcceptableCheck: createGetterAndSetter<ChildAcceptableCheckFunc>(GroovyAstNodeExtraAttrs.CHILD_ACCEPTABLE_CHECK),
-	OnChildAppended: createGetterAndSetter<OnChildAppendedFunc>(GroovyAstNodeExtraAttrs.ON_CHILD_APPENDED),
-	OnChildClosed: createGetterAndSetter<OnChildClosedFunc>(GroovyAstNodeExtraAttrs.ON_CHILD_CLOSED),
-	OnNodeClosed: createGetterAndSetter<OnNodeClosedFunc>(GroovyAstNodeExtraAttrs.ON_NODE_CLOSED)
-} as const;

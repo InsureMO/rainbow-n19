@@ -1,7 +1,11 @@
 import {TokenType} from '../../tokens';
+import {AstNodeCaptor} from '../captor';
 import {Char} from '../types';
 import {AstChars, AstKeywords, AstLiterals, AstMarks, AstOperators, AstPrimitiveTypes} from '../util';
-import {GroovyAstNodeCaptorConstructor} from './types';
+
+export interface GroovyAstNodeCaptorConstructor<N extends AstNodeCaptor = AstNodeCaptor> {
+	new(): N;
+}
 
 export enum AtomicTokenType {
 	PrimitiveType,

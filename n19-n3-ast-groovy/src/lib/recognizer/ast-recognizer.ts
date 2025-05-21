@@ -2,9 +2,8 @@ import {GroovyAst} from '../ast';
 import {CommentKeyword, CommentKeywords} from '../captor';
 import {CompilationUnitNode, GroovyAstNode} from '../node';
 import {TokenId} from '../tokens';
-import {$Neaf} from './neaf-wrapper';
-import {NodePointcuts} from './node-recognizer';
 import {NodeRecognizerRepo} from './node-recognizer-repo';
+import {$Neaf, NodePointcuts} from './pointcuts';
 import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types';
 
 /**

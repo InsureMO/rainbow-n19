@@ -1,6 +1,6 @@
 import {AstNode} from '@rainbow-n19/n3-ast';
 import {TokenId} from '../tokens';
-import {AllNodeRecognizers} from './node-recognizer';
+import {RecognizerDef} from './defs';
 import {NodeRecognizer, NodeRecognizersOptions} from './types';
 
 export class NodeRecognizerRepo {
@@ -12,7 +12,7 @@ export class NodeRecognizerRepo {
 
 	protected initRecognizers(externalRecognizers?: Array<NodeRecognizer>): Map<TokenId, NodeRecognizer> {
 		return [
-			...AllNodeRecognizers,
+			...Object.values(RecognizerDef),
 			...(externalRecognizers ?? [])
 		].reduce((map, recognizer) => {
 			map.set(recognizer.acceptTokenId(), recognizer);

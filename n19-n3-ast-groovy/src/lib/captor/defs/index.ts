@@ -1,4 +1,4 @@
-export * from './types';
+export * from './internal';
 
 export * from './atomic-token';
 export * from './atomic-token-def';

@@ -1,12 +1,8 @@
 import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
 import {AstTokenizer} from './ast-tokenizer';
-import {
-	AstNodeCaptorCharCheck,
-	AstNodeCaptorCharFuncCheck,
-	AstNodeCaptorCharsCheckers,
-	AstNodeCaptorCheckers
-} from './captor';
+import {AstNodeCaptorCharCheck, AstNodeCaptorCharsCheckers, AstNodeCaptorCheckers} from './captor';
+import {isNumeric} from './captor-func-checkers';
 import {Char} from './types';
 import {AstChars} from './util';
 
@@ -130,14 +126,7 @@ export class LtNumericBasePartCaptorStartsWith9 extends AbstractLtNumericBasePar
  * starts from ".", next char is "0-9", and following chars are "0-9" or "_".
  */
 export class LtNumericBasePartCaptorStartsWithDot extends AbstractAstNodeCaptor {
-	private readonly _numericChecker = (() => {
-		const func: AstNodeCaptorCharFuncCheck = (char) => {
-			return '0123456789'.includes(char);
-		};
-		func.describe = () => 'isNumeric';
-		return func;
-	})();
-	private readonly _checkers: AstNodeCaptorCharsCheckers = [AstChars.Dot, this._numericChecker];
+	private readonly _checkers: AstNodeCaptorCharsCheckers = [AstChars.Dot, isNumeric];
 
 	checkers(): AstNodeCaptorCheckers {
 		return this._checkers;

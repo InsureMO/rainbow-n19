@@ -1,10 +1,11 @@
 export * from './types';
 
-export * from './ast-recognizer';
+export * from './util';
+export * from './abstract';
+export * from './statement';
+
+export * from './pointcuts';
+export * from './defs';
 export * from './node-recognizer-repo';
 
-export * from './node-recognizer';
-
-import {$Neaf} from './neaf-wrapper';
-
-export const $NeafForRecognizer = $Neaf;
+export * from './ast-recognizer';

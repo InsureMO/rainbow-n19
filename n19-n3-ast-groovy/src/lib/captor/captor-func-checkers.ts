@@ -12,3 +12,19 @@ export const isNotJavaIdentifierPart = (() => {
 	func.describe = () => 'isNotJavaIdentifierPart';
 	return func;
 })();
+
+export const isJavaIdentifierStartAndNotIdentifierIgnorable = (() => {
+	const func: AstNodeCaptorCharFuncCheck = (char) => {
+		return Character.isJavaIdentifierStartAndNotIdentifierIgnorable(char.codePointAt(0));
+	};
+	func.describe = () => 'isJavaIdentifierStartAndNotIdentifierIgnorable';
+	return func;
+})();
+
+export const isNumeric = (() => {
+	const func: AstNodeCaptorCharFuncCheck = (char) => {
+		return '0123456789'.includes(char);
+	};
+	func.describe = () => 'isNumeric';
+	return func;
+})();

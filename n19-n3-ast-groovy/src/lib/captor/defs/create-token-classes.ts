@@ -4,8 +4,7 @@ import {AbstractMultipleCharsCaptor} from '../abstract-multiple-chars-captor';
 import {AbstractSameCharsCaptor} from '../abstract-same-chars-captor';
 import {AbstractSingleCharCaptor} from '../abstract-single-char-captor';
 import {Char} from '../types';
-import {AtomicTokenDefOfSingleCaptor} from './internal';
-import {GroovyAstNodeCaptorConstructor} from './types';
+import {GroovyAstNodeCaptorConstructor} from './internal';
 
 // single-char captor
 export const createSingleCharCaptorClass =
@@ -73,14 +72,14 @@ export const createKeywordCaptorClass =
 
 // operator
 export const createStringLiteralMarkCaptorClass =
-	(className: string, operator: string, tokenId: TokenId): AtomicTokenDefOfSingleCaptor => {
+	(className: string, operator: string, tokenId: TokenId): GroovyAstNodeCaptorConstructor => {
 		return (operator.length === 1)
 			? createSingleCharCaptorClass(className, operator, tokenId, TokenType.Mark)
 			: createMultiCharsCaptorClass(className, operator, tokenId, TokenType.Mark);
 	};
 // operator
 export const createOperatorCaptorClass =
-	(className: string, operator: string, tokenId: TokenId): AtomicTokenDefOfSingleCaptor => {
+	(className: string, operator: string, tokenId: TokenId): GroovyAstNodeCaptorConstructor => {
 		return (operator.length === 1)
 			? createSingleCharCaptorClass(className, operator, tokenId, TokenType.Operator)
 			: createMultiCharsCaptorClass(className, operator, tokenId, TokenType.Operator);
