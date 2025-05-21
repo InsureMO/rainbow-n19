@@ -6,6 +6,25 @@ import {PredefinedPreservation as Preserve, PredefinedRehydration as Rehydrate, 
 
 export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBasisType }>> = {
 	// separator
+	[TokenId.LBrace]: {
+		name: 'SpLBrace',
+		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
+		declareAsParent: [
+			/** if parent has {@link $Neaf.TakeLBraceAs} */
+			NodePointcuts.LogicBlock.Brace.createOnTakeLBraceAs,
+			/** any other case */
+			[TokenId.CodeBlock, TokenType.LogicBlock]
+		]
+	},
+	[TokenId.RBrace]: 'TODO',
+	[TokenId.LParen]: {
+		name: 'SpLParen',
+		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
+		declareAsParent: [[TokenId.ParenBlock, TokenType.LogicBlock]]
+	},
+	[TokenId.RParen]: 'TODO',
+	[TokenId.LBrack]: 'TODO',
+	[TokenId.RBrack]: 'TODO',
 	[TokenId.At]: {
 		name: 'SpAt',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
@@ -19,22 +38,48 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 			}
 		]
 	},
-	[TokenId.LBrace]: {
-		name: 'SpLBrace',
-		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
-		declareAsParent: [
-			/** if parent has {@link $Neaf.TakeLBraceAs} */
-			NodePointcuts.LogicBlock.Brace.createOnTakeLBraceAs,
-			/** any other case */
-			[TokenId.CodeBlock, TokenType.LogicBlock]
-		]
-	},
-	[TokenId.LParen]: {
-		name: 'SpLParen',
-		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
-		declareAsParent: [[TokenId.ParenBlock, TokenType.LogicBlock]]
-	},
+	[TokenId.Semicolon]: 'TODO',
+	[TokenId.Comma]: 'TODO',
+	[TokenId.Dot]: 'TODO',
 	// operators
+	[TokenId.RangeInclusive]: 'TODO',
+	[TokenId.RangeExclusiveLeft]: 'TODO',
+	[TokenId.RangeExclusiveRight]: 'TODO',
+	[TokenId.RangeExclusiveFull]: 'TODO',
+	[TokenId.SpreadDot]: 'TODO',
+	[TokenId.SafeDot]: 'TODO',
+	[TokenId.SafeIndex]: 'TODO',
+	[TokenId.SafeChainDot]: 'TODO',
+	[TokenId.Elvis]: 'TODO',
+	[TokenId.ElvisAssign]: 'TODO',
+	[TokenId.MethodPointer]: 'TODO',
+	[TokenId.RegexFind]: 'TODO',
+	[TokenId.RegexMatch]: 'TODO',
+	[TokenId.Power]: 'TODO',
+	[TokenId.PowerAssign]: 'TODO',
+	[TokenId.Spaceship]: 'TODO',
+	[TokenId.Identical]: 'TODO',
+	[TokenId.NotIdentical]: 'TODO',
+	[TokenId.IN]: 'TODO',
+	[TokenId.NOT_IN]: 'TODO',
+	[TokenId.NOT_INSTANCEOF]: 'TODO',
+	[TokenId.Assign]: 'TODO',
+	[TokenId.GreaterThan]: 'TODO',
+	[TokenId.LessThan]: 'TODO',
+	[TokenId.Not]: 'TODO',
+	[TokenId.Bitnot]: 'TODO',
+	[TokenId.Question]: 'TODO',
+	[TokenId.Colon]: 'TODO',
+	[TokenId.Equal]: 'TODO',
+	[TokenId.LessThanOrEqual]: 'TODO',
+	[TokenId.GreaterThanOrEqual]: 'TODO',
+	[TokenId.NotEqual]: 'TODO',
+	[TokenId.And]: 'TODO',
+	[TokenId.Or]: 'TODO',
+	[TokenId.Increase]: 'TODO',
+	[TokenId.Decrease]: 'TODO',
+	[TokenId.Add]: 'TODO',
+	[TokenId.Subtract]: 'TODO',
 	[TokenId.Multiple]: {
 		name: 'OpMultiple',
 		rehydrate: [
@@ -42,6 +87,26 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 			{parentTokenId: TokenId.ImportDeclaration, to: [TokenId.ImportAllMark, TokenType.Mark]}
 		]
 	},
+	[TokenId.Divide]: 'TODO',
+	[TokenId.Bitand]: 'TODO',
+	[TokenId.Bitor]: 'TODO',
+	[TokenId.Xor]: 'TODO',
+	[TokenId.Mod]: 'TODO',
+	[TokenId.AddAssign]: 'TODO',
+	[TokenId.SubtractAssign]: 'TODO',
+	[TokenId.MultipleAssign]: 'TODO',
+	[TokenId.DivideAssign]: 'TODO',
+	[TokenId.BitandAssign]: 'TODO',
+	[TokenId.BitorAssign]: 'TODO',
+	[TokenId.XorAssign]: 'TODO',
+	[TokenId.ModAssign]: 'TODO',
+	[TokenId.LshiftAssign]: 'TODO',
+	[TokenId.RshiftAssign]: 'TODO',
+	[TokenId.UrshiftAssign]: 'TODO',
+	[TokenId.MethodReference]: 'TODO',
+	[TokenId.Ellipsis]: 'TODO',
+	[TokenId.Arrow]: 'TODO',
+	[TokenId.INSTANCEOF]: 'TODO',
 	// mark
 	[TokenId.ScriptCommandStartMark]: {
 		name: 'ScriptCommand', class: ScriptCommandRecognizer,
@@ -55,8 +120,36 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		name: 'MultipleLinesComments', class: MultipleLinesCommentsRecognizer,
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral]
 	},
+	[TokenId.MultipleLinesCommentEndMark]: 'NotRequired',
 	// number literal
+	[TokenId.NumericBasePart]: 'TODO',
+	[TokenId.BinaryStartMark]: 'TODO',
+	[TokenId.HexadecimalStartMark]: 'TODO',
 	// boolean literal
+	[TokenId.BooleanLiteral]: 'NotRequired',
+	// string literal
+	[TokenId.StringQuotationMark]: 'TODO',
+	[TokenId.StringQuotationMarkML]: 'TODO',
+	[TokenId.StringBackspaceEscape]: 'TODO',
+	[TokenId.StringFormFeedEscape]: 'TODO',
+	[TokenId.StringNewLineEscape]: 'TODO',
+	[TokenId.StringCarriageReturnEscape]: 'TODO',
+	[TokenId.StringSingleSpaceEscape]: 'TODO',
+	[TokenId.StringTabulationEscape]: 'TODO',
+	[TokenId.StringBackslashEscape]: 'TODO',
+	[TokenId.StringSingleQuoteEscape]: 'TODO',
+	[TokenId.StringDoubleQuoteEscape]: 'TODO',
+	[TokenId.StringDollarEscape]: 'TODO',
+	[TokenId.StringUnicodeEscapeMark]: 'TODO',
+	[TokenId.GStringQuotationMark]: 'TODO',
+	[TokenId.GStringQuotationMarkML]: 'TODO',
+	[TokenId.DollarSlashyGStringQuotationStartMark]: 'TODO',
+	[TokenId.DollarSlashyGStringQuotationEndMark]: 'TODO',
+	[TokenId.SlashyGStringBackslashEscape]: 'TODO',
+	[TokenId.DollarSlashyGStringDollarEscape]: 'TODO',
+	[TokenId.GStringInterpolationStartMark]: 'TODO',
+	[TokenId.GStringInterpolationLBraceStartMark]: 'TODO',
+	[TokenId.RegexpPatternStartMark]: 'TODO',
 	// keyword
 	[TokenId.ABSTRACT]: {
 		name: 'KwAbstract',
@@ -96,6 +189,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		preserve: [Preserve.ParentIsCsscmfDeclaration, Preserve.ParentIsTypeDeclaration],
 		declareAsParent: [[TokenId.ClassDeclaration, TokenType.TypeDeclaration]]
 	},
+	[TokenId.CONST]: 'NotRequired',
 	[TokenId.CONTINUE]: {
 		name: 'KwContinue',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
@@ -144,6 +238,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		preserve: [Preserve.ParentIsCsscmfDeclaration, Preserve.ParentIsTypeDeclaration],
 		declareAsParent: [[TokenId.EnumClassDeclaration, TokenType.TypeDeclaration]]
 	},
+	[TokenId.EXTENDS]: 'TODO',
 	[TokenId.FINAL]: {
 		name: 'KwFinal',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
@@ -160,6 +255,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
 		declareAsParent: [[TokenId.ForDeclaration, TokenType.LogicBlockDeclaration]]
 	},
+	[TokenId.GOTO]: 'TODO',
 	[TokenId.IF]: {
 		name: 'KwIf',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
@@ -169,6 +265,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 			[[TokenId.IfIfDeclaration, TokenType.LogicBlockDeclaration], [TokenId.IfDeclaration, TokenType.LogicBlockDeclaration]]
 		]
 	},
+	[TokenId.IMPLEMENTS]: 'TODO',
 	[TokenId.IMPORT]: {
 		name: 'KwImport',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
@@ -201,6 +298,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		preserve: [Preserve.ParentIsCsscmfDeclaration, Preserve.ParentIsTypeDeclaration],
 		declareAsParent: [[TokenId.Tmp$CsscmfDeclaration, TokenType.TypeDeclaration]]
 	},
+	[TokenId.NULL]: 'TODO',
 	[TokenId.PACKAGE]: {
 		name: 'KwPackage',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
@@ -244,6 +342,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		preserve: [Preserve.ParentIsCsscmfDeclaration, Preserve.ParentIsTypeDeclaration],
 		declareAsParent: [[TokenId.RecordClassDeclaration, TokenType.TypeDeclaration]]
 	},
+	[TokenId.RETURN]: 'TODO',
 	[TokenId.SEALED]: {
 		name: 'KwSealed',
 		rehydrate: [
@@ -274,17 +373,21 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
 		declareAsParent: [[TokenId.SwitchDeclaration, TokenType.LogicBlockDeclaration]]
 	},
+	[TokenId.SUPER]: 'TODO',
 	[TokenId.SYNCHRONIZED]: {
 		name: 'KwSynchronized',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
 		preserve: [Preserve.ParentIsCsscmfDeclaration],
 		declareAsParent: [[TokenId.Tmp$CsscmfDeclaration, TokenType.TypeDeclaration]]
 	},
+	[TokenId.THIS]: 'TODO',
+	[TokenId.THREADSAFE]: 'TODO',
 	[TokenId.THROW]: {
 		name: 'KwThrow',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
 		declareAsParent: [[TokenId.ThrowStatement, TokenType.LogicStatement]]
 	},
+	[TokenId.THROWS]: 'TODO',
 	[TokenId.TRAIT]: {
 		name: 'KwTrait',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
@@ -327,6 +430,21 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
 		preserve: [Preserve.ParentIsDoWhileDeclaration],
 		declareAsParent: [[TokenId.WhileDeclaration, TokenType.LogicBlockDeclaration]]
-	}
+	},
+	[TokenId.YIELD]: 'TODO',
 	// primitive type
+	[TokenId.BOOLEAN]: 'TODO',
+	[TokenId.CHAR]: 'TODO',
+	[TokenId.BYTE]: 'TODO',
+	[TokenId.SHORT]: 'TODO',
+	[TokenId.INT]: 'TODO',
+	[TokenId.LONG]: 'TODO',
+	[TokenId.FLOAT]: 'TODO',
+	[TokenId.DOUBLE]: 'TODO',
+	// chars
+	[TokenId.Whitespaces]: 'NotRequired',
+	[TokenId.Tabs]: 'NotRequired',
+	[TokenId.NewLine]: 'NotRequired',
+	[TokenId.Identifier]: 'TODO',
+	[TokenId.UndeterminedChars]: 'NotRequired'
 };

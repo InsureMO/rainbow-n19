@@ -8,7 +8,7 @@ import {RecognizerBasisType} from './internal';
 import {buildPreserveFunc} from './preserve-def';
 import {buildRehydrateFunc} from './rehydrate-def';
 
-const createRecognizerDef = (tokenId: TokenId, basis: RecognizerBasisType): NodeRecognizer => {
+const createRecognizerDef = (tokenId: TokenId, basis: Exclude<RecognizerBasisType, 'TODO' | 'NotRequired'>): NodeRecognizer => {
 	const {
 		name: className, class: BaseClass = AbstractNodeRecognizer,
 		rehydrate, preserve, declareAsParent
@@ -57,7 +57,10 @@ const createRecognizerDef = (tokenId: TokenId, basis: RecognizerBasisType): Node
 
 export const RecognizerDef: Readonly<{ [key in keyof typeof RecognizerBasis]: NodeRecognizer }> = (() => {
 	return Object.keys(RecognizerBasis).reduce((defs, tokenId) => {
-		defs[tokenId] = createRecognizerDef(Number(tokenId) as TokenId, RecognizerBasis[tokenId]);
+		const def = RecognizerBasis[tokenId];
+		if (def !== 'TODO' && def !== 'NotRequired') {
+			defs[tokenId] = createRecognizerDef(Number(tokenId) as TokenId, def);
+		}
 		return defs;
 	}, {});
 })();

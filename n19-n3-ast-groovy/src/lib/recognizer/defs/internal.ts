@@ -87,4 +87,4 @@ export type StandardRecognizerBasis = Readonly<{
 	preserve?: ReadonlyArray<PreserveCheckBasis>;
 	declareAsParent?: ReadonlyArray<DeclareAsParentBasis>;
 }>;
-export type RecognizerBasisType = StandardRecognizerBasis;
+export type RecognizerBasisType = StandardRecognizerBasis | 'TODO' | 'NotRequired';
