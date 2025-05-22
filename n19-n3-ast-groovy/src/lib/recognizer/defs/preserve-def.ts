@@ -1,12 +1,28 @@
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition} from '../types';
-import {NodePreservableCheckFunc, NodePreservation} from '../util';
 import {
+	NodePreservableCheckFunc,
 	PredefinedPreservation,
 	PreserveCheckBasis,
 	PreserveWhenParentIsTokenId,
 	PreserveWhenParentIsTokenType
-} from './internal';
+} from './types';
+
+const parentIsTokenId = (tokenId: TokenId): NodePreservableCheckFunc => {
+	return (recognition: AstRecognition): boolean => {
+		return recognition.astRecognizer.getCurrentParent().tokenId === tokenId;
+	};
+};
+const parentIsTokenType = (tokenType: TokenType): NodePreservableCheckFunc => {
+	return (recognition: AstRecognition): boolean => {
+		return recognition.astRecognizer.getCurrentParent().tokenType === tokenType;
+	};
+};
+
+export const NodePreservation = {
+	parentIsTokenId,
+	parentIsTokenType
+} as const;
 
 const isPredefinedPreserveWhenParentIs = (p: PreserveCheckBasis): p is PredefinedPreservation => {
 	return typeof p === 'string' && Object.values(PredefinedPreservation).includes(p);

@@ -1,9 +1,9 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {PBS} from './index';
-import {CsscmfDeclarationPointcuts, TypeDeclarationPointcuts} from '../statement';
 import {PointcutBasisType} from '../defs';
+import {CsscmfDeclarationPointcuts, TypeDeclarationPointcuts} from '../statement';
+import {PBS} from './builder';
 import {NodePointcuts} from './defs';
 
 export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisType }>> = {

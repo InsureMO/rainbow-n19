@@ -1,7 +1,9 @@
 import {TokenId, TokenType} from '../../tokens';
+import {NodePointcutUtils} from '../pointcuts';
 import {MultipleLinesCommentsRecognizer, ScriptCommandRecognizer, SingleLineCommentsRecognizer} from '../statement';
-import {NodePointcutUtils, NodeRecognizeUtils, NodeRehydration} from '../util';
-import {PredefinedPreservation as Preserve, PredefinedRehydration as Rehydrate, RecognizerBasisType} from './internal';
+import {NodeRecognizeUtils} from '../util';
+import {NodeRehydration} from './rehydrate-def';
+import {PredefinedPreservation as Preserve, PredefinedRehydration as Rehydrate, RecognizerBasisType} from './types';
 
 export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBasisType }>> = {
 	// separator

@@ -1,12 +1,11 @@
 import {TokenId} from '../../tokens';
 import {AbstractNodeRecognizer} from '../abstract';
 import {NodeRecognizer} from '../types';
-import {NodeAsParentDeclareFunc, NodePreservableCheckFunc, NodeRehydrateFunc} from '../util';
 import {RecognizerBasis} from './basis';
 import {buildDeclareAsParentFunc} from './declare-as-parent-def';
-import {RecognizerBasisType} from './internal';
 import {buildPreserveFunc} from './preserve-def';
 import {buildRehydrateFunc} from './rehydrate-def';
+import {NodeAsParentDeclareFunc, NodePreservableCheckFunc, NodeRehydrateFunc, RecognizerBasisType} from './types';
 
 const createRecognizerDef = (tokenId: TokenId, basis: Exclude<RecognizerBasisType, 'TODO' | 'NotRequired'>): NodeRecognizer => {
 	const {

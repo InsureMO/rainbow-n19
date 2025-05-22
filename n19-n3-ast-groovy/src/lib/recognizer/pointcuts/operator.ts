@@ -9,21 +9,21 @@ import {
 	RecognizerAttrVisitor,
 	TakeSpecificTokenToAnother
 } from './types';
-import {createAttrVisitor, createNumberAccumulator} from './utils';
+import {NodePointcutUtils} from './utils';
 
 export const NodePointcutOperator = {
 	// standard
-	ChildAcceptableCheck: createAttrVisitor<ChildAcceptableCheckFunc>(GroovyAstNodeRecognizerAttrs.CHILD_ACCEPTABLE_CHECK),
-	OnChildAppended: createAttrVisitor<OnChildAppendedFunc>(GroovyAstNodeRecognizerAttrs.ON_CHILD_APPENDED),
-	OnChildClosed: createAttrVisitor<OnChildClosedFunc>(GroovyAstNodeRecognizerAttrs.ON_CHILD_CLOSED),
-	OnNodeClosed: createAttrVisitor<OnNodeClosedFunc>(GroovyAstNodeRecognizerAttrs.ON_NODE_CLOSED),
+	ChildAcceptableCheck: NodePointcutUtils.createAttrVisitor<ChildAcceptableCheckFunc>(GroovyAstNodeRecognizerAttrs.CHILD_ACCEPTABLE_CHECK),
+	OnChildAppended: NodePointcutUtils.createAttrVisitor<OnChildAppendedFunc>(GroovyAstNodeRecognizerAttrs.ON_CHILD_APPENDED),
+	OnChildClosed: NodePointcutUtils.createAttrVisitor<OnChildClosedFunc>(GroovyAstNodeRecognizerAttrs.ON_CHILD_CLOSED),
+	OnNodeClosed: NodePointcutUtils.createAttrVisitor<OnNodeClosedFunc>(GroovyAstNodeRecognizerAttrs.ON_NODE_CLOSED),
 	// auxiliary
-	Accept5BaseNodesAsChild: createAttrVisitor<boolean>(GroovyAstNodeRecognizerAttrs.ACCEPT_5_BASE_NODES_AS_CHILD),
-	AcceptTokenIdsAsChild: createAttrVisitor<Array<TokenId>>(GroovyAstNodeRecognizerAttrs.ACCEPT_TOKEN_IDS_AS_CHILD),
-	AcceptTokenTypesAsChild: createAttrVisitor<Array<TokenType>>(GroovyAstNodeRecognizerAttrs.ACCEPT_TOKEN_TYPES_AS_CHILD),
-	RejectTokenIdsAsChild: createAttrVisitor<Array<TokenId>>(GroovyAstNodeRecognizerAttrs.REJECT_TOKEN_IDS_AS_CHILD),
-	TakeLBraceAs: createAttrVisitor<TakeSpecificTokenToAnother>(GroovyAstNodeRecognizerAttrs.TAKE_LBRACE_AS),
-	EndWithToken: createAttrVisitor<TokenId>(GroovyAstNodeRecognizerAttrs.END_WITH_TOKEN),
+	Accept5BaseNodesAsChild: NodePointcutUtils.createAttrVisitor<boolean>(GroovyAstNodeRecognizerAttrs.ACCEPT_5_BASE_NODES_AS_CHILD),
+	AcceptTokenIdsAsChild: NodePointcutUtils.createAttrVisitor<Array<TokenId>>(GroovyAstNodeRecognizerAttrs.ACCEPT_TOKEN_IDS_AS_CHILD),
+	AcceptTokenTypesAsChild: NodePointcutUtils.createAttrVisitor<Array<TokenType>>(GroovyAstNodeRecognizerAttrs.ACCEPT_TOKEN_TYPES_AS_CHILD),
+	RejectTokenIdsAsChild: NodePointcutUtils.createAttrVisitor<Array<TokenId>>(GroovyAstNodeRecognizerAttrs.REJECT_TOKEN_IDS_AS_CHILD),
+	TakeLBraceAs: NodePointcutUtils.createAttrVisitor<TakeSpecificTokenToAnother>(GroovyAstNodeRecognizerAttrs.TAKE_LBRACE_AS),
+	EndWithToken: NodePointcutUtils.createAttrVisitor<TokenId>(GroovyAstNodeRecognizerAttrs.END_WITH_TOKEN),
 	EndWithSemicolon: {
 		get: (node: GroovyAstNode): boolean => node.getAttr<TokenId>(GroovyAstNodeRecognizerAttrs.END_WITH_TOKEN) === TokenId.Semicolon,
 		set: (node: GroovyAstNode): RecognizerAttrVisitor => {
@@ -35,13 +35,13 @@ export const NodePointcutOperator = {
 			return NodePointcutOperator;
 		}
 	},
-	CloseOnChildWithTokenClosed: createAttrVisitor<TokenId>(GroovyAstNodeRecognizerAttrs.CLOSE_ON_CHILD_WITH_TOKEN_CLOSED),
-	ElevateTrailingDetachableOnNodeClosed: createAttrVisitor<boolean>(GroovyAstNodeRecognizerAttrs.ELEVATE_TRAILING_DETACHABLE_ON_NODE_CLOSED),
+	CloseOnChildWithTokenClosed: NodePointcutUtils.createAttrVisitor<TokenId>(GroovyAstNodeRecognizerAttrs.CLOSE_ON_CHILD_WITH_TOKEN_CLOSED),
+	ElevateTrailingDetachableOnNodeClosed: NodePointcutUtils.createAttrVisitor<boolean>(GroovyAstNodeRecognizerAttrs.ELEVATE_TRAILING_DETACHABLE_ON_NODE_CLOSED),
 	clear: (node: GroovyAstNode): RecognizerAttrVisitor => {
 		node.clearAttrs();
 		return NodePointcutOperator;
 	},
 	// additional
-	SLCommentHighlightColumn: createAttrVisitor<number>(GroovyAstNodeRecognizerAttrs.SL_COMMENT_HIGHLIGHT_COLUMN),
-	IdentifierChildCount: createNumberAccumulator(GroovyAstNodeRecognizerAttrs.IDENTIFIER_CHILD_COUNT)
+	SLCommentHighlightColumn: NodePointcutUtils.createAttrVisitor<number>(GroovyAstNodeRecognizerAttrs.SL_COMMENT_HIGHLIGHT_COLUMN),
+	IdentifierChildCount: NodePointcutUtils.createNumberAccumulator(GroovyAstNodeRecognizerAttrs.IDENTIFIER_CHILD_COUNT)
 };

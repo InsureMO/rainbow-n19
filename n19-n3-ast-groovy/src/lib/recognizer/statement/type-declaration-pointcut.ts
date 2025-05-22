@@ -1,8 +1,13 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {NodePointcutOperator, NodePointcuts, OnNodeClosedFunc} from '../pointcuts';
-import {NodePointcutUtils, OneOfOnChildAppendedFunc} from '../util';
+import {
+	NodePointcutOperator,
+	NodePointcuts,
+	NodePointcutUtils,
+	OneOfOnChildAppendedFunc,
+	OnNodeClosedFunc
+} from '../pointcuts';
 
 export class TypeDeclarationPointcuts {
 	// noinspection JSUnusedLocalSymbols

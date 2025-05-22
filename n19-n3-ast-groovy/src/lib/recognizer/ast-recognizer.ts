@@ -5,7 +5,7 @@ import {TokenId} from '../tokens';
 import {NodeRecognizerRepo} from './node-recognizer-repo';
 import {NodePointcutOperator} from './pointcuts';
 import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types';
-import {NodePointcutUtils} from './util';
+import {NodePointcutUtils} from './pointcuts';
 
 /**
  * Stateful, and an instance needs to be created for each use.

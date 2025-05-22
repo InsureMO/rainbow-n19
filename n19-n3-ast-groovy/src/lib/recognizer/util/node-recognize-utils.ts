@@ -1,6 +1,5 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-
 import {AstRecognition} from '../types';
 
 export const NodeRecognizeUtils = {

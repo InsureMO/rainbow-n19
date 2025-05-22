@@ -2,6 +2,7 @@ export * from './types';
 
 export * from './attrs';
 export * from './operator';
+export * from './utils';
 
 export * from './builder';
 
