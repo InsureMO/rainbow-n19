@@ -81,7 +81,7 @@ describe('Do-While declaration test', () => {
 					[TokenId.Whitespaces, 12, 13, 2, ' '],
 					[TokenId.ParenBlock, 13, 19, 2, '(true)', [
 						[TokenId.LParen, 13, 14, 2, '('],
-						[TokenId.BooleanLiteral, 14, 18, 2, 'true'],
+						[TokenId.BooleanTrue, 14, 18, 2, 'true'],
 						[TokenId.RParen, 18, 19, 2, ')'],
 					]]
 				]],

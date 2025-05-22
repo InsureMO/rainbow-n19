@@ -61,7 +61,7 @@ export type AtomicTokenCaptors =
 export type AtomicPrimitiveTokenBasis = [AtomicTokenType.PrimitiveType, AstPrimitiveTypes, AtomicTokenName];
 export type AtomicGroovyKeywordTokenBasis = [AtomicTokenType.GroovyKeyword, AstKeywords, AtomicTokenName];
 export type AtomicJavaKeywordTokenBasis = [AtomicTokenType.JavaKeyword, AstKeywords, AtomicTokenName];
-export type AtomicBooleanLiteralBasis = [AtomicTokenType.BooleanLiteral, [AstLiterals, AstLiterals], AtomicTokenName];
+export type AtomicBooleanLiteralBasis = [AtomicTokenType.BooleanLiteral, AstLiterals, AtomicTokenName];
 export type AtomicNumericLiteralBasis =
 	| [AtomicTokenType.NumericLiteral, AstLiterals, AtomicTokenName]
 	| [AtomicTokenType.NumericLiteral, Array<GroovyAstNodeCaptorConstructor>];

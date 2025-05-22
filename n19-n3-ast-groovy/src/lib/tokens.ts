@@ -69,7 +69,8 @@ export enum TokenId {
 	WHILE, // 1.0
 	YIELD, // 14
 	// boolean
-	BooleanLiteral, // true or false
+	BooleanTrue, // true
+	BooleanFalse, // false
 	// numeric
 	NumericSignPart, // + or -
 	NumericBasePart, // numbers
@@ -113,7 +114,6 @@ export enum TokenId {
 	SlashyGStringBackslashEscape, // \/
 	DollarSlashyGStringDollarEscape, // $$
 	DollarSlashyGStringSlashEscape, // $/
-	GStringContent, // string part in gstring
 	GStringInterpolationStartMark, // $ of $...
 	GStringInterpolationLBraceStartMark, // ${ of ${...}
 	GStringInterpolationRBraceEndMark, // } of ${...}

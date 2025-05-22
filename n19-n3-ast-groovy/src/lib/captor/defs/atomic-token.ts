@@ -83,7 +83,8 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.WHILE]: [Tt.Jk, KwKw.While, 'JkWhile'],
 	[TokenId.YIELD]: [Tt.Jk, KwKw.Yield, 'JkYield'],
 	// boolean
-	[TokenId.BooleanLiteral]: [Tt.Bl, [KwLt.TRUE, KwLt.FALSE], 'LtBoolean'],
+	[TokenId.BooleanTrue]: [Tt.Bl, KwLt.TRUE, 'LtBooleanTrue'],
+	[TokenId.BooleanFalse]: [Tt.Bl, KwLt.FALSE, 'LtBooleanFalse'],
 	// numeric
 	[TokenId.NumericBasePart]: [Tt.Nl, [
 		LtNumericBasePartCaptorStartsWith0, LtNumericBasePartCaptorStartsWith1, LtNumericBasePartCaptorStartsWith2,

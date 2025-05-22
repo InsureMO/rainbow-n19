@@ -27,7 +27,7 @@ describe('Switch declaration test', () => {
 					[TokenId.Whitespaces, 6, 7, 1, ' '],
 					[TokenId.ParenBlock, 7, 13, 1, '(true)', [
 						[TokenId.LParen, 7, 8, 1, '('],
-						[TokenId.BooleanLiteral, 8, 12, 1, 'true'],
+						[TokenId.BooleanTrue, 8, 12, 1, 'true'],
 						[TokenId.RParen, 12, 13, 1, ')']
 					]],
 					[TokenId.Whitespaces, 13, 14, 1, ' '],
@@ -51,7 +51,7 @@ describe('Switch declaration test', () => {
 					[TokenId.Whitespaces, 6, 7, 1, ' '],
 					[TokenId.ParenBlock, 7, 13, 1, '(true)', [
 						[TokenId.LParen, 7, 8, 1, '('],
-						[TokenId.BooleanLiteral, 8, 12, 1, 'true'],
+						[TokenId.BooleanTrue, 8, 12, 1, 'true'],
 						[TokenId.RParen, 12, 13, 1, ')']
 					]],
 					[TokenId.Whitespaces, 13, 14, 1, ' '],

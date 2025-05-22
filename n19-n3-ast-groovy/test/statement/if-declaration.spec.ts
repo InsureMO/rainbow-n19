@@ -24,7 +24,7 @@ describe('If declaration test', () => {
 		[TokenId.Whitespaces, 2, 3, 1, ' '],
 		[TokenId.ParenBlock, 3, 9, 1, '(true)', [
 			[TokenId.LParen, 3, 4, 1, '('],
-			[TokenId.BooleanLiteral, 4, 8, 1, 'true'],
+			[TokenId.BooleanTrue, 4, 8, 1, 'true'],
 			[TokenId.RParen, 8, 9, 1, ')']
 		]],
 		[TokenId.Whitespaces, 9, 10, 1, ' '],
@@ -81,7 +81,7 @@ describe('If declaration test', () => {
 						[TokenId.Whitespaces, 21, 22, 2, ' '],
 						[TokenId.ParenBlock, 22, 28, 2, '(true)', [
 							[TokenId.LParen, 22, 23, 2, '('],
-							[TokenId.BooleanLiteral, 23, 27, 2, 'true'],
+							[TokenId.BooleanTrue, 23, 27, 2, 'true'],
 							[TokenId.RParen, 27, 28, 2, ')']
 						]],
 						[TokenId.Whitespaces, 28, 29, 2, ' '],
@@ -116,7 +116,7 @@ describe('If declaration test', () => {
 						[TokenId.Whitespaces, 2, 3, 1, ' '],
 						[TokenId.ParenBlock, 3, 9, 1, '(true)', [
 							[TokenId.LParen, 3, 4, 1, '('],
-							[TokenId.BooleanLiteral, 4, 8, 1, 'true'],
+							[TokenId.BooleanTrue, 4, 8, 1, 'true'],
 							[TokenId.RParen, 8, 9, 1, ')']
 						]],
 						[TokenId.Whitespaces, 9, 10, 1, ' ']
@@ -128,7 +128,7 @@ describe('If declaration test', () => {
 						[TokenId.Whitespaces, 17, 18, 1, ' '],
 						[TokenId.ParenBlock, 18, 24, 1, '(true)', [
 							[TokenId.LParen, 18, 19, 1, '('],
-							[TokenId.BooleanLiteral, 19, 23, 1, 'true'],
+							[TokenId.BooleanTrue, 19, 23, 1, 'true'],
 							[TokenId.RParen, 23, 24, 1, ')']
 						]],
 						[TokenId.Whitespaces, 24, 25, 1, ' ']

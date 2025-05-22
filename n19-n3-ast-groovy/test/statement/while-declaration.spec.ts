@@ -60,7 +60,7 @@ describe('While declaration test', () => {
 					[TokenId.Whitespaces, 5, 6, 1, ' '],
 					[TokenId.ParenBlock, 6, 12, 1, '(true)', [
 						[TokenId.LParen, 6, 7, 1, '('],
-						[TokenId.BooleanLiteral, 7, 11, 1, 'true'],
+						[TokenId.BooleanTrue, 7, 11, 1, 'true'],
 						[TokenId.RParen, 11, 12, 1, ')']
 					]],
 					[TokenId.Whitespaces, 12, 13, 1, ' '],

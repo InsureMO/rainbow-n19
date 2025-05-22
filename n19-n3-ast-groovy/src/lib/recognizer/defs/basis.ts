@@ -126,7 +126,8 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 	[TokenId.BinaryStartMark]: 'TODO',
 	[TokenId.HexadecimalStartMark]: 'TODO',
 	// boolean literal
-	[TokenId.BooleanLiteral]: 'NotRequired',
+	[TokenId.BooleanTrue]: 'NotRequired',
+	[TokenId.BooleanFalse]: 'NotRequired',
 	// string literal
 	[TokenId.StringQuotationMark]: 'TODO',
 	[TokenId.StringQuotationMarkML]: 'TODO',
