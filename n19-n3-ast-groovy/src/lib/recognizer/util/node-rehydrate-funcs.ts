@@ -62,7 +62,7 @@ export const NodeRehydration = {
 		return nodeIndex;
 	}) as NodeRehydrateFunc,
 	isNonSealedKeywordNotSupported: (recognition: AstRecognition): boolean => {
-		return recognition.astRecognizer.isNonSealedKeywordSupported;
+		return !recognition.astRecognizer.isNonSealedKeywordSupported;
 	},
 	/**
 	 * split to 3 parts:
@@ -89,8 +89,8 @@ export const NodeRehydration = {
 			startLine, startColumn: startColumn + 4
 		});
 
-		// push node2 and node3
-		nodes.splice(nodeIndex, 0, node2, node3);
+		// push node2 and node3 after original node
+		nodes.splice(nodeIndex + 1, 0, node2, node3);
 		return nodeIndex + 1;
 	}) as NodeRehydrateFunc
 } as const;
