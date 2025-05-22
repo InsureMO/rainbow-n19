@@ -3,8 +3,9 @@ import {CommentKeyword, CommentKeywords} from '../captor';
 import {CompilationUnitNode, GroovyAstNode} from '../node';
 import {TokenId} from '../tokens';
 import {NodeRecognizerRepo} from './node-recognizer-repo';
-import {$Neaf, NodePointcuts} from './pointcuts';
+import {NodePointcutOperator} from './pointcuts';
 import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types';
+import {NodePointcutUtils} from './util';
 
 /**
  * Stateful, and an instance needs to be created for each use.
@@ -147,18 +148,18 @@ export class AstRecognizer {
 	}
 
 	protected acceptedWith5BaseNodes(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		return ($Neaf.Accept5BaseNodesAsChild.get(parent) ?? true) && [
+		return (NodePointcutOperator.Accept5BaseNodesAsChild.get(parent) ?? true) && [
 			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 			TokenId.SingleLineComment, TokenId.MultipleLinesComment
 		].includes(child.tokenId);
 	}
 
 	protected acceptedWithLBrace(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		return $Neaf.TakeLBraceAs.get(parent) != null && child.tokenId === TokenId.LBrace;
+		return NodePointcutOperator.TakeLBraceAs.get(parent) != null && child.tokenId === TokenId.LBrace;
 	}
 
 	protected acceptedWithEndToken(parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' {
-		const tokenId = $Neaf.EndWithToken.get(parent);
+		const tokenId = NodePointcutOperator.EndWithToken.get(parent);
 		if (tokenId == null) {
 			return 'ignored';
 		} else {
@@ -167,15 +168,15 @@ export class AstRecognizer {
 	}
 
 	protected acceptedByGivenTokenIds(parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' {
-		return $Neaf.AcceptTokenIdsAsChild.get(parent)?.includes(child.tokenId) ?? 'ignored';
+		return NodePointcutOperator.AcceptTokenIdsAsChild.get(parent)?.includes(child.tokenId) ?? 'ignored';
 	}
 
 	protected acceptedByGivenTokenTypes(parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' {
-		return $Neaf.AcceptTokenTypesAsChild.get(parent)?.includes(child.tokenType) ?? 'ignored';
+		return NodePointcutOperator.AcceptTokenTypesAsChild.get(parent)?.includes(child.tokenType) ?? 'ignored';
 	}
 
 	protected rejectedByGivenTokenIds(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		return $Neaf.RejectTokenIdsAsChild.get(parent)?.includes(child.tokenId) ?? false;
+		return NodePointcutOperator.RejectTokenIdsAsChild.get(parent)?.includes(child.tokenId) ?? false;
 	}
 
 	protected acceptChild(parent: GroovyAstNode, child: GroovyAstNode): boolean {
@@ -188,7 +189,6 @@ export class AstRecognizer {
 			return false;
 		}
 
-		// $Neaf.ChildAcceptableCheck.get(parent)?.(child, this) !== false;
 		let hasRule = false;
 		const acceptedByGivenTokenIds = this.acceptedByGivenTokenIds(parent, child);
 		if (acceptedByGivenTokenIds === true) {
@@ -202,7 +202,7 @@ export class AstRecognizer {
 		} else if (acceptedByGivenTokenTypes === false) {
 			hasRule = true;
 		}
-		const func = $Neaf.ChildAcceptableCheck.get(parent);
+		const func = NodePointcutOperator.ChildAcceptableCheck.get(parent);
 		if (func != null) {
 			return func(child, this) === true;
 		} else {
@@ -240,26 +240,26 @@ export class AstRecognizer {
 
 	protected onChildAppended(parent: GroovyAstNode, child: GroovyAstNode): void {
 		const proceeded = [
-			NodePointcuts.Shared.endWithToken
+			NodePointcutUtils.endWithToken
 		].some(func => func(child, this));
 		if (!proceeded) {
-			$Neaf.OnChildAppended.get(parent)?.(child, this);
+			NodePointcutOperator.OnChildAppended.get(parent)?.(child, this);
 		}
 	}
 
 	protected onChildClosed(parent: GroovyAstNode, child: GroovyAstNode): void {
 		const proceeded = [
-			NodePointcuts.Shared.closeOnChildWithTokenClosed
+			NodePointcutUtils.closeOnChildWithTokenClosed
 		].some(func => func(child, this));
 		if (!proceeded) {
-			$Neaf.OnChildClosed.get(parent)?.(child, this);
+			NodePointcutOperator.OnChildClosed.get(parent)?.(child, this);
 		}
 	}
 
 	protected onNodeClosed(node: GroovyAstNode): void {
-		$Neaf.OnNodeClosed.get(node)?.(node, this);
-		if ($Neaf.ElevateTrailingDetachableOnNodeClosed.get(node) ?? true) {
-			NodePointcuts.Shared.moveTrailingDetachableNodesToParentOnNodeClosed(node, this);
+		NodePointcutOperator.OnNodeClosed.get(node)?.(node, this);
+		if (NodePointcutOperator.ElevateTrailingDetachableOnNodeClosed.get(node) ?? true) {
+			NodePointcutUtils.moveTrailingDetachableNodesToParentOnNodeClosed(node, this);
 		}
 	}
 

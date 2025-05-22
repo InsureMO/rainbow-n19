@@ -58,7 +58,7 @@ export abstract class AbstractNodeRecognizer implements NodeRecognizer {
 			text: '', startOffset: givenNode.startOffset,
 			startLine: givenNode.startLine, startColumn: givenNode.startColumn
 		});
-		(extra ?? NodePointcuts.Extras[tokenId])?.(parentNode);
+		(extra ?? NodePointcuts[tokenId])?.(parentNode);
 		return parentNode;
 	}
 

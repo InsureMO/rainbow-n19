@@ -1,7 +1,6 @@
 import {TokenId, TokenType} from '../../tokens';
-import {NodePointcuts} from '../pointcuts';
 import {MultipleLinesCommentsRecognizer, ScriptCommandRecognizer, SingleLineCommentsRecognizer} from '../statement';
-import {NodeRecognizeUtils, NodeRehydration} from '../util';
+import {NodePointcutUtils, NodeRecognizeUtils, NodeRehydration} from '../util';
 import {PredefinedPreservation as Preserve, PredefinedRehydration as Rehydrate, RecognizerBasisType} from './internal';
 
 export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBasisType }>> = {
@@ -10,8 +9,8 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		name: 'SpLBrace',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
 		declareAsParent: [
-			/** if parent has {@link $Neaf.TakeLBraceAs} */
-			NodePointcuts.LogicBlock.Brace.createOnTakeLBraceAs,
+			/** if parent has {@link NodePointcutOperator.TakeLBraceAs} */
+			NodePointcutUtils.createOnTakeLBraceAs,
 			/** any other case */
 			[TokenId.CodeBlock, TokenType.LogicBlock]
 		]

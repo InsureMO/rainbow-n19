@@ -1,3 +1,4 @@
+import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AbstractNodeRecognizer} from '../abstract';
 import {AstRecognition} from '../types';
@@ -88,5 +89,5 @@ export type StandardRecognizerBasis = Readonly<{
 	declareAsParent?: ReadonlyArray<DeclareAsParentBasis>;
 }>;
 export type RecognizerBasisType = StandardRecognizerBasis | 'TODO' | 'NotRequired';
-
-export type PointcutBasisType = 'TODO';
+// pointcut
+export type PointcutBasisType = { build: (node: GroovyAstNode) => void } | 'TODO' | 'NotRequired';

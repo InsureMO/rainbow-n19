@@ -1,15 +1,10 @@
-import {GroovyAstNode, OnNodeClosedFunc} from '../../node';
+import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {$Neaf} from './neaf';
-import {ConstructorDeclaration} from './constructor-declaration';
-import {FieldDeclaration} from './field-declaration';
-import {MethodDeclaration} from './method-declaration';
-import {OneOfOnChildAppendedFunc, SharedNodePointcuts} from './shared';
-import {StaticBlockDeclaration} from './static-block-declaration';
-import {SynchronizedBlockDeclaration} from './synchronized-block-declaration';
+import {NodePointcutOperator, NodePointcuts, OnNodeClosedFunc} from '../pointcuts';
+import {NodePointcutUtils, OneOfOnChildAppendedFunc} from '../util';
 
-class TypeDeclarationUtils {
+export class TypeDeclarationPointcuts {
 	// noinspection JSUnusedLocalSymbols
 	private constructor() {
 		// avoid extend
@@ -50,7 +45,7 @@ class TypeDeclarationUtils {
 	];
 }
 
-class CsscmfDeclaration {
+export class CsscmfDeclarationPointcuts {
 	// noinspection JSUnusedLocalSymbols
 	private constructor() {
 		// avoid extend
@@ -102,7 +97,7 @@ class CsscmfDeclaration {
 				return false;
 			}
 		}
-		TypeDeclaration.extra(statementNode);
+		NodePointcuts[statementNode.tokenId](statementNode);
 		return true;
 	}) as OneOfOnChildAppendedFunc;
 	/**
@@ -111,13 +106,13 @@ class CsscmfDeclaration {
 	 */
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	static readonly onMethodKeywordAppended = ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		if (!TypeDeclarationUtils.isMethodKeyword(lastChildNode.tokenId)) {
+		if (!TypeDeclarationPointcuts.isMethodKeyword(lastChildNode.tokenId)) {
 			return false;
 		}
 
 		const statementNode = lastChildNode.parent;
 		statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-		MethodDeclaration.extra(statementNode);
+		NodePointcuts[TokenId.MethodDeclaration](statementNode);
 		return true;
 	}) as OneOfOnChildAppendedFunc;
 	/**
@@ -126,13 +121,13 @@ class CsscmfDeclaration {
 	 */
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	static readonly onFieldKeywordAppended = ((lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-		if (!TypeDeclarationUtils.isFieldKeyword(lastChildNode.tokenId)) {
+		if (!TypeDeclarationPointcuts.isFieldKeyword(lastChildNode.tokenId)) {
 			return false;
 		}
 
 		const statementNode = lastChildNode.parent;
 		statementNode.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
-		FieldDeclaration.extra(statementNode);
+		NodePointcuts[TokenId.FieldDeclaration](statementNode);
 		return true;
 	}) as OneOfOnChildAppendedFunc;
 	/**
@@ -145,9 +140,9 @@ class CsscmfDeclaration {
 		}
 
 		const statementNode = lastChildNode.parent;
-		const identifierCount = $Neaf.IdentifierChildCount.get(statementNode);
+		const identifierCount = NodePointcutOperator.IdentifierChildCount.get(statementNode);
 		if (identifierCount === 0) {
-			$Neaf.IdentifierChildCount.set(statementNode, 1);
+			NodePointcutOperator.IdentifierChildCount.set(statementNode, 1);
 		} else {
 			// multiple identifiers, close declaration and chop-off the identifier node, move to parent
 			astRecognizer.closeCurrentParent();
@@ -176,10 +171,10 @@ class CsscmfDeclaration {
 
 		let isStaticBlockStart = true;
 		let isSynchronizedBlockStart = true;
-		if ($Neaf.IdentifierChildCount.get(statementNode) > 0) {
+		if (NodePointcutOperator.IdentifierChildCount.get(statementNode) > 0) {
 			// has identifier
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
-			ClassDeclaration.extra(statementNode);
+			NodePointcuts[TokenId.ClassDeclaration](statementNode);
 			mightBeChildNode.replaceTokenNature(TokenId.ClassBody, TokenType.LogicBlock);
 			return true;
 		}
@@ -200,15 +195,15 @@ class CsscmfDeclaration {
 
 		if (isStaticBlockStart) {
 			statementNode.replaceTokenNature(TokenId.StaticBlockDeclaration, TokenType.LogicBlockDeclaration);
-			StaticBlockDeclaration.extra(statementNode);
+			NodePointcuts[TokenId.StaticBlockDeclaration](statementNode);
 			mightBeChildNode.replaceTokenNature(TokenId.StaticBlockBody, TokenType.LogicBlock);
 		} else if (isSynchronizedBlockStart) {
 			statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
-			SynchronizedBlockDeclaration.extra(statementNode);
+			NodePointcuts[TokenId.SynchronizedBlockDeclaration](statementNode);
 			mightBeChildNode.replaceTokenNature(TokenId.SynchronizedBlockBody, TokenType.LogicBlock);
 		} else {
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
-			ClassDeclaration.extra(statementNode);
+			NodePointcuts[TokenId.ClassDeclaration](statementNode);
 			mightBeChildNode.replaceTokenNature(TokenId.ClassBody, TokenType.LogicBlock);
 		}
 
@@ -236,7 +231,7 @@ class CsscmfDeclaration {
 		}
 
 		const statementNode = mightBeChildNode.parent;
-		const identifierCount = $Neaf.IdentifierChildCount.get(statementNode);
+		const identifierCount = NodePointcutOperator.IdentifierChildCount.get(statementNode);
 		if (identifierCount === 0) {
 			// no identifier exists, identified as method declaration
 			let isSynchronizedBlockStart = true;
@@ -253,10 +248,10 @@ class CsscmfDeclaration {
 			}
 			if (isSynchronizedBlockStart) {
 				statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
-				SynchronizedBlockDeclaration.extra(statementNode);
+				NodePointcuts[TokenId.SynchronizedBlockDeclaration](statementNode);
 			} else {
 				statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-				MethodDeclaration.extra(statementNode);
+				NodePointcuts[TokenId.MethodDeclaration](statementNode);
 			}
 			return true;
 		}
@@ -266,7 +261,7 @@ class CsscmfDeclaration {
 		if (parentOfStatementNode.tokenId !== TokenId.ClassBody) {
 			// simply treated as method declaration
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-			MethodDeclaration.extra(statementNode);
+			NodePointcuts[TokenId.MethodDeclaration](statementNode);
 			return true;
 		}
 
@@ -276,11 +271,11 @@ class CsscmfDeclaration {
 		if (identifierNode.text === className) {
 			// constructor
 			statementNode.replaceTokenNature(TokenId.ConstructorDeclaration, TokenType.ConstructorDeclaration);
-			ConstructorDeclaration.extra(statementNode);
+			NodePointcuts[TokenId.ConstructorDeclaration](statementNode);
 		} else {
 			// method
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-			MethodDeclaration.extra(statementNode);
+			NodePointcuts[TokenId.MethodDeclaration](statementNode);
 		}
 
 		return true;
@@ -298,7 +293,7 @@ class CsscmfDeclaration {
 
 		const statementNode = lastChildNode.parent;
 		statementNode.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
-		FieldDeclaration.extra(statementNode);
+		NodePointcuts[TokenId.FieldDeclaration](statementNode);
 		return true;
 	}) as OneOfOnChildAppendedFunc;
 	/**
@@ -318,7 +313,7 @@ class CsscmfDeclaration {
 		if (hasDefOrPrimitiveType) {
 			const statementNode = lastChildNode.parent;
 			statementNode.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
-			FieldDeclaration.extra(statementNode);
+			NodePointcuts[TokenId.FieldDeclaration](statementNode);
 		} else {
 			// simply close, will invoke onNodeClosed to determine that what I am
 			astRecognizer.closeCurrentParent();
@@ -329,15 +324,15 @@ class CsscmfDeclaration {
 	 * No modifier can determine the exact type of statement.
 	 * Therefore, it is necessary to make judgments based on different scenarios.
 	 */
-	static readonly onChildAppended = SharedNodePointcuts.onChildAppendedOfFirstOrNone(
-		CsscmfDeclaration.onClassKeywordAppended,
-		CsscmfDeclaration.onMethodKeywordAppended,
-		CsscmfDeclaration.onFieldKeywordAppended,
-		CsscmfDeclaration.onIdentifierAppended,
-		CsscmfDeclaration.onCodeBlockAppended,
-		CsscmfDeclaration.onParenBlockAppended,
-		CsscmfDeclaration.onEqualAppended,
-		CsscmfDeclaration.onCommaAppended
+	static readonly onChildAppended = NodePointcutUtils.onChildAppendedOfFirstOrNone(
+		CsscmfDeclarationPointcuts.onClassKeywordAppended,
+		CsscmfDeclarationPointcuts.onMethodKeywordAppended,
+		CsscmfDeclarationPointcuts.onFieldKeywordAppended,
+		CsscmfDeclarationPointcuts.onIdentifierAppended,
+		CsscmfDeclarationPointcuts.onCodeBlockAppended,
+		CsscmfDeclarationPointcuts.onParenBlockAppended,
+		CsscmfDeclarationPointcuts.onEqualAppended,
+		CsscmfDeclarationPointcuts.onCommaAppended
 	);
 	/**
 	 * The node is not recognized as any of type, static block, constructor, method, or field declaration.
@@ -400,204 +395,4 @@ class CsscmfDeclaration {
 			}
 		}
 	}) as OnNodeClosedFunc;
-	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.of(node)
-			// could be 1. return type of method, 2. type of field
-			.AcceptTokenTypesAsChild(TokenType.PrimitiveType)
-			.AcceptTokenIdsAsChild(
-				// class, constructor, method, field
-				TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
-				// class
-				TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
-				// class, method
-				TokenId.ABSTRACT,
-				// class, static block, method, field
-				TokenId.STATIC,
-				// class, method, field (only field in groovy, it is not allowed in java)
-				TokenId.STRICTFP,
-				// class
-				TokenId.EXTENDS, TokenId.IMPLEMENTS,
-				// sure to method
-				TokenId.NATIVE, TokenId.SYNCHRONIZED, TokenId.DEFAULT,
-				// class, method, field
-				TokenId.FINAL,
-				// sure to field
-				TokenId.TRANSIENT, TokenId.VOLATILE,
-				// constructor, method, field
-				TokenId.DEF,
-				// constructor, method
-				TokenId.THROWS,
-				/*
-				 * could be
-				 * 1. name,
-				 * 2. return type of method,
-				 * 3. type of field
-				 */
-				TokenId.Identifier,
-				TokenId.GenericTypeDeclaration, TokenId.AnnotationDeclaration,
-				// method
-				TokenId.VOID,
-				// sure to class
-				TokenId.CLASS, TokenId.INTERFACE, TokenId.AT_INTERFACE, TokenId.ENUM, TokenId.RECORD, TokenId.TRAIT,
-				// sure to class or static block
-				TokenId.LBrace, TokenId.CodeBlock,
-				// sure to constructor or method.
-				// record class also has paren pair, but it is after record keyword. and it is determined as record class declaration already.
-				TokenId.LParen, TokenId.ParenBlock,
-				// sure to field, it is value assigning
-				TokenId.Equal,
-				// sure to field, end this part
-				TokenId.Comma
-			)
-			.EndWithSemicolon()
-			.OnChildAppended(CsscmfDeclaration.onChildAppended)
-			.OnNodeClosed(CsscmfDeclaration.onNodeClosed);
-	};
-}
-
-class ClassDeclaration {
-	// noinspection JSUnusedLocalSymbols
-	private constructor() {
-		// avoid extend
-	}
-
-	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(
-				TokenId.Tmp$NeverHappen,
-				...TypeDeclarationUtils.StandardTypeChildAcceptTokenIds)
-			.TakeLBraceAs(TokenId.ClassBody)
-			.EndWithSemicolon()
-			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
-	};
-}
-
-class InterfaceDeclaration {
-	// noinspection JSUnusedLocalSymbols
-	private constructor() {
-		// avoid extend
-	}
-
-	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(
-				TokenId.Tmp$NeverHappen,
-				...TypeDeclarationUtils.StandardTypeChildAcceptTokenIds)
-			.TakeLBraceAs(TokenId.ClassBody)
-			.EndWithSemicolon()
-			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
-	};
-}
-
-class AtInterfaceClassDeclaration {
-	// noinspection JSUnusedLocalSymbols
-	private constructor() {
-		// avoid extend
-	}
-
-	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(
-				TokenId.Tmp$NeverHappen,
-				...TypeDeclarationUtils.StandardTypeChildAcceptTokenIds)
-			.TakeLBraceAs(TokenId.ClassBody)
-			.EndWithSemicolon()
-			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
-	};
-}
-
-class EnumClassDeclaration {
-	// noinspection JSUnusedLocalSymbols
-	private constructor() {
-		// avoid extend
-	}
-
-	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(
-				TokenId.Tmp$NeverHappen,
-				...TypeDeclarationUtils.StandardTypeChildAcceptTokenIds)
-			.TakeLBraceAs(TokenId.ClassBody)
-			.EndWithSemicolon()
-			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
-	};
-}
-
-class RecordClassDeclaration {
-	// noinspection JSUnusedLocalSymbols
-	private constructor() {
-		// avoid extend
-	}
-
-	// TODO record has formal parameters part, enclose with parentheses
-	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(
-				TokenId.Tmp$NeverHappen,
-				...TypeDeclarationUtils.StandardTypeChildAcceptTokenIds)
-			.TakeLBraceAs(TokenId.ClassBody)
-			.EndWithSemicolon()
-			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
-	};
-}
-
-class TraitClassDeclaration {
-	// noinspection JSUnusedLocalSymbols
-	private constructor() {
-		// avoid extend
-	}
-
-	static readonly extra = (node: GroovyAstNode): void => {
-		$Neaf.of(node)
-			.AcceptTokenIdsAsChild(
-				TokenId.Tmp$NeverHappen,
-				...TypeDeclarationUtils.StandardTypeChildAcceptTokenIds)
-			.TakeLBraceAs(TokenId.ClassBody)
-			.EndWithSemicolon()
-			.CloseOnChildWithTokenClosed(TokenId.ClassBody);
-	};
-}
-
-export class TypeDeclaration {
-	// noinspection JSUnusedLocalSymbols
-	private constructor() {
-		// avoid extend
-	}
-
-	static readonly Utils = TypeDeclarationUtils;
-	static readonly Csscmf = CsscmfDeclaration;
-	static readonly Class = ClassDeclaration;
-	static readonly Interface = InterfaceDeclaration;
-	static readonly AtInterface = AtInterfaceClassDeclaration;
-	static readonly Enum = EnumClassDeclaration;
-	static readonly Record = RecordClassDeclaration;
-	static readonly Trait = TraitClassDeclaration;
-	static readonly extra = (node: GroovyAstNode): void => {
-		switch (node.tokenId) {
-			case TokenId.ClassDeclaration:
-				ClassDeclaration.extra(node);
-				break;
-			case TokenId.InterfaceDeclaration:
-				InterfaceDeclaration.extra(node);
-				break;
-			case TokenId.AtInterfaceClassDeclaration:
-				AtInterfaceClassDeclaration.extra(node);
-				break;
-			case TokenId.EnumClassDeclaration:
-				EnumClassDeclaration.extra(node);
-				break;
-			case TokenId.RecordClassDeclaration:
-				RecordClassDeclaration.extra(node);
-				break;
-			case TokenId.TraitClassDeclaration:
-				TraitClassDeclaration.extra(node);
-				break;
-			case TokenId.Tmp$CsscmfDeclaration:
-				CsscmfDeclaration.extra(node);
-				break;
-			default:
-				// do nothing
-				break;
-		}
-	};
 }

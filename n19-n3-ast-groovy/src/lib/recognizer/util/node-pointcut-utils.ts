@@ -1,7 +1,10 @@
-import {GroovyAstNode, OnNodeClosedFunc} from '../../node';
+import {Optional} from '@rainbow-n19/n3-ast';
+import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {$Neaf} from './neaf';
+import {NodePointcutOperator, OnNodeClosedFunc} from '../pointcuts';
+import {AstRecognition} from '../types';
+import {NodeAsParentDeclaration} from './node-declare-parent-funcs';
 
 export type OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
 export type OneOfOnChildClosedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
@@ -14,16 +17,32 @@ export interface BlockCreationByNodeOptions {
 	astRecognizer: AstRecognizer;
 }
 
-export class SharedNodePointcuts {
-	// noinspection JSUnusedLocalSymbols
-	private constructor() {
-		// avoid extend
-	}
+export const NodePointcutUtils = {
+	/**
+	 * based on {@link NodePointcutOperator.TakeLBraceAs}, will not check the node
+	 */
+	createOnTakeLBraceAs: (recognition: AstRecognition): Optional<NodeAsParentDeclaration> => {
+		const {astRecognizer} = recognition;
 
+		const currentParent = astRecognizer.getCurrentParent();
+		const tokenIdOrTakeFunc = NodePointcutOperator.TakeLBraceAs.get(currentParent);
+		if (tokenIdOrTakeFunc == null) {
+			return (void 0);
+		}
+
+		const tokenId = (typeof tokenIdOrTakeFunc === 'function')
+			? tokenIdOrTakeFunc(astRecognizer)
+			: tokenIdOrTakeFunc;
+		if (tokenId == null) {
+			return (void 0);
+		}
+
+		return [tokenId, TokenType.LogicBlock];
+	},
 	/**
 	 * create an on child appended function by given functions.
 	 */
-	static readonly onChildAppendedOfFirstOrNone = (...funcs: Array<OneOfOnChildAppendedFunc>): OneOfOnChildAppendedFunc => {
+	onChildAppendedOfFirstOrNone: (...funcs: Array<OneOfOnChildAppendedFunc>): OneOfOnChildAppendedFunc => {
 		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			for (let index = 0, count = funcs.length; index < count; index++) {
 				if (funcs[index](lastChildNode, astRecognizer)) {
@@ -32,33 +51,33 @@ export class SharedNodePointcuts {
 			}
 			return false;
 		};
-	};
+	},
 	/**
-	 * check the given child node matches the configuration in {@link $Neaf.EndWithToken} or not.
+	 * check the given child node matches the configuration in {@link NodePointcutOperator.EndWithToken} or not.
 	 * if matched, close current parent and return true.
 	 * if not matched, do nothing and return false.
 	 */
-	static readonly endWithToken = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		const tokenId = $Neaf.EndWithToken.get(lastChildNode.parent);
+	endWithToken: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+		const tokenId = NodePointcutOperator.EndWithToken.get(lastChildNode.parent);
 		if (tokenId === lastChildNode.tokenId) {
 			astRecognizer.closeCurrentParent();
 			return true;
 		}
 		return false;
-	}) as OneOfOnChildAppendedFunc;
+	}) as OneOfOnChildAppendedFunc,
 	/**
-	 * check the given child node matches the configuration in {@link $Neaf.CloseOnChildWithTokenClosed} or not.
+	 * check the given child node matches the configuration in {@link NodePointcutOperator.CloseOnChildWithTokenClosed} or not.
 	 * if matched, close current parent and return true.
 	 * if not matched, do nothing and return false.
 	 */
-	static readonly closeOnChildWithTokenClosed = ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		const tokenId = $Neaf.CloseOnChildWithTokenClosed.get(lastChildNode.parent);
+	closeOnChildWithTokenClosed: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+		const tokenId = NodePointcutOperator.CloseOnChildWithTokenClosed.get(lastChildNode.parent);
 		if (tokenId === lastChildNode.tokenId) {
 			astRecognizer.closeCurrentParent();
 			return true;
 		}
 		return false;
-	}) as OneOfOnChildClosedFunc;
+	}) as OneOfOnChildClosedFunc,
 	/**
 	 * move all trailing detachable nodes to parent when node closed,
 	 * typically, detachable nodes includes:
@@ -70,7 +89,7 @@ export class SharedNodePointcuts {
 	 *
 	 * nodes before first newline treated as undetachable, which means they still belongs to original parent.
 	 */
-	static readonly moveTrailingDetachableNodesToParentOnNodeClosed = ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+	moveTrailingDetachableNodesToParentOnNodeClosed: ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const {children = []} = node;
 		let removeNodes: Array<GroovyAstNode> = [];
 		let firstNewLineIndex = -1;
@@ -94,12 +113,12 @@ export class SharedNodePointcuts {
 			removeNodes = removeNodes.slice(firstNewLineIndex);
 			astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
 		}
-	}) as OnNodeClosedFunc;
+	}) as OnNodeClosedFunc,
 	/**
 	 * create a block node by given node, the given node will be the first child node of the created block node.
 	 * and the original parent node will be the parent of the created block node.
 	 */
-	static readonly createBlockByNode = (options: BlockCreationByNodeOptions): GroovyAstNode => {
+	createBlockByNode: (options: BlockCreationByNodeOptions): GroovyAstNode => {
 		const {node, blockTokenId, blockTokenType, blockNodePointcuts, astRecognizer} = options;
 		const parentNode = node.parent;
 		parentNode.chopOffTrailingNodes([node]);
@@ -113,5 +132,5 @@ export class SharedNodePointcuts {
 		blockNode.asParentOf(node);
 		astRecognizer.appendAsCurrentParent(blockNode);
 		return blockNode;
-	};
-}
+	}
+} as const;
