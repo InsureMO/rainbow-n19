@@ -1,11 +1,11 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {NodeReviseFunc, NodeReviseResult} from '../abstract';
 import {AstRecognizer} from '../ast-recognizer';
 import {NodePointcutOperator} from '../pointcuts';
 import {AstRecognition} from '../types';
 import {AbstractCommentsNodeRecognizer, CommentsNodeReviseSituation} from './abstract-comments-node-recognizer';
+import {NodeReviseFunc, NodeReviseResult} from './abstract-eager-node-recognizer';
 
 export abstract class SingleLineCommentsRecognizer extends AbstractCommentsNodeRecognizer {
 	acceptTokenId(): TokenId {

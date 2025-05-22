@@ -2,7 +2,7 @@ import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {PointcutBasisType} from '../defs';
-import {CsscmfDeclarationPointcuts, TypeDeclarationPointcuts} from '../statement';
+import {CsscmfDeclarationPointcuts, TypeDeclarationPointcuts} from '../specific-impls';
 import {PBS} from './builder';
 import {NodePointcuts} from './defs';
 

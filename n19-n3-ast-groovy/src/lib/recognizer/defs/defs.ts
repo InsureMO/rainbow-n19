@@ -1,5 +1,5 @@
 import {TokenId} from '../../tokens';
-import {AbstractNodeRecognizer} from '../abstract';
+import {AbstractNodeRecognizer} from '../specific-impls';
 import {NodeRecognizer} from '../types';
 import {RecognizerBasis} from './basis';
 import {buildDeclareAsParentFunc} from './declare-as-parent-def';

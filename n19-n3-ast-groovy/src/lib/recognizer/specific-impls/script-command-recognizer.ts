@@ -1,8 +1,8 @@
 import {AstChars, AstOperators} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AbstractEagerNodeRecognizer, NodeReviseResult, NodeReviseSituation} from '../abstract';
 import {AstRecognition} from '../types';
+import {AbstractEagerNodeRecognizer, NodeReviseResult, NodeReviseSituation} from './abstract-eager-node-recognizer';
 
 /**
  * 1. check script command is enabled or not,<br>

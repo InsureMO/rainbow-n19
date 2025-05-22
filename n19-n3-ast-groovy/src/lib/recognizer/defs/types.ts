@@ -1,7 +1,7 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AbstractNodeRecognizer} from '../abstract';
+import {AbstractNodeRecognizer} from '../specific-impls';
 import {AstRecognition} from '../types';
 
 /**

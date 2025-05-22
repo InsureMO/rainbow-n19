@@ -1,8 +1,7 @@
 export * from './types';
 
 export * from './util';
-export * from './abstract';
-export * from './statement';
+export * from './specific-impls';
 
 export * from './defs';
 export * from './node-recognizer-repo';
