@@ -3,7 +3,6 @@ import {AstKeywords, AstOperators} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition} from '../types';
-import {NodeRecognizeUtils} from './node-recognize-utils';
 
 /**
  * 1. return undefined when no rehydration applied,
@@ -14,56 +13,6 @@ import {NodeRecognizeUtils} from './node-recognize-utils';
 export type NodeRehydrateFunc = (recognition: AstRecognition) => Optional<number>;
 
 export const NodeRehydration = {
-	/**
-	 * node is rehydrated, and append to parent as leaf
-	 */
-	rehydrateToCharsWhenInString: ((recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, astRecognizer} = recognition;
-
-		const currentParent = astRecognizer.getCurrentParent();
-		const currentParentTokenType = currentParent.tokenType;
-		if (currentParentTokenType === TokenType.StringLiteral) {
-			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
-			return nodeIndex;
-		} else {
-			return (void 0);
-		}
-	}) as NodeRehydrateFunc,
-	/**
-	 * node is rehydrated, and not append to parent, waiting for identifier recognizer to decide
-	 */
-	rehydrateToIdentifierWhenAfterDotDirectly: ((recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex} = recognition;
-		const [, dotNodeIndex] = NodeRecognizeUtils.getNearestPreviousDotNode(recognition);
-		if (dotNodeIndex === -1) {
-			return (void 0);
-		} else {
-			// kind of property name, it is an identifier
-			node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
-			return nodeIndex;
-		}
-	}) as NodeRehydrateFunc,
-	rehydrateToIdentifierWhenKeywordSealedNotSupported: ((recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, astRecognizer} = recognition;
-		if (astRecognizer.isSealedClassSupported) {
-			return (void 0);
-		}
-
-		node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
-		return nodeIndex;
-	}) as NodeRehydrateFunc,
-	rehydrateToIdentifierWhenKeywordRecordNotSupported: ((recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, astRecognizer} = recognition;
-		if (astRecognizer.isRecordClassSupported) {
-			return (void 0);
-		}
-
-		node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
-		return nodeIndex;
-	}) as NodeRehydrateFunc,
-	isNonSealedKeywordNotSupported: (recognition: AstRecognition): boolean => {
-		return !recognition.astRecognizer.isNonSealedKeywordSupported;
-	},
 	/**
 	 * split to 3 parts:
 	 * 1. identifier: non

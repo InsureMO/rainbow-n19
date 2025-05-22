@@ -1,6 +1,7 @@
 import {Optional} from '@rainbow-n19/n3-ast';
+import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition} from '../types';
-import {NodeRehydrateFunc, NodeRehydration} from '../util';
+import {NodeRecognizeUtils, NodeRehydrateFunc} from '../util';
 import {
 	PredefinedRehydration,
 	RehydrateBasis,
@@ -22,61 +23,79 @@ const isRehydrateOnChecked = (r: RehydrateBasis): r is RehydrateOnChecked => {
 	return (r as RehydrateOnChecked).check != null;
 };
 
+const buildRehydrateFuncOnWhenParentIsTokenId = (r: RehydrateWhenParentIsTokenId): NodeRehydrateFunc => {
+	return (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, astRecognizer} = recognition;
+
+		if (Array.isArray(r.parentTokenId)) {
+			if (r.parentTokenId.includes(astRecognizer.getCurrentParent().tokenId)) {
+				node.replaceTokenNature(r.to[0], r.to[1]);
+				return nodeIndex;
+			}
+		} else if (astRecognizer.getCurrentParent().tokenId === r.parentTokenId) {
+			node.replaceTokenNature(r.to[0], r.to[1]);
+			return nodeIndex;
+		}
+		return (void 0);
+	};
+};
+const buildRehydrateFuncWhenParentIsTokenType = (r: RehydrateWhenParentIsTokenType): NodeRehydrateFunc => {
+	return (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, astRecognizer} = recognition;
+
+		if (Array.isArray(r.parentTokenType)) {
+			if (r.parentTokenType.includes(astRecognizer.getCurrentParent().tokenType)) {
+				node.replaceTokenNature(r.to[0], r.to[1]);
+				return nodeIndex;
+			}
+		} else if (astRecognizer.getCurrentParent().tokenType === r.parentTokenType) {
+			node.replaceTokenNature(r.to[0], r.to[1]);
+			return nodeIndex;
+		}
+		return (void 0);
+	};
+};
+const buildRehydrateFuncOnChecked = (r: RehydrateOnChecked): NodeRehydrateFunc => {
+	return (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex} = recognition;
+
+		if (r.check(recognition)) {
+			if (typeof r.to === 'function') {
+				return r.to(recognition);
+			} else {
+				node.replaceTokenNature(r.to[0], r.to[1]);
+				return nodeIndex;
+			}
+		} else {
+			return (void 0);
+		}
+	};
+};
+
 const PredefinedRehydrationMap: Record<PredefinedRehydration, NodeRehydrateFunc> = {
-	[PredefinedRehydration.ToCharsWhenInStringLiteral]: NodeRehydration.rehydrateToCharsWhenInString,
-	[PredefinedRehydration.ToIdentifierWhenAfterDotDirectly]: NodeRehydration.rehydrateToIdentifierWhenAfterDotDirectly,
-	[PredefinedRehydration.ToIdentifierWhenKeywordSealedNotSupported]: NodeRehydration.rehydrateToIdentifierWhenKeywordSealedNotSupported,
-	[PredefinedRehydration.ToIdentifierWhenKeywordRecordNotSupported]: NodeRehydration.rehydrateToIdentifierWhenKeywordRecordNotSupported
+	[PredefinedRehydration.ToCharsWhenInStringLiteral]: buildRehydrateFuncOnChecked({
+		check: NodeRecognizeUtils.parentTokenTypeIsStringLiteral, to: [TokenId.Identifier, TokenType.Identifier]
+	}),
+	[PredefinedRehydration.ToIdentifierWhenAfterDotDirectly]: buildRehydrateFuncOnChecked({
+		check: NodeRecognizeUtils.isDirectAfterDot, to: [TokenId.Identifier, TokenType.Identifier]
+	}),
+	[PredefinedRehydration.ToIdentifierWhenKeywordSealedNotSupported]: buildRehydrateFuncOnChecked({
+		check: NodeRecognizeUtils.isSealedKeywordNotSupported, to: [TokenId.Identifier, TokenType.Identifier]
+	}),
+	[PredefinedRehydration.ToIdentifierWhenKeywordRecordNotSupported]: buildRehydrateFuncOnChecked({
+		check: NodeRecognizeUtils.isRecordKeywordNotSupported, to: [TokenId.Identifier, TokenType.Identifier]
+	})
 };
 
 export const buildRehydrateFunc = (r: RehydrateBasis): NodeRehydrateFunc => {
 	if (isPredefinedRehydrateWhenParentIs(r)) {
 		return PredefinedRehydrationMap[r];
 	} else if (isRehydrateWhenParentIsTokenId(r)) {
-		return (recognition: AstRecognition): Optional<number> => {
-			const {node, nodeIndex, astRecognizer} = recognition;
-
-			if (Array.isArray(r.parentTokenId)) {
-				if (r.parentTokenId.includes(astRecognizer.getCurrentParent().tokenId)) {
-					node.replaceTokenNature(r.to[0], r.to[1]);
-					return nodeIndex;
-				}
-			} else if (astRecognizer.getCurrentParent().tokenId === r.parentTokenId) {
-				node.replaceTokenNature(r.to[0], r.to[1]);
-				return nodeIndex;
-			}
-			return (void 0);
-		};
+		return buildRehydrateFuncOnWhenParentIsTokenId(r);
 	} else if (isRehydrateWhenParentIsTokenType(r)) {
-		return (recognition: AstRecognition): Optional<number> => {
-			const {node, nodeIndex, astRecognizer} = recognition;
-
-			if (Array.isArray(r.parentTokenType)) {
-				if (r.parentTokenType.includes(astRecognizer.getCurrentParent().tokenType)) {
-					node.replaceTokenNature(r.to[0], r.to[1]);
-					return nodeIndex;
-				}
-			} else if (astRecognizer.getCurrentParent().tokenType === r.parentTokenType) {
-				node.replaceTokenNature(r.to[0], r.to[1]);
-				return nodeIndex;
-			}
-			return (void 0);
-		};
+		return buildRehydrateFuncWhenParentIsTokenType(r);
 	} else if (isRehydrateOnChecked(r)) {
-		return (recognition: AstRecognition): Optional<number> => {
-			const {node, nodeIndex} = recognition;
-
-			if (r.check(recognition)) {
-				if (typeof r.to === 'function') {
-					return r.to(recognition);
-				} else {
-					node.replaceTokenNature(r.to[0], r.to[1]);
-					return nodeIndex;
-				}
-			} else {
-				return (void 0);
-			}
-		};
+		return buildRehydrateFuncOnChecked(r);
 	} else {
 		return r;
 	}

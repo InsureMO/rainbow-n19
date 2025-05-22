@@ -292,7 +292,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		name: 'KwNonSealed',
 		rehydrate: [
 			Rehydrate.ToCharsWhenInStringLiteral,
-			{check: NodeRehydration.isNonSealedKeywordNotSupported, to: NodeRehydration.rehydrateNonSealedTo3Parts},
+			{check: NodeRecognizeUtils.isNonSealedKeywordNotSupported, to: NodeRehydration.rehydrateNonSealedTo3Parts},
 			{check: NodeRecognizeUtils.isDirectAfterDot, to: NodeRehydration.rehydrateNonSealedTo3Parts}
 		],
 		preserve: [Preserve.ParentIsCsscmfDeclaration, Preserve.ParentIsTypeDeclaration],

@@ -4,6 +4,18 @@ import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition} from '../types';
 
 export const NodeRecognizeUtils = {
+	isSealedKeywordNotSupported: (recognition: AstRecognition): boolean => {
+		return !recognition.astRecognizer.isSealedClassSupported;
+	},
+	isRecordKeywordNotSupported: (recognition: AstRecognition): boolean => {
+		return !recognition.astRecognizer.isRecordClassSupported;
+	},
+	isNonSealedKeywordNotSupported: (recognition: AstRecognition): boolean => {
+		return !recognition.astRecognizer.isNonSealedKeywordSupported;
+	},
+	parentTokenTypeIsStringLiteral: (recognition: AstRecognition): boolean => {
+		return recognition.astRecognizer.getCurrentParent().tokenType === TokenType.StringLiteral;
+	},
 	/**
 	 * Check whether, among the currently recognized nodes,
 	 * there are nodes other than newline, whitespaces, tabs, and comments nodes
