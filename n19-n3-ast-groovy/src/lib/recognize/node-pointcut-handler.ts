@@ -28,13 +28,9 @@ export const NodePointcutHandler = {
 		const lbraceAsTokenId = NodeAttributeOperator.TakeLBraceAs.get(parent);
 		return lbraceAsTokenId != null && (child.tokenId === lbraceAsTokenId || child.tokenId === TokenId.LBrace);
 	},
-	acceptedByEndTokenIds: (parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' => {
+	acceptedByEndTokenIds: (parent: GroovyAstNode, child: GroovyAstNode): boolean => {
 		const tokenIds = NodeAttributeOperator.EndWithAnyOfTokenIds.get(parent);
-		if (tokenIds == null || tokenIds.length === 0) {
-			return 'ignored';
-		} else {
-			return tokenIds.includes(child.tokenId);
-		}
+		return tokenIds != null && tokenIds.includes(child.tokenId);
 	},
 	/**
 	 * move all trailing detachable nodes to parent when node closed,

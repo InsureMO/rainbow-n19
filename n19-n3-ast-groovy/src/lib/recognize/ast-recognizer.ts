@@ -207,7 +207,7 @@ export class AstRecognizer {
 			const ancestor = ancestors[0];
 			if (this.acceptChild(ancestor, node)) {
 				// given node can be accepted by current parent, break the check
-				break;
+				return ancestor;
 			} else {
 				// given node cannot be accepted by current parent
 				// shift current parent
@@ -348,10 +348,25 @@ export class AstRecognizer {
 			return;
 		}
 
+		const debugTimeLogs = {
+			/* TODO change to true to enable the dev logs */
+			enabled: false,
+			startOfRound: [0, 0] as [number, number],
+			nodeIndexOfRound: 0,
+			total: 0,
+			/* token id, token id name, node index, spent on this round, spent till now */
+			rounds: [] as Array<[TokenId, string, number, number, number]>
+		};
+
 		this._currentAncestors.push(complicationUnitNode);
 		const nodeCount = nodes.length;
 		let nodeIndex = 0;
 		while (nodeIndex < nodeCount) {
+			if (debugTimeLogs.enabled) {
+				debugTimeLogs.startOfRound = process.hrtime();
+				debugTimeLogs.nodeIndexOfRound = nodeIndex;
+			}
+
 			const node = nodes[nodeIndex];
 			const nodeRecognizer = this.nodeRecognizers().find(node);
 			if (nodeRecognizer != null) {
@@ -366,6 +381,16 @@ export class AstRecognizer {
 				this.appendAsLeaf(node, true);
 				nodeIndex++;
 			}
+
+			if (debugTimeLogs.enabled) {
+				const end = process.hrtime(debugTimeLogs.startOfRound);
+				const spent = (end[0] * 1e9 + end[1]) / 1_000_000;
+				debugTimeLogs.total = debugTimeLogs.total = spent;
+				debugTimeLogs.rounds.push([node.tokenId, TokenId[node.tokenId], debugTimeLogs.nodeIndexOfRound, spent, debugTimeLogs.total]);
+			}
+		}
+		if (debugTimeLogs.enabled) {
+			console.warn(debugTimeLogs.rounds);
 		}
 	}
 
