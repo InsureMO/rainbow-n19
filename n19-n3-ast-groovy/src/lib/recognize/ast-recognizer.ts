@@ -2,9 +2,9 @@ import {GroovyAst} from '../ast';
 import {CommentKeyword, CommentKeywords} from '../captor';
 import {CompilationUnitNode, GroovyAstNode} from '../node';
 import {TokenId} from '../tokens';
-import {NodeAttributeOperator} from './node';
+import {NodeAttributeOperator} from './node-attribute';
 import {NodePointcutHandler} from './node-pointcut-handler';
-import {NodeRecognizerRepo} from './node-recognize';
+import {NodeRecognizerRepository} from './node-recognizer-repository';
 import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types';
 
 /**
@@ -15,7 +15,7 @@ export class AstRecognizer {
 	private readonly _buildCommentKeywords: CommentKeywords;
 	private readonly _multipleLinesCommentHighlightEnabled: boolean;
 	private readonly _jdkVersion: number;
-	private readonly _recognizerRepo: NodeRecognizerRepo;
+	private readonly _recognizerRepository: NodeRecognizerRepository;
 
 	// recognition
 	// ancestors, closest is 0, root is the last
@@ -35,7 +35,7 @@ export class AstRecognizer {
 		// default use 17
 		this._jdkVersion = jdkVersion ?? 17;
 		// recognizers
-		this._recognizerRepo = new NodeRecognizerRepo(restOptions);
+		this._recognizerRepository = new NodeRecognizerRepository(restOptions);
 	}
 
 	// initializing
@@ -96,8 +96,8 @@ export class AstRecognizer {
 		};
 	}
 
-	nodeRecognizers(): NodeRecognizerRepo {
-		return this._recognizerRepo;
+	nodeRecognizers(): NodeRecognizerRepository {
+		return this._recognizerRepository;
 	}
 
 	get commentKeywords(): CommentKeywords {
@@ -373,6 +373,6 @@ export class AstRecognizer {
 	}
 
 	printDefs(): void {
-		this._recognizerRepo.printDefs();
+		this._recognizerRepository.printDefs();
 	}
 }

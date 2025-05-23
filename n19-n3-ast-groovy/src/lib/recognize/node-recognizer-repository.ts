@@ -1,19 +1,12 @@
 import {AstNode} from '@rainbow-n19/n3-ast';
-import {TokenId} from '../../tokens';
-import {NodeRecognizer} from './recognizer';
-import {NodeRecognizers} from './recognizer-defs';
+import {TokenId} from '../tokens';
+import {NodeRecognizer, NodeRecognizers} from './node-recognize';
+import {NodeRecognizerRepositoryOptions} from './types';
 
-export interface NodeRecognizersOptions {
-	/**
-	 * replace or extend node recognizers
-	 */
-	externalRecognizers?: Array<NodeRecognizer>;
-}
-
-export class NodeRecognizerRepo {
+export class NodeRecognizerRepository {
 	private readonly _recognizers: Map<TokenId, NodeRecognizer>;
 
-	constructor(options?: NodeRecognizersOptions) {
+	constructor(options?: NodeRecognizerRepositoryOptions) {
 		this._recognizers = this.initRecognizers(options.externalRecognizers);
 	}
 

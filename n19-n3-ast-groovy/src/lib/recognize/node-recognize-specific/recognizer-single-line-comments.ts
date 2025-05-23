@@ -1,13 +1,18 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {GroovyAstNode} from '../../../node';
-import {TokenId, TokenType} from '../../../tokens';
-import {AstRecognizer} from '../../ast-recognizer';
-import {NodeAttributeOperator} from '../../node';
-import {AstRecognition} from '../recognizer';
-import {AbstractCommentsNodeRecognizer, CommentsNodeReviseSituation} from './abstract-comments-recognizer';
-import {NodeReviseFunc, NodeReviseResult} from './abstract-eager-recognizer';
+import {GroovyAstNode} from '../../node';
+import {TokenId, TokenType} from '../../tokens';
+import {AstRecognizer} from '../ast-recognizer';
+import {NodeAttributeOperator} from '../node-attribute';
+import {
+	AstRecognition,
+	CommentsNodeReviseSituation,
+	NodeRecognizeUtils,
+	NodeReviseFunc,
+	NodeReviseResult
+} from '../node-recognize';
+import {AbstractNodeRecognizer} from './abstract-recognizer';
 
-export abstract class SingleLineCommentsRecognizer extends AbstractCommentsNodeRecognizer {
+export abstract class SingleLineCommentsRecognizer extends AbstractNodeRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.SingleLineCommentStartMark;
 	}
@@ -23,7 +28,7 @@ export abstract class SingleLineCommentsRecognizer extends AbstractCommentsNodeR
 				node.replaceTokenNature(TokenId.CommentHighlightChars, TokenType.Chars);
 				return {revisedNodes: [node], consumedNodeCount: 1};
 			}
-			return this.matchCommentKeyword(situation, astRecognizer);
+			return NodeRecognizeUtils.matchCommentKeyword(situation, astRecognizer);
 		};
 	}
 
@@ -95,9 +100,11 @@ export abstract class SingleLineCommentsRecognizer extends AbstractCommentsNodeR
 
 	protected doRecognize(recognition: AstRecognition): number {
 		const {astRecognizer} = recognition;
-		const [statementNode, nextNodeIndex] = this.createParentAndGrabNodesTillNewLine(
-			TokenId.SingleLineComment, TokenType.Comments,
-			recognition, this.createNodeReviser(astRecognizer));
+		const [statementNode, nextNodeIndex] = NodeRecognizeUtils.createParentAndGrabNodesTillNewLine({
+			parentTokenId: TokenId.SingleLineComment, parentTokenType: TokenType.Comments,
+			reviseGrabbedNode: this.createNodeReviser(astRecognizer),
+			recognition
+		});
 		this.finalizeHighlightCharsSegments(statementNode, astRecognizer);
 		return nextNodeIndex;
 	}

@@ -1,10 +1,16 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {GroovyAstNode} from '../../../node';
-import {TokenId} from '../../../tokens';
-import {NodePointcuts} from '../../node-pointcut';
-import {AstRecognition, NodeRecognizer} from '../recognizer';
-import {NodeAsParentDeclaration, NodeAsParentDeclareFunc, NodePreservableCheckFunc, NodeRehydrateFunc} from '../types';
-import {NodeDeclareAsParent} from '../utils';
+import {GroovyAstNode} from '../../node';
+import {TokenId} from '../../tokens';
+import {NodePointcuts} from '../node-pointcut';
+import {
+	AstRecognition,
+	NodeAsParentDeclaration,
+	NodeAsParentDeclareFunc,
+	NodeDeclareAsParent,
+	NodePreservableCheckFunc,
+	NodeRecognizer,
+	NodeRehydrateFunc
+} from '../node-recognize';
 
 /**
  * node recognizer follows steps as below:

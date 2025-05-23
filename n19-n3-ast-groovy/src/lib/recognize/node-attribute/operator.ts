@@ -1,5 +1,6 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
+import {AstRecognizer} from '../ast-recognizer';
 import {
 	ChildAcceptableCheckFunc,
 	GroovyAstNodeAccumulativeAttributeNames,
@@ -11,10 +12,13 @@ import {
 	RecognizerExtraAttribute,
 	RecognizerExtraNumberAccumulator,
 	TakeSpecificTokenToAnother
-} from './attribute';
+} from './types';
 
-export const NodeAttributeOperatorHelper = {
-	createAttrVisitor: <V>(key: GroovyAstNodeAttributeNames): RecognizerExtraAttribute<V> => {
+export type OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
+export type OneOfOnChildClosedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
+
+export class NodeAttributeOperatorHelper {
+	static createAttrVisitor<V>(key: GroovyAstNodeAttributeNames): RecognizerExtraAttribute<V> {
 		return {
 			get: (node: GroovyAstNode) => node.getAttr<V>(key),
 			set: (node: GroovyAstNode, value: V) => {
@@ -26,9 +30,9 @@ export const NodeAttributeOperatorHelper = {
 				return NodeAttributeOperator;
 			}
 		};
-	},
+	}
 
-	createNumberAccumulator: (key: GroovyAstNodeAccumulativeAttributeNames): RecognizerExtraNumberAccumulator => {
+	static createNumberAccumulator(key: GroovyAstNodeAccumulativeAttributeNames): RecognizerExtraNumberAccumulator {
 		return {
 			get: (node: GroovyAstNode) => node.getAttr<number>(key) ?? 0,
 			set: (node: GroovyAstNode, value: number) => {
@@ -44,9 +48,37 @@ export const NodeAttributeOperatorHelper = {
 			reset: (node: GroovyAstNode) => node.setAttr<number>(key, 0)
 		};
 	}
-};
 
-export const NodeAttributeOperator = {
+	/**
+	 * create an on child appended function by given functions.
+	 */
+	static onChildAppendedOfFirstOrNone(...funcs: Array<OneOfOnChildAppendedFunc>): OneOfOnChildAppendedFunc {
+		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+			for (let index = 0, count = funcs.length; index < count; index++) {
+				if (funcs[index](lastChildNode, astRecognizer)) {
+					return true;
+				}
+			}
+			return false;
+		};
+	}
+
+	/**
+	 * create an on child closed function by given functions.
+	 */
+	static onChildClosedOfFirstOrNone(...funcs: Array<OneOfOnChildClosedFunc>): OneOfOnChildClosedFunc {
+		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+			for (let index = 0, count = funcs.length; index < count; index++) {
+				if (funcs[index](lastChildNode, astRecognizer)) {
+					return true;
+				}
+			}
+			return false;
+		};
+	}
+}
+
+export const NodeAttributeOperator: RecognizerAttrVisitor = {
 	// standard
 	ChildAcceptableCheck: NodeAttributeOperatorHelper.createAttrVisitor<ChildAcceptableCheckFunc>(GroovyAstNodeAttributeNames.CHILD_ACCEPTABLE_CHECK),
 	OnChildAppended: NodeAttributeOperatorHelper.createAttrVisitor<OnChildAppendedFunc>(GroovyAstNodeAttributeNames.ON_CHILD_APPENDED),

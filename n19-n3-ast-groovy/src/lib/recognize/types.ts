@@ -1,4 +1,11 @@
-import {NodeRecognizersOptions} from './node-recognize';
+import {NodeRecognizer} from './node-recognize';
+
+export interface NodeRecognizerRepositoryOptions {
+	/**
+	 * replace or extend node recognizers
+	 */
+	externalRecognizers?: Array<NodeRecognizer>;
+}
 
 export enum AstRecognitionCommentKeywordOption {
 	DISABLED = 0,
@@ -19,7 +26,7 @@ export interface AstRecognitionCommentKeywords {
 	[key: string]: AstRecognitionCommentKeywordOption;
 }
 
-export interface AstRecognizerOptions extends Partial<NodeRecognizersOptions> {
+export interface AstRecognizerOptions extends Partial<NodeRecognizerRepositoryOptions> {
 	scriptCommandEnabled?: boolean;
 	commentKeywords?: AstRecognitionCommentKeywords;
 	multipleLinesCommentHighlightEnabled?: boolean;

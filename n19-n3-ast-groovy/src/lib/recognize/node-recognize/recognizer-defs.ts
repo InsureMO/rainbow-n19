@@ -1,5 +1,5 @@
 import {TokenId} from '../../tokens';
-import {AbstractNodeRecognizer} from './recognizers';
+import {AbstractNodeRecognizer} from '../node-recognize-specific';
 import {buildDeclareAsParentFunc} from './defs-declare-as-parent';
 import {buildPreserveFunc} from './defs-preserve';
 import {buildRehydrateFunc} from './defs-rehydrate';

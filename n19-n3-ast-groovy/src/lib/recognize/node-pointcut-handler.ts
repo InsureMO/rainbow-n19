@@ -1,8 +1,12 @@
 import {GroovyAstNode} from '../node';
 import {TokenId} from '../tokens';
 import {AstRecognizer} from './ast-recognizer';
-import {NodeAttributeOperator, OnNodeClosedFunc} from './node';
-import {OneOfOnChildAppendedFunc, OneOfOnChildClosedFunc} from './node-pointcut';
+import {
+	NodeAttributeOperator,
+	OneOfOnChildAppendedFunc,
+	OneOfOnChildClosedFunc,
+	OnNodeClosedFunc
+} from './node-attribute';
 
 export const NodePointcutHandler = {
 	/**

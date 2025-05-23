@@ -2,9 +2,9 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {AstKeywords, AstOperators} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
+import {NodeRecognizeUtils} from './recognize-utils';
 import {AstRecognition} from './recognizer';
 import {NodeRehydrateFunc} from './types';
-import {NodeRecognizeUtils} from './utils';
 
 export type RehydrateTokenNatureTo = Readonly<[TokenId, TokenType]>
 export type RehydrateWhenParentIsTokenId = Readonly<{

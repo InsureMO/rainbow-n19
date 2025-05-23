@@ -1,8 +1,8 @@
-import {AstChars, AstOperators} from '../../../captor';
-import {GroovyAstNode} from '../../../node';
-import {TokenId, TokenType} from '../../../tokens';
-import {AstRecognition} from '../recognizer';
-import {AbstractEagerNodeRecognizer, NodeReviseResult, NodeReviseSituation} from './abstract-eager-recognizer';
+import {AstChars, AstOperators} from '../../captor';
+import {GroovyAstNode} from '../../node';
+import {TokenId, TokenType} from '../../tokens';
+import {AstRecognition, NodeRecognizeUtils} from '../node-recognize';
+import {AbstractNodeRecognizer} from './abstract-recognizer';
 
 /**
  * 1. check script command is enabled or not,<br>
@@ -22,15 +22,7 @@ import {AbstractEagerNodeRecognizer, NodeReviseResult, NodeReviseSituation} from
  *     5.2.4. if next is {@link TokenId.INSTANCEOF}, create {@link TokenId.NOT_INSTANCEOF} token, replace the next {@link TokenId.INSTANCEOF},<br>
  *     5.2.5. create {@link TokenId.Not} token, insert after given token.<br>
  */
-export abstract class ScriptCommandRecognizer extends AbstractEagerNodeRecognizer {
-	static reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToParent(situation: NodeReviseSituation): NodeReviseResult {
-		const {node} = situation;
-		if (node.tokenType !== TokenType.WhitespaceOrTabs) {
-			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
-		}
-		return {revisedNodes: [node], consumedNodeCount: 1};
-	}
-
+export abstract class ScriptCommandRecognizer extends AbstractNodeRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.ScriptCommandStartMark;
 	}
@@ -127,9 +119,12 @@ export abstract class ScriptCommandRecognizer extends AbstractEagerNodeRecognize
 			previousNodeIndex--;
 		}
 		if (!hasNotWhitespaceAndTabBeforeInSameLine) {
-			const [, nextNodeIndex] = this.createParentAndGrabNodesTillNewLine(
-				TokenId.ScriptCommand, TokenType.ScriptCommand,
-				recognition, ScriptCommandRecognizer.reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToParent);
+			const [, nextNodeIndex] = NodeRecognizeUtils.createParentAndGrabNodesTillNewLine({
+				parentTokenId: TokenId.ScriptCommand,
+				parentTokenType: TokenType.ScriptCommand,
+				reviseGrabbedNode: NodeRecognizeUtils.reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToParent,
+				recognition
+			});
 			return nextNodeIndex;
 		} else {
 			return this.rehydrateTo2Parts(recognition);

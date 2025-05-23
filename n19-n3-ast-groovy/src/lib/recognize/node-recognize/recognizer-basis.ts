@@ -1,16 +1,16 @@
 import {TokenId, TokenType} from '../../tokens';
+import {
+	RecognizerMultipleLinesComments,
+	ScriptCommandRecognizer,
+	SingleLineCommentsRecognizer
+} from '../node-recognize-specific';
 import {DeclareAsParentBasis} from './defs-declare-as-parent';
 import {PredefinedPreservation as Preserve, PreserveCheckBasis} from './defs-preserve';
 import {NodeRehydration, PredefinedRehydration as Rehydrate, RehydrateBasis} from './defs-rehydrate';
-import {
-	AbstractNodeRecognizer,
-	MultipleLinesCommentsRecognizer,
-	ScriptCommandRecognizer,
-	SingleLineCommentsRecognizer
-} from './recognizers';
-import {NodeRecognizeUtils} from './utils';
+import {NodeRecognizeUtils} from './recognize-utils';
+import {NodeRecognizer} from './recognizer';
 
-export type GroovyAstNodeRecognizerConstructor = abstract new () => AbstractNodeRecognizer;
+export type GroovyAstNodeRecognizerConstructor = abstract new () => NodeRecognizer;
 
 /** define everything by configuration, unless it has to be programmatic */
 export type StandardRecognizerBasis = Readonly<{
@@ -135,7 +135,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral]
 	},
 	[TokenId.MultipleLinesCommentStartMark]: {
-		name: 'MultipleLinesComments', class: MultipleLinesCommentsRecognizer,
+		name: 'MultipleLinesComments', class: RecognizerMultipleLinesComments,
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral]
 	},
 	[TokenId.MultipleLinesCommentEndMark]: 'NotRequired',

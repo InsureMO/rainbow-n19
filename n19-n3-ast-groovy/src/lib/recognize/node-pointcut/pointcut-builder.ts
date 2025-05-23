@@ -7,7 +7,7 @@ import {
 	OnChildClosedFunc,
 	OnNodeClosedFunc,
 	TakeSpecificTokenToAnother
-} from '../node';
+} from '../node-attribute';
 
 export class PointcutBuilder {
 	private readonly _funcs: Array<(node: GroovyAstNode) => void> = [];
@@ -105,6 +105,7 @@ export class PointcutBuilder {
 
 	get build(): ((node: GroovyAstNode) => void) {
 		return (node: GroovyAstNode) => {
+			node.clearAttrs();
 			this._funcs.forEach(func => func(node));
 		};
 	}

@@ -1,9 +1,13 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {NodeAttributeOperator, OnNodeClosedFunc} from '../node';
-import {NodePointcuts} from './pointcut-defs';
-import {NodePointcutUtils, OneOfOnChildAppendedFunc} from './pointcut-utils';
+import {
+	NodeAttributeOperator,
+	NodeAttributeOperatorHelper,
+	OneOfOnChildAppendedFunc,
+	OnNodeClosedFunc
+} from '../node-attribute';
+import {NodePointcuts} from '../node-pointcut';
 
 export class TypeDeclarationPointcuts {
 	// noinspection JSUnusedLocalSymbols
@@ -99,6 +103,7 @@ export class CsscmfDeclarationPointcuts {
 			}
 		}
 		NodePointcuts.initialize(statementNode);
+
 		return true;
 	}) as OneOfOnChildAppendedFunc;
 	/**
@@ -177,6 +182,7 @@ export class CsscmfDeclarationPointcuts {
 			statementNode.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
 			NodePointcuts.initialize(statementNode);
 			mightBeChildNode.replaceTokenNature(TokenId.ClassBody, TokenType.LogicBlock);
+			NodePointcuts.initialize(mightBeChildNode);
 			return true;
 		}
 
@@ -207,6 +213,7 @@ export class CsscmfDeclarationPointcuts {
 			NodePointcuts.initialize(statementNode);
 			mightBeChildNode.replaceTokenNature(TokenId.ClassBody, TokenType.LogicBlock);
 		}
+		NodePointcuts.initialize(mightBeChildNode);
 
 		return true;
 	}) as OneOfOnChildAppendedFunc;
@@ -249,11 +256,10 @@ export class CsscmfDeclarationPointcuts {
 			}
 			if (isSynchronizedBlockStart) {
 				statementNode.replaceTokenNature(TokenId.SynchronizedBlockDeclaration, TokenType.LogicBlockDeclaration);
-				NodePointcuts.initialize(statementNode);
 			} else {
 				statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-				NodePointcuts.initialize(statementNode);
 			}
+			NodePointcuts.initialize(statementNode);
 			return true;
 		}
 
@@ -272,12 +278,11 @@ export class CsscmfDeclarationPointcuts {
 		if (identifierNode.text === className) {
 			// constructor
 			statementNode.replaceTokenNature(TokenId.ConstructorDeclaration, TokenType.ConstructorDeclaration);
-			NodePointcuts.initialize(statementNode);
 		} else {
 			// method
 			statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
-			NodePointcuts.initialize(statementNode);
 		}
+		NodePointcuts.initialize(statementNode);
 
 		return true;
 	}) as OneOfOnChildAppendedFunc;
@@ -325,7 +330,7 @@ export class CsscmfDeclarationPointcuts {
 	 * No modifier can determine the exact type of statement.
 	 * Therefore, it is necessary to make judgments based on different scenarios.
 	 */
-	static readonly onChildAppended = NodePointcutUtils.onChildAppendedOfFirstOrNone(
+	static readonly onChildAppended = NodeAttributeOperatorHelper.onChildAppendedOfFirstOrNone(
 		CsscmfDeclarationPointcuts.onClassKeywordAppended,
 		CsscmfDeclarationPointcuts.onMethodKeywordAppended,
 		CsscmfDeclarationPointcuts.onFieldKeywordAppended,
@@ -373,16 +378,19 @@ export class CsscmfDeclarationPointcuts {
 			case possibilities.class: {
 				// can be class, top priority
 				node.replaceTokenNature(TokenId.ClassDeclaration, TokenType.TypeDeclaration);
+				NodePointcuts.initialize(node);
 				break;
 			}
 			case possibilities.method && withinClassBodyDirectly: {
 				// can be method, 2nd priority
 				node.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
+				NodePointcuts.initialize(node);
 				break;
 			}
 			case possibilities.field && withinClassBodyDirectly: {
 				// can be field
 				node.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
+				NodePointcuts.initialize(node);
 				break;
 			}
 			case !possibilities.class && !possibilities.method && !possibilities.field: {
@@ -392,6 +400,7 @@ export class CsscmfDeclarationPointcuts {
 			default: {
 				// method in incorrect position
 				node.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
+				NodePointcuts.initialize(node);
 				break;
 			}
 		}

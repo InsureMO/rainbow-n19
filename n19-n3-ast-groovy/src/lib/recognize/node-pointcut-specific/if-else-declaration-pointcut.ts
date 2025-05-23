@@ -1,7 +1,7 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {NodePointcuts} from './pointcut-defs';
+import {NodePointcuts} from '../node-pointcut';
 
 export class IfElseDeclarationPointcuts {
 	// noinspection JSUnusedLocalSymbols

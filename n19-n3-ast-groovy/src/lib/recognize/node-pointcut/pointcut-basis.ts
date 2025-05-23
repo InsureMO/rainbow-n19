@@ -1,8 +1,11 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {IfElseDeclarationPointcuts} from './if-else-declaration-pointcut';
+import {
+	CsscmfDeclarationPointcuts,
+	IfElseDeclarationPointcuts,
+	TypeDeclarationPointcuts
+} from '../node-pointcut-specific';
 import {NodePointcutBuilderFacade as $} from './pointcut-builder';
-import {CsscmfDeclarationPointcuts, TypeDeclarationPointcuts} from './type-declaration-pointcut';
 
 export type PointcutBasisDefs = { build: (node: GroovyAstNode) => void } | 'TODO' | 'NotRequired';
 
