@@ -177,7 +177,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		declareAsParent: [[TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement]]
 	},
 	[TokenId.ASSERT]: {
-		name: 'KwAbstract',
+		name: 'KwAssert',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral, Rehydrate.ToIdentifierWhenAfterDotDirectly],
 		declareAsParent: [[TokenId.AssertStatement, TokenType.LogicStatement]]
 	},

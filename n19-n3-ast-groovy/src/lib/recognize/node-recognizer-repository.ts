@@ -26,17 +26,26 @@ export class NodeRecognizerRepository {
 
 	printDefs(): void {
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+		const recognizerMap: Map<Function, NodeRecognizer> = new Map();
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 		const map: Map<Function, Array<Function>> = new Map();
 		for (const recognizer of this._recognizers.values()) {
+			// get class of recognizer
 			const proto = Object.getPrototypeOf(recognizer);
+			// cache the relationship of recognizer and its class
+			recognizerMap.set(proto.constructor, recognizer);
+			// find ancestor classes of recognizer, or initialize it if not exists
 			let ancestors = map.get(proto.constructor);
 			if (ancestors == null) {
 				ancestors = [];
 				map.set(proto.constructor, ancestors);
 			}
+			// get super class of recognizer
 			let superProto = Object.getPrototypeOf(proto);
 			while (superProto != null && superProto.constructor !== Object) {
+				// push into ancestors from index 0
 				ancestors.unshift(superProto.constructor);
+				// loop find super class
 				superProto = Object.getPrototypeOf(superProto);
 			}
 		}
@@ -60,12 +69,12 @@ export class NodeRecognizerRepository {
 
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type, @typescript-eslint/no-explicit-any
 		const print = (proto: Function, derivation: Map<any, any>, level: Array<'└' | '├' | ' ' | '│'>): void => {
-			try {
-				// @ts-expect-error it is a constructor function, and is NodeRecognizer
-				const tokenId = new proto().acceptTokenId();
+			const recognizer = recognizerMap.get(proto);
+			if (recognizer != null) {
+				const tokenId = recognizerMap.get(proto).acceptTokenId();
 				const tokenName = TokenId[tokenId];
 				buf.push(`${level.join(' ')} ${proto.name} [tokenId=${tokenId}, tokenName=${tokenName}]`);
-			} catch {
+			} else {
 				buf.push(`${level.join(' ')} ${proto.name}`);
 			}
 			if (derivation != null && derivation.size !== 0) {
