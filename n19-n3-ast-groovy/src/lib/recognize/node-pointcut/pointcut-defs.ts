@@ -1,11 +1,11 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId} from '../../tokens';
-import {PointcutBasis} from './pointcut-basis';
+import {buildNodePointcut, PointcutBasis} from './pointcut-basis';
 
 export type NodePointcutInitialize = (node: GroovyAstNode) => void;
 
-export interface NodePointcutHelper {
+export type NodePointcutHelper = {
 	readonly initialize: NodePointcutInitialize;
 }
 
@@ -27,7 +27,9 @@ export class NodePointcutsHelper {
 				const tokenId = Number(key) as TokenId;
 				const pointcut = PointcutBasis[tokenId];
 				if (pointcut !== 'TODO' && pointcut !== 'NotRequired') {
-					this._helpers.set(tokenId, {initialize: pointcut.build});
+					this._helpers.set(tokenId, {
+						initialize: buildNodePointcut(pointcut)
+					});
 				}
 			});
 			this._initialized = true;

@@ -16,7 +16,7 @@ export enum GroovyAstNodeAttributeNames {
 	ACCEPT_TOKEN_TYPES_AS_CHILD = '$$AcceptTokenTypesAsChild',
 	REJECT_TOKEN_IDS_AS_CHILD = '$$RejectTokenIdsAsChild',
 	TAKE_LBRACE_AS = '$$TakeLBraceAs',
-	END_WITH_TOKEN = '$$EndWithToken',
+	END_WITH_ANY_OF_TOKEN_IDS = '$$EndWithAnyOfTokenIds',
 	CLOSE_ON_CHILD_WITH_TOKEN_CLOSED = '$$CloseOnChildWithTokenClosed',
 	/** default true */
 	ELEVATE_TRAILING_DETACHABLE_ON_NODE_CLOSED = '$$ElevateTrailingDetachableOnNodeClosed',
@@ -64,12 +64,7 @@ export type RecognizerAttrVisitor = {
 	readonly RejectTokenIdsAsChild: RecognizerExtraAttribute<Array<TokenId>>;
 	readonly TakeLBraceAs: RecognizerExtraAttribute<TakeSpecificTokenToAnother>;
 	/** true: accept one token id, and close on this token id appended */
-	readonly EndWithToken: RecognizerExtraAttribute<TokenId>;
-	readonly EndWithSemicolon: {
-		readonly get: (node: GroovyAstNode) => boolean;
-		readonly set: (node: GroovyAstNode) => RecognizerAttrVisitor;
-		readonly clear: (node: GroovyAstNode) => RecognizerAttrVisitor;
-	}
+	readonly EndWithAnyOfTokenIds: RecognizerExtraAttribute<Array<TokenId>>;
 	/** close me when child with appointed token id closed */
 	readonly CloseOnChildWithTokenClosed: RecognizerExtraAttribute<TokenId>;
 	/** default true */

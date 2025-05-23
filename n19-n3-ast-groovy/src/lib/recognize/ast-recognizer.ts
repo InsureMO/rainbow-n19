@@ -147,56 +147,36 @@ export class AstRecognizer {
 		return this._currentAncestors[0];
 	}
 
-	protected acceptedWith5BaseNodes(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		return (NodeAttributeOperator.Accept5BaseNodesAsChild.get(parent) ?? true) && [
-			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
-			TokenId.SingleLineComment, TokenId.MultipleLinesComment
-		].includes(child.tokenId);
-	}
-
-	protected acceptedWithLBrace(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		return NodeAttributeOperator.TakeLBraceAs.get(parent) != null && child.tokenId === TokenId.LBrace;
-	}
-
-	protected acceptedWithEndToken(parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' {
-		const tokenId = NodeAttributeOperator.EndWithToken.get(parent);
-		if (tokenId == null) {
-			return 'ignored';
-		} else {
-			return tokenId === child.tokenId;
-		}
-	}
-
-	protected acceptedByGivenTokenIds(parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' {
-		return NodeAttributeOperator.AcceptTokenIdsAsChild.get(parent)?.includes(child.tokenId) ?? 'ignored';
-	}
-
-	protected acceptedByGivenTokenTypes(parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' {
-		return NodeAttributeOperator.AcceptTokenTypesAsChild.get(parent)?.includes(child.tokenType) ?? 'ignored';
-	}
-
-	protected rejectedByGivenTokenIds(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		return NodeAttributeOperator.RejectTokenIdsAsChild.get(parent)?.includes(child.tokenId) ?? false;
-	}
-
+	/**
+	 * 1. accepted by {@link NodeAttributeOperator.Accept5BaseNodesAsChild}, returns true,
+	 * 2. accepted by {@link NodeAttributeOperator.TakeLBraceAs}, returns true,
+	 * 3. accepted by {@link NodeAttributeOperator.EndWithAnyOfTokenIds}, returns true,
+	 * 4. rejected by {@link NodeAttributeOperator.RejectTokenIdsAsChild}, returns false,
+	 * 5. no definitions on {@link NodeAttributeOperator.AcceptTokenIdsAsChild}, {@link NodeAttributeOperator.AcceptTokenTypesAsChild},
+	 *    or {@link NodeAttributeOperator.ChildAcceptableCheck}, returns true,
+	 * 6. accepted by {@link NodeAttributeOperator.AcceptTokenIdsAsChild}, returns true,
+	 * 7. accepted by {@link NodeAttributeOperator.AcceptTokenTypesAsChild}, returns true,
+	 * 8. accepted by {@link NodeAttributeOperator.ChildAcceptableCheck}, returns true,
+	 * 9. returns false.
+	 */
 	protected acceptChild(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		if (this.acceptedWith5BaseNodes(parent, child)
-			|| this.acceptedWithLBrace(parent, child)
-			|| this.acceptedWithEndToken(parent, child)) {
+		if (NodePointcutHandler.acceptedBy5BaseNodes(parent, child)
+			|| NodePointcutHandler.acceptedByTakeLBraceAs(parent, child)
+			|| NodePointcutHandler.acceptedByEndTokenIds(parent, child)) {
 			return true;
 		}
-		if (this.rejectedByGivenTokenIds(parent, child)) {
+		if (NodePointcutHandler.rejectedByPresetTokenIds(parent, child)) {
 			return false;
 		}
 
 		let hasRule = false;
-		const acceptedByGivenTokenIds = this.acceptedByGivenTokenIds(parent, child);
+		const acceptedByGivenTokenIds = NodePointcutHandler.acceptedByPresetTokenIds(parent, child);
 		if (acceptedByGivenTokenIds === true) {
 			return true;
 		} else if (acceptedByGivenTokenIds === false) {
 			hasRule = true;
 		}
-		const acceptedByGivenTokenTypes = this.acceptedByGivenTokenTypes(parent, child);
+		const acceptedByGivenTokenTypes = NodePointcutHandler.acceptedByPresetTokenTypes(parent, child);
 		if (acceptedByGivenTokenTypes === true) {
 			return true;
 		} else if (acceptedByGivenTokenTypes === false) {
@@ -238,24 +218,41 @@ export class AstRecognizer {
 		return ancestors[0];
 	}
 
+	/**
+	 * check the given child node matches the configuration in {@link NodeAttributeOperator.EndWithAnyOfTokenIds} or not,
+	 * if matched, close current parent and return.
+	 * otherwise invoke the {@link NodeAttributeOperator.OnChildAppended} function.
+	 */
 	protected onChildAppended(parent: GroovyAstNode, child: GroovyAstNode): void {
-		const proceeded = [
-			NodePointcutHandler.endWithToken
-		].some(func => func(child, this));
-		if (!proceeded) {
-			NodeAttributeOperator.OnChildAppended.get(parent)?.(child, this);
+		const tokenIds = NodeAttributeOperator.EndWithAnyOfTokenIds.get(parent);
+		if (tokenIds != null && tokenIds.includes(child.tokenId)) {
+			this.closeCurrentParent();
+			return;
 		}
+
+		NodeAttributeOperator.OnChildAppended.get(parent)?.(child, this);
 	}
 
+	/**
+	 * check the given child node matches the configuration in {@link NodeAttributeOperator.CloseOnChildWithTokenClosed} or not,
+	 * if matched, close current parent and return.
+	 * otherwise invoke the {@link NodeAttributeOperator.OnChildClosed} function.
+	 */
 	protected onChildClosed(parent: GroovyAstNode, child: GroovyAstNode): void {
-		const proceeded = [
-			NodePointcutHandler.closeOnChildWithTokenClosed
-		].some(func => func(child, this));
-		if (!proceeded) {
-			NodeAttributeOperator.OnChildClosed.get(parent)?.(child, this);
+		const tokenId = NodeAttributeOperator.CloseOnChildWithTokenClosed.get(parent);
+		if (tokenId === child.tokenId) {
+			this.closeCurrentParent();
+			return;
 		}
+
+		NodeAttributeOperator.OnChildClosed.get(parent)?.(child, this);
 	}
 
+	/**
+	 * invoke the {@link NodeAttributeOperator.OnNodeClosed},
+	 * and invoke the {@link NodePointcutHandler.moveTrailingDetachableNodesToParentOnNodeClosed} when
+	 * {@link NodeAttributeOperator.ElevateTrailingDetachableOnNodeClosed} is not false
+	 */
 	protected onNodeClosed(node: GroovyAstNode): void {
 		NodeAttributeOperator.OnNodeClosed.get(node)?.(node, this);
 		if (NodeAttributeOperator.ElevateTrailingDetachableOnNodeClosed.get(node) ?? true) {

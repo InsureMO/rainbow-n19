@@ -90,18 +90,7 @@ export const NodeAttributeOperator: RecognizerAttrVisitor = {
 	AcceptTokenTypesAsChild: NodeAttributeOperatorHelper.createAttrVisitor<Array<TokenType>>(GroovyAstNodeAttributeNames.ACCEPT_TOKEN_TYPES_AS_CHILD),
 	RejectTokenIdsAsChild: NodeAttributeOperatorHelper.createAttrVisitor<Array<TokenId>>(GroovyAstNodeAttributeNames.REJECT_TOKEN_IDS_AS_CHILD),
 	TakeLBraceAs: NodeAttributeOperatorHelper.createAttrVisitor<TakeSpecificTokenToAnother>(GroovyAstNodeAttributeNames.TAKE_LBRACE_AS),
-	EndWithToken: NodeAttributeOperatorHelper.createAttrVisitor<TokenId>(GroovyAstNodeAttributeNames.END_WITH_TOKEN),
-	EndWithSemicolon: {
-		get: (node: GroovyAstNode): boolean => node.getAttr<TokenId>(GroovyAstNodeAttributeNames.END_WITH_TOKEN) === TokenId.Semicolon,
-		set: (node: GroovyAstNode): RecognizerAttrVisitor => {
-			node.setAttr<TokenId>(GroovyAstNodeAttributeNames.END_WITH_TOKEN, TokenId.Semicolon);
-			return NodeAttributeOperator;
-		},
-		clear: (node: GroovyAstNode): RecognizerAttrVisitor => {
-			node.setAttr<undefined>(GroovyAstNodeAttributeNames.END_WITH_TOKEN, (void 0));
-			return NodeAttributeOperator;
-		}
-	},
+	EndWithAnyOfTokenIds: NodeAttributeOperatorHelper.createAttrVisitor<Array<TokenId>>(GroovyAstNodeAttributeNames.END_WITH_ANY_OF_TOKEN_IDS),
 	CloseOnChildWithTokenClosed: NodeAttributeOperatorHelper.createAttrVisitor<TokenId>(GroovyAstNodeAttributeNames.CLOSE_ON_CHILD_WITH_TOKEN_CLOSED),
 	ElevateTrailingDetachableOnNodeClosed: NodeAttributeOperatorHelper.createAttrVisitor<boolean>(GroovyAstNodeAttributeNames.ELEVATE_TRAILING_DETACHABLE_ON_NODE_CLOSED),
 	clear: (node: GroovyAstNode): RecognizerAttrVisitor => {

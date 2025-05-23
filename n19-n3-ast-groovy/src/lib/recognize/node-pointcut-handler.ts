@@ -1,40 +1,41 @@
 import {GroovyAstNode} from '../node';
 import {TokenId} from '../tokens';
 import {AstRecognizer} from './ast-recognizer';
-import {
-	NodeAttributeOperator,
-	OneOfOnChildAppendedFunc,
-	OneOfOnChildClosedFunc,
-	OnNodeClosedFunc
-} from './node-attribute';
+import {NodeAttributeOperator} from './node-attribute';
 
 export const NodePointcutHandler = {
-	/**
-	 * check the given child node matches the configuration in {@link NodeAttributeOperator.EndWithToken} or not.
-	 * if matched, close current parent and return true.
-	 * if not matched, do nothing and return false.
-	 */
-	endWithToken: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		const tokenId = NodeAttributeOperator.EndWithToken.get(lastChildNode.parent);
-		if (tokenId === lastChildNode.tokenId) {
-			astRecognizer.closeCurrentParent();
-			return true;
+	acceptedBy5BaseNodes: (parent: GroovyAstNode, child: GroovyAstNode): boolean => {
+		const base5Enabled = NodeAttributeOperator.Accept5BaseNodesAsChild.get(parent) ?? true;
+		if (base5Enabled) {
+			return [
+				TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+				TokenId.SingleLineComment, TokenId.MultipleLinesComment
+			].includes(child.tokenId);
+		} else {
+			return false;
 		}
-		return false;
-	}) as OneOfOnChildAppendedFunc,
-	/**
-	 * check the given child node matches the configuration in {@link NodeAttributeOperator.CloseOnChildWithTokenClosed} or not.
-	 * if matched, close current parent and return true.
-	 * if not matched, do nothing and return false.
-	 */
-	closeOnChildWithTokenClosed: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		const tokenId = NodeAttributeOperator.CloseOnChildWithTokenClosed.get(lastChildNode.parent);
-		if (tokenId === lastChildNode.tokenId) {
-			astRecognizer.closeCurrentParent();
-			return true;
+	},
+	acceptedByPresetTokenIds: (parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' => {
+		return NodeAttributeOperator.AcceptTokenIdsAsChild.get(parent)?.includes(child.tokenId) ?? 'ignored';
+	},
+	acceptedByPresetTokenTypes: (parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' => {
+		return NodeAttributeOperator.AcceptTokenTypesAsChild.get(parent)?.includes(child.tokenType) ?? 'ignored';
+	},
+	rejectedByPresetTokenIds: (parent: GroovyAstNode, child: GroovyAstNode): boolean => {
+		return NodeAttributeOperator.RejectTokenIdsAsChild.get(parent)?.includes(child.tokenId) ?? false;
+	},
+	acceptedByTakeLBraceAs: (parent: GroovyAstNode, child: GroovyAstNode): boolean => {
+		const lbraceAsTokenId = NodeAttributeOperator.TakeLBraceAs.get(parent);
+		return lbraceAsTokenId != null && (child.tokenId === lbraceAsTokenId || child.tokenId === TokenId.LBrace);
+	},
+	acceptedByEndTokenIds: (parent: GroovyAstNode, child: GroovyAstNode): boolean | 'ignored' => {
+		const tokenIds = NodeAttributeOperator.EndWithAnyOfTokenIds.get(parent);
+		if (tokenIds == null || tokenIds.length === 0) {
+			return 'ignored';
+		} else {
+			return tokenIds.includes(child.tokenId);
 		}
-		return false;
-	}) as OneOfOnChildClosedFunc,
+	},
 	/**
 	 * move all trailing detachable nodes to parent when node closed,
 	 * typically, detachable nodes includes:
@@ -46,7 +47,7 @@ export const NodePointcutHandler = {
 	 *
 	 * nodes before first newline treated as undetachable, which means they still belongs to original parent.
 	 */
-	moveTrailingDetachableNodesToParentOnNodeClosed: ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+	moveTrailingDetachableNodesToParentOnNodeClosed: (node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const {children = []} = node;
 		let removeNodes: Array<GroovyAstNode> = [];
 		let firstNewLineIndex = -1;
@@ -70,5 +71,5 @@ export const NodePointcutHandler = {
 			removeNodes = removeNodes.slice(firstNewLineIndex);
 			astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
 		}
-	}) as OnNodeClosedFunc
+	}
 };

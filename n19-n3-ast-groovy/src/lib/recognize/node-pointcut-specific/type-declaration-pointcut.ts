@@ -35,7 +35,7 @@ export class TypeDeclarationPointcuts {
 
 	// standard behaviors of type declaration, node must be one of 6 type declarations.
 	// TODO 6 type keywords should be added into acceptable token ids?
-	static readonly StandardTypeChildAcceptTokenIds = [
+	static readonly StandardTypeChildAcceptTokenIds: [TokenId, ...Array<TokenId>] = [
 		TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE,
 		TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
 		TokenId.ABSTRACT,
