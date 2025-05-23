@@ -198,38 +198,37 @@ export class CaptorDelegate {
 				if (char === '$') {
 					// there are 2 possibilities:
 					// 1. LtDollarSlashyGStringDollarEscapeCaptor (the next char is still $)
-					// 2. LtGStringInterpolationSymbolCaptor (if the next char is not $)
+					// 2. LtGStringInterpolationStartMarkCaptor (if the next char is not $)
 					let winner: AstNodeCaptor;
 					const nextChar = tokenizer.charAt(offset + 1);
 					if (nextChar === '$') {
-						// must be LtDollarSlashyGStringDollarEscapeCaptor
+						// Identifier or LtDollarSlashyGStringDollarEscapeCaptor
 						// compare the next char of next char
 						const nextCharOfNext = tokenizer.charAt(offset + 2);
 						if (nextCharOfNext == null) {
-							// no more char
-							// LtGStringInterpolationSymbolCaptor wins
-							winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationSymbolCaptor');
+							// no more char, is $$
+							// LtDollarSlashyGStringDollarEscapeCaptor wins
+							winner = captors.find(captor => captor.constructor.name === 'LtDollarSlashyGStringDollarEscapeCaptor');
 						} else {
 							if (Character.isJavaIdentifierPartAndNotIdentifierIgnorable(nextCharOfNext.codePointAt(0))) {
-								// identifier wins
+								// $$a, $$b, $$1, $$2, etc., identifier wins
 								winner = captors[identifierCaptorIndex];
 							} else {
-								// LtGStringInterpolationSymbolCaptor wins
-								winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationSymbolCaptor');
+								// LtDollarSlashyGStringDollarEscapeCaptor wins
+								winner = captors.find(captor => captor.constructor.name === 'LtDollarSlashyGStringDollarEscapeCaptor');
 							}
 						}
 					} else if (nextChar == null) {
-						// no more char
-						// LtGStringInterpolationSymbolCaptor wins
-						winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationSymbolCaptor');
+						// no more char, $, LtGStringInterpolationStartMarkCaptor wins
+						winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationStartMarkCaptor');
 					} else {
-						// must be LtGStringInterpolationSymbolCaptor
+						// Identifier or LtGStringInterpolationStartMarkCaptor
 						if (Character.isJavaIdentifierPartAndNotIdentifierIgnorable(nextChar.codePointAt(0))) {
-							// identifier wins
+							// $a, $b, $1, $2, etc., identifier wins
 							winner = captors[identifierCaptorIndex];
 						} else {
-							// LtGStringInterpolationSymbolCaptor wins
-							winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationSymbolCaptor');
+							// LtGStringInterpolationStartMarkCaptor wins
+							winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationStartMarkCaptor');
 						}
 					}
 					if (captors.length > 2) {

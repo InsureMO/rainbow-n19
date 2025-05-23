@@ -8,14 +8,16 @@ const readFileAsText = (filePath: string): string => {
 	return fs.readFileSync(absolutePath, 'utf8');
 };
 
-const parseAst = (text: string) => {
-	const start = process.hrtime();
-	for (let i = 0; i < 100; i++) {
-		GroovyAstBuilder.ast(text, {timeSpentLogEnabled: false});
+const parseAst = (text: string, loop: boolean = true) => {
+	if (loop) {
+		const start = process.hrtime();
+		for (let i = 0; i < 100; i++) {
+			GroovyAstBuilder.ast(text, {timeSpentLogEnabled: false});
+		}
+		const end = process.hrtime(start);
+		const spent = (end[0] * 1e9 + end[1]) / 1_000_000 / 100;
+		console.log(`Spent ${spent}ms each time.`);
 	}
-	const end = process.hrtime(start);
-	const spent = (end[0] * 1e9 + end[1]) / 1_000_000 / 100;
-	console.log(`Spent ${spent}ms each time.`);
 	const ast = GroovyAstBuilder.ast(text);
 	console.log(`Token count: ${ast.compilationUnit.children.length}`);
 };
