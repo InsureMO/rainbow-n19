@@ -8,18 +8,27 @@ export interface GroovyAstBuildOptions extends AstTokenizerOptions, AstRecognize
 
 export class GroovyAstBuilderInstance implements AstBuilder {
 	private logTimeSpent(document: string, options?: GroovyAstBuildOptions): GroovyAst {
-		const label: string = `Parse source[length=${(document ?? '').length}]`;
-		console.time(label);
+		let ast: GroovyAst;
+		let label = `Tokenize[chars=${(document ?? '').length}]`;
 		try {
-			return this.doAst(document, options);
+			console.time(label);
+			ast = AstTokenizer.visit(document, options);
 		} finally {
 			console.timeEnd(label);
 		}
+
+		label = `Recognize[tokens=${ast.compilationUnit.children?.length ?? 0}]`;
+		try {
+			console.time(label);
+			new AstRecognizer(options).recognize(ast);
+		} finally {
+			console.timeEnd(label);
+		}
+		return ast;
 	}
 
 	protected doAst(document: string, options?: GroovyAstBuildOptions): GroovyAst {
 		const ast = AstTokenizer.visit(document, options);
-		// recognize nodes structure
 		new AstRecognizer(options).recognize(ast);
 		return ast;
 	}
