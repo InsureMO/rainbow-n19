@@ -6,6 +6,6 @@ export * from './ast-holder';
 
 export * from './node';
 export * from './captor';
-export * from './recognizer';
+export * from './recognize';
 
 export * from './ast-utils';

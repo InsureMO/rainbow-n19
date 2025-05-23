@@ -1,7 +1,7 @@
 import {AstBuilder, AstBuildOptions} from '@rainbow-n19/n3-ast';
 import {GroovyAst} from './ast';
 import {AstTokenizer, AstTokenizerOptions} from './captor';
-import {AstRecognizer, AstRecognizerOptions} from './recognizer';
+import {AstRecognizer, AstRecognizerOptions} from './recognize';
 
 export interface GroovyAstBuildOptions extends AstTokenizerOptions, AstRecognizerOptions, AstBuildOptions {
 }
