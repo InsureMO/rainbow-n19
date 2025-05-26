@@ -11,7 +11,7 @@ export interface GroovyAstNodeConstructOptions extends Omit<AstNodeConstructOpti
 export class GroovyAstNode implements AstNode {
 	private _tokenId: TokenId;
 	private _tokenType: TokenType;
-	private _text: string;
+	protected _text: string;
 	private readonly _startOffset: number;
 	private _endOffset: number;
 	private readonly _startLine: number;
@@ -74,7 +74,14 @@ export class GroovyAstNode implements AstNode {
 	}
 
 	get text(): string {
-		return this._text ?? '';
+		const children = this.children;
+		if (children.length === 0) {
+			// leaf node
+			return this._text ?? '';
+		} else {
+			// container node
+			return this.root.text.slice(this._startOffset, this._endOffset);
+		}
 	}
 
 	get startOffset(): number {
@@ -208,10 +215,21 @@ export class GroovyAstNode implements AstNode {
 		if (text == null || text.length === 0) {
 			return;
 		}
-		this._text = this._text + text;
-		this._endOffset = this._startOffset + this._text.length;
-		// also change parent's text and offset
-		this.parent?.appendText(text);
+		if (this.children.length === 0) {
+			// leaf node
+			this._text = this._text + text;
+			this._endOffset = this._startOffset + this._text.length;
+			// also change parent's text and offset
+			this.parent?.appendText(text);
+		} else {
+			// container node
+			this.expandEndOffset(text.length);
+		}
+	}
+
+	protected expandEndOffset(length: number): void {
+		this._endOffset += length;
+		this.parent?.expandEndOffset(length);
 	}
 
 	/**
@@ -222,8 +240,14 @@ export class GroovyAstNode implements AstNode {
 		if (length <= 0) {
 			return;
 		}
-		this._text = this._text.slice(0, -length);
-		this._endOffset = this._startOffset + this._text.length;
+		if (this.children.length === 0) {
+			// leaf node
+			this._text = this._text.slice(0, -length);
+			this._endOffset = this._startOffset + this._text.length;
+		} else {
+			// container node
+			this._endOffset -= length;
+		}
 		// also change parent's text and offset
 		this.parent?.chopOffTrailingText(length);
 	}

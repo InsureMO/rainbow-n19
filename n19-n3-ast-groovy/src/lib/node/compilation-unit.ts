@@ -6,6 +6,8 @@ import {GroovyAstNode} from './groovy-node';
  * compilation unit, root.
  */
 export class CompilationUnitNode extends GroovyAstNode implements ProgramNode {
+	private _accomplished: boolean = false;
+
 	constructor(options: Omit<AstNodeConstructOptions, 'startLine'>) {
 		super({
 			...options,
@@ -14,7 +16,19 @@ export class CompilationUnitNode extends GroovyAstNode implements ProgramNode {
 		});
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	get accomplished(): boolean {
+		return this._accomplished;
+	}
+
+	accomplish(): void {
+		this._accomplished = true;
+	}
+
+	get text(): string {
+		return this._text;
+	}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	replaceTokenNature(_tokenId: TokenId, _tokenType: TokenType) {
 		// do nothing
 	}
@@ -71,6 +85,14 @@ export class CompilationUnitNode extends GroovyAstNode implements ProgramNode {
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	appendText(_text: string): void {
+		// do nothing
+	}
+
+	/**
+	 * do nothing, text of this is frozen on constructing
+	 */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	protected expandEndOffset(_length: number) {
 		// do nothing
 	}
 
