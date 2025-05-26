@@ -141,8 +141,16 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 	[TokenId.MultipleLinesCommentEndMark]: 'NotRequired',
 	// number literal
 	[TokenId.NumericBasePart]: 'TODO',
-	[TokenId.BinaryStartMark]: 'TODO',
-	[TokenId.HexadecimalStartMark]: 'TODO',
+	[TokenId.BinaryStartMark]: {
+		name: 'LtBinary',
+		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
+		declareAsParent: [[TokenId.BinaryLiteral, TokenType.NumberLiteral]]
+	},
+	[TokenId.HexadecimalStartMark]: {
+		name: 'LtHexadecimal',
+		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
+		declareAsParent: [[TokenId.HexadecimalLiteral, TokenType.NumberLiteral]]
+	},
 	// boolean literal
 	[TokenId.BooleanTrue]: 'NotRequired',
 	[TokenId.BooleanFalse]: 'NotRequired',

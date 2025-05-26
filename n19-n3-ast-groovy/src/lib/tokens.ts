@@ -74,7 +74,6 @@ export enum TokenId {
 	// numeric
 	NumericSignPart, // + or -
 	NumericBasePart, // numbers
-	NumericUnderscorePart, // _ between numbers, could be multiple times
 	NumericSuffixPart, // gG: BigInteger/BigDecimal, lL: Long, iI: Integer, dD: double, fF: float
 	BinaryStartMark, // 0b of [+-]0b...
 	BinaryLiteral, // [+-]0b..., "..." means numbers
