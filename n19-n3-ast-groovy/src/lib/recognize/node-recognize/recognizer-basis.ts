@@ -34,15 +34,15 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 			[TokenId.CodeBlock, TokenType.LogicBlock]
 		]
 	},
-	[TokenId.RBrace]: 'TODO',
+	[TokenId.RBrace]: 'NotRequired',
 	[TokenId.LParen]: {
 		name: 'SpLParen',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
 		declareAsParent: [[TokenId.ParenBlock, TokenType.LogicBlock]]
 	},
-	[TokenId.RParen]: 'TODO',
+	[TokenId.RParen]: 'NotRequired',
 	[TokenId.LBrack]: 'TODO',
-	[TokenId.RBrack]: 'TODO',
+	[TokenId.RBrack]: 'NotRequired',
 	[TokenId.At]: {
 		name: 'SpAt',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
@@ -56,9 +56,9 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 			}
 		]
 	},
-	[TokenId.Semicolon]: 'TODO',
-	[TokenId.Comma]: 'TODO',
-	[TokenId.Dot]: 'TODO',
+	[TokenId.Semicolon]: 'NotRequired',
+	[TokenId.Comma]: 'NotRequired',
+	[TokenId.Dot]: 'NotRequired',
 	// operators
 	[TokenId.RangeInclusive]: 'TODO',
 	[TokenId.RangeExclusiveLeft]: 'TODO',
@@ -140,17 +140,10 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 	},
 	[TokenId.MultipleLinesCommentEndMark]: 'NotRequired',
 	// number literal
-	[TokenId.NumericBasePart]: 'TODO',
-	[TokenId.BinaryStartMark]: {
-		name: 'LtBinary',
-		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
-		declareAsParent: [[TokenId.BinaryLiteral, TokenType.NumberLiteral]]
-	},
-	[TokenId.HexadecimalStartMark]: {
-		name: 'LtHexadecimal',
-		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
-		declareAsParent: [[TokenId.HexadecimalLiteral, TokenType.NumberLiteral]]
-	},
+	[TokenId.NumericBasePart]: 'NotRequired',
+	[TokenId.BinaryStartMark]: 'NotRequired',
+	[TokenId.OctalStartMark]: 'NotRequired',
+	[TokenId.HexadecimalStartMark]: 'NotRequired',
 	// boolean literal
 	[TokenId.BooleanTrue]: 'NotRequired',
 	[TokenId.BooleanFalse]: 'NotRequired',

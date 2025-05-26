@@ -93,8 +93,6 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 		LtNumericBasePartCaptorStartsWith9,
 		LtNumericBasePartCaptorStartsWithDot
 	]],
-	[TokenId.BinaryStartMark]: [Tt.Nl, KwLt.BinaryStartMark, 'LtBinaryStartMark'],
-	[TokenId.HexadecimalStartMark]: [Tt.Nl, KwLt.HexadecimalStartMark, 'LtHexadecimalStartMark'],
 	// string and gstring
 	[TokenId.StringQuotationMark]: [Tt.Sl, KwLt.StringQuotationMark, 'LtStringQuotationMark'],
 	[TokenId.StringQuotationMarkML]: [Tt.Sl, KwLt.StringQuotationMarkML, 'LtStringQuotationMarkML'],

@@ -6,9 +6,6 @@ import {isNumeric} from './captor-func-checkers';
 import {Char} from './types';
 import {AstChars} from './util';
 
-/**
- * starts from "0-9", and following chars are "0-9", "_" or ".". "." could appear only once.
- */
 export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends AbstractAstNodeCaptor {
 	private readonly _numericChecker: AstNodeCaptorCharCheck;
 

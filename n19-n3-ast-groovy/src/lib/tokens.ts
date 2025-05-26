@@ -75,14 +75,14 @@ export enum TokenId {
 	NumericSignPart, // + or -
 	NumericBasePart, // numbers
 	NumericSuffixPart, // gG: BigInteger/BigDecimal, lL: Long, iI: Integer, dD: double, fF: float
-	BinaryStartMark, // 0b of [+-]0b...
+	BinaryStartMark, // 0b/0B of [+-]0b...
 	BinaryLiteral, // [+-]0b..., "..." means numbers
 	OctalStartMark, // 0 of [+-]0...
 	OctalLiteral, // [+-]0..., "..." means numbers
-	HexadecimalStartMark, // 0x of [+-]0x...
+	HexadecimalStartMark, // 0x/0X of [+-]0x...
 	HexadecimalLiteral, // [+-]0x..., "..." means numbers
 	IntegralLiteral, // [+-]..., "..." means numbers
-	DecimalExponentSymbol, // E or e
+	DecimalExponentSymbol, // e/E
 	DecimalExponentPart, // [+-]..., "..." means numbers. exponent part of decimal literal, after symbol
 	DecimalLiteral, // [+-]..., "..." means float, double or exponent number
 	// char

@@ -1,8 +1,6 @@
 export enum AstLiterals {
 	TRUE = 'true',
 	FALSE = 'false',
-	BinaryStartMark = '0b',
-	HexadecimalStartMark = '0x',
 	StringQuotationMark = '\'',
 	StringQuotationMarkML = '\'\'\'',
 	StringBackspaceEscape = '\\b',
