@@ -11,7 +11,7 @@ export interface GroovyAstNodeConstructOptions extends Omit<AstNodeConstructOpti
 export class GroovyAstNode implements AstNode {
 	private _tokenId: TokenId;
 	private _tokenType: TokenType;
-	protected _text: string;
+	private _text: string;
 	private readonly _startOffset: number;
 	private _endOffset: number;
 	private readonly _startLine: number;
@@ -71,6 +71,14 @@ export class GroovyAstNode implements AstNode {
 
 	clearAttrs(): void {
 		this._extraAttrs = {};
+	}
+
+	/**
+	 * get field {@link _text} directly.
+	 * it should be used only when node is leaf, otherwise it will return an empty string.
+	 */
+	protected get internalText(): string {
+		return this._text ?? '';
 	}
 
 	get text(): string {
