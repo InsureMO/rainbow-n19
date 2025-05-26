@@ -6,45 +6,234 @@ import {isNumeric} from './captor-func-checkers';
 import {Char} from './types';
 import {AstChars} from './util';
 
-export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends AbstractAstNodeCaptor {
-	private readonly _numericChecker: AstNodeCaptorCharCheck;
-
-	protected constructor(number: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9') {
-		super();
-		this._numericChecker = number;
+export abstract class AbstractLtNumericBasePartCaptor extends AbstractAstNodeCaptor {
+	protected cutoffTrailingUnderscoreChars(text: string): string {
+		let trailingUnderscoreCount = 0;
+		for (let i = text.length - 1; i > 0; i--) {
+			if (text[i] === '_') {
+				trailingUnderscoreCount++;
+			} else {
+				break;
+			}
+		}
+		return text.slice(0, -trailingUnderscoreCount);
 	}
 
-	checkers(): AstNodeCaptorCheckers {
-		return this._numericChecker;
+	/**
+	 * binary number starts with "0b" or "0B",
+	 * 1. only 0 & 1, 3rd char must be one of 0 or 1,
+	 * 2. no dot,
+	 * 3. no e/E,
+	 * 4. cannot end with underscore,
+	 * 5. suffix is one of iIlLgG,
+	 * 6. suffix cannot after underscore directly,
+	 * starts from offset + 2
+	 */
+	protected tryToVisitAsBinary(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
+		const char3 = tokenizer.charAt(offsetOfGiven + 2);
+		if (char3 === '0' || char3 === '1') {
+			// is binary, continue to visit
+			let text = given + char3;
+			let offset = offsetOfGiven + 3;
+			let lastChar = char3;
+			let char = tokenizer.charAt(offset);
+			while (true) {
+				if (char3 === '0' || char3 === '1' || char3 === '_') {
+					offset = offset + 1;
+					text = text + char;
+					lastChar = char;
+					char = tokenizer.charAt(offset);
+				} else if ('iIlLgG'.includes(char)) {
+					if (lastChar === '_') {
+						// last char is underscore, which is not allowed
+						break;
+					} else {
+						// suffix found, end
+						offset = offset + 1;
+						text = text + char;
+						break;
+					}
+				} else {
+					break;
+				}
+			}
+			text = this.cutoffTrailingUnderscoreChars(text);
+			this.createAndAppendToAst(tokenizer, {
+				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+				text, startOffset: offsetOfGiven
+			});
+			tokenizer.moveCursorTo(offset);
+		} else {
+			// not binary, just collect to first 0
+			this.createAndAppendToAst(tokenizer, {
+				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+				text: given, startOffset: offsetOfGiven
+			});
+			tokenizer.moveCursorTo(offsetOfGiven + 1);
+		}
 	}
 
-	visit(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
+	/**
+	 * hexadecimal number starts with "0x" or "0X",
+	 * 1. only 0-9a-fA-F, 3rd char must be one of 0-9a-fA-F,
+	 * 2. no dot,
+	 * 3. no e/E,
+	 * 4. cannot end with underscore,
+	 * 5. suffix is one of iIlLgG,
+	 * 6. suffix cannot after underscore directly,
+	 * starts from offset + 2
+	 */
+	protected tryToVisitAsHexadecimal(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
+		const char3 = tokenizer.charAt(offsetOfGiven + 2);
+		if ('0123456789abcdefABCDEF'.includes(char3)) {
+			// is binary, continue to visit
+			let text = given + char3;
+			let offset = offsetOfGiven + 3;
+			let lastChar = char3;
+			let char = tokenizer.charAt(offset);
+			while (true) {
+				if ('0123456789abcdefABCDEF_'.includes(char)) {
+					offset = offset + 1;
+					text = text + char;
+					lastChar = char;
+					char = tokenizer.charAt(offset);
+				} else if ('iIlLgG'.includes(char)) {
+					if (lastChar === '_') {
+						// last char is underscore, which is not allowed
+						break;
+					} else {
+						// suffix found, end
+						offset = offset + 1;
+						text = text + char;
+						break;
+					}
+				} else {
+					break;
+				}
+			}
+			text = this.cutoffTrailingUnderscoreChars(text);
+			this.createAndAppendToAst(tokenizer, {
+				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+				text, startOffset: offsetOfGiven
+			});
+			tokenizer.moveCursorTo(offset);
+		} else {
+			// not hexadecimal, just collect to first 0
+			this.createAndAppendToAst(tokenizer, {
+				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+				text: given, startOffset: offsetOfGiven
+			});
+			tokenizer.moveCursorTo(offsetOfGiven + 1);
+		}
+	}
+
+	/**
+	 * 1. only 0-9,
+	 * 2. zero or one dot,
+	 * 3. zero or one e/E,
+	 * 4. cannot end with dot or underscore,
+	 * 5. underscore cannot around dot or e/E.
+	 * 6. if there is one dot, suffix is one of fFdDgG; otherwise suffix is one of iIlLgG.
+	 * starts with offset + 1
+	 */
+	protected tryToVisitAsDecimalOrOctal(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
+		let hasDot = given === AstChars.Dot;
+		let hasExponent = false;
+
 		// starts from next character
 		let offset = offsetOfGiven + 1;
-		let c = tokenizer.charAt(offset);
+		let lastChar = given;
+		let char = tokenizer.charAt(offset);
 		let text = given;
-		let hasDot = false;
-		while (c != null) {
-			if (c === AstChars.Dot) {
+		while (char != null) {
+			if ('0123456789'.includes(char)) {
+				offset += 1;
+				text = text + char;
+				lastChar = char;
+				char = tokenizer.charAt(offset);
+			} else if (char === '_') {
+				if (lastChar === AstChars.Dot || lastChar === 'e' || lastChar === 'E') {
+					break;
+				} else {
+					offset += 1;
+					text = text + char;
+					lastChar = char;
+					char = tokenizer.charAt(offset);
+				}
+			} else if (char === AstChars.Dot) {
 				if (hasDot) {
+					break;
+				} else if (lastChar === '_') {
+					// last char is underscore, which is not allowed
+					break;
+				} else if (lastChar === 'e' || lastChar === 'E') {
+					// last char is e or E, which is not allowed
 					break;
 				} else {
 					hasDot = true;
-					const nc = tokenizer.charAt(offset + 1);
-					if ('0123456789'.includes(c)) {
-						offset += 2;
-						text = text + AstChars.Dot + nc;
-						c = tokenizer.charAt(offset);
-					} else {
-						// the next char after dot is not 0-9, which means the dot is a dot to get property or something
-						// e.g. 1._1 means get _1 from 1, dot is not a decimal point in this case.
-						break;
+					offset += 1;
+					text = text + char;
+					lastChar = char;
+					char = tokenizer.charAt(offset);
+				}
+			} else if (char === 'e' || char === 'E') {
+				if (hasExponent) {
+					// has exponent already, which is not allowed
+					break;
+				} else if (lastChar === '_') {
+					// last char is underscore, which is not allowed
+					break;
+				} else if (lastChar === AstChars.Dot) {
+					// last char is dot, which is not allowed
+					break;
+				} else {
+					hasExponent = true;
+					offset += 1;
+					text = text + char;
+					lastChar = char;
+					char = tokenizer.charAt(offset);
+					if (char === '+' || char === '-') {
+						offset += 1;
+						text = text + char;
+						lastChar = char;
+						char = tokenizer.charAt(offset);
 					}
 				}
-			} else if ('0123456789_'.includes(c)) {
-				offset += 1;
-				text = text + c;
-				c = tokenizer.charAt(offset);
+			} else if ('iIlL'.includes(char)) {
+				if (lastChar === '_') {
+					// last char is underscore, which is not allowed
+					break;
+				} else if (lastChar === AstChars.Dot) {
+					// last char is dot, which is not allowed
+					break;
+				} else if (lastChar === 'e' || lastChar === 'E') {
+					// last char is e or E, which is not allowed
+					break;
+				} else if (hasDot) {
+					// has dot already, which is now allowed
+					break;
+				} else {
+					// suffix found, end
+					offset += 1;
+					text = text + char;
+					break;
+				}
+			} else if ('fFdDgG'.includes(char)) {
+				if (lastChar === '_') {
+					// last char is underscore, which is not allowed
+					break;
+				} else if (lastChar === AstChars.Dot) {
+					// last char is dot, which is not allowed
+					break;
+				} else if (lastChar === 'e' || lastChar === 'E') {
+					// last char is e or E, which is not allowed
+					break;
+				} else {
+					// suffix found, end
+					offset += 1;
+					text = text + char;
+					break;
+				}
 			} else {
 				break;
 			}
@@ -56,6 +245,36 @@ export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends Ab
 		});
 		// move cursor
 		tokenizer.moveCursorTo(offset);
+	}
+}
+
+export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends AbstractLtNumericBasePartCaptor {
+	protected readonly _numericChecker: AstNodeCaptorCharCheck;
+
+	protected constructor(number: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9') {
+		super();
+		this._numericChecker = number;
+	}
+
+	checkers(): AstNodeCaptorCheckers {
+		return this._numericChecker;
+	}
+
+	visit(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
+		if (given === '0') {
+			const nextChar = tokenizer.charAt(offsetOfGiven + 1);
+			if (nextChar === 'b' || nextChar === 'B') {
+				// 0b or 0B, which is a binary number
+				this.tryToVisitAsBinary(given, offsetOfGiven, tokenizer);
+			} else if (nextChar === 'x' || nextChar === 'X') {
+				// 0x or 0X, which is a hexadecimal number
+				this.tryToVisitAsHexadecimal(given, offsetOfGiven, tokenizer);
+			} else {
+				this.tryToVisitAsDecimalOrOctal(given, offsetOfGiven, tokenizer);
+			}
+		} else {
+			this.tryToVisitAsDecimalOrOctal(given, offsetOfGiven, tokenizer);
+		}
 	}
 }
 
@@ -122,7 +341,7 @@ export class LtNumericBasePartCaptorStartsWith9 extends AbstractLtNumericBasePar
 /**
  * starts from ".", next char is "0-9", and following chars are "0-9" or "_".
  */
-export class LtNumericBasePartCaptorStartsWithDot extends AbstractAstNodeCaptor {
+export class LtNumericBasePartCaptorStartsWithDot extends AbstractLtNumericBasePartCaptor {
 	private readonly _checkers: AstNodeCaptorCharsCheckers = [AstChars.Dot, isNumeric];
 
 	checkers(): AstNodeCaptorCheckers {
@@ -130,25 +349,6 @@ export class LtNumericBasePartCaptorStartsWithDot extends AbstractAstNodeCaptor 
 	}
 
 	visit(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
-		// starts from next character
-		let offset = offsetOfGiven + 1;
-		let c = tokenizer.charAt(offset);
-		let text = given;
-		while (c != null) {
-			if ('0123456789_'.includes(c)) {
-				offset += 1;
-			} else {
-				break;
-			}
-			text = text + c;
-			c = tokenizer.charAt(offset);
-		}
-
-		this.createAndAppendToAst(tokenizer, {
-			tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
-			text, startOffset: offsetOfGiven
-		});
-		// move cursor
-		tokenizer.moveCursorTo(offset);
+		this.tryToVisitAsDecimalOrOctal(given, offsetOfGiven, tokenizer);
 	}
 }
