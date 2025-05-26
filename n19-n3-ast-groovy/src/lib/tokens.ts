@@ -82,7 +82,7 @@ export enum TokenId {
 	HexadecimalStartMark, // 0x/0X of [+-]0x...
 	HexadecimalLiteral, // [+-]0x..., "..." means numbers
 	IntegralLiteral, // [+-]..., "..." means numbers
-	DecimalExponentSymbol, // e/E
+	DecimalExponentMark, // e/E
 	DecimalExponentPart, // [+-]..., "..." means numbers. exponent part of decimal literal, after symbol
 	DecimalLiteral, // [+-]..., "..." means float, double or exponent number
 	// char

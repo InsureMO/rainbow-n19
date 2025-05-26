@@ -140,10 +140,14 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 	},
 	[TokenId.MultipleLinesCommentEndMark]: 'NotRequired',
 	// number literal
+	[TokenId.NumericSignPart]: 'NotRequired',
 	[TokenId.NumericBasePart]: 'NotRequired',
+	[TokenId.NumericSuffixPart]: 'NotRequired',
 	[TokenId.BinaryStartMark]: 'NotRequired',
 	[TokenId.OctalStartMark]: 'NotRequired',
 	[TokenId.HexadecimalStartMark]: 'NotRequired',
+	[TokenId.DecimalExponentMark]: 'NotRequired',
+	[TokenId.DecimalExponentPart]: 'NotRequired',
 	// boolean literal
 	[TokenId.BooleanTrue]: 'NotRequired',
 	[TokenId.BooleanFalse]: 'NotRequired',
