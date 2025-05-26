@@ -509,6 +509,8 @@ export const buildNodePointcut = (def: PointcutBasisDef) => {
 				NodeAttributeOperator.CloseOnChildWithTokenClosed.set(node, asTokenId);
 				takeLBraceAs = true;
 				closeOnChildWithTokenClosed = true;
+			} else if (type === PointcutBasisDefType.DisableElevateTrailingDetachable) {
+				NodeAttributeOperator.ElevateTrailingDetachableOnNodeClosed.set(node, false);
 			} else {
 				// Unknown type
 				throw new Error(`Pointcut basis definition type[${type}] is not supported yet.`);
