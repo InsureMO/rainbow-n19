@@ -141,9 +141,9 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	[TokenId.SlashyGStringLiteral]: 'TODO',
 	[TokenId.DollarSlashyGStringLiteral]: 'TODO',
 	// statement
-	[TokenId.SingleLineComment]: 'TODO',
-	[TokenId.MultipleLinesComment]: 'TODO',
-	[TokenId.ScriptCommand]: 'TODO',
+	[TokenId.SingleLineComment]: 'NotRequired',
+	[TokenId.MultipleLinesComment]: 'NotRequired',
+	[TokenId.ScriptCommand]: 'NotRequired',
 	[TokenId.PackageDeclaration]: [
 		// newline and sl comments is not allowed
 		DisableBase5AsChild,
