@@ -1,6 +1,6 @@
 import {TokenId, TokenType} from '../../tokens';
 import {
-	RecognizerMultipleLinesComments,
+	MultipleLinesCommentsRecognizer, NumericBasePartRecognizer,
 	ScriptCommandRecognizer,
 	SingleLineCommentsRecognizer
 } from '../node-recognize-specific';
@@ -135,13 +135,16 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral]
 	},
 	[TokenId.MultipleLinesCommentStartMark]: {
-		name: 'MultipleLinesComments', class: RecognizerMultipleLinesComments,
+		name: 'MultipleLinesComments', class: MultipleLinesCommentsRecognizer,
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral]
 	},
 	[TokenId.MultipleLinesCommentEndMark]: 'NotRequired',
 	// number literal
 	[TokenId.NumericSignPart]: 'NotRequired',
-	[TokenId.NumericBasePart]: 'NotRequired',
+	[TokenId.NumericBasePart]: {
+		name: 'LtNumericBasePart', class: NumericBasePartRecognizer,
+		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral]
+	},
 	[TokenId.NumericSuffixPart]: 'NotRequired',
 	[TokenId.BinaryStartMark]: 'NotRequired',
 	[TokenId.OctalStartMark]: 'NotRequired',

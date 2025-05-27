@@ -127,11 +127,11 @@ export type PointcutBasisDefs = PointcutBasisDef | 'TODO' | 'NotRequired';
 
 export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDefs }>> = {
 	// number literal
-	[TokenId.BinaryLiteral]: 'TODO',
-	[TokenId.OctalLiteral]: 'TODO',
-	[TokenId.HexadecimalLiteral]: 'TODO',
-	[TokenId.IntegralLiteral]: 'TODO',
-	[TokenId.DecimalLiteral]: 'TODO',
+	[TokenId.BinaryLiteral]: 'NotRequired',
+	[TokenId.OctalLiteral]: 'NotRequired',
+	[TokenId.HexadecimalLiteral]: 'NotRequired',
+	[TokenId.IntegralLiteral]: 'NotRequired',
+	[TokenId.DecimalLiteral]: 'NotRequired',
 	// char literal
 	[TokenId.CharLiteral]: 'TODO',
 	// string literal

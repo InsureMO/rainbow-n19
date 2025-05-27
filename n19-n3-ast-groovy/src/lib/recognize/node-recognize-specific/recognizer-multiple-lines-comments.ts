@@ -12,7 +12,7 @@ import {
 } from '../node-recognize';
 import {AbstractNodeRecognizer} from './abstract-recognizer';
 
-export abstract class RecognizerMultipleLinesComments extends AbstractNodeRecognizer {
+export abstract class MultipleLinesCommentsRecognizer extends AbstractNodeRecognizer {
 	acceptTokenId(): TokenId {
 		return TokenId.MultipleLinesCommentStartMark;
 	}
