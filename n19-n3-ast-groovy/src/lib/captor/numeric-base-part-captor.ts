@@ -16,7 +16,7 @@ export abstract class AbstractLtNumericBasePartCaptor extends AbstractAstNodeCap
 				break;
 			}
 		}
-		return text.slice(0, -trailingUnderscoreCount);
+		return trailingUnderscoreCount === 0 ? text : text.slice(0, -trailingUnderscoreCount);
 	}
 
 	protected cutoffTrailingDotExponentUnderscorePlusMinusChars(text: string): string {
@@ -33,7 +33,8 @@ export abstract class AbstractLtNumericBasePartCaptor extends AbstractAstNodeCap
 					break;
 			}
 		}
-		return text.slice(0, -trailingCharCount);
+
+		return trailingCharCount === 0 ? text : text.slice(0, -trailingCharCount);
 	}
 
 	/**
