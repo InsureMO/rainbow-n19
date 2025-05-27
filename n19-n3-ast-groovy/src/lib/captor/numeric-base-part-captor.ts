@@ -47,11 +47,11 @@ export abstract class AbstractLtNumericBasePartCaptor extends AbstractAstNodeCap
 	 * 6. suffix cannot after underscore directly,
 	 * starts from offset + 2
 	 */
-	protected tryToVisitAsBinary(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
+	protected tryToVisitAsBinary(given: Char, next: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
 		const char3 = tokenizer.charAt(offsetOfGiven + 2);
 		if (char3 === '0' || char3 === '1') {
 			// is binary, continue to visit
-			let text = given + char3;
+			let text = given + next + char3;
 			let offset = offsetOfGiven + 3;
 			let lastChar = char3;
 			let char = tokenizer.charAt(offset);
@@ -115,7 +115,7 @@ export abstract class AbstractLtNumericBasePartCaptor extends AbstractAstNodeCap
 	 * 6. suffix cannot after underscore directly,
 	 * starts from offset + 2
 	 */
-	protected tryToVisitAsHexadecimal(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
+	protected tryToVisitAsHexadecimal(given: Char, next: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
 		const char3 = tokenizer.charAt(offsetOfGiven + 2);
 		switch (char3) {
 			// 0-9, a-f, A-F @formatter:off
@@ -124,7 +124,7 @@ export abstract class AbstractLtNumericBasePartCaptor extends AbstractAstNodeCap
 			case 'A': case 'B': case 'C': case 'D': case 'E': case 'F': {
 				// @formatter:on
 				// is binary, continue to visit
-				let text = given + char3;
+				let text = given + next + char3;
 				let offset = offsetOfGiven + 3;
 				let lastChar: string = char3;
 				let char = tokenizer.charAt(offset);
@@ -348,12 +348,12 @@ export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends Ab
 				// @formatter:off
 				case 'b': case 'B': {
 					// 0b or 0B, which is a binary number
-					this.tryToVisitAsBinary(given, offsetOfGiven, tokenizer);
+					this.tryToVisitAsBinary(given,nextChar, offsetOfGiven, tokenizer);
 					break;
 				}
 				case 'x': case 'X': {
 					// 0x or 0X, which is a hexadecimal number
-					this.tryToVisitAsHexadecimal(given, offsetOfGiven, tokenizer);
+					this.tryToVisitAsHexadecimal(given,nextChar, offsetOfGiven, tokenizer);
 					break;
 				}
 				default: {
