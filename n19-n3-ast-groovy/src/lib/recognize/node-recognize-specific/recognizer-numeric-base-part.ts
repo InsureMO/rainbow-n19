@@ -26,11 +26,36 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 		return TokenId.NumericBasePart;
 	}
 
+	protected appendCharToIntegralGroup(groupIndex: number, groups: NumericGroups, char: string): void {
+		switch (groupIndex) {
+			case 0: {
+				groups.integral.push(char);
+				break;
+			}
+			case 1: {
+				groups.fraction.push(char);
+				break;
+			}
+			case 2: {
+				groups.exponentNumeric.push(char);
+				break;
+			}
+			default:
+				throw new Error(`Unknown numeric group index, should be one of 0, 1, 2, but got ${groupIndex}.`);
+		}
+	}
+
 	protected buildNumericGroups(node: GroovyAstNode): NumericGroups {
 		const text = node.text;
 		const groups: NumericGroups = {integral: [], fraction: [], exponentNumeric: []};
+
+		let hexadecimal = false;
 		let startIndex = 0;
-		if (text[1] === 'b' || text[1] === 'B' || text[1] === 'x' || text[1] === 'X') {
+		if (text[1] === 'b' || text[1] === 'B') {
+			groups.mark = text[1];
+			startIndex = 2;
+		} else if (text[1] === 'x' || text[1] === 'X') {
+			hexadecimal = true;
 			groups.mark = text[1];
 			startIndex = 2;
 		}
@@ -39,36 +64,43 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 			const char = text[index];
 			switch (text[index]) {
 				// @formatter:off
-				case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9': {
+				case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9':
+				case 'a': case 'b': case 'c':
+				case 'A': case 'B': case 'C': {
 					// @formatter:on
-					switch (groupIndex) {
-						case 0: {
-							groups.integral.push(char);
-							break;
-						}
-						case 1: {
-							groups.fraction.push(char);
-							break;
-						}
-						case 2: {
-							groups.exponentNumeric.push(char);
-							break;
-						}
-						default:
-							throw new Error(`Unknown numeric group index, should be one of 0, 1, 2, but got ${groupIndex}.`);
+					// a/b/c/A/B/C are happen only when hexadecimal, no check needed
+					this.appendCharToIntegralGroup(groupIndex, groups, char);
+					break;
+				}
+				// @formatter:off
+				case 'd':  case 'f':
+				case 'D':  case 'F': {
+					// @formatter:on
+					if (hexadecimal) {
+						// is integral part
+						this.appendCharToIntegralGroup(groupIndex, groups, char);
+					} else {
+						// is suffix part
+						groups.suffix = char;
+					}
+					break;
+				}
+				// @formatter:off
+				case 'e':case 'E': {
+					// @formatter:on
+					if (hexadecimal) {
+						// is integral part
+						this.appendCharToIntegralGroup(groupIndex, groups, char);
+					} else {
+						// is exponent part
+						groupIndex = 2;
+						groups.exponent = char;
 					}
 					break;
 				}
 				case '.': {
 					groupIndex = 1;
 					groups.dot = true;
-					break;
-				}
-				// @formatter:off
-				case 'e': case 'E': {
-					// @formatter:on
-					groupIndex = 2;
-					groups.exponent = char;
 					break;
 				}
 				// @formatter:off

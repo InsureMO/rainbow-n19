@@ -22,6 +22,7 @@ export abstract class AbstractLtNumericBasePartCaptor extends AbstractAstNodeCap
 	protected cutoffTrailingDotExponentUnderscorePlusMinusChars(text: string): string {
 		let trailingCharCount = 0;
 		for (let i = text.length - 1; i > 0; i--) {
+			let breakFor = false;
 			switch (text[i]) {
 				// @formatter:off
 				case '_': case '.': case 'e': case 'E': case '+': case '-': {
@@ -30,7 +31,11 @@ export abstract class AbstractLtNumericBasePartCaptor extends AbstractAstNodeCap
 					break;
 				}
 				default:
+					breakFor = true;
 					break;
+			}
+			if (breakFor) {
+				break;
 			}
 		}
 

@@ -117,7 +117,6 @@ export enum TokenId {
 	GStringInterpolationLBraceStartMark, // ${ of ${...}
 	GStringInterpolationRBraceEndMark, // } of ${...}
 	GStringInterpolation, // ${...}, $..., "..." means interpolation, any groovy expression is good for it
-	RegexpPatternStartMark,  // ~/
 	GStringLiteral,
 	SlashyGStringLiteral,
 	DollarSlashyGStringLiteral,

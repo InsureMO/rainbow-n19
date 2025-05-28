@@ -176,7 +176,6 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 	[TokenId.DollarSlashyGStringDollarEscape]: 'TODO',
 	[TokenId.GStringInterpolationStartMark]: 'TODO',
 	[TokenId.GStringInterpolationLBraceStartMark]: 'TODO',
-	[TokenId.RegexpPatternStartMark]: 'TODO',
 	// keyword
 	[TokenId.ABSTRACT]: {
 		name: 'KwAbstract',
