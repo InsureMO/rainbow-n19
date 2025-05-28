@@ -1,6 +1,6 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
-import {TokenId, TokenType} from '../../tokens';
+import {TokenId} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 
 export enum GroovyAstNodeAttributeNames {
@@ -10,16 +10,8 @@ export enum GroovyAstNodeAttributeNames {
 	ON_CHILD_APPENDED = '$$OnChildAppended',
 	ON_CHILD_CLOSED = '$$OnChildClosed',
 	ON_NODE_CLOSED = '$$OnNodeClosed',
-	// shortcuts
-	ACCEPT_5_BASE_NODES_AS_CHILD = '$$Accept5BaseNodesAsChild',
-	ACCEPT_TOKEN_IDS_AS_CHILD = '$$AcceptTokenIdsAsChild',
-	ACCEPT_TOKEN_TYPES_AS_CHILD = '$$AcceptTokenTypesAsChild',
-	REJECT_TOKEN_IDS_AS_CHILD = '$$RejectTokenIdsAsChild',
+	/* to identify the lbrace will be taken as */
 	TAKE_LBRACE_AS = '$$TakeLBraceAs',
-	END_WITH_ANY_OF_TOKEN_IDS = '$$EndWithAnyOfTokenIds',
-	CLOSE_ON_CHILD_WITH_TOKEN_CLOSED = '$$CloseOnChildWithTokenClosed',
-	/** default true */
-	ELEVATE_TRAILING_DETACHABLE_ON_NODE_CLOSED = '$$ElevateTrailingDetachableOnNodeClosed',
 	/* to identify the highlight column of single line comment */
 	SL_COMMENT_HIGHLIGHT_COLUMN = '$$SLCommentHighlightColumn',
 	/** to identify the identifier child node count */
@@ -32,6 +24,10 @@ export type ChildAcceptableCheckFunc = (mightBeChildNode: GroovyAstNode, astReco
 export type OnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => void;
 export type OnChildClosedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => void;
 export type OnNodeClosedFunc = (node: GroovyAstNode, astRecognizer: AstRecognizer) => void;
+
+export type OneOfChildAcceptableCheckFunc = (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
+export type OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
+export type OneOfOnChildClosedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
 
 /** attribute getter and setter */
 export interface RecognizerExtraAttribute<V> {
@@ -56,21 +52,9 @@ export type RecognizerAttrVisitor = {
 	readonly OnChildAppended: RecognizerExtraAttribute<OnChildAppendedFunc>;
 	readonly OnChildClosed: RecognizerExtraAttribute<OnChildClosedFunc>;
 	readonly OnNodeClosed: RecognizerExtraAttribute<OnNodeClosedFunc>;
-	// auxiliary
-	/** accept whitespaces, tabs, newline, sl comments, ml comments. default true */
-	readonly Accept5BaseNodesAsChild: RecognizerExtraAttribute<boolean>;
-	readonly AcceptTokenIdsAsChild: RecognizerExtraAttribute<Array<TokenId>>;
-	readonly AcceptTokenTypesAsChild: RecognizerExtraAttribute<Array<TokenType>>;
-	readonly RejectTokenIdsAsChild: RecognizerExtraAttribute<Array<TokenId>>;
-	readonly TakeLBraceAs: RecognizerExtraAttribute<TakeSpecificTokenToAnother>;
-	/** true: accept one token id, and close on this token id appended */
-	readonly EndWithAnyOfTokenIds: RecognizerExtraAttribute<Array<TokenId>>;
-	/** close me when child with appointed token id closed */
-	readonly CloseOnChildWithTokenClosed: RecognizerExtraAttribute<TokenId>;
-	/** default true */
-	readonly ElevateTrailingDetachableOnNodeClosed: RecognizerExtraAttribute<boolean>;
 	readonly clear: (node: GroovyAstNode) => RecognizerAttrVisitor;
 	// additional
+	readonly TakeLBraceAs: RecognizerExtraAttribute<TakeSpecificTokenToAnother>;
 	readonly SLCommentHighlightColumn: RecognizerExtraAttribute<number>;
 	readonly IdentifierChildCount: RecognizerExtraNumberAccumulator;
 }

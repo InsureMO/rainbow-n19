@@ -1,6 +1,7 @@
 import {TokenId, TokenType} from '../../tokens';
 import {
-	MultipleLinesCommentsRecognizer, NumericBasePartRecognizer,
+	MultipleLinesCommentsRecognizer,
+	NumericBasePartRecognizer,
 	ScriptCommandRecognizer,
 	SingleLineCommentsRecognizer
 } from '../node-recognize-specific';
@@ -154,8 +155,14 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 	[TokenId.BooleanTrue]: 'NotRequired',
 	[TokenId.BooleanFalse]: 'NotRequired',
 	// string literal
-	[TokenId.StringQuotationMark]: 'TODO',
-	[TokenId.StringQuotationMarkML]: 'TODO',
+	[TokenId.StringQuotationMark]: {
+		name: 'LtStringQuotationMark',
+		declareAsParent: [[TokenId.StringLiteral, TokenType.StringLiteral]]
+	},
+	[TokenId.StringQuotationMarkML]: {
+		name: 'LtStringQuotationMarkML',
+		declareAsParent: [[TokenId.StringLiteral, TokenType.StringLiteral]]
+	},
 	[TokenId.StringBackspaceEscape]: 'TODO',
 	[TokenId.StringFormFeedEscape]: 'TODO',
 	[TokenId.StringNewLineEscape]: 'TODO',
@@ -167,9 +174,18 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 	[TokenId.StringDoubleQuoteEscape]: 'TODO',
 	[TokenId.StringDollarEscape]: 'TODO',
 	[TokenId.StringUnicodeEscapeMark]: 'TODO',
-	[TokenId.GStringQuotationMark]: 'TODO',
-	[TokenId.GStringQuotationMarkML]: 'TODO',
-	[TokenId.DollarSlashyGStringQuotationStartMark]: 'TODO',
+	[TokenId.GStringQuotationMark]: {
+		name: 'LtGStringQuotationMark',
+		declareAsParent: [[TokenId.GStringLiteral, TokenType.StringLiteral]]
+	},
+	[TokenId.GStringQuotationMarkML]: {
+		name: 'LtGStringQuotationMarkML',
+		declareAsParent: [[TokenId.GStringLiteral, TokenType.StringLiteral]]
+	},
+	[TokenId.DollarSlashyGStringQuotationStartMark]: {
+		name: 'LtDollarSlashyGStringQuotationStartMark',
+		declareAsParent: [[TokenId.DollarSlashyGStringLiteral, TokenType.StringLiteral]]
+	},
 	[TokenId.DollarSlashyGStringQuotationEndMark]: 'TODO',
 	[TokenId.SlashyGStringBackslashEscape]: 'TODO',
 	[TokenId.DollarSlashyGStringDollarEscape]: 'TODO',

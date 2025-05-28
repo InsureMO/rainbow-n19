@@ -3,7 +3,6 @@ import {CommentKeyword, CommentKeywords} from '../captor';
 import {CompilationUnitNode, GroovyAstNode} from '../node';
 import {TokenId} from '../tokens';
 import {NodeAttributeOperator} from './node-attribute';
-import {NodePointcutHandler} from './node-pointcut-handler';
 import {NodeRecognizerRepository} from './node-recognizer-repository';
 import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types';
 
@@ -148,52 +147,6 @@ export class AstRecognizer {
 	}
 
 	/**
-	 * 1. accepted by {@link NodeAttributeOperator.Accept5BaseNodesAsChild}, returns true,
-	 * 2. accepted by {@link NodeAttributeOperator.TakeLBraceAs}, returns true,
-	 * 3. accepted by {@link NodeAttributeOperator.EndWithAnyOfTokenIds}, returns true,
-	 * 4. rejected by {@link NodeAttributeOperator.RejectTokenIdsAsChild}, returns false,
-	 * 5. no definitions on {@link NodeAttributeOperator.AcceptTokenIdsAsChild}, {@link NodeAttributeOperator.AcceptTokenTypesAsChild},
-	 *    or {@link NodeAttributeOperator.ChildAcceptableCheck}, returns true,
-	 * 6. accepted by {@link NodeAttributeOperator.AcceptTokenIdsAsChild}, returns true,
-	 * 7. accepted by {@link NodeAttributeOperator.AcceptTokenTypesAsChild}, returns true,
-	 * 8. accepted by {@link NodeAttributeOperator.ChildAcceptableCheck}, returns true,
-	 * 9. returns false.
-	 */
-	protected acceptChild(parent: GroovyAstNode, child: GroovyAstNode): boolean {
-		if (NodePointcutHandler.acceptedBy5BaseNodes(parent, child)
-			|| NodePointcutHandler.acceptedByTakeLBraceAs(parent, child)
-			|| NodePointcutHandler.acceptedByEndTokenIds(parent, child)) {
-			return true;
-		}
-		if (NodePointcutHandler.rejectedByPresetTokenIds(parent, child)) {
-			return false;
-		}
-
-		let hasRule = false;
-		const acceptedByGivenTokenIds = NodePointcutHandler.acceptedByPresetTokenIds(parent, child);
-		if (acceptedByGivenTokenIds === true) {
-			return true;
-		} else if (acceptedByGivenTokenIds === false) {
-			hasRule = true;
-		}
-		const acceptedByGivenTokenTypes = NodePointcutHandler.acceptedByPresetTokenTypes(parent, child);
-		if (acceptedByGivenTokenTypes === true) {
-			return true;
-		} else if (acceptedByGivenTokenTypes === false) {
-			hasRule = true;
-		}
-		const func = NodeAttributeOperator.ChildAcceptableCheck.get(parent);
-		if (func != null) {
-			return func(child, this) === true;
-		} else {
-			// not function specified, then check if there is any rule on token ids or types
-			// 1. if exists, means the given child not pass the check, return false
-			// 2. no exists, means no rule, return true, accept any token
-			return !hasRule;
-		}
-	}
-
-	/**
 	 * for some nodes, they cannot accept other statement node as child.
 	 * typically, other statement node not includes multiple-lines comments node.
 	 *
@@ -205,7 +158,7 @@ export class AstRecognizer {
 		// the last node is compilation unit, can be the parent of anything
 		while (ancestors.length > 1) {
 			const ancestor = ancestors[0];
-			if (this.acceptChild(ancestor, node)) {
+			if (NodeAttributeOperator.ChildAcceptableCheck.get(ancestor)?.(node, this) !== false) {
 				// given node can be accepted by current parent, break the check
 				return ancestor;
 			} else {
@@ -219,45 +172,24 @@ export class AstRecognizer {
 	}
 
 	/**
-	 * check the given child node matches the configuration in {@link NodeAttributeOperator.EndWithAnyOfTokenIds} or not,
-	 * if matched, close current parent and return.
-	 * otherwise invoke the {@link NodeAttributeOperator.OnChildAppended} function.
+	 * invoke the {@link NodeAttributeOperator.OnChildAppended} function.
 	 */
 	protected onChildAppended(parent: GroovyAstNode, child: GroovyAstNode): void {
-		const tokenIds = NodeAttributeOperator.EndWithAnyOfTokenIds.get(parent);
-		if (tokenIds != null && tokenIds.includes(child.tokenId)) {
-			this.closeCurrentParent();
-			return;
-		}
-
 		NodeAttributeOperator.OnChildAppended.get(parent)?.(child, this);
 	}
 
 	/**
-	 * check the given child node matches the configuration in {@link NodeAttributeOperator.CloseOnChildWithTokenClosed} or not,
-	 * if matched, close current parent and return.
-	 * otherwise invoke the {@link NodeAttributeOperator.OnChildClosed} function.
+	 * invoke the {@link NodeAttributeOperator.OnChildClosed} function.
 	 */
 	protected onChildClosed(parent: GroovyAstNode, child: GroovyAstNode): void {
-		const tokenId = NodeAttributeOperator.CloseOnChildWithTokenClosed.get(parent);
-		if (tokenId === child.tokenId) {
-			this.closeCurrentParent();
-			return;
-		}
-
 		NodeAttributeOperator.OnChildClosed.get(parent)?.(child, this);
 	}
 
 	/**
-	 * invoke the {@link NodeAttributeOperator.OnNodeClosed},
-	 * and invoke the {@link NodePointcutHandler.moveTrailingDetachableNodesToParentOnNodeClosed} when
-	 * {@link NodeAttributeOperator.ElevateTrailingDetachableOnNodeClosed} is not false
+	 * invoke the {@link NodeAttributeOperator.OnNodeClosed} function.
 	 */
 	protected onNodeClosed(node: GroovyAstNode): void {
 		NodeAttributeOperator.OnNodeClosed.get(node)?.(node, this);
-		if (NodeAttributeOperator.ElevateTrailingDetachableOnNodeClosed.get(node) ?? true) {
-			NodePointcutHandler.moveTrailingDetachableNodesToParentOnNodeClosed(node, this);
-		}
 	}
 
 	/**

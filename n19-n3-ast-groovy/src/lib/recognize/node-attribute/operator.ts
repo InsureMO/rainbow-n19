@@ -1,5 +1,4 @@
 import {GroovyAstNode} from '../../node';
-import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {
 	ChildAcceptableCheckFunc,
@@ -7,15 +6,14 @@ import {
 	GroovyAstNodeAttributeNames,
 	OnChildAppendedFunc,
 	OnChildClosedFunc,
+	OneOfOnChildAppendedFunc,
+	OneOfOnChildClosedFunc,
 	OnNodeClosedFunc,
 	RecognizerAttrVisitor,
 	RecognizerExtraAttribute,
 	RecognizerExtraNumberAccumulator,
 	TakeSpecificTokenToAnother
 } from './types';
-
-export type OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
-export type OneOfOnChildClosedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => boolean;
 
 export class NodeAttributeOperatorHelper {
 	static createAttrVisitor<V>(key: GroovyAstNodeAttributeNames): RecognizerExtraAttribute<V> {
@@ -84,20 +82,12 @@ export const NodeAttributeOperator: RecognizerAttrVisitor = {
 	OnChildAppended: NodeAttributeOperatorHelper.createAttrVisitor<OnChildAppendedFunc>(GroovyAstNodeAttributeNames.ON_CHILD_APPENDED),
 	OnChildClosed: NodeAttributeOperatorHelper.createAttrVisitor<OnChildClosedFunc>(GroovyAstNodeAttributeNames.ON_CHILD_CLOSED),
 	OnNodeClosed: NodeAttributeOperatorHelper.createAttrVisitor<OnNodeClosedFunc>(GroovyAstNodeAttributeNames.ON_NODE_CLOSED),
-	// auxiliary
-	Accept5BaseNodesAsChild: NodeAttributeOperatorHelper.createAttrVisitor<boolean>(GroovyAstNodeAttributeNames.ACCEPT_5_BASE_NODES_AS_CHILD),
-	AcceptTokenIdsAsChild: NodeAttributeOperatorHelper.createAttrVisitor<Array<TokenId>>(GroovyAstNodeAttributeNames.ACCEPT_TOKEN_IDS_AS_CHILD),
-	AcceptTokenTypesAsChild: NodeAttributeOperatorHelper.createAttrVisitor<Array<TokenType>>(GroovyAstNodeAttributeNames.ACCEPT_TOKEN_TYPES_AS_CHILD),
-	RejectTokenIdsAsChild: NodeAttributeOperatorHelper.createAttrVisitor<Array<TokenId>>(GroovyAstNodeAttributeNames.REJECT_TOKEN_IDS_AS_CHILD),
-	TakeLBraceAs: NodeAttributeOperatorHelper.createAttrVisitor<TakeSpecificTokenToAnother>(GroovyAstNodeAttributeNames.TAKE_LBRACE_AS),
-	EndWithAnyOfTokenIds: NodeAttributeOperatorHelper.createAttrVisitor<Array<TokenId>>(GroovyAstNodeAttributeNames.END_WITH_ANY_OF_TOKEN_IDS),
-	CloseOnChildWithTokenClosed: NodeAttributeOperatorHelper.createAttrVisitor<TokenId>(GroovyAstNodeAttributeNames.CLOSE_ON_CHILD_WITH_TOKEN_CLOSED),
-	ElevateTrailingDetachableOnNodeClosed: NodeAttributeOperatorHelper.createAttrVisitor<boolean>(GroovyAstNodeAttributeNames.ELEVATE_TRAILING_DETACHABLE_ON_NODE_CLOSED),
 	clear: (node: GroovyAstNode): RecognizerAttrVisitor => {
 		node.clearAttrs();
 		return NodeAttributeOperator;
 	},
 	// additional
+	TakeLBraceAs: NodeAttributeOperatorHelper.createAttrVisitor<TakeSpecificTokenToAnother>(GroovyAstNodeAttributeNames.TAKE_LBRACE_AS),
 	SLCommentHighlightColumn: NodeAttributeOperatorHelper.createAttrVisitor<number>(GroovyAstNodeAttributeNames.SL_COMMENT_HIGHLIGHT_COLUMN),
 	IdentifierChildCount: NodeAttributeOperatorHelper.createNumberAccumulator(GroovyAstNodeAttributeNames.IDENTIFIER_CHILD_COUNT)
 };

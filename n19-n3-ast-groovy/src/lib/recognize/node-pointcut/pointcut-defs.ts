@@ -1,7 +1,8 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId} from '../../tokens';
-import {buildNodePointcut, PointcutBasis} from './pointcut-basis';
+import {buildNodePointcut} from './build-node-pointcut';
+import {PointcutBasis} from './pointcut-basis';
 
 export type NodePointcutInitialize = (node: GroovyAstNode) => void;
 

@@ -1,10 +1,10 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
+import {AstRecognizer} from '../ast-recognizer';
 import {
-	ChildAcceptableCheckFunc,
-	NodeAttributeOperator,
 	OnChildAppendedFunc,
-	OnChildClosedFunc,
+	OneOfChildAcceptableCheckFunc,
+	OneOfOnChildAppendedFunc,
 	OnNodeClosedFunc
 } from '../node-attribute';
 import {
@@ -12,65 +12,44 @@ import {
 	IfElseDeclarationPointcuts,
 	TypeDeclarationPointcuts
 } from '../node-pointcut-specific';
-
-export enum PointcutBasisDefType {
-	// pointcut functions
-	ChildAcceptableCheck = 'ChildAcceptableCheck',
-	OnChildAppended = 'OnChildAppended',
-	OnChildClosed = 'OnChildClosed',
-	OnNodeClosed = 'OnNodeClosed',
-	// child acceptable check
-	DisableBase5AsChild = 'DisableBase5AsChild',
-	AcceptableTokenIds = 'AcceptableTokenIds',
-	AcceptableTokenTypes = 'AcceptableTokenTypes',
-	UnacceptableTokenIds = 'UnacceptableTokenIds',
-	// on child appended
-	TakeLBraceAs = 'TakeLBraceAs',
-	EndsWithAnyOfTokenIdsAppended = 'EndsWithAnyOfTokenIdsAppended',
-	// on child closed
-	CloseOnChildWithTokenIdClosed = 'CloseOnChildWithTokenIdClosed',
-	// on node closed
-	DisableElevateTrailingDetachable = 'DisableElevateTrailingDetachable',
-	// combined
-	TakeLBraceAsEnd = 'TakeLBraceAsEnd'
-}
-
-// pointcut functions
-export type ChildAcceptableCheck = Readonly<[PointcutBasisDefType.ChildAcceptableCheck, ChildAcceptableCheckFunc]>;
-export type OnChildAppended = Readonly<[PointcutBasisDefType.OnChildAppended, OnChildAppendedFunc]>;
-export type OnChildClosed = Readonly<[PointcutBasisDefType.OnChildClosed, OnChildClosedFunc]>;
-export type OnNodeClosed = Readonly<[PointcutBasisDefType.OnNodeClosed, OnNodeClosedFunc]>;
-// child acceptable check
-export type DisableBase5AsChild = Readonly<[PointcutBasisDefType.DisableBase5AsChild]>;
-export type AcceptableTokenIds = Readonly<[PointcutBasisDefType.AcceptableTokenIds, ...Array<TokenId>]>;
-export type AcceptableTokenTypes = Readonly<[PointcutBasisDefType.AcceptableTokenTypes, ...Array<TokenType>]>;
-export type UnacceptableTokenIds = Readonly<[PointcutBasisDefType.UnacceptableTokenIds, ...Array<TokenId>]>;
-// on child appended
-export type TakeLBraceAs = Readonly<[PointcutBasisDefType.TakeLBraceAs, TokenId]>;
-export type EndsWithAnyOfTokenIdsAppended = Readonly<[PointcutBasisDefType.EndsWithAnyOfTokenIdsAppended, ...Array<TokenId>]>;
-// on child closed
-export type CloseOnChildWithTokenIdClosed = Readonly<[PointcutBasisDefType.CloseOnChildWithTokenIdClosed, TokenId]>;
-// on node closed
-export type DisableElevateTrailingDetachable = Readonly<[PointcutBasisDefType.DisableElevateTrailingDetachable]>;
-// combined
-export type TakeLBraceAsEnd = Readonly<[PointcutBasisDefType.TakeLBraceAsEnd, TokenId]>;
+import {
+	AcceptableTokenIds,
+	AcceptableTokenTypes,
+	AcceptWhen,
+	CloseOnChildWithTokenIdClosed,
+	DisableBase5AsChild,
+	EndsWithAnyOfTokenIdsAppended,
+	EndsWithChecked,
+	OnChildAppended,
+	OnNodeClosed,
+	PointcutBasisDefs,
+	PointcutBasisDefType,
+	TakeLBraceAs,
+	TakeLBraceAsEnd,
+	UnacceptableTokenIds,
+	UnacceptedWhen
+} from './types';
 
 // pointcut function
-const ChildAcceptableCheck = (func: ChildAcceptableCheckFunc): ChildAcceptableCheck => {
-	return [PointcutBasisDefType.ChildAcceptableCheck, func];
-};
+// TODO not use yet
+//  const ChildAcceptableCheck = (func: ChildAcceptableCheckFunc): ChildAcceptableCheck => {
+// 	 return [PointcutBasisDefType.ChildAcceptableCheck, func];
+//  };
 const OnChildAppended = (func: OnChildAppendedFunc): OnChildAppended => {
 	return [PointcutBasisDefType.OnChildAppended, func];
 };
-const OnChildClosed = (func: OnChildClosedFunc): OnChildClosed => {
-	return [PointcutBasisDefType.OnChildClosed, func];
-};
+// TODO not use yet
+//  const OnChildClosed = (func: OnChildClosedFunc): OnChildClosed => {
+// 	 return [PointcutBasisDefType.OnChildClosed, func];
+//  };
 const OnNodeClosed = (func: OnNodeClosedFunc): OnNodeClosed => {
 	return [PointcutBasisDefType.OnNodeClosed, func];
 };
 
 // child acceptable check
+/** disable the default 5 base tokens as child */
 const DisableBase5AsChild: DisableBase5AsChild = [PointcutBasisDefType.DisableBase5AsChild];
+/** accept or reject the given token ids */
 const TokenIds = {
 	accept: (tokenId: TokenId, ...tokenIds: Array<TokenId>): AcceptableTokenIds => {
 		return [PointcutBasisDefType.AcceptableTokenIds, tokenId, ...tokenIds];
@@ -79,51 +58,65 @@ const TokenIds = {
 		return [PointcutBasisDefType.UnacceptableTokenIds, tokenId, ...tokenIds];
 	}
 };
+/** accept the given token types */
 const TokenTypes = {
 	accept: (tokenType: TokenType, ...tokenTypes: Array<TokenType>): AcceptableTokenTypes => {
 		return [PointcutBasisDefType.AcceptableTokenTypes, tokenType, ...tokenTypes];
 	}
 };
-// on child appended
-/** take lbrace as given token id, accept given token id */
-const TakeLBraceAs = (tokenId: TokenId): TakeLBraceAs => {
-	return [PointcutBasisDefType.TakeLBraceAs, tokenId];
+/** accept or reject given token ids when pass when check */
+const Tokens = {
+	when: (when: OneOfChildAcceptableCheckFunc) => {
+		return {
+			accept: (tokenId: TokenId, ...tokenIds: Array<TokenId>): AcceptWhen => {
+				return [PointcutBasisDefType.AcceptWhen, when, tokenId, ...tokenIds];
+			},
+			reject: (tokenId: TokenId, ...tokenIds: Array<TokenId>): UnacceptedWhen => {
+				return [PointcutBasisDefType.UnacceptedWhen, when, tokenId, ...tokenIds];
+			}
+		};
+	}
 };
+// on child appended
+/** if one of given token id appended as child, close current parent (me) */
 const EndsWith = (tokenId: TokenId, ...tokenIds: Array<TokenId>): EndsWithAnyOfTokenIdsAppended => {
 	return [PointcutBasisDefType.EndsWithAnyOfTokenIdsAppended, tokenId, ...tokenIds];
 };
+/** if semicolon appended as child, close current parent (me) */
 const EndsWithSemicolon: EndsWithAnyOfTokenIdsAppended = EndsWith(TokenId.Semicolon);
+/** if rbrace appended as child, close current parent (me) */
 const EndsWithRBrace: EndsWithAnyOfTokenIdsAppended = EndsWith(TokenId.RBrace);
+/** if rparen appended as child, close current parent (me) */
 const EndsWithRParen: EndsWithAnyOfTokenIdsAppended = EndsWith(TokenId.RParen);
+/** if some token appended as child, and pass when check, close current parent (me) */
+const EndsWithChecked = (when: OneOfOnChildAppendedFunc): EndsWithChecked => {
+	return [PointcutBasisDefType.EndsWithChecked, when];
+};
+/** if some token appended as child, and same as start mark token, close current parent (me) */
+const EndsWithStartMark: EndsWithChecked = EndsWithChecked((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+	const parentNode = astRecognizer.getCurrentParent();
+	const firstChildNode = parentNode.children[0];
+	return firstChildNode !== lastChildNode && firstChildNode.tokenId === lastChildNode.tokenId;
+});
 // on child closed
+/** if given token id closed, close current parent (me) */
 const CloseOnChildWithTokenIdClosed = (tokenId: TokenId): CloseOnChildWithTokenIdClosed => {
 	return [PointcutBasisDefType.CloseOnChildWithTokenIdClosed, tokenId];
 };
 // on node closed
-const DisableElevateTrailingDetachable: DisableElevateTrailingDetachable = [PointcutBasisDefType.DisableElevateTrailingDetachable];
+// TODO not use yet
+//. /** disable the default elevate trailing detachable tokens */
+//  const DisableElevateTrailingDetachable: DisableElevateTrailingDetachable = [PointcutBasisDefType.DisableElevateTrailingDetachable];
+// additional
+/** take lbrace as given token id, accept given token id */
+const TakeLBraceAs = (tokenId: TokenId): TakeLBraceAs => {
+	return [PointcutBasisDefType.TakeLBraceAs, tokenId];
+};
 // combined
-/** take lbrace as given token id, accept given token id, close when given token closed */
+/** take lbrace as given token id, accept given token id, close me when given token closed */
 const TakeLBraceAsEnd = (tokenId: TokenId): TakeLBraceAsEnd => {
 	return [PointcutBasisDefType.TakeLBraceAsEnd, tokenId];
 };
-
-export type PointcutBasisDef = ReadonlyArray<
-	// pointcut functions
-	| ChildAcceptableCheck | OnChildAppended | OnChildClosed | OnNodeClosed
-	// child acceptable check
-	| DisableBase5AsChild
-	| AcceptableTokenIds | AcceptableTokenTypes | UnacceptableTokenIds
-	// on child appended
-	| TakeLBraceAs | EndsWithAnyOfTokenIdsAppended
-	// on child closed
-	| CloseOnChildWithTokenIdClosed
-	// on node closed
-	| DisableElevateTrailingDetachable
-	// combined
-	| TakeLBraceAsEnd
->
-
-export type PointcutBasisDefs = PointcutBasisDef | 'TODO' | 'NotRequired';
 
 export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDefs }>> = {
 	// number literal
@@ -135,11 +128,25 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	// char literal
 	[TokenId.CharLiteral]: 'TODO',
 	// string literal
-	[TokenId.StringLiteral]: 'TODO',
+	[TokenId.StringLiteral]: [
+		Tokens.when((_: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+			return astRecognizer.getCurrentParent().children[0].tokenId === TokenId.StringQuotationMark;
+		}).reject(TokenId.NewLine),
+		EndsWithStartMark
+	],
 	[TokenId.GStringInterpolation]: 'TODO',
-	[TokenId.GStringLiteral]: 'TODO',
-	[TokenId.SlashyGStringLiteral]: 'TODO',
-	[TokenId.DollarSlashyGStringLiteral]: 'TODO',
+	[TokenId.GStringLiteral]: [
+		Tokens.when((_: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+			return astRecognizer.getCurrentParent().children[0].tokenId === TokenId.GStringQuotationMark;
+		}).reject(TokenId.NewLine),
+		EndsWithStartMark
+	],
+	[TokenId.SlashyGStringLiteral]: [
+		EndsWith(TokenId.Divide)
+	],
+	[TokenId.DollarSlashyGStringLiteral]: [
+		EndsWith(TokenId.DollarSlashyGStringQuotationEndMark)
+	],
 	// statement
 	[TokenId.SingleLineComment]: 'NotRequired',
 	[TokenId.MultipleLinesComment]: 'NotRequired',
@@ -258,7 +265,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		EndsWithRBrace
 	],
 	[TokenId.IfElseDeclaration]: [
-		// TODO brace body is not necessary, or have one statement instead.
+		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.IF),
 		/** special logic to take care of the {@link TokenId.IF} */
 		OnChildAppended(IfElseDeclarationPointcuts.onChildAppended),
@@ -446,75 +453,4 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		OnNodeClosed(CsscmfDeclarationPointcuts.onNodeClosed)
 	],
 	[TokenId.Tmp$NeverHappen]: 'NotRequired'
-};
-
-const checkMultipleTakeBraceAsSet = (takeLBraceAs: boolean) => {
-	if (takeLBraceAs) {
-		throw new Error('Pointcut[TakeLBraceAs] already set, cannot set again.');
-	}
-};
-const checkMultipleCloseOnChildWithTokenClosedSet = (closeOnChildWithTokenClosed: boolean) => {
-	if (closeOnChildWithTokenClosed) {
-		throw new Error('Pointcut[CloseOnChildWithTokenClosed] already set, cannot set again.');
-	}
-};
-
-export const buildNodePointcut = (def: PointcutBasisDef) => {
-	return (node: GroovyAstNode): void => {
-		// clear all
-		NodeAttributeOperator.clear(node);
-
-		let takeLBraceAs = false;
-		let closeOnChildWithTokenClosed = false;
-
-		def.forEach((item) => {
-			const type = item[0];
-			if (type === PointcutBasisDefType.ChildAcceptableCheck) {
-				NodeAttributeOperator.ChildAcceptableCheck.set(node, item[1]);
-			} else if (type === PointcutBasisDefType.OnChildAppended) {
-				NodeAttributeOperator.OnChildAppended.set(node, item[1]);
-			} else if (type === PointcutBasisDefType.OnChildClosed) {
-				NodeAttributeOperator.OnChildClosed.set(node, item[1]);
-			} else if (type === PointcutBasisDefType.OnNodeClosed) {
-				NodeAttributeOperator.OnNodeClosed.set(node, item[1]);
-			} else if (type === PointcutBasisDefType.DisableBase5AsChild) {
-				NodeAttributeOperator.Accept5BaseNodesAsChild.set(node, false);
-			} else if (type === PointcutBasisDefType.AcceptableTokenIds) {
-				const tokenIds = item.slice(1) as Array<TokenId>;
-				const acceptedTokenIds = NodeAttributeOperator.AcceptTokenIdsAsChild.get(node);
-				if (acceptedTokenIds == null) {
-					NodeAttributeOperator.AcceptTokenIdsAsChild.set(node, tokenIds);
-				} else {
-					acceptedTokenIds.push(...tokenIds);
-				}
-			} else if (type === PointcutBasisDefType.AcceptableTokenTypes) {
-				NodeAttributeOperator.AcceptTokenTypesAsChild.set(node, item.slice(1) as Array<TokenType>);
-			} else if (type === PointcutBasisDefType.UnacceptableTokenIds) {
-				NodeAttributeOperator.RejectTokenIdsAsChild.set(node, item.slice(1) as Array<TokenId>);
-			} else if (type === PointcutBasisDefType.TakeLBraceAs) {
-				checkMultipleTakeBraceAsSet(takeLBraceAs);
-				NodeAttributeOperator.TakeLBraceAs.set(node, item[1]);
-				takeLBraceAs = true;
-			} else if (type === PointcutBasisDefType.EndsWithAnyOfTokenIdsAppended) {
-				NodeAttributeOperator.EndWithAnyOfTokenIds.set(node, item.slice(1) as Array<TokenId>);
-			} else if (type === PointcutBasisDefType.CloseOnChildWithTokenIdClosed) {
-				checkMultipleCloseOnChildWithTokenClosedSet(closeOnChildWithTokenClosed);
-				NodeAttributeOperator.CloseOnChildWithTokenClosed.set(node, item[1]);
-				closeOnChildWithTokenClosed = true;
-			} else if (type === PointcutBasisDefType.TakeLBraceAsEnd) {
-				checkMultipleTakeBraceAsSet(takeLBraceAs);
-				checkMultipleCloseOnChildWithTokenClosedSet(closeOnChildWithTokenClosed);
-				const asTokenId = item[1];
-				NodeAttributeOperator.TakeLBraceAs.set(node, asTokenId);
-				NodeAttributeOperator.CloseOnChildWithTokenClosed.set(node, asTokenId);
-				takeLBraceAs = true;
-				closeOnChildWithTokenClosed = true;
-			} else if (type === PointcutBasisDefType.DisableElevateTrailingDetachable) {
-				NodeAttributeOperator.ElevateTrailingDetachableOnNodeClosed.set(node, false);
-			} else {
-				// Unknown type
-				throw new Error(`Pointcut basis definition type[${type}] is not supported yet.`);
-			}
-		});
-	};
 };
