@@ -150,7 +150,6 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 	[TokenId.OctalStartMark]: 'NotRequired',
 	[TokenId.HexadecimalStartMark]: 'NotRequired',
 	[TokenId.DecimalExponentMark]: 'NotRequired',
-	[TokenId.DecimalExponentPart]: 'NotRequired',
 	// boolean literal
 	[TokenId.BooleanTrue]: 'NotRequired',
 	[TokenId.BooleanFalse]: 'NotRequired',

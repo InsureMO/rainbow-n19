@@ -238,8 +238,8 @@ export abstract class AbstractLtNumericBasePartCaptor extends AbstractAstNodeCap
 					break;
 				}
 				case '.': {
-					if (hasDot) {
-						// has dot already, which is not allowed
+					if (hasDot || hasExponent) {
+						// has dot or exponent already, which is not allowed
 						breakWhile = true;
 						break;
 					}

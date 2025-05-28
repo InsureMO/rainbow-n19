@@ -83,7 +83,6 @@ export enum TokenId {
 	HexadecimalLiteral, // [+-]0x..., "..." means numbers
 	IntegralLiteral, // [+-]..., "..." means numbers
 	DecimalExponentMark, // e/E
-	DecimalExponentPart, // [+-]..., "..." means numbers. exponent part of decimal literal, after symbol
 	DecimalLiteral, // [+-]..., "..." means float, double or exponent number
 	// char
 	CharLiteral, // a single char in '', and declared as char with 3 different ways: "char x = 'x'", "def x = 'x' as char", "def x = (char)'x'"
