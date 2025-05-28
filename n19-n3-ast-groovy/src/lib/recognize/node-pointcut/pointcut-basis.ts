@@ -129,6 +129,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	[TokenId.CharLiteral]: 'TODO',
 	// string literal
 	[TokenId.StringLiteral]: [
+		// newline is accepted only when string literal allows multiple lines
 		Tokens.when((_: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			return astRecognizer.getCurrentParent().children[0].tokenId === TokenId.StringQuotationMark;
 		}).reject(TokenId.NewLine),
@@ -136,6 +137,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	],
 	[TokenId.GStringInterpolation]: 'TODO',
 	[TokenId.GStringLiteral]: [
+		// newline is accepted only when gstring literal allows multiple lines
 		Tokens.when((_: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			return astRecognizer.getCurrentParent().children[0].tokenId === TokenId.GStringQuotationMark;
 		}).reject(TokenId.NewLine),
