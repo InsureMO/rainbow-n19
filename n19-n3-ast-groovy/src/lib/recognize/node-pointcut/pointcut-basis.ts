@@ -105,7 +105,7 @@ const CloseOnChildWithTokenIdClosed = (tokenId: TokenId): CloseOnChildWithTokenI
 };
 // on node closed
 // TODO not use yet
-//. /** disable the default elevate trailing detachable tokens */
+//  /** disable the default elevate trailing detachable tokens */
 //  const DisableElevateTrailingDetachable: DisableElevateTrailingDetachable = [PointcutBasisDefType.DisableElevateTrailingDetachable];
 // additional
 /** take lbrace as given token id, accept given token id */
@@ -249,7 +249,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		TokenIds.accept(TokenId.IfIfDeclaration, TokenId.IfElseIfDeclaration, TokenId.IfElseDeclaration)
 	],
 	[TokenId.IfIfDeclaration]: [
-		// TODO brace body is not necessary, or have one statement instead.
+		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.ParenBlock),
 		EndsWithSemicolon,
 		TakeLBraceAsEnd(TokenId.IfIfBody)
@@ -258,7 +258,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		EndsWithRBrace
 	],
 	[TokenId.IfElseIfDeclaration]: [
-		// TODO brace body is not necessary, or have one statement instead.
+		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.ParenBlock),
 		EndsWithSemicolon,
 		TakeLBraceAsEnd(TokenId.IfElseIfBody)
@@ -302,7 +302,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		EndsWithSemicolon
 	],
 	[TokenId.WhileDeclaration]: [
-		// TODO brace body is not necessary, or have one statement instead.
+		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.ParenBlock),
 		EndsWithSemicolon,
 		TakeLBraceAsEnd(TokenId.WhileBody)
@@ -311,7 +311,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		EndsWithRBrace
 	],
 	[TokenId.DoWhileDeclaration]: [
-		// TODO brace body is not necessary, or have one statement instead.
+		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.DoWhileBody, TokenId.WHILE, TokenId.ParenBlock),
 		TakeLBraceAs(TokenId.DoWhileBody),
 		EndsWithSemicolon,
@@ -322,7 +322,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		EndsWithRBrace
 	],
 	[TokenId.ForDeclaration]: [
-		// TODO brace body is not necessary, or have one statement instead.
+		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.ParenBlock),
 		EndsWithSemicolon,
 		TakeLBraceAsEnd(TokenId.ForBody)
