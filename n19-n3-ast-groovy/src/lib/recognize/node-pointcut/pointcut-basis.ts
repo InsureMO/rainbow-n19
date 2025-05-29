@@ -25,6 +25,7 @@ import {
 	PointcutBasisDefs,
 	PointcutBasisDefType,
 	ReviseCodeBlockTo,
+	ReviseTokenTo,
 	UnacceptableTokenIds,
 	UnacceptedWhen
 } from './types';
@@ -80,6 +81,9 @@ const Tokens = {
 /** revise code block to given token id */
 const ReviseCodeBlockTo = (tokenId: TokenId): ReviseCodeBlockTo => {
 	return [PointcutBasisDefType.ReviseCodeBlockTo, tokenId];
+};
+const ReviseTokenTo = (mapping: ReviseTokenTo[1]): ReviseTokenTo => {
+	return [PointcutBasisDefType.ReviseTokenTo, mapping];
 };
 /** if one of given token id appended as child, close current parent (me) */
 const EndWith = (tokenId: TokenId, ...tokenIds: Array<TokenId>): EndWithAnyOfTokenIdsAppended => {
@@ -156,9 +160,8 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		// newline and sl comments is not allowed
 		DisableBase5AsChild,
 		TokenIds.accept(TokenId.STATIC, TokenId.Identifier, TokenId.Dot, TokenId.AS,
-			// alias of TokenId.Multiple, only in import declaration
-			TokenId.ImportAllMark,
 			TokenId.Whitespaces, TokenId.Tabs, TokenId.MultipleLinesComment),
+		ReviseTokenTo({[TokenId.Multiple]: [TokenId.ImportAllMark, TokenType.Mark]}),
 		EndWithSemicolon
 	],
 	[TokenId.ImportAllMark]: 'TODO',

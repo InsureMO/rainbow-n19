@@ -19,19 +19,11 @@ export const buildOnChildClosedPointcut = (items?: PointcutBasisDef): Optional<O
 	}
 
 	const defs = items?.reduce((defs, item) => {
-		switch (item[0]) {
-			case PointcutBasisDefType.OnChildClosed: {
-				defs.OnChildClosed = item as OnChildClosed;
-				break;
-			}
-			case PointcutBasisDefType.CloseOnChildWithTokenIdClosed: {
-				defs.CloseOnChildWithTokenIdClosed = item as CloseOnChildWithTokenIdClosed;
-				break;
-			}
-			default: {
-				// other types, ignored
-				break;
-			}
+		if ([
+			PointcutBasisDefType.OnChildClosed,
+			PointcutBasisDefType.CloseOnChildWithTokenIdClosed
+		].includes(item[0])) {
+			defs[item[0]] = item;
 		}
 		return defs;
 	}, {} as OnChildClosedPointcutDefs) ?? {};

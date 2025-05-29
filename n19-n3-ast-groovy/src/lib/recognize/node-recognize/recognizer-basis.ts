@@ -28,10 +28,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 	[TokenId.LBrace]: {
 		name: 'SpLBrace',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
-		declareAsParent: [
-			/** any other case */
-			[TokenId.CodeBlock, TokenType.LogicBlock]
-		]
+		declareAsParent: [[TokenId.CodeBlock, TokenType.LogicBlock]]
 	},
 	[TokenId.RBrace]: 'NotRequired',
 	[TokenId.LParen]: {
@@ -97,13 +94,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 	[TokenId.Decrease]: 'TODO',
 	[TokenId.Add]: 'TODO',
 	[TokenId.Subtract]: 'TODO',
-	[TokenId.Multiple]: {
-		name: 'OpMultiple',
-		rehydrate: [
-			Rehydrate.ToCharsWhenInStringLiteral,
-			{parentTokenId: TokenId.ImportDeclaration, to: [TokenId.ImportAllMark, TokenType.Mark]}
-		]
-	},
+	[TokenId.Multiple]: 'TODO',
 	[TokenId.Divide]: 'TODO',
 	[TokenId.Bitand]: 'TODO',
 	[TokenId.Bitor]: 'TODO',

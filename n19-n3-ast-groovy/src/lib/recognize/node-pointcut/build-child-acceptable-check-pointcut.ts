@@ -4,22 +4,19 @@ import {TokenId} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {ChildAcceptableCheckFunc} from '../node-attribute';
 import {
-	AcceptableTokenIds,
-	AcceptableTokenTypes,
-	AcceptWhen,
-	ChildAcceptableCheck,
-	DisableBase5AsChild,
 	EndWithAnyOfTokenIdsAppended,
 	PointcutBasisChildAcceptableCheck,
 	PointcutBasisDef,
 	PointcutBasisDefType,
 	PointcutItemsToRecord,
 	ReviseCodeBlockTo,
-	UnacceptableTokenIds,
-	UnacceptedWhen
+	ReviseTokenTo
 } from './types';
 
-type ChildAcceptableCheckPointcutDefs = PointcutItemsToRecord<PointcutBasisChildAcceptableCheck | ReviseCodeBlockTo | EndWithAnyOfTokenIdsAppended>;
+type ChildAcceptableCheckPointcutDefs = PointcutItemsToRecord<
+	| PointcutBasisChildAcceptableCheck
+	| ReviseCodeBlockTo | ReviseTokenTo
+	| EndWithAnyOfTokenIdsAppended>;
 
 export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Optional<ChildAcceptableCheckFunc> => {
 	if (items == null || items.length === 0) {
@@ -27,50 +24,38 @@ export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Opt
 	}
 
 	const defs = items?.reduce((defs, item) => {
-		switch (item[0]) {
-			case PointcutBasisDefType.ChildAcceptableCheck: {
-				defs.ChildAcceptableCheck = item as ChildAcceptableCheck;
-				break;
-			}
-			case PointcutBasisDefType.DisableBase5AsChild: {
-				defs.DisableBase5AsChild = item as DisableBase5AsChild;
-				break;
-			}
-			case PointcutBasisDefType.AcceptableTokenIds: {
-				defs.AcceptableTokenIds = item as AcceptableTokenIds;
-				break;
-			}
-			case PointcutBasisDefType.AcceptableTokenTypes: {
-				defs.AcceptableTokenTypes = item as AcceptableTokenTypes;
-				break;
-			}
-			case PointcutBasisDefType.AcceptWhen: {
-				defs.AcceptWhen = item as AcceptWhen;
-				break;
-			}
-			case PointcutBasisDefType.UnacceptableTokenIds: {
-				defs.UnacceptableTokenIds = item as UnacceptableTokenIds;
-				break;
-			}
-			case PointcutBasisDefType.UnacceptedWhen: {
-				defs.UnacceptedWhen = item as UnacceptedWhen;
-				break;
-			}
-			case PointcutBasisDefType.ReviseCodeBlockTo: {
-				defs.ReviseCodeBlockTo = item as ReviseCodeBlockTo;
-				break;
-			}
-			case PointcutBasisDefType.EndWithAnyOfTokenIdsAppended: {
-				defs.EndWithAnyOfTokenIdsAppended = item as EndWithAnyOfTokenIdsAppended;
-				break;
-			}
-			default: {
-				// other types, ignored
-				break;
-			}
+		if ([
+			PointcutBasisDefType.ChildAcceptableCheck,
+			PointcutBasisDefType.DisableBase5AsChild,
+			PointcutBasisDefType.AcceptableTokenIds,
+			PointcutBasisDefType.AcceptableTokenTypes,
+			PointcutBasisDefType.AcceptWhen,
+			PointcutBasisDefType.UnacceptableTokenIds,
+			PointcutBasisDefType.UnacceptedWhen,
+			PointcutBasisDefType.ReviseCodeBlockTo,
+			PointcutBasisDefType.ReviseTokenTo,
+			PointcutBasisDefType.EndWithAnyOfTokenIdsAppended
+		].includes(item[0])) {
+			defs[item[0]] = item;
 		}
 		return defs;
 	}, {} as ChildAcceptableCheckPointcutDefs) ?? {};
+
+	let tokenIdsAcceptedByReviseTokenTo: Optional<Array<TokenId>> = (void 0);
+	const reviseTokenTo = defs.ReviseTokenTo;
+	if (reviseTokenTo != null) {
+		tokenIdsAcceptedByReviseTokenTo = [];
+		const fromTokenIds = Object.keys(reviseTokenTo[1]).map(tokenId => Number(tokenId) as TokenId);
+		tokenIdsAcceptedByReviseTokenTo.push(...fromTokenIds);
+		fromTokenIds.forEach(fromTokenId => {
+			const to = reviseTokenTo[1][fromTokenId];
+			if (Array.isArray(to)) {
+				tokenIdsAcceptedByReviseTokenTo.push(to[0]);
+			} else {
+				tokenIdsAcceptedByReviseTokenTo.push(to);
+			}
+		});
+	}
 
 	return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		const {tokenId: childTokenId, tokenType: childTokenType} = mightBeChildNode;
@@ -87,6 +72,12 @@ export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Opt
 		{
 			if (defs.ReviseCodeBlockTo != null
 				&& (TokenId.CodeBlock === childTokenId || defs.ReviseCodeBlockTo.includes(childTokenId))) {
+				return true;
+			}
+		}
+		// revise token to, accept from/to token ids
+		{
+			if (tokenIdsAcceptedByReviseTokenTo?.includes(childTokenId)) {
 				return true;
 			}
 		}

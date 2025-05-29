@@ -4,16 +4,7 @@ import {TokenId} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {OnChildAppendedFunc} from '../node-attribute';
 import {NodePointcuts} from './pointcut-defs';
-import {
-	EndWithAnyOfTokenIdsAppended,
-	EndWithChecked,
-	OnChildAppended,
-	PointcutBasisDef,
-	PointcutBasisDefType,
-	PointcutBasisOnChildAppended,
-	PointcutItemsToRecord,
-	ReviseCodeBlockTo
-} from './types';
+import {PointcutBasisDef, PointcutBasisDefType, PointcutBasisOnChildAppended, PointcutItemsToRecord} from './types';
 
 type OnChildAppendedPointcutDefs = PointcutItemsToRecord<PointcutBasisOnChildAppended>;
 
@@ -23,27 +14,14 @@ export const buildOnChildAppendedPointcut = (items?: PointcutBasisDef): Optional
 	}
 
 	const defs = items?.reduce((defs, item) => {
-		switch (item[0]) {
-			case PointcutBasisDefType.OnChildAppended: {
-				defs.OnChildAppended = item as OnChildAppended;
-				break;
-			}
-			case PointcutBasisDefType.ReviseCodeBlockTo: {
-				defs.ReviseCodeBlockTo = item as ReviseCodeBlockTo;
-				break;
-			}
-			case PointcutBasisDefType.EndWithAnyOfTokenIdsAppended: {
-				defs.EndWithAnyOfTokenIdsAppended = item as EndWithAnyOfTokenIdsAppended;
-				break;
-			}
-			case PointcutBasisDefType.EndWithChecked: {
-				defs.EndWithChecked = item as EndWithChecked;
-				break;
-			}
-			default: {
-				// other types, ignored
-				break;
-			}
+		if ([
+			PointcutBasisDefType.OnChildAppended,
+			PointcutBasisDefType.ReviseCodeBlockTo,
+			PointcutBasisDefType.ReviseTokenTo,
+			PointcutBasisDefType.EndWithAnyOfTokenIdsAppended,
+			PointcutBasisDefType.EndWithChecked
+		].includes(item[0])) {
+			defs[item[0]] = item;
 		}
 		return defs;
 	}, {} as OnChildAppendedPointcutDefs) ?? {};
@@ -55,6 +33,19 @@ export const buildOnChildAppendedPointcut = (items?: PointcutBasisDef): Optional
 		{
 			if (childTokenId === TokenId.CodeBlock && defs.ReviseCodeBlockTo != null) {
 				lastChildNode.replaceTokenNature(defs.ReviseCodeBlockTo[1], lastChildNode.tokenType);
+				NodePointcuts.initialize(lastChildNode);
+				return;
+			}
+		}
+		// revise token to
+		{
+			const reviseTo = defs.ReviseTokenTo?.[1]?.[childTokenId];
+			if (reviseTo != null) {
+				if (Array.isArray(reviseTo)) {
+					lastChildNode.replaceTokenNature(reviseTo[0], reviseTo[1]);
+				} else {
+					lastChildNode.replaceTokenNature(reviseTo, lastChildNode.tokenType);
+				}
 				NodePointcuts.initialize(lastChildNode);
 				return;
 			}
