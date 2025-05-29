@@ -84,3 +84,7 @@ export const buildDeclareAsParentFunc = (d: DeclareAsParentBasis): NodeAsParentD
 		return d;
 	}
 };
+
+export const buildDeclareAsParentFuncs = (basis?: ReadonlyArray<DeclareAsParentBasis>): Optional<Array<NodeAsParentDeclareFunc>> => {
+	return basis?.map(d => buildDeclareAsParentFunc(d));
+};

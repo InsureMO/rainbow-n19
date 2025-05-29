@@ -1,3 +1,4 @@
+import {Optional} from '@rainbow-n19/n3-ast';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition} from './recognizer';
 import {NodePreservableCheckFunc} from './types';
@@ -88,4 +89,8 @@ export const buildPreserveFunc = (p: PreserveCheckBasis): NodePreservableCheckFu
 	} else {
 		return p;
 	}
+};
+
+export const buildPreserveFuncs = (basis?: ReadonlyArray<PreserveCheckBasis>): Optional<Array<NodePreservableCheckFunc>> => {
+	return basis?.map(p => buildPreserveFunc(p));
 };

@@ -1,17 +1,30 @@
 import {TokenId} from '../../tokens';
 import {AbstractNodeRecognizer} from '../node-recognize-specific';
-import {buildDeclareAsParentFunc} from './defs-declare-as-parent';
-import {buildPreserveFunc} from './defs-preserve';
-import {buildRehydrateFunc} from './defs-rehydrate';
+import {buildDeclareAsParentFuncs, DeclareAsParentBasis} from './defs-declare-as-parent';
+import {buildPreserveFuncs, PreserveCheckBasis} from './defs-preserve';
+import {buildRehydrateFuncs, RehydrateBasis} from './defs-rehydrate';
 import {NodeRecognizer} from './recognizer';
-import {RecognizerBasis, RecognizerBasisDefs} from './recognizer-basis';
+import {GroovyAstNodeRecognizerConstructor, RecognizerBasis, RecognizerBasisDefs} from './recognizer-basis';
 import {NodeAsParentDeclareFunc, NodePreservableCheckFunc, NodeRehydrateFunc} from './types';
 
-const createRecognizerDef = (tokenId: TokenId, basis: Exclude<RecognizerBasisDefs, 'TODO' | 'NotRequired'>): NodeRecognizer => {
-	const {
-		name: className, class: BaseClass = AbstractNodeRecognizer,
-		rehydrate, preserve, declareAsParent
-	} = basis;
+const createRecognizerDef = (tokenId: TokenId, basis: RecognizerBasisDefs): NodeRecognizer => {
+	let BaseClass: GroovyAstNodeRecognizerConstructor,
+		rehydrate: ReadonlyArray<RehydrateBasis>,
+		preserve: ReadonlyArray<PreserveCheckBasis>,
+		declareAsParent: ReadonlyArray<DeclareAsParentBasis>;
+
+	if (basis === 'TODO' || basis === 'NotRequired') {
+		BaseClass = AbstractNodeRecognizer;
+		rehydrate = (void 0);
+		preserve = (void 0);
+		declareAsParent = (void 0);
+	} else {
+		BaseClass = basis.class ?? AbstractNodeRecognizer;
+		rehydrate = basis.rehydrate;
+		preserve = basis.preserve;
+		declareAsParent = basis.declareAsParent;
+	}
+
 	const RecognizerClass = class extends BaseClass {
 		private readonly _tokenId: TokenId;
 		private readonly _rehydrateFuncs: Array<NodeRehydrateFunc>;
@@ -45,21 +58,19 @@ const createRecognizerDef = (tokenId: TokenId, basis: Exclude<RecognizerBasisDef
 			return this._declareAsParentFuncs;
 		}
 	};
-	Object.defineProperty(RecognizerClass, 'name', {value: `${className}Recognizer`});
+	Object.defineProperty(RecognizerClass, 'name', {value: `${TokenId[tokenId]}Recognizer`});
 	return new RecognizerClass(
 		tokenId,
-		rehydrate?.map(r => buildRehydrateFunc(r)),
-		preserve?.map(p => buildPreserveFunc(p)),
-		declareAsParent?.map(d => buildDeclareAsParentFunc(d))
+		buildRehydrateFuncs(rehydrate),
+		buildPreserveFuncs(preserve),
+		buildDeclareAsParentFuncs(declareAsParent)
 	);
 };
 
 export const NodeRecognizers: Readonly<{ [key in keyof typeof RecognizerBasis]: NodeRecognizer }> = (() => {
 	return Object.keys(RecognizerBasis).reduce((defs, tokenId) => {
 		const def = RecognizerBasis[tokenId];
-		if (def !== 'TODO' && def !== 'NotRequired') {
-			defs[tokenId] = createRecognizerDef(Number(tokenId) as TokenId, def);
-		}
+		defs[tokenId] = createRecognizerDef(Number(tokenId) as TokenId, def);
 		return defs;
 	}, {});
 })();

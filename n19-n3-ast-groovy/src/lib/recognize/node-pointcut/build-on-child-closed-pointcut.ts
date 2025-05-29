@@ -2,14 +2,7 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {AstRecognizer} from '../ast-recognizer';
 import {OnChildClosedFunc} from '../node-attribute';
-import {
-	CloseOnChildWithTokenIdClosed,
-	OnChildClosed,
-	PointcutBasisDef,
-	PointcutBasisDefType,
-	PointcutBasisOnChildClosed,
-	PointcutItemsToRecord
-} from './types';
+import {PointcutBasisDef, PointcutBasisDefType, PointcutBasisOnChildClosed, PointcutItemsToRecord} from './types';
 
 type OnChildClosedPointcutDefs = PointcutItemsToRecord<PointcutBasisOnChildClosed>;
 

@@ -17,7 +17,7 @@ export type RehydrateWhenParentIsTokenType = Readonly<{
 }>;
 
 export enum PredefinedRehydration {
-	ToCharsWhenInStringLiteral = 'ToCharsWhenInStringLiteral',
+	DisableToCharsWhenTokenTypeIsStringLiteral = 'DisableToCharsWhenTokenTypeIsStringLiteral',
 	ToIdentifierWhenAfterDotDirectly = 'ToIdentifierWhenAfterDotDirectly',
 	ToIdentifierWhenKeywordSealedNotSupported = 'ToIdentifierWhenKeywordSealedNotSupported',
 	ToIdentifierWhenKeywordRecordNotSupported = 'ToIdentifierWhenKeywordRecordNotSupported',
@@ -127,10 +127,8 @@ const buildRehydrateFuncOnChecked = (r: RehydrateOnChecked): NodeRehydrateFunc =
 	};
 };
 
-const PredefinedRehydrationMap: Record<PredefinedRehydration, NodeRehydrateFunc> = {
-	[PredefinedRehydration.ToCharsWhenInStringLiteral]: buildRehydrateFuncOnChecked({
-		check: NodeRecognizeUtils.parentTokenTypeIsStringLiteral, to: [TokenId.Chars, TokenType.Chars]
-	}),
+type PredefinedPredefinedRehydration = Exclude<PredefinedRehydration, PredefinedRehydration.DisableToCharsWhenTokenTypeIsStringLiteral>;
+const PredefinedRehydrationMap: Record<PredefinedPredefinedRehydration, NodeRehydrateFunc> = {
 	[PredefinedRehydration.ToIdentifierWhenAfterDotDirectly]: buildRehydrateFuncOnChecked({
 		check: NodeRecognizeUtils.isDirectAfterDot, to: [TokenId.Identifier, TokenType.Identifier]
 	}),
@@ -154,4 +152,33 @@ export const buildRehydrateFunc = (r: RehydrateBasis): NodeRehydrateFunc => {
 	} else {
 		return r;
 	}
+};
+
+/** almost all tokens require this rehydrate rule, so build it as default till disable it manually by configuration */
+const rehydrateToCharsWhenTokenTypeIsStringLiteral = buildRehydrateFuncOnChecked({
+	check: NodeRecognizeUtils.parentTokenTypeIsStringLiteral, to: [TokenId.Chars, TokenType.Chars]
+});
+
+export const buildRehydrateFuncs = (basis?: ReadonlyArray<RehydrateBasis>): Optional<Array<NodeRehydrateFunc>> => {
+	if (basis == null) {
+		return (void 0);
+	}
+
+	let disableToCharsWhenTokenTypeIsStringLiteral = false;
+	const funcs: Array<NodeRehydrateFunc> = [];
+	for (const rehydrate of basis) {
+		if (PredefinedRehydration.DisableToCharsWhenTokenTypeIsStringLiteral === rehydrate) {
+			disableToCharsWhenTokenTypeIsStringLiteral = true;
+		} else {
+			funcs.push(buildRehydrateFunc(rehydrate));
+		}
+	}
+
+	if (!disableToCharsWhenTokenTypeIsStringLiteral) {
+		// to chars when token type is string literal is not disabled
+		// put this rehydrate function at first
+		funcs.unshift(rehydrateToCharsWhenTokenTypeIsStringLiteral);
+	}
+
+	return funcs.length === 0 ? (void 0) : funcs;
 };
