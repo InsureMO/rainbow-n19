@@ -8,11 +8,10 @@ import {
 	PointcutBasisDef,
 	PointcutBasisDefType,
 	PointcutBasisOnChildClosed,
-	PointcutItemsToRecord,
-	TakeLBraceAsEnd
+	PointcutItemsToRecord
 } from './types';
 
-type OnChildClosedPointcutDefs = PointcutItemsToRecord<PointcutBasisOnChildClosed | TakeLBraceAsEnd>;
+type OnChildClosedPointcutDefs = PointcutItemsToRecord<PointcutBasisOnChildClosed>;
 
 export const buildOnChildClosedPointcut = (items?: PointcutBasisDef): Optional<OnChildClosedFunc> => {
 	if (items == null || items.length === 0) {
@@ -29,10 +28,6 @@ export const buildOnChildClosedPointcut = (items?: PointcutBasisDef): Optional<O
 				defs.CloseOnChildWithTokenIdClosed = item as CloseOnChildWithTokenIdClosed;
 				break;
 			}
-			case PointcutBasisDefType.TakeLBraceAsEnd: {
-				defs.TakeLBraceAsEnd = item as TakeLBraceAsEnd;
-				break;
-			}
 			default: {
 				// other types, ignored
 				break;
@@ -44,9 +39,7 @@ export const buildOnChildClosedPointcut = (items?: PointcutBasisDef): Optional<O
 	return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const {tokenId: childTokenId} = lastChildNode;
 
-		if (defs.CloseOnChildWithTokenIdClosed?.includes(childTokenId)
-			?? defs.TakeLBraceAsEnd?.includes(childTokenId)
-			?? false) {
+		if (defs.CloseOnChildWithTokenIdClosed?.includes(childTokenId) ?? false) {
 			astRecognizer.closeCurrentParent();
 			return;
 		}

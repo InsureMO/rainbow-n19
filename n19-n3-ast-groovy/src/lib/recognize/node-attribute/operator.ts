@@ -11,8 +11,7 @@ import {
 	OnNodeClosedFunc,
 	RecognizerAttrVisitor,
 	RecognizerExtraAttribute,
-	RecognizerExtraNumberAccumulator,
-	TakeSpecificTokenToAnother
+	RecognizerExtraNumberAccumulator
 } from './types';
 
 export class NodeAttributeOperatorHelper {
@@ -87,7 +86,6 @@ export const NodeAttributeOperator: RecognizerAttrVisitor = {
 		return NodeAttributeOperator;
 	},
 	// additional
-	TakeLBraceAs: NodeAttributeOperatorHelper.createAttrVisitor<TakeSpecificTokenToAnother>(GroovyAstNodeAttributeNames.TAKE_LBRACE_AS),
 	SLCommentHighlightColumn: NodeAttributeOperatorHelper.createAttrVisitor<number>(GroovyAstNodeAttributeNames.SL_COMMENT_HIGHLIGHT_COLUMN),
 	IdentifierChildCount: NodeAttributeOperatorHelper.createNumberAccumulator(GroovyAstNodeAttributeNames.IDENTIFIER_CHILD_COUNT)
 };

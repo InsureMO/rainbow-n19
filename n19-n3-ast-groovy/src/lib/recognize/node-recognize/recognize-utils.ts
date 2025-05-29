@@ -1,8 +1,6 @@
-import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {NodeAttributeOperator} from '../node-attribute';
 import {AstRecognition} from './recognizer';
 import {NodeAsParentDeclaration, NodeAsParentDeclarations, NodeAsParentsDeclaration} from './types';
 
@@ -110,28 +108,6 @@ export class NodeRecognizeUtils {
 	static isDirectAfterDot(recognition: AstRecognition): boolean {
 		const [, dotNodeIndex] = NodeRecognizeUtils.getNearestPreviousDotNode(recognition);
 		return dotNodeIndex !== -1;
-	}
-
-	/**
-	 * based on {@link NodeAttributeOperator.TakeLBraceAs}, will not check the node
-	 */
-	static createOnTakeLBraceAs(recognition: AstRecognition): Optional<NodeAsParentDeclaration> {
-		const {astRecognizer} = recognition;
-
-		const currentParent = astRecognizer.getCurrentParent();
-		const tokenIdOrTakeFunc = NodeAttributeOperator.TakeLBraceAs.get(currentParent);
-		if (tokenIdOrTakeFunc == null) {
-			return (void 0);
-		}
-
-		const tokenId = (typeof tokenIdOrTakeFunc === 'function')
-			? tokenIdOrTakeFunc(astRecognizer)
-			: tokenIdOrTakeFunc;
-		if (tokenId == null) {
-			return (void 0);
-		}
-
-		return [tokenId, TokenType.LogicBlock];
 	}
 
 	static reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToParent(situation: NodeReviseSituation): NodeReviseResult {

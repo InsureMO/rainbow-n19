@@ -18,14 +18,13 @@ import {
 	AcceptWhen,
 	CloseOnChildWithTokenIdClosed,
 	DisableBase5AsChild,
-	EndsWithAnyOfTokenIdsAppended,
-	EndsWithChecked,
+	EndWithAnyOfTokenIdsAppended,
+	EndWithChecked,
 	OnChildAppended,
 	OnNodeClosed,
 	PointcutBasisDefs,
 	PointcutBasisDefType,
-	TakeLBraceAs,
-	TakeLBraceAsEnd,
+	ReviseCodeBlockTo,
 	UnacceptableTokenIds,
 	UnacceptedWhen
 } from './types';
@@ -78,22 +77,26 @@ const Tokens = {
 	}
 };
 // on child appended
+/** revise code block to given token id */
+const ReviseCodeBlockTo = (tokenId: TokenId): ReviseCodeBlockTo => {
+	return [PointcutBasisDefType.ReviseCodeBlockTo, tokenId];
+};
 /** if one of given token id appended as child, close current parent (me) */
-const EndsWith = (tokenId: TokenId, ...tokenIds: Array<TokenId>): EndsWithAnyOfTokenIdsAppended => {
-	return [PointcutBasisDefType.EndsWithAnyOfTokenIdsAppended, tokenId, ...tokenIds];
+const EndWith = (tokenId: TokenId, ...tokenIds: Array<TokenId>): EndWithAnyOfTokenIdsAppended => {
+	return [PointcutBasisDefType.EndWithAnyOfTokenIdsAppended, tokenId, ...tokenIds];
 };
 /** if semicolon appended as child, close current parent (me) */
-const EndsWithSemicolon: EndsWithAnyOfTokenIdsAppended = EndsWith(TokenId.Semicolon);
+const EndWithSemicolon: EndWithAnyOfTokenIdsAppended = EndWith(TokenId.Semicolon);
 /** if rbrace appended as child, close current parent (me) */
-const EndsWithRBrace: EndsWithAnyOfTokenIdsAppended = EndsWith(TokenId.RBrace);
+const EndWithRBrace: EndWithAnyOfTokenIdsAppended = EndWith(TokenId.RBrace);
 /** if rparen appended as child, close current parent (me) */
-const EndsWithRParen: EndsWithAnyOfTokenIdsAppended = EndsWith(TokenId.RParen);
+const EndWithRParen: EndWithAnyOfTokenIdsAppended = EndWith(TokenId.RParen);
 /** if some token appended as child, and pass when check, close current parent (me) */
-const EndsWithChecked = (when: OneOfOnChildAppendedFunc): EndsWithChecked => {
-	return [PointcutBasisDefType.EndsWithChecked, when];
+const EndWithChecked = (when: OneOfOnChildAppendedFunc): EndWithChecked => {
+	return [PointcutBasisDefType.EndWithChecked, when];
 };
 /** if some token appended as child, and same as start mark token, close current parent (me) */
-const EndsWithStartMark: EndsWithChecked = EndsWithChecked((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+const EndWithStartMark: EndWithChecked = EndWithChecked((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 	const parentNode = astRecognizer.getCurrentParent();
 	const firstChildNode = parentNode.children[0];
 	return firstChildNode !== lastChildNode && firstChildNode.tokenId === lastChildNode.tokenId;
@@ -107,16 +110,6 @@ const CloseOnChildWithTokenIdClosed = (tokenId: TokenId): CloseOnChildWithTokenI
 // TODO not use yet
 //  /** disable the default elevate trailing detachable tokens */
 //  const DisableElevateTrailingDetachable: DisableElevateTrailingDetachable = [PointcutBasisDefType.DisableElevateTrailingDetachable];
-// additional
-/** take lbrace as given token id, accept given token id */
-const TakeLBraceAs = (tokenId: TokenId): TakeLBraceAs => {
-	return [PointcutBasisDefType.TakeLBraceAs, tokenId];
-};
-// combined
-/** take lbrace as given token id, accept given token id, close me when given token closed */
-const TakeLBraceAsEnd = (tokenId: TokenId): TakeLBraceAsEnd => {
-	return [PointcutBasisDefType.TakeLBraceAsEnd, tokenId];
-};
 
 export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDefs }>> = {
 	// number literal
@@ -133,7 +126,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		Tokens.when((_: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			return astRecognizer.getCurrentParent().children[0].tokenId === TokenId.StringQuotationMark;
 		}).reject(TokenId.NewLine),
-		EndsWithStartMark
+		EndWithStartMark
 	],
 	[TokenId.GStringInterpolation]: 'TODO',
 	[TokenId.GStringLiteral]: [
@@ -141,13 +134,13 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		Tokens.when((_: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			return astRecognizer.getCurrentParent().children[0].tokenId === TokenId.GStringQuotationMark;
 		}).reject(TokenId.NewLine),
-		EndsWithStartMark
+		EndWithStartMark
 	],
 	[TokenId.SlashyGStringLiteral]: [
-		EndsWith(TokenId.Divide)
+		EndWith(TokenId.Divide)
 	],
 	[TokenId.DollarSlashyGStringLiteral]: [
-		EndsWith(TokenId.DollarSlashyGStringQuotationEndMark)
+		EndWith(TokenId.DollarSlashyGStringQuotationEndMark)
 	],
 	// statement
 	[TokenId.SingleLineComment]: 'NotRequired',
@@ -157,7 +150,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		// newline and sl comments is not allowed
 		DisableBase5AsChild,
 		TokenIds.accept(TokenId.Identifier, TokenId.Dot, TokenId.Whitespaces, TokenId.Tabs, TokenId.MultipleLinesComment),
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.ImportDeclaration]: [
 		// newline and sl comments is not allowed
@@ -166,65 +159,74 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 			// alias of TokenId.Multiple, only in import declaration
 			TokenId.ImportAllMark,
 			TokenId.Whitespaces, TokenId.Tabs, TokenId.MultipleLinesComment),
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.ImportAllMark]: 'TODO',
 	[TokenId.InterfaceDeclaration]: [
 		TokenIds.accept(...TypeDeclarationPointcuts.StandardTypeChildAcceptTokenIds),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.ClassBody)
+		ReviseCodeBlockTo(TokenId.ClassBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.ClassBody)
 	],
 	[TokenId.ClassDeclaration]: [
 		TokenIds.accept(...TypeDeclarationPointcuts.StandardTypeChildAcceptTokenIds),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.ClassBody)
+		ReviseCodeBlockTo(TokenId.ClassBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.ClassBody)
 	],
 	[TokenId.AtInterfaceClassDeclaration]: [
 		TokenIds.accept(...TypeDeclarationPointcuts.StandardTypeChildAcceptTokenIds),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.ClassBody)
+		ReviseCodeBlockTo(TokenId.ClassBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.ClassBody)
 	],
 	[TokenId.EnumClassDeclaration]: [
 		TokenIds.accept(...TypeDeclarationPointcuts.StandardTypeChildAcceptTokenIds),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.ClassBody)
+		ReviseCodeBlockTo(TokenId.ClassBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.ClassBody)
 	],
 	[TokenId.RecordClassDeclaration]: [
 		TokenIds.accept(...TypeDeclarationPointcuts.StandardTypeChildAcceptTokenIds),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.ClassBody)
+		ReviseCodeBlockTo(TokenId.ClassBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.ClassBody)
 	],
 	[TokenId.TraitClassDeclaration]: [
 		TokenIds.accept(...TypeDeclarationPointcuts.StandardTypeChildAcceptTokenIds),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.ClassBody)
+		ReviseCodeBlockTo(TokenId.ClassBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.ClassBody)
 	],
 	[TokenId.ClassBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.StaticBlockDeclaration]: [
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.StaticBlockBody)
+		ReviseCodeBlockTo(TokenId.StaticBlockBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.StaticBlockBody)
 	],
 	[TokenId.StaticBlockBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.ConstructorDeclaration]: [
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.ConstructorBody)
+		ReviseCodeBlockTo(TokenId.ConstructorBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.ConstructorBody)
 	],
 	[TokenId.ConstructorBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.MethodDeclaration]: [
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.MethodBody)
+		ReviseCodeBlockTo(TokenId.MethodBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.MethodBody)
 	],
 	[TokenId.MethodBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.FieldDeclaration]: [
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.AnnotationDeclaration]: [
 		// newline and sl comments is not allowed
@@ -233,17 +235,18 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		TokenIds.accept(TokenId.Identifier, TokenId.Dot,
 			TokenId.Whitespaces, TokenId.Tabs, TokenId.MultipleLinesComment,
 			TokenId.ParenBlock),
-		EndsWithSemicolon,
+		EndWithSemicolon,
 		CloseOnChildWithTokenIdClosed(TokenId.ParenBlock)
 	],
 	[TokenId.GenericTypeDeclaration]: 'TODO',
 	[TokenId.SynchronizedBlockDeclaration]: [
 		TokenIds.accept(TokenId.ParenBlock),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.SynchronizedBlockBody)
+		ReviseCodeBlockTo(TokenId.SynchronizedBlockBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.SynchronizedBlockBody)
 	],
 	[TokenId.SynchronizedBlockBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.IfDeclaration]: [
 		TokenIds.accept(TokenId.IfIfDeclaration, TokenId.IfElseIfDeclaration, TokenId.IfElseDeclaration)
@@ -251,39 +254,43 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	[TokenId.IfIfDeclaration]: [
 		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.ParenBlock),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.IfIfBody)
+		ReviseCodeBlockTo(TokenId.IfIfBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.IfIfBody)
 	],
 	[TokenId.IfIfBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.IfElseIfDeclaration]: [
 		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.ParenBlock),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.IfElseIfBody)
+		ReviseCodeBlockTo(TokenId.IfElseIfBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.IfElseIfBody)
 	],
 	[TokenId.IfElseIfBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.IfElseDeclaration]: [
 		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.IF),
 		/** special logic to take care of the {@link TokenId.IF} */
 		OnChildAppended(IfElseDeclarationPointcuts.onChildAppended),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.IfElseBody)
+		ReviseCodeBlockTo(TokenId.IfElseBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.IfElseBody)
 	],
 	[TokenId.IfElseBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.SwitchDeclaration]: [
 		TokenIds.accept(TokenId.ParenBlock, TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.SwitchBody)
+		ReviseCodeBlockTo(TokenId.SwitchBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.SwitchBody)
 	],
 	[TokenId.SwitchBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.SwitchCaseDeclaration]: [
 		// accept anything except new switch routes
@@ -291,7 +298,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 			// any legitimate right brace will be received by the block initiated by the left brace.
 			// therefore, an independent right brace must mark the end of the switch body.
 			TokenId.RBrace),
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.SwitchDefaultDeclaration]: [
 		// accept anything except new switch routes
@@ -299,36 +306,38 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 			// any legitimate right brace will be received by the block initiated by the left brace.
 			// therefore, an independent right brace must mark the end of the switch body.
 			TokenId.RBrace),
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.WhileDeclaration]: [
 		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.ParenBlock),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.WhileBody)
+		ReviseCodeBlockTo(TokenId.WhileBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.WhileBody)
 	],
 	[TokenId.WhileBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.DoWhileDeclaration]: [
 		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.DoWhileBody, TokenId.WHILE, TokenId.ParenBlock),
-		TakeLBraceAs(TokenId.DoWhileBody),
-		EndsWithSemicolon,
+		ReviseCodeBlockTo(TokenId.DoWhileBody),
+		EndWithSemicolon,
 		// TODO need to check the paren block is directly after while keyword?
 		CloseOnChildWithTokenIdClosed(TokenId.ParenBlock)
 	],
 	[TokenId.DoWhileBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.ForDeclaration]: [
 		// TODO brace body is not mandatory, or have one statement instead.
 		TokenIds.accept(TokenId.ParenBlock),
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.ForBody)
+		ReviseCodeBlockTo(TokenId.ForBody),
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.ForBody)
 	],
 	[TokenId.ForBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.TryDeclaration]: [
 		TokenIds.accept(TokenId.TryTryDeclaration, TokenId.TryCatchDeclaration, TokenId.TryFinallyDeclaration)
@@ -336,70 +345,73 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	[TokenId.TryTryDeclaration]: [
 		// auto closable
 		TokenIds.accept(TokenId.ParenBlock),
+		ReviseCodeBlockTo(TokenId.TryTryBody),
 		// TODO really?
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.TryTryBody)
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.TryTryBody)
 	],
 	[TokenId.TryTryBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.TryCatchDeclaration]: [
 		TokenIds.accept(TokenId.ParenBlock),
+		ReviseCodeBlockTo(TokenId.TryCatchBody),
 		// TODO really?
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.TryCatchBody)
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.TryCatchBody)
 	],
 	[TokenId.TryCatchBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.TryFinallyDeclaration]: [
+		ReviseCodeBlockTo(TokenId.TryFinallyBody),
 		// TODO really?
-		EndsWithSemicolon,
-		TakeLBraceAsEnd(TokenId.TryFinallyBody)
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.TryFinallyBody)
 	],
 	[TokenId.TryFinallyBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.Closure]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.LambdaDeclaration]: 'TODO',
 	[TokenId.LambdaBody]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.CodeBlock]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.ParenBlock]: [
-		EndsWithRParen
+		EndWithRParen
 	],
 	[TokenId.AssertStatement]: [
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.BreakStatement]: [
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.ContinueStatement]: [
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.DefStatement]: [
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.VarStatement]: [
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.NewExpression]: [
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.ThrowStatement]: [
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	[TokenId.ArrayInitializer]: [
-		EndsWithRBrace
+		EndWithRBrace
 	],
 	[TokenId.AtFieldPathElement]: [
 		TokenIds.accept(TokenId.Identifier, TokenId.StringLiteral),
-		EndsWithSemicolon
+		EndWithSemicolon
 	],
 	// temporary
 	[TokenId.Tmp$CsscmfDeclaration]: [
@@ -451,7 +463,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 			TokenId.Comma
 		),
 		OnChildAppended(CsscmfDeclarationPointcuts.onChildAppended),
-		EndsWithSemicolon,
+		EndWithSemicolon,
 		OnNodeClosed(CsscmfDeclarationPointcuts.onNodeClosed)
 	],
 	[TokenId.Tmp$NeverHappen]: 'NotRequired'

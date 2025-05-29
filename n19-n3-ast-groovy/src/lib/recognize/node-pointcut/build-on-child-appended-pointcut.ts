@@ -1,15 +1,18 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
+import {TokenId} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {OnChildAppendedFunc} from '../node-attribute';
+import {NodePointcuts} from './pointcut-defs';
 import {
-	EndsWithAnyOfTokenIdsAppended,
-	EndsWithChecked,
+	EndWithAnyOfTokenIdsAppended,
+	EndWithChecked,
 	OnChildAppended,
 	PointcutBasisDef,
 	PointcutBasisDefType,
 	PointcutBasisOnChildAppended,
-	PointcutItemsToRecord
+	PointcutItemsToRecord,
+	ReviseCodeBlockTo
 } from './types';
 
 type OnChildAppendedPointcutDefs = PointcutItemsToRecord<PointcutBasisOnChildAppended>;
@@ -25,12 +28,16 @@ export const buildOnChildAppendedPointcut = (items?: PointcutBasisDef): Optional
 				defs.OnChildAppended = item as OnChildAppended;
 				break;
 			}
-			case PointcutBasisDefType.EndsWithAnyOfTokenIdsAppended: {
-				defs.EndsWithAnyOfTokenIdsAppended = item as EndsWithAnyOfTokenIdsAppended;
+			case PointcutBasisDefType.ReviseCodeBlockTo: {
+				defs.ReviseCodeBlockTo = item as ReviseCodeBlockTo;
 				break;
 			}
-			case PointcutBasisDefType.EndsWithChecked: {
-				defs.EndsWithChecked = item as EndsWithChecked;
+			case PointcutBasisDefType.EndWithAnyOfTokenIdsAppended: {
+				defs.EndWithAnyOfTokenIdsAppended = item as EndWithAnyOfTokenIdsAppended;
+				break;
+			}
+			case PointcutBasisDefType.EndWithChecked: {
+				defs.EndWithChecked = item as EndWithChecked;
 				break;
 			}
 			default: {
@@ -44,8 +51,17 @@ export const buildOnChildAppendedPointcut = (items?: PointcutBasisDef): Optional
 	return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const {tokenId: childTokenId} = lastChildNode;
 
-		if (defs.EndsWithAnyOfTokenIdsAppended?.includes(childTokenId)
-			?? defs.EndsWithChecked?.[1]?.(lastChildNode, astRecognizer)
+		// revise code block to
+		{
+			if (childTokenId === TokenId.CodeBlock && defs.ReviseCodeBlockTo != null) {
+				lastChildNode.replaceTokenNature(defs.ReviseCodeBlockTo[1], lastChildNode.tokenType);
+				NodePointcuts.initialize(lastChildNode);
+				return;
+			}
+		}
+
+		if (defs.EndWithAnyOfTokenIdsAppended?.includes(childTokenId)
+			?? defs.EndWithChecked?.[1]?.(lastChildNode, astRecognizer)
 			?? false) {
 			astRecognizer.closeCurrentParent();
 			return;

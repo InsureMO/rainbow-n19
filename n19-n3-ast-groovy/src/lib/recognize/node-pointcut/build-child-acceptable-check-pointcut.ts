@@ -9,18 +9,17 @@ import {
 	AcceptWhen,
 	ChildAcceptableCheck,
 	DisableBase5AsChild,
-	EndsWithAnyOfTokenIdsAppended,
+	EndWithAnyOfTokenIdsAppended,
 	PointcutBasisChildAcceptableCheck,
 	PointcutBasisDef,
 	PointcutBasisDefType,
 	PointcutItemsToRecord,
-	TakeLBraceAs,
-	TakeLBraceAsEnd,
+	ReviseCodeBlockTo,
 	UnacceptableTokenIds,
 	UnacceptedWhen
 } from './types';
 
-type ChildAcceptableCheckPointcutDefs = PointcutItemsToRecord<PointcutBasisChildAcceptableCheck | TakeLBraceAs | TakeLBraceAsEnd | EndsWithAnyOfTokenIdsAppended>;
+type ChildAcceptableCheckPointcutDefs = PointcutItemsToRecord<PointcutBasisChildAcceptableCheck | ReviseCodeBlockTo | EndWithAnyOfTokenIdsAppended>;
 
 export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Optional<ChildAcceptableCheckFunc> => {
 	if (items == null || items.length === 0) {
@@ -57,16 +56,12 @@ export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Opt
 				defs.UnacceptedWhen = item as UnacceptedWhen;
 				break;
 			}
-			case PointcutBasisDefType.TakeLBraceAs: {
-				defs.TakeLBraceAs = item as TakeLBraceAs;
+			case PointcutBasisDefType.ReviseCodeBlockTo: {
+				defs.ReviseCodeBlockTo = item as ReviseCodeBlockTo;
 				break;
 			}
-			case PointcutBasisDefType.TakeLBraceAsEnd: {
-				defs.TakeLBraceAsEnd = item as TakeLBraceAsEnd;
-				break;
-			}
-			case PointcutBasisDefType.EndsWithAnyOfTokenIdsAppended: {
-				defs.EndsWithAnyOfTokenIdsAppended = item as EndsWithAnyOfTokenIdsAppended;
+			case PointcutBasisDefType.EndWithAnyOfTokenIdsAppended: {
+				defs.EndWithAnyOfTokenIdsAppended = item as EndWithAnyOfTokenIdsAppended;
 				break;
 			}
 			default: {
@@ -88,21 +83,16 @@ export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Opt
 				return true;
 			}
 		}
-		// take brace as, accept as token id and lbrace as well
+		// revise code block to, accept code block and token which revised to
 		{
-			if (defs.TakeLBraceAs?.includes(childTokenId)) {
-				return true;
-			}
-		}
-		// take brace as end, accept as token id and lbrace as well
-		{
-			if (defs.TakeLBraceAsEnd?.includes(childTokenId)) {
+			if (defs.ReviseCodeBlockTo != null
+				&& (TokenId.CodeBlock === childTokenId || defs.ReviseCodeBlockTo.includes(childTokenId))) {
 				return true;
 			}
 		}
 		// end token ids
 		{
-			if (defs.EndsWithAnyOfTokenIdsAppended?.includes(childTokenId) ?? false) {
+			if (defs.EndWithAnyOfTokenIdsAppended?.includes(childTokenId) ?? false) {
 				return true;
 			}
 		}

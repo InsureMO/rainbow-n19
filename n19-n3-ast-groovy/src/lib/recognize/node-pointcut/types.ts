@@ -22,16 +22,13 @@ export enum PointcutBasisDefType {
 	UnacceptableTokenIds = 'UnacceptableTokenIds',
 	UnacceptedWhen = 'UnacceptedWhen',
 	// on child appended
-	EndsWithAnyOfTokenIdsAppended = 'EndsWithAnyOfTokenIdsAppended',
-	EndsWithChecked = 'EndsWithChecked',
+	ReviseCodeBlockTo = 'ReviseCodeBlockTo',
+	EndWithAnyOfTokenIdsAppended = 'EndWithAnyOfTokenIdsAppended',
+	EndWithChecked = 'EndWithChecked',
 	// on child closed
 	CloseOnChildWithTokenIdClosed = 'CloseOnChildWithTokenIdClosed',
 	// on node closed
 	DisableElevateTrailingDetachable = 'DisableElevateTrailingDetachable',
-	// additional
-	TakeLBraceAs = 'TakeLBraceAs',
-	// combined
-	TakeLBraceAsEnd = 'TakeLBraceAsEnd'
 }
 
 // pointcut functions
@@ -47,16 +44,13 @@ export type AcceptWhen = Readonly<[PointcutBasisDefType.AcceptWhen, OneOfChildAc
 export type UnacceptableTokenIds = Readonly<[PointcutBasisDefType.UnacceptableTokenIds, ...Array<TokenId>]>;
 export type UnacceptedWhen = Readonly<[PointcutBasisDefType.UnacceptedWhen, OneOfChildAcceptableCheckFunc, ...Array<TokenId>]>;
 // on child appended
-export type EndsWithAnyOfTokenIdsAppended = Readonly<[PointcutBasisDefType.EndsWithAnyOfTokenIdsAppended, ...Array<TokenId>]>;
-export type EndsWithChecked = Readonly<[PointcutBasisDefType.EndsWithChecked, OneOfOnChildAppendedFunc]>;
+export type ReviseCodeBlockTo = Readonly<[PointcutBasisDefType.ReviseCodeBlockTo, TokenId]>;
+export type EndWithAnyOfTokenIdsAppended = Readonly<[PointcutBasisDefType.EndWithAnyOfTokenIdsAppended, ...Array<TokenId>]>;
+export type EndWithChecked = Readonly<[PointcutBasisDefType.EndWithChecked, OneOfOnChildAppendedFunc]>;
 // on child closed
 export type CloseOnChildWithTokenIdClosed = Readonly<[PointcutBasisDefType.CloseOnChildWithTokenIdClosed, TokenId]>;
 // on node closed
 export type DisableElevateTrailingDetachable = Readonly<[PointcutBasisDefType.DisableElevateTrailingDetachable]>;
-// additional
-export type TakeLBraceAs = Readonly<[PointcutBasisDefType.TakeLBraceAs, TokenId]>;
-// combined
-export type TakeLBraceAsEnd = Readonly<[PointcutBasisDefType.TakeLBraceAsEnd, TokenId]>;
 
 export type PointcutBasisChildAcceptableCheck =
 	| ChildAcceptableCheck
@@ -65,7 +59,8 @@ export type PointcutBasisChildAcceptableCheck =
 	| UnacceptableTokenIds | UnacceptedWhen;
 export type PointcutBasisOnChildAppended =
 	| OnChildAppended
-	| EndsWithAnyOfTokenIdsAppended | EndsWithChecked;
+	| ReviseCodeBlockTo
+	| EndWithAnyOfTokenIdsAppended | EndWithChecked;
 export type PointcutBasisOnChildClosed =
 	| OnChildClosed
 	| CloseOnChildWithTokenIdClosed;
@@ -82,13 +77,8 @@ export type PointcutBasisDef = ReadonlyArray<
 	| PointcutBasisOnChildAppended
 	| PointcutBasisOnChildClosed
 	| PointcutBasisOnNodeClosed
-	// other
-	| TakeLBraceAs
-	// combined
-	/** will overwrite TakeLBraceAs */
-	| TakeLBraceAsEnd
 >
 export type PointcutBasisDefs = PointcutBasisDef | 'TODO' | 'NotRequired';
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type PointcutItemsToRecord<T extends readonly [PointcutBasisDefType, ...any[]]> = Partial<{ [K in T[0]]: Extract<T, readonly [K, ...any[]]> }>;

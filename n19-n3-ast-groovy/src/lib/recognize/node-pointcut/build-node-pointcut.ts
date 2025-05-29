@@ -4,7 +4,7 @@ import {buildChildAcceptableCheckPointcut} from './build-child-acceptable-check-
 import {buildOnChildAppendedPointcut} from './build-on-child-appended-pointcut';
 import {buildOnChildClosedPointcut} from './build-on-child-closed-pointcut';
 import {buildOnNodeClosedPointcut} from './build-on-node-closed-pointcut';
-import {PointcutBasisDef, PointcutBasisDefType} from './types';
+import {PointcutBasisDef} from './types';
 
 export const buildNodePointcut = (def: PointcutBasisDef) => {
 	return (node: GroovyAstNode): void => {
@@ -27,14 +27,5 @@ export const buildNodePointcut = (def: PointcutBasisDef) => {
 		if (onNodeClosed != null) {
 			NodeAttributeOperator.OnNodeClosed.set(node, onNodeClosed);
 		}
-
-		def.forEach((item) => {
-			const type = item[0];
-			if (type === PointcutBasisDefType.TakeLBraceAs) {
-				NodeAttributeOperator.TakeLBraceAs.set(node, item[1]);
-			} else if (type === PointcutBasisDefType.TakeLBraceAsEnd) {
-				NodeAttributeOperator.TakeLBraceAs.set(node, item[1]);
-			}
-		});
 	};
 };

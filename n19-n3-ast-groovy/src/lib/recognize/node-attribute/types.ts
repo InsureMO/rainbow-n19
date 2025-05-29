@@ -1,6 +1,4 @@
-import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
-import {TokenId} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 
 export enum GroovyAstNodeAttributeNames {
@@ -44,8 +42,6 @@ export interface RecognizerExtraNumberAccumulator extends RecognizerExtraAttribu
 	readonly reset: (node: GroovyAstNode) => void;
 }
 
-export type TakeSpecificTokenToAnother = TokenId | ((astRecognizer: AstRecognizer) => Optional<TokenId>);
-
 export type RecognizerAttrVisitor = {
 	// standard
 	readonly ChildAcceptableCheck: RecognizerExtraAttribute<ChildAcceptableCheckFunc>;
@@ -54,7 +50,6 @@ export type RecognizerAttrVisitor = {
 	readonly OnNodeClosed: RecognizerExtraAttribute<OnNodeClosedFunc>;
 	readonly clear: (node: GroovyAstNode) => RecognizerAttrVisitor;
 	// additional
-	readonly TakeLBraceAs: RecognizerExtraAttribute<TakeSpecificTokenToAnother>;
 	readonly SLCommentHighlightColumn: RecognizerExtraAttribute<number>;
 	readonly IdentifierChildCount: RecognizerExtraNumberAccumulator;
 }

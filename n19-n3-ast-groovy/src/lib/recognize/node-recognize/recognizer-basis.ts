@@ -29,8 +29,6 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizerBas
 		name: 'SpLBrace',
 		rehydrate: [Rehydrate.ToCharsWhenInStringLiteral],
 		declareAsParent: [
-			/** if parent has {@link NodeAttributeOperator.TakeLBraceAs} */
-			NodeRecognizeUtils.createOnTakeLBraceAs,
 			/** any other case */
 			[TokenId.CodeBlock, TokenType.LogicBlock]
 		]
