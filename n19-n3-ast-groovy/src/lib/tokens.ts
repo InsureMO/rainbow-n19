@@ -266,6 +266,7 @@ export enum TokenId {
 	VarStatement,
 	NewExpression,
 	ThrowStatement,
+	YieldStatement,
 	ArrayInitializer,
 	AtFieldPathElement,
 	// temporary tokens are only used during the AST parsing process

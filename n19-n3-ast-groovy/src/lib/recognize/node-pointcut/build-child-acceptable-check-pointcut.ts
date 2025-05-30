@@ -29,7 +29,7 @@ export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Opt
 			PointcutBasisDefType.DisableBase5AsChild,
 			PointcutBasisDefType.AcceptableTokenIds,
 			PointcutBasisDefType.AcceptableTokenTypes,
-			PointcutBasisDefType.AcceptWhen,
+			PointcutBasisDefType.AcceptedWhen,
 			PointcutBasisDefType.UnacceptableTokenIds,
 			PointcutBasisDefType.UnacceptedWhen,
 			PointcutBasisDefType.ReviseCodeBlockTo,
@@ -123,7 +123,7 @@ export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Opt
 		}
 		// accept when
 		{
-			const acceptableTokenIdsWhen = defs.AcceptWhen;
+			const acceptableTokenIdsWhen = defs.AcceptedWhen;
 			if (acceptableTokenIdsWhen != null) {
 				if (acceptableTokenIdsWhen[1](mightBeChildNode, astRecognizer)) {
 					return true;

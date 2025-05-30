@@ -2,16 +2,6 @@ import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition} from './recognizer';
-import {NodeAsParentDeclaration, NodeAsParentDeclarations, NodeAsParentsDeclaration} from './types';
-
-export const NodeDeclareAsParent = {
-	isNodeAsParentDeclaration: (d: NodeAsParentDeclarations): d is NodeAsParentDeclaration => {
-		return !Array.isArray(d[0]);
-	},
-	isNodeAsParentsDeclaration: (d: NodeAsParentDeclarations): d is NodeAsParentsDeclaration => {
-		return Array.isArray(d[0]);
-	}
-} as const;
 
 export interface NodeReviseSituation {
 	/* grabbed nodes, already appended to statement */
@@ -71,6 +61,20 @@ export class NodeRecognizeUtils {
 
 	static parentTokenTypeIsStringLiteral(recognition: AstRecognition): boolean {
 		return recognition.astRecognizer.getCurrentParent().tokenType === TokenType.StringLiteral;
+	}
+
+	static parentIsOneOfTokenIds(tokenId: TokenId, ...tokenIds: Array<TokenId>): ((recognition: AstRecognition) => boolean) {
+		return (recognition: AstRecognition): boolean => {
+			const parentTokenId = recognition.astRecognizer.getCurrentParent().tokenId;
+			return tokenId === parentTokenId || tokenIds.includes(parentTokenId);
+		};
+	}
+
+	static parentIsOneOfTokenTypes(tokenType: TokenType, ...tokenTypes: Array<TokenType>): ((recognition: AstRecognition) => boolean) {
+		return (recognition: AstRecognition): boolean => {
+			const parentTokenType = recognition.astRecognizer.getCurrentParent().tokenType;
+			return tokenType === parentTokenType || tokenTypes.includes(parentTokenType);
+		};
 	}
 
 	/**

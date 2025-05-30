@@ -15,7 +15,7 @@ import {
 import {
 	AcceptableTokenIds,
 	AcceptableTokenTypes,
-	AcceptWhen,
+	AcceptedWhen,
 	CloseOnChildWithTokenIdClosed,
 	DisableBase5AsChild,
 	EndWithAnyOfTokenIdsAppended,
@@ -68,8 +68,8 @@ const TokenTypes = {
 const Tokens = {
 	when: (when: OneOfChildAcceptableCheckFunc) => {
 		return {
-			accept: (tokenId: TokenId, ...tokenIds: Array<TokenId>): AcceptWhen => {
-				return [PointcutBasisDefType.AcceptWhen, when, tokenId, ...tokenIds];
+			accept: (tokenId: TokenId, ...tokenIds: Array<TokenId>): AcceptedWhen => {
+				return [PointcutBasisDefType.AcceptedWhen, when, tokenId, ...tokenIds];
 			},
 			reject: (tokenId: TokenId, ...tokenIds: Array<TokenId>): UnacceptedWhen => {
 				return [PointcutBasisDefType.UnacceptedWhen, when, tokenId, ...tokenIds];
@@ -407,6 +407,9 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		EndWithSemicolon
 	],
 	[TokenId.ThrowStatement]: [
+		EndWithSemicolon
+	],
+	[TokenId.YieldStatement]: [
 		EndWithSemicolon
 	],
 	[TokenId.ArrayInitializer]: [

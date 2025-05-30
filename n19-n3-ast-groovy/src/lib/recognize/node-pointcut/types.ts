@@ -18,7 +18,7 @@ export enum PointcutBasisDefType {
 	DisableBase5AsChild = 'DisableBase5AsChild',
 	AcceptableTokenIds = 'AcceptableTokenIds',
 	AcceptableTokenTypes = 'AcceptableTokenTypes',
-	AcceptWhen = 'AcceptWhen',
+	AcceptedWhen = 'AcceptedWhen',
 	UnacceptableTokenIds = 'UnacceptableTokenIds',
 	UnacceptedWhen = 'UnacceptedWhen',
 	// on child appended
@@ -41,7 +41,7 @@ export type OnNodeClosed = Readonly<[PointcutBasisDefType.OnNodeClosed, OnNodeCl
 export type DisableBase5AsChild = Readonly<[PointcutBasisDefType.DisableBase5AsChild]>;
 export type AcceptableTokenIds = Readonly<[PointcutBasisDefType.AcceptableTokenIds, ...Array<TokenId>]>;
 export type AcceptableTokenTypes = Readonly<[PointcutBasisDefType.AcceptableTokenTypes, ...Array<TokenType>]>;
-export type AcceptWhen = Readonly<[PointcutBasisDefType.AcceptWhen, OneOfChildAcceptableCheckFunc, ...Array<TokenId>]>;
+export type AcceptedWhen = Readonly<[PointcutBasisDefType.AcceptedWhen, OneOfChildAcceptableCheckFunc, ...Array<TokenId>]>;
 export type UnacceptableTokenIds = Readonly<[PointcutBasisDefType.UnacceptableTokenIds, ...Array<TokenId>]>;
 export type UnacceptedWhen = Readonly<[PointcutBasisDefType.UnacceptedWhen, OneOfChildAcceptableCheckFunc, ...Array<TokenId>]>;
 // on child appended
@@ -57,7 +57,7 @@ export type DisableElevateTrailingDetachable = Readonly<[PointcutBasisDefType.Di
 export type PointcutBasisChildAcceptableCheck =
 	| ChildAcceptableCheck
 	| DisableBase5AsChild
-	| AcceptableTokenIds | AcceptableTokenTypes | AcceptWhen
+	| AcceptableTokenIds | AcceptableTokenTypes | AcceptedWhen
 	| UnacceptableTokenIds | UnacceptedWhen;
 export type PointcutBasisOnChildAppended =
 	| OnChildAppended

@@ -6,7 +6,6 @@ import {
 	AstRecognition,
 	NodeAsParentDeclaration,
 	NodeAsParentDeclareFunc,
-	NodeDeclareAsParent,
 	NodePreservableCheckFunc,
 	NodeRecognizer,
 	NodeRehydrateFunc
@@ -66,22 +65,16 @@ export abstract class AbstractNodeRecognizer implements NodeRecognizer {
 	protected doDeclareAsParent(recognition: AstRecognition): Optional<number> {
 		const declareParentFuncs = this.getDeclareAsParentFuncs();
 		for (let index = 0, count = declareParentFuncs.length; index < count; index++) {
-			const declarations = declareParentFuncs[index](recognition);
-			if (declarations != null) {
+			const ancestorDeclarations = declareParentFuncs[index](recognition);
+			if (ancestorDeclarations != null) {
 				const {node, nodeIndex, astRecognizer} = recognition;
-				if (NodeDeclareAsParent.isNodeAsParentsDeclaration(declarations)) {
-					const parentNodes = declarations.map(declaration => {
-						return this.createDeclaredParentNode(node, declaration);
-					});
-					// first one is parent, rest are ancestors
-					parentNodes[0].asParentOf(node);
-					// append all ancestors to ast
-					parentNodes.reverse().forEach(ancestorNode => astRecognizer.appendAsCurrentParent(ancestorNode));
-				} else {
-					const parentNode = this.createDeclaredParentNode(node, declarations);
-					parentNode.asParentOf(node);
-					astRecognizer.appendAsCurrentParent(parentNode);
-				}
+				const parentNodes = ancestorDeclarations.map(declaration => {
+					return this.createDeclaredParentNode(node, declaration);
+				});
+				// first one is parent, rest are ancestors
+				parentNodes[0].asParentOf(node);
+				// append all ancestors to ast
+				parentNodes.reverse().forEach(ancestorNode => astRecognizer.appendAsCurrentParent(ancestorNode));
 				return nodeIndex + 1;
 			}
 		}

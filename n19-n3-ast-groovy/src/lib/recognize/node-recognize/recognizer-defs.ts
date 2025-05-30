@@ -1,28 +1,30 @@
+import {Optional} from '@rainbow-n19/n3-ast';
 import {TokenId} from '../../tokens';
 import {AbstractNodeRecognizer} from '../node-recognize-specific';
-import {buildDeclareAsParentFuncs, DeclareAsParentBasis} from './defs-declare-as-parent';
-import {buildPreserveFuncs, PreserveCheckBasis} from './defs-preserve';
-import {buildRehydrateFuncs, RehydrateBasis} from './defs-rehydrate';
+import {buildDeclareAsParentFuncs} from './build-declare-as-parent-funcs';
+import {buildPreserveFuncs} from './build-preserve-check-funcs';
+import {buildRehydrateFuncs} from './build-rehydrate-funcs';
 import {NodeRecognizer} from './recognizer';
-import {GroovyAstNodeRecognizerConstructor, RecognizerBasis, RecognizerBasisDefs} from './recognizer-basis';
-import {NodeAsParentDeclareFunc, NodePreservableCheckFunc, NodeRehydrateFunc} from './types';
+import {RecognizerBasis} from './recognizer-basis';
+import {
+	GroovyAstNodeRecognizerConstructor,
+	NodeAsParentDeclareFunc,
+	NodePreservableCheckFunc,
+	NodeRehydrateFunc,
+	RecognizeBasisDefs,
+	RecognizeBasisType
+} from './types';
 
-const createRecognizerDef = (tokenId: TokenId, basis: RecognizerBasisDefs): NodeRecognizer => {
-	let BaseClass: GroovyAstNodeRecognizerConstructor,
-		rehydrate: ReadonlyArray<RehydrateBasis>,
-		preserve: ReadonlyArray<PreserveCheckBasis>,
-		declareAsParent: ReadonlyArray<DeclareAsParentBasis>;
+const createRecognizerDef = (tokenId: TokenId, basis: RecognizeBasisDefs): NodeRecognizer => {
+	let BaseClass: GroovyAstNodeRecognizerConstructor;
+	let defs: Optional<Exclude<RecognizeBasisDefs, 'TODO' | 'NotRequired'>>;
 
 	if (basis === 'TODO' || basis === 'NotRequired') {
 		BaseClass = AbstractNodeRecognizer;
-		rehydrate = (void 0);
-		preserve = (void 0);
-		declareAsParent = (void 0);
+		defs = (void 0);
 	} else {
-		BaseClass = basis.class ?? AbstractNodeRecognizer;
-		rehydrate = basis.rehydrate;
-		preserve = basis.preserve;
-		declareAsParent = basis.declareAsParent;
+		BaseClass = basis.find(item => item[0] === RecognizeBasisType.CustomClass)?.[1] ?? AbstractNodeRecognizer;
+		defs = basis;
 	}
 
 	const RecognizerClass = class extends BaseClass {
@@ -61,9 +63,9 @@ const createRecognizerDef = (tokenId: TokenId, basis: RecognizerBasisDefs): Node
 	Object.defineProperty(RecognizerClass, 'name', {value: `${TokenId[tokenId]}Recognizer`});
 	return new RecognizerClass(
 		tokenId,
-		buildRehydrateFuncs(rehydrate),
-		buildPreserveFuncs(preserve),
-		buildDeclareAsParentFuncs(declareAsParent)
+		buildRehydrateFuncs(defs),
+		buildPreserveFuncs(defs),
+		buildDeclareAsParentFuncs(defs)
 	);
 };
 
