@@ -1,6 +1,7 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
+import {OneOfOnChildAppendedFunc} from '../node-attribute';
 import {NodePointcuts} from '../node-pointcut';
 
 export class IfElseDeclarationPointcuts {
@@ -10,7 +11,7 @@ export class IfElseDeclarationPointcuts {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly onChildAppended = (lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+	static readonly onChildAppended: OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 		if (lastChildNode.tokenId !== TokenId.IF) {
 			return false;
 		}

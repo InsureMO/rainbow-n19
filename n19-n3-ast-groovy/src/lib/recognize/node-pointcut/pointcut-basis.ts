@@ -9,9 +9,11 @@ import {
 } from '../node-attribute';
 import {
 	CsscmfDeclarationPointcuts,
+	GStringLiteralPointcuts,
 	IfElseDeclarationPointcuts,
 	MultipleLinesCommentPointcuts,
 	SingleLineCommentPointcuts,
+	StringLiteralPointcuts,
 	TypeDeclarationPointcuts
 } from '../node-pointcut-specific';
 import {PointcutUtils} from './pointcut-utils';
@@ -146,17 +148,13 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	// string literal
 	[TokenId.StringLiteral]: [
 		// newline is accepted only when string literal allows multiple lines
-		Tokens.when((_: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-			return astRecognizer.getCurrentParent().children[0].tokenId === TokenId.StringQuotationMark;
-		}).reject(TokenId.NewLine),
+		Tokens.when(StringLiteralPointcuts.isSingleLine).reject(TokenId.NewLine),
 		EndWithStartMark
 	],
 	[TokenId.GStringInterpolation]: 'TODO',
 	[TokenId.GStringLiteral]: [
 		// newline is accepted only when gstring literal allows multiple lines
-		Tokens.when((_: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-			return astRecognizer.getCurrentParent().children[0].tokenId === TokenId.GStringQuotationMark;
-		}).reject(TokenId.NewLine),
+		Tokens.when(GStringLiteralPointcuts.isSingleLine).reject(TokenId.NewLine),
 		EndWithStartMark
 	],
 	[TokenId.SlashyGStringLiteral]: [
