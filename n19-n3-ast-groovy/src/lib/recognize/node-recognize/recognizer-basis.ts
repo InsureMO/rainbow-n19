@@ -2,7 +2,6 @@ import {TokenId, TokenType} from '../../tokens';
 import {
 	MultipleLinesCommentsRecognizer,
 	NumericBasePartRecognizer,
-	ScriptCommandRecognizer,
 	SingleLineCommentsRecognizer
 } from '../node-recognize-specific';
 import {NodeRehydration} from './build-rehydrate-funcs';
@@ -173,7 +172,10 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.Arrow]: 'TODO',
 	[TokenId.INSTANCEOF]: [ReviseToIdentifierWhenAfterDotDirectly],
 	// mark
-	[TokenId.ScriptCommandStartMark]: [CustomClass(ScriptCommandRecognizer)],
+	[TokenId.ScriptCommandStartMark]: [
+		ReviseToken.when(NodeRecognizeUtils.isScriptCommandNotAllowed).use(NodeRehydration.rehydrateScriptCommandStartMarkTo2Parts),
+		DeclareAsParent([TokenId.ScriptCommand, TokenType.ScriptCommand])
+	],
 	[TokenId.SingleLineCommentStartMark]: [CustomClass(SingleLineCommentsRecognizer)],
 	[TokenId.MultipleLinesCommentStartMark]: [CustomClass(MultipleLinesCommentsRecognizer)],
 	[TokenId.MultipleLinesCommentEndMark]: 'NotRequired',
@@ -521,7 +523,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		DeclareAsParent([TokenId.WhileDeclaration, TokenType.LogicBlockDeclaration])
 	],
 	[TokenId.YIELD]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		ReviseToIdentifierWhenAfterDotDirectly
 		// TODO how does it end? it is the common issue for XXXStatement
 		// DeclareAsParent([TokenId.YieldStatement, TokenType.LogicStatement])
 	],

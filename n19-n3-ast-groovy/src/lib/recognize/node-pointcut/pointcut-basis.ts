@@ -149,7 +149,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	// statement
 	[TokenId.SingleLineComment]: 'NotRequired',
 	[TokenId.MultipleLinesComment]: 'NotRequired',
-	[TokenId.ScriptCommand]: 'NotRequired',
+	[TokenId.ScriptCommand]: [DisableBase5AsChild, TokenIds.reject(TokenId.NewLine)],
 	[TokenId.PackageDeclaration]: [
 		// newline and sl comments is not allowed
 		DisableBase5AsChild,

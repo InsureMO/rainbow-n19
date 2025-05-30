@@ -241,7 +241,7 @@ export class AstRecognizer {
 		const {tokenId: previousSiblingTokenId} = previousSiblingNode;
 		if (previousSiblingTokenId !== node.tokenId) {
 			parent.asParentOf(node);
-		} else if (previousSiblingTokenId === TokenId.Chars || previousSiblingTokenId === TokenId.UndeterminedChars) {
+		} else if (previousSiblingTokenId === TokenId.UndeterminedChars) {
 			previousSiblingNode.appendText(node.text);
 		} else {
 			parent.asParentOf(node);
@@ -291,9 +291,8 @@ export class AstRecognizer {
 		};
 
 		this._currentAncestors.push(complicationUnitNode);
-		const nodeCount = nodes.length;
 		let nodeIndex = 0;
-		while (nodeIndex < nodeCount) {
+		while (nodeIndex < nodes.length) {
 			if (debugTimeLogs.enabled) {
 				debugTimeLogs.startOfRound = process.hrtime();
 				debugTimeLogs.nodeIndexOfRound = nodeIndex;

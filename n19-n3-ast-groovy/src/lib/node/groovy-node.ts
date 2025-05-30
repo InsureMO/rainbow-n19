@@ -23,6 +23,10 @@ export class GroovyAstNode implements AstNode {
 	// special behaviors
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private _extraAttrs: Record<string, any>;
+	/** save the origin token id after nature replaced, the first version */
+	private _originTokenId: Optional<TokenId>;
+	/** save the origin token type after nature replaced, the first version */
+	private _originTokenType: Optional<TokenType>;
 
 	constructor(options: GroovyAstNodeConstructOptions) {
 		this._tokenId = options.tokenId;
@@ -43,6 +47,8 @@ export class GroovyAstNode implements AstNode {
 	}
 
 	replaceTokenNature(tokenId: TokenId, tokenType: TokenType): void {
+		this._originTokenId = this._originTokenId ?? this._tokenId;
+		this._originTokenType = this._originTokenType ?? this._tokenType;
 		this._tokenId = tokenId;
 		this._tokenType = tokenType;
 	}
@@ -54,6 +60,14 @@ export class GroovyAstNode implements AstNode {
 		this.replaceTokenNature(tokenId, tokenType);
 		this._text = text;
 		this._endOffset = this._startOffset + this._text.length;
+	}
+
+	get originTokenId(): TokenId {
+		return this._originTokenId ?? this._tokenId;
+	}
+
+	get originTokenType(): TokenType {
+		return this._originTokenType ?? this._tokenType;
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any

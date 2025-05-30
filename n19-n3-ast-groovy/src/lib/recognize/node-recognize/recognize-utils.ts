@@ -187,6 +187,27 @@ export class NodeRecognizeUtils {
 		});
 	}
 
+	/**
+	 * return true when
+	 * 1. script command not enabled,
+	 * 2. current parent is not compilation unit,
+	 * 3. previous siblings has token rather than script command, whitespaces, tabs or newline.
+	 */
+	static isScriptCommandNotAllowed(recognition: AstRecognition): boolean {
+		if (!recognition.astRecognizer.isScriptCommandEnabled) {
+			return false;
+		}
+		const currentParent = recognition.astRecognizer.getCurrentParent();
+		if (currentParent.tokenId !== TokenId.COMPILATION_UNIT) {
+			return false;
+		}
+		const previousSiblings = currentParent.children;
+		return previousSiblings.some(node => ![
+			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+			TokenId.ScriptCommand
+		].includes(node.tokenId));
+	}
+
 	static matchCommentKeyword(situation: CommentsNodeReviseSituation, astRecognizer: AstRecognizer): ReturnType<NodeReviseFunc> {
 		const {node} = situation;
 		const {minLength, available} = astRecognizer.commentKeywords;
