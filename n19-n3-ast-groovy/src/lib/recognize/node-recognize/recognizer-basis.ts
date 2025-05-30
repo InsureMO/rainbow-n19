@@ -1,5 +1,5 @@
 import {TokenId, TokenType} from '../../tokens';
-import {MultipleLinesCommentsRecognizer, NumericBasePartRecognizer} from '../node-recognize-specific';
+import {NumericBasePartRecognizer} from '../node-recognize-specific';
 import {NodeRehydration} from './build-rehydrate-funcs';
 import {NodeRecognizeUtils} from './recognize-utils';
 import {AstRecognition} from './recognizer';
@@ -172,11 +172,8 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		RehydrateToken.when(NodeRecognizeUtils.isScriptCommandNotAllowed).use(NodeRehydration.rehydrateScriptCommandStartMarkTo2Parts),
 		DeclareAsParent([TokenId.ScriptCommand, TokenType.ScriptCommand])
 	],
-	[TokenId.SingleLineCommentStartMark]: [
-		DeclareAsParent([TokenId.SingleLineComment, TokenType.Comments])
-	],
-	// [CustomClass(SingleLineCommentsRecognizer)],
-	[TokenId.MultipleLinesCommentStartMark]: [CustomClass(MultipleLinesCommentsRecognizer)],
+	[TokenId.SingleLineCommentStartMark]: [DeclareAsParent([TokenId.SingleLineComment, TokenType.Comments])],
+	[TokenId.MultipleLinesCommentStartMark]: [DeclareAsParent([TokenId.MultipleLinesComment, TokenType.Comments])],
 	[TokenId.MultipleLinesCommentEndMark]: 'NotRequired',
 	// number literal
 	[TokenId.NumericSignPart]: 'NotRequired',

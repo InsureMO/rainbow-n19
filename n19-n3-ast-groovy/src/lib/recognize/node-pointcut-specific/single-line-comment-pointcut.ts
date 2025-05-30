@@ -10,7 +10,7 @@ export class SingleLineCommentPointcuts {
 		// avoid extend
 	}
 
-	static readonly finalizeSingleLineCommentHighlighting: OnNodeClosedFunc = (node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+	static readonly finalizeCommentHighlighting: OnNodeClosedFunc = (node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		// ignore the start mark
 		const [, ...restNodes] = node.children;
 		if (restNodes.length === 0) {

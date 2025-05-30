@@ -19,6 +19,7 @@ export const buildOnChildAppendedPointcut = (items?: PointcutBasisDef): Optional
 			PointcutBasisDefType.ReviseCodeBlockTo,
 			PointcutBasisDefType.ReviseTokenTo,
 			PointcutBasisDefType.ReviseTokenToWhen,
+			PointcutBasisDefType.SplitTokenWhen,
 			PointcutBasisDefType.EndWithAnyOfTokenIdsAppended,
 			PointcutBasisDefType.EndWithChecked
 		].includes(item[0])) {
@@ -61,6 +62,14 @@ export const buildOnChildAppendedPointcut = (items?: PointcutBasisDef): Optional
 					lastChildNode.replaceTokenNature(reviseToWhen[2], lastChildNode.tokenType);
 				}
 				NodePointcuts.initialize(lastChildNode);
+				return;
+			}
+		}
+		// split token when
+		{
+			const splitTokenWhen = defs.SplitTokenWhen;
+			if (splitTokenWhen != null && splitTokenWhen[1](lastChildNode, astRecognizer)) {
+				splitTokenWhen[2](lastChildNode, astRecognizer);
 				return;
 			}
 		}

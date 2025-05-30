@@ -189,12 +189,12 @@ export enum TokenId {
 	ElvisAssign, // ?=
 	Ellipsis, // ...
 	// comment
-	CommentKeyword,
+	CommentKeyword, // predefined words
 	CommentHighlightChars, // chars after comment keyword
-	SingleLineCommentStartMark,
+	SingleLineCommentStartMark, // //
 	SingleLineComment,
-	MultipleLinesCommentStartMark,
-	MultipleLinesCommentEndMark,
+	MultipleLinesCommentStartMark, // /*
+	MultipleLinesCommentEndMark, // */
 	MultipleLinesCommentsHeadAsterisks,  // asterisks in head of line
 	MultipleLinesComment,
 	// shebang command

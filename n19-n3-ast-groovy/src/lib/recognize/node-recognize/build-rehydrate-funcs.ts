@@ -116,14 +116,24 @@ export class NodeRehydration {
 	 */
 	private static doRehydrateToCharsWhenParentisOneOf3Tokens = (node: GroovyAstNode, nodeIndex: number, parentNode: GroovyAstNode, astRecognizer: AstRecognizer): Optional<number> => {
 		const {tokenId: parentTokenId} = parentNode;
-		if (astRecognizer.isScriptCommandEnabled && parentTokenId === TokenId.ScriptCommand) {
+		if (parentTokenId === TokenId.ScriptCommand) {
+			if (astRecognizer.isScriptCommandEnabled) {
+				node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
+				astRecognizer.appendAsLeaf(node, false);
+				return nodeIndex + 1;
+			}
+		} else if (parentTokenId === TokenId.SingleLineComment) {
 			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
 			astRecognizer.appendAsLeaf(node, false);
 			return nodeIndex + 1;
-		} else if (parentTokenId === TokenId.SingleLineComment || parentTokenId === TokenId.MultipleLinesComment) {
-			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
-			astRecognizer.appendAsLeaf(node, false);
-			return nodeIndex + 1;
+		} else if (parentTokenId === TokenId.MultipleLinesComment) {
+			if (node.tokenId === TokenId.MultipleLinesCommentEndMark) {
+				// it is a special case, ignore it
+			} else {
+				node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
+				astRecognizer.appendAsLeaf(node, false);
+				return nodeIndex + 1;
+			}
 		}
 		return (void 0);
 	};

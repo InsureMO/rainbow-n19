@@ -10,6 +10,7 @@ import {
 import {
 	CsscmfDeclarationPointcuts,
 	IfElseDeclarationPointcuts,
+	MultipleLinesCommentPointcuts,
 	SingleLineCommentPointcuts,
 	TypeDeclarationPointcuts
 } from '../node-pointcut-specific';
@@ -29,6 +30,7 @@ import {
 	ReviseCodeBlockTo,
 	ReviseTokenTo,
 	ReviseTokenToWhen,
+	SplitTokenWhen,
 	UnacceptableTokenIds,
 	UnacceptedWhen
 } from './types';
@@ -92,6 +94,13 @@ const ReviseTokenWhen = (when: OneOfOnChildAppendedFunc) => {
 	return {
 		to: (tokenId: TokenId, tokenType?: TokenType): ReviseTokenToWhen => {
 			return [PointcutBasisDefType.ReviseTokenToWhen, when, tokenType == null ? tokenId : [tokenId, tokenType]];
+		}
+	};
+};
+const SplitTokenWhen = (when: OneOfOnChildAppendedFunc) => {
+	return {
+		use: (func: OnChildAppendedFunc): SplitTokenWhen => {
+			return [PointcutBasisDefType.SplitTokenWhen, when, func];
 		}
 	};
 };
@@ -161,9 +170,15 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		DisableBase5AsChild,
 		TokenIds.reject(TokenId.NewLine),
 		ReviseTokenWhen(PointcutUtils.commentKeywordMatched).to(TokenId.CommentKeyword, TokenType.Chars),
-		OnNodeClosed(SingleLineCommentPointcuts.finalizeSingleLineCommentHighlighting)
+		OnNodeClosed(SingleLineCommentPointcuts.finalizeCommentHighlighting)
 	],
-	[TokenId.MultipleLinesComment]: 'NotRequired',
+	[TokenId.MultipleLinesComment]: [
+		DisableBase5AsChild,
+		ReviseTokenWhen(PointcutUtils.commentKeywordMatched).to(TokenId.CommentKeyword, TokenType.Chars),
+		SplitTokenWhen(MultipleLinesCommentPointcuts.asteriskHeadMatched).use(MultipleLinesCommentPointcuts.splitToAsteriskHeadAnd),
+		EndWith(TokenId.MultipleLinesCommentEndMark),
+		OnNodeClosed(MultipleLinesCommentPointcuts.finalizeCommentHighlighting)
+	],
 	[TokenId.ScriptCommand]: [DisableBase5AsChild, TokenIds.reject(TokenId.NewLine)],
 	[TokenId.PackageDeclaration]: [
 		// newline and sl comments is not allowed
