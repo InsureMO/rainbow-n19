@@ -1,9 +1,5 @@
 import {TokenId, TokenType} from '../../tokens';
-import {
-	MultipleLinesCommentsRecognizer,
-	NumericBasePartRecognizer,
-	SingleLineCommentsRecognizer
-} from '../node-recognize-specific';
+import {MultipleLinesCommentsRecognizer, NumericBasePartRecognizer} from '../node-recognize-specific';
 import {NodeRehydration} from './build-rehydrate-funcs';
 import {NodeRecognizeUtils} from './recognize-utils';
 import {AstRecognition} from './recognizer';
@@ -21,28 +17,28 @@ import {
 	PreserveWhenParentIsTokenType,
 	RecognizeBasisDefs,
 	RecognizeBasisType,
-	ReviseTokenToWhen,
-	ReviseTokenUseFuncWhen
+	RehydrateTokenToWhen,
+	RehydrateTokenUseFuncWhen
 } from './types';
 
 // custom recognize class
 const CustomClass = (clazz: GroovyAstNodeRecognizerConstructor): CustomClass => [RecognizeBasisType.CustomClass, clazz];
 // rehydrate
-/** disable the default revise to chars when parent token type is string literal */
+/** disable the default rehydrate to chars when parent token type is string literal */
 const DisableToCharsWhenParentTokenTypeIsStringLiteral: DisableToCharsWhenParentTokenTypeIsStringLiteral = [RecognizeBasisType.DisableToCharsWhenParentTokenTypeIsStringLiteral];
-const ReviseToken = {
+const RehydrateToken = {
 	when: (when: DoRehydrateWhen) => {
 		return {
-			to: (to: TokenId | [TokenId, TokenType]): ReviseTokenToWhen => {
-				return [RecognizeBasisType.ReviseTokenToWhen, when, to];
+			to: (to: TokenId | [TokenId, TokenType]): RehydrateTokenToWhen => {
+				return [RecognizeBasisType.RehydrateTokenToWhen, when, to];
 			},
-			use: (func: NodeRehydrateFunc): ReviseTokenUseFuncWhen => {
-				return [RecognizeBasisType.ReviseTokenUseFuncWhen, when, func];
+			use: (func: NodeRehydrateFunc): RehydrateTokenUseFuncWhen => {
+				return [RecognizeBasisType.RehydrateTokenUseFuncWhen, when, func];
 			}
 		};
 	}
 };
-const ReviseToIdentifierWhenAfterDotDirectly = ReviseToken.when(NodeRecognizeUtils.isDirectAfterDot).to([TokenId.Identifier, TokenType.Identifier]);
+const RehydrateToIdentifierWhenAfterDotDirectly = RehydrateToken.when(NodeRecognizeUtils.isDirectAfterDot).to([TokenId.Identifier, TokenType.Identifier]);
 // preserve
 const PreserveWhenParentIsOneOfTokenIds = (tokenId: TokenId, ...tokenIds: Array<TokenId>): PreserveWhenParentIsOneOfTokenIds => {
 	return [RecognizeBasisType.PreserveWhenParentIsOneOfTokenIds, tokenId, ...tokenIds];
@@ -130,7 +126,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.Spaceship]: 'TODO',
 	[TokenId.Identical]: 'TODO',
 	[TokenId.NotIdentical]: 'TODO',
-	[TokenId.IN]: [ReviseToIdentifierWhenAfterDotDirectly],
+	[TokenId.IN]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.NOT_IN]: 'TODO',
 	[TokenId.NOT_INSTANCEOF]: 'TODO',
 	[TokenId.Assign]: 'TODO',
@@ -170,13 +166,16 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.MethodReference]: 'TODO',
 	[TokenId.Ellipsis]: 'TODO',
 	[TokenId.Arrow]: 'TODO',
-	[TokenId.INSTANCEOF]: [ReviseToIdentifierWhenAfterDotDirectly],
+	[TokenId.INSTANCEOF]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	// mark
 	[TokenId.ScriptCommandStartMark]: [
-		ReviseToken.when(NodeRecognizeUtils.isScriptCommandNotAllowed).use(NodeRehydration.rehydrateScriptCommandStartMarkTo2Parts),
+		RehydrateToken.when(NodeRecognizeUtils.isScriptCommandNotAllowed).use(NodeRehydration.rehydrateScriptCommandStartMarkTo2Parts),
 		DeclareAsParent([TokenId.ScriptCommand, TokenType.ScriptCommand])
 	],
-	[TokenId.SingleLineCommentStartMark]: [CustomClass(SingleLineCommentsRecognizer)],
+	[TokenId.SingleLineCommentStartMark]: [
+		DeclareAsParent([TokenId.SingleLineComment, TokenType.Comments])
+	],
+	// [CustomClass(SingleLineCommentsRecognizer)],
 	[TokenId.MultipleLinesCommentStartMark]: [CustomClass(MultipleLinesCommentsRecognizer)],
 	[TokenId.MultipleLinesCommentEndMark]: 'NotRequired',
 	// number literal
@@ -286,46 +285,46 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	],
 	// keyword
 	[TokenId.ABSTRACT]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.ASSERT]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.AssertStatement, TokenType.LogicStatement])
 	],
 	[TokenId.AT_INTERFACE]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.AtInterfaceClassDeclaration, TokenType.TypeDeclaration])
 	],
 	[TokenId.BREAK]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.BreakStatement, TokenType.LogicStatement])
 	],
 	[TokenId.CASE]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.SwitchCaseDeclaration, TokenType.LogicBlockDeclaration])
 	],
 	[TokenId.CATCH]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.TryCatchDeclaration, TokenType.LogicBlockDeclaration])
 	],
 	[TokenId.CLASS]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.ClassDeclaration, TokenType.TypeDeclaration])
 	],
-	[TokenId.CONST]: [ReviseToIdentifierWhenAfterDotDirectly],
+	[TokenId.CONST]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.CONTINUE]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.ContinueStatement, TokenType.LogicStatement])
 	],
 	[TokenId.DEF]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		// could be method or field if parent is class body
 		// could be class, method or field is parent is csscmf
@@ -338,7 +337,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 			.otherwise([TokenId.DefStatement, TokenType.LogicStatement])
 	],
 	[TokenId.DEFAULT]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsMethodDeclaration,
 		// should be default route when parent is switch declaration, body or other route declaration
@@ -348,194 +347,194 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 			.otherwise([TokenId.MethodDeclaration, TokenType.MethodDeclaration])
 	],
 	[TokenId.DO]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.DoWhileDeclaration, TokenType.LogicBlockDeclaration])
 	],
 	[TokenId.ELSE]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.IfElseDeclaration, TokenType.LogicBlockDeclaration])
 	],
 	[TokenId.ENUM]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.EnumClassDeclaration, TokenType.TypeDeclaration])
 	],
-	[TokenId.EXTENDS]: [ReviseToIdentifierWhenAfterDotDirectly],
+	[TokenId.EXTENDS]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.FINAL]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.FINALLY]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.TryFinallyDeclaration, TokenType.LogicBlockDeclaration])
 	],
 	[TokenId.FOR]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.ForDeclaration, TokenType.LogicBlockDeclaration])
 	],
-	[TokenId.GOTO]: [ReviseToIdentifierWhenAfterDotDirectly],
+	[TokenId.GOTO]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.IF]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsOneOfTokenIds(TokenId.IfElseDeclaration),
 		DeclareAsParent([TokenId.IfIfDeclaration, TokenType.LogicBlockDeclaration], [TokenId.IfDeclaration, TokenType.LogicBlockDeclaration])
 	],
-	[TokenId.IMPLEMENTS]: [ReviseToIdentifierWhenAfterDotDirectly],
+	[TokenId.IMPLEMENTS]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.IMPORT]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.ImportDeclaration, TokenType.ImportDeclaration])
 	],
 	[TokenId.INTERFACE]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.InterfaceDeclaration, TokenType.TypeDeclaration])
 	],
 	[TokenId.NATIVE]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsMethodDeclaration,
 		DeclareAsParent([TokenId.MethodDeclaration, TokenType.MethodDeclaration])
 	],
 	[TokenId.NEW]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.NewExpression, TokenType.LogicStatement])
 	],
 	[TokenId.NON_SEALED]: [
-		ReviseToken.when(NodeRecognizeUtils.isNonSealedKeywordNotSupported).use(NodeRehydration.rehydrateNonSealedTo3Parts),
-		ReviseToken.when(NodeRecognizeUtils.isDirectAfterDot).use(NodeRehydration.rehydrateNonSealedTo3Parts),
+		RehydrateToken.when(NodeRecognizeUtils.isNonSealedKeywordNotSupported).use(NodeRehydration.rehydrateNonSealedTo3Parts),
+		RehydrateToken.when(NodeRecognizeUtils.isDirectAfterDot).use(NodeRehydration.rehydrateNonSealedTo3Parts),
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
-	[TokenId.NULL]: [ReviseToIdentifierWhenAfterDotDirectly],
+	[TokenId.NULL]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.PACKAGE]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.PackageDeclaration, TokenType.PackageDeclaration])
 	],
 	[TokenId.PERMITS]: [
-		ReviseToken.when(NodeRecognizeUtils.isSealedKeywordNotSupported).to([TokenId.Identifier, TokenType.Identifier]),
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToken.when(NodeRecognizeUtils.isSealedKeywordNotSupported).to([TokenId.Identifier, TokenType.Identifier]),
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.PRIVATE]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.PROTECTED]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.PUBLIC]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.RECORD]: [
-		ReviseToken.when(NodeRecognizeUtils.isRecordKeywordNotSupported).to([TokenId.Identifier, TokenType.Identifier]),
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToken.when(NodeRecognizeUtils.isRecordKeywordNotSupported).to([TokenId.Identifier, TokenType.Identifier]),
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.RecordClassDeclaration, TokenType.TypeDeclaration])
 	],
-	[TokenId.RETURN]: [ReviseToIdentifierWhenAfterDotDirectly],
+	[TokenId.RETURN]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.SEALED]: [
-		ReviseToken.when(NodeRecognizeUtils.isSealedKeywordNotSupported).to([TokenId.Identifier, TokenType.Identifier]),
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToken.when(NodeRecognizeUtils.isSealedKeywordNotSupported).to([TokenId.Identifier, TokenType.Identifier]),
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.STATIC]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsOneOfTokenIds(TokenId.ImportDeclaration),
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.STRICTFP]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.SWITCH]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.SwitchDeclaration, TokenType.LogicBlockDeclaration])
 	],
 	[TokenId.SUPER]: 'TODO',
 	[TokenId.SYNCHRONIZED]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.THIS]: 'TODO',
-	[TokenId.THREADSAFE]: 'TODO', // TODO revise to 2 parts when after dot directly
+	[TokenId.THREADSAFE]: 'TODO', // TODO rehydrate to 2 parts when after dot directly
 	[TokenId.THROW]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.ThrowStatement, TokenType.LogicStatement])
 	],
-	[TokenId.THROWS]: [ReviseToIdentifierWhenAfterDotDirectly],
+	[TokenId.THROWS]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.TRAIT]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.TraitClassDeclaration, TokenType.TypeDeclaration])
 	],
 	[TokenId.TRANSIENT]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsFieldDeclaration,
 		DeclareAsParent([TokenId.FieldDeclaration, TokenType.FieldDeclaration])
 	],
 	[TokenId.TRY]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.TryTryDeclaration, TokenType.LogicBlockDeclaration], [TokenId.TryDeclaration, TokenType.LogicBlockDeclaration])
 	],
 	[TokenId.VAR]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.VarStatement, TokenType.LogicStatement])
 	],
 	[TokenId.VOID]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsMethodDeclaration,
 		DeclareAsParent([TokenId.MethodDeclaration, TokenType.MethodDeclaration])
 	],
 	[TokenId.VOLATILE]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsFieldDeclaration,
 		DeclareAsParent([TokenId.FieldDeclaration, TokenType.FieldDeclaration])
 	],
 	[TokenId.WHILE]: [
-		ReviseToIdentifierWhenAfterDotDirectly,
+		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsOneOfTokenIds(TokenId.DoWhileDeclaration),
 		DeclareAsParent([TokenId.WhileDeclaration, TokenType.LogicBlockDeclaration])
 	],
 	[TokenId.YIELD]: [
-		ReviseToIdentifierWhenAfterDotDirectly
+		RehydrateToIdentifierWhenAfterDotDirectly
 		// TODO how does it end? it is the common issue for XXXStatement
 		// DeclareAsParent([TokenId.YieldStatement, TokenType.LogicStatement])
 	],
 	// primitive type
-	[TokenId.BOOLEAN]: [ReviseToIdentifierWhenAfterDotDirectly],
-	[TokenId.CHAR]: [ReviseToIdentifierWhenAfterDotDirectly],
-	[TokenId.BYTE]: [ReviseToIdentifierWhenAfterDotDirectly],
-	[TokenId.SHORT]: [ReviseToIdentifierWhenAfterDotDirectly],
-	[TokenId.INT]: [ReviseToIdentifierWhenAfterDotDirectly],
-	[TokenId.LONG]: [ReviseToIdentifierWhenAfterDotDirectly],
-	[TokenId.FLOAT]: [ReviseToIdentifierWhenAfterDotDirectly],
-	[TokenId.DOUBLE]: [ReviseToIdentifierWhenAfterDotDirectly],
+	[TokenId.BOOLEAN]: [RehydrateToIdentifierWhenAfterDotDirectly],
+	[TokenId.CHAR]: [RehydrateToIdentifierWhenAfterDotDirectly],
+	[TokenId.BYTE]: [RehydrateToIdentifierWhenAfterDotDirectly],
+	[TokenId.SHORT]: [RehydrateToIdentifierWhenAfterDotDirectly],
+	[TokenId.INT]: [RehydrateToIdentifierWhenAfterDotDirectly],
+	[TokenId.LONG]: [RehydrateToIdentifierWhenAfterDotDirectly],
+	[TokenId.FLOAT]: [RehydrateToIdentifierWhenAfterDotDirectly],
+	[TokenId.DOUBLE]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	// chars
 	[TokenId.Whitespaces]: 'NotRequired',
 	[TokenId.Tabs]: 'NotRequired',

@@ -257,6 +257,13 @@ export class AstRecognizer {
 		this.onChildClosed(this._currentAncestors[0], node);
 	}
 
+	protected closeAllParents(): void {
+		// last one is compilation unit, no need to close
+		while (this._currentAncestors.length !== 1) {
+			this.closeCurrentParent();
+		}
+	}
+
 	/**
 	 * move given nodes to old parent, and append them as child of current parent.
 	 * will not perform the parent-child rationality check
@@ -320,6 +327,9 @@ export class AstRecognizer {
 				debugTimeLogs.rounds.push([node.tokenId, TokenId[node.tokenId], debugTimeLogs.nodeIndexOfRound, spent, debugTimeLogs.total]);
 			}
 		}
+
+		this.closeAllParents();
+
 		if (debugTimeLogs.enabled) {
 			console.warn(debugTimeLogs.rounds);
 		}

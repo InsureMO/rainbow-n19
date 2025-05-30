@@ -34,8 +34,8 @@ export enum RecognizeBasisType {
 	CustomClass = 'CustomClass',
 	// rehydrate
 	DisableToCharsWhenParentTokenTypeIsStringLiteral = 'DisableToCharsWhenParentTokenTypeIsStringLiteral',
-	ReviseTokenToWhen = 'ReviseTokenToWhen',
-	ReviseTokenUseFuncWhen = 'ReviseTokenUseFuncWhen',
+	RehydrateTokenToWhen = 'RehydrateTokenToWhen',
+	RehydrateTokenUseFuncWhen = 'RehydrateTokenUseFuncWhen',
 	// preserve
 	PreserveWhenParentIsOneOfTokenIds = 'PreserveWhenParentIsOneOfTokenIds',
 	PreserveWhenParentIsTokenType = 'PreserveWhenParentIsTokenType',
@@ -50,8 +50,8 @@ export type CustomClass = Readonly<[RecognizeBasisType.CustomClass, GroovyAstNod
 // rehydrate
 export type DisableToCharsWhenParentTokenTypeIsStringLiteral = Readonly<[RecognizeBasisType.DisableToCharsWhenParentTokenTypeIsStringLiteral]>;
 export type DoRehydrateWhen = (recognition: AstRecognition) => boolean;
-export type ReviseTokenToWhen = Readonly<[RecognizeBasisType.ReviseTokenToWhen, DoRehydrateWhen, TokenId | [TokenId, TokenType]]>;
-export type ReviseTokenUseFuncWhen = Readonly<[RecognizeBasisType.ReviseTokenUseFuncWhen, DoRehydrateWhen, NodeRehydrateFunc]>;
+export type RehydrateTokenToWhen = Readonly<[RecognizeBasisType.RehydrateTokenToWhen, DoRehydrateWhen, TokenId | [TokenId, TokenType]]>;
+export type RehydrateTokenUseFuncWhen = Readonly<[RecognizeBasisType.RehydrateTokenUseFuncWhen, DoRehydrateWhen, NodeRehydrateFunc]>;
 // preserve
 export type PreserveWhenParentIsOneOfTokenIds = Readonly<[RecognizeBasisType.PreserveWhenParentIsOneOfTokenIds, TokenId, ...Array<TokenId>]>;
 export type PreserveWhenParentIsTokenType = Readonly<[RecognizeBasisType.PreserveWhenParentIsTokenType, TokenType]>;
@@ -62,7 +62,7 @@ export type DeclareAsParentWhenAndOtherwise = Readonly<[RecognizeBasisType.Decla
 
 export type RehydrateBasis =
 	| DisableToCharsWhenParentTokenTypeIsStringLiteral
-	| ReviseTokenToWhen | ReviseTokenUseFuncWhen;
+	| RehydrateTokenToWhen | RehydrateTokenUseFuncWhen;
 export type PreserveCheckBasis =
 	| PreserveWhenParentIsOneOfTokenIds | PreserveWhenParentIsTokenType;
 export type DeclareAsParentBasis =

@@ -2,7 +2,7 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {AstRecognizer} from '../ast-recognizer';
 import {OnNodeClosedFunc} from '../node-attribute';
-import {PointcutHelper} from './pointcut-helper';
+import {PointcutUtils} from './pointcut-utils';
 import {PointcutBasisDef, PointcutBasisDefType, PointcutBasisOnNodeClosed, PointcutItemsToRecord} from './types';
 
 type OnNodeClosedPointcutDefs = PointcutItemsToRecord<PointcutBasisOnNodeClosed>;
@@ -25,7 +25,7 @@ export const buildOnNodeClosedPointcut = (items?: PointcutBasisDef): Optional<On
 	return (node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		defs.OnNodeClosed?.[1]?.(node, astRecognizer);
 		if (defs.DisableElevateTrailingDetachable == null) {
-			PointcutHelper.moveTrailingDetachableNodesToParentOnNodeClosed(node, astRecognizer);
+			PointcutUtils.moveTrailingDetachableNodesToParentOnNodeClosed(node, astRecognizer);
 		}
 	};
 };

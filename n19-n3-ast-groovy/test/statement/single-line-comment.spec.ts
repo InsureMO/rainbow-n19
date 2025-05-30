@@ -66,10 +66,10 @@ describe('Single line comment test', () => {
 		]);
 	});
 	test('Single line comment #4', async () => {
-		const text = `// todo\t\tdef\n\t// 2nd line\n//  3rd`;
+		const text = `// todo\t\tdef\n\t//  2nd line\n//  3rd`;
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			TokenId.COMPILATION_UNIT, 0, 33, 0, text, [
+			TokenId.COMPILATION_UNIT, 0, 34, 0, text, [
 				[TokenId.SingleLineComment, 0, 12, 1, '// todo\t\tdef', [
 					[TokenId.SingleLineCommentStartMark, 0, 2, 1, '//'],
 					[TokenId.Whitespaces, 2, 3, 1, ' '],
@@ -79,20 +79,20 @@ describe('Single line comment test', () => {
 				]],
 				[TokenId.NewLine, 12, 13, 1, '\n'],
 				[TokenId.Tabs, 13, 14, 2, '\t'],
-				[TokenId.SingleLineComment, 14, 25, 2, '// 2nd line', [
+				[TokenId.SingleLineComment, 14, 26, 2, '//  2nd line', [
 					[TokenId.SingleLineCommentStartMark, 14, 16, 2, '//'],
-					[TokenId.Whitespaces, 16, 17, 2, ' '],
-					[TokenId.CommentHighlightChars, 17, 18, 2, '2'],
-					[TokenId.CommentHighlightChars, 18, 20, 2, 'nd'],
-					[TokenId.Whitespaces, 20, 21, 2, ' '],
-					[TokenId.CommentHighlightChars, 21, 25, 2, 'line']
+					[TokenId.Whitespaces, 16, 18, 2, '  '],
+					[TokenId.CommentHighlightChars, 18, 19, 2, '2'],
+					[TokenId.CommentHighlightChars, 19, 21, 2, 'nd'],
+					[TokenId.Whitespaces, 21, 22, 2, ' '],
+					[TokenId.CommentHighlightChars, 22, 26, 2, 'line']
 				]],
-				[TokenId.NewLine, 25, 26, 2, '\n'],
-				[TokenId.SingleLineComment, 26, 33, 3, '//  3rd', [
-					[TokenId.SingleLineCommentStartMark, 26, 28, 3, '//'],
-					[TokenId.Whitespaces, 28, 30, 3, '  '],
-					[TokenId.CommentHighlightChars, 30, 31, 3, '3'],
-					[TokenId.CommentHighlightChars, 31, 33, 3, 'rd']
+				[TokenId.NewLine, 26, 27, 2, '\n'],
+				[TokenId.SingleLineComment, 27, 34, 3, '//  3rd', [
+					[TokenId.SingleLineCommentStartMark, 27, 29, 3, '//'],
+					[TokenId.Whitespaces, 29, 31, 3, '  '],
+					[TokenId.CommentHighlightChars, 31, 32, 3, '3'],
+					[TokenId.CommentHighlightChars, 32, 34, 3, 'rd']
 				]]
 			]
 		]);

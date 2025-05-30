@@ -3,7 +3,7 @@ export * from './types';
 export * from './pointcut-basis';
 export * from './pointcut-defs';
 
-export * from './pointcut-helper';
+export * from './pointcut-utils';
 
 export * from './build-child-acceptable-check-pointcut';
 export * from './build-on-child-appended-pointcut';

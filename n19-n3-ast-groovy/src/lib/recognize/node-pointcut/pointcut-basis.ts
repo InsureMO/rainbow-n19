@@ -10,8 +10,10 @@ import {
 import {
 	CsscmfDeclarationPointcuts,
 	IfElseDeclarationPointcuts,
+	SingleLineCommentPointcuts,
 	TypeDeclarationPointcuts
 } from '../node-pointcut-specific';
+import {PointcutUtils} from './pointcut-utils';
 import {
 	AcceptableTokenIds,
 	AcceptableTokenTypes,
@@ -26,6 +28,7 @@ import {
 	PointcutBasisDefType,
 	ReviseCodeBlockTo,
 	ReviseTokenTo,
+	ReviseTokenToWhen,
 	UnacceptableTokenIds,
 	UnacceptedWhen
 } from './types';
@@ -84,6 +87,13 @@ const ReviseCodeBlockTo = (tokenId: TokenId): ReviseCodeBlockTo => {
 };
 const ReviseTokenTo = (mapping: ReviseTokenTo[1]): ReviseTokenTo => {
 	return [PointcutBasisDefType.ReviseTokenTo, mapping];
+};
+const ReviseTokenWhen = (when: OneOfOnChildAppendedFunc) => {
+	return {
+		to: (tokenId: TokenId, tokenType?: TokenType): ReviseTokenToWhen => {
+			return [PointcutBasisDefType.ReviseTokenToWhen, when, tokenType == null ? tokenId : [tokenId, tokenType]];
+		}
+	};
 };
 /** if one of given token id appended as child, close current parent (me) */
 const EndWith = (tokenId: TokenId, ...tokenIds: Array<TokenId>): EndWithAnyOfTokenIdsAppended => {
@@ -147,7 +157,12 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		EndWith(TokenId.DollarSlashyGStringQuotationEndMark)
 	],
 	// statement
-	[TokenId.SingleLineComment]: 'NotRequired',
+	[TokenId.SingleLineComment]: [
+		DisableBase5AsChild,
+		TokenIds.reject(TokenId.NewLine),
+		ReviseTokenWhen(PointcutUtils.commentKeywordMatched).to(TokenId.CommentKeyword, TokenType.Chars),
+		OnNodeClosed(SingleLineCommentPointcuts.finalizeSingleLineCommentHighlighting)
+	],
 	[TokenId.MultipleLinesComment]: 'NotRequired',
 	[TokenId.ScriptCommand]: [DisableBase5AsChild, TokenIds.reject(TokenId.NewLine)],
 	[TokenId.PackageDeclaration]: [

@@ -111,10 +111,10 @@ export class NodeRehydration {
 		return nodeIndex + 1;
 	};
 	/**
-	 * 1. script command enabled and parent token id is {@link TokenId.ScriptCommand}, revise to {@link TokenId.Chars},
-	 * 2. parent token id is {@link TokenId.SingleLineComment} or {@link TokenId.MultipleLinesComment}, revise to {@link TokenId.Chars}.
+	 * 1. script command enabled and parent token id is {@link TokenId.ScriptCommand}, rehydrate to {@link TokenId.Chars},
+	 * 2. parent token id is {@link TokenId.SingleLineComment} or {@link TokenId.MultipleLinesComment}, rehydrate to {@link TokenId.Chars}.
 	 */
-	private static doReviseToCharsWhenParentisOneOf3Tokens = (node: GroovyAstNode, nodeIndex: number, parentNode: GroovyAstNode, astRecognizer: AstRecognizer): Optional<number> => {
+	private static doRehydrateToCharsWhenParentisOneOf3Tokens = (node: GroovyAstNode, nodeIndex: number, parentNode: GroovyAstNode, astRecognizer: AstRecognizer): Optional<number> => {
 		const {tokenId: parentTokenId} = parentNode;
 		if (astRecognizer.isScriptCommandEnabled && parentTokenId === TokenId.ScriptCommand) {
 			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
@@ -132,15 +132,15 @@ export class NodeRehydration {
 	 * 1. is whitespaces, tabs or newline: do nothing,
 	 * 2. parent token type is {@link TokenType.StringLiteral},
 	 *   2.1. has {@link RecognizeBasisType.DisableToCharsWhenParentTokenTypeIsStringLiteral} declared: do nothing,
-	 *   2.2 revise to {@link TokenId.Chars},
-	 * 3. script command enabled and parent token id is {@link TokenId.ScriptCommand}, revise to {@link TokenId.Chars},
-	 * 4. parent token id is {@link TokenId.SingleLineComment} or {@link TokenId.MultipleLinesComment}, revise to {@link TokenId.Chars}.
+	 *   2.2 rehydrate to {@link TokenId.Chars},
+	 * 3. script command enabled and parent token id is {@link TokenId.ScriptCommand}, rehydrate to {@link TokenId.Chars},
+	 * 4. parent token id is {@link TokenId.SingleLineComment} or {@link TokenId.MultipleLinesComment}, rehydrate to {@link TokenId.Chars}.
 	 */
-	static reviseToCharsWhenParentIsOneOf4Tokens: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rehydrateToCharsWhenParentIsOneOf4Tokens: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, astRecognizer} = recognition;
 
-		const tokenId = node.tokenId;
-		if ([TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine].includes(tokenId)) {
+		const {tokenId, tokenType} = node;
+		if (TokenId.NewLine === tokenId || TokenType.WhitespaceOrTabs === tokenType) {
 			return (void 0);
 		}
 
@@ -151,15 +151,15 @@ export class NodeRehydration {
 			astRecognizer.appendAsLeaf(node, false);
 			return nodeIndex + 1;
 		}
-		return NodeRehydration.doReviseToCharsWhenParentisOneOf3Tokens(node, nodeIndex, currentParent, astRecognizer);
+		return NodeRehydration.doRehydrateToCharsWhenParentisOneOf3Tokens(node, nodeIndex, currentParent, astRecognizer);
 	};
 	/**
 	 * check given token,
 	 * 1. is whitespaces, tabs or newline: do nothing,
-	 * 2. script command enabled and parent token id is {@link TokenId.ScriptCommand}, revise to {@link TokenId.Chars},
-	 * 3. parent token id is {@link TokenId.SingleLineComment} or {@link TokenId.MultipleLinesComment}, revise to {@link TokenId.Chars}.
+	 * 2. script command enabled and parent token id is {@link TokenId.ScriptCommand}, rehydrate to {@link TokenId.Chars},
+	 * 3. parent token id is {@link TokenId.SingleLineComment} or {@link TokenId.MultipleLinesComment}, rehydrate to {@link TokenId.Chars}.
 	 */
-	static reviseToCharsWhenParentIsOneOf3Tokens: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rehydrateToCharsWhenParentIsOneOf3Tokens: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, astRecognizer} = recognition;
 
 		const tokenId = node.tokenId;
@@ -168,9 +168,9 @@ export class NodeRehydration {
 		}
 
 		const currentParent = astRecognizer.getCurrentParent();
-		return NodeRehydration.doReviseToCharsWhenParentisOneOf3Tokens(node, nodeIndex, currentParent, astRecognizer);
+		return NodeRehydration.doRehydrateToCharsWhenParentisOneOf3Tokens(node, nodeIndex, currentParent, astRecognizer);
 	};
-	static buildReviseTokenToWhen = (when: DoRehydrateWhen, to: TokenId | [TokenId, TokenType]): NodeRehydrateFunc => {
+	static buildRehydrateTokenToWhen = (when: DoRehydrateWhen, to: TokenId | [TokenId, TokenType]): NodeRehydrateFunc => {
 		return (recognition: AstRecognition): Optional<number> => {
 			if (!when(recognition)) {
 				return (void 0);
@@ -185,7 +185,7 @@ export class NodeRehydration {
 			return nodeIndex;
 		};
 	};
-	static buildReviseTokenUseFuncWhen = (when: DoRehydrateWhen, func: NodeRehydrateFunc): NodeRehydrateFunc => {
+	static buildRehydrateTokenUseFuncWhen = (when: DoRehydrateWhen, func: NodeRehydrateFunc): NodeRehydrateFunc => {
 		return (recognition: AstRecognition): Optional<number> => {
 			if (!when(recognition)) {
 				return (void 0);
@@ -202,7 +202,7 @@ export const buildRehydrateFuncs = (items?: RecognizeBasisDef): Optional<Array<N
 
 	if (items == null || items.length === 0) {
 		// default to chars when parent token type is string literal is enabled
-		funcs.unshift(NodeRehydration.reviseToCharsWhenParentIsOneOf4Tokens);
+		funcs.unshift(NodeRehydration.rehydrateToCharsWhenParentIsOneOf4Tokens);
 	} else {
 		let disableToCharsWhenTokenTypeIsStringLiteral = false;
 		for (const item of items) {
@@ -211,12 +211,12 @@ export const buildRehydrateFuncs = (items?: RecognizeBasisDef): Optional<Array<N
 					disableToCharsWhenTokenTypeIsStringLiteral = true;
 					break;
 				}
-				case RecognizeBasisType.ReviseTokenToWhen: {
-					funcs.push(NodeRehydration.buildReviseTokenToWhen(item[1], item[2]));
+				case RecognizeBasisType.RehydrateTokenToWhen: {
+					funcs.push(NodeRehydration.buildRehydrateTokenToWhen(item[1], item[2]));
 					break;
 				}
-				case RecognizeBasisType.ReviseTokenUseFuncWhen: {
-					funcs.push(NodeRehydration.buildReviseTokenUseFuncWhen(item[1], item[2]));
+				case RecognizeBasisType.RehydrateTokenUseFuncWhen: {
+					funcs.push(NodeRehydration.buildRehydrateTokenUseFuncWhen(item[1], item[2]));
 					break;
 				}
 			}
@@ -224,9 +224,9 @@ export const buildRehydrateFuncs = (items?: RecognizeBasisDef): Optional<Array<N
 		if (disableToCharsWhenTokenTypeIsStringLiteral) {
 			// to chars when token type is string literal is not disabled
 			// put this rehydrate function at first
-			funcs.unshift(NodeRehydration.reviseToCharsWhenParentIsOneOf3Tokens);
+			funcs.unshift(NodeRehydration.rehydrateToCharsWhenParentIsOneOf3Tokens);
 		} else {
-			funcs.unshift(NodeRehydration.reviseToCharsWhenParentIsOneOf4Tokens);
+			funcs.unshift(NodeRehydration.rehydrateToCharsWhenParentIsOneOf4Tokens);
 		}
 	}
 

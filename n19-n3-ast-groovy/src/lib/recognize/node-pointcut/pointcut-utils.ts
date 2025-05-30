@@ -1,8 +1,31 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
+import {OneOfOnChildAppendedFunc, OnNodeClosedFunc} from '../node-attribute';
 
-export const PointcutHelper = {
+export const PointcutUtils = {
+	/**
+	 * to test the given node is matching the comment keyword or not
+	 */
+	commentKeywordMatched: ((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+		const node = lastChildNode;
+		const {minLength, available} = astRecognizer.commentKeywords;
+
+		const {text} = node;
+		const textLength = text.length;
+		if (textLength < minLength) {
+			// not a comment keyword
+			return false;
+		}
+		const keywords = available(textLength);
+		for (const {keyword, caseSensitive} of keywords) {
+			const matched = caseSensitive ? (keyword === text) : (keyword === text.toLowerCase());
+			if (matched) {
+				return true;
+			}
+		}
+		return false;
+	}) as OneOfOnChildAppendedFunc,
 	/**
 	 * move all trailing detachable nodes to parent when node closed,
 	 * typically, detachable nodes includes:
@@ -14,7 +37,7 @@ export const PointcutHelper = {
 	 *
 	 * nodes before first newline treated as undetachable, which means they still belongs to original parent.
 	 */
-	moveTrailingDetachableNodesToParentOnNodeClosed: (node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+	moveTrailingDetachableNodesToParentOnNodeClosed: ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const {children = []} = node;
 		let removeNodes: Array<GroovyAstNode> = [];
 		let firstNewLineIndex = -1;
@@ -38,5 +61,5 @@ export const PointcutHelper = {
 			removeNodes = removeNodes.slice(firstNewLineIndex);
 			astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
 		}
-	}
+	}) as OnNodeClosedFunc
 };

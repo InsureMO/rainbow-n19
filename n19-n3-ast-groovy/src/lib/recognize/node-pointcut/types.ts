@@ -24,6 +24,7 @@ export enum PointcutBasisDefType {
 	// on child appended
 	ReviseCodeBlockTo = 'ReviseCodeBlockTo',
 	ReviseTokenTo = 'ReviseTokenTo',
+	ReviseTokenToWhen = 'ReviseTokenToWhen',
 	EndWithAnyOfTokenIdsAppended = 'EndWithAnyOfTokenIdsAppended',
 	EndWithChecked = 'EndWithChecked',
 	// on child closed
@@ -47,6 +48,7 @@ export type UnacceptedWhen = Readonly<[PointcutBasisDefType.UnacceptedWhen, OneO
 // on child appended
 export type ReviseCodeBlockTo = Readonly<[PointcutBasisDefType.ReviseCodeBlockTo, TokenId]>;
 export type ReviseTokenTo = Readonly<[PointcutBasisDefType.ReviseTokenTo, Partial<Record<TokenId, TokenId | [TokenId, TokenType]>>]>;
+export type ReviseTokenToWhen = Readonly<[PointcutBasisDefType.ReviseTokenToWhen, OneOfOnChildAppendedFunc, TokenId | [TokenId, TokenType]]>;
 export type EndWithAnyOfTokenIdsAppended = Readonly<[PointcutBasisDefType.EndWithAnyOfTokenIdsAppended, ...Array<TokenId>]>;
 export type EndWithChecked = Readonly<[PointcutBasisDefType.EndWithChecked, OneOfOnChildAppendedFunc]>;
 // on child closed
@@ -61,7 +63,7 @@ export type PointcutBasisChildAcceptableCheck =
 	| UnacceptableTokenIds | UnacceptedWhen;
 export type PointcutBasisOnChildAppended =
 	| OnChildAppended
-	| ReviseCodeBlockTo | ReviseTokenTo
+	| ReviseCodeBlockTo | ReviseTokenTo | ReviseTokenToWhen
 	| EndWithAnyOfTokenIdsAppended | EndWithChecked;
 export type PointcutBasisOnChildClosed =
 	| OnChildClosed
