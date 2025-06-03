@@ -100,7 +100,6 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.StringFormFeedEscape]: [Tt.Sl, KwLt.StringFormFeedEscape, 'LtStringFormFeedEscape'],
 	[TokenId.StringNewLineEscape]: [Tt.Sl, KwLt.StringNewLineEscape, 'LtStringNewLineEscape'],
 	[TokenId.StringCarriageReturnEscape]: [Tt.Sl, KwLt.StringCarriageReturnEscape, 'LtStringCarriageReturnEscape'],
-	[TokenId.StringSingleSpaceEscape]: [Tt.Sl, KwLt.StringSingleSpaceEscape, 'LtStringSingleSpaceEscape'],
 	[TokenId.StringTabulationEscape]: [Tt.Sl, KwLt.StringTabulationEscape, 'LtStringTabulationEscape'],
 	[TokenId.StringBackslashEscape]: [Tt.Sl, KwLt.StringBackslashEscape, 'LtStringBackslashEscape'],
 	[TokenId.StringSingleQuoteEscape]: [Tt.Sl, KwLt.StringSingleQuoteEscape, 'LtStringSingleQuoteEscape'],

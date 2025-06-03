@@ -1,5 +1,6 @@
 import {TokenId, TokenType} from '../../tokens';
 import {
+	GStringLiteralRecognizeUtils,
 	NumericBasePartRecognizer,
 	ScriptCommandRecognizeUtils,
 	StringLiteralRecognizeUtils
@@ -208,7 +209,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		RehydrateToken
 			.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
 			.to([TokenId.Chars, TokenType.Chars]),
-		RehydrateToken.when(StringLiteralRecognizeUtils.isMultipleLinesStringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		RehydrateToken.when(StringLiteralRecognizeUtils.isMultipleLines).to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral),
 		DeclareAsParent([TokenId.StringLiteral, TokenType.StringLiteral])
 	],
@@ -219,7 +220,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 			.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
 			.to([TokenId.Chars, TokenType.Chars]),
 		// split when start mark of literal is SL mark
-		RehydrateToken.when(StringLiteralRecognizeUtils.isSingleLineStringLiteral).use(StringLiteralRecognizeUtils.rehydrateStringQuotationMarkML),
+		RehydrateToken.when(StringLiteralRecognizeUtils.isSingleLine).use(StringLiteralRecognizeUtils.rehydrateStringQuotationMarkML),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral),
 		DeclareAsParent([TokenId.StringLiteral, TokenType.StringLiteral])
 	],
@@ -248,14 +249,6 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringCarriageReturnEscape]: [ // \r
-		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
-		RehydrateToken
-			.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
-			.to([TokenId.Chars, TokenType.Chars]),
-		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
-	],
-	[TokenId.StringSingleSpaceEscape]: [ // \s
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
 		RehydrateToken
@@ -308,17 +301,25 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	],
 	[TokenId.GStringQuotationMark]: [ // "
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// TODO need to rehydrate to chars
+		// rehydrate to chars
 		//  when parent is string literal or slashy/dollar slashy gstring literal
 		//  or start mark of literal is ML mark
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
+		// split when start mark of literal is SL mark
+		RehydrateToken.when(GStringLiteralRecognizeUtils.isMultipleLines).to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.GStringLiteral),
 		DeclareAsParent([TokenId.GStringLiteral, TokenType.StringLiteral])
 	],
 	[TokenId.GStringQuotationMarkML]: [ // """
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// TODO need to
-		//  rehydrate to chars when parent is string literal or slashy/dollar slashy gstring literal
-		//  or split to 2 parts when start mark of literal is SL mark
+		// rehydrate to chars when parent is string literal or slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
+		// split when start mark of literal is SL mark
+		RehydrateToken.when(GStringLiteralRecognizeUtils.isSingleLine).use(GStringLiteralRecognizeUtils.rehydrateGStringQuotationMarkML),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.GStringLiteral),
 		DeclareAsParent([TokenId.GStringLiteral, TokenType.StringLiteral])
 	],

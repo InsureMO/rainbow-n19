@@ -94,7 +94,6 @@ export enum TokenId {
 	StringFormFeedEscape, // \f
 	StringNewLineEscape, // \n
 	StringCarriageReturnEscape, // \r
-	StringSingleSpaceEscape, // \s
 	StringTabulationEscape, // \t
 	StringBackslashEscape, // \\
 	StringSingleQuoteEscape, // \', in string, or optional in multiple string, gstring and multiple line gstring

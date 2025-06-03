@@ -10,13 +10,13 @@ export class StringLiteralRecognizeUtils {
 		// avoid extend
 	}
 
-	static isSingleLineStringLiteral: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
+	static isSingleLine: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
 		const currentParent = recognition.astRecognizer.getCurrentParent();
 		return currentParent.tokenId === TokenId.StringLiteral
 			&& currentParent.children[0]?.tokenId === TokenId.StringQuotationMark;
 	};
 
-	static isMultipleLinesStringLiteral: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
+	static isMultipleLines: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
 		const currentParent = recognition.astRecognizer.getCurrentParent();
 		return currentParent.tokenId === TokenId.StringLiteral
 			&& currentParent.children[0]?.tokenId === TokenId.StringQuotationMarkML;
@@ -29,7 +29,7 @@ export class StringLiteralRecognizeUtils {
 	 * 3. if next is `'''`, back to step 1.
 	 *
 	 * e.g.
-	 * 1. when `'''a`, split to `'`, `'`, `',`, `a`,
+	 * 1. when `'''a`, split to `'`, `'`, `'`, `a`,
 	 * 2. when `''''a`, split to `'`, `'''`, `a`,
 	 * 3. when `''''''a`, split to `'`, `'''`, `'`, '`', `a`.
 	 */
