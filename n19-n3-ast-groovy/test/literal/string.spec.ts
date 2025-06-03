@@ -133,4 +133,17 @@ describe('String test', () => {
 			]
 		]);
 	});
+	test('String literal #9', async () => {
+		const text = `'''\n'''`;
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 7, 0, text, [
+				[TokenId.StringLiteral, 0, 7, 1, text, [
+					[TokenId.StringQuotationMarkML, 0, 3, 1, `'''`],
+					[TokenId.NewLine, 3, 4, 1, '\n'],
+					[TokenId.StringQuotationMarkML, 4, 7, 2, `'''`]
+				]],
+			]
+		]);
+	});
 });

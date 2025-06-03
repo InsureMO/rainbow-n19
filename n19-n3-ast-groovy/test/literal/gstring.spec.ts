@@ -133,4 +133,17 @@ describe('GString test', () => {
 			]
 		]);
 	});
+	test('GString literal #9', async () => {
+		const text = '"""\n"""';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 7, 0, text, [
+				[TokenId.GStringLiteral, 0, 7, 1, text, [
+					[TokenId.GStringQuotationMarkML, 0, 3, 1, '"""'],
+					[TokenId.NewLine, 3, 4, 1, '\n'],
+					[TokenId.GStringQuotationMarkML, 4, 7, 2, '"""']
+				]],
+			]
+		]);
+	});
 });
