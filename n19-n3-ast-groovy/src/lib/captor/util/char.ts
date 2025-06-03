@@ -6,7 +6,7 @@ export enum AstChars {
 	WellNumber = '#',
 	At = '@',
 	// Exclamation = '!',
-	// Slash = '/',
+	Backslash = '\\',
 	// Asterisk = '*',
 	Semicolon = ';',
 	Colon = ':',

@@ -226,29 +226,6 @@ export class AstRecognizer {
 	}
 
 	/**
-	 * no parent checking, but will try to merge to last child of current parent.
-	 * and will not trigger on child appended function
-	 */
-	appendAsLeafAndTryToMerge(node: GroovyAstNode): void {
-		const parent = this._currentAncestors[0];
-		const children = parent.children;
-		if (children.length === 0) {
-			parent.asParentOf(node);
-			return;
-		}
-
-		const previousSiblingNode = children[children.length - 1];
-		const {tokenId: previousSiblingTokenId} = previousSiblingNode;
-		if (previousSiblingTokenId !== node.tokenId) {
-			parent.asParentOf(node);
-		} else if (previousSiblingTokenId === TokenId.UndeterminedChars) {
-			previousSiblingNode.appendText(node.text);
-		} else {
-			parent.asParentOf(node);
-		}
-	}
-
-	/**
 	 * close current parent
 	 */
 	closeCurrentParent(): void {

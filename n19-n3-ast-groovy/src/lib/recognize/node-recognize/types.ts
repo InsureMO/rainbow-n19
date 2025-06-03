@@ -35,8 +35,11 @@ export enum RecognizeBasisType {
 	// rehydrate
 	DisableToCharsWhenParentTokenTypeIsStringLiteral = 'DisableToCharsWhenParentTokenTypeIsStringLiteral',
 	RehydrateTokenToWhenParentTokenIdIsOneOf = 'RehydrateTokenToWhenParentTokenIdIsOneOf',
+	RehydrateTokenToWhenParentTokenIdIsNotAnyOf = 'RehydrateTokenToWhenParentTokenIdIsNotAnyOf',
+	RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf = 'RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf',
 	RehydrateTokenToWhen = 'RehydrateTokenToWhen',
 	RehydrateTokenUseFuncWhen = 'RehydrateTokenUseFuncWhen',
+	RehydrateTokenUseFunc = 'RehydrateTokenUseFunc',
 	// preserve
 	PreserveWhenParentIsOneOfTokenIds = 'PreserveWhenParentIsOneOfTokenIds',
 	PreserveWhenParentIsTokenType = 'PreserveWhenParentIsTokenType',
@@ -52,8 +55,11 @@ export type CustomClass = Readonly<[RecognizeBasisType.CustomClass, GroovyAstNod
 export type DisableToCharsWhenParentTokenTypeIsStringLiteral = Readonly<[RecognizeBasisType.DisableToCharsWhenParentTokenTypeIsStringLiteral]>;
 export type DoRehydrateWhen = (recognition: AstRecognition) => boolean;
 export type RehydrateTokenToWhenParentTokenIdIsOneOf = Readonly<[RecognizeBasisType.RehydrateTokenToWhenParentTokenIdIsOneOf, Array<TokenId>, TokenId | [TokenId, TokenType]]>;
+export type RehydrateTokenToWhenParentTokenIdIsNotAnyOf = Readonly<[RecognizeBasisType.RehydrateTokenToWhenParentTokenIdIsNotAnyOf, Array<TokenId>, TokenId | [TokenId, TokenType]]>;
+export type RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf = Readonly<[RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf, Array<TokenId>, NodeRehydrateFunc]>;
 export type RehydrateTokenToWhen = Readonly<[RecognizeBasisType.RehydrateTokenToWhen, DoRehydrateWhen, TokenId | [TokenId, TokenType]]>;
 export type RehydrateTokenUseFuncWhen = Readonly<[RecognizeBasisType.RehydrateTokenUseFuncWhen, DoRehydrateWhen, NodeRehydrateFunc]>;
+export type RehydrateTokenUseFunc = Readonly<[RecognizeBasisType.RehydrateTokenUseFunc, NodeRehydrateFunc]>;
 // preserve
 export type PreserveWhenParentIsOneOfTokenIds = Readonly<[RecognizeBasisType.PreserveWhenParentIsOneOfTokenIds, TokenId, ...Array<TokenId>]>;
 export type PreserveWhenParentIsTokenType = Readonly<[RecognizeBasisType.PreserveWhenParentIsTokenType, TokenType]>;
@@ -65,7 +71,9 @@ export type DeclareAsParentWhenAndOtherwise = Readonly<[RecognizeBasisType.Decla
 export type RehydrateBasis =
 	| DisableToCharsWhenParentTokenTypeIsStringLiteral
 	| RehydrateTokenToWhenParentTokenIdIsOneOf
-	| RehydrateTokenToWhen | RehydrateTokenUseFuncWhen;
+	| RehydrateTokenToWhenParentTokenIdIsNotAnyOf | RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf
+	| RehydrateTokenToWhen | RehydrateTokenUseFuncWhen
+	| RehydrateTokenUseFunc;
 export type PreserveCheckBasis =
 	| PreserveWhenParentIsOneOfTokenIds | PreserveWhenParentIsTokenType;
 export type DeclareAsParentBasis =

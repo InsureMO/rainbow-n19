@@ -15,6 +15,7 @@ import {
 	LtNumericBasePartCaptorStartsWithDot
 } from '../numeric-base-part-captor';
 import {UndeterminedCharsCaptor} from '../undetermined-chars-captor';
+import {LtUnicodeEscapeCaptor} from '../unicode-escape-captor';
 import {AtomicTokenBasisType, KwCh, KwKw, KwLt, KwMk, KwOp, KwPt, Tt} from './internal';
 
 export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenBasisType }>> = {
@@ -105,7 +106,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.StringSingleQuoteEscape]: [Tt.Sl, KwLt.StringSingleQuoteEscape, 'LtStringSingleQuoteEscape'],
 	[TokenId.StringDoubleQuoteEscape]: [Tt.Sl, KwLt.StringDoubleQuoteEscape, 'LtStringDoubleQuoteEscape'],
 	[TokenId.StringDollarEscape]: [Tt.Sl, KwLt.StringDollarEscape, 'LtStringDollarEscape'],
-	[TokenId.StringUnicodeEscapeMark]: [Tt.Sl, KwLt.StringUnicodeEscapeMark, 'LtStringUnicodeEscapeMark'],
+	[TokenId.StringUnicodeEscape]: [Tt.Sl, LtUnicodeEscapeCaptor],
 	[TokenId.GStringQuotationMark]: [Tt.Sl, KwLt.GStringQuotationMark, 'LtGStringQuotationMark'],
 	[TokenId.GStringQuotationMarkML]: [Tt.Sl, KwLt.GStringQuotationMarkML, 'LtGStringQuotationMarkML'],
 	[TokenId.DollarSlashyGStringQuotationStartMark]: [Tt.Sl, KwLt.DollarSlashyGStringQuotationStartMark, 'LtDollarSlashyGStringQuotationStartMark'],

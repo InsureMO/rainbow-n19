@@ -1,5 +1,5 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {AstLiterals} from '../../captor';
+import {AstChars, AstLiterals} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
@@ -136,6 +136,121 @@ export class StringLiteralRecognizeUtils {
 			return nodeIndex;
 		} else {
 			throw new Error(`Unexpected token[text=${node.text}, line=${nextNode.startLine}, column=${nextNode.startColumn}].`);
+		}
+	};
+
+	/**
+	 * for \b, \f, \n, \r, \t
+	 */
+	static rehydrateEscapeBFNRT: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+
+		const {startOffset, startLine, startColumn} = node;
+		// split to \ and BFNRT
+		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
+		// now there is a BFNRT, check next node
+		const nextNodeIndex = nodeIndex + 1;
+		const nextNode = nodes[nextNodeIndex];
+		const nextNodeTokenId = nextNode?.tokenId;
+		const nextNodeTokenType = nextNode?.tokenType;
+		if ([TokenId.Identifier, TokenId.IN, TokenId.INSTANCEOF].includes(nextNodeTokenId)
+			|| [TokenType.BooleanLiteral, TokenType.PrimitiveType, TokenType.Keyword].includes(nextNodeTokenType)) {
+			// unshift the BFNRT to identifier
+			nodes[nextNodeIndex] = new GroovyAstNode({
+				tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
+				text: node.text[1] + nextNode.text,
+				startOffset: startOffset + 1,
+				startLine, startColumn: startColumn + 1
+			});
+		} else {
+			const node2 = new GroovyAstNode({
+				tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
+				text: node.text[1],
+				startOffset: startOffset + 1,
+				startLine, startColumn: startColumn + 1
+			});
+			// treated as an identifier
+			nodes.splice(nodeIndex + 1, 0, node2);
+		}
+
+		return nodeIndex;
+	};
+
+	/**
+	 * for \', \"
+	 */
+	static rehydrateEscapeQuotation: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+
+		const {startOffset, startLine, startColumn} = node;
+		// split to \ and '"
+		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
+		const node2 = new GroovyAstNode({
+			tokenId: TokenId.Chars, tokenType: TokenType.Chars,
+			text: node.text[1],
+			startOffset: startOffset + 1,
+			startLine, startColumn: startColumn + 1
+		});
+		// treated as an identifier
+		nodes.splice(nodeIndex + 1, 0, node2);
+
+		return nodeIndex;
+	};
+
+	/**
+	 * for \u....
+	 */
+	static rehydrateUnicodeEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes, astRecognizer} = recognition;
+
+		const {startOffset, startLine, startColumn, text} = node;
+
+		const currentParent = astRecognizer.getCurrentParent();
+		if (currentParent.tokenType === TokenType.StringLiteral) {
+			// build Unicode escape
+			node.replaceTokenNatureAndText(TokenId.StringUnicodeEscape, TokenType.StringLiteral, '');
+			astRecognizer.appendAsCurrentParent(node);
+			const markNode = new GroovyAstNode({
+				tokenId: TokenId.StringUnicodeEscapeMark, tokenType: TokenType.Mark,
+				text: '\\u', startOffset,
+				startLine, startColumn
+			});
+			node.asParentOf(markNode);
+			const contentNode = new GroovyAstNode({
+				tokenId: TokenId.StringUnicodeEscapeContent, tokenType: TokenType.StringLiteral,
+				text: text.slice(2), startOffset: startOffset + 2,
+				startLine, startColumn: startColumn + 2
+			});
+			node.asParentOf(contentNode);
+			astRecognizer.closeCurrentParent();
+			return nodeIndex + 1;
+		} else {
+			node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
+			// now there is an u...., check next node
+			const nextNodeIndex = nodeIndex + 1;
+			const nextNode = nodes[nextNodeIndex];
+			const nextNodeTokenId = nextNode?.tokenId;
+			const nextNodeTokenType = nextNode?.tokenType;
+			if ([TokenId.Identifier, TokenId.IN, TokenId.INSTANCEOF].includes(nextNodeTokenId)
+				|| [TokenType.BooleanLiteral, TokenType.PrimitiveType, TokenType.Keyword].includes(nextNodeTokenType)) {
+				// unshift the u.... to identifier
+				nodes[nextNodeIndex] = new GroovyAstNode({
+					tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
+					text: node.text.slice(1) + nextNode.text,
+					startOffset: startOffset + 1,
+					startLine, startColumn: startColumn + 1
+				});
+			} else {
+				const node2 = new GroovyAstNode({
+					tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
+					text: node.text.slice(1),
+					startOffset: startOffset + 1,
+					startLine, startColumn: startColumn + 1
+				});
+				// treated as an identifier
+				nodes.splice(nodeIndex + 1, 0, node2);
+			}
+			return nodeIndex;
 		}
 	};
 }

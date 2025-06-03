@@ -39,8 +39,12 @@ const createAtomicTokenDef = (tokenId: TokenId, basis: AtomicTokenBasisType): At
 			}
 		}
 		case Tt.Sl: {
-			const [, keyword, name] = basis;
-			return createStringLiteralMarkCaptorClass(name, keyword, tokenId);
+			const [, keywordOrCaptor, name] = basis;
+			if (typeof keywordOrCaptor === 'string') {
+				return createStringLiteralMarkCaptorClass(name, keywordOrCaptor, tokenId);
+			} else {
+				return keywordOrCaptor;
+			}
 		}
 		// groovy operator
 		case Tt.Go:

@@ -23,7 +23,21 @@ export const isJavaIdentifierStartAndNotIdentifierIgnorable = (() => {
 
 export const isNumeric = (() => {
 	const func: AstNodeCaptorCharFuncCheck = (char) => {
-		return '0123456789'.includes(char);
+		const codepoint = char?.codePointAt(0);
+		// 0 -> 48, 9 -> 57
+		return codepoint >= 48 && codepoint <= 57;
+	};
+	func.describe = () => 'isNumeric';
+	return func;
+})();
+
+export const isHexadecimalNumeric = (() => {
+	const func: AstNodeCaptorCharFuncCheck = (char) => {
+		const codepoint = char?.codePointAt(0);
+		// 0 -> 48, 9 -> 57, a -> 97, f -> 102, A -> 65, F -> 70
+		return (codepoint >= 48 && codepoint <= 57)
+			|| (codepoint >= 97 && codepoint <= 102)
+			|| (codepoint >= 65 && codepoint <= 70);
 	};
 	func.describe = () => 'isNumeric';
 	return func;

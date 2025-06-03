@@ -99,8 +99,11 @@ export enum TokenId {
 	StringSingleQuoteEscape, // \', in string, or optional in multiple string, gstring and multiple line gstring
 	StringDoubleQuoteEscape, // \" in gstring, or optional in multiple string and multiple line gstring
 	StringDollarEscape, // \$, not for slashy gstring or dollar slashy gstring
+	StringOctalEscape, // \ followed by 1 - 3 octal digits
+	StringOctalEscapeMark, // \ in octal escape
+	StringOctalEscapeContent, // 1 - 3 octal digits follows \
 	StringUnicodeEscape, // \u followed by 4 hexadecimal digits
-	StringUnicodeEscapeMark, // \u
+	StringUnicodeEscapeMark, // \u in unicode escape
 	StringUnicodeEscapeContent, // 4 hexadecimal digits follows \u
 	StringLiteral,
 	GStringQuotationMark, // "
@@ -206,7 +209,6 @@ export enum TokenId {
 	Chars,
 	Identifier,
 	UndeterminedChars,
-	UnexpectedChars,
 	// statements
 	PackageDeclaration,
 	ImportDeclaration,

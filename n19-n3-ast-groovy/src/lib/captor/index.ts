@@ -17,6 +17,7 @@ export * from './abstract-keyword-captor';
 export * from './newline-captors';
 export * from './identifier-captor';
 export * from './numeric-base-part-captor';
+export * from './unicode-escape-captor';
 export * from './undetermined-chars-captor';
 
 export * from './ast-tokenizer';
