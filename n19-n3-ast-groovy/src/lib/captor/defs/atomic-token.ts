@@ -106,6 +106,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.StringSingleQuoteEscape]: [Tt.Sl, KwLt.StringSingleQuoteEscape, 'LtStringSingleQuoteEscape'],
 	[TokenId.StringDoubleQuoteEscape]: [Tt.Sl, KwLt.StringDoubleQuoteEscape, 'LtStringDoubleQuoteEscape'],
 	[TokenId.StringDollarEscape]: [Tt.Sl, KwLt.StringDollarEscape, 'LtStringDollarEscape'],
+	// TODO string octal escape
 	[TokenId.StringUnicodeEscape]: [Tt.Sl, LtUnicodeEscapeCaptor],
 	[TokenId.GStringQuotationMark]: [Tt.Sl, KwLt.GStringQuotationMark, 'LtGStringQuotationMark'],
 	[TokenId.GStringQuotationMarkML]: [Tt.Sl, KwLt.GStringQuotationMarkML, 'LtGStringQuotationMarkML'],

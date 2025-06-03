@@ -128,23 +128,6 @@ export class NodeRehydration {
 			return nodeIndex;
 		};
 	};
-	static buildRehydrateTokenToWhenParentTokenIdIsNotAnyOf = (parentTokenIds: Array<TokenId>, to: TokenId | [TokenId, TokenType]): NodeRehydrateFunc => {
-		return (recognition: AstRecognition): Optional<number> => {
-			const {node, nodeIndex, astRecognizer} = recognition;
-
-			const currentParent = astRecognizer.getCurrentParent();
-			if (parentTokenIds.includes(currentParent.tokenId)) {
-				return (void 0);
-			}
-
-			if (Array.isArray(to)) {
-				node.replaceTokenNature(to[0], to [1]);
-			} else {
-				node.replaceTokenNature(to, node.tokenType);
-			}
-			return nodeIndex;
-		};
-	};
 	static buildRehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf = (parentTokenIds: Array<TokenId>, func: NodeRehydrateFunc): NodeRehydrateFunc => {
 		return (recognition: AstRecognition): Optional<number> => {
 			const {astRecognizer} = recognition;
@@ -200,10 +183,6 @@ export const buildRehydrateFuncs = (items?: RecognizeBasisDef): Optional<Array<N
 				}
 				case RecognizeBasisType.RehydrateTokenToWhenParentTokenIdIsOneOf: {
 					funcs.push(NodeRehydration.buildRehydrateTokenToWhenParentTokenIdIsOneOf(item[1], item[2]));
-					break;
-				}
-				case RecognizeBasisType.RehydrateTokenToWhenParentTokenIdIsNotAnyOf: {
-					funcs.push(NodeRehydration.buildRehydrateTokenToWhenParentTokenIdIsNotAnyOf(item[1], item[2]));
 					break;
 				}
 				case RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf: {

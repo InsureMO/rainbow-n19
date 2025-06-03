@@ -23,7 +23,6 @@ import {
 	RecognizeBasisDefs,
 	RecognizeBasisType,
 	RehydrateTokenToWhen,
-	RehydrateTokenToWhenParentTokenIdIsNotAnyOf,
 	RehydrateTokenToWhenParentTokenIdIsOneOf,
 	RehydrateTokenUseFunc,
 	RehydrateTokenUseFuncWhen,
@@ -45,9 +44,6 @@ const RehydrateToken = {
 	},
 	whenParentTokenIdIsNotAnyOf: (tokenId: TokenId, ...tokenIds: Array<TokenId>) => {
 		return {
-			to: (to: TokenId | [TokenId, TokenType]): RehydrateTokenToWhenParentTokenIdIsNotAnyOf => {
-				return [RecognizeBasisType.RehydrateTokenToWhenParentTokenIdIsNotAnyOf, [tokenId, ...tokenIds], to];
-			},
 			use: (func: NodeRehydrateFunc): RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf => {
 				return [RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf, [tokenId, ...tokenIds], func];
 			}
@@ -299,7 +295,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeUtils.rehydrateEscapeQuotation),
+			.use(StringLiteralRecognizeUtils.rehydrateQuoteEscape),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringDoubleQuoteEscape]: [ // \"
@@ -307,7 +303,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeUtils.rehydrateEscapeQuotation),
+			.use(StringLiteralRecognizeUtils.rehydrateQuoteEscape),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringDollarEscape]: [ // \$
@@ -323,10 +319,10 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	],
 	[TokenId.StringOctalEscapeMark]: 'NotRequired',
 	[TokenId.StringOctalEscapeContent]: 'NotRequired',
-	[TokenId.StringUnicodeEscape]: [ // TODO \u0000 ~ \uFFFF
+	[TokenId.StringUnicodeEscape]: [ // \u0000 ~ \uFFFF
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// always rehydrate
-		// available for any parent which token type is string literal
+		// available for parent token type is string literal
 		// split to \ and u.... when not in string literal
 		RehydrateToken.alwaysUse(StringLiteralRecognizeUtils.rehydrateUnicodeEscape)
 	],

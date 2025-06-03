@@ -141,6 +141,10 @@ export class StringLiteralRecognizeUtils {
 
 	/**
 	 * for \b, \f, \n, \r, \t
+	 * split to \ and BFNRT, and BFNRT part will seek the next node.
+	 * 1. if next node is boolean literal, primitive type, keyword, identifier, in, instanceof,
+	 *    prepend the BFNRT, and replace nature to identifier
+	 * 2. insert a new node after \, use the BFNRT as identifier.
 	 */
 	static rehydrateEscapeBFNRT: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
@@ -177,13 +181,18 @@ export class StringLiteralRecognizeUtils {
 	};
 
 	/**
-	 * for \', \"
+	 * for \', \",
+	 * split to \ and one of `'"`, and `'"` part will seek the next node. TODO
+	 * 1. if next node is `'` for `'`, seek the next of next node,
+	 * 2. if next node is `'''` for `'`,
+	 * 3. if next node is `"` for `"`, seek the next of next node,
+	 * 4. if next node is `"""` for `"`,
 	 */
-	static rehydrateEscapeQuotation: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rehydrateQuoteEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 
 		const {startOffset, startLine, startColumn} = node;
-		// split to \ and '"
+		// split to \ and `'"`
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
 		const node2 = new GroovyAstNode({
 			tokenId: TokenId.Chars, tokenType: TokenType.Chars,
@@ -199,6 +208,11 @@ export class StringLiteralRecognizeUtils {
 
 	/**
 	 * for \u....
+	 * 1. in any token with type is string literal, rebuild
+	 * 2. otherwise, split to \ and u...., and u.... part will seek the next node.
+	 *   2.1. if next node is boolean literal, primitive type, keyword, identifier, in, instanceof,
+	 *        prepend the u...., and replace nature to identifier
+	 *   2.2. insert a new node after \, use the u.... part as identifier.
 	 */
 	static rehydrateUnicodeEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, astRecognizer} = recognition;
