@@ -1,5 +1,9 @@
 import {TokenId, TokenType} from '../../tokens';
-import {NumericBasePartRecognizer} from '../node-recognize-specific';
+import {
+	NumericBasePartRecognizer,
+	ScriptCommandRecognizeUtils,
+	StringLiteralRecognizeUtils
+} from '../node-recognize-specific';
 import {NodeRehydration} from './build-rehydrate-funcs';
 import {NodeRecognizeUtils} from './recognize-utils';
 import {AstRecognition} from './recognizer';
@@ -18,6 +22,7 @@ import {
 	RecognizeBasisDefs,
 	RecognizeBasisType,
 	RehydrateTokenToWhen,
+	RehydrateTokenToWhenParentTokenIdIsOneOf,
 	RehydrateTokenUseFuncWhen
 } from './types';
 
@@ -27,6 +32,13 @@ const CustomClass = (clazz: GroovyAstNodeRecognizerConstructor): CustomClass => 
 /** disable the default rehydrate to chars when parent token type is string literal */
 const DisableToCharsWhenParentTokenTypeIsStringLiteral: DisableToCharsWhenParentTokenTypeIsStringLiteral = [RecognizeBasisType.DisableToCharsWhenParentTokenTypeIsStringLiteral];
 const RehydrateToken = {
+	whenParentTokenIdIsOneOf: (tokenId: TokenId, ...tokenIds: Array<TokenId>) => {
+		return {
+			to: (to: TokenId | [TokenId, TokenType]): RehydrateTokenToWhenParentTokenIdIsOneOf => {
+				return [RecognizeBasisType.RehydrateTokenToWhenParentTokenIdIsOneOf, [tokenId, ...tokenIds], to];
+			}
+		};
+	},
 	when: (when: DoRehydrateWhen) => {
 		return {
 			to: (to: TokenId | [TokenId, TokenType]): RehydrateTokenToWhen => {
@@ -54,6 +66,7 @@ const PreserveWhenParentIsFieldDeclaration = PreserveWhenParentIsTokenType(Token
 // declare as parent
 interface DeclareAsParentHelper {
 	(declaration: NodeAsParentDeclaration, ...declarations: Array<NodeAsParentDeclaration>): DeclareAsParent;
+	/** fulfill any of given when */
 	when: (when: DoDeclareAsParentWhen, ...more: Array<DoDeclareAsParentWhen>) => {
 		to: (declaration: NodeAsParentDeclaration) => {
 			otherwise: (declaration: NodeAsParentDeclaration) => DeclareAsParentWhenAndOtherwise
@@ -169,7 +182,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.INSTANCEOF]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	// mark
 	[TokenId.ScriptCommandStartMark]: [
-		RehydrateToken.when(NodeRecognizeUtils.isScriptCommandNotAllowed).use(NodeRehydration.rehydrateScriptCommandStartMarkTo2Parts),
+		RehydrateToken.when(NodeRecognizeUtils.isScriptCommandNotAllowed).use(ScriptCommandRecognizeUtils.rehydrateScriptCommandStartMarkTo2Parts),
 		DeclareAsParent([TokenId.ScriptCommand, TokenType.ScriptCommand])
 	],
 	[TokenId.SingleLineCommentStartMark]: [DeclareAsParent([TokenId.SingleLineComment, TokenType.Comments])],
@@ -187,67 +200,113 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.BooleanTrue]: 'NotRequired',
 	[TokenId.BooleanFalse]: 'NotRequired',
 	// string literal
-	[TokenId.StringQuotationMark]: [
+	[TokenId.StringQuotationMark]: [ // '
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// TODO need to rehydrate to chars
+		// rehydrate to chars
 		//  when parent is standard/slashy/dollar slashy gstring literal
 		//  or start mark of literal is ML mark
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
+		RehydrateToken.when(StringLiteralRecognizeUtils.isMultipleLinesStringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral),
 		DeclareAsParent([TokenId.StringLiteral, TokenType.StringLiteral])
 	],
-	[TokenId.StringQuotationMarkML]: [
+	[TokenId.StringQuotationMarkML]: [ // '''
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// TODO need to
-		//  rehydrate to chars when parent is standard/slashy/dollar slashy gstring literal
-		//  or split to 2 parts when start mark of literal is SL mark
+		// rehydrate to chars when parent is standard/slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
+		// split when start mark of literal is SL mark
+		RehydrateToken.when(StringLiteralRecognizeUtils.isSingleLineStringLiteral).use(StringLiteralRecognizeUtils.rehydrateStringQuotationMarkML),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral),
 		DeclareAsParent([TokenId.StringLiteral, TokenType.StringLiteral])
 	],
-	[TokenId.StringBackspaceEscape]: [
+	[TokenId.StringBackspaceEscape]: [ // \b
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// TODO need to rehydrate to chars when parent is slashy/dollar slashy gstring literal
+		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
-	[TokenId.StringFormFeedEscape]: [
+	[TokenId.StringFormFeedEscape]: [ // \f
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
-	[TokenId.StringNewLineEscape]: [
+	[TokenId.StringNewLineEscape]: [ // \n
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
-	[TokenId.StringCarriageReturnEscape]: [
+	[TokenId.StringCarriageReturnEscape]: [ // \r
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
-	[TokenId.StringSingleSpaceEscape]: [
+	[TokenId.StringSingleSpaceEscape]: [ // \s
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
-	[TokenId.StringTabulationEscape]: [
+	[TokenId.StringTabulationEscape]: [ // \t
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
-	[TokenId.StringBackslashEscape]: [
+	[TokenId.StringBackslashEscape]: [ // \\
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is string literal or standard/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.GStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
+		PreserveWhenParentIsOneOfTokenIds(TokenId.SlashyGStringLiteral)
+	],
+	[TokenId.StringSingleQuoteEscape]: [ // \'
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
-	[TokenId.StringSingleQuoteEscape]: [
+	[TokenId.StringDoubleQuoteEscape]: [ // \"
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
-	[TokenId.StringDoubleQuoteEscape]: [
+	[TokenId.StringDollarEscape]: [ // \$
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
+		// rehydrate to chars when parent is slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.GStringLiteral, TokenId.SlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
+		PreserveWhenParentIsOneOfTokenIds(TokenId.DollarSlashyGStringLiteral)
 	],
-	[TokenId.StringDollarEscape]: [
-		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		PreserveWhenParentIsOneOfTokenIds(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral)
-	],
-	[TokenId.StringUnicodeEscapeMark]: [
+	[TokenId.StringUnicodeEscapeMark]: [ // \u
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
 	],
-	[TokenId.GStringQuotationMark]: [
+	[TokenId.GStringQuotationMark]: [ // "
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// TODO need to rehydrate to chars
 		//  when parent is string literal or slashy/dollar slashy gstring literal
@@ -255,7 +314,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		PreserveWhenParentIsOneOfTokenIds(TokenId.GStringLiteral),
 		DeclareAsParent([TokenId.GStringLiteral, TokenType.StringLiteral])
 	],
-	[TokenId.GStringQuotationMarkML]: [
+	[TokenId.GStringQuotationMarkML]: [ // """
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// TODO need to
 		//  rehydrate to chars when parent is string literal or slashy/dollar slashy gstring literal
@@ -263,21 +322,25 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		PreserveWhenParentIsOneOfTokenIds(TokenId.GStringLiteral),
 		DeclareAsParent([TokenId.GStringLiteral, TokenType.StringLiteral])
 	],
-	[TokenId.DollarSlashyGStringQuotationStartMark]: [
+	[TokenId.DollarSlashyGStringQuotationStartMark]: [ // $/
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is string literal or slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.GStringLiteral, TokenId.SlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.DollarSlashyGStringLiteral),
 		DeclareAsParent([TokenId.DollarSlashyGStringLiteral, TokenType.StringLiteral])
 	],
-	[TokenId.DollarSlashyGStringQuotationEndMark]: 'TODO',
-	[TokenId.SlashyGStringBackslashEscape]: [
+	[TokenId.DollarSlashyGStringQuotationEndMark]: 'TODO', // /$
+	[TokenId.SlashyGStringBackslashEscape]: [ // \/
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		PreserveWhenParentIsOneOfTokenIds(TokenId.SlashyGStringLiteral)
 	],
-	[TokenId.DollarSlashyGStringDollarEscape]: [
+	[TokenId.DollarSlashyGStringDollarEscape]: [ // $$
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		PreserveWhenParentIsOneOfTokenIds(TokenId.DollarSlashyGStringLiteral)
 	],
-	[TokenId.GStringInterpolationLBraceStartMark]: [
+	[TokenId.GStringInterpolationLBraceStartMark]: [ // ${
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
 	],
 	// keyword

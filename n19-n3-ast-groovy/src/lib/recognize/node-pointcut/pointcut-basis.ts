@@ -147,20 +147,24 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	[TokenId.CharLiteral]: 'TODO',
 	// string literal
 	[TokenId.StringLiteral]: [
+		DisableBase5AsChild,
 		// newline is accepted only when string literal allows multiple lines
 		Tokens.when(StringLiteralPointcuts.isSingleLine).reject(TokenId.NewLine),
 		EndWithStartMark
 	],
 	[TokenId.GStringInterpolation]: 'TODO',
 	[TokenId.GStringLiteral]: [
+		DisableBase5AsChild,
 		// newline is accepted only when gstring literal allows multiple lines
 		Tokens.when(GStringLiteralPointcuts.isSingleLine).reject(TokenId.NewLine),
 		EndWithStartMark
 	],
 	[TokenId.SlashyGStringLiteral]: [
+		DisableBase5AsChild,
 		EndWith(TokenId.Divide)
 	],
 	[TokenId.DollarSlashyGStringLiteral]: [
+		DisableBase5AsChild,
 		EndWith(TokenId.DollarSlashyGStringQuotationEndMark)
 	],
 	// statement

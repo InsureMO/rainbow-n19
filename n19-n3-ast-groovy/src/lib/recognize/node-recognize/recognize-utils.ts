@@ -1,45 +1,6 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition} from './recognizer';
-
-export interface NodeReviseSituation {
-	/* grabbed nodes, already appended to statement */
-	grabbedNodes: Array<GroovyAstNode>;
-	/** node to revise */
-	node: GroovyAstNode;
-	/** index of node to revise */
-	nodeIndex: number;
-	/** origin nodes */
-	nodes: Array<GroovyAstNode>;
-}
-
-export interface NodeReviseResult {
-	/** revised nodes by given node */
-	revisedNodes: Array<GroovyAstNode>;
-	/* consumed nodes count. default consume given node */
-	consumedNodeCount: number;
-}
-
-export type NodeReviseFunc = (situation: NodeReviseSituation) => NodeReviseResult;
-
-export interface DeclareAsParentAndGrabNodesTillOptions {
-	/** token id of parent node to create */
-	parentTokenId: TokenId;
-	/** token type of parent node to create */
-	parentTokenType: TokenType;
-	/** grab original nodes till this token id appears */
-	tillTokenId: TokenId;
-	/** grab till token node or not */
-	includeTillToken: boolean;
-	/** function to revise grabbed nodes, from node starts from nodeIndex + 1 (include), ends by till token node (exclude) */
-	reviseGrabbedNode?: NodeReviseFunc;
-	recognition: AstRecognition;
-}
-
-export interface CommentsNodeReviseSituation extends NodeReviseSituation {
-	keywordFound?: boolean;
-}
 
 export class NodeRecognizeUtils {
 	// noinspection JSUnusedLocalSymbols
@@ -114,79 +75,6 @@ export class NodeRecognizeUtils {
 		return dotNodeIndex !== -1;
 	}
 
-	static reviseNodeToCharsWhenNotWhitespacesOrTabsBeforeAppendToParent(situation: NodeReviseSituation): NodeReviseResult {
-		const {node} = situation;
-		if (node.tokenType !== TokenType.WhitespaceOrTabs) {
-			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
-		}
-		return {revisedNodes: [node], consumedNodeCount: 1};
-	}
-
-	/**
-	 * create statement node, grab following nodes till new line.
-	 * The given original node and the nodes following it till node with given till token id,
-	 * are processed by the revise function and then added to the created statement node.
-	 * returns the created statement node, and node index of the next node waiting to be processed.
-	 *
-	 * Note that the created statement node has been closed, and it no longer accepts new child nodes.
-	 *
-	 */
-	static createParentAndGrabNodesTill(options: DeclareAsParentAndGrabNodesTillOptions): [GroovyAstNode, number] {
-		const {parentTokenId, parentTokenType, tillTokenId, includeTillToken, reviseGrabbedNode, recognition} = options;
-		const {node, nodeIndex, nodes, astRecognizer} = recognition;
-
-		const situation: Partial<NodeReviseSituation> = {grabbedNodes: [], nodes};
-		const statementNode = new GroovyAstNode({
-			tokenId: parentTokenId, tokenType: parentTokenType,
-			text: '', startOffset: node.startOffset,
-			startLine: node.startLine, startColumn: node.startColumn
-		});
-		astRecognizer.appendAsCurrentParent(statementNode);
-		statementNode.asParentOf(node);
-		situation.grabbedNodes.push(node);
-		let nextNodeIndex = nodeIndex + 1;
-		let nextNode = nodes[nextNodeIndex];
-		while (nextNode != null) {
-			if (nextNode.tokenId !== tillTokenId) {
-				situation.node = nextNode;
-				situation.nodeIndex = nextNodeIndex;
-				const revisedResult = reviseGrabbedNode == null
-					? {revisedNodes: [nextNode], consumedNodeCount: 1} as NodeReviseResult
-					: reviseGrabbedNode(situation as NodeReviseSituation);
-				revisedResult.revisedNodes.forEach(node => {
-					astRecognizer.appendAsLeafAndTryToMerge(node);
-					situation.grabbedNodes.push(node);
-				});
-				nextNodeIndex = nextNodeIndex + revisedResult.consumedNodeCount;
-				nextNode = nodes[nextNodeIndex];
-			} else {
-				if (includeTillToken) {
-					astRecognizer.appendAsLeafAndTryToMerge(nextNode);
-					nextNodeIndex++;
-				}
-				break;
-			}
-		}
-		astRecognizer.closeCurrentParent();
-		return [statementNode, nextNodeIndex];
-	}
-
-	/**
-	 * create statement node,
-	 * The given original node and the nodes following it till new line node,
-	 * are processed by the revise function and then added to the created statement node.
-	 * returns the created statement node, and node index of the next node waiting to be processed.
-	 */
-	static createParentAndGrabNodesTillNewLine(options: Omit<DeclareAsParentAndGrabNodesTillOptions, 'tillTokenId' | 'includeTillToken'>): [GroovyAstNode, number] {
-		const {parentTokenId, parentTokenType, reviseGrabbedNode, recognition} = options;
-		return this.createParentAndGrabNodesTill({
-			parentTokenId, parentTokenType,
-			tillTokenId: TokenId.NewLine, includeTillToken: false,
-			reviseGrabbedNode,
-			recognition
-		});
-	}
-
 	/**
 	 * return true when
 	 * 1. script command not enabled,
@@ -206,33 +94,5 @@ export class NodeRecognizeUtils {
 			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
 			TokenId.ScriptCommand
 		].includes(node.tokenId));
-	}
-
-	static matchCommentKeyword(situation: CommentsNodeReviseSituation, astRecognizer: AstRecognizer): ReturnType<NodeReviseFunc> {
-		const {node} = situation;
-		const {minLength, available} = astRecognizer.commentKeywords;
-
-		const {text} = node;
-		const textLength = text.length;
-		if (textLength < minLength) {
-			// not a comment keyword
-			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
-			return {revisedNodes: [node], consumedNodeCount: 1};
-		}
-		let matched = false;
-		const keywords = available(textLength);
-		for (const {keyword, caseSensitive} of keywords) {
-			matched = caseSensitive ? (keyword === text) : (keyword === text.toLowerCase());
-			if (matched) {
-				break;
-			}
-		}
-		if (matched) {
-			node.replaceTokenNature(TokenId.CommentKeyword, TokenType.Chars);
-			situation.keywordFound = true;
-		} else {
-			node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
-		}
-		return {revisedNodes: [node], consumedNodeCount: 1};
 	}
 }

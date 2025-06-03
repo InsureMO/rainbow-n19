@@ -1,5 +1,5 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {AstChars, AstKeywords, AstOperators} from '../../captor';
+import {AstKeywords, AstOperators} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
@@ -12,75 +12,6 @@ export class NodeRehydration {
 		// avoid extend
 	}
 
-	/**
-	 * check next token:<br>
-	 * 1. if next is {@link TokenId.Equal}, create {@link TokenId.NotIdentical} token, replace the next {@link TokenId.Equal},<br>
-	 * 2. if next is {@link TokenId.Assign}, create {@link TokenId.NotEqual} token, replace the next {@link TokenId.Assign},<br>
-	 * 3. if next is {@link TokenId.IN}, create {@link TokenId.NOT_IN} token, replace the next {@link TokenId.IN},<br>
-	 * 4. if next is {@link TokenId.INSTANCEOF}, create {@link TokenId.NOT_INSTANCEOF} token, replace the next {@link TokenId.INSTANCEOF},<br>
-	 * 5. create {@link TokenId.Not} token, insert after given token.<br>
-	 */
-	static rehydrateScriptCommandStartMarkTo2Parts: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, nodes, astRecognizer} = recognition;
-
-		const {startOffset, startLine, startColumn} = node;
-		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.WellNumber);
-		// push well-number mark
-		astRecognizer.appendAsLeaf(node, true);
-		// to check the next index can merge to mark ! or not
-		let node2: GroovyAstNode;
-		let replaceNextNode = false;
-		const nextNode = nodes[nodeIndex + 1];
-		if (nextNode == null) {
-			node2 = GroovyAstNode.createAstNode({
-				tokenId: TokenId.Not, tokenType: TokenType.Operator,
-				text: AstOperators.Not,
-				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-			});
-		} else if (nextNode.tokenId === TokenId.Equal) {
-			node2 = GroovyAstNode.createAstNode({
-				tokenId: TokenId.NotIdentical, tokenType: TokenType.Operator,
-				text: AstOperators.NotIdentical,
-				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-			});
-			replaceNextNode = true;
-		} else if (nextNode.tokenId === TokenId.Assign) {
-			node2 = GroovyAstNode.createAstNode({
-				tokenId: TokenId.NotEqual, tokenType: TokenType.Operator,
-				text: AstOperators.NotEqual,
-				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-			});
-			replaceNextNode = true;
-		} else if (nextNode.tokenId === TokenId.IN) {
-			node2 = GroovyAstNode.createAstNode({
-				tokenId: TokenId.NOT_IN, tokenType: TokenType.Operator,
-				text: AstOperators.NotIn,
-				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-			});
-			replaceNextNode = true;
-		} else if (nextNode.tokenId === TokenId.INSTANCEOF) {
-			node2 = GroovyAstNode.createAstNode({
-				tokenId: TokenId.NOT_INSTANCEOF, tokenType: TokenType.Operator,
-				text: AstOperators.NotInstanceof,
-				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-			});
-			replaceNextNode = true;
-		} else {
-			node2 = GroovyAstNode.createAstNode({
-				tokenId: TokenId.Not, tokenType: TokenType.Operator,
-				text: AstOperators.Not,
-				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-			});
-		}
-		// push node2
-		if (replaceNextNode) {
-			nodes[nodeIndex + 1] = node2;
-		} else {
-			// insert node2 after current node
-			nodes.splice(nodeIndex + 1, 0, node2);
-		}
-		return nodeIndex + 1;
-	};
 	/**
 	 * split to 3 parts:
 	 * 1. identifier: non
@@ -114,7 +45,7 @@ export class NodeRehydration {
 	 * 1. script command enabled and parent token id is {@link TokenId.ScriptCommand}, rehydrate to {@link TokenId.Chars},
 	 * 2. parent token id is {@link TokenId.SingleLineComment} or {@link TokenId.MultipleLinesComment}, rehydrate to {@link TokenId.Chars}.
 	 */
-	private static doRehydrateToCharsWhenParentisOneOf3Tokens = (node: GroovyAstNode, nodeIndex: number, parentNode: GroovyAstNode, astRecognizer: AstRecognizer): Optional<number> => {
+	private static doRehydrateToCharsWhenParentIsOneOf3Tokens = (node: GroovyAstNode, nodeIndex: number, parentNode: GroovyAstNode, astRecognizer: AstRecognizer): Optional<number> => {
 		const {tokenId: parentTokenId} = parentNode;
 		if (parentTokenId === TokenId.ScriptCommand) {
 			if (astRecognizer.isScriptCommandEnabled) {
@@ -161,7 +92,7 @@ export class NodeRehydration {
 			astRecognizer.appendAsLeaf(node, false);
 			return nodeIndex + 1;
 		}
-		return NodeRehydration.doRehydrateToCharsWhenParentisOneOf3Tokens(node, nodeIndex, currentParent, astRecognizer);
+		return NodeRehydration.doRehydrateToCharsWhenParentIsOneOf3Tokens(node, nodeIndex, currentParent, astRecognizer);
 	};
 	/**
 	 * check given token,
@@ -178,7 +109,24 @@ export class NodeRehydration {
 		}
 
 		const currentParent = astRecognizer.getCurrentParent();
-		return NodeRehydration.doRehydrateToCharsWhenParentisOneOf3Tokens(node, nodeIndex, currentParent, astRecognizer);
+		return NodeRehydration.doRehydrateToCharsWhenParentIsOneOf3Tokens(node, nodeIndex, currentParent, astRecognizer);
+	};
+	static buildRehydrateTokenToWhenParentTokenIdIsOneOf = (parentTokenIds: Array<TokenId>, to: TokenId | [TokenId, TokenType]): NodeRehydrateFunc => {
+		return (recognition: AstRecognition): Optional<number> => {
+			const {node, nodeIndex, astRecognizer} = recognition;
+
+			const currentParent = astRecognizer.getCurrentParent();
+			if (!parentTokenIds.includes(currentParent.tokenId)) {
+				return (void 0);
+			}
+
+			if (Array.isArray(to)) {
+				node.replaceTokenNature(to[0], to [1]);
+			} else {
+				node.replaceTokenNature(to, node.tokenType);
+			}
+			return nodeIndex;
+		};
 	};
 	static buildRehydrateTokenToWhen = (when: DoRehydrateWhen, to: TokenId | [TokenId, TokenType]): NodeRehydrateFunc => {
 		return (recognition: AstRecognition): Optional<number> => {
@@ -219,6 +167,10 @@ export const buildRehydrateFuncs = (items?: RecognizeBasisDef): Optional<Array<N
 			switch (item[0]) {
 				case RecognizeBasisType.DisableToCharsWhenParentTokenTypeIsStringLiteral: {
 					disableToCharsWhenTokenTypeIsStringLiteral = true;
+					break;
+				}
+				case RecognizeBasisType.RehydrateTokenToWhenParentTokenIdIsOneOf: {
+					funcs.push(NodeRehydration.buildRehydrateTokenToWhenParentTokenIdIsOneOf(item[1], item[2]));
 					break;
 				}
 				case RecognizeBasisType.RehydrateTokenToWhen: {

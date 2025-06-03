@@ -95,8 +95,11 @@ export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Opt
 		}
 		// reject when
 		{
-			if (defs.UnacceptedWhen?.[1]?.(mightBeChildNode, astRecognizer) ?? false) {
-				return false;
+			const unacceptedWhen = defs.UnacceptedWhen;
+			if (unacceptedWhen != null && unacceptedWhen[1](mightBeChildNode, astRecognizer) === true) {
+				if (unacceptedWhen.includes(mightBeChildNode.tokenId)) {
+					return false;
+				}
 			}
 		}
 

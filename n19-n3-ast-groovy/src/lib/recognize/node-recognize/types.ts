@@ -34,6 +34,7 @@ export enum RecognizeBasisType {
 	CustomClass = 'CustomClass',
 	// rehydrate
 	DisableToCharsWhenParentTokenTypeIsStringLiteral = 'DisableToCharsWhenParentTokenTypeIsStringLiteral',
+	RehydrateTokenToWhenParentTokenIdIsOneOf = 'RehydrateTokenToWhenParentTokenIdIsOneOf',
 	RehydrateTokenToWhen = 'RehydrateTokenToWhen',
 	RehydrateTokenUseFuncWhen = 'RehydrateTokenUseFuncWhen',
 	// preserve
@@ -50,6 +51,7 @@ export type CustomClass = Readonly<[RecognizeBasisType.CustomClass, GroovyAstNod
 // rehydrate
 export type DisableToCharsWhenParentTokenTypeIsStringLiteral = Readonly<[RecognizeBasisType.DisableToCharsWhenParentTokenTypeIsStringLiteral]>;
 export type DoRehydrateWhen = (recognition: AstRecognition) => boolean;
+export type RehydrateTokenToWhenParentTokenIdIsOneOf = Readonly<[RecognizeBasisType.RehydrateTokenToWhenParentTokenIdIsOneOf, Array<TokenId>, TokenId | [TokenId, TokenType]]>;
 export type RehydrateTokenToWhen = Readonly<[RecognizeBasisType.RehydrateTokenToWhen, DoRehydrateWhen, TokenId | [TokenId, TokenType]]>;
 export type RehydrateTokenUseFuncWhen = Readonly<[RecognizeBasisType.RehydrateTokenUseFuncWhen, DoRehydrateWhen, NodeRehydrateFunc]>;
 // preserve
@@ -62,6 +64,7 @@ export type DeclareAsParentWhenAndOtherwise = Readonly<[RecognizeBasisType.Decla
 
 export type RehydrateBasis =
 	| DisableToCharsWhenParentTokenTypeIsStringLiteral
+	| RehydrateTokenToWhenParentTokenIdIsOneOf
 	| RehydrateTokenToWhen | RehydrateTokenUseFuncWhen;
 export type PreserveCheckBasis =
 	| PreserveWhenParentIsOneOfTokenIds | PreserveWhenParentIsTokenType;
