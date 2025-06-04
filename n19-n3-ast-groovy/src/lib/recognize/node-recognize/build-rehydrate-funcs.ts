@@ -140,6 +140,30 @@ export class NodeRehydration {
 			return func(recognition);
 		};
 	};
+	static buildRehydrateTokenUseFuncWhenParentTokenTypeIs = (parentTokenType: TokenType, func: NodeRehydrateFunc): NodeRehydrateFunc => {
+		return (recognition: AstRecognition): Optional<number> => {
+			const {astRecognizer} = recognition;
+
+			const currentParent = astRecognizer.getCurrentParent();
+			if (parentTokenType === currentParent.tokenType) {
+				return func(recognition);
+			}
+
+			return (void 0);
+		};
+	};
+	static buildRehydrateTokenUseFuncWhenParentTokenTypeIsNot = (parentTokenType: TokenType, func: NodeRehydrateFunc): NodeRehydrateFunc => {
+		return (recognition: AstRecognition): Optional<number> => {
+			const {astRecognizer} = recognition;
+
+			const currentParent = astRecognizer.getCurrentParent();
+			if (parentTokenType !== currentParent.tokenType) {
+				return func(recognition);
+			}
+
+			return (void 0);
+		};
+	};
 	static buildRehydrateTokenToWhen = (when: DoRehydrateWhen, to: TokenId | [TokenId, TokenType]): NodeRehydrateFunc => {
 		return (recognition: AstRecognition): Optional<number> => {
 			if (!when(recognition)) {
@@ -189,6 +213,14 @@ export const buildRehydrateFuncs = (items?: RecognizeBasisDef): Optional<Array<N
 					funcs.push(NodeRehydration.buildRehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf(item[1], item[2]));
 					break;
 				}
+				case RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenTypeIs: {
+					funcs.push(NodeRehydration.buildRehydrateTokenUseFuncWhenParentTokenTypeIs(item[1], item[2]));
+					break;
+				}
+				case RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenTypeIsNot: {
+					funcs.push(NodeRehydration.buildRehydrateTokenUseFuncWhenParentTokenTypeIsNot(item[1], item[2]));
+					break;
+				}
 				case RecognizeBasisType.RehydrateTokenToWhen: {
 					funcs.push(NodeRehydration.buildRehydrateTokenToWhen(item[1], item[2]));
 					break;
@@ -199,9 +231,11 @@ export const buildRehydrateFuncs = (items?: RecognizeBasisDef): Optional<Array<N
 				}
 			}
 		}
+
+		// put this rehydrate function at first
+		// for script command, sl comments, ml comments and string literal
 		if (disableToCharsWhenTokenTypeIsStringLiteral) {
-			// to chars when token type is string literal is not disabled
-			// put this rehydrate function at first
+			// to chars when token type is string literal is disabled
 			funcs.unshift(NodeRehydration.rehydrateToCharsWhenParentIsOneOf3Tokens);
 		} else {
 			funcs.unshift(NodeRehydration.rehydrateToCharsWhenParentIsOneOf4Tokens);

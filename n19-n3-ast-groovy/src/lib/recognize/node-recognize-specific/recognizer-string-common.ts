@@ -89,7 +89,9 @@ export abstract class StringLiteralRecognizeCommonUtils {
 
 	/**
 	 * for \b, \f, \n, \r, \t
-	 * split to \ and BFNRT char, and BFNRT part will seek the next node. cache new node text as BFNRT char
+	 * split to \ and BFNRT char or u...., then the BFNRT part or u.... will seek the next node.
+	 * cache the BFNRT char or u.... part as new node text,
+	 *
 	 * 1. if next node is boolean literal, primitive type, keyword, in, instanceof, identifier,
 	 *    unshift the new node text, and replace to identifier
 	 * 2. if next node is numeric base part, check
@@ -100,14 +102,15 @@ export abstract class StringLiteralRecognizeCommonUtils {
 	 * 2.3. otherwise, collect all numeric basic part, unshift the new node text, and cache, and back to step 1,
 	 * 3. use the new node text as an identifier node, insert after \.
 	 */
-	static rehydrateEscapeBFNRT: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitEscapeBFNRTAndUnicode: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 
 		const {text, startOffset, startLine, startColumn} = node;
-		// split to \ and BFNRT char
+		// split to \, and BFNRT char or u....
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
-		// now there is a BFNRT char, check following node
-		let newNodeText = text[1];
+
+		// now there is a BFNRT char or u...., check following node
+		let newNodeText = text.slice(1);
 		let removeNodeCount = 0;
 		let followingNodeIndex = nodeIndex + 1;
 		let followingNode = nodes[followingNodeIndex];
@@ -118,7 +121,7 @@ export abstract class StringLiteralRecognizeCommonUtils {
 			if ([TokenId.Identifier, TokenId.IN, TokenId.INSTANCEOF].includes(followingNodeTokenId)
 				|| [TokenType.BooleanLiteral, TokenType.PrimitiveType, TokenType.Keyword].includes(followingNodeTokenType)) {
 				removeNodeCount++;
-				// unshift the BFNRT to identifier
+				// unshift the new node text to identifier
 				nodes.splice(nodeIndex + 1, removeNodeCount, new GroovyAstNode({
 					tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
 					text: newNodeText + followingNode.text,
@@ -186,5 +189,36 @@ export abstract class StringLiteralRecognizeCommonUtils {
 		}
 
 		return nodeIndex;
+	};
+
+	/**
+	 * for \u...., rebuild it.
+	 * 2. otherwise, split to \ and u...., and u.... part will seek the next node.
+	 *   2.1. if next node is boolean literal, primitive type, keyword, identifier, in, instanceof,
+	 *        prepend the u...., and replace nature to identifier
+	 *   2.2. insert a new node after \, use the u.... part as identifier.
+	 */
+	static rehydrateUnicodeEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, astRecognizer} = recognition;
+
+		const {startOffset, startLine, startColumn, text} = node;
+
+		// build Unicode escape
+		node.replaceTokenNatureAndText(TokenId.StringUnicodeEscape, TokenType.StringLiteral, '');
+		astRecognizer.appendAsCurrentParent(node);
+		const markNode = new GroovyAstNode({
+			tokenId: TokenId.StringUnicodeEscapeMark, tokenType: TokenType.Mark,
+			text: '\\u', startOffset,
+			startLine, startColumn
+		});
+		node.asParentOf(markNode);
+		const contentNode = new GroovyAstNode({
+			tokenId: TokenId.StringUnicodeEscapeContent, tokenType: TokenType.StringLiteral,
+			text: text.slice(2), startOffset: startOffset + 2,
+			startLine, startColumn: startColumn + 2
+		});
+		node.asParentOf(contentNode);
+		astRecognizer.closeCurrentParent();
+		return nodeIndex + 1;
 	};
 }

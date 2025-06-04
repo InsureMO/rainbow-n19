@@ -25,9 +25,10 @@ import {
 	RecognizeBasisType,
 	RehydrateTokenToWhen,
 	RehydrateTokenToWhenParentTokenIdIsOneOf,
-	RehydrateTokenUseFunc,
 	RehydrateTokenUseFuncWhen,
-	RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf
+	RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf,
+	RehydrateTokenUseFuncWhenParentTokenTypeIs,
+	RehydrateTokenUseFuncWhenParentTokenTypeIsNot
 } from './types';
 
 // custom recognize class
@@ -50,6 +51,20 @@ const RehydrateToken = {
 			}
 		};
 	},
+	whenParentTokenTypeIs: (tokenType: TokenType) => {
+		return {
+			use: (func: NodeRehydrateFunc): RehydrateTokenUseFuncWhenParentTokenTypeIs => {
+				return [RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenTypeIs, tokenType, func];
+			}
+		};
+	},
+	whenParentTokenTypeIsNot: (tokenType: TokenType) => {
+		return {
+			use: (func: NodeRehydrateFunc): RehydrateTokenUseFuncWhenParentTokenTypeIsNot => {
+				return [RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenTypeIsNot, tokenType, func];
+			}
+		};
+	},
 	when: (when: DoRehydrateWhen, ...more: Array<DoRehydrateWhen>) => {
 		let check: DoRehydrateWhen;
 		if (more == null || more.length === 0) {
@@ -65,9 +80,6 @@ const RehydrateToken = {
 				return [RecognizeBasisType.RehydrateTokenUseFuncWhen, check, func];
 			}
 		};
-	},
-	alwaysUse: (func: NodeRehydrateFunc): RehydrateTokenUseFunc => {
-		return [RecognizeBasisType.RehydrateTokenUseFunc, func];
 	}
 };
 const RehydrateToIdentifierWhenAfterDotDirectly = RehydrateToken.when(NodeRecognizeUtils.isDirectAfterDot).to([TokenId.Identifier, TokenType.Identifier]);
@@ -210,7 +222,10 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.MultipleLinesCommentEndMark]: 'NotRequired',
 	// number literal
 	[TokenId.NumericSignPart]: 'NotRequired',
-	[TokenId.NumericBasePart]: [CustomClass(NumericBasePartRecognizer)],
+	[TokenId.NumericBasePart]: [
+		// ToCharsWhenParentTokenTypeIsStringLiteral still works here
+		CustomClass(NumericBasePartRecognizer)
+	],
 	[TokenId.NumericSuffixPart]: 'NotRequired',
 	[TokenId.BinaryStartMark]: 'NotRequired',
 	[TokenId.OctalStartMark]: 'NotRequired',
@@ -248,7 +263,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeCommonUtils.rehydrateEscapeBFNRT),
+			.use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringFormFeedEscape]: [ // \f
@@ -256,7 +271,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeCommonUtils.rehydrateEscapeBFNRT),
+			.use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringNewLineEscape]: [ // \n
@@ -264,7 +279,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeCommonUtils.rehydrateEscapeBFNRT),
+			.use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringCarriageReturnEscape]: [ // \r
@@ -272,7 +287,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeCommonUtils.rehydrateEscapeBFNRT),
+			.use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringTabulationEscape]: [ // \t
@@ -280,7 +295,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeCommonUtils.rehydrateEscapeBFNRT),
+			.use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringBackslashEscape]: [ // \\
@@ -318,17 +333,17 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.StringOctalEscape]: [ // TODO \0 ~ \7, \00 ~ \77, \000 ~ \777
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
 	],
-	[TokenId.StringOctalEscapeMark]: 'NotRequired',
-	[TokenId.StringOctalEscapeContent]: 'NotRequired',
+	[TokenId.StringOctalEscapeMark]: 'NotRequired', // it is created inside the logic of rebuilding the octal escape node and node recognizer will not be used under any circumstances.
+	[TokenId.StringOctalEscapeContent]: 'NotRequired', // it is created inside the logic of rebuilding the octal escape node and node recognizer will not be used under any circumstances.
 	[TokenId.StringUnicodeEscape]: [ // \u0000 ~ \uFFFF
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// always rehydrate
-		// available for parent token type is string literal
-		// split to \ and u.... when not in string literal
-		RehydrateToken.alwaysUse(StringLiteralRecognizeUtils.rehydrateUnicodeEscape)
+		// rebuild Unicode escape node, when parent token type is string literal
+		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.rehydrateUnicodeEscape),
+		// otherwise, split to \ and u.... when not in string literal
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode)
 	],
-	[TokenId.StringUnicodeEscapeMark]: 'NotRequired',
-	[TokenId.StringUnicodeEscapeContent]: 'NotRequired',
+	[TokenId.StringUnicodeEscapeMark]: 'NotRequired', // it is created inside the logic of rebuilding the unicode escape node and node recognizer will not be used under any circumstances.
+	[TokenId.StringUnicodeEscapeContent]: 'NotRequired', // it is created inside the logic of rebuilding the unicode escape node and node recognizer will not be used under any circumstances.
 	[TokenId.GStringQuotationMark]: [ // "
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// rehydrate to chars

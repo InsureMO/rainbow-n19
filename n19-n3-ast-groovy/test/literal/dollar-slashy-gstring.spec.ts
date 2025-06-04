@@ -30,11 +30,11 @@ describe('Dollar Slashy GString test', () => {
 		]);
 	});
 	test('GString literal #3', async () => {
-		const text = '$/\\b\\f\\n\\r\\t\\babc\\fin\\n0x15afg\\r0.348e2f\\t126e+5g/$';
+		const text = '$/\\b\\f\\n\\r\\t\\babc\\fin\\n0x15afg\\r0.348e2f\\t126e+5g\\b0x15afgabc\\u123\\uaef8abc/$\\uaef8abc';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
-			TokenId.COMPILATION_UNIT, 0, 51, 0, text, [
-				[TokenId.DollarSlashyGStringLiteral, 0, 51, 1, text, [
+			TokenId.COMPILATION_UNIT, 0, 86, 0, text, [
+				[TokenId.DollarSlashyGStringLiteral, 0, 77, 1, '$/\\b\\f\\n\\r\\t\\babc\\fin\\n0x15afg\\r0.348e2f\\t126e+5g\\b0x15afgabc\\u123\\uaef8abc/$', [
 					[TokenId.DollarSlashyGStringQuotationStartMark, 0, 2, 1, '$/'],
 					[TokenId.UndeterminedChars, 2, 3, 1, '\\'],
 					[TokenId.Chars, 3, 4, 1, 'b'],
@@ -59,8 +59,19 @@ describe('Dollar Slashy GString test', () => {
 					[TokenId.Chars, 41, 46, 1, 't126e'],
 					[TokenId.Chars, 46, 47, 1, '+'],
 					[TokenId.Chars, 47, 49, 1, '5g'],
-					[TokenId.DollarSlashyGStringQuotationEndMark, 49, 51, 1, '/$']
-				]]
+					[TokenId.UndeterminedChars, 49, 50, 1, '\\'],
+					[TokenId.Chars, 50, 61, 1, 'b0x15afgabc'],
+					[TokenId.UndeterminedChars, 61, 62, 1, '\\'],
+					[TokenId.Chars, 62, 66, 1, 'u123'],
+					[TokenId.StringUnicodeEscape, 66, 72, 1, '\\uaef8', [
+						[TokenId.StringUnicodeEscapeMark, 66, 68, 1, '\\u'],
+						[TokenId.StringUnicodeEscapeContent, 68, 72, 1, 'aef8']
+					]],
+					[TokenId.Chars, 72, 75, 1, 'abc'],
+					[TokenId.DollarSlashyGStringQuotationEndMark, 75, 77, 1, '/$']
+				]],
+				[TokenId.UndeterminedChars, 77, 78, 1, '\\'],
+				[TokenId.Identifier, 78, 86, 1, 'uaef8abc']
 			]
 		]);
 	});
