@@ -14,6 +14,7 @@ import {
 	LtNumericBasePartCaptorStartsWith9,
 	LtNumericBasePartCaptorStartsWithDot
 } from '../numeric-base-part-captor';
+import {LtOctalEscapeCaptor} from '../octal-escape-captor';
 import {UndeterminedCharsCaptor} from '../undetermined-chars-captor';
 import {LtUnicodeEscapeCaptor} from '../unicode-escape-captor';
 import {AtomicTokenBasisType, KwCh, KwKw, KwLt, KwMk, KwOp, KwPt, Tt} from './internal';
@@ -106,7 +107,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.StringSingleQuoteEscape]: [Tt.Sl, KwLt.StringSingleQuoteEscape, 'LtStringSingleQuoteEscape'],
 	[TokenId.StringDoubleQuoteEscape]: [Tt.Sl, KwLt.StringDoubleQuoteEscape, 'LtStringDoubleQuoteEscape'],
 	[TokenId.StringDollarEscape]: [Tt.Sl, KwLt.StringDollarEscape, 'LtStringDollarEscape'],
-	// TODO string octal escape
+	[TokenId.StringOctalEscape]: [Tt.Sl, LtOctalEscapeCaptor],
 	[TokenId.StringUnicodeEscape]: [Tt.Sl, LtUnicodeEscapeCaptor],
 	[TokenId.GStringQuotationMark]: [Tt.Sl, KwLt.GStringQuotationMark, 'LtGStringQuotationMark'],
 	[TokenId.GStringQuotationMarkML]: [Tt.Sl, KwLt.GStringQuotationMarkML, 'LtGStringQuotationMarkML'],

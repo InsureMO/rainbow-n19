@@ -35,6 +35,7 @@ export enum RecognizeBasisType {
 	// rehydrate
 	DisableToCharsWhenParentTokenTypeIsStringLiteral = 'DisableToCharsWhenParentTokenTypeIsStringLiteral',
 	RehydrateTokenToWhenParentTokenIdIsOneOf = 'RehydrateTokenToWhenParentTokenIdIsOneOf',
+	RehydrateTokenUseFuncWhenParentTokenIdIsOneOf = 'RehydrateTokenUseFuncWhenParentTokenIdIsOneOf',
 	RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf = 'RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf',
 	RehydrateTokenUseFuncWhenParentTokenTypeIs = 'RehydrateTokenUseFuncWhenParentTokenTypeIs',
 	RehydrateTokenUseFuncWhenParentTokenTypeIsNot = 'RehydrateTokenUseFuncWhenParentTokenTypeIsNot',
@@ -55,6 +56,7 @@ export type CustomClass = Readonly<[RecognizeBasisType.CustomClass, GroovyAstNod
 export type DisableToCharsWhenParentTokenTypeIsStringLiteral = Readonly<[RecognizeBasisType.DisableToCharsWhenParentTokenTypeIsStringLiteral]>;
 export type DoRehydrateWhen = (recognition: AstRecognition) => boolean;
 export type RehydrateTokenToWhenParentTokenIdIsOneOf = Readonly<[RecognizeBasisType.RehydrateTokenToWhenParentTokenIdIsOneOf, Array<TokenId>, TokenId | [TokenId, TokenType]]>;
+export type RehydrateTokenUseFuncWhenParentTokenIdIsOneOf = Readonly<[RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenIdIsOneOf, Array<TokenId>, NodeRehydrateFunc]>;
 export type RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf = Readonly<[RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf, Array<TokenId>, NodeRehydrateFunc]>;
 export type RehydrateTokenUseFuncWhenParentTokenTypeIs = Readonly<[RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenTypeIs, TokenType, NodeRehydrateFunc]>;
 export type RehydrateTokenUseFuncWhenParentTokenTypeIsNot = Readonly<[RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenTypeIsNot, TokenType, NodeRehydrateFunc]>;
@@ -70,7 +72,8 @@ export type DeclareAsParentWhenAndOtherwise = Readonly<[RecognizeBasisType.Decla
 
 export type RehydrateBasis =
 	| DisableToCharsWhenParentTokenTypeIsStringLiteral
-	| RehydrateTokenToWhenParentTokenIdIsOneOf | RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf
+	| RehydrateTokenToWhenParentTokenIdIsOneOf | RehydrateTokenUseFuncWhenParentTokenIdIsOneOf
+	| RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf
 	| RehydrateTokenUseFuncWhenParentTokenTypeIs | RehydrateTokenUseFuncWhenParentTokenTypeIsNot
 	| RehydrateTokenToWhen | RehydrateTokenUseFuncWhen;
 export type PreserveCheckBasis =

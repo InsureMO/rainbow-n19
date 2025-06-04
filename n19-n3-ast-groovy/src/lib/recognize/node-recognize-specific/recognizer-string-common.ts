@@ -24,12 +24,13 @@ export abstract class StringLiteralRecognizeCommonUtils {
 	 * parameter is `'` and `'''`, or `"` and `"""`
 	 */
 	static buildRehydrateStringQuotationMarkML = (
-		tokenIds:
+		params:
 			| [slTokenId: TokenId.StringQuotationMark, mlTokenId: TokenId.StringQuotationMarkML, slMark: AstLiterals.StringQuotationMark, mlMark: AstLiterals.StringQuotationMarkML]
 			| [slTokenId: TokenId.GStringQuotationMark, mlTokenId: TokenId.GStringQuotationMarkML, slMark: AstLiterals.GStringQuotationMark, mlMark: AstLiterals.GStringQuotationMarkML]
 	): NodeRehydrateFunc => {
-		const [slTokenId, mlTokenId, slMark, mlMark] = tokenIds;
+		const [slTokenId, mlTokenId, slMark, mlMark] = params;
 
+		// in following comments, `'` could be `"`, depends on the given parameter values
 		return (recognition: AstRecognition): Optional<number> => {
 			const {node, nodeIndex, nodes} = recognition;
 
@@ -87,8 +88,102 @@ export abstract class StringLiteralRecognizeCommonUtils {
 		};
 	};
 
+	private static collectIdentifiableContentForwardMaximally = (
+		initIdentifierText: string, startNodeIndex: number,
+		startOffsetOfIdentifier: number, startLineOfIdentifier: number, startColumnOfIdentifier: number,
+		nodes: Array<GroovyAstNode>
+	): void => {
+		let newNodeText = initIdentifierText;
+		let removeNodeCount = 0;
+		let followingNodeIndex = startNodeIndex;
+		let followingNode = nodes[followingNodeIndex];
+		let followingNodeTokenId = followingNode?.tokenId;
+		let followingNodeTokenType = followingNode?.tokenType;
+		// eslint-disable-next-line no-constant-condition
+		while (true) {
+			if ([TokenId.Identifier, TokenId.IN, TokenId.INSTANCEOF].includes(followingNodeTokenId)
+				|| [TokenType.BooleanLiteral, TokenType.PrimitiveType, TokenType.Keyword].includes(followingNodeTokenType)) {
+				removeNodeCount++;
+				// unshift the new node text to identifier
+				nodes.splice(startNodeIndex, removeNodeCount, new GroovyAstNode({
+					tokenId: TokenId.Identifier,
+					tokenType: TokenType.Identifier,
+					text: newNodeText + followingNode.text,
+					startOffset: startOffsetOfIdentifier,
+					startLine: startLineOfIdentifier, startColumn: startColumnOfIdentifier
+				}));
+				break;
+			} else if (followingNodeTokenId === TokenId.NumericBasePart) {
+				removeNodeCount++;
+				const numericBasePartText = followingNode.text;
+				const dotIndex = numericBasePartText.indexOf(AstChars.Dot);
+				if (dotIndex !== -1) {
+					const identifierNodeText = newNodeText + numericBasePartText.slice(0, dotIndex);
+					nodes.splice(startNodeIndex, removeNodeCount, new GroovyAstNode({
+						tokenId: TokenId.Identifier,
+						tokenType: TokenType.Identifier,
+						text: identifierNodeText,
+						startOffset: startOffsetOfIdentifier,
+						startLine: startLineOfIdentifier, startColumn: startColumnOfIdentifier
+					}), new GroovyAstNode({
+						tokenId: TokenId.NumericBasePart,
+						tokenType: TokenType.NumberLiteral,
+						text: numericBasePartText.slice(dotIndex),
+						startOffset: startOffsetOfIdentifier + identifierNodeText.length,
+						startLine: startLineOfIdentifier,
+						startColumn: startColumnOfIdentifier + identifierNodeText.length
+					}));
+					break;
+				}
+				let exponentSignIndex = numericBasePartText.indexOf(AstOperators.Add);
+				exponentSignIndex = exponentSignIndex === -1 ? numericBasePartText.indexOf(AstOperators.Subtract) : exponentSignIndex;
+				if (exponentSignIndex !== -1) {
+					const identifierNodeText = newNodeText + numericBasePartText.slice(0, exponentSignIndex);
+					const signText = numericBasePartText.slice(exponentSignIndex, exponentSignIndex + 1);
+					nodes.splice(startNodeIndex, removeNodeCount, new GroovyAstNode({
+						tokenId: TokenId.Identifier,
+						tokenType: TokenType.Identifier,
+						text: identifierNodeText,
+						startOffset: startOffsetOfIdentifier,
+						startLine: startLineOfIdentifier, startColumn: startColumnOfIdentifier
+					}), new GroovyAstNode({
+						tokenId: signText === AstOperators.Add ? TokenId.Add : TokenId.Subtract,
+						tokenType: TokenType.Operator,
+						text: signText,
+						startOffset: startOffsetOfIdentifier + identifierNodeText.length,
+						startLine: startLineOfIdentifier,
+						startColumn: startColumnOfIdentifier + identifierNodeText.length
+					}), new GroovyAstNode({
+						tokenId: TokenId.NumericBasePart,
+						tokenType: TokenType.NumberLiteral,
+						text: numericBasePartText.slice(exponentSignIndex + 1),
+						startOffset: startOffsetOfIdentifier + identifierNodeText.length + 1,
+						startLine: startLineOfIdentifier,
+						startColumn: startColumnOfIdentifier + identifierNodeText.length + 1
+					}));
+					break;
+				}
+				// no dot, no exponent sign, collect whole part since all of these chars can be part of identifier
+				newNodeText = newNodeText + numericBasePartText;
+				followingNodeIndex = followingNodeIndex + 1;
+				followingNode = nodes[followingNodeIndex];
+				followingNodeTokenId = followingNode?.tokenId;
+				followingNodeTokenType = followingNode?.tokenType;
+			} else {
+				// treated as an identifier
+				nodes.splice(startNodeIndex, removeNodeCount, new GroovyAstNode({
+					tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
+					text: newNodeText,
+					startOffset: startOffsetOfIdentifier,
+					startLine: startLineOfIdentifier, startColumn: startColumnOfIdentifier
+				}));
+				break;
+			}
+		}
+	};
+
 	/**
-	 * for \b, \f, \n, \r, \t
+	 * for \b, \f, \n, \r, \t, and \u....
 	 * split to \ and BFNRT char or u...., then the BFNRT part or u.... will seek the next node.
 	 * cache the BFNRT char or u.... part as new node text,
 	 *
@@ -110,93 +205,17 @@ export abstract class StringLiteralRecognizeCommonUtils {
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
 
 		// now there is a BFNRT char or u...., check following node
-		let newNodeText = text.slice(1);
-		let removeNodeCount = 0;
-		let followingNodeIndex = nodeIndex + 1;
-		let followingNode = nodes[followingNodeIndex];
-		let followingNodeTokenId = followingNode?.tokenId;
-		let followingNodeTokenType = followingNode?.tokenType;
-		// eslint-disable-next-line no-constant-condition
-		while (true) {
-			if ([TokenId.Identifier, TokenId.IN, TokenId.INSTANCEOF].includes(followingNodeTokenId)
-				|| [TokenType.BooleanLiteral, TokenType.PrimitiveType, TokenType.Keyword].includes(followingNodeTokenType)) {
-				removeNodeCount++;
-				// unshift the new node text to identifier
-				nodes.splice(nodeIndex + 1, removeNodeCount, new GroovyAstNode({
-					tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
-					text: newNodeText + followingNode.text,
-					startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-				}));
-				break;
-			} else if (followingNodeTokenId === TokenId.NumericBasePart) {
-				removeNodeCount++;
-				const numericBasePartText = followingNode.text;
-				const dotIndex = numericBasePartText.indexOf(AstChars.Dot);
-				if (dotIndex !== -1) {
-					const identifierNodeText = newNodeText + numericBasePartText.slice(0, dotIndex);
-					nodes.splice(nodeIndex + 1, removeNodeCount, new GroovyAstNode({
-						tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
-						text: identifierNodeText,
-						startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-					}), new GroovyAstNode({
-						tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
-						text: numericBasePartText.slice(dotIndex),
-						startOffset: startOffset + 1 + identifierNodeText.length,
-						startLine, startColumn: startColumn + 1 + identifierNodeText.length
-					}));
-					break;
-				}
-				let exponentSignIndex = numericBasePartText.indexOf(AstOperators.Add);
-				exponentSignIndex = exponentSignIndex === -1 ? numericBasePartText.indexOf(AstOperators.Subtract) : exponentSignIndex;
-				if (exponentSignIndex !== -1) {
-					const identifierNodeText = newNodeText + numericBasePartText.slice(0, exponentSignIndex);
-					const signText = numericBasePartText.slice(exponentSignIndex, exponentSignIndex + 1);
-					nodes.splice(nodeIndex + 1, removeNodeCount, new GroovyAstNode({
-						tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
-						text: identifierNodeText,
-						startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-					}), new GroovyAstNode({
-						tokenId: signText === AstOperators.Add ? TokenId.Add : TokenId.Subtract,
-						tokenType: TokenType.Operator,
-						text: signText,
-						startOffset: startOffset + 1 + identifierNodeText.length,
-						startLine,
-						startColumn: startColumn + 1 + identifierNodeText.length
-					}), new GroovyAstNode({
-						tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
-						text: numericBasePartText.slice(exponentSignIndex + 1),
-						startOffset: startOffset + 1 + identifierNodeText.length + 1,
-						startLine, startColumn: startColumn + 1 + identifierNodeText.length + 1
-					}));
-					break;
-				}
-				// no dot, no exponent sign, collect whole part since all of these chars can be part of identifier
-				newNodeText = newNodeText + numericBasePartText;
-				followingNodeIndex = followingNodeIndex + 1;
-				followingNode = nodes[followingNodeIndex];
-				followingNodeTokenId = followingNode?.tokenId;
-				followingNodeTokenType = followingNode?.tokenType;
-			} else {
-				// treated as an identifier
-				nodes.splice(nodeIndex + 1, removeNodeCount, new GroovyAstNode({
-					tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
-					text: newNodeText,
-					startOffset: startOffset + 1,
-					startLine, startColumn: startColumn + 1
-				}));
-				break;
-			}
-		}
+		StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(
+			text.slice(1), nodeIndex + 1,
+			startOffset + 1, startLine, startColumn + 1,
+			nodes
+		);
 
 		return nodeIndex;
 	};
 
 	/**
 	 * for \u...., rebuild it.
-	 * 2. otherwise, split to \ and u...., and u.... part will seek the next node.
-	 *   2.1. if next node is boolean literal, primitive type, keyword, identifier, in, instanceof,
-	 *        prepend the u...., and replace nature to identifier
-	 *   2.2. insert a new node after \, use the u.... part as identifier.
 	 */
 	static rehydrateUnicodeEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, astRecognizer} = recognition;
@@ -208,7 +227,7 @@ export abstract class StringLiteralRecognizeCommonUtils {
 		astRecognizer.appendAsCurrentParent(node);
 		const markNode = new GroovyAstNode({
 			tokenId: TokenId.StringUnicodeEscapeMark, tokenType: TokenType.Mark,
-			text: '\\u', startOffset,
+			text: AstLiterals.StringUnicodeEscapeMark, startOffset,
 			startLine, startColumn
 		});
 		node.asParentOf(markNode);
@@ -220,5 +239,176 @@ export abstract class StringLiteralRecognizeCommonUtils {
 		node.asParentOf(contentNode);
 		astRecognizer.closeCurrentParent();
 		return nodeIndex + 1;
+	};
+
+	/**
+	 * for octal escape \..., rebuild it.
+	 */
+	static rehydrateOctalEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, astRecognizer} = recognition;
+
+		const {startOffset, startLine, startColumn, text} = node;
+
+		// build octal escape
+		node.replaceTokenNatureAndText(TokenId.StringOctalEscape, TokenType.StringLiteral, '');
+		astRecognizer.appendAsCurrentParent(node);
+		const markNode = new GroovyAstNode({
+			tokenId: TokenId.StringOctalEscapeMark, tokenType: TokenType.Mark,
+			text: AstChars.Backslash, startOffset,
+			startLine, startColumn
+		});
+		node.asParentOf(markNode);
+		const contentNode = new GroovyAstNode({
+			tokenId: TokenId.StringOctalEscapeContent, tokenType: TokenType.StringLiteral,
+			text: text.slice(1), startOffset: startOffset + 1,
+			startLine, startColumn: startColumn + 1
+		});
+		node.asParentOf(contentNode);
+		astRecognizer.closeCurrentParent();
+		return nodeIndex + 1;
+	};
+
+	static splitOctalEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+
+		const {text, startOffset, startLine, startColumn} = node;
+		// split to \, and 1 - 3 digits 0 - 7
+		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
+
+		const nextNodeIndex = nodeIndex + 1;
+		const nextNode = nodes[nextNodeIndex];
+		const nextNodeTokenId = nextNode?.tokenId;
+		const nextNodeText = nextNode?.text;
+		if (nextNodeTokenId !== TokenId.NumericBasePart) {
+			// create a new numeric base part node, append after \
+			nodes.splice(nodeIndex + 1, 0, new GroovyAstNode({
+				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+				text: text.slice(1),
+				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
+			}));
+			return nodeIndex;
+		}
+		if (['b', 'B', 'x', 'X'].includes(nextNodeText[1])) {
+			// it is a binary or hexadecimal literal
+			const newNode = new GroovyAstNode({
+				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+				text: text.slice(1) + '0', // 0 is from 0b/0B/0x/0X
+				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
+			});
+			nodes.splice(nodeIndex + 1, 1, newNode);
+			// the rest part of next node is an identifier now
+			// check following nodes
+			StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(
+				nextNodeText.slice(1), nodeIndex + 2,
+				startOffset + 1 + text.length, startLine, startColumn + 1 + text.length,
+				nodes
+			);
+		} else {
+			// it is an octal, integral, decimal literal
+			// replace the next node with new one
+			nodes.splice(nodeIndex + 1, 1, new GroovyAstNode({
+				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+				text: text.slice(1) + nextNodeText,
+				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
+			}));
+		}
+		return nodeIndex;
+	};
+
+	/**
+	 * for \', \",
+	 * split to \ and one of `'"`, and `'"` part will seek the following nodes.
+	 * cache the `'"` part to init node text.
+	 *
+	 * 1. when the following node is ml mark of `'"`, collect the first 1 or 2 chars to create as a ml mark,
+	 *    in this case, there is still 1 or 2 chars left, cache to init node text (actually it is same as the original init node text),
+	 *    back to step 1,
+	 * 2. when the following node is sl mark of `'"`,
+	 * 2.1. when init node text's length is 1, double the init node text, therefore now length of it is 2,
+	 *      back to step 1,
+	 * 2.2. when init node text's length is 2, collect the following node, and unshift the init node text to create a ml mark,
+	 * 3. the following node is not one of sl or ml mark,
+	 * 3.1. when init node text's length is 1, create a sl mark,
+	 * 3.2. when init node text's length is 2, create 2 sl marks.
+	 */
+	static rehydrateQuoteEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+
+		const {text, startOffset, startLine, startColumn} = node;
+		// split to \ and `'"`
+		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
+
+		const newNodes: Array<GroovyAstNode> = [];
+		let initNodeText = text.slice(1);
+		const [slTokenId, mlTokenId, slMark, mlMark] = initNodeText === AstLiterals.StringQuotationMark
+			? [TokenId.StringQuotationMark, TokenId.StringQuotationMarkML, AstLiterals.StringQuotationMark, AstLiterals.StringQuotationMarkML]
+			: [TokenId.GStringQuotationMark, TokenId.GStringQuotationMarkML, AstLiterals.GStringQuotationMark, AstLiterals.GStringQuotationMarkML];
+		let removeNodeCount = 0;
+		let newNodeStartOffset = startOffset + 1;
+		let newNodeStartColumn = startColumn + 1;
+		// now there is a `'` or `"`, check the following nodes
+		let followingNodeIndex = nodeIndex + 1;
+		let followingNode = nodes[followingNodeIndex];
+		let followingNodeTokenId = followingNode?.tokenId;
+		// eslint-disable-next-line no-constant-condition
+		while (true) {
+			if (followingNodeTokenId === mlTokenId) {
+				// next is `'''`,
+				// when init node text is `'`, collect first `''` to be a new `'''`, and there is a `'` left
+				// or init node text is `''`, collect first `'` to be a new `'''`, and there is a `''` left
+				removeNodeCount++;
+				newNodes.push(new GroovyAstNode({
+					tokenId: mlTokenId, tokenType: TokenType.Mark, text: mlMark,
+					startOffset: newNodeStartOffset, startLine, startColumn: newNodeStartColumn
+				}));
+				// continue
+				// init node text is same, no need to change
+				newNodeStartOffset = newNodeStartOffset + 3;
+				newNodeStartColumn = newNodeStartColumn + 3;
+				followingNodeIndex = followingNodeIndex + 1;
+				followingNode = nodes[followingNodeIndex];
+				followingNodeTokenId = followingNode?.tokenId;
+			} else if (initNodeText.length === 1) {
+				if (followingNodeTokenId === slTokenId) {
+					// next is `'`, now there is a `''`, check the following nodes
+					removeNodeCount++;
+					// continue
+					initNodeText = initNodeText + initNodeText;
+					followingNodeIndex = followingNodeIndex + 1;
+					followingNode = nodes[followingNodeIndex];
+					followingNodeTokenId = followingNode?.tokenId;
+				} else {
+					newNodes.push(new GroovyAstNode({
+						tokenId: slTokenId, tokenType: TokenType.Mark, text: slMark,
+						startOffset: newNodeStartOffset, startLine, startColumn: newNodeStartColumn
+					}));
+					break;
+				}
+			} else {
+				// length is 2
+				if (followingNodeTokenId === slTokenId) {
+					// next is `'`, now there is a `'''`
+					removeNodeCount++;
+					newNodes.push(new GroovyAstNode({
+						tokenId: mlTokenId, tokenType: TokenType.Mark, text: mlMark,
+						startOffset: newNodeStartOffset, startLine, startColumn: newNodeStartColumn
+					}));
+					break;
+				} else {
+					newNodes.push(new GroovyAstNode({
+						tokenId: slTokenId, tokenType: TokenType.Mark, text: slMark,
+						startOffset: newNodeStartOffset, startLine, startColumn: newNodeStartColumn
+					}), new GroovyAstNode({
+						tokenId: slTokenId, tokenType: TokenType.Mark, text: slMark,
+						startOffset: newNodeStartOffset + 1, startLine, startColumn: newNodeStartColumn + 1
+					}));
+					break;
+				}
+			}
+		}
+		// manufacture nodes
+		nodes.splice(nodeIndex + 1, removeNodeCount, ...newNodes);
+
+		return nodeIndex;
 	};
 }

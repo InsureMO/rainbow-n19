@@ -1,7 +1,5 @@
-import {Optional} from '@rainbow-n19/n3-ast';
-import {AstChars, AstLiterals} from '../../captor';
-import {GroovyAstNode} from '../../node';
-import {TokenId, TokenType} from '../../tokens';
+import {AstLiterals} from '../../captor';
+import {TokenId} from '../../tokens';
 import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
 import {StringLiteralRecognizeCommonUtils} from './recognizer-string-common';
 
@@ -35,30 +33,4 @@ export class StringLiteralRecognizeUtils extends StringLiteralRecognizeCommonUti
 	 * 3. when `''''''a`, split to `'`, `'''`, `'`, `'`, `a`.
 	 */
 	static rehydrateStringQuotationMarkML: NodeRehydrateFunc = StringLiteralRecognizeUtils.buildRehydrateStringQuotationMarkML([TokenId.StringQuotationMark, TokenId.StringQuotationMarkML, AstLiterals.StringQuotationMark, AstLiterals.StringQuotationMarkML]);
-
-	/**
-	 * for \', \",
-	 * split to \ and one of `'"`, and `'"` part will seek the next node. TODO
-	 * 1. if next node is `'` for `'`, seek the next of next node,
-	 * 2. if next node is `'''` for `'`,
-	 * 3. if next node is `"` for `"`, seek the next of next node,
-	 * 4. if next node is `"""` for `"`,
-	 */
-	static rehydrateQuoteEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, nodes} = recognition;
-
-		const {startOffset, startLine, startColumn} = node;
-		// split to \ and `'"`
-		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
-		const node2 = new GroovyAstNode({
-			tokenId: TokenId.Chars, tokenType: TokenType.Chars,
-			text: node.text[1],
-			startOffset: startOffset + 1,
-			startLine, startColumn: startColumn + 1
-		});
-		// treated as an identifier
-		nodes.splice(nodeIndex + 1, 0, node2);
-
-		return nodeIndex;
-	};
 }

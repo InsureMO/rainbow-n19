@@ -163,4 +163,38 @@ describe('String test', () => {
 			]
 		]);
 	});
+	test('String literal #11', async () => {
+		const text = `'\\127'\\127012\\1270.12e2g\\1270b010abc`;
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 36, 0, text, [
+				[TokenId.StringLiteral, 0, 6, 1, `'\\127'`, [
+					[TokenId.StringQuotationMark, 0, 1, 1, `'`],
+					[TokenId.StringOctalEscape, 1, 5, 1, '\\127', [
+						[TokenId.StringOctalEscapeMark, 1, 2, 1, '\\'],
+						[TokenId.StringOctalEscapeContent, 2, 5, 1, '127']
+					]],
+					[TokenId.StringQuotationMark, 5, 6, 1, `'`]
+				]],
+				[TokenId.UndeterminedChars, 6, 7, 1, '\\'],
+				[TokenId.IntegralLiteral, 7, 13, 1, '127012', [
+					[TokenId.NumericBasePart, 7, 13, 1, '127012']
+				]],
+				[TokenId.UndeterminedChars, 13, 14, 1, '\\'],
+				[TokenId.DecimalLiteral, 14, 24, 1, '1270.12e2g', [
+					[TokenId.NumericBasePart, 14, 18, 1, '1270'],
+					[TokenId.Dot, 18, 19, 1, '.'],
+					[TokenId.NumericBasePart, 19, 21, 1, '12'],
+					[TokenId.DecimalExponentMark, 21, 22, 1, 'e'],
+					[TokenId.NumericBasePart, 22, 23, 1, '2'],
+					[TokenId.NumericSuffixPart, 23, 24, 1, 'g']
+				]],
+				[TokenId.UndeterminedChars, 24, 25, 1, '\\'],
+				[TokenId.IntegralLiteral, 25, 29, 1, '1270', [
+					[TokenId.NumericBasePart, 25, 29, 1, '1270']
+				]],
+				[TokenId.Identifier, 29, 36, 1, 'b010abc']
+			]
+		]);
+	});
 });
