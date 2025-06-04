@@ -2,7 +2,8 @@ import {TokenId, TokenType} from '../../tokens';
 import {
 	GStringLiteralRecognizeUtils,
 	NumericBasePartRecognizer,
-	ScriptCommandRecognizeUtils, StringLiteralRecognizeCommonUtils,
+	ScriptCommandRecognizeUtils,
+	StringLiteralRecognizeCommonUtils,
 	StringLiteralRecognizeUtils
 } from '../node-recognize-specific';
 import {NodeRehydration} from './build-rehydrate-funcs';
@@ -361,7 +362,14 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		PreserveWhenParentIsOneOfTokenIds(TokenId.DollarSlashyGStringLiteral),
 		DeclareAsParent([TokenId.DollarSlashyGStringLiteral, TokenType.StringLiteral])
 	],
-	[TokenId.DollarSlashyGStringQuotationEndMark]: 'TODO', // /$
+	[TokenId.DollarSlashyGStringQuotationEndMark]: [ // /$
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// TODO rehydrate to chars when parent is string literal or slashy/dollar slashy gstring literal
+		RehydrateToken
+			.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.GStringLiteral, TokenId.SlashyGStringLiteral)
+			.to([TokenId.Chars, TokenType.Chars]),
+		PreserveWhenParentIsOneOfTokenIds(TokenId.DollarSlashyGStringLiteral)
+	],
 	[TokenId.SlashyGStringBackslashEscape]: [ // TODO \/
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		PreserveWhenParentIsOneOfTokenIds(TokenId.SlashyGStringLiteral)
@@ -630,5 +638,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.Tabs]: 'NotRequired',
 	[TokenId.NewLine]: 'NotRequired',
 	[TokenId.Identifier]: 'TODO', // TODO, when in string literal, and starts with $
-	[TokenId.UndeterminedChars]: 'NotRequired'
+	[TokenId.UndeterminedChars]: [
+		DisableToCharsWhenParentTokenTypeIsStringLiteral
+	]
 };

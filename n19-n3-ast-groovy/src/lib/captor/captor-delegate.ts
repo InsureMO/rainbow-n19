@@ -218,6 +218,9 @@ export class CaptorDelegate {
 								winner = captors.find(captor => captor.constructor.name === 'LtDollarSlashyGStringDollarEscapeCaptor');
 							}
 						}
+					} else if (nextChar === '/') {
+						// LtDollarSlashyGStringQuotationStartMarkCaptor wins
+						winner = captors.find(captor => captor.constructor.name === 'LtDollarSlashyGStringQuotationStartMarkCaptor');
 					} else if (nextChar == null) {
 						// no more char, $, LtGStringInterpolationStartMarkCaptor wins
 						winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationStartMarkCaptor');

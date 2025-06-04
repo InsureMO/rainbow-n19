@@ -103,16 +103,16 @@ export abstract class StringLiteralRecognizeCommonUtils {
 	static rehydrateEscapeBFNRT: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 
-		const {startOffset, startLine, startColumn} = node;
+		const {text, startOffset, startLine, startColumn} = node;
 		// split to \ and BFNRT char
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
 		// now there is a BFNRT char, check following node
-		let newNodeText = node.text[1];
+		let newNodeText = text[1];
 		let removeNodeCount = 0;
-		const followingNodeIndex = nodeIndex + 1;
-		const followingNode = nodes[followingNodeIndex];
-		const followingNodeTokenId = followingNode?.tokenId;
-		const followingNodeTokenType = followingNode?.tokenType;
+		let followingNodeIndex = nodeIndex + 1;
+		let followingNode = nodes[followingNodeIndex];
+		let followingNodeTokenId = followingNode?.tokenId;
+		let followingNodeTokenType = followingNode?.tokenType;
 		// eslint-disable-next-line no-constant-condition
 		while (true) {
 			if ([TokenId.Identifier, TokenId.IN, TokenId.INSTANCEOF].includes(followingNodeTokenId)
@@ -169,6 +169,10 @@ export abstract class StringLiteralRecognizeCommonUtils {
 				}
 				// no dot, no exponent sign, collect whole part since all of these chars can be part of identifier
 				newNodeText = newNodeText + numericBasePartText;
+				followingNodeIndex = followingNodeIndex + 1;
+				followingNode = nodes[followingNodeIndex];
+				followingNodeTokenId = followingNode?.tokenId;
+				followingNodeTokenType = followingNode?.tokenType;
 			} else {
 				// treated as an identifier
 				nodes.splice(nodeIndex + 1, removeNodeCount, new GroovyAstNode({

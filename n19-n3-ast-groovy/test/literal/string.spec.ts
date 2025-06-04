@@ -142,7 +142,24 @@ describe('String test', () => {
 					[TokenId.StringQuotationMarkML, 0, 3, 1, `'''`],
 					[TokenId.NewLine, 3, 4, 1, '\n'],
 					[TokenId.StringQuotationMarkML, 4, 7, 2, `'''`]
-				]],
+				]]
+			]
+		]);
+	});
+	test('String literal #10', async () => {
+		const text = `'''\\b\\f\\n\\r\\t'''`;
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 16, 0, text, [
+				[TokenId.StringLiteral, 0, 16, 1, text, [
+					[TokenId.StringQuotationMarkML, 0, 3, 1, `'''`],
+					[TokenId.StringBackspaceEscape, 3, 5, 1, '\\b'],
+					[TokenId.StringFormFeedEscape, 5, 7, 1, '\\f'],
+					[TokenId.StringNewLineEscape, 7, 9, 1, '\\n'],
+					[TokenId.StringCarriageReturnEscape, 9, 11, 1, '\\r'],
+					[TokenId.StringTabulationEscape, 11, 13, 1, '\\t'],
+					[TokenId.StringQuotationMarkML, 13, 16, 1, `'''`]
+				]]
 			]
 		]);
 	});
