@@ -2,7 +2,7 @@ import {TokenId, TokenType} from '../../tokens';
 import {
 	GStringLiteralRecognizeUtils,
 	NumericBasePartRecognizer,
-	ScriptCommandRecognizeUtils,
+	ScriptCommandRecognizeUtils, StringLiteralRecognizeCommonUtils,
 	StringLiteralRecognizeUtils
 } from '../node-recognize-specific';
 import {NodeRehydration} from './build-rehydrate-funcs';
@@ -247,7 +247,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeUtils.rehydrateEscapeBFNRT),
+			.use(StringLiteralRecognizeCommonUtils.rehydrateEscapeBFNRT),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringFormFeedEscape]: [ // \f
@@ -255,7 +255,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeUtils.rehydrateEscapeBFNRT),
+			.use(StringLiteralRecognizeCommonUtils.rehydrateEscapeBFNRT),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringNewLineEscape]: [ // \n
@@ -263,7 +263,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeUtils.rehydrateEscapeBFNRT),
+			.use(StringLiteralRecognizeCommonUtils.rehydrateEscapeBFNRT),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringCarriageReturnEscape]: [ // \r
@@ -271,7 +271,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeUtils.rehydrateEscapeBFNRT),
+			.use(StringLiteralRecognizeCommonUtils.rehydrateEscapeBFNRT),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringTabulationEscape]: [ // \t
@@ -279,7 +279,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is not string literal, gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral)
-			.use(StringLiteralRecognizeUtils.rehydrateEscapeBFNRT),
+			.use(StringLiteralRecognizeCommonUtils.rehydrateEscapeBFNRT),
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral, TokenId.GStringLiteral)
 	],
 	[TokenId.StringBackslashEscape]: [ // \\
