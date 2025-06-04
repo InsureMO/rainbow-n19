@@ -88,14 +88,48 @@ export abstract class StringLiteralRecognizeCommonUtils {
 		};
 	};
 
+	/**
+	 * to collect the following content which can be identifier.
+	 *
+	 * 1. when the following node is one of:
+	 *   - identifier,
+	 *   - operator in,
+	 *   - operator instanceof,
+	 *   - boolean literal (true/false),
+	 *   - primitive type (8 types),
+	 *   - any keyword
+	 *   collect whole text of following node, append to identifier text, create an identifier node,
+	 * 2. is numeric base part,
+	 * 2.1. has dot, so this must be a decimal literal,
+	 *   - append the text before dot to identifier text, create an identifier node,
+	 *   - use the left part (starts from dot), to create a new numeric base part node,
+	 * 2.2. has exponent sign (+/-), so this must be a decimal literal,
+	 *   - append the text before exponent sign to identifier text, create an identifier node,
+	 *   - use the exponent sign to create a new add/divide node,
+	 *   - use the left part (after the exponent sign), to create a new numeric base part node,
+	 *     the new node only contains numeric chars and an optional suffix,
+	 * 2.3. collect whole text of following node, append to identifier text, and back to step 1, to check following nodes,
+	 * 3. use the identifier text to create an identifier node.
+	 *
+	 * nodes retrieved from original array in step 1 and 2, will be removed.
+	 * and created new nodes will insert at given node index of first following node.
+	 * node retrieved from original array in step 3 is kept.
+	 *
+	 * @param initIdentifierText initial identifier text, on air now
+	 * @param nodeIndexOfFirstFollowingNode node index of first following node
+	 * @param startOffsetOfIdentifier the start offset of collected identifier
+	 * @param startLineOfIdentifier the start line of collected identifier
+	 * @param startColumnOfIdentifier ths start column of collected identifier
+	 * @param nodes original nodes
+	 */
 	private static collectIdentifiableContentForwardMaximally = (
-		initIdentifierText: string, startNodeIndex: number,
+		initIdentifierText: string, nodeIndexOfFirstFollowingNode: number,
 		startOffsetOfIdentifier: number, startLineOfIdentifier: number, startColumnOfIdentifier: number,
 		nodes: Array<GroovyAstNode>
 	): void => {
 		let newNodeText = initIdentifierText;
 		let removeNodeCount = 0;
-		let followingNodeIndex = startNodeIndex;
+		let followingNodeIndex = nodeIndexOfFirstFollowingNode;
 		let followingNode = nodes[followingNodeIndex];
 		let followingNodeTokenId = followingNode?.tokenId;
 		let followingNodeTokenType = followingNode?.tokenType;
@@ -105,7 +139,7 @@ export abstract class StringLiteralRecognizeCommonUtils {
 				|| [TokenType.BooleanLiteral, TokenType.PrimitiveType, TokenType.Keyword].includes(followingNodeTokenType)) {
 				removeNodeCount++;
 				// unshift the new node text to identifier
-				nodes.splice(startNodeIndex, removeNodeCount, new GroovyAstNode({
+				nodes.splice(nodeIndexOfFirstFollowingNode, removeNodeCount, new GroovyAstNode({
 					tokenId: TokenId.Identifier,
 					tokenType: TokenType.Identifier,
 					text: newNodeText + followingNode.text,
@@ -119,7 +153,7 @@ export abstract class StringLiteralRecognizeCommonUtils {
 				const dotIndex = numericBasePartText.indexOf(AstChars.Dot);
 				if (dotIndex !== -1) {
 					const identifierNodeText = newNodeText + numericBasePartText.slice(0, dotIndex);
-					nodes.splice(startNodeIndex, removeNodeCount, new GroovyAstNode({
+					nodes.splice(nodeIndexOfFirstFollowingNode, removeNodeCount, new GroovyAstNode({
 						tokenId: TokenId.Identifier,
 						tokenType: TokenType.Identifier,
 						text: identifierNodeText,
@@ -140,7 +174,7 @@ export abstract class StringLiteralRecognizeCommonUtils {
 				if (exponentSignIndex !== -1) {
 					const identifierNodeText = newNodeText + numericBasePartText.slice(0, exponentSignIndex);
 					const signText = numericBasePartText.slice(exponentSignIndex, exponentSignIndex + 1);
-					nodes.splice(startNodeIndex, removeNodeCount, new GroovyAstNode({
+					nodes.splice(nodeIndexOfFirstFollowingNode, removeNodeCount, new GroovyAstNode({
 						tokenId: TokenId.Identifier,
 						tokenType: TokenType.Identifier,
 						text: identifierNodeText,
@@ -171,7 +205,7 @@ export abstract class StringLiteralRecognizeCommonUtils {
 				followingNodeTokenType = followingNode?.tokenType;
 			} else {
 				// treated as an identifier
-				nodes.splice(startNodeIndex, removeNodeCount, new GroovyAstNode({
+				nodes.splice(nodeIndexOfFirstFollowingNode, removeNodeCount, new GroovyAstNode({
 					tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
 					text: newNodeText,
 					startOffset: startOffsetOfIdentifier,
@@ -412,19 +446,27 @@ export abstract class StringLiteralRecognizeCommonUtils {
 		return nodeIndex;
 	};
 
+	/**
+	 * create a backslash node, and insert at given node index of insert
+	 */
 	private static createBackslashNode = (
-		nodes: Array<GroovyAstNode>, replaceNodeIndex: number,
+		nodes: Array<GroovyAstNode>, nodeIndexOfInsert: number,
 		startOffsetOfBackslash: number, startLineOfBackslash: number, startColumnOfBackslash: number
 	): void => {
-		nodes.splice(replaceNodeIndex, 0, new GroovyAstNode({
+		nodes.splice(nodeIndexOfInsert, 0, new GroovyAstNode({
 			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
 			text: AstChars.Backslash,
 			startOffset: startOffsetOfBackslash, startLine: startLineOfBackslash, startColumn: startColumnOfBackslash
 		}));
 	};
 
+	/**
+	 * replace one node at given node index of replace,
+	 * and insert a slashy gstring slash escape node,
+	 * and insert a node identified by parameter {@code moreNode}.
+	 */
 	private static replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd = (
-		nodes: Array<GroovyAstNode>, replaceNodeIndex: number,
+		nodes: Array<GroovyAstNode>, nodeIndexOfReplace: number,
 		startOffsetOfEscape: number, startLineOfEscape: number, startColumnOfEscape: number,
 		moreNode?: { tokenId: TokenId, tokenType: TokenType, text: string }
 	): void => {
@@ -441,7 +483,7 @@ export abstract class StringLiteralRecognizeCommonUtils {
 				startOffset: startOffsetOfEscape + 2, startLine: startLineOfEscape, startColumn: startColumnOfEscape + 2
 			}));
 		}
-		nodes.splice(replaceNodeIndex, 1, ...newNodes);
+		nodes.splice(nodeIndexOfReplace, 1, ...newNodes);
 	};
 
 	/**
@@ -517,7 +559,6 @@ export abstract class StringLiteralRecognizeCommonUtils {
 				}
 			}
 		} else if (currentParentTokenId === TokenId.DollarSlashyGStringLiteral) {
-			// TODO
 			// \u.... is available
 			const nextNodeIndex = nodeIndex + 1;
 			const nextNode = nodes[nextNodeIndex];
