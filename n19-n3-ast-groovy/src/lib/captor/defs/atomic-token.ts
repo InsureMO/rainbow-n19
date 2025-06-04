@@ -113,7 +113,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.GStringQuotationMarkML]: [Tt.Sl, KwLt.GStringQuotationMarkML, 'LtGStringQuotationMarkML'],
 	[TokenId.DollarSlashyGStringQuotationStartMark]: [Tt.Sl, KwLt.DollarSlashyGStringQuotationStartMark, 'LtDollarSlashyGStringQuotationStartMark'],
 	[TokenId.DollarSlashyGStringQuotationEndMark]: [Tt.Sl, KwLt.DollarSlashyGStringQuotationEndMark, 'LtDollarSlashyGStringQuotationEndMark'],
-	[TokenId.SlashyGStringBackslashEscape]: [Tt.Sl, KwLt.SlashyGStringBackslashEscape, 'LtSlashyGStringBackslashEscape'],
+	[TokenId.SlashyGStringSlashEscape]: [Tt.Sl, KwLt.SlashyGStringSlashEscape, 'LtSlashyGStringSlashEscape'],
 	[TokenId.DollarSlashyGStringDollarEscape]: [Tt.Sl, KwLt.DollarSlashyGStringDollarEscape, 'LtDollarSlashyGStringDollarEscape'],
 	[TokenId.GStringInterpolationStartMark]: [Tt.Sl, KwLt.GStringInterpolationStartMark, 'LtGStringInterpolationStartMark'],
 	[TokenId.GStringInterpolationLBraceStartMark]: [Tt.Sl, KwLt.GStringInterpolationLBraceStartMark, 'LtGStringInterpolationLBraceStartMark'],

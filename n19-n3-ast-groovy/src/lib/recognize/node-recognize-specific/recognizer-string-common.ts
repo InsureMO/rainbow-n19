@@ -331,7 +331,7 @@ export abstract class StringLiteralRecognizeCommonUtils {
 	 * 3.1. when init node text's length is 1, create a sl mark,
 	 * 3.2. when init node text's length is 2, create 2 sl marks.
 	 */
-	static rehydrateQuoteEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitQuoteEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 
 		const {text, startOffset, startLine, startColumn} = node;
@@ -409,6 +409,133 @@ export abstract class StringLiteralRecognizeCommonUtils {
 		// manufacture nodes
 		nodes.splice(nodeIndex + 1, removeNodeCount, ...newNodes);
 
+		return nodeIndex;
+	};
+
+	private static createBackslashNode = (
+		nodes: Array<GroovyAstNode>, replaceNodeIndex: number,
+		startOffsetOfBackslash: number, startLineOfBackslash: number, startColumnOfBackslash: number
+	): void => {
+		nodes.splice(replaceNodeIndex, 0, new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: startOffsetOfBackslash, startLine: startLineOfBackslash, startColumn: startColumnOfBackslash
+		}));
+	};
+
+	private static replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd = (
+		nodes: Array<GroovyAstNode>, replaceNodeIndex: number,
+		startOffsetOfEscape: number, startLineOfEscape: number, startColumnOfEscape: number,
+		moreNode?: { tokenId: TokenId, tokenType: TokenType, text: string }
+	): void => {
+		const newNodes = [
+			new GroovyAstNode({
+				tokenId: TokenId.SlashyGStringSlashEscape, tokenType: TokenType.Mark,
+				text: AstLiterals.SlashyGStringSlashEscape,
+				startOffset: startOffsetOfEscape, startLine: startLineOfEscape, startColumn: startColumnOfEscape
+			})
+		];
+		if (moreNode != null) {
+			newNodes.push(new GroovyAstNode({
+				...moreNode,
+				startOffset: startOffsetOfEscape + 2, startLine: startLineOfEscape, startColumn: startColumnOfEscape + 2
+			}));
+		}
+		nodes.splice(replaceNodeIndex, 1, ...newNodes);
+	};
+
+	/**
+	 * for \\, split to \ and \,
+	 * when parent is slashy gstring literal or dollar gstring literal, the 2nd \ might be combined with following nodes.
+	 * otherwise just create a new \ node.
+	 */
+	static splitBackslashEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes, astRecognizer} = recognition;
+
+		const {startOffset, startLine, startColumn} = node;
+		// split to \ and `'"`
+		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
+
+		const currentParent = astRecognizer.getCurrentParent();
+		const currentParentTokenId = currentParent.tokenId;
+		if (currentParentTokenId === TokenId.SlashyGStringLiteral) {
+			// \/ and \u.... are available
+			const nextNodeIndex = nodeIndex + 1;
+			const nextNode = nodes[nextNodeIndex];
+			const nextNodeTokenId = nextNode?.tokenId;
+			switch (nextNodeTokenId) {
+				case TokenId.Divide: {
+					// merge as \/
+					StringLiteralRecognizeCommonUtils.replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd(
+						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1);
+					break;
+				}
+				case TokenId.DivideAssign: {
+					// merge as \/, and a =
+					StringLiteralRecognizeCommonUtils.replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd(
+						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1, {
+							tokenId: TokenId.Assign, tokenType: TokenType.Operator, text: AstOperators.Assign
+						});
+					break;
+				}
+				case TokenId.SingleLineCommentStartMark: {
+					// merge as \/, and a /
+					StringLiteralRecognizeCommonUtils.replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd(
+						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1, {
+							tokenId: TokenId.Divide, tokenType: TokenType.Operator, text: AstOperators.Divide
+						});
+					break;
+				}
+				case TokenId.MultipleLinesCommentStartMark: {
+					// merge as \/, and a *
+					StringLiteralRecognizeCommonUtils.replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd(
+						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1, {
+							tokenId: TokenId.Multiple, tokenType: TokenType.Operator, text: AstOperators.Multiple
+						});
+					break;
+				}
+				case TokenId.DollarSlashyGStringQuotationEndMark: {
+					// merge as \/, and a $
+					StringLiteralRecognizeCommonUtils.replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd(
+						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1, {
+							tokenId: TokenId.Identifier,
+							tokenType: TokenType.Identifier,
+							text: AstLiterals.GStringInterpolationStartMark
+						});
+					break;
+				}
+				case TokenId.Identifier: {
+					// TODO if anything starts with "u", must be an identifier
+					break;
+				}
+				default: {
+					// no keyword starts with U,
+					// and other escapes which starts with backslash are not available for slashy gstring literal
+					// so insert a \ node
+					StringLiteralRecognizeCommonUtils.createBackslashNode(
+						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1);
+				}
+			}
+		} else if (currentParentTokenId === TokenId.DollarSlashyGStringLiteral) {
+			// TODO
+			// \u.... is available
+			const nextNodeIndex = nodeIndex + 1;
+			const nextNode = nodes[nextNodeIndex];
+			const nextNodeTokenId = nextNode?.tokenId;
+			if (nextNodeTokenId === TokenId.Identifier) {
+				// TODO if anything starts with "u", must be an identifier
+			} else {
+				// no keyword starts with U,
+				// and other escapes which starts with backslash are not available for slashy gstring literal
+				// so insert a \ node
+				StringLiteralRecognizeCommonUtils.createBackslashNode(
+					nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1);
+			}
+		} else {
+			// insert a \ node
+			StringLiteralRecognizeCommonUtils.createBackslashNode(
+				nodes, nodeIndex + 1, startOffset + 1, startLine, startColumn + 1);
+		}
 		return nodeIndex;
 	};
 }

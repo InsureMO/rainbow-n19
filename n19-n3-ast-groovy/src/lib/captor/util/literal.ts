@@ -19,7 +19,7 @@ export enum AstLiterals {
 	SlashyGStringQuotationMark = '/',
 	DollarSlashyGStringQuotationStartMark = '$/',
 	DollarSlashyGStringQuotationEndMark = '/$',
-	SlashyGStringBackslashEscape = '\\/',
+	SlashyGStringSlashEscape = '\\/',
 	DollarSlashyGStringDollarEscape = '$$',
 	GStringInterpolationStartMark = '$',
 	GStringInterpolationLBraceStartMark = `\${`,

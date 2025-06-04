@@ -111,7 +111,7 @@ export enum TokenId {
 	SlashyGStringQuotationMark, // /
 	DollarSlashyGStringQuotationStartMark, // $/
 	DollarSlashyGStringQuotationEndMark, // /$
-	SlashyGStringBackslashEscape, // \/
+	SlashyGStringSlashEscape, // \/
 	DollarSlashyGStringDollarEscape, // $$
 	DollarSlashyGStringSlashEscape, // $/
 	GStringInterpolationStartMark, // $ of $...
