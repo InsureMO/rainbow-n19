@@ -197,4 +197,34 @@ describe('String test', () => {
 			]
 		]);
 	});
+	test('String literal #12', async () => {
+		const text = `'\\'\\""'\\''\\""\\''''`;
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 18, 0, text, [
+				[TokenId.StringLiteral, 0, 7, 1, `'\\'\\""'`, [
+					[TokenId.StringQuotationMark, 0, 1, 1, `'`],
+					[TokenId.StringSingleQuoteEscape, 1, 3, 1, `\\'`],
+					[TokenId.StringDoubleQuoteEscape, 3, 5, 1, '\\"'],
+					[TokenId.Chars, 5, 6, 1, '"'],
+					[TokenId.StringQuotationMark, 6, 7, 1, `'`]
+				]],
+				[TokenId.UndeterminedChars, 7, 8, 1, '\\'],
+				[TokenId.StringLiteral, 8, 10, 1, `''`, [
+					[TokenId.StringQuotationMark, 8, 9, 1, `'`],
+					[TokenId.StringQuotationMark, 9, 10, 1, `'`]
+				]],
+				[TokenId.UndeterminedChars, 10, 11, 1, '\\'],
+				[TokenId.GStringLiteral, 11, 13, 1, '""', [
+					[TokenId.GStringQuotationMark, 11, 12, 1, '"'],
+					[TokenId.GStringQuotationMark, 12, 13, 1, '"']
+				]],
+				[TokenId.UndeterminedChars, 13, 14, 1, '\\'],
+				[TokenId.StringLiteral, 14, 18, 1, `''''`, [
+					[TokenId.StringQuotationMarkML, 14, 17, 1, `'''`],
+					[TokenId.Chars, 17, 18, 1, `'`]
+				]]
+			]
+		]);
+	});
 });

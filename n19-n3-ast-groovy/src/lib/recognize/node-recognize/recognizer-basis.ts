@@ -241,13 +241,13 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	// string literal
 	[TokenId.StringQuotationMark]: [ // '
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// rehydrate to chars
-		//  when parent is standard/slashy/dollar slashy gstring literal
-		//  or start mark of literal is ML mark
+		// rehydrate to chars, when parent is standard/slashy/dollar slashy gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
 			.to([TokenId.Chars, TokenType.Chars]),
+		// it is an incorrect syntax, should be a single quotation escape
 		RehydrateToken.when(StringLiteralRecognizeUtils.isMultipleLines).to([TokenId.Chars, TokenType.Chars]),
+		// only in sl string literal, since ml already rehydrated
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral),
 		DeclareAsParent([TokenId.StringLiteral, TokenType.StringLiteral])
 	],
@@ -357,14 +357,13 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.StringUnicodeEscapeContent]: 'NotRequired', // it is created inside the logic of rebuilding the unicode escape node and node recognizer will not be used under any circumstances.
 	[TokenId.GStringQuotationMark]: [ // "
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// rehydrate to chars
-		//  when parent is string literal or slashy/dollar slashy gstring literal
-		//  or start mark of literal is ML mark
+		// rehydrate to chars, when parent is string literal or slashy/dollar slashy gstring literal
 		RehydrateToken
 			.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
 			.to([TokenId.Chars, TokenType.Chars]),
-		// split when start mark of literal is SL mark
+		// it is an incorrect syntax, should be a double quotation escape
 		RehydrateToken.when(GStringLiteralRecognizeUtils.isMultipleLines).to([TokenId.Chars, TokenType.Chars]),
+		// only in sl string literal, since ml already rehydrated
 		PreserveWhenParentIsOneOfTokenIds(TokenId.GStringLiteral),
 		DeclareAsParent([TokenId.GStringLiteral, TokenType.StringLiteral])
 	],
