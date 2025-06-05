@@ -1,5 +1,12 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {AstChars, AstLiterals, AstOperators} from '../../captor';
+import {
+	AstChars,
+	AstLiterals,
+	AstOperators,
+	AstTokenizer,
+	isHexadecimalNumeric,
+	isJavaIdentifierStartAndNotIdentifierIgnorable
+} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
@@ -116,16 +123,16 @@ export abstract class StringLiteralRecognizeCommonUtils {
 	 * node retrieved from original array in step 3 is kept.
 	 *
 	 * @param initIdentifierText initial identifier text, on air now
+	 * @param nodes original nodes
 	 * @param nodeIndexOfFirstFollowingNode node index of first following node
 	 * @param startOffsetOfIdentifier the start offset of collected identifier
 	 * @param startLineOfIdentifier the start line of collected identifier
 	 * @param startColumnOfIdentifier ths start column of collected identifier
-	 * @param nodes original nodes
 	 */
-	private static collectIdentifiableContentForwardMaximally = (
-		initIdentifierText: string, nodeIndexOfFirstFollowingNode: number,
-		startOffsetOfIdentifier: number, startLineOfIdentifier: number, startColumnOfIdentifier: number,
-		nodes: Array<GroovyAstNode>
+	static collectIdentifiableContentForwardMaximally = (
+		initIdentifierText: string, nodes: Array<GroovyAstNode>,
+		nodeIndexOfFirstFollowingNode: number, startOffsetOfIdentifier: number, startLineOfIdentifier: number,
+		startColumnOfIdentifier: number
 	): void => {
 		let newNodeText = initIdentifierText;
 		let removeNodeCount = 0;
@@ -239,11 +246,7 @@ export abstract class StringLiteralRecognizeCommonUtils {
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
 
 		// now there is a BFNRT char or u...., check following node
-		StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(
-			text.slice(1), nodeIndex + 1,
-			startOffset + 1, startLine, startColumn + 1,
-			nodes
-		);
+		StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(text.slice(1), nodes, nodeIndex + 1, startOffset + 1, startLine, startColumn + 1);
 
 		return nodeIndex;
 	};
@@ -332,11 +335,7 @@ export abstract class StringLiteralRecognizeCommonUtils {
 			nodes.splice(nodeIndex + 1, 1, newNode);
 			// the rest part of next node is an identifier now
 			// check following nodes
-			StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(
-				nextNodeText.slice(1), nodeIndex + 2,
-				startOffset + 1 + text.length, startLine, startColumn + 1 + text.length,
-				nodes
-			);
+			StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(nextNodeText.slice(1), nodes, nodeIndex + 2, startOffset + 1 + text.length, startLine, startColumn + 1 + text.length);
 		} else {
 			// it is an octal, integral, decimal literal
 			// replace the next node with new one
@@ -461,122 +460,122 @@ export abstract class StringLiteralRecognizeCommonUtils {
 	};
 
 	/**
-	 * replace one node at given node index of replace,
-	 * and insert a slashy gstring slash escape node,
-	 * and insert a node identified by parameter {@code moreNode}.
+	 * try to collect following node, to combine as a unicode escape and more, currently in memory there is a $ in air.
+	 * the next node must be an identifier, and then check it,
+	 * 1. next node starts with char "u", next 4 chars are 0-9a-fA-F,
+	 * 1.1. replace next node as a unicode escape node,
+	 * 1.2. when there has rest text of next node after u.... part, to collect chars which cannot be first char of identifier,
+	 * 1.2.1. char cannot be first char of identifier collected, split them to numeric base part and undetermined chars (not just 2, might more than 2 nodes),
+	 *        insert after the escape node. and if not all rest text are consumed, use the rest part of rest text to collect identifier forward maximally,
+	 * 1.2.2. when first char of rest text can be first char of identifier, use the rest text to collect identifier forward maximally,
+	 * 2. simply create a backslash node.
+	 * TODO
 	 */
-	private static replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd = (
-		nodes: Array<GroovyAstNode>, nodeIndexOfReplace: number,
-		startOffsetOfEscape: number, startLineOfEscape: number, startColumnOfEscape: number,
-		moreNode?: { tokenId: TokenId, tokenType: TokenType, text: string }
+	private static tryToCollectUnicodeAndHandleFollowing = (
+		nodes: Array<GroovyAstNode>,
+		nextNode: GroovyAstNode, nextNodeIndex: number,
+		startOffsetOfBackslash: number, startLineOfBackslash: number, startColumnOfBackslash: number
 	): void => {
-		const newNodes = [
-			new GroovyAstNode({
-				tokenId: TokenId.SlashyGStringSlashEscape, tokenType: TokenType.Mark,
-				text: AstLiterals.SlashyGStringSlashEscape,
-				startOffset: startOffsetOfEscape, startLine: startLineOfEscape, startColumn: startColumnOfEscape
-			})
-		];
-		if (moreNode != null) {
-			newNodes.push(new GroovyAstNode({
-				...moreNode,
-				startOffset: startOffsetOfEscape + 2, startLine: startLineOfEscape, startColumn: startColumnOfEscape + 2
-			}));
-		}
-		nodes.splice(nodeIndexOfReplace, 1, ...newNodes);
-	};
+		// if anything starts with "u", must be an identifier
+		const nextNodeText = nextNode.text;
+		// never mind the 2nd parameter, which is null, it is unused in function
+		if (nextNodeText.length >= 5 && nextNodeText[0] === 'u' && [1, 2, 3, 4].every(index => isHexadecimalNumeric(nextNodeText[index], null as AstTokenizer))) {
+			const unicodeText = nextNodeText.slice(0, 5);
+			const restText = nextNodeText.slice(5);
+			// create a unicode escape
+			nodes[nextNodeIndex] = new GroovyAstNode({
+				tokenId: TokenId.StringUnicodeEscape, tokenType: TokenType.StringLiteral,
+				text: '\\' + unicodeText,
+				startOffset: startOffsetOfBackslash,
+				startLine: startLineOfBackslash, startColumn: startColumnOfBackslash
+			});
+			if (restText.length !== 0) {
+				// more text after the unicode
+				// check the heading chars can be start of identifier or not
+				let charIndex = 0;
+				// eslint-disable-next-line no-constant-condition
+				while (true) {
+					// never mind the 2nd parameter, which is null, it is unused in function
+					if (!isJavaIdentifierStartAndNotIdentifierIgnorable(restText[charIndex], null as AstTokenizer)) {
+						charIndex++;
+					} else {
+						break;
+					}
+				}
+				if (charIndex === 0) {
+					// the rest text is an identifier
+					StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(
+						restText, nodes, nextNodeIndex + 1, startOffsetOfBackslash + 6, startLineOfBackslash, startColumnOfBackslash + 6);
+				} else {
+					const headText = restText.slice(0, charIndex);
+					// chars in head text can not be first char of identifier,
+					// they might be 0-9 or some unicode, such as emoji.
+					// split them to numeric base part and undetermined chars
+					const parts: Array<[string, 'number' | 'undetermined']> = [];
+					let startTextIndex = 0;
+					let currentType: Optional<'number' | 'undetermined'> = (void 0);
+					for (let textIndex = 0, textCount = headText.length; textIndex < textCount; textIndex++) {
+						const char = headText[textIndex];
+						const codepoint = char.codePointAt(0);
+						// 0 -> 48, 9 -> 57
+						if (48 <= codepoint || codepoint >= 57) {
+							// not 0-9
+							if (currentType == null) {
+								currentType = 'undetermined';
+							} else if (currentType === 'number') {
+								// type changed
+								parts.push([headText.slice(startTextIndex, textIndex), 'number']);
+								startTextIndex = textIndex;
+							}
+						} else {
+							// 0-9
+							if (currentType == null) {
+								currentType = 'number';
+							} else if (currentType === 'undetermined') {
+								// type changed
+								parts.push([headText.slice(startTextIndex, textIndex), 'undetermined']);
+								startTextIndex = textIndex;
+							}
+						}
+					}
+					let startOffsetOfNewNodes = startOffsetOfBackslash + 6;
+					let startColumnOfNewNodes = startColumnOfBackslash + 6;
+					parts.push([headText.slice(startTextIndex), currentType]);
+					const newNodes = parts.map(([text, type]) => {
+						let node: GroovyAstNode;
+						if (type === 'number') {
+							node = new GroovyAstNode({
+								tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+								text,
+								startOffset: startOffsetOfNewNodes,
+								startLine: startLineOfBackslash, startColumn: startColumnOfNewNodes
+							});
+						} else {
+							node = new GroovyAstNode({
+								tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+								text,
+								startOffset: startOffsetOfNewNodes,
+								startLine: startLineOfBackslash, startColumn: startColumnOfNewNodes
+							});
+						}
+						startOffsetOfNewNodes += text.length;
+						startColumnOfNewNodes += text.length;
+						return node;
+					});
+					nodes.splice(nextNodeIndex + 1, 0, ...newNodes);
 
-	/**
-	 * for \\, split to \ and \,
-	 * when parent is slashy gstring literal or dollar gstring literal, the 2nd \ might be combined with following nodes.
-	 * otherwise just create a new \ node.
-	 */
-	static splitBackslashEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, nodes, astRecognizer} = recognition;
-
-		const {startOffset, startLine, startColumn} = node;
-		// split to \ and `'"`
-		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
-
-		const currentParent = astRecognizer.getCurrentParent();
-		const currentParentTokenId = currentParent.tokenId;
-		if (currentParentTokenId === TokenId.SlashyGStringLiteral) {
-			// \/ and \u.... are available
-			const nextNodeIndex = nodeIndex + 1;
-			const nextNode = nodes[nextNodeIndex];
-			const nextNodeTokenId = nextNode?.tokenId;
-			switch (nextNodeTokenId) {
-				case TokenId.Divide: {
-					// merge as \/
-					StringLiteralRecognizeCommonUtils.replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd(
-						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1);
-					break;
+					const identifierText = restText.slice(charIndex);
+					if (identifierText.length !== 0) {
+						StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(
+							restText, nodes, nextNodeIndex + 1 + newNodes.length, startOffsetOfNewNodes, startLineOfBackslash, startColumnOfNewNodes);
+					}
 				}
-				case TokenId.DivideAssign: {
-					// merge as \/, and a =
-					StringLiteralRecognizeCommonUtils.replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd(
-						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1, {
-							tokenId: TokenId.Assign, tokenType: TokenType.Operator, text: AstOperators.Assign
-						});
-					break;
-				}
-				case TokenId.SingleLineCommentStartMark: {
-					// merge as \/, and a /
-					StringLiteralRecognizeCommonUtils.replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd(
-						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1, {
-							tokenId: TokenId.Divide, tokenType: TokenType.Operator, text: AstOperators.Divide
-						});
-					break;
-				}
-				case TokenId.MultipleLinesCommentStartMark: {
-					// merge as \/, and a *
-					StringLiteralRecognizeCommonUtils.replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd(
-						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1, {
-							tokenId: TokenId.Multiple, tokenType: TokenType.Operator, text: AstOperators.Multiple
-						});
-					break;
-				}
-				case TokenId.DollarSlashyGStringQuotationEndMark: {
-					// merge as \/, and a $
-					StringLiteralRecognizeCommonUtils.replaceOneNodeAndInsertASlashyGStringSlashEscapeAnd(
-						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1, {
-							tokenId: TokenId.Identifier,
-							tokenType: TokenType.Identifier,
-							text: AstLiterals.GStringInterpolationStartMark
-						});
-					break;
-				}
-				case TokenId.Identifier: {
-					// TODO if anything starts with "u", must be an identifier
-					break;
-				}
-				default: {
-					// no keyword starts with U,
-					// and other escapes which starts with backslash are not available for slashy gstring literal
-					// so insert a \ node
-					StringLiteralRecognizeCommonUtils.createBackslashNode(
-						nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1);
-				}
-			}
-		} else if (currentParentTokenId === TokenId.DollarSlashyGStringLiteral) {
-			// \u.... is available
-			const nextNodeIndex = nodeIndex + 1;
-			const nextNode = nodes[nextNodeIndex];
-			const nextNodeTokenId = nextNode?.tokenId;
-			if (nextNodeTokenId === TokenId.Identifier) {
-				// TODO if anything starts with "u", must be an identifier
-			} else {
-				// no keyword starts with U,
-				// and other escapes which starts with backslash are not available for slashy gstring literal
-				// so insert a \ node
-				StringLiteralRecognizeCommonUtils.createBackslashNode(
-					nodes, nextNodeIndex, startOffset + 1, startLine, startColumn + 1);
 			}
 		} else {
-			// insert a \ node
+			// the following node not starts with u....,
+			// so insert a \ node
 			StringLiteralRecognizeCommonUtils.createBackslashNode(
-				nodes, nodeIndex + 1, startOffset + 1, startLine, startColumn + 1);
+				nodes, nextNodeIndex, startOffsetOfBackslash, startLineOfBackslash, startColumnOfBackslash);
 		}
-		return nodeIndex;
 	};
 }
