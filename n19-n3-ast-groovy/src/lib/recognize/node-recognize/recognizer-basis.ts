@@ -86,7 +86,7 @@ const RehydrateToken = {
 		};
 	}
 };
-const RehydrateToIdentifierWhenAfterDotDirectly = RehydrateToken.when(NodeRecognizeUtils.isDirectAfterDot).to([TokenId.Identifier, TokenType.Identifier]);
+const RehydrateToIdentifierWhenAfterDotDirectly = RehydrateToken.when(NodeRecognizeUtils.isAfterDot).to([TokenId.Identifier, TokenType.Identifier]);
 // preserve
 const PreserveWhenParentIsOneOfTokenIds = (tokenId: TokenId, ...tokenIds: Array<TokenId>): PreserveWhenParentIsOneOfTokenIds => {
 	return [RecognizeBasisType.PreserveWhenParentIsOneOfTokenIds, tokenId, ...tokenIds];
@@ -133,7 +133,10 @@ DeclareAsParent.when = (when: DoDeclareAsParentWhen, ...more: Array<DoDeclareAsP
 };
 
 /**
- * 1. rehydrate to chars when parent token type is {@link TokenType.StringLiteral},
+ * 0. for newline, whitespaces, tabs, undetermined chars, chars, there is no default rehydration applied,
+ * 1. rehydrate to chars when parent token type is sl/ml comment or script command (when enabled),
+ *    note the ml comment end mark will not be rehydrated when parent is ml comment,
+ * 2. rehydrate to chars when parent token type is {@link TokenType.StringLiteral},
  *    unless {@link RecognizeBasisType.DisableToCharsWhenParentTokenTypeIsStringLiteral} declared.
  *    and it is the first rehydration if it is applied.
  *    this rehydrate function will be applied on almost all tokens except string related.
@@ -147,7 +150,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.LBrack]: 'TODO',
 	[TokenId.RBrack]: 'NotRequired',
 	[TokenId.At]: [
-		DeclareAsParent.when(NodeRecognizeUtils.isDirectAfterDot)
+		DeclareAsParent.when(NodeRecognizeUtils.isAfterDot)
 			// after dot directly, x.@y
 			.to([TokenId.AtFieldPathElement, TokenType.PathElement])
 			// not after dot, @x
@@ -164,6 +167,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.SpreadDot]: 'TODO',
 	[TokenId.SafeDot]: 'TODO',
 	[TokenId.SafeIndex]: 'TODO',
+	[TokenId.SafeIndexClose]: 'TODO',
 	[TokenId.SafeChainDot]: 'TODO',
 	[TokenId.Elvis]: 'TODO',
 	[TokenId.ElvisAssign]: 'TODO',
@@ -221,33 +225,46 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		RehydrateToken.when(NodeRecognizeUtils.isScriptCommandNotAllowed).use(ScriptCommandRecognizeUtils.rehydrateScriptCommandStartMarkTo2Parts),
 		DeclareAsParent([TokenId.ScriptCommand, TokenType.ScriptCommand])
 	],
+	// created in on child appended pointcut of sl/ml comment declaration, and node recognizer will not be used under any circumstances.
+	[TokenId.CommentKeyword]: 'NotRequired',
+	// created in on child appended pointcut of sl/ml comment declaration, and node recognizer will not be used under any circumstances.
+	[TokenId.CommentHighlightChars]: 'NotRequired',
 	[TokenId.SingleLineCommentStartMark]: [ // //
-		// TODO split to / and / when parent is slashy literal, / needs to seek more following nodes
+		// TODO split to / and / when parent is slashy gstring literal, / needs to seek more following nodes
 		DeclareAsParent([TokenId.SingleLineComment, TokenType.Comments])
 	],
 	[TokenId.MultipleLinesCommentStartMark]: [ // /*
-		// TODO split to / and * when parent is slashy literal, * needs to seek more following nodes
+		// TODO split to / and * when parent is slashy gstring literal, * needs to seek more following nodes
 		DeclareAsParent([TokenId.MultipleLinesComment, TokenType.Comments])
 	],
 	[TokenId.MultipleLinesCommentEndMark]: [ // */
-		// TODO split to * and / when parent is slashy literal, / needs to seek more following nodes
+		// TODO split to * and / when parent is slashy gstring literal, / needs to seek more following nodes
 		// ml comment end mark will not apply the default to chars rehydration when parent is ml comment,
 		// it is built-in, no need to declare as configuration
 	],
+	// created in on child appended pointcut of ml comment declaration, and node recognizer will not be used under any circumstances.
+	[TokenId.MultipleLinesCommentsHeadAsterisks]: 'NotRequired',
 	// number literal
+	// it is created inside the logic of rebuilding the number literal node and node recognizer will not be used under any circumstances.
+	// TODO note the created inside logic is for exponent sign only, not for the sign of whole number literal
 	[TokenId.NumericSignPart]: 'NotRequired',
 	[TokenId.NumericBasePart]: [
 		// ToCharsWhenParentTokenTypeIsStringLiteral still works here
 		CustomClass(NumericBasePartRecognizer)
 	],
+	// it is created inside the logic of rebuilding the number literal node and node recognizer will not be used under any circumstances.
 	[TokenId.NumericSuffixPart]: 'NotRequired',
+	// it is created inside the logic of rebuilding the number literal node and node recognizer will not be used under any circumstances.
 	[TokenId.BinaryStartMark]: 'NotRequired',
+	// it is created inside the logic of rebuilding the number literal node and node recognizer will not be used under any circumstances.
 	[TokenId.OctalStartMark]: 'NotRequired',
+	// it is created inside the logic of rebuilding the number literal node and node recognizer will not be used under any circumstances.
 	[TokenId.HexadecimalStartMark]: 'NotRequired',
+	// it is created inside the logic of rebuilding the number literal node and node recognizer will not be used under any circumstances.
 	[TokenId.DecimalExponentMark]: 'NotRequired',
 	// boolean literal
-	[TokenId.BooleanTrue]: 'NotRequired',
-	[TokenId.BooleanFalse]: 'NotRequired',
+	[TokenId.BooleanTrue]: [RehydrateToIdentifierWhenAfterDotDirectly],
+	[TokenId.BooleanFalse]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	// string literal
 	[TokenId.StringQuotationMark]: [ // '
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
@@ -272,6 +289,10 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// only in ml string literal since sl already rehydrated
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral),
 		DeclareAsParent([TokenId.StringLiteral, TokenType.StringLiteral])
+	],
+	[TokenId.StringMLFirstNewLineEraser]: [ // \
+		// TODO need test, it is for all string literal or just for some kinds?
+		DisableToCharsWhenParentTokenTypeIsStringLiteral
 	],
 	[TokenId.StringBackspaceEscape]: [ // \b
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
@@ -315,9 +336,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.StringDollarEscape]: [ // \$
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
 		// TODO split to \ and $ when parent is string literal, gstring literal or slashy gstring literal, $ needs to seek more following nodes
-		// RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.GStringLiteral, TokenId.SlashyGStringLiteral).use(),
-		// TODO rehydrate when parent is not dollar slashy gstring literal
-		// RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).use(),
+		// TODO split to \ and $ when parent is not dollar slashy gstring literal, $ needs to seek more following nodes
 	],
 	[TokenId.StringOctalEscape]: [ // \0 ~ \7, \00 ~ \77, \000 ~ \777
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
@@ -326,8 +345,10 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// otherwise, split to \ and ..., ... part needs to seek more following nodes
 		RehydrateToken.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitOctalEscape)
 	],
-	[TokenId.StringOctalEscapeMark]: 'NotRequired', // it is created inside the logic of rebuilding the octal escape node and node recognizer will not be used under any circumstances.
-	[TokenId.StringOctalEscapeContent]: 'NotRequired', // it is created inside the logic of rebuilding the octal escape node and node recognizer will not be used under any circumstances.
+	// it is created inside the logic of rebuilding the octal escape node and node recognizer will not be used under any circumstances.
+	[TokenId.StringOctalEscapeMark]: 'NotRequired',
+	// it is created inside the logic of rebuilding the octal escape node and node recognizer will not be used under any circumstances.
+	[TokenId.StringOctalEscapeContent]: 'NotRequired',
 	[TokenId.StringUnicodeEscape]: [ // \u0000 ~ \uFFFF
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// rebuild Unicode escape node, when parent token type is string literal
@@ -335,8 +356,10 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// otherwise, split to \ and u...., u.... part needs to seek more following nodes
 		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode)
 	],
-	[TokenId.StringUnicodeEscapeMark]: 'NotRequired', // it is created inside the logic of rebuilding the unicode escape node and node recognizer will not be used under any circumstances.
-	[TokenId.StringUnicodeEscapeContent]: 'NotRequired', // it is created inside the logic of rebuilding the unicode escape node and node recognizer will not be used under any circumstances.
+	// it is created inside the logic of rebuilding the unicode escape node and node recognizer will not be used under any circumstances.
+	[TokenId.StringUnicodeEscapeMark]: 'NotRequired',
+	// it is created inside the logic of rebuilding the unicode escape node and node recognizer will not be used under any circumstances.
+	[TokenId.StringUnicodeEscapeContent]: 'NotRequired',
 	[TokenId.GStringQuotationMark]: [ // "
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// rehydrate to chars, when parent is string literal or slashy/dollar slashy gstring literal
@@ -357,19 +380,27 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		PreserveWhenParentIsOneOfTokenIds(TokenId.GStringLiteral),
 		DeclareAsParent([TokenId.GStringLiteral, TokenType.StringLiteral])
 	],
+	[TokenId.SlashyGStringQuotationMark]: [ // /
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// also is end mark
+		PreserveWhenParentIsOneOfTokenIds(TokenId.SlashyGStringLiteral),
+		DeclareAsParent([TokenId.SlashyGStringLiteral, TokenType.StringLiteral])
+	],
 	[TokenId.DollarSlashyGStringQuotationStartMark]: [ // $/
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// TODO split to $ and / when parent is string literal or gstring literal, / needs to seek more following nodes
-		// TODO split to $ and / when parent is slashy literal, / needs to seek more following nodes
+		// TODO split to $ and / when parent is slashy gstring literal, / needs to seek more following nodes
 		// rehydrate to slash escape when parent is dollar slashy gstring literal
+		// must be handled here instead of by revising on child appended pointcut, otherwise it will be declared as parent
+		// this rehydration leads to the configuration of dollar slashy gstring slash escape
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).to([TokenId.DollarSlashyGStringSlashEscape, TokenType.Mark]),
 		DeclareAsParent([TokenId.DollarSlashyGStringLiteral, TokenType.StringLiteral])
 	],
 	[TokenId.DollarSlashyGStringQuotationEndMark]: [ // /$
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
 		// TODO split to / and $ when parent is string literal or gstring literal, $ needs to seek more following nodes
-		// TODO split to / and $ when parent is slashy literal, $ needs to seek more following nodes
-		// TODO split to / and $ when parent is not dollar slashy literal, $ needs to seek more following nodes
+		// TODO split to / and $ when parent is slashy gstring literal, $ needs to seek more following nodes
+		// TODO split to / and $ when parent is not dollar slashy gstring literal, $ needs to seek more following nodes
 	],
 	[TokenId.SlashyGStringSlashEscape]: [ // \/
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
@@ -389,11 +420,18 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// TODO split to $ and $ when parent is slashy gstring literal, $ needs to seek more following nodes
 		// TODO needs to seek more following nodes when parent is not dollar slashy gstring literal
 	],
+	[TokenId.GStringInterpolationStartMark]: [ // $
+		DisableToCharsWhenParentTokenTypeIsStringLiteral
+		// TODO what?
+	],
 	[TokenId.GStringInterpolationLBraceStartMark]: [ // ${
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// TODO split to $ and { when parent is string literal
 		// TODO split to $ and { when parent is not any gstring literal
 		DeclareAsParent([TokenId.GStringInterpolation, TokenType.StringLiteral])
+	],
+	[TokenId.GStringInterpolationRBraceEndMark]: [ // }
+		DisableToCharsWhenParentTokenTypeIsStringLiteral
 	],
 	// keyword
 	[TokenId.ABSTRACT]: [
@@ -402,6 +440,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
+	[TokenId.AS]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.ASSERT]: [
 		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.AssertStatement, TokenType.LogicStatement])
@@ -516,7 +555,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	],
 	[TokenId.NON_SEALED]: [
 		RehydrateToken.when(NodeRecognizeUtils.isNonSealedKeywordNotSupported).use(NodeRehydration.rehydrateNonSealedTo3Parts),
-		RehydrateToken.when(NodeRecognizeUtils.isDirectAfterDot).use(NodeRehydration.rehydrateNonSealedTo3Parts),
+		RehydrateToken.when(NodeRecognizeUtils.isAfterDot).use(NodeRehydration.rehydrateNonSealedTo3Parts),
 		PreserveWhenParentIsCsscmfDeclaration,
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
@@ -652,7 +691,6 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.Tabs]: 'NotRequired',
 	[TokenId.NewLine]: 'NotRequired',
 	[TokenId.Identifier]: 'TODO', // TODO, when in string literal, and starts with $. actually, single $ is not a legal identifier
-	[TokenId.UndeterminedChars]: [
-		DisableToCharsWhenParentTokenTypeIsStringLiteral
-	]
+	[TokenId.Chars]: 'NotRequired',
+	[TokenId.UndeterminedChars]: 'NotRequired'
 };

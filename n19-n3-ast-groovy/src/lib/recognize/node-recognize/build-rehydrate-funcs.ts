@@ -81,7 +81,10 @@ export class NodeRehydration {
 		const {node, nodeIndex, astRecognizer} = recognition;
 
 		const {tokenId, tokenType} = node;
-		if (TokenId.NewLine === tokenId || TokenType.WhitespaceOrTabs === tokenType) {
+		if (TokenId.NewLine === tokenId
+			|| TokenType.WhitespaceOrTabs === tokenType
+			|| TokenId.UndeterminedChars === tokenId
+			|| TokenId.Chars === tokenId) {
 			return (void 0);
 		}
 

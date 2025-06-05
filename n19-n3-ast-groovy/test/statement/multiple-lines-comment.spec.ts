@@ -27,7 +27,7 @@ describe('Multiple lines comment test', () => {
 					[TokenId.MultipleLinesCommentsHeadAsterisks, 21, 22, 3, '*'],
 					[TokenId.Whitespaces, 22, 23, 3, ' '],
 					[TokenId.Chars, 23, 26, 3, 'xyz'],
-					[TokenId.Chars, 26, 27, 3, '\r'],
+					[TokenId.UndeterminedChars, 26, 27, 3, '\r'],
 					[TokenId.Whitespaces, 27, 28, 3, ' '],
 					[TokenId.MultipleLinesCommentEndMark, 28, 30, 3, '*/']
 				]]

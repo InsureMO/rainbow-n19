@@ -45,7 +45,7 @@ export class NodeRecognizeUtils {
 	 * If there are such nodes, return false. If there is no dot node among these nodes, also return -1.
 	 *
 	 * That is to say, there is only one situation returns index of dot node where there is a dot node among these nodes,
-	 * and there are no nodes after the dot node, or all the nodes after it are newline, whitespace, tab, or comment nodes.
+	 * and there are no nodes after the dot node, or all the nodes after it are newline, whitespace, tab, or sl/ml comment nodes.
 	 *
 	 * @return [current parent node, dot node index], or [current parent node, -1] when not after dot directly
 	 */
@@ -63,6 +63,8 @@ export class NodeRecognizeUtils {
 			}
 			if (previousSiblingTokenId === TokenId.Dot) {
 				return [currentParent, index];
+			} else {
+				break;
 			}
 		}
 
@@ -70,7 +72,10 @@ export class NodeRecognizeUtils {
 		return [currentParent, -1];
 	}
 
-	static isDirectAfterDot(recognition: AstRecognition): boolean {
+	/**
+	 * nodes between the dot before me and me, includes newline, whitespaces, tabs, sl/ml comments only
+	 */
+	static isAfterDot(recognition: AstRecognition): boolean {
 		const [, dotNodeIndex] = NodeRecognizeUtils.getNearestPreviousDotNode(recognition);
 		return dotNodeIndex !== -1;
 	}
