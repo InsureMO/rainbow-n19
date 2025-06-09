@@ -9,6 +9,7 @@ import {
 } from '../node-attribute';
 import {
 	CsscmfDeclarationPointcuts,
+	GStringInterpolationPointcuts,
 	GStringLiteralPointcuts,
 	IfElseDeclarationPointcuts,
 	MultipleLinesCommentPointcuts,
@@ -152,7 +153,14 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		Tokens.when(StringLiteralPointcuts.isSingleLine).reject(TokenId.NewLine),
 		EndWithStartMark
 	],
-	[TokenId.GStringInterpolation]: 'TODO',
+	[TokenId.GStringInterpolation]: [
+		// start with ${, accept any token
+		Tokens.when(GStringInterpolationPointcuts.startsWithLBrace).reject(TokenId.Tmp$NeverHappen),
+		Tokens.when(GStringInterpolationPointcuts.notStartsWithLBrace).accept(TokenId.Identifier, TokenId.Dot),
+		EndWith(TokenId.GStringInterpolationRBraceEndMark)
+		// TODO continuous dots are now allowed,
+		//  when not starts with lbrace, identifier starts with $ are not allowed
+	],
 	[TokenId.GStringLiteral]: [
 		DisableBase5AsChild,
 		// newline is accepted only when gstring literal allows multiple lines

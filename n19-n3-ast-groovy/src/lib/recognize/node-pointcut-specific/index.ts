@@ -3,6 +3,7 @@ export * from './multiple-lines-comment-pointcut';
 
 export * from './string-literal-pointcut';
 export * from './gstring-literal-pointcut';
+export * from './gstring-interpolation-pointcut';
 
 export * from './if-else-declaration-pointcut';
 export * from './type-declaration-pointcut';

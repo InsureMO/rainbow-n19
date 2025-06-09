@@ -106,8 +106,11 @@ export class NodeRehydration {
 	static rehydrateToCharsWhenParentIsOneOf3Tokens: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, astRecognizer} = recognition;
 
-		const tokenId = node.tokenId;
-		if ([TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine].includes(tokenId)) {
+		const {tokenId, tokenType} = node;
+		if (TokenId.NewLine === tokenId
+			|| TokenType.WhitespaceOrTabs === tokenType
+			|| TokenId.UndeterminedChars === tokenId
+			|| TokenId.Chars === tokenId) {
 			return (void 0);
 		}
 
@@ -153,6 +156,23 @@ export class NodeRehydration {
 			}
 
 			return func(recognition);
+		};
+	};
+	static buildRehydrateTokenToWhenParentTokenTypeIs = (parentTokenType: TokenType, to: TokenId | [TokenId, TokenType]): NodeRehydrateFunc => {
+		return (recognition: AstRecognition): Optional<number> => {
+			const {node, nodeIndex, astRecognizer} = recognition;
+
+			const currentParent = astRecognizer.getCurrentParent();
+			if (parentTokenType !== currentParent.tokenType) {
+				return (void 0);
+			}
+
+			if (Array.isArray(to)) {
+				node.replaceTokenNature(to[0], to [1]);
+			} else {
+				node.replaceTokenNature(to, node.tokenType);
+			}
+			return nodeIndex;
 		};
 	};
 	static buildRehydrateTokenUseFuncWhenParentTokenTypeIs = (parentTokenType: TokenType, func: NodeRehydrateFunc): NodeRehydrateFunc => {
@@ -230,6 +250,10 @@ export const buildRehydrateFuncs = (items?: RecognizeBasisDef): Optional<Array<N
 				}
 				case RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf: {
 					funcs.push(NodeRehydration.buildRehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf(item[1], item[2]));
+					break;
+				}
+				case RecognizeBasisType.RehydrateTokenToWhenParentTokenTypeIs: {
+					funcs.push(NodeRehydration.buildRehydrateTokenToWhenParentTokenTypeIs(item[1], item[2]));
 					break;
 				}
 				case RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenTypeIs: {

@@ -9,11 +9,11 @@ import {
 } from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
 
-export abstract class StringLiteralRecognizeCommonUtils {
+export class StringLiteralRecognizeCommonUtils {
 	// noinspection JSUnusedLocalSymbols
-	protected constructor() {
+	private constructor() {
 		// avoid extend
 	}
 
@@ -93,370 +93,6 @@ export abstract class StringLiteralRecognizeCommonUtils {
 			}
 			return nodeIndex;
 		};
-	};
-
-	/**
-	 * to collect the following content which can be identifier.
-	 *
-	 * 1. when the following node is one of:
-	 *   - identifier,
-	 *   - operator in,
-	 *   - operator instanceof,
-	 *   - boolean literal (true/false),
-	 *   - primitive type (8 types),
-	 *   - any keyword
-	 *   collect whole text of following node, append to identifier text, create an identifier node,
-	 * 2. is numeric base part,
-	 * 2.1. has dot, so this must be a decimal literal,
-	 *   - append the text before dot to identifier text, create an identifier node,
-	 *   - use the left part (starts from dot), to create a new numeric base part node,
-	 * 2.2. has exponent sign (+/-), so this must be a decimal literal,
-	 *   - append the text before exponent sign to identifier text, create an identifier node,
-	 *   - use the exponent sign to create a new add/divide node,
-	 *   - use the left part (after the exponent sign), to create a new numeric base part node,
-	 *     the new node only contains numeric chars and an optional suffix,
-	 * 2.3. collect whole text of following node, append to identifier text, and back to step 1, to check following nodes,
-	 * 3. use the identifier text to create an identifier node.
-	 *
-	 * nodes retrieved from original array in step 1 and 2, will be removed.
-	 * and created new nodes will insert at given node index of first following node.
-	 * node retrieved from original array in step 3 is kept.
-	 *
-	 * @param initIdentifierText initial identifier text, on air now
-	 * @param nodes original nodes
-	 * @param nodeIndexOfFirstFollowingNode node index of first following node
-	 * @param startOffsetOfIdentifier the start offset of collected identifier
-	 * @param startLineOfIdentifier the start line of collected identifier
-	 * @param startColumnOfIdentifier ths start column of collected identifier
-	 */
-	static collectIdentifiableContentForwardMaximally = (
-		initIdentifierText: string, nodes: Array<GroovyAstNode>,
-		nodeIndexOfFirstFollowingNode: number, startOffsetOfIdentifier: number, startLineOfIdentifier: number,
-		startColumnOfIdentifier: number
-	): void => {
-		let newNodeText = initIdentifierText;
-		let removeNodeCount = 0;
-		let followingNodeIndex = nodeIndexOfFirstFollowingNode;
-		let followingNode = nodes[followingNodeIndex];
-		let followingNodeTokenId = followingNode?.tokenId;
-		let followingNodeTokenType = followingNode?.tokenType;
-		// eslint-disable-next-line no-constant-condition
-		while (true) {
-			if ([TokenId.Identifier, TokenId.IN, TokenId.INSTANCEOF].includes(followingNodeTokenId)
-				|| [TokenType.BooleanLiteral, TokenType.PrimitiveType, TokenType.Keyword].includes(followingNodeTokenType)) {
-				removeNodeCount++;
-				// unshift the new node text to identifier
-				nodes.splice(nodeIndexOfFirstFollowingNode, removeNodeCount, new GroovyAstNode({
-					tokenId: TokenId.Identifier,
-					tokenType: TokenType.Identifier,
-					text: newNodeText + followingNode.text,
-					startOffset: startOffsetOfIdentifier,
-					startLine: startLineOfIdentifier, startColumn: startColumnOfIdentifier
-				}));
-				break;
-			} else if (followingNodeTokenId === TokenId.NumericBasePart) {
-				removeNodeCount++;
-				const numericBasePartText = followingNode.text;
-				const dotIndex = numericBasePartText.indexOf(AstChars.Dot);
-				if (dotIndex !== -1) {
-					const identifierNodeText = newNodeText + numericBasePartText.slice(0, dotIndex);
-					nodes.splice(nodeIndexOfFirstFollowingNode, removeNodeCount, new GroovyAstNode({
-						tokenId: TokenId.Identifier,
-						tokenType: TokenType.Identifier,
-						text: identifierNodeText,
-						startOffset: startOffsetOfIdentifier,
-						startLine: startLineOfIdentifier, startColumn: startColumnOfIdentifier
-					}), new GroovyAstNode({
-						tokenId: TokenId.NumericBasePart,
-						tokenType: TokenType.NumberLiteral,
-						text: numericBasePartText.slice(dotIndex),
-						startOffset: startOffsetOfIdentifier + identifierNodeText.length,
-						startLine: startLineOfIdentifier,
-						startColumn: startColumnOfIdentifier + identifierNodeText.length
-					}));
-					break;
-				}
-				let exponentSignIndex = numericBasePartText.indexOf(AstOperators.Add);
-				exponentSignIndex = exponentSignIndex === -1 ? numericBasePartText.indexOf(AstOperators.Subtract) : exponentSignIndex;
-				if (exponentSignIndex !== -1) {
-					const identifierNodeText = newNodeText + numericBasePartText.slice(0, exponentSignIndex);
-					const signText = numericBasePartText.slice(exponentSignIndex, exponentSignIndex + 1);
-					nodes.splice(nodeIndexOfFirstFollowingNode, removeNodeCount, new GroovyAstNode({
-						tokenId: TokenId.Identifier,
-						tokenType: TokenType.Identifier,
-						text: identifierNodeText,
-						startOffset: startOffsetOfIdentifier,
-						startLine: startLineOfIdentifier, startColumn: startColumnOfIdentifier
-					}), new GroovyAstNode({
-						tokenId: signText === AstOperators.Add ? TokenId.Add : TokenId.Subtract,
-						tokenType: TokenType.Operator,
-						text: signText,
-						startOffset: startOffsetOfIdentifier + identifierNodeText.length,
-						startLine: startLineOfIdentifier,
-						startColumn: startColumnOfIdentifier + identifierNodeText.length
-					}), new GroovyAstNode({
-						tokenId: TokenId.NumericBasePart,
-						tokenType: TokenType.NumberLiteral,
-						text: numericBasePartText.slice(exponentSignIndex + 1),
-						startOffset: startOffsetOfIdentifier + identifierNodeText.length + 1,
-						startLine: startLineOfIdentifier,
-						startColumn: startColumnOfIdentifier + identifierNodeText.length + 1
-					}));
-					break;
-				}
-				// no dot, no exponent sign, collect whole part since all of these chars can be part of identifier
-				newNodeText = newNodeText + numericBasePartText;
-				followingNodeIndex = followingNodeIndex + 1;
-				followingNode = nodes[followingNodeIndex];
-				followingNodeTokenId = followingNode?.tokenId;
-				followingNodeTokenType = followingNode?.tokenType;
-			} else {
-				// treated as an identifier
-				nodes.splice(nodeIndexOfFirstFollowingNode, removeNodeCount, new GroovyAstNode({
-					tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
-					text: newNodeText,
-					startOffset: startOffsetOfIdentifier,
-					startLine: startLineOfIdentifier, startColumn: startColumnOfIdentifier
-				}));
-				break;
-			}
-		}
-	};
-
-	/**
-	 * for \b, \f, \n, \r, \t, and \u....
-	 * split to \ and BFNRT char or u...., then the BFNRT part or u.... will seek the next node.
-	 * cache the BFNRT char or u.... part as new node text,
-	 *
-	 * 1. if next node is boolean literal, primitive type, keyword, in, instanceof, identifier,
-	 *    unshift the new node text, and replace to identifier
-	 * 2. if next node is numeric base part, check
-	 * 2.1. if it contains dot, collect part before dot, unshift the new node text, and create an identifier node, insert after \,
-	 *      change the original numeric base part starts from dot,
-	 * 2.2. if it contains exponent sign, collect part before sign, unshift the new node text, and create an identifier node, insert after \,
-	 *      split the original numeric base part to add/subtract and make original exponent numeric (suffix) part to a new numeric base part
-	 * 2.3. otherwise, collect all numeric basic part, unshift the new node text, and cache, and back to step 1,
-	 * 3. use the new node text as an identifier node, insert after \.
-	 */
-	static splitEscapeBFNRTAndUnicode: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, nodes} = recognition;
-
-		const {text, startOffset, startLine, startColumn} = node;
-		// split to \, and BFNRT char or u....
-		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
-
-		// now there is a BFNRT char or u...., check following node
-		StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(text.slice(1), nodes, nodeIndex + 1, startOffset + 1, startLine, startColumn + 1);
-
-		return nodeIndex;
-	};
-
-	/**
-	 * for \u...., rebuild it.
-	 */
-	static rehydrateUnicodeEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, astRecognizer} = recognition;
-
-		const {startOffset, startLine, startColumn, text} = node;
-
-		// build Unicode escape
-		node.replaceTokenNatureAndText(TokenId.StringUnicodeEscape, TokenType.StringLiteral, '');
-		astRecognizer.appendAsCurrentParent(node);
-		const markNode = new GroovyAstNode({
-			tokenId: TokenId.StringUnicodeEscapeMark, tokenType: TokenType.Mark,
-			text: AstLiterals.StringUnicodeEscapeMark, startOffset,
-			startLine, startColumn
-		});
-		node.asParentOf(markNode);
-		const contentNode = new GroovyAstNode({
-			tokenId: TokenId.StringUnicodeEscapeContent, tokenType: TokenType.StringLiteral,
-			text: text.slice(2), startOffset: startOffset + 2,
-			startLine, startColumn: startColumn + 2
-		});
-		node.asParentOf(contentNode);
-		astRecognizer.closeCurrentParent();
-		return nodeIndex + 1;
-	};
-
-	/**
-	 * for octal escape \..., rebuild it.
-	 */
-	static rehydrateOctalEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, astRecognizer} = recognition;
-
-		const {startOffset, startLine, startColumn, text} = node;
-
-		// build octal escape
-		node.replaceTokenNatureAndText(TokenId.StringOctalEscape, TokenType.StringLiteral, '');
-		astRecognizer.appendAsCurrentParent(node);
-		const markNode = new GroovyAstNode({
-			tokenId: TokenId.StringOctalEscapeMark, tokenType: TokenType.Mark,
-			text: AstChars.Backslash, startOffset,
-			startLine, startColumn
-		});
-		node.asParentOf(markNode);
-		const contentNode = new GroovyAstNode({
-			tokenId: TokenId.StringOctalEscapeContent, tokenType: TokenType.StringLiteral,
-			text: text.slice(1), startOffset: startOffset + 1,
-			startLine, startColumn: startColumn + 1
-		});
-		node.asParentOf(contentNode);
-		astRecognizer.closeCurrentParent();
-		return nodeIndex + 1;
-	};
-
-	static splitOctalEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, nodes} = recognition;
-
-		const {text, startOffset, startLine, startColumn} = node;
-		// split to \, and 1 - 3 digits 0 - 7
-		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
-
-		const nextNodeIndex = nodeIndex + 1;
-		const nextNode = nodes[nextNodeIndex];
-		const nextNodeTokenId = nextNode?.tokenId;
-		const nextNodeText = nextNode?.text;
-		if (nextNodeTokenId !== TokenId.NumericBasePart) {
-			// create a new numeric base part node, append after \
-			nodes.splice(nodeIndex + 1, 0, new GroovyAstNode({
-				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
-				text: text.slice(1),
-				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-			}));
-			return nodeIndex;
-		}
-		if (['b', 'B', 'x', 'X'].includes(nextNodeText[1])) {
-			// it is a binary or hexadecimal literal
-			const newNode = new GroovyAstNode({
-				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
-				text: text.slice(1) + '0', // 0 is from 0b/0B/0x/0X
-				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-			});
-			nodes.splice(nodeIndex + 1, 1, newNode);
-			// the rest part of next node is an identifier now
-			// check following nodes
-			StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(nextNodeText.slice(1), nodes, nodeIndex + 2, startOffset + 1 + text.length, startLine, startColumn + 1 + text.length);
-		} else {
-			// it is an octal, integral, decimal literal
-			// replace the next node with new one
-			nodes.splice(nodeIndex + 1, 1, new GroovyAstNode({
-				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
-				text: text.slice(1) + nextNodeText,
-				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
-			}));
-		}
-		return nodeIndex;
-	};
-
-	/**
-	 * for \', \",
-	 * split to \ and one of `'"`, and `'"` part will seek the following nodes.
-	 * cache the `'"` part to init node text.
-	 *
-	 * 1. when the following node is ml mark of `'"`, collect the first 1 or 2 chars to create as a ml mark,
-	 *    in this case, there is still 1 or 2 chars left, cache to init node text (actually it is same as the original init node text),
-	 *    back to step 1,
-	 * 2. when the following node is sl mark of `'"`,
-	 * 2.1. when init node text's length is 1, double the init node text, therefore now length of it is 2,
-	 *      back to step 1,
-	 * 2.2. when init node text's length is 2, collect the following node, and unshift the init node text to create a ml mark,
-	 * 3. the following node is not one of sl or ml mark,
-	 * 3.1. when init node text's length is 1, create a sl mark,
-	 * 3.2. when init node text's length is 2, create 2 sl marks.
-	 */
-	static splitQuoteEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, nodes} = recognition;
-
-		const {text, startOffset, startLine, startColumn} = node;
-		// split to \ and `'"`
-		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
-
-		const newNodes: Array<GroovyAstNode> = [];
-		let initNodeText = text.slice(1);
-		const [slTokenId, mlTokenId, slMark, mlMark] = initNodeText === AstLiterals.StringQuotationMark
-			? [TokenId.StringQuotationMark, TokenId.StringQuotationMarkML, AstLiterals.StringQuotationMark, AstLiterals.StringQuotationMarkML]
-			: [TokenId.GStringQuotationMark, TokenId.GStringQuotationMarkML, AstLiterals.GStringQuotationMark, AstLiterals.GStringQuotationMarkML];
-		let removeNodeCount = 0;
-		let newNodeStartOffset = startOffset + 1;
-		let newNodeStartColumn = startColumn + 1;
-		// now there is a `'` or `"`, check the following nodes
-		let followingNodeIndex = nodeIndex + 1;
-		let followingNode = nodes[followingNodeIndex];
-		let followingNodeTokenId = followingNode?.tokenId;
-		// eslint-disable-next-line no-constant-condition
-		while (true) {
-			if (followingNodeTokenId === mlTokenId) {
-				// next is `'''`,
-				// when init node text is `'`, collect first `''` to be a new `'''`, and there is a `'` left
-				// or init node text is `''`, collect first `'` to be a new `'''`, and there is a `''` left
-				removeNodeCount++;
-				newNodes.push(new GroovyAstNode({
-					tokenId: mlTokenId, tokenType: TokenType.Mark, text: mlMark,
-					startOffset: newNodeStartOffset, startLine, startColumn: newNodeStartColumn
-				}));
-				// continue
-				// init node text is same, no need to change
-				newNodeStartOffset = newNodeStartOffset + 3;
-				newNodeStartColumn = newNodeStartColumn + 3;
-				followingNodeIndex = followingNodeIndex + 1;
-				followingNode = nodes[followingNodeIndex];
-				followingNodeTokenId = followingNode?.tokenId;
-			} else if (initNodeText.length === 1) {
-				if (followingNodeTokenId === slTokenId) {
-					// next is `'`, now there is a `''`, check the following nodes
-					removeNodeCount++;
-					// continue
-					initNodeText = initNodeText + initNodeText;
-					followingNodeIndex = followingNodeIndex + 1;
-					followingNode = nodes[followingNodeIndex];
-					followingNodeTokenId = followingNode?.tokenId;
-				} else {
-					newNodes.push(new GroovyAstNode({
-						tokenId: slTokenId, tokenType: TokenType.Mark, text: slMark,
-						startOffset: newNodeStartOffset, startLine, startColumn: newNodeStartColumn
-					}));
-					break;
-				}
-			} else {
-				// length is 2
-				if (followingNodeTokenId === slTokenId) {
-					// next is `'`, now there is a `'''`
-					removeNodeCount++;
-					newNodes.push(new GroovyAstNode({
-						tokenId: mlTokenId, tokenType: TokenType.Mark, text: mlMark,
-						startOffset: newNodeStartOffset, startLine, startColumn: newNodeStartColumn
-					}));
-					break;
-				} else {
-					newNodes.push(new GroovyAstNode({
-						tokenId: slTokenId, tokenType: TokenType.Mark, text: slMark,
-						startOffset: newNodeStartOffset, startLine, startColumn: newNodeStartColumn
-					}), new GroovyAstNode({
-						tokenId: slTokenId, tokenType: TokenType.Mark, text: slMark,
-						startOffset: newNodeStartOffset + 1, startLine, startColumn: newNodeStartColumn + 1
-					}));
-					break;
-				}
-			}
-		}
-		// manufacture nodes
-		nodes.splice(nodeIndex + 1, removeNodeCount, ...newNodes);
-
-		return nodeIndex;
-	};
-
-	/**
-	 * create a backslash node, and insert at given node index of insert
-	 */
-	private static createBackslashNode = (
-		nodes: Array<GroovyAstNode>, nodeIndexOfInsert: number,
-		startOffsetOfBackslash: number, startLineOfBackslash: number, startColumnOfBackslash: number
-	): void => {
-		nodes.splice(nodeIndexOfInsert, 0, new GroovyAstNode({
-			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
-			text: AstChars.Backslash,
-			startOffset: startOffsetOfBackslash, startLine: startLineOfBackslash, startColumn: startColumnOfBackslash
-		}));
 	};
 
 	/**
@@ -577,5 +213,619 @@ export abstract class StringLiteralRecognizeCommonUtils {
 			StringLiteralRecognizeCommonUtils.createBackslashNode(
 				nodes, nextNodeIndex, startOffsetOfBackslash, startLineOfBackslash, startColumnOfBackslash);
 		}
+	};
+
+	/**
+	 * split /* to / and *, * needs check the following node.
+	 * works only in slashy gstring literal
+	 */
+	static splitMlCommentStartMarkToSlashyGStringQuotationMarkAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+
+		const markNode = new GroovyAstNode({
+			tokenId: TokenId.SlashyGStringQuotationMark, tokenType: TokenType.Mark,
+			text: AstLiterals.SlashyGStringQuotationMark,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a * remained
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithMultiple(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, markNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split * / (no blank actually) to * and /,
+	 * works only in slashy gstring literal
+	 */
+	static splitMlCommentEndMarkToMultipleAndSlashyGStringQuotationMark: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const multipleNode = new GroovyAstNode({
+			tokenId: TokenId.Multiple, tokenType: TokenType.Operator,
+			text: AstOperators.Multiple,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		const markNode = new GroovyAstNode({
+			tokenId: TokenId.SlashyGStringQuotationMark, tokenType: TokenType.Mark,
+			text: AstLiterals.SlashyGStringQuotationMark,
+			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
+		});
+		// replace the original nodes
+		nodes.splice(nodeIndex, 1, multipleNode, markNode);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \b to \ and b, b needs check the following node.
+	 * works when parent is not any string literal
+	 */
+	static splitBackspaceEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a b remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithB(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \f to \ and f, f needs check the following node.
+	 * works when parent is not any string literal
+	 */
+	static splitFormFeedEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have an f remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithF(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \n to \ and n, n needs check the following node.
+	 * works when parent is not any string literal
+	 */
+	static splitNewlineEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have an n remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithN(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \r to \ and r, r needs check the following node.
+	 * works when parent is not any string literal
+	 */
+	static splitCarriageReturnEscapeToBackslashAndMore = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have an r remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithR(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \t to \ and t, t needs check the following node.
+	 * works when parent is not any string literal
+	 */
+	static splitTabulationEscapeToBackslashAndMore = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a t remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithT(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \\ to \ and \, 2nd \ needs check the following node.
+	 * works only in slashy gstring literal
+	 */
+	static splitBackslashEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a \ remained.
+		// since in slashy gstring literal, the only next char which concerned is /, and they can combine to a \/
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithBackslash(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \\ to \ and \
+	 */
+	static splitBackslashEscapeTo2Backslashes: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const firstNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		const secondNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
+		});
+		// replace the original nodes
+		nodes.splice(nodeIndex, 1, firstNode, secondNode);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \' to \ and ', ' needs check the following node.
+	 * works when parent is not any string literal
+	 */
+	static splitSingleQuoteEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a ' remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithSingleQuote(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \" to \ and ", " needs check the following node.
+	 * works when parent is not any string literal
+	 */
+	static splitDoubleQuoteEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a " remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithDoubleQuote(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \$ to \ and $, $ needs check the following node.
+	 * works when parent is slashy gstring literal or dollar slashy gstring literal
+	 */
+	static splitDollarEscapeToBackslashAndMoreWhenParentIsSlashyOrDollarSlashyGString: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes, astRecognizer} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a $ remained.
+
+		const currentParent = astRecognizer.getCurrentParent();
+		if (currentParent.tokenId === TokenId.SlashyGStringLiteral) {
+			const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithDollarWhenParentIsSlashyGString(recognition);
+			// replace the original nodes
+			nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		} else {
+			const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithDollarWhenParentIsDollarSlashyGString(recognition);
+			// replace the original nodes
+			nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		}
+		return nodeIndex;
+	};
+
+	/**
+	 * split \$ to \ and $, $ needs check the following node.
+	 * works when parent is not any string literal
+	 */
+	static splitDollarEscapeToBackslashAndMoreWhenParentIsNotString: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a $ remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithDollarWhenParentIsNotString(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * for octal escape \..., rebuild it.
+	 */
+	static rebuildOctalEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, astRecognizer} = recognition;
+
+		const {startOffset, startLine, startColumn, text} = node;
+
+		// build octal escape
+		node.replaceTokenNatureAndText(TokenId.StringOctalEscape, TokenType.StringLiteral, '');
+		astRecognizer.appendAsCurrentParent(node);
+		const markNode = new GroovyAstNode({
+			tokenId: TokenId.StringOctalEscapeMark, tokenType: TokenType.Mark,
+			text: AstChars.Backslash, startOffset,
+			startLine, startColumn
+		});
+		node.asParentOf(markNode);
+		const contentNode = new GroovyAstNode({
+			tokenId: TokenId.StringOctalEscapeContent, tokenType: TokenType.StringLiteral,
+			text: text.slice(1), startOffset: startOffset + 1,
+			startLine, startColumn: startColumn + 1
+		});
+		node.asParentOf(contentNode);
+		astRecognizer.closeCurrentParent();
+		return nodeIndex + 1;
+	};
+
+	/**
+	 * split \... to \ and ..., ... needs check the following node. ... is numbers from 0 to 7 with a length of 0 to 3 digits.
+	 * works when parent is not any string literal
+	 */
+	static splitOctalEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+
+		const {text, startOffset, startLine, startColumn} = node;
+		// split to \, and 1 - 3 digits 0 - 7
+		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, AstChars.Backslash);
+
+		const nextNodeIndex = nodeIndex + 1;
+		const nextNode = nodes[nextNodeIndex];
+		const nextNodeTokenId = nextNode?.tokenId;
+		const nextNodeText = nextNode?.text;
+		if (nextNodeTokenId !== TokenId.NumericBasePart) {
+			// create a new numeric base part node, append after \
+			nodes.splice(nodeIndex + 1, 0, new GroovyAstNode({
+				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+				text: text.slice(1),
+				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
+			}));
+			return nodeIndex;
+		}
+		if (['b', 'B', 'x', 'X'].includes(nextNodeText[1])) {
+			// it is a binary or hexadecimal literal
+			const newNode = new GroovyAstNode({
+				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+				text: text.slice(1) + '0', // 0 is from 0b/0B/0x/0X
+				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
+			});
+			nodes.splice(nodeIndex + 1, 1, newNode);
+			// the rest part of next node is an identifier now
+			// check following nodes
+			StringLiteralRecognizeCommonUtils.collectIdentifiableContentForwardMaximally(nextNodeText.slice(1), nodes, nodeIndex + 2, startOffset + 1 + text.length, startLine, startColumn + 1 + text.length);
+		} else {
+			// it is an octal, integral, decimal literal
+			// replace the next node with new one
+			nodes.splice(nodeIndex + 1, 1, new GroovyAstNode({
+				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
+				text: text.slice(1) + nextNodeText,
+				startOffset: startOffset + 1, startLine, startColumn: startColumn + 1
+			}));
+		}
+		return nodeIndex;
+	};
+
+	/**
+	 * for \u...., rebuild it.
+	 */
+	static buildUnicodeEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, astRecognizer} = recognition;
+
+		const {startOffset, startLine, startColumn, text} = node;
+
+		// build Unicode escape
+		node.replaceTokenNatureAndText(TokenId.StringUnicodeEscape, TokenType.StringLiteral, '');
+		astRecognizer.appendAsCurrentParent(node);
+		const markNode = new GroovyAstNode({
+			tokenId: TokenId.StringUnicodeEscapeMark, tokenType: TokenType.Mark,
+			text: AstLiterals.StringUnicodeEscapeMark, startOffset,
+			startLine, startColumn
+		});
+		node.asParentOf(markNode);
+		const contentNode = new GroovyAstNode({
+			tokenId: TokenId.StringUnicodeEscapeContent, tokenType: TokenType.StringLiteral,
+			text: text.slice(2), startOffset: startOffset + 2,
+			startLine, startColumn: startColumn + 2
+		});
+		node.asParentOf(contentNode);
+		astRecognizer.closeCurrentParent();
+		return nodeIndex + 1;
+	};
+
+	/**
+	 * split \u.... to \ and u...., u.... needs check the following node. u.... is u and numbers from 0-9a-fA-F with a length of 4 digits.
+	 * works when parent is not any string literal
+	 */
+	static splitUnicodeEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		return nodeIndex;
+	};
+
+	/**
+	 * split $/ to $ and /,
+	 * works only in gstring literal
+	 */
+	static splitDollarSlashyGStringQuotationStartMarkToGStringInterpolationStartMarkAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const markNode = new GroovyAstNode({
+			tokenId: TokenId.GStringInterpolationStartMark, tokenType: TokenType.Mark,
+			text: AstLiterals.GStringInterpolationStartMark,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a / remained.
+		const divideNode = new GroovyAstNode({
+			tokenId: TokenId.Chars, tokenType: TokenType.Chars,
+			text: AstOperators.Divide,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// replace the original nodes
+		nodes.splice(nodeIndex, 1, markNode, divideNode);
+
+		return nodeIndex;
+	};
+
+	/**
+	 * split $/ to $ and /
+	 * works only in slashy gstring literal
+	 */
+	static splitDollarSlashyGStringQuotationStartMarkToDollarAndSlashyGStringQuotationMark: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const multipleNode = new GroovyAstNode({
+			tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
+			text: AstLiterals.GStringInterpolationStartMark,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		const markNode = new GroovyAstNode({
+			tokenId: TokenId.SlashyGStringQuotationMark, tokenType: TokenType.Mark,
+			text: AstLiterals.SlashyGStringQuotationMark,
+			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
+		});
+		// replace the original nodes
+		nodes.splice(nodeIndex, 1, multipleNode, markNode);
+		return nodeIndex;
+	};
+
+	/**
+	 * split /$ to / and $,
+	 * works only in gstring literal
+	 */
+	static splitDollarSlashyGStringQuotationEndMarkToSlashAndMoreWhenParentIsGString: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const slashNode = new GroovyAstNode({
+			tokenId: TokenId.Chars, tokenType: TokenType.Chars,
+			text: AstOperators.Divide,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a $ remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithDollarWhenParentIsGString(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, slashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split /$ to / and $,
+	 * works only in slashy gstring literal
+	 */
+	static splitDollarSlashyGStringQuotationEndMarkToSlashyGStringQuotationMarkAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const markNode = new GroovyAstNode({
+			tokenId: TokenId.SlashyGStringQuotationMark, tokenType: TokenType.Mark,
+			text: AstLiterals.SlashyGStringQuotationMark,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a $ remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithDollarWhenParentIsNotString(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, markNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split /$ to / and $, needs to check the / is start of slashy gstring literal or just a divide, and $ needs to seek more following nodes
+	 * works only when parent is not any string literal
+	 */
+	static splitDollarSlashyGStringQuotationEndMarkToSlashAndMoreWhenParentIsNotString: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		// TODO the / is a mark or a divide?
+		const slashNode = new GroovyAstNode({
+			tokenId: TokenId.SlashyGStringQuotationMark, tokenType: TokenType.Mark,
+			text: AstLiterals.SlashyGStringQuotationMark,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a $ remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithDollarWhenParentIsNotString(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, slashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \/ to \ and /
+	 * works only when parent is string literal or gstring literal
+	 */
+	static splitSlashyGStringSlashEscapeToBackslashAndSlash: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const multipleNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		const slashNode = new GroovyAstNode({
+			tokenId: TokenId.Chars, tokenType: TokenType.Chars,
+			text: AstOperators.Divide,
+			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
+		});
+		// replace the original nodes
+		nodes.splice(nodeIndex, 1, multipleNode, slashNode);
+		return nodeIndex;
+	};
+
+	/**
+	 * split \/ to \ and /, needs to check the / is start of slashy gstring literal or just a divide
+	 * works only when parent is not any string literal
+	 */
+	static splitSlashyGStringSlashEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		const backslashNode = new GroovyAstNode({
+			tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars,
+			text: AstChars.Backslash,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a / remained.
+		const [newNodes, removeCount] = StringLiteralRecognizeCommonUtils.retokenizeWithSlash(recognition);
+		// replace the original nodes
+		nodes.splice(nodeIndex, removeCount + 1, backslashNode, ...newNodes);
+		return nodeIndex;
+	};
+
+	/**
+	 * split $$ to $ and $,
+	 * works only in gstring literal
+	 */
+	static splitDollarSlashyGStringDollarEscapeTo2GStringInterpolationStartMarks: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+
+		const firstNode = new GroovyAstNode({
+			tokenId: TokenId.GStringInterpolationStartMark, tokenType: TokenType.Mark,
+			text: AstLiterals.GStringInterpolationStartMark,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		// now have a $ remained.
+		const secondNode = new GroovyAstNode({
+			tokenId: TokenId.GStringInterpolationStartMark, tokenType: TokenType.Mark,
+			text: AstLiterals.GStringInterpolationStartMark,
+			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
+		});
+		// replace the original nodes
+		nodes.splice(nodeIndex, 1, firstNode, secondNode);
+
+		return nodeIndex;
+	};
+
+	/**
+	 * split $$ to $ and $,  could be chars only, otherwise 2nd $ needs to seek more following nodes,
+	 * works only in slashy gstring literal
+	 */
+	static rehydrateOrSplitDollarSlashyGStringDollarEscapeTo2GStringInterpolationStartMarks: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+
+		const nextNodeText = nodes[nodeIndex + 1]?.text;
+		if (nextNodeText.startsWith(AstChars.LBrace)) {
+			const firstNode = new GroovyAstNode({
+				tokenId: TokenId.Chars, tokenType: TokenType.Chars,
+				text: AstLiterals.GStringInterpolationStartMark,
+				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+			});
+			const newNodes = StringLiteralRecognizeCommonUtils.retokenizeWithDollarWhenParentIsGString(recognition);
+			// replace the original nodes
+			nodes.splice(nodeIndex, 1, firstNode, ...newNodes);
+			return nodeIndex;
+		}
+		const firstCharOfNextNodeText = nextNodeText[0];
+		// never mind the 2nd parameter, which is null, it is unused in function
+		if (firstCharOfNextNodeText !== AstLiterals.GStringInterpolationStartMark && isJavaIdentifierStartAndNotIdentifierIgnorable(firstCharOfNextNodeText, null)) {
+			const firstNode = new GroovyAstNode({
+				tokenId: TokenId.Chars, tokenType: TokenType.Chars,
+				text: AstLiterals.GStringInterpolationStartMark,
+				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+			});
+			const newNodes = StringLiteralRecognizeCommonUtils.retokenizeWithDollarWhenParentIsGString(recognition);
+			// replace the original nodes
+			nodes.splice(nodeIndex, 1, firstNode, ...newNodes);
+			return nodeIndex;
+		}
+
+		// chars only
+		node.replaceTokenNature(TokenId.Chars, TokenType.Chars);
+		return nodeIndex;
+	};
+
+	/**
+	 * check around to combine this $$, or it is an identifier
+	 */
+	static rehydrateDollarSlashyGStringDollarEscapeWithAround: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		// TODO
+		return nodeIndex;
+	};
+
+	/**
+	 * split to $ and {,
+	 * works only when parent is not any string literal
+	 */
+	static splitGStringInterpolationLBraceStartMarkToDollarAndLBrace: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node, nodeIndex, nodes} = recognition;
+		// TODO
+		return nodeIndex;
+	};
+
+	/**
+	 * return true when,
+	 * 1. current node text is backslash,
+	 * 2. in ml string literal, or ml gstring literal, or slashy gstring literal, or in dollar gstring literal,
+	 * 3. next node is newline.
+	 */
+	static backslashAtLineEndAndParentTokenTypeIsMLStringLiteral: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
+		const {node, nodeIndex, nodes, astRecognizer} = recognition;
+
+		if (node.text !== AstChars.Backslash) {
+			return false;
+		}
+
+		const currentParent = astRecognizer.getCurrentParent();
+		const parentTokenId = currentParent.tokenId;
+		switch (parentTokenId) {
+			case TokenId.StringLiteral:
+				if (currentParent.children?.[0]?.tokenId === TokenId.StringQuotationMark) {
+					return false;
+				}
+				break;
+			case TokenId.GStringLiteral:
+				if (currentParent.children?.[0]?.tokenId === TokenId.GStringQuotationMark) {
+					return false;
+				}
+				break;
+			case TokenId.SlashyGStringLiteral:
+			case TokenId.DollarSlashyGStringLiteral:
+				break;
+			default:
+				return false;
+		}
+
+		return nodes[nodeIndex]?.tokenId === TokenId.NewLine;
 	};
 }

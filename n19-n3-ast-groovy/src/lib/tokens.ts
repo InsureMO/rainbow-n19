@@ -89,7 +89,7 @@ export enum TokenId {
 	// string and gstring
 	StringQuotationMark, // '
 	StringQuotationMarkML, // '''
-	StringMLFirstNewLineEraser, // \ after multiple line mark, and no character after it, for all kinds of multiple string and gstring
+	StringMLNewLineEraser, // \ for multiple lines string/gstring literal, and no character after it, erase the following newline
 	StringBackspaceEscape, // \b
 	StringFormFeedEscape, // \f
 	StringNewLineEscape, // \n

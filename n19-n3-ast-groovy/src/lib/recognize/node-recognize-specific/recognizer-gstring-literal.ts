@@ -3,10 +3,10 @@ import {TokenId} from '../../tokens';
 import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
 import {StringLiteralRecognizeCommonUtils} from './recognizer-string-common';
 
-export class GStringLiteralRecognizeUtils extends StringLiteralRecognizeCommonUtils {
+export class GStringLiteralRecognizeUtils {
 	// noinspection JSUnusedLocalSymbols
 	private constructor() {
-		super();
+		// avoid extend
 	}
 
 	static isSingleLine: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
@@ -32,5 +32,5 @@ export class GStringLiteralRecognizeUtils extends StringLiteralRecognizeCommonUt
 	 * 2. when `''''a`, split to `"`, `"""`, `a`,
 	 * 3. when `''''''a`, split to `"`, `"""`, `"`, '`', `a`.
 	 */
-	static rehydrateGStringQuotationMarkML: NodeRehydrateFunc = GStringLiteralRecognizeUtils.buildRehydrateStringQuotationMarkML([TokenId.GStringQuotationMark, TokenId.GStringQuotationMarkML, AstLiterals.GStringQuotationMark, AstLiterals.GStringQuotationMarkML]);
+	static rehydrateGStringQuotationMarkML: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.buildRehydrateStringQuotationMarkML([TokenId.GStringQuotationMark, TokenId.GStringQuotationMarkML, AstLiterals.GStringQuotationMark, AstLiterals.GStringQuotationMarkML]);
 }

@@ -1,10 +1,13 @@
 import {TokenId, TokenType} from '../../tokens';
 import {
+	GStringInterpolationRecognizeUtils,
 	GStringLiteralRecognizeUtils,
 	NumericBasePartRecognizer,
 	ScriptCommandRecognizeUtils,
+	SingleLineCommentRecognizeUtils,
 	StringLiteralRecognizeCommonUtils,
-	StringLiteralRecognizeUtils
+	StringLiteralRecognizeUtils,
+	ThreadsafeRecognizeUtils
 } from '../node-recognize-specific';
 import {NodeRehydration} from './build-rehydrate-funcs';
 import {NodeRecognizeUtils} from './recognize-utils';
@@ -25,6 +28,7 @@ import {
 	RecognizeBasisType,
 	RehydrateTokenToWhen,
 	RehydrateTokenToWhenParentTokenIdIsOneOf,
+	RehydrateTokenToWhenParentTokenTypeIs,
 	RehydrateTokenUseFuncWhen,
 	RehydrateTokenUseFuncWhenParentTokenIdIsNotAnyOf,
 	RehydrateTokenUseFuncWhenParentTokenIdIsOneOf,
@@ -57,6 +61,9 @@ const RehydrateToken = {
 	},
 	whenParentTokenTypeIs: (tokenType: TokenType) => {
 		return {
+			to: (to: TokenId | [TokenId, TokenType]): RehydrateTokenToWhenParentTokenTypeIs => {
+				return [RecognizeBasisType.RehydrateTokenToWhenParentTokenTypeIs, tokenType, to];
+			},
 			use: (func: NodeRehydrateFunc): RehydrateTokenUseFuncWhenParentTokenTypeIs => {
 				return [RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenTypeIs, tokenType, func];
 			}
@@ -144,14 +151,16 @@ DeclareAsParent.when = (when: DoDeclareAsParentWhen, ...more: Array<DoDeclareAsP
 export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasisDefs }>> = {
 	// separator
 	[TokenId.LBrace]: [DeclareAsParent([TokenId.CodeBlock, TokenType.LogicBlock])],
-	[TokenId.RBrace]: 'NotRequired',
+	[TokenId.RBrace]: [
+		RehydrateToken.when(GStringInterpolationRecognizeUtils.startsFromLBrace).to([TokenId.GStringInterpolationRBraceEndMark, TokenType.Mark])
+	],
 	[TokenId.LParen]: [DeclareAsParent([TokenId.ParenBlock, TokenType.LogicBlock])],
 	[TokenId.RParen]: 'NotRequired',
 	[TokenId.LBrack]: 'TODO',
 	[TokenId.RBrack]: 'NotRequired',
 	[TokenId.At]: [
 		DeclareAsParent.when(NodeRecognizeUtils.isAfterDot)
-			// after dot directly, x.@y
+			// after dot, x.@y
 			.to([TokenId.AtFieldPathElement, TokenType.PathElement])
 			// not after dot, @x
 			.otherwise([TokenId.AnnotationDeclaration, TokenType.AnnotationDeclaration])
@@ -230,23 +239,36 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	// created in on child appended pointcut of sl/ml comment declaration, and node recognizer will not be used under any circumstances.
 	[TokenId.CommentHighlightChars]: 'NotRequired',
 	[TokenId.SingleLineCommentStartMark]: [ // //
-		// TODO split to / and / when parent is slashy gstring literal, / needs to seek more following nodes
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// split to / (slashy gstring literal end mark) and / when parent is slashy gstring literal, / needs to seek more following nodes
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(SingleLineCommentRecognizeUtils.splitStartMarkToSlashGStringQuotationMarkAnMore),
+		// rehydrate to chars when parent is any string literal
+		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		DeclareAsParent([TokenId.SingleLineComment, TokenType.Comments])
 	],
 	[TokenId.MultipleLinesCommentStartMark]: [ // /*
-		// TODO split to / and * when parent is slashy gstring literal, * needs to seek more following nodes
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// split to / and * when parent is slashy gstring literal, * needs to seek more following nodes
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(StringLiteralRecognizeCommonUtils.splitMlCommentStartMarkToSlashyGStringQuotationMarkAndMore),
+		// rehydrate to chars when parent is any string literal
+		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		DeclareAsParent([TokenId.MultipleLinesComment, TokenType.Comments])
 	],
 	[TokenId.MultipleLinesCommentEndMark]: [ // */
-		// TODO split to * and / when parent is slashy gstring literal, / needs to seek more following nodes
 		// ml comment end mark will not apply the default to chars rehydration when parent is ml comment,
 		// it is built-in, no need to declare as configuration
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// split to * and / when parent is slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(StringLiteralRecognizeCommonUtils.splitMlCommentEndMarkToMultipleAndSlashyGStringQuotationMark),
+		// rehydrate to chars when parent is any string literal
+		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
 	],
 	// created in on child appended pointcut of ml comment declaration, and node recognizer will not be used under any circumstances.
 	[TokenId.MultipleLinesCommentsHeadAsterisks]: 'NotRequired',
 	// number literal
 	// it is created inside the logic of rebuilding the number literal node and node recognizer will not be used under any circumstances.
-	// TODO note the created inside logic is for exponent sign only, not for the sign of whole number literal
+	// note the created inside logic is for exponent sign only, not for the sign of whole number literal
+	// and sign of whole number literal still treated as add/subtract, will not be included as start of number literal
 	[TokenId.NumericSignPart]: 'NotRequired',
 	[TokenId.NumericBasePart]: [
 		// ToCharsWhenParentTokenTypeIsStringLiteral still works here
@@ -290,60 +312,83 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		PreserveWhenParentIsOneOfTokenIds(TokenId.StringLiteral),
 		DeclareAsParent([TokenId.StringLiteral, TokenType.StringLiteral])
 	],
-	[TokenId.StringMLFirstNewLineEraser]: [ // \
-		// TODO need test, it is for all string literal or just for some kinds?
+	// it is rehydrated from undetermined chars, so it always appears in the right place.
+	[TokenId.StringMLNewLineEraser]: [ // \
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
 	],
 	[TokenId.StringBackspaceEscape]: [ // \b
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// split to \ and b when parent is not string literal, gstring literal, b needs to seek more following nodes
-		RehydrateToken.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode)
+		// rehydrate to chars when parent is slashy gstring literal or dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to \ and b when parent is not any string literal, b needs to seek more following nodes
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitBackspaceEscapeToBackslashAndMore)
 	],
 	[TokenId.StringFormFeedEscape]: [ // \f
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// split to \ and f when parent is not string literal, gstring literal, f needs to seek more following nodes
-		RehydrateToken.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode)
+		// rehydrate to chars when parent is slashy gstring literal or dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to \ and f when parent is not any string literal, f needs to seek more following nodes
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitFormFeedEscapeToBackslashAndMore)
 	],
 	[TokenId.StringNewLineEscape]: [ // \n
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// split to \ and n when parent is not string literal, gstring literal, n needs to seek more following nodes
-		RehydrateToken.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode)
+		// rehydrate to chars when parent is slashy gstring literal or dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to \ and n when parent is not any string literal, n needs to seek more following nodes
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitNewlineEscapeToBackslashAndMore)
 	],
 	[TokenId.StringCarriageReturnEscape]: [ // \r
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// split to \ and r when parent is not string literal, gstring literal, r needs to seek more following nodes
-		RehydrateToken.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode)
+		// rehydrate to chars when parent is slashy gstring literal or dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to \ and r when parent is not any string literal, r needs to seek more following nodes
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitCarriageReturnEscapeToBackslashAndMore)
 	],
 	[TokenId.StringTabulationEscape]: [ // \t
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// split to \ and t when parent is not string literal, gstring literal, t needs to seek more following nodes
-		RehydrateToken.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode)
+		// rehydrate to chars when parent is slashy gstring literal or dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to \ and t when parent is not any string literal, t needs to seek more following nodes
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitTabulationEscapeToBackslashAndMore)
 	],
 	[TokenId.StringBackslashEscape]: [ // \\
-		DisableToCharsWhenParentTokenTypeIsStringLiteral
-		// TODO split to \ and \ when parent is not string literal, gstring literal, 2nd \ needs to seek more following nodes
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// split to \ and \ when parent is slashy gstring literal, 2nd \ needs to seek more following nodes
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(StringLiteralRecognizeCommonUtils.splitBackslashEscapeToBackslashAndMore),
+		// split to \ and \ when parent is dollar gstring literal, since 2nd \ could be string ml newline escape
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).use(StringLiteralRecognizeCommonUtils.splitBackslashEscapeTo2Backslashes),
+		// split to \ and \ when parent is any string literal
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitBackslashEscapeTo2Backslashes)
 	],
 	[TokenId.StringSingleQuoteEscape]: [ // \'
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// split to \ and ' when parent is not string literal, gstring literal, ' needs to seek more following nodes
-		RehydrateToken.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitQuoteEscape)
+		// rehydrate to chars when parent is slashy gstring literal or dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to \ and ' when parent is not any string literal, ' needs to seek more following nodes
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitSingleQuoteEscapeToBackslashAndMore)
 	],
 	[TokenId.StringDoubleQuoteEscape]: [ // \"
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// split to \ and " when parent is not string literal, gstring literal, " needs to seek more following nodes
-		RehydrateToken.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitQuoteEscape)
+		// rehydrate to chars when parent is slashy gstring literal or dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to \ and " when parent is not any string literal, " needs to seek more following nodes
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitDoubleQuoteEscapeToBackslashAndMore)
 	],
 	[TokenId.StringDollarEscape]: [ // \$
-		DisableToCharsWhenParentTokenTypeIsStringLiteral
-		// TODO split to \ and $ when parent is string literal, gstring literal or slashy gstring literal, $ needs to seek more following nodes
-		// TODO split to \ and $ when parent is not dollar slashy gstring literal, $ needs to seek more following nodes
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// split to \ and $ when parent is slashy gstring literal or dollar gstring literal, $ needs to seek more following nodes
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).use(StringLiteralRecognizeCommonUtils.splitDollarEscapeToBackslashAndMoreWhenParentIsSlashyOrDollarSlashyGString),
+		// split to \ and $ when parent is not any string literal, $ needs to seek more following nodes
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitDollarEscapeToBackslashAndMoreWhenParentIsNotString)
 	],
 	[TokenId.StringOctalEscape]: [ // \0 ~ \7, \00 ~ \77, \000 ~ \777
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// rebuild octal escape node, when parent token id is string literal or gstring literal
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.rehydrateOctalEscape),
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.rebuildOctalEscape),
+		// rehydrate to chars when parent is slashy gstring literal or dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// otherwise, split to \ and ..., ... part needs to seek more following nodes
-		RehydrateToken.whenParentTokenIdIsNotAnyOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitOctalEscape)
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitOctalEscapeToBackslashAndMore)
 	],
 	// it is created inside the logic of rebuilding the octal escape node and node recognizer will not be used under any circumstances.
 	[TokenId.StringOctalEscapeMark]: 'NotRequired',
@@ -352,9 +397,9 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.StringUnicodeEscape]: [ // \u0000 ~ \uFFFF
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// rebuild Unicode escape node, when parent token type is string literal
-		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.rehydrateUnicodeEscape),
+		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.buildUnicodeEscape),
 		// otherwise, split to \ and u...., u.... part needs to seek more following nodes
-		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitEscapeBFNRTAndUnicode)
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitUnicodeEscapeToBackslashAndMore)
 	],
 	// it is created inside the logic of rebuilding the unicode escape node and node recognizer will not be used under any circumstances.
 	[TokenId.StringUnicodeEscapeMark]: 'NotRequired',
@@ -388,48 +433,72 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	],
 	[TokenId.DollarSlashyGStringQuotationStartMark]: [ // $/
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// TODO split to $ and / when parent is string literal or gstring literal, / needs to seek more following nodes
-		// TODO split to $ and / when parent is slashy gstring literal, / needs to seek more following nodes
 		// rehydrate to slash escape when parent is dollar slashy gstring literal
 		// must be handled here instead of by revising on child appended pointcut, otherwise it will be declared as parent
 		// this rehydration leads to the configuration of dollar slashy gstring slash escape
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).to([TokenId.DollarSlashyGStringSlashEscape, TokenType.Mark]),
+		// rehydrate to chars when parent is string literal or gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to $ and / when parent is gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitDollarSlashyGStringQuotationStartMarkToGStringInterpolationStartMarkAndMore),
+		// split to $ and / when parent is slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(StringLiteralRecognizeCommonUtils.splitDollarSlashyGStringQuotationStartMarkToDollarAndSlashyGStringQuotationMark),
 		DeclareAsParent([TokenId.DollarSlashyGStringLiteral, TokenType.StringLiteral])
 	],
 	[TokenId.DollarSlashyGStringQuotationEndMark]: [ // /$
-		DisableToCharsWhenParentTokenTypeIsStringLiteral
-		// TODO split to / and $ when parent is string literal or gstring literal, $ needs to seek more following nodes
-		// TODO split to / and $ when parent is slashy gstring literal, $ needs to seek more following nodes
-		// TODO split to / and $ when parent is not dollar slashy gstring literal, $ needs to seek more following nodes
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is string literal or gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to / and $ when parent is gstring literal, $ needs to seek more following nodes
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitDollarSlashyGStringQuotationEndMarkToSlashAndMoreWhenParentIsGString),
+		// split to / and $ when parent is slashy gstring literal, $ needs to seek more following nodes
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(StringLiteralRecognizeCommonUtils.splitDollarSlashyGStringQuotationEndMarkToSlashyGStringQuotationMarkAndMore),
+		// split to / and $ when parent is not any string literal,
+		// needs to check the / is start of slashy gstring literal or just a divide, and $ needs to seek more following nodes
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitDollarSlashyGStringQuotationEndMarkToSlashAndMoreWhenParentIsNotString)
 	],
 	[TokenId.SlashyGStringSlashEscape]: [ // \/
-		DisableToCharsWhenParentTokenTypeIsStringLiteral
-		// TODO split to \ and / when parent is string literal, gstring literal or dollar slashy gstring literal, / needs to seek more following nodes
-		// TODO split to \ and / when parent is not slashy gstring literal, / needs to seek more following nodes
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// split to \ and / when parent is string literal, gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral, TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitSlashyGStringSlashEscapeToBackslashAndSlash),
+		// rehydrate to chars when parent is dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to \ and / when parent is not any string literal, needs to check the / is start of slashy gstring literal or just a divide
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitSlashyGStringSlashEscapeToBackslashAndMore)
 	],
-	[TokenId.DollarSlashyGStringSlashEscape]: [ // $/, it is rehydrated from DollarSlashyGStringQuotationStartMark
+	// it is rehydrated from dollar slashy gstring quotation start mark, so it always appears in the right place.
+	[TokenId.DollarSlashyGStringSlashEscape]: [ // $/
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
-		// TODO split to $ and / when parent is string literal or gstring literal, / needs to seek more following nodes
-		// TODO split to $ and / when parent is slashy gstring literal, / needs to seek more following nodes
-		// TODO split to $ and / when parent is not dollar slashy gstring literal, / needs to seek more following nodes
 	],
 	[TokenId.DollarSlashyGStringDollarEscape]: [ // $$
-		DisableToCharsWhenParentTokenTypeIsStringLiteral
-		// TODO needs to seek more following nodes when parent is string literal
-		// TODO split to $ and $ when parent is gstring literal, $ needs to seek more following nodes
-		// TODO split to $ and $ when parent is slashy gstring literal, $ needs to seek more following nodes
-		// TODO needs to seek more following nodes when parent is not dollar slashy gstring literal
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to $ and $ when parent is gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral).use(StringLiteralRecognizeCommonUtils.splitDollarSlashyGStringDollarEscapeTo2GStringInterpolationStartMarks),
+		// split to $ and $ when parent is slashy gstring literal,
+		// could be chars only, otherwise 2nd $ needs to seek more following nodes
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(StringLiteralRecognizeCommonUtils.rehydrateOrSplitDollarSlashyGStringDollarEscapeTo2GStringInterpolationStartMarks),
+		// needs to seek more following nodes
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.rehydrateDollarSlashyGStringDollarEscapeWithAround)
 	],
+	// it is rehydrated from other nodes inside the logic of other node recognizing such as
+	// - DollarSlashyGStringQuotationStartMark, $/,
+	// - Identifier,
+	// so it always appears in the right place.
 	[TokenId.GStringInterpolationStartMark]: [ // $
-		DisableToCharsWhenParentTokenTypeIsStringLiteral
-		// TODO what?
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		DeclareAsParent([TokenId.GStringInterpolation, TokenType.StringLiteral])
 	],
 	[TokenId.GStringInterpolationLBraceStartMark]: [ // ${
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// TODO split to $ and { when parent is string literal
-		// TODO split to $ and { when parent is not any gstring literal
+		// rehydrate to chars when parent is dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to $ and { when parent is not any string literal
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(StringLiteralRecognizeCommonUtils.splitGStringInterpolationLBraceStartMarkToDollarAndLBrace),
 		DeclareAsParent([TokenId.GStringInterpolation, TokenType.StringLiteral])
 	],
+	// created in on child appended pointcut of gstring interpolation, and node recognizer will not be used under any circumstances.
 	[TokenId.GStringInterpolationRBraceEndMark]: [ // }
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
 	],
@@ -629,7 +698,10 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.THIS]: 'TODO',
-	[TokenId.THREADSAFE]: 'TODO', // TODO rehydrate to 2 parts when after dot directly
+	[TokenId.THREADSAFE]: [
+		// rehydrate to 2 parts when after dot
+		RehydrateToken.when(NodeRecognizeUtils.isAfterDot).use(ThreadsafeRecognizeUtils.splitTo2Parts)
+	],
 	[TokenId.THROW]: [
 		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.ThrowStatement, TokenType.LogicStatement])
@@ -687,10 +759,15 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.FLOAT]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.DOUBLE]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	// chars
+	// TODO, when in string literal, and starts with $. actually, single $ is not a legal identifier
+	//  and if $ is not at start of identifier, might need to be split
+	[TokenId.Identifier]: 'TODO',
 	[TokenId.Whitespaces]: 'NotRequired',
 	[TokenId.Tabs]: 'NotRequired',
 	[TokenId.NewLine]: 'NotRequired',
-	[TokenId.Identifier]: 'TODO', // TODO, when in string literal, and starts with $. actually, single $ is not a legal identifier
 	[TokenId.Chars]: 'NotRequired',
-	[TokenId.UndeterminedChars]: 'NotRequired'
+	[TokenId.UndeterminedChars]: [
+		// will not rehydrate under 4 tokens
+		RehydrateToken.when(StringLiteralRecognizeCommonUtils.backslashAtLineEndAndParentTokenTypeIsMLStringLiteral).to([TokenId.StringMLNewLineEraser, TokenType.Mark])
+	]
 };
