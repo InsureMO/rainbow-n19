@@ -5,6 +5,7 @@ export * from './recognizer-common';
 export * from './recognizer-script-command';
 
 export * from './recognizer-single-line-comment';
+export * from './recognizer-multiple-lines-comment';
 
 export * from './recognizer-numeric-base-part';
 

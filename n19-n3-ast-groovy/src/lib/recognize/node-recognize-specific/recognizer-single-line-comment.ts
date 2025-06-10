@@ -1,7 +1,4 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {AstLiterals} from '../../captor';
-import {GroovyAstNode} from '../../node';
-import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
 import {RecognizeCommonUtils} from './recognizer-common';
 
@@ -18,15 +15,15 @@ export class SingleLineCommentRecognizeUtils {
 	static splitStartMarkToSlashGStringQuotationMarkAnMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 
-		const markNode = new GroovyAstNode({
-			tokenId: TokenId.SlashyGStringQuotationMark, tokenType: TokenType.Mark,
-			text: AstLiterals.SlashyGStringQuotationMark,
-			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
-		});
-		// now have a / remained
-		const [newNodes, removeCount] = RecognizeCommonUtils.retokenizeWithSlash(recognition);
+		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
+				...recognition,
+				node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
+				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+			},
+			RecognizeCommonUtils.createSlashyGStringQuotationMark,
+			RecognizeCommonUtils.retokenizeWithDivideHeaded);
 		// replace the original nodes
-		nodes.splice(nodeIndex, removeCount + 1, markNode, ...newNodes);
+		nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 		return nodeIndex;
 	};
 }

@@ -27,7 +27,7 @@ export class LtUnicodeEscapeCaptor extends AbstractAstNodeCaptor {
 			tokenizer.charAt(offset + 5)
 		].join('');
 		this.createAndAppendToAst(tokenizer, {
-			tokenId: TokenId.StringUnicodeEscape, tokenType: TokenType.StringLiteral, text, startOffset: offset
+			tokenId: TokenId.StringUnicodeEscape, tokenType: TokenType.Mark, text, startOffset: offset
 		});
 		tokenizer.moveCursorTo(offset + 6);
 	}

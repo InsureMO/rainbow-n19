@@ -70,7 +70,7 @@ export const createKeywordCaptorClass =
 		return CaptorClass;
 	};
 
-// operator
+// string literal mark
 export const createStringLiteralMarkCaptorClass =
 	(className: string, operator: string, tokenId: TokenId): GroovyAstNodeCaptorConstructor => {
 		return (operator.length === 1)

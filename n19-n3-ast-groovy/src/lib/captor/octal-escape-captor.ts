@@ -32,7 +32,7 @@ export class LtOctalEscapeCaptor extends AbstractAstNodeCaptor {
 
 		const text = parts.join('');
 		this.createAndAppendToAst(tokenizer, {
-			tokenId: TokenId.StringOctalEscape, tokenType: TokenType.StringLiteral, text, startOffset: offsetOfGiven
+			tokenId: TokenId.StringOctalEscape, tokenType: TokenType.Mark, text, startOffset: offsetOfGiven
 		});
 		tokenizer.moveCursorTo(offsetOfGiven + text.length);
 	}
