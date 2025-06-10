@@ -243,8 +243,7 @@ export class RecognizeCommonUtils {
 				const identifierText = node.text;
 				if (!identifierText.startsWith(AstLiterals.GStringInterpolationStartMark)) {
 					return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDivideNode);
-				}
-				if (identifierText.length === 1) {
+				} else if (identifierText.length === 1) {
 					return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDollarSlashyGStringEndMarkNode);
 				} else {
 					return RecognizeCommonUtils.retokenize(recognition,

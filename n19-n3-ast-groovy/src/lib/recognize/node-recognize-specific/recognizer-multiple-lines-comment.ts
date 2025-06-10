@@ -17,7 +17,6 @@ export class MultipleLinesCommentRecognizeUtils {
 
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
-				node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
 			RecognizeCommonUtils.createSlashyGStringQuotationMark,
@@ -35,7 +34,6 @@ export class MultipleLinesCommentRecognizeUtils {
 		const {node, nodeIndex, nodes} = recognition;
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
-				node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
 			(position) => RecognizeCommonUtils.createMultipleNode(position, 1),

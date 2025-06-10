@@ -17,7 +17,6 @@ export class SingleLineCommentRecognizeUtils {
 
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
-				node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
 			RecognizeCommonUtils.createSlashyGStringQuotationMark,

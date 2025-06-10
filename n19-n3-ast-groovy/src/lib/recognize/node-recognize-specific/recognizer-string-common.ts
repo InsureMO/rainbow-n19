@@ -105,7 +105,6 @@ export class StringLiteralRecognizeCommonUtils {
 			const {node, nodeIndex, nodes} = recognition;
 			const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 					...recognition,
-					node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
 				RecognizeCommonUtils.createBackslashNode,
@@ -168,25 +167,13 @@ export class StringLiteralRecognizeCommonUtils {
 	/**
 	 * split \\ to \ and \
 	 */
-	static splitBackslashEscapeDSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, nodes} = recognition;
-		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
-				...recognition,
-				node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
-				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
-			},
-			RecognizeCommonUtils.createBackslashNode,
-			(recognition) => {
-				const {startOffset, startLine, startColumn} = recognition;
-				const [nodes, consumedNodeCount] = RecognizeCommonUtils.createBackslashNode({
-					startOffset, startLine, startColumn
-				}, 0);
-				return [nodes, consumedNodeCount];
-			});
-		// replace the original nodes
-		nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
-		return nodeIndex;
-	};
+	static splitBackslashEscapeDSGL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore((recognition) => {
+		const {startOffset, startLine, startColumn} = recognition;
+		const [nodes, consumedNodeCount] = RecognizeCommonUtils.createBackslashNode({
+			startOffset, startLine, startColumn
+		}, 0);
+		return [nodes, consumedNodeCount];
+	});
 
 	/**
 	 * split \\ to \ and \
@@ -334,7 +321,6 @@ export class StringLiteralRecognizeCommonUtils {
 		const {node, nodeIndex, nodes} = recognition;
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
-				node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
 			(position) => RecognizeCommonUtils.createCharsNode(AstOperators.Divide, position),
@@ -352,7 +338,6 @@ export class StringLiteralRecognizeCommonUtils {
 		const {node, nodeIndex, nodes} = recognition;
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
-				node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
 			RecognizeCommonUtils.createSlashyGStringQuotationMark,
@@ -379,7 +364,6 @@ export class StringLiteralRecognizeCommonUtils {
 			// split to divide and more
 			const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 					...recognition,
-					node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
 				(position) => RecognizeCommonUtils.createDivideNode(position, 1),
@@ -390,7 +374,6 @@ export class StringLiteralRecognizeCommonUtils {
 			// start of slashy gstring literal
 			const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 					...recognition,
-					node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
 				RecognizeCommonUtils.createSlashyGStringQuotationMark,
@@ -427,7 +410,6 @@ export class StringLiteralRecognizeCommonUtils {
 		const {node, nodeIndex, nodes} = recognition;
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
-				node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
 			(position) => RecognizeCommonUtils.createUndeterminedCharsNode(AstChars.Backslash, position),
@@ -449,7 +431,6 @@ export class StringLiteralRecognizeCommonUtils {
 			const {node, nodeIndex, nodes} = recognition;
 			const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 					...recognition,
-					node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
 				RecognizeCommonUtils.createGStringInterpolationStartMarkNode,
@@ -482,7 +463,6 @@ export class StringLiteralRecognizeCommonUtils {
 		if (nextNodeText.startsWith(AstChars.LBrace)) {
 			const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 					...recognition,
-					node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
 				(position) => RecognizeCommonUtils.createCharsNode(AstLiterals.GStringInterpolationStartMark, position),
@@ -497,7 +477,6 @@ export class StringLiteralRecognizeCommonUtils {
 		if (firstCharOfNextNodeText !== AstLiterals.GStringInterpolationStartMark && isJavaIdentifierStartAndNotIdentifierIgnorable(firstCharOfNextNodeText, null)) {
 			const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 					...recognition,
-					node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
 				(position) => RecognizeCommonUtils.createCharsNode(AstLiterals.GStringInterpolationStartMark, position),
@@ -513,19 +492,18 @@ export class StringLiteralRecognizeCommonUtils {
 	};
 
 	/**
-	 * check around to combine this $$, or it is an identifier
+	 * seek more following nodes to combine this $$, or it is an identifier
 	 */
 	static rehydrateDollarSlashyGStringDollarEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
-				node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
-			(_position): RetokenizedHeadNodes => [[], 0, 0],
+			(_position): RetokenizedHeadNodes => [[], 1, 0],
 			(recognition) => RecognizeCommonUtils.retokenizeWithIdentifiableTextHeaded('$$', recognition));
-		if (consumedNodeCount === 0) {
+		if (consumedNodeCount === 1) {
 			node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
 		} else {
 			nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
