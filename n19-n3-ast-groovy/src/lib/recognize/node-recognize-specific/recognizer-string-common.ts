@@ -3,8 +3,16 @@ import {AstChars, AstLiterals, AstOperators, isJavaIdentifierStartAndNotIdentifi
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
-import {RecognizeCommonUtils, RetokenizeRestNodes} from './recognizer-common';
+import {RecognizeCommonUtils, RetokenizedHeadNodes, RetokenizeRestNodes} from './recognizer-common';
 
+/**
+ * NSL: When Parent Is Not Any String Literal,
+ * SL: When Parent Is String Literal,
+ * GL: When Parent Is GString Literal,
+ * SGL: When Parent Is Slashy GString Literal,
+ * DSGL: When Parent Is Dollar Slashy GString Literal,
+ *
+ */
 export class StringLiteralRecognizeCommonUtils {
 	// noinspection JSUnusedLocalSymbols
 	private constructor() {
@@ -125,42 +133,42 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split \b to \ and b, b needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitBackspaceEscapeToBackslashAndMore: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitBackspaceEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
 
 	/**
 	 * split \f to \ and f, f needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitFormFeedEscapeToBackslashAndMore: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitFormFeedEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
 
 	/**
 	 * split \n to \ and n, n needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitNewlineEscapeToBackslashAndMore: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitNewlineEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
 
 	/**
 	 * split \r to \ and r, r needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitCarriageReturnEscapeToBackslashAndMore: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitCarriageReturnEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
 
 	/**
 	 * split \t to \ and t, t needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitTabulationEscapeToBackslashAndMore: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitTabulationEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
 
 	/**
 	 * split \\ to \ and \, 2nd \ needs check the following node.
 	 * works only in slashy gstring literal
 	 */
-	static splitBackslashEscapeToBackslashAndMore: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithBackslashHeaded);
+	static splitBackslashEscapeSGL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithBackslashHeaded);
 
 	/**
 	 * split \\ to \ and \
 	 */
-	static splitBackslashEscapeTo2Backslashes: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitBackslashEscapeDSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
@@ -181,22 +189,33 @@ export class StringLiteralRecognizeCommonUtils {
 	};
 
 	/**
+	 * split \\ to \ and \
+	 */
+	static splitBackslashEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashEscapeDSGL;
+
+	/**
 	 * split \' to \ and ', ' needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitSingleQuoteEscapeToBackslashAndMore: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithSingleQuoteHeaded);
+	static splitSingleQuoteEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithSingleQuoteHeaded);
 
 	/**
 	 * split \" to \ and ", " needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitDoubleQuoteEscapeToBackslashAndMore: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithDoubleQuoteHeaded);
+	static splitDoubleQuoteEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithDoubleQuoteHeaded);
 
 	/**
 	 * split \$ to \ and $, $ needs check the following node.
 	 * works when parent is slashy gstring literal or dollar slashy gstring literal
 	 */
-	static splitDollarEscapeToBackslashAndMore: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithDollarHeaded);
+	static splitDollarEscapeSGLAndDSGL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithDollarHeaded);
+
+	/**
+	 * split \$ to \ and $, $ needs check the following node.
+	 * works when parent is not any string literal
+	 */
+	static splitDollarEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitDollarEscapeSGLAndDSGL;
 
 	/**
 	 * for octal escape \..., rebuild it.
@@ -229,7 +248,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split \... to \ and ..., ... needs check the following node. ... is numbers from 0 to 7 with a length of 0 to 3 digits.
 	 * works when parent is not any string literal
 	 */
-	static splitOctalEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitOctalEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node} = recognition;
 		return StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore((recognition) => {
 			return RecognizeCommonUtils.retokenizeWithOctalContentHeaded(node.text.slice(1), recognition);
@@ -267,13 +286,13 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split \u.... to \ and u...., u.... needs check the following node. u.... is u and numbers from 0-9a-fA-F with a length of 4 digits.
 	 * works when parent is not any string literal
 	 */
-	static splitUnicodeEscapeToBackslashAndMore: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitUnicodeEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
 
 	/**
 	 * split $/ to $ and /,
 	 * works only in gstring literal
 	 */
-	static splitDollarSlashyGStringQuotationStartMarkToGStringInterpolationStartMarkAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringQuotationStartMarkGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 		// replace the original nodes
 		nodes.splice(nodeIndex, 1, new GroovyAstNode({
@@ -292,7 +311,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split $/ to $ and /
 	 * works only in slashy gstring literal
 	 */
-	static splitDollarSlashyGStringQuotationStartMarkToDollarAndSlashyGStringQuotationMark: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringQuotationStartMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 		// replace the original nodes
 		nodes.splice(nodeIndex, 1, new GroovyAstNode({
@@ -311,7 +330,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split /$ to / and $,
 	 * works only in gstring literal
 	 */
-	static splitDollarSlashyGStringQuotationEndMarkToSlashAndMoreWhenParentIsGString: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringQuotationEndMarkGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
@@ -329,7 +348,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split /$ to / and $,
 	 * works only in slashy gstring literal
 	 */
-	static splitDollarSlashyGStringQuotationEndMarkToSlashyGStringQuotationMarkAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringQuotationEndMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
@@ -347,7 +366,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split /$ to / and $, needs to check the / is start of slashy gstring literal or just a divide, and $ needs to seek more following nodes
 	 * works only when parent is not any string literal
 	 */
-	static splitDollarSlashyGStringQuotationEndMarkToSlashAndMoreWhenParentIsNotString: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringQuotationEndMarkNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 
 		const [nearestUnignorableNode, nearestUnignorableNodeIndex] = RecognizeCommonUtils.getNearestPreviousUnignorableNode(recognition);
@@ -385,7 +404,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split \/ to \ and /
 	 * works only when parent is string literal or gstring literal
 	 */
-	static splitSlashyGStringSlashEscapeToBackslashAndSlash: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitSlashyGStringSlashEscapeSLAndGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 		// replace the original nodes
 		nodes.splice(nodeIndex, 1, new GroovyAstNode({
@@ -404,7 +423,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split \/ to \ and /, needs to check the / is start of slashy gstring literal or just a divide
 	 * works only when parent is not any string literal
 	 */
-	static splitSlashyGStringSlashEscapeToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitSlashyGStringSlashEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
@@ -422,7 +441,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split $$ to $ and $,
 	 * works only in gstring literal
 	 */
-	static splitDollarSlashyGStringDollarEscapeToGStringInterpolationStartMarksAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringDollarEscapeGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 
 		const nextNodeText = nodes[nodeIndex + 1]?.text;
@@ -456,7 +475,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split $$ to $ and $, could be chars only, depend on seeking more following nodes for 2nd $,
 	 * works only in slashy gstring literal
 	 */
-	static rehydrateOrSplitDollarSlashyGStringDollarEscapeToGStringInterpolationStartMarksAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rehydrateOrSplitDollarSlashyGStringDollarEscapeSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 
 		const nextNodeText = nodes[nodeIndex + 1]?.text;
@@ -496,9 +515,21 @@ export class StringLiteralRecognizeCommonUtils {
 	/**
 	 * check around to combine this $$, or it is an identifier
 	 */
-	static rehydrateDollarSlashyGStringDollarEscapeWithAround: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rehydrateDollarSlashyGStringDollarEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
-		// TODO
+		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
+				...recognition,
+				node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1,
+				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+			},
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			(_position): RetokenizedHeadNodes => [[], 0, 0],
+			(recognition) => RecognizeCommonUtils.retokenizeWithIdentifiableTextHeaded('$$', recognition));
+		if (consumedNodeCount === 0) {
+			node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
+		} else {
+			nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
+		}
 		return nodeIndex;
 	};
 
@@ -506,7 +537,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split to $ and {,
 	 * works only when parent is not any string literal
 	 */
-	static splitGStringInterpolationLBraceStartMarkToDollarAndLBrace: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitGStringInterpolationLBraceStartMarkNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 		nodes.splice(nodeIndex, 1, new GroovyAstNode({
 			tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
