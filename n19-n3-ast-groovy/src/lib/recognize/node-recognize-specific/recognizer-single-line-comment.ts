@@ -9,18 +9,23 @@ export class SingleLineCommentRecognizeUtils {
 	}
 
 	/**
-	 * split // to / and /, 2nd / needs check the following node.
-	 * works only in slashy gstring literal
+	 * split // to / and /.
+	 * - 1st / ends slashy gstring literal,
+	 * - 2nd / is NSL
+	 * works only in slashy gstring literal.
+	 *
+	 * NSL: When Parent Is Not Any String Literal,
+	 * SGL: When Parent Is Slashy GString Literal.
 	 */
-	static splitStartMarkToSlashGStringQuotationMarkAnMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitStartMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
 
 		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
 				...recognition,
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
-			RecognizeCommonUtils.createSlashyGStringQuotationMark,
-			RecognizeCommonUtils.retokenizeWithDivideHeaded);
+			RecognizeCommonUtils.createSlashyGStringQuotationMarkNode,
+			RecognizeCommonUtils.retokenizeWithDivideHeadedNSL);
 		// replace the original nodes
 		nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 		return nodeIndex;

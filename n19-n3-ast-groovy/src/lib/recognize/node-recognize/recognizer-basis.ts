@@ -243,7 +243,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.SingleLineCommentStartMark]: [ // //
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// split to / (slashy gstring literal end mark) and / when parent is slashy gstring literal, / needs to seek more following nodes
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(SingleLineCommentRecognizeUtils.splitStartMarkToSlashGStringQuotationMarkAnMore),
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(SingleLineCommentRecognizeUtils.splitStartMarkSGL),
 		// rehydrate to chars when parent is any string literal
 		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		DeclareAsParent([TokenId.SingleLineComment, TokenType.Comments])
@@ -251,7 +251,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.MultipleLinesCommentStartMark]: [ // /*
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// split to / and * when parent is slashy gstring literal, * needs to seek more following nodes
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(MultipleLinesCommentRecognizeUtils.splitStartMarkToSlashyGStringQuotationMarkAndMore),
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(MultipleLinesCommentRecognizeUtils.splitStartMarkSGL),
 		// rehydrate to chars when parent is any string literal
 		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		DeclareAsParent([TokenId.MultipleLinesComment, TokenType.Comments])
@@ -261,7 +261,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// it is built-in, no need to declare as configuration
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// split to * and / when parent is slashy gstring literal
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(MultipleLinesCommentRecognizeUtils.splitEndMarkToMultipleAndSlashyGStringQuotationMark),
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(MultipleLinesCommentRecognizeUtils.splitEndMarkSGL),
 		// rehydrate to chars when parent is any string literal
 		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
 	],

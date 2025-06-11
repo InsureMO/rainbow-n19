@@ -11,7 +11,6 @@ import {RecognizeCommonUtils, RetokenizedHeadNodes, RetokenizeRestNodes} from '.
  * GL: When Parent Is GString Literal,
  * SGL: When Parent Is Slashy GString Literal,
  * DSGL: When Parent Is Dollar Slashy GString Literal,
- *
  */
 export class StringLiteralRecognizeCommonUtils {
 	// noinspection JSUnusedLocalSymbols
@@ -100,7 +99,7 @@ export class StringLiteralRecognizeCommonUtils {
 	/**
 	 * split \.... to \ and ....
 	 */
-	private static splitBackslashHeadedToBackslashAndMore = (retokenizeRest: RetokenizeRestNodes): NodeRehydrateFunc => {
+	private static splitBackslashHeaded = (retokenizeRest: RetokenizeRestNodes): NodeRehydrateFunc => {
 		return (recognition: AstRecognition): Optional<number> => {
 			const {node, nodeIndex, nodes} = recognition;
 			const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
@@ -116,58 +115,55 @@ export class StringLiteralRecognizeCommonUtils {
 	};
 
 	/**
-	 * 1. split \b, \f, \n, \r, \t to \ and bfnrt, bfnrt needs check the following node.
-	 * 2. split \u.... to \ and u...., u.... needs check the following node. u.... is u and numbers from 0-9a-fA-F with a length of 4 digits.
-	 *
-	 * both works when parent is not any string literal
-	 */
-	private static splitBackslashAndBFNRTUToBackslashAndMore: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node} = recognition;
-		return StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore((recognition) => {
-			return RecognizeCommonUtils.retokenizeWithIdentifiableTextHeaded(node.text.slice(1), recognition);
-		})(recognition);
-	};
-
-	/**
 	 * split \b to \ and b, b needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitBackspaceEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitBackspaceEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeaded((recognition) => {
+		return RecognizeCommonUtils.retokenizeWithIdentifiableTextHeadedNSL('b', recognition);
+	});
 
 	/**
 	 * split \f to \ and f, f needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitFormFeedEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitFormFeedEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeaded((recognition) => {
+		return RecognizeCommonUtils.retokenizeWithIdentifiableTextHeadedNSL('f', recognition);
+	});
 
 	/**
 	 * split \n to \ and n, n needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitNewlineEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitNewlineEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeaded((recognition) => {
+		return RecognizeCommonUtils.retokenizeWithIdentifiableTextHeadedNSL('n', recognition);
+	});
 
 	/**
 	 * split \r to \ and r, r needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitCarriageReturnEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitCarriageReturnEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeaded((recognition) => {
+		return RecognizeCommonUtils.retokenizeWithIdentifiableTextHeadedNSL('r', recognition);
+	});
 
 	/**
 	 * split \t to \ and t, t needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitTabulationEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitTabulationEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeaded((recognition) => {
+		return RecognizeCommonUtils.retokenizeWithIdentifiableTextHeadedNSL('t', recognition);
+	});
 
 	/**
 	 * split \\ to \ and \, 2nd \ needs check the following node.
 	 * works only in slashy gstring literal
 	 */
-	static splitBackslashEscapeSGL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithBackslashHeaded);
+	static splitBackslashEscapeSGL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeaded(RecognizeCommonUtils.retokenizeWithBackslashHeadedSGL);
 
 	/**
 	 * split \\ to \ and \
 	 */
-	static splitBackslashEscapeDSGL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore((recognition) => {
+	static splitBackslashEscapeDSGL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeaded((recognition) => {
 		const {startOffset, startLine, startColumn} = recognition;
 		const [nodes, consumedNodeCount] = RecognizeCommonUtils.createBackslashNode({
 			startOffset, startLine, startColumn
@@ -184,19 +180,19 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split \' to \ and ', ' needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitSingleQuoteEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithSingleQuoteHeaded);
+	static splitSingleQuoteEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeaded(RecognizeCommonUtils.retokenizeWithSingleQuoteHeaded);
 
 	/**
 	 * split \" to \ and ", " needs check the following node.
 	 * works when parent is not any string literal
 	 */
-	static splitDoubleQuoteEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithDoubleQuoteHeaded);
+	static splitDoubleQuoteEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeaded(RecognizeCommonUtils.retokenizeWithDoubleQuoteHeaded);
 
 	/**
 	 * split \$ to \ and $, $ needs check the following node.
 	 * works when parent is slashy gstring literal or dollar slashy gstring literal
 	 */
-	static splitDollarEscapeSGLAndDSGL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore(RecognizeCommonUtils.retokenizeWithDollarHeaded);
+	static splitDollarEscapeSGLAndDSGL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashHeaded(RecognizeCommonUtils.retokenizeWithDollarHeadedNSL);
 
 	/**
 	 * split \$ to \ and $, $ needs check the following node.
@@ -237,7 +233,7 @@ export class StringLiteralRecognizeCommonUtils {
 	 */
 	static splitOctalEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node} = recognition;
-		return StringLiteralRecognizeCommonUtils.splitBackslashHeadedToBackslashAndMore((recognition) => {
+		return StringLiteralRecognizeCommonUtils.splitBackslashHeaded((recognition) => {
 			return RecognizeCommonUtils.retokenizeWithOctalContentHeaded(node.text.slice(1), recognition);
 		})(recognition);
 	};
@@ -273,7 +269,12 @@ export class StringLiteralRecognizeCommonUtils {
 	 * split \u.... to \ and u...., u.... needs check the following node. u.... is u and numbers from 0-9a-fA-F with a length of 4 digits.
 	 * works when parent is not any string literal
 	 */
-	static splitUnicodeEscapeNSL: NodeRehydrateFunc = StringLiteralRecognizeCommonUtils.splitBackslashAndBFNRTUToBackslashAndMore;
+	static splitUnicodeEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+		const {node} = recognition;
+		return StringLiteralRecognizeCommonUtils.splitBackslashHeaded((recognition) => {
+			return RecognizeCommonUtils.retokenizeWithIdentifiableTextHeadedNSL(node.text.slice(1), recognition);
+		})(recognition);
+	};
 
 	/**
 	 * split $/ to $ and /,
@@ -324,7 +325,7 @@ export class StringLiteralRecognizeCommonUtils {
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
 			(position) => RecognizeCommonUtils.createCharsNode(AstOperators.Divide, position),
-			RecognizeCommonUtils.retokenizeWithDollarHeaded);
+			RecognizeCommonUtils.retokenizeWithDollarHeadedNSL);
 		// replace the original nodes
 		nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 		return nodeIndex;
@@ -340,8 +341,8 @@ export class StringLiteralRecognizeCommonUtils {
 				...recognition,
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
-			RecognizeCommonUtils.createSlashyGStringQuotationMark,
-			RecognizeCommonUtils.retokenizeWithDollarHeaded);
+			RecognizeCommonUtils.createSlashyGStringQuotationMarkNode,
+			RecognizeCommonUtils.retokenizeWithDollarHeadedNSL);
 		// replace the original nodes
 		nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 		return nodeIndex;
@@ -367,7 +368,7 @@ export class StringLiteralRecognizeCommonUtils {
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
 				(position) => RecognizeCommonUtils.createDivideNode(position, 1),
-				RecognizeCommonUtils.retokenizeWithDollarHeaded);
+				RecognizeCommonUtils.retokenizeWithDollarHeadedNSL);
 			nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 			return nodeIndex;
 		} else {
@@ -376,8 +377,8 @@ export class StringLiteralRecognizeCommonUtils {
 					...recognition,
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
-				RecognizeCommonUtils.createSlashyGStringQuotationMark,
-				RecognizeCommonUtils.retokenizeWithDollarHeaded);
+				RecognizeCommonUtils.createSlashyGStringQuotationMarkNode,
+				RecognizeCommonUtils.retokenizeWithDollarHeadedNSL);
 			nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 			return nodeIndex;
 		}
@@ -413,7 +414,7 @@ export class StringLiteralRecognizeCommonUtils {
 				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 			},
 			(position) => RecognizeCommonUtils.createUndeterminedCharsNode(AstChars.Backslash, position),
-			RecognizeCommonUtils.retokenizeWithDivideHeaded);
+			RecognizeCommonUtils.retokenizeWithDivideHeadedNSL);
 		// replace the original nodes
 		nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 		return nodeIndex;
@@ -434,7 +435,7 @@ export class StringLiteralRecognizeCommonUtils {
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
 				RecognizeCommonUtils.createGStringInterpolationStartMarkNode,
-				RecognizeCommonUtils.retokenizeWithDollarHeaded);
+				RecognizeCommonUtils.retokenizeWithDollarHeadedNSL);
 			// replace the original nodes
 			nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 		} else {
@@ -466,7 +467,7 @@ export class StringLiteralRecognizeCommonUtils {
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
 				(position) => RecognizeCommonUtils.createCharsNode(AstLiterals.GStringInterpolationStartMark, position),
-				RecognizeCommonUtils.retokenizeWithDollarHeaded);
+				RecognizeCommonUtils.retokenizeWithDollarHeadedNSL);
 			// replace the original nodes
 			nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 			return nodeIndex;
@@ -480,7 +481,7 @@ export class StringLiteralRecognizeCommonUtils {
 					startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 				},
 				(position) => RecognizeCommonUtils.createCharsNode(AstLiterals.GStringInterpolationStartMark, position),
-				RecognizeCommonUtils.retokenizeWithDollarHeaded);
+				RecognizeCommonUtils.retokenizeWithDollarHeadedNSL);
 			// replace the original nodes
 			nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 			return nodeIndex;
@@ -502,7 +503,7 @@ export class StringLiteralRecognizeCommonUtils {
 			},
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			(_position): RetokenizedHeadNodes => [[], 1, 0],
-			(recognition) => RecognizeCommonUtils.retokenizeWithIdentifiableTextHeaded('$$', recognition));
+			(recognition) => RecognizeCommonUtils.retokenizeWithIdentifiableTextHeadedNSL('$$', recognition));
 		if (consumedNodeCount === 1) {
 			node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
 		} else {
