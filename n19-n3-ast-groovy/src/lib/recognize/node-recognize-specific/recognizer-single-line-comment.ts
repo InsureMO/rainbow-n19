@@ -1,12 +1,7 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
-import {
-	RecognizeCommonUtils,
-	RetokenizeAstRecognition,
-	RetokenizedNodes,
-	RetokenizeNodeWalker
-} from './recognizer-common';
+import {RetokenizeAstRecognition, RetokenizedNodes, RetokenizeNodeWalker} from './recognizer-common';
 import {NSLRecognizeUtils} from './recognizer-not-any-string-literal';
 
 export class SingleLineCommentRecognizeUtils {
