@@ -1,29 +1,24 @@
-import {AstChars, AstLiterals, AstMarks, AstOperators} from '../../captor';
-import {GroovyAstNode} from '../../node';
+import {Optional} from '@rainbow-n19/n3-ast';
+import {CompilationUnitNode, GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
+import {AstRecognizer} from '../ast-recognizer';
 import {AstRecognition} from '../node-recognize';
 
 export type RetokenizeGroovyAstNodePosition = Pick<GroovyAstNode, 'startOffset' | 'startLine' | 'startColumn'>;
-export type RetokenizeGroovyAstNodeNature = Pick<GroovyAstNode, 'tokenId' | 'tokenType' | 'text'>;
-export type RetokenizeGroovyAstNodeNatureAndPosition = RetokenizeGroovyAstNodeNature & RetokenizeGroovyAstNodePosition;
-
-export type RetokenizedHeadNodes = [nodes: Array<GroovyAstNode>, consumedNodeCount: number, consumedCharCount: number];
-export type RetokenizeHeadNodes = (position: RetokenizeGroovyAstNodePosition) => RetokenizedHeadNodes;
-export type RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount?: number) => RetokenizedHeadNodes;
-export type RetokenizedRestNodes = [nodes: Array<GroovyAstNode>, consumedNodeCount: number];
+export type RetokenizedNodes = [nodes: Array<GroovyAstNode>, consumedNodeCount: number];
+/**
+ * node is the first node which needs to be retokenize, could be null,
+ * node index is index of the first node,
+ * position is for the first retokenized node.
+ *
+ * note there is an in-air text as very first part of retokenizing.
+ */
 export type RetokenizeAstRecognition =
 	& Omit<AstRecognition, 'node'>
 	& Partial<Pick<AstRecognition, 'node'>>
 	& RetokenizeGroovyAstNodePosition;
-export type RetokenizeRestNodes = (recognition: RetokenizeAstRecognition) => RetokenizedRestNodes;
+export type Retokenize = (recognition: RetokenizeAstRecognition) => RetokenizedNodes;
 
-/**
- * NSL: When Parent Is Not Any String Literal,
- * SL: When Parent Is String Literal,
- * GL: When Parent Is GString Literal,
- * SGL: When Parent Is Slashy GString Literal,
- * DSGL: When Parent Is Dollar Slashy GString Literal,
- */
 export class RecognizeCommonUtils {
 	// noinspection JSUnusedLocalSymbols
 	private constructor() {
@@ -67,485 +62,153 @@ export class RecognizeCommonUtils {
 		const [node, nodeIndex] = RecognizeCommonUtils.getNearestPreviousUnignorableNode(recognition);
 		return nodeIndex !== -1 && node.tokenId === TokenId.Dot;
 	};
+}
 
-	private static createNode = (natureAndPosition: RetokenizeGroovyAstNodeNatureAndPosition): GroovyAstNode => {
-		return new GroovyAstNode(natureAndPosition);
-	};
+export abstract class RetokenizeNodeWalker {
+	private readonly _position: { startOffset: number, startLine: number; startColumn: number };
+	private readonly _createdNodes: Array<GroovyAstNode> = [];
 
-	static createCharsNode = (text: string, position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 1): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({tokenId: TokenId.Chars, tokenType: TokenType.Chars, text, ...position})],
-			consumedNodeCount, text.length
-		];
-	};
-	static createUndeterminedCharsNode = (text: string, position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 1): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars, text, ...position
-			})],
-			consumedNodeCount, text.length
-		];
-	};
+	private readonly _compilationUnit: CompilationUnitNode;
+	private readonly _astRecognizer: AstRecognizer;
+	private readonly _nodes: Array<GroovyAstNode>;
 
-	static createAddNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 0): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.Add, tokenType: TokenType.Operator, text: AstOperators.Add, ...position
-			})],
-			consumedNodeCount, 1
-		];
-	};
+	private _inAirText: string;
+	private _currentNodeIndex = -1;
+	private _currentNode: Optional<GroovyAstNode> = (void 0);
+	private _consumedNodeCount = 0;
 
-	static createSubtractNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 0): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.Subtract, tokenType: TokenType.Operator, text: AstOperators.Subtract, ...position
-			})],
-			consumedNodeCount, 1
-		];
-	};
+	constructor(inAirText: string, recognition: RetokenizeAstRecognition) {
+		const {
+			node, nodeIndex, nodes, compilationUnit, astRecognizer,
+			startOffset, startLine, startColumn
+		} = recognition;
 
-	static createDivideNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 0): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.Divide, tokenType: TokenType.Operator, text: AstOperators.Divide, ...position
-			})],
-			consumedNodeCount, 1
-		];
-	};
+		this._compilationUnit = compilationUnit;
+		this._astRecognizer = astRecognizer;
+		this._nodes = nodes;
 
-	static createDivideAssignNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 1): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.DivideAssign, tokenType: TokenType.Operator, text: AstOperators.DivideAssign,
-				...position
-			})],
-			consumedNodeCount, 2
-		];
-	};
+		this._inAirText = inAirText ?? '';
+		this._currentNodeIndex = nodeIndex;
+		this._currentNode = node;
 
-	static createMultipleNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 0): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.Multiple, tokenType: TokenType.Operator, text: AstOperators.Multiple, ...position
-			})],
-			consumedNodeCount, 1
-		];
-	};
+		this._position = {startOffset, startLine, startColumn};
+	}
 
-	static createBackslashNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 1): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.UndeterminedChars, tokenType: TokenType.UndeterminedChars, text: AstChars.Backslash,
-				...position
-			})],
-			consumedNodeCount, 1
-		];
-	};
+	get currentNode(): Optional<GroovyAstNode> {
+		return this._currentNode;
+	}
 
-	private static createSLCommentStartMarkNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 1): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.SingleLineCommentStartMark, tokenType: TokenType.Mark, text: AstMarks.SLCommentStart,
-				...position
-			})],
-			consumedNodeCount, 2
-		];
-	};
+	get currentPosition(): { startOffset: number, startLine: number; startColumn: number } {
+		return this._position;
+	}
 
-	private static createMlCommentStartMarkNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 1): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.MultipleLinesCommentStartMark, tokenType: TokenType.Mark,
-				text: AstMarks.MLCommentStart,
-				...position
-			})],
-			consumedNodeCount, 2
-		];
-	};
+	get hasAvailableNode(): boolean {
+		return this._createdNodes != null;
+	}
 
-	static createGStringInterpolationStartMarkNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 1): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.GStringInterpolationStartMark, tokenType: TokenType.Mark,
-				text: AstLiterals.GStringInterpolationStartMark,
-				...position
-			})],
-			consumedNodeCount, 1
-		];
-	};
+	get inAirText(): string {
+		return this._inAirText;
+	}
 
-	static createSlashyGStringQuotationMarkNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 1): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.SlashyGStringQuotationMark, tokenType: TokenType.Mark,
-				text: AstLiterals.SlashyGStringQuotationMark,
-				...position
-			})],
-			consumedNodeCount, 1
-		];
-	};
+	appendToInAirText(moreText?: string): this {
+		if (moreText != null) {
+			this._inAirText = (this._inAirText ?? '') + moreText;
+		}
+		return this;
+	}
 
-	private static createDollarSlashyGStringEndMarkNode: RetokenizeHeadNodesWithOptionalAppointedConsumedNodeCount = (position: RetokenizeGroovyAstNodePosition, consumedNodeCount = 1): RetokenizedHeadNodes => {
-		return [
-			[RecognizeCommonUtils.createNode({
-				tokenId: TokenId.DollarSlashyGStringQuotationEndMark, tokenType: TokenType.Mark,
-				text: AstLiterals.DollarSlashyGStringQuotationEndMark,
-				...position
-			})],
-			consumedNodeCount, 2
-		];
-	};
+	setInAirText(text: string): this {
+		this._inAirText = text;
+		return this;
+	}
 
-	static createIdentifierNode = (text: string, position: RetokenizeGroovyAstNodePosition): GroovyAstNode => {
-		return RecognizeCommonUtils.createNode({
-			tokenId: TokenId.Identifier, tokenType: TokenType.Identifier, text, ...position
+	clearInAirText(): this {
+		this._inAirText = '';
+		return this;
+	}
+
+	/**
+	 * create node and push to create nodes array.
+	 * move offset and column to end of created node, keep line.
+	 * note the in-air text will not change no matter it is used or not.
+	 *
+	 * @param tokenId
+	 * @param tokenType
+	 * @param text use in-air text if text is ignored
+	 */
+	createNode(tokenId: TokenId, tokenType: TokenType, text?: string): this {
+		text = text ?? this._inAirText;
+		const node = GroovyAstNode.createAstNode({tokenId, tokenType, text, ...this._position});
+		this._createdNodes.push(node);
+		const length = text.length;
+		this._position.startOffset += length;
+		this._position.startColumn += length;
+		return this;
+	}
+
+	Backslash(): this {
+		return this.createNode(TokenId.UndeterminedChars, TokenType.UndeterminedChars, '\\');
+	}
+
+	Identifier(moreText?: string): this {
+		return this
+			.appendToInAirText(moreText)
+			.createNode(TokenId.Identifier, TokenType.Identifier)
+			// clear identifier text
+			.clearInAirText();
+	}
+
+	NumericBasePart(numericText: string): this {
+		return this.createNode(TokenId.NumericBasePart, TokenType.NumberLiteral, numericText);
+	}
+
+	/**
+	 * create a chars token node, and append to created nodes array
+	 */
+	chars(chars: string): this {
+		return this.createNode(TokenId.Chars, TokenType.Chars, chars);
+	}
+
+	andUse(retokenize: Retokenize): this {
+		const [newNodes, consumedNodeCount] = retokenize({
+			node: this._nodes[this._currentNodeIndex], nodeIndex: this._currentNodeIndex, nodes: this._nodes,
+			compilationUnit: this._compilationUnit, astRecognizer: this._astRecognizer,
+			...this.currentPosition
 		});
-	};
+		this._createdNodes.push(...newNodes);
+		this._consumedNodeCount += consumedNodeCount;
+		return this;
+	}
 
-	static buildCreateIdentifierNode = (text: string, consumedNodeCount = 0): RetokenizeHeadNodes => {
-		return (position: RetokenizeGroovyAstNodePosition): RetokenizedHeadNodes => {
-			return [[RecognizeCommonUtils.createIdentifierNode(text, position)], consumedNodeCount, 1];
-		};
-	};
+	/**
+	 * move to next node, and consume node count plus 1
+	 */
+	consumeNode(): this {
+		// move to next
+		this._currentNodeIndex += 1;
+		this._currentNode = this._nodes[this._currentNodeIndex];
+		// accumulate count
+		this._consumedNodeCount += 1;
+		return this;
+	}
 
-	static createNumericBasePartNode = (text: string, position: RetokenizeGroovyAstNodePosition): GroovyAstNode => {
-		return RecognizeCommonUtils.createNode({
-			tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral, text, ...position
-		});
-	};
+	/**
+	 * append text of current node to in-air text
+	 * move to next node, and consume node count plus 1.
+	 */
+	consumeNodeAndText(): this {
+		// accumulate text
+		this._inAirText = this._inAirText + this._currentNode.text;
+		this.consumeNode();
+		return this;
+	}
 
-	static retokenize = (recognition: RetokenizeAstRecognition, retokenizeHead: RetokenizeHeadNodes, retokenizeRest?: RetokenizeRestNodes): RetokenizedRestNodes => {
-		const {startOffset, startLine, startColumn} = recognition;
-		const [
-			headNodes, consumedNodeCountForRetokenizeHead, consumedCharCountForRetokenizeHead
-		] = retokenizeHead({startOffset, startLine, startColumn});
+	protected abstract finalizeNodeOnInAirText(): this;
 
-		if (retokenizeRest == null) {
-			return [headNodes, consumedNodeCountForRetokenizeHead];
+	finalize(): RetokenizedNodes {
+		if (this._inAirText != null && this._inAirText.length !== 0) {
+			this.finalizeNodeOnInAirText();
 		}
-
-		const {nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
-		const [restNodes, consumedNodeCountForRetokenizeRest] = retokenizeRest({
-			node: nodes[nodeIndex + consumedNodeCountForRetokenizeHead],
-			nodeIndex: nodeIndex + consumedNodeCountForRetokenizeHead,
-			nodes, compilationUnit, astRecognizer,
-			startOffset: startOffset + consumedCharCountForRetokenizeHead,
-			startLine: startLine,
-			startColumn: startColumn + consumedCharCountForRetokenizeHead
-		});
-		return [[...headNodes, ...restNodes], consumedNodeCountForRetokenizeHead + consumedNodeCountForRetokenizeRest];
-	};
-
-	/**
-	 * retokenize tokens with a / as headed char.
-	 */
-	static retokenizeWithDivideHeadedNSL: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		const {node} = recognition;
-
-		// to find the node which can be combined with the beginning divide
-		if (node == null) {
-			// TODO need check the previous node?
-			return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDivideNode);
-		}
-
-		// token starts with /: //, /*, /$, /=
-		switch (node.tokenId) {
-			// -> //, and an optional part
-			case TokenId.SlashyGStringQuotationMark: // not created at tokenize phase, actually never happen
-			case TokenId.Divide: // -> //
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createSLCommentStartMarkNode);
-			case TokenId.DollarSlashyGStringQuotationEndMark: // -> // + $
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createSLCommentStartMarkNode, RecognizeCommonUtils.retokenizeWithDollarHeadedNSL);
-			case TokenId.DivideAssign: // -> // + =
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createSLCommentStartMarkNode, RecognizeCommonUtils.retokenizeWithAssignHeaded);
-			case TokenId.SingleLineCommentStartMark: // -> // + /
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createSLCommentStartMarkNode, RecognizeCommonUtils.retokenizeWithDivideHeadedNSL);
-			case TokenId.MultipleLinesCommentStartMark: // -> // + *
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createSLCommentStartMarkNode, RecognizeCommonUtils.retokenizeWithMultipleHeaded);
-			// -> /*, and an optional part
-			case TokenId.SpreadDot: // -> /* + .
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createMlCommentStartMarkNode, RecognizeCommonUtils.retokenizeWithDotHeaded);
-			case TokenId.Power: // -> /* + *
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createMlCommentStartMarkNode, RecognizeCommonUtils.retokenizeWithMultipleHeaded);
-			case TokenId.PowerAssign: // -> /* + *=
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createMlCommentStartMarkNode, RecognizeCommonUtils.retokenizeWithMultipleAssignHeaded);
-			case TokenId.Multiple: // -> /*
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createMlCommentStartMarkNode);
-			case TokenId.MultipleAssign: // -> /* + =
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createMlCommentStartMarkNode, RecognizeCommonUtils.retokenizeWithAssignHeaded);
-			case TokenId.MultipleLinesCommentEndMark: // -> /* + /
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createMlCommentStartMarkNode, RecognizeCommonUtils.retokenizeWithDivideHeadedNSL);
-			// -> /$, and an optional part
-			case TokenId.DollarSlashyGStringQuotationStartMark: // -> /$ + /
-				// TODO need check the previous node?
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDollarSlashyGStringEndMarkNode, RecognizeCommonUtils.retokenizeWithDivideHeadedNSL);
-			case TokenId.DollarSlashyGStringDollarEscape: // -> /$ + $
-				// TODO need check the previous node?
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDollarSlashyGStringEndMarkNode, RecognizeCommonUtils.retokenizeWithDollarHeadedNSL);
-			case TokenId.GStringInterpolationLBraceStartMark: // /$ + {
-				// TODO need check the previous node?
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDollarSlashyGStringEndMarkNode, RecognizeCommonUtils.retokenizeWithLBraceHeaded);
-			case TokenId.Identifier: { // check the start char, if it is $, then -> /$ + ... (optional)
-				// TODO need check the previous node?
-				const identifierText = node.text;
-				if (!identifierText.startsWith(AstLiterals.GStringInterpolationStartMark)) {
-					return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDivideNode);
-				} else if (identifierText.length === 1) {
-					return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDollarSlashyGStringEndMarkNode);
-				} else {
-					return RecognizeCommonUtils.retokenize(recognition,
-						RecognizeCommonUtils.createDollarSlashyGStringEndMarkNode,
-						(recognition) => RecognizeCommonUtils.retokenizeWithMightBeIdentifiableTextHeadedNSL(identifierText.slice(1), recognition));
-				}
-			}
-			// -> /=, and an optional part
-			case TokenId.Assign: // -> /=
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDivideAssignNode);
-			case TokenId.Equal: // -> /= + =
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDivideAssignNode, RecognizeCommonUtils.retokenizeWithAssignHeaded);
-			case TokenId.Identical: // -> /= + ==
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDivideAssignNode, RecognizeCommonUtils.retokenizeWithEqualHeaded);
-			case TokenId.RegexFind: // -> /= + ~
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDivideAssignNode, RecognizeCommonUtils.retokenizeWithBitnotHeaded);
-			case TokenId.RegexMatch: // -> /= + =~
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDivideAssignNode, RecognizeCommonUtils.retokenizeWithRegexFindHeaded);
-			default: // cannot combine with the beginning /
-				return RecognizeCommonUtils.retokenize(recognition, RecognizeCommonUtils.createDivideNode);
-		}
-	};
-
-	/**
-	 * retokenize tokens with a { as headed char.
-	 */
-	static retokenizeWithLBraceHeaded: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		const {startOffset, startLine, startColumn} = recognition;
-		return [
-			[new GroovyAstNode({
-				tokenId: TokenId.LBrace, tokenType: TokenType.Separator, text: AstChars.LBrace,
-				startOffset, startLine, startColumn
-			})],
-			0
-		];
-	};
-
-	/**
-	 * retokenize tokens with a \ as headed char.
-	 */
-	static retokenizeWithBackslashHeadedSGL: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithBackslashHeadedSGL not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with a $ as headed char.
-	 */
-	static retokenizeWithDollarHeadedNSL: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithDollarHeadedNSL not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with an ' as headed char.
-	 */
-	static retokenizeWithSingleQuoteHeaded: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithSingleQuoteHeaded not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with an ' as headed char.
-	 */
-	static retokenizeWithDoubleQuoteHeaded: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithDoubleQuoteHeaded not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with a = as headed char.
-	 */
-	static retokenizeWithAssignHeaded: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithAssignHeaded not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with a * as headed char.
-	 */
-	static retokenizeWithMultipleHeaded: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithMultipleHeaded not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with a *= as headed chars.
-	 */
-	static retokenizeWithMultipleAssignHeaded: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithMultipleAssignHeaded not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with a . as headed char.
-	 */
-	static retokenizeWithDotHeaded: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithDotHeaded not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with a == as headed chars.
-	 */
-	static retokenizeWithEqualHeaded: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithEqualHeaded not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with a ~ as headed char.
-	 */
-	static retokenizeWithBitnotHeaded: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithBitnotHeaded not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with a =~ as headed chars.
-	 */
-	static retokenizeWithRegexFindHeaded: RetokenizeRestNodes = (recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithRegexFindHeaded not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with an identifiable text as headed char(s).
-	 * works only when parent is not any string literal
-	 */
-	static retokenizeWithIdentifiableTextHeadedNSL = (identifiableText: string, recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		const {node, nodeIndex, nodes, startOffset, startLine, startColumn} = recognition;
-
-		let identifierPosition = {startOffset, startLine, startColumn};
-
-		// to find the node which can be combined with the beginning divide
-		if (node == null) {
-			return [[RecognizeCommonUtils.createIdentifierNode(identifiableText, identifierPosition)], 0];
-		}
-
-		let text = identifiableText;
-		let consumeNodeIndex = nodeIndex;
-		let consumeNode = node;
-
-		let createdNodes: Array<GroovyAstNode> = [];
-		let consumedNodeCount = 0;
-
-		while (consumeNode != null) {
-			if ([TokenType.Identifier, TokenType.Keyword, TokenType.BooleanLiteral].includes(consumeNode.tokenType)
-				|| [TokenId.IN, TokenId.INSTANCEOF].includes(consumeNode.tokenId)) {
-				// combine with given identifier text, continue
-				consumeNodeIndex += 1;
-				consumedNodeCount += 1;
-
-				// accumulate text, and move to next node
-				text += consumeNode.text;
-				consumeNode = nodes[consumeNodeIndex];
-			} else if (TokenId.NumericBasePart === consumeNode.tokenId) {
-				const nodeText = consumeNode.text;
-				const dotIndex = nodeText.indexOf(AstChars.Dot);
-				if (dotIndex === 0) {
-					// dot is first char, cannot combine with given identifier text
-					createdNodes.push(RecognizeCommonUtils.createIdentifierNode(text, identifierPosition));
-					break;
-				}
-
-				consumeNodeIndex += 1;
-				consumedNodeCount += 1;
-
-				if (dotIndex !== -1) {
-					// dot is not first char, and according to the capture logic, dot will not be the last char
-					const textBeforeDot = nodeText.slice(0, dotIndex);
-					text += textBeforeDot;
-					const movement = text.length;
-					createdNodes.push(
-						RecognizeCommonUtils.createIdentifierNode(text, identifierPosition),
-						RecognizeCommonUtils.createNumericBasePartNode(nodeText.slice(dotIndex), {
-							startOffset: identifierPosition.startOffset + movement,
-							startLine: identifierPosition.startLine,
-							startColumn: identifierPosition.startColumn + movement
-						})
-					);
-					break;
-				} else {
-					let exponentSignIndex = nodeText.indexOf(AstOperators.Add);
-					if (exponentSignIndex === -1) {
-						exponentSignIndex = nodeText.indexOf(AstOperators.Subtract);
-					}
-					if (exponentSignIndex === -1) {
-						// no dot, no exponent sign, combine with given identifier text
-						// accumulate text, and move to next node
-						text += consumeNode.text;
-						consumeNode = nodes[consumeNodeIndex];
-					} else {
-						const textBeforeExponentSign = nodeText.slice(0, exponentSignIndex);
-						text += textBeforeExponentSign;
-						const exponentSign = nodeText.slice(exponentSignIndex, exponentSignIndex + 1);
-						const operatorTokenId = exponentSign === AstOperators.Add ? TokenId.Add : TokenId.Subtract;
-						const movement = textBeforeExponentSign.length;
-						// identifier, add/subtract, numeric base part,
-						createdNodes.push(
-							RecognizeCommonUtils.createIdentifierNode(text, identifierPosition),
-							RecognizeCommonUtils.createNode({
-								tokenId: operatorTokenId, tokenType: TokenType.Operator, text: exponentSign,
-								startOffset: identifierPosition.startOffset + movement,
-								startLine: identifierPosition.startLine,
-								startColumn: identifierPosition.startColumn + movement
-							})
-						);
-						// check has number suffix or not
-						const lastChar = nodeText[nodeText.length - 1];
-						const lastCharCodePoint = lastChar.codePointAt(0);
-						// 0 -> 48, 9 -> 57
-						if (lastCharCodePoint < 48 || lastCharCodePoint > 57) {
-							// it is suffix char, -> identifier, add/subtract, numeric base part, and a suffix char
-							const numericText = nodeText.slice(exponentSignIndex + 1, nodeText.length - 1);
-							createdNodes.push(RecognizeCommonUtils.createNumericBasePartNode(numericText, {
-								startOffset: identifierPosition.startOffset + movement + 1,
-								startLine: identifierPosition.startLine,
-								startColumn: identifierPosition.startColumn + movement + 1
-							}));
-							// reset identifier text and position, and move to next node
-							text = lastChar;
-							identifierPosition = {
-								startOffset: identifierPosition.startOffset + movement + 1 + numericText.length,
-								startLine: identifierPosition.startLine,
-								startColumn: identifierPosition.startColumn + movement + 1 + numericText.length
-							};
-							consumeNode = nodes[consumeNodeIndex];
-						} else {
-							// no suffix char, -> identifier, add/subtract, numeric base part
-							createdNodes.push(RecognizeCommonUtils.createNumericBasePartNode(nodeText.slice(exponentSignIndex + 1), {
-								startOffset: identifierPosition.startOffset + movement + 1,
-								startLine: identifierPosition.startLine,
-								startColumn: identifierPosition.startColumn + movement + 1
-							}));
-							break;
-						}
-					}
-				}
-			} else {
-				// cannot combine with given identifier text
-				createdNodes.push(RecognizeCommonUtils.createIdentifierNode(text, identifierPosition));
-				break;
-			}
-
-			// no node following
-			if (consumeNode == null) {
-				createdNodes.push(RecognizeCommonUtils.createIdentifierNode(text, identifierPosition));
-				break;
-			}
-		}
-		return [createdNodes, consumedNodeCount];
-	};
-
-	/**
-	 * retokenize tokens with a might be identifiable text as headed char(s).
-	 */
-	static retokenizeWithMightBeIdentifiableTextHeadedNSL = (mightBeIdentifiableText: string, recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithMightBeIdentifiableTextHeadedNSL not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with an octal content (0-7, 00-77, 000-777) text as headed char(s).
-	 */
-	static retokenizeWithOctalContentHeaded = (octalContent: string, recognition: RetokenizeAstRecognition): RetokenizedRestNodes => {
-		throw 'retokenizeWithOctalContentHeaded not supported yet'; // TODO Not supported yet
-	};
+		return [this._createdNodes, this._consumedNodeCount];
+	}
 }

@@ -45,7 +45,7 @@ export class MultipleLinesCommentPointcuts {
 			case TokenId.MultipleAssign: {
 				// *=, split to * and =
 				lastChildNode.replaceTokenNatureAndText(TokenId.MultipleLinesCommentsHeadAsterisks, TokenType.Chars, AstOperators.Multiple);
-				const splitNode = new GroovyAstNode({
+				const splitNode = GroovyAstNode.createAstNode({
 					tokenId: TokenId.Assign, tokenType: TokenType.Operator,
 					text: AstOperators.Assign, startOffset: lastChildNode.startOffset + 1,
 					startLine, startColumn: lastChildNode.startColumn + 1
@@ -56,7 +56,7 @@ export class MultipleLinesCommentPointcuts {
 			case TokenId.PowerAssign: {
 				// **=, split to ** and =
 				lastChildNode.replaceTokenNatureAndText(TokenId.MultipleLinesCommentsHeadAsterisks, TokenType.Chars, AstOperators.Power);
-				const splitNode = new GroovyAstNode({
+				const splitNode = GroovyAstNode.createAstNode({
 					tokenId: TokenId.Assign, tokenType: TokenType.Operator,
 					text: AstOperators.Assign, startOffset: lastChildNode.startOffset + 1,
 					startLine, startColumn: lastChildNode.startColumn + 1

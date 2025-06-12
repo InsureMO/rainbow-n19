@@ -1,9 +1,8 @@
 import {Optional} from '@rainbow-n19/n3-ast';
-import {AstLiterals, AstOperators} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
-import {RecognizeCommonUtils} from './recognizer-common';
+import {NSLRecognizeUtils} from './recognizer-not-any-string-literal';
 
 export class MultipleLinesCommentRecognizeUtils {
 	// noinspection JSUnusedLocalSymbols
@@ -19,18 +18,22 @@ export class MultipleLinesCommentRecognizeUtils {
 	 *
 	 * NSL: When Parent Is Not Any String Literal,
 	 * SGL: When Parent Is Slashy GString Literal.
+	 *
+	 * @ok 20250611
 	 */
 	static splitStartMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, nodes} = recognition;
+		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
-		const [newNodes, consumedNodeCount] = RecognizeCommonUtils.retokenize({
-				...recognition,
-				startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
-			},
-			RecognizeCommonUtils.createSlashyGStringQuotationMarkNode,
-			RecognizeCommonUtils.retokenizeWithMultipleHeaded);
-		// replace the original nodes
-		nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
+		// replace node with /
+		node.replaceTokenNatureAndText(TokenId.SlashyGStringQuotationMark, TokenType.Mark, '/');
+		// retokenize with the 2nd *
+		const [newNodes, consumedNodeCount] = NSLRecognizeUtils.retokenizeWithMultipleHeadedNSL({
+			node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1, nodes,
+			compilationUnit, astRecognizer,
+			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
+		});
+		// replace the consumed nodes and insert new node
+		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
 	};
 
@@ -41,14 +44,17 @@ export class MultipleLinesCommentRecognizeUtils {
 	 * works only in slashy gstring literal.
 	 *
 	 * SGL: When Parent Is Slashy GString Literal.
+	 *
+	 * @ok 20250611
 	 */
 	static splitEndMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
-		// replace the original nodes
-		node.replaceTokenNatureAndText(TokenId.Multiple, TokenType.Operator, AstOperators.Multiple);
-		nodes.splice(nodeIndex + 1, 0, new GroovyAstNode({
-			tokenId: TokenId.SlashyGStringQuotationMark, tokenType: TokenType.Mark,
-			text: AstLiterals.SlashyGStringQuotationMark,
+		// replace node with *
+		node.replaceTokenNatureAndText(TokenId.Multiple, TokenType.Operator, '*');
+		// treated the 2nd / as slashy gstring quotation mark
+		// insert new node
+		nodes.splice(nodeIndex + 1, 0, GroovyAstNode.createAstNode({
+			tokenId: TokenId.SlashyGStringQuotationMark, tokenType: TokenType.Mark, text: '/',
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
 		}));
 		return nodeIndex;

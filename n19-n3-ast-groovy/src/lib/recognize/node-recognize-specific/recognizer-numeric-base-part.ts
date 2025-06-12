@@ -123,7 +123,7 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 	protected appendLiteralNode(recognition: AstRecognition, tokenId: TokenId): GroovyAstNode {
 		const {node, astRecognizer} = recognition;
 
-		const literalNode = new GroovyAstNode({
+		const literalNode = GroovyAstNode.createAstNode({
 			tokenId, tokenType: TokenType.NumberLiteral,
 			text: '', startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
@@ -136,7 +136,7 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 	protected appendMarkPart(recognition: AstRecognition, literalNode: GroovyAstNode, tokenId: TokenId, mark: string): GroovyAstNode {
 		const {node} = recognition;
 
-		const markNode = new GroovyAstNode({
+		const markNode = GroovyAstNode.createAstNode({
 			tokenId: tokenId, tokenType: TokenType.Mark,
 			text: mark, startOffset: node.startOffset,
 			startLine: node.startLine, startColumn: node.startColumn
@@ -152,7 +152,7 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 		if (groups.integral.length > 0) {
 			const text = startIndex === 0 ? groups.integral.join('') : groups.integral.slice(startIndex).join('');
 
-			const integralNode = new GroovyAstNode({
+			const integralNode = GroovyAstNode.createAstNode({
 				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
 				text, startOffset: node.startOffset + offset,
 				startLine: node.startLine, startColumn: node.startColumn + offset
@@ -171,7 +171,7 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 
 		if (groups.suffix != null) {
 			const distance = text.length - 1;
-			const suffixNode = new GroovyAstNode({
+			const suffixNode = GroovyAstNode.createAstNode({
 				tokenId: TokenId.NumericSuffixPart, tokenType: TokenType.Mark,
 				text: groups.suffix, startOffset: node.startOffset + distance,
 				startLine: node.startLine, startColumn: node.startColumn + distance
@@ -229,7 +229,7 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 
 		// dot
 		if (groups.dot) {
-			const dotNode = new GroovyAstNode({
+			const dotNode = GroovyAstNode.createAstNode({
 				tokenId: TokenId.Dot, tokenType: TokenType.Mark,
 				text: '.', startOffset: node.startOffset + offset,
 				startLine: node.startLine, startColumn: node.startColumn + offset
@@ -240,7 +240,7 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 
 		// fraction part, optional
 		if (groups.fraction.length > 0) {
-			const fractionNode = new GroovyAstNode({
+			const fractionNode = GroovyAstNode.createAstNode({
 				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
 				text: groups.fraction.join(''), startOffset: node.startOffset + offset,
 				startLine: node.startLine, startColumn: node.startColumn + offset
@@ -251,7 +251,7 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 
 		// exponent part, optional
 		if (groups.exponent != null) {
-			const markNode = new GroovyAstNode({
+			const markNode = GroovyAstNode.createAstNode({
 				tokenId: TokenId.DecimalExponentMark, tokenType: TokenType.Mark,
 				text: groups.exponent, startOffset: node.startOffset + offset,
 				startLine: node.startLine, startColumn: node.startColumn + offset
@@ -260,7 +260,7 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 			offset += 1;
 
 			if (groups.exponentSign != null) {
-				const signNode = new GroovyAstNode({
+				const signNode = GroovyAstNode.createAstNode({
 					tokenId: TokenId.NumericSignPart, tokenType: TokenType.Mark,
 					text: groups.exponentSign, startOffset: node.startOffset + offset,
 					startLine: node.startLine, startColumn: node.startColumn + offset
@@ -269,7 +269,7 @@ export abstract class NumericBasePartRecognizer extends AbstractNodeRecognizer {
 				offset += 1;
 			}
 
-			const numericNode = new GroovyAstNode({
+			const numericNode = GroovyAstNode.createAstNode({
 				tokenId: TokenId.NumericBasePart, tokenType: TokenType.NumberLiteral,
 				text: groups.exponentNumeric.join(''), startOffset: node.startOffset + offset,
 				startLine: node.startLine, startColumn: node.startColumn + offset

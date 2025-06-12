@@ -53,7 +53,7 @@ export abstract class AbstractNodeRecognizer implements NodeRecognizer {
 
 	private createDeclaredParentNode(givenNode: GroovyAstNode, declaration: NodeAsParentDeclaration): GroovyAstNode {
 		const [tokenId, tokenType, pointcut] = declaration;
-		const parentNode = new GroovyAstNode({
+		const parentNode = GroovyAstNode.createAstNode({
 			tokenId, tokenType,
 			text: '', startOffset: givenNode.startOffset,
 			startLine: givenNode.startLine, startColumn: givenNode.startColumn

@@ -26,12 +26,12 @@ export class NodeRehydration {
 		const {startOffset, startLine, startColumn} = node;
 		node.replaceTokenNatureAndText(TokenId.Identifier, TokenType.Identifier, 'non');
 		astRecognizer.appendAsLeaf(node, true);
-		const node2 = new GroovyAstNode({
+		const node2 = GroovyAstNode.createAstNode({
 			tokenId: TokenId.Subtract, tokenType: TokenType.Operator,
 			text: AstOperators.Subtract, startOffset: startOffset + 3,
 			startLine, startColumn: startColumn + 3
 		});
-		const node3 = new GroovyAstNode({
+		const node3 = GroovyAstNode.createAstNode({
 			tokenId: TokenId.Identifier, tokenType: TokenType.Identifier,
 			text: AstKeywords.Sealed, startOffset: startOffset + 4,
 			startLine, startColumn: startColumn + 4
@@ -187,6 +187,23 @@ export class NodeRehydration {
 			return (void 0);
 		};
 	};
+	static buildRehydrateTokenToWhenParentTokenTypeIsNot = (parentTokenType: TokenType, to: TokenId | [TokenId, TokenType]): NodeRehydrateFunc => {
+		return (recognition: AstRecognition): Optional<number> => {
+			const {node, nodeIndex, astRecognizer} = recognition;
+
+			const currentParent = astRecognizer.getCurrentParent();
+			if (parentTokenType === currentParent.tokenType) {
+				return (void 0);
+			}
+
+			if (Array.isArray(to)) {
+				node.replaceTokenNature(to[0], to [1]);
+			} else {
+				node.replaceTokenNature(to, node.tokenType);
+			}
+			return nodeIndex;
+		};
+	};
 	static buildRehydrateTokenUseFuncWhenParentTokenTypeIsNot = (parentTokenType: TokenType, func: NodeRehydrateFunc): NodeRehydrateFunc => {
 		return (recognition: AstRecognition): Optional<number> => {
 			const {astRecognizer} = recognition;
@@ -258,6 +275,10 @@ export const buildRehydrateFuncs = (items?: RecognizeBasisDef): Optional<Array<N
 				}
 				case RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenTypeIs: {
 					funcs.push(NodeRehydration.buildRehydrateTokenUseFuncWhenParentTokenTypeIs(item[1], item[2]));
+					break;
+				}
+				case RecognizeBasisType.RehydrateTokenToWhenParentTokenTypeIsNot: {
+					funcs.push(NodeRehydration.buildRehydrateTokenToWhenParentTokenTypeIsNot(item[1], item[2]));
 					break;
 				}
 				case RecognizeBasisType.RehydrateTokenUseFuncWhenParentTokenTypeIsNot: {
