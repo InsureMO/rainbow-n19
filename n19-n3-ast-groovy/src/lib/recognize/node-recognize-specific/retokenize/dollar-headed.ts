@@ -50,6 +50,7 @@ export const retokenizeWithDollarHeadedNSL = (recognition: RetokenizeAstRecognit
 
 /**
  * retokenize tokens with a $ as headed char.
+ * the $ is interpolation start mark, always. difference is followed or not followed by {.
  *
  * @ok 20250613
  */
@@ -67,6 +68,8 @@ export const retokenizeWithDollarHeadedGL = (recognition: RetokenizeAstRecogniti
 };
 /**
  * retokenize tokens with a $ as headed char.
+ * $..., the ... part must be an identifier.
+ * or ${...}
  *
  * @ok 20250613
  */
@@ -100,6 +103,8 @@ export const retokenizeWithDollarHeadedSGL = (recognition: RetokenizeAstRecognit
 
 /**
  * retokenize tokens with a $ as headed char.
+ *
+ * @ok 20250613
  */
 export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('$', recognition);
