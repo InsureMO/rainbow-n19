@@ -784,8 +784,9 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	// chars
 	[TokenId.Identifier]: [
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars])
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// TODO, when in any gstring literal, check $
+		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
 	],
 	// will not rehydrate under 4 tokens
 	[TokenId.Whitespaces]: 'NotRequired',

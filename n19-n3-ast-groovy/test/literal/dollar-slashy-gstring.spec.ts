@@ -6,7 +6,7 @@ describe('Dollar Slashy GString test', () => {
 		GroovyAstBuilder.enableTimeSpentLog();
 	});
 
-	test('GString literal #1', async () => {
+	test('Dollar Slashy GString literal #1', async () => {
 		const text = '$/';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
@@ -17,7 +17,7 @@ describe('Dollar Slashy GString test', () => {
 			]
 		]);
 	});
-	test('GString literal #2', async () => {
+	test('Dollar Slashy GString literal #2', async () => {
 		const text = '$//$';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
@@ -29,7 +29,7 @@ describe('Dollar Slashy GString test', () => {
 			]
 		]);
 	});
-	test('GString literal #3', async () => {
+	test('Dollar Slashy GString literal #3', async () => {
 		const text = '$/\\b\\f\\n\\r\\t\\babc\\fin\\n0x15afg\\r0.348e2f\\t126e+5g\\b0x15afgabc\\u123\\uaef8abc/$\\uaef8abc';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
