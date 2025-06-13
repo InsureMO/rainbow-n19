@@ -147,7 +147,7 @@ export class AstTokenizer {
 		captor.visit(char, this._cursor, this);
 	}
 
-	printDefs(): void {
-		this._captorSelector.printDefs();
+	printDefs(markdown: boolean = false): void {
+		this._captorSelector.printDefs(markdown);
 	}
 }

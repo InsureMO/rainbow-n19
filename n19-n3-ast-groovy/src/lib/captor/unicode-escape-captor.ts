@@ -1,7 +1,7 @@
 import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
 import {AstTokenizer} from './ast-tokenizer';
-import {AstNodeCaptorCheckers} from './captor';
+import {AstNodeCaptorCheckers, AstNodeCaptorDescription} from './captor';
 import {isHexadecimalNumeric} from './captor-func-checkers';
 import {Char} from './types';
 
@@ -30,5 +30,14 @@ export class LtUnicodeEscapeCaptor extends AbstractAstNodeCaptor {
 			tokenId: TokenId.StringUnicodeEscape, tokenType: TokenType.Mark, text, startOffset: offset
 		});
 		tokenizer.moveCursorTo(offset + 6);
+	}
+
+	describe(): AstNodeCaptorDescription {
+		return {
+			text: '`\\u....`',
+			tokenId: TokenId.StringUnicodeEscape,
+			tokenType: TokenType.Mark,
+			rule: 'Starts with `\\u`, and the following four characters are all in the range of `0-9a-fA-F`.'
+		};
 	}
 }

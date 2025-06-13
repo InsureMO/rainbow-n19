@@ -46,7 +46,7 @@ export class CaptorSelector {
 		return this._delegate.find(char, offset, char, this._tokenizer);
 	}
 
-	printDefs(): void {
-		this._delegate.print();
+	printDefs(markdown: boolean = false): void {
+		this._delegate.print(markdown);
 	}
 }

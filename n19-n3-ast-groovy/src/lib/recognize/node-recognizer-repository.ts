@@ -24,7 +24,7 @@ export class NodeRecognizerRepository {
 		return this._recognizers.get(node.tokenId);
 	}
 
-	printDefs(): void {
+	print(): void {
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 		const recognizerMap: Map<Function, NodeRecognizer> = new Map();
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
@@ -94,5 +94,17 @@ export class NodeRecognizerRepository {
 		printMap(hierarchyMap, []);
 
 		console.debug(buf.join('\n'));
+	}
+
+	printAsMarkdown(): void {
+		// TODO
+	}
+
+	printDefs(markdown: boolean = false): void {
+		if (markdown) {
+			this.printAsMarkdown();
+		} else {
+			this.print();
+		}
 	}
 }

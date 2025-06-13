@@ -1,7 +1,7 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode, GroovyAstNodeConstructOptions} from '../node';
 import {AstTokenizer} from './ast-tokenizer';
-import {AstNodeCaptor, AstNodeCaptorCheckers} from './captor';
+import {AstNodeCaptor, AstNodeCaptorCheckers, AstNodeCaptorDescription} from './captor';
 import {Char} from './types';
 
 export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
@@ -30,4 +30,6 @@ export abstract class AbstractAstNodeCaptor implements AstNodeCaptor {
 	abstract checkers(): AstNodeCaptorCheckers;
 
 	abstract visit(char: Char, offset: number, tokenizer: AstTokenizer): void;
+
+	abstract describe(): AstNodeCaptorDescription;
 }

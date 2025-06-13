@@ -1,7 +1,12 @@
 import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
 import {AstTokenizer} from './ast-tokenizer';
-import {AstNodeCaptorCharCheck, AstNodeCaptorCharsCheckers, AstNodeCaptorCheckers} from './captor';
+import {
+	AstNodeCaptorCharCheck,
+	AstNodeCaptorCharsCheckers,
+	AstNodeCaptorCheckers,
+	AstNodeCaptorDescription
+} from './captor';
 import {isNumeric} from './captor-func-checkers';
 import {Char} from './types';
 import {AstChars} from './util';
@@ -370,6 +375,15 @@ export abstract class AbstractLtNumericBasePartCaptorStartsWithNumber extends Ab
 			this.tryToVisitAsDecimalOrOctal(given, offsetOfGiven, tokenizer);
 		}
 	}
+	describe(): AstNodeCaptorDescription {
+		return {
+			text: `\`${this._numericChecker}...\``,
+			tokenId: TokenId.NumericBasePart,
+			tokenType: TokenType.NumberLiteral,
+			rule: `Groovy numeric, starts with \`${this._numericChecker}\`.`
+		};
+	}
+
 }
 
 export class LtNumericBasePartCaptorStartsWith0 extends AbstractLtNumericBasePartCaptorStartsWithNumber {
@@ -444,5 +458,14 @@ export class LtNumericBasePartCaptorStartsWithDot extends AbstractLtNumericBaseP
 
 	visit(given: Char, offsetOfGiven: number, tokenizer: AstTokenizer): void {
 		this.tryToVisitAsDecimalOrOctal(given, offsetOfGiven, tokenizer);
+	}
+
+	describe(): AstNodeCaptorDescription {
+		return {
+			text: '`....`',
+			tokenId: TokenId.NumericBasePart,
+			tokenType: TokenType.NumberLiteral,
+			rule: `Groovy decimal, starts with \`.\`.`
+		};
 	}
 }

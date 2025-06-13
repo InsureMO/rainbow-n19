@@ -1,7 +1,7 @@
 import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
 import {AstTokenizer} from './ast-tokenizer';
-import {AstNodeCaptorCheckers} from './captor';
+import {AstNodeCaptorCheckers, AstNodeCaptorDescription} from './captor';
 import {Char} from './types';
 
 /**
@@ -18,5 +18,14 @@ export class UndeterminedCharsCaptor extends AbstractAstNodeCaptor {
 			text: char, startOffset: offset
 		});
 		tokenizer.moveCursorTo(offset + 1);
+	}
+
+	describe(): AstNodeCaptorDescription {
+		return {
+			text: '`any`',
+			tokenId: TokenId.UndeterminedChars,
+			tokenType: TokenType.UndeterminedChars,
+			rule: 'Any char doesn\'t captured by any captor.'
+		};
 	}
 }

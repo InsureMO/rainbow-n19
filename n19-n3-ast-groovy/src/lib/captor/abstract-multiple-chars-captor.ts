@@ -1,7 +1,7 @@
 import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
 import {AstTokenizer} from './ast-tokenizer';
-import {AstNodeCaptorCheckers} from './captor';
+import {AstNodeCaptorCheckers, AstNodeCaptorDescription} from './captor';
 import {Char} from './types';
 
 export abstract class AbstractMultipleCharsCaptor extends AbstractAstNodeCaptor {
@@ -39,5 +39,15 @@ export abstract class AbstractMultipleCharsCaptor extends AbstractAstNodeCaptor 
 		const [tokenId, tokenType] = this.getTokenNature();
 		this.createAndAppendToAst(tokenizer, {tokenId, tokenType, text: this.chars, startOffset: offset});
 		tokenizer.moveCursorTo(offset + this.charsLength);
+	}
+
+	describe(): AstNodeCaptorDescription {
+		const [tokenId, tokenType] = this.getTokenNature();
+		return {
+			text: `\`${this._chars}\``,
+			tokenId,
+			tokenType,
+			rule: `Exactly match.`
+		};
 	}
 }

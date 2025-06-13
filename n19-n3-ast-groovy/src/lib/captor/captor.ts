@@ -1,3 +1,4 @@
+import {TokenId, TokenType} from '../tokens';
 import {AstTokenizer} from './ast-tokenizer';
 import {Char} from './types';
 
@@ -10,6 +11,13 @@ export type AstNodeCaptorCharChecker = AstNodeCaptorCharCheck | AstNodeCaptorCha
 export type AstNodeCaptorCharsChecker = Array<AstNodeCaptorCharChecker>;
 export type AstNodeCaptorCharsCheckers = Array<AstNodeCaptorCharChecker | AstNodeCaptorCharsChecker>;
 export type AstNodeCaptorCheckers = AstNodeCaptorCharChecker | AstNodeCaptorCharsChecker | AstNodeCaptorCharsCheckers;
+
+export interface AstNodeCaptorDescription {
+	text: string;
+	tokenId: TokenId;
+	tokenType: TokenType;
+	rule: string;
+}
 
 /**
  *  must be stateless
@@ -25,4 +33,6 @@ export interface AstNodeCaptor {
 	 * nodes visited should be appended to ast in this function
 	 */
 	visit(char: Char, offset: number, tokenizer: AstTokenizer): void;
+
+	describe(): AstNodeCaptorDescription;
 }

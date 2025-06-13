@@ -312,7 +312,7 @@ export class AstRecognizer {
 		}
 	}
 
-	printDefs(): void {
-		this._recognizerRepository.printDefs();
+	printDefs(markdown: boolean = false): void {
+		this._recognizerRepository.printDefs(markdown);
 	}
 }

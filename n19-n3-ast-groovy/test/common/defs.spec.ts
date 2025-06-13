@@ -2,7 +2,7 @@ import {GroovyAstBuilder, PointcutBasis, RecognizerBasis, TokenId} from '../../s
 
 describe('Ast defs test', () => {
 	test('Ast defs #1', async () => {
-		GroovyAstBuilder.printDefs();
+		GroovyAstBuilder.printDefs(true);
 
 		const missDefinedTokens = Object.keys(TokenId)
 			.filter(key => '0123456789'.includes(key[0]))
@@ -16,6 +16,7 @@ describe('Ast defs test', () => {
 			})
 			.filter(x => x != null)
 			.map(tokenId => TokenId[tokenId]);
+
 		console.log(missDefinedTokens);
 	});
 });

@@ -61,8 +61,8 @@ export class GroovyAstBuilder {
 		return GroovyAstBuilder._INSTANCE.ast(document, options);
 	}
 
-	static printDefs(): void {
-		new AstTokenizer(new GroovyAst('')).printDefs();
-		new AstRecognizer().printDefs();
+	static printDefs(markdown: boolean = false): void {
+		new AstTokenizer(new GroovyAst('')).printDefs(markdown);
+		new AstRecognizer().printDefs(markdown);
 	}
 }

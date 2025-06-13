@@ -1,7 +1,7 @@
 import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
 import {AstTokenizer} from './ast-tokenizer';
-import {AstNodeCaptorCheckers} from './captor';
+import {AstNodeCaptorCheckers, AstNodeCaptorDescription} from './captor';
 import {isOctalNumeric} from './captor-func-checkers';
 import {Char} from './types';
 
@@ -35,5 +35,14 @@ export class LtOctalEscapeCaptor extends AbstractAstNodeCaptor {
 			tokenId: TokenId.StringOctalEscape, tokenType: TokenType.Mark, text, startOffset: offsetOfGiven
 		});
 		tokenizer.moveCursorTo(offsetOfGiven + text.length);
+	}
+
+	describe(): AstNodeCaptorDescription {
+		return {
+			text: '`\\...`',
+			tokenId: TokenId.StringOctalEscape,
+			tokenType: TokenType.Mark,
+			rule: 'Starts with `\\`, and the following 0-3 characters are all in the range of `0-7`.'
+		};
 	}
 }

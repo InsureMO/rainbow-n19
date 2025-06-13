@@ -1,5 +1,5 @@
 import {AbstractMultipleCharsCaptor} from './abstract-multiple-chars-captor';
-import {AstNodeCaptorCheckers} from './captor';
+import {AstNodeCaptorCheckers, AstNodeCaptorDescription} from './captor';
 import {isNotJavaIdentifierPart} from './captor-func-checkers';
 
 export abstract class AbstractKeywordCaptor extends AbstractMultipleCharsCaptor {
@@ -16,5 +16,12 @@ export abstract class AbstractKeywordCaptor extends AbstractMultipleCharsCaptor 
 
 	checkers(): AstNodeCaptorCheckers {
 		return this._checker;
+	}
+
+	describe(): AstNodeCaptorDescription {
+		return {
+			...super.describe(),
+			rule: `Exactly match, and following char cannot be any of java identifier chars.`
+		};
 	}
 }

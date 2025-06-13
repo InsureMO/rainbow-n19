@@ -224,6 +224,9 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.Bitor]: 'TODO',
 	[TokenId.Xor]: 'TODO',
 	[TokenId.Mod]: 'TODO',
+	[TokenId.Lshift]: 'TODO',
+	[TokenId.Rshift]: 'TODO',
+	[TokenId.Urshift]: 'TODO',
 	[TokenId.AddAssign]: 'TODO',
 	[TokenId.SubtractAssign]: 'TODO',
 	[TokenId.MultipleAssign]: 'TODO',
@@ -776,9 +779,11 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.FLOAT]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	[TokenId.DOUBLE]: [RehydrateToIdentifierWhenAfterDotDirectly],
 	// chars
-	// TODO, when in string literal, and starts with $. actually, single $ is not a legal identifier
-	//  and if $ is not at start of identifier, might need to be split
-	[TokenId.Identifier]: 'TODO',
+	[TokenId.Identifier]: [
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars])
+		// TODO, when in any gstring literal, check $
+	],
 	[TokenId.Whitespaces]: 'NotRequired',
 	[TokenId.Tabs]: 'NotRequired',
 	[TokenId.NewLine]: 'NotRequired',

@@ -1,4 +1,5 @@
 import {AstUtils} from '../ast-utils';
+import {TokenId, TokenType} from '../tokens';
 import {AstTokenizer} from './ast-tokenizer';
 import {AstNodeCaptor, AstNodeCaptorCharChecker, AstNodeCaptorCharFuncCheck, AstNodeCaptorCharsChecker} from './captor';
 import {Character} from './character';
@@ -301,9 +302,42 @@ export class CaptorDelegate {
 		}
 	}
 
-	print(): void {
+	protected doPrintAsMarkdown(): Array<AstNodeCaptor> {
+		return [
+			...Object.keys(this._byCharMap).map(char => this._byCharMap[char]),
+			...this._byFunc.map(([, captorOrDelegate]) => captorOrDelegate),
+			this._fallback
+		]
+			.filter(x => x != null)
+			.map(captorOrDelegate => {
+				if (captorOrDelegate instanceof CaptorDelegate) {
+					return captorOrDelegate.doPrintAsMarkdown();
+				} else {
+					return captorOrDelegate;
+				}
+			}).flat();
+	}
+
+	print(markdown: boolean = false): void {
 		const buf: Array<string> = [];
-		this.doPrint(buf);
+		if (markdown) {
+			buf.push(
+				'| Token | Id | Type | Captor | Capture Rule |',
+				'|-------|----|------|--------|--------------|',
+				...this.doPrintAsMarkdown()
+					.map(captor => {
+						return {...captor.describe(), captorName: captor.constructor.name};
+					})
+					.sort(({tokenId: tokenId1}, {tokenId: tokenId2}) => {
+						return tokenId1 - tokenId2;
+					})
+					.map(({text, tokenId, tokenType, captorName, rule}) => {
+						return `| ${AstUtils.escapeForPrint(text).replace(/\|/g, '\\|')} | ${tokenId}, ${TokenId[tokenId]} | ${tokenType}, ${TokenType[tokenType]} | ${captorName} | ${AstUtils.escapeForPrint(rule)} |`;
+					})
+			);
+		} else {
+			this.doPrint(buf);
+		}
 		console.debug(buf.join('\n'));
 	}
 }

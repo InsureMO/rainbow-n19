@@ -1,5 +1,6 @@
 import {AbstractSingleCharCaptor} from './abstract-single-char-captor';
 import {AstTokenizer} from './ast-tokenizer';
+import {AstNodeCaptorDescription} from './captor';
 import {Char} from './types';
 
 /**
@@ -33,5 +34,15 @@ export abstract class AbstractSameCharsCaptor extends AbstractSingleCharCaptor {
 
 		// move cursor
 		tokenizer.moveCursorTo(offset);
+	}
+
+	describe(): AstNodeCaptorDescription {
+		const [tokenId, tokenType] = this.getTokenNature();
+		return {
+			text: `\`${this.singleChar()}\``,
+			tokenId,
+			tokenType,
+			rule: `Starts with \`${this.singleChar()}\`, and all of rest chars are also \`${this.singleChar()}\`.`
+		};
 	}
 }

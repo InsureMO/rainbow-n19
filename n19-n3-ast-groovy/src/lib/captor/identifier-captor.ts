@@ -1,7 +1,7 @@
 import {TokenId, TokenType} from '../tokens';
 import {AbstractAstNodeCaptor} from './abstract-captor';
 import {AstTokenizer} from './ast-tokenizer';
-import {AstNodeCaptorCheckers} from './captor';
+import {AstNodeCaptorCheckers, AstNodeCaptorDescription} from './captor';
 import {isJavaIdentifierStartAndNotIdentifierIgnorable} from './captor-func-checkers';
 import {Character} from './character';
 import {Char} from './types';
@@ -40,5 +40,14 @@ export class IdentifierCaptor extends AbstractAstNodeCaptor {
 
 		// move cursor
 		tokenizer.moveCursorTo(offset);
+	}
+
+	describe(): AstNodeCaptorDescription {
+		return {
+			text: '`...`',
+			tokenId: TokenId.Identifier,
+			tokenType: TokenType.Identifier,
+			rule: 'First is one of the java identifier start chars, optional rest are any of java identifier chars.'
+		};
 	}
 }
