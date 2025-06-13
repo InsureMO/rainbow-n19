@@ -529,7 +529,10 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		PreserveWhenParentIsTypeDeclaration,
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
-	[TokenId.AS]: [RehydrateToIdentifierWhenAfterDotDirectly],
+	[TokenId.AS]: [
+		RehydrateToIdentifierWhenAfterDotDirectly
+		// TODO declare as an AsStatement? to identify that following nodes are identifier and dot
+	],
 	[TokenId.ASSERT]: [
 		RehydrateToIdentifierWhenAfterDotDirectly,
 		DeclareAsParent([TokenId.AssertStatement, TokenType.LogicStatement])
@@ -784,9 +787,13 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars])
 		// TODO, when in any gstring literal, check $
 	],
+	// will not rehydrate under 4 tokens
 	[TokenId.Whitespaces]: 'NotRequired',
+	// will not rehydrate under 4 tokens
 	[TokenId.Tabs]: 'NotRequired',
+	// will not rehydrate under 4 tokens
 	[TokenId.NewLine]: 'NotRequired',
+	// will not rehydrate under 4 tokens
 	[TokenId.Chars]: 'NotRequired',
 	[TokenId.UndeterminedChars]: [
 		// will not rehydrate under 4 tokens
