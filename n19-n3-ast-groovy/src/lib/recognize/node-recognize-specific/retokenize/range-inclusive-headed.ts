@@ -17,7 +17,7 @@ export const retokenizeWithRangeInclusiveHeadedNSL = (recognition: RetokenizeAst
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('..', recognition);
 
 	// to find the node which can be combined with the beginning 2 dots
-	// could be ..., ..<
+	// token starts with .., possible tokens are ..., ..<
 	switch (Walker.currentNode?.tokenId) {
 		// -> ...
 		case TokenId.Dot: // -> ...

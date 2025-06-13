@@ -11,7 +11,7 @@ export const retokenizeWithAssignHeadedNSL = (recognition: RetokenizeAstRecognit
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('=', recognition);
 
 	// to find the node which can be combined with the beginning assign
-	// could be =~, ==~, ===, ==
+	// token starts with =, possible tokens are =~, ==~, ===, ==
 	switch (Walker.currentNode?.tokenId) {
 		// -> =~
 		case TokenId.Bitnot: // -> =~

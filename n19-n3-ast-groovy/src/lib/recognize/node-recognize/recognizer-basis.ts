@@ -1,5 +1,7 @@
 import {TokenId, TokenType} from '../../tokens';
 import {
+	ASLRecognizeUtils,
+	DivideAssignRecognizeUtils,
 	DSGLRecognizeUtils,
 	GLRecognizeUtils,
 	GStringInterpolationRecognizeUtils,
@@ -11,7 +13,6 @@ import {
 	SGLRecognizeUtils,
 	SingleLineCommentRecognizeUtils,
 	SLRecognizeUtils,
-	ASLRecognizeUtils,
 	ThreadsafeRecognizeUtils
 } from '../node-recognize-specific';
 import {NodeRehydration} from './build-rehydrate-funcs';
@@ -226,7 +227,12 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.AddAssign]: 'TODO',
 	[TokenId.SubtractAssign]: 'TODO',
 	[TokenId.MultipleAssign]: 'TODO',
-	[TokenId.DivideAssign]: 'TODO',
+	[TokenId.DivideAssign]: [
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// split to / and $ when parent is slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(DivideAssignRecognizeUtils.splitSGL),
+		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
+	],
 	[TokenId.BitandAssign]: 'TODO',
 	[TokenId.BitorAssign]: 'TODO',
 	[TokenId.XorAssign]: 'TODO',

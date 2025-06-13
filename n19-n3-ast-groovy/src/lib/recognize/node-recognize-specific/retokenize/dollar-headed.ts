@@ -25,15 +25,18 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 export const retokenizeWithDollarHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('$', recognition);
 
+	// to find the node which can be combined with the beginning dollar
+	// token starts with $, possible tokens are $/, $$, $..., ${...},
+	// since $$ is only available in dollar slashy gstring literal,
+	// and $..., ${...} are only available in gstring/slashy gstring/dollar slashy gstring literal,
+	// which means here the $/ is the only option
 	switch (Walker.currentNode?.tokenId) {
 		// -> //, and an optional part
 		case TokenId.SlashyGStringQuotationMark: // not created at tokenize phase, actually never happen
 		case TokenId.Divide: // -> $/
 			return Walker.DollarSlashyGStringQuotationStartMark().consumeNode().finalize();
 		case TokenId.DollarSlashyGStringQuotationEndMark: // -> $/ + $
-			return Walker.DollarSlashyGStringQuotationStartMark().consumeNode().andUse(recognition => {
-				return retokenizeWithDollarHeadedDSGL(recognition);
-			}).finalize();
+			return Walker.DollarSlashyGStringQuotationStartMark().consumeNode().andUse(retokenizeWithDollarHeadedDSGL).finalize();
 		case TokenId.DivideAssign: // -> $/ + =
 			return Walker.DollarSlashyGStringQuotationStartMark().consumeNode().chars('=').finalize();
 		case TokenId.SingleLineCommentStartMark: // -> $/ + /
@@ -47,20 +50,97 @@ export const retokenizeWithDollarHeadedNSL = (recognition: RetokenizeAstRecognit
 
 /**
  * retokenize tokens with a $ as headed char.
+ *
+ * @ok 20250613
  */
 export const retokenizeWithDollarHeadedGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	throw 'retokenizeWithDollarHeadedGL not supported yet'; // TODO Not supported yet
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('$', recognition);
+
+	// to find the node which can be combined with the beginning dollar
+	// token starts with $, possible tokens are ${...}
+	switch (Walker.currentNode?.tokenId) {
+		case TokenId.LBrace: // -> ${
+			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();
+		default: // remain $
+			return Walker.GStringInterpolationStartMark().finalize();
+	}
 };
 /**
  * retokenize tokens with a $ as headed char.
+ *
+ * @ok 20250613
  */
 export const retokenizeWithDollarHeadedSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	throw 'retokenizeWithDollarHeadedSGL not supported yet'; // TODO Not supported yet
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('$', recognition);
+
+	// to find the node which can be combined with the beginning dollar
+	// token starts with $, possible tokens are ${...}
+	switch (Walker.currentNode?.tokenId) {
+		// next char is $
+		case TokenId.DollarSlashyGStringQuotationStartMark:
+		case TokenId.DollarSlashyGStringSlashEscape:
+		case TokenId.DollarSlashyGStringDollarEscape:
+		case TokenId.GStringInterpolationStartMark:
+		case TokenId.GStringInterpolationLBraceStartMark: // -> $, but change nature to chars
+			return Walker.chars('$').finalize();
+		case TokenId.LBrace: // -> ${
+			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();
+		case TokenId.Identifier: { // check first char
+			const text = Walker.currentNode.text;
+			if (text.startsWith('$')) {
+				return Walker.chars('$').finalize();
+			} else {
+				return Walker.GStringInterpolationStartMark().finalize();
+			}
+		}
+		default: // remain $
+			return Walker.GStringInterpolationStartMark().finalize();
+	}
 };
 
 /**
  * retokenize tokens with a $ as headed char.
  */
 export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	throw 'retokenizeWithDollarHeadedDSGL not supported yet'; // TODO Not supported yet
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('$', recognition);
+
+	// to find the node which can be combined with the beginning dollar
+	// token starts with $, possible tokens are ${...}, $$, $/
+	switch (Walker.currentNode?.tokenId) {
+		// -> $$
+		case TokenId.DollarSlashyGStringQuotationStartMark: // -> $$ + /
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('/').finalize();
+		case TokenId.DollarSlashyGStringSlashEscape:
+		case TokenId.DollarSlashyGStringDollarEscape: // -> $$ + $
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().andUse(retokenizeWithDollarHeadedDSGL).finalize();
+		case TokenId.GStringInterpolationStartMark: // -> $$
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().finalize();
+		case TokenId.GStringInterpolationLBraceStartMark: // -> $$ + {
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('{').finalize();
+		case TokenId.LBrace: // -> ${
+			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();
+		case TokenId.Identifier: { // check first char
+			const text = Walker.currentNode.text;
+			if (text.startsWith('$')) {
+				// to find $, and split to before $, $, after $
+				// part before $ change nature to chars, and call dollar headed again
+				const indexOf$ = text.indexOf('$', 1);
+				if (indexOf$ !== -1) {
+					// no $ after first $
+					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(text.slice(1)).finalize();
+				}
+				const before$ = text.slice(1, indexOf$);
+				const $AndAfter = text.slice(indexOf$);
+				if ($AndAfter.length === 1) {
+					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(before$).andUse(retokenizeWithDollarHeadedDSGL).finalize();
+				} else {
+					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(before$).Identifier($AndAfter).finalize();
+				}
+			} else {
+				return Walker.GStringInterpolationStartMark().finalize();
+			}
+		}
+		default: // remain $
+			return Walker.GStringInterpolationStartMark().finalize();
+	}
 };

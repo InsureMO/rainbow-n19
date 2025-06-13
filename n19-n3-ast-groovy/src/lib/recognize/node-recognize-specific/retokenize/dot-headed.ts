@@ -1,7 +1,6 @@
 import {TokenId} from '../../../tokens';
 import {retokenizeWithAssignHeadedNSL} from './assign-headed';
 import {retokenizeWithBitandHeadedNSL} from './bitand-headed';
-import {retokenizeWithNumericBasePartHeadedNSL} from './numeric-base-part-headed';
 import {retokenizeWithRangeInclusiveHeadedNSL} from './range-inclusive-headed';
 import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
 import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
@@ -15,7 +14,7 @@ export const retokenizeWithDotHeadedNSL = (recognition: RetokenizeAstRecognition
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('.', recognition);
 
 	// to find the node which can be combined with the beginning dot
-	// could be .&, .., ..., ..<
+	// token starts with ., possible tokens are .&, .., ..., ..<
 	switch (Walker.currentNode?.tokenId) {
 		// -> .&
 		case TokenId.Bitand: // -> .&
@@ -27,10 +26,10 @@ export const retokenizeWithDotHeadedNSL = (recognition: RetokenizeAstRecognition
 		// -> ..
 		case TokenId.NumericBasePart: {
 			const text = Walker.currentNode.text;
-			if (text.startsWith('.')) { // -> .. + numeric, seek more
-				return Walker.RangeInclusive().consumeNode().andUse(recognition => {
-					return retokenizeWithNumericBasePartHeadedNSL(text.slice(1), recognition);
-				}).finalize();
+			if (text.startsWith('.')) { // -> .. + numeric base part
+				// a numeric starts with dot, after dot removed, still are valid numeric base part.
+				// since the exponent part and suffix still work
+				return Walker.RangeInclusive().consumeNode().NumericBasePart(text.slice(1)).finalize();
 			} else { // -> remain dot
 				return Walker.Dot().finalize();
 			}

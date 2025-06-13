@@ -13,7 +13,7 @@ export const retokenizeWithGtHeadedNSL = (recognition: RetokenizeAstRecognition)
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('>', recognition);
 
 	// to find the node which can be combined with the beginning <
-	// could be >=, >>, >>=, >>>, >>>=
+	// token starts with >, possible tokens are >=, >>, >>=, >>>, >>>=
 	switch (Walker.currentNode?.tokenId) {
 		// -> >=
 		case TokenId.RegexFind: // -> >= + ~

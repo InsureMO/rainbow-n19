@@ -15,7 +15,7 @@ export const retokenizeWithRangeExclusiveLeftHeadedNSL = (recognition: Retokeniz
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('<..', recognition);
 
 	// to find the node which can be combined with the beginning <
-	// could be <..<
+	// token starts with <.., possible tokens is <..<
 	switch (Walker.currentNode?.tokenId) {
 		case TokenId.RangeExclusiveLeft: // -> <..< + ..
 			return Walker.RangeExclusiveFull().consumeNode().andUse(retokenizeWithRangeInclusiveHeadedNSL).finalize();

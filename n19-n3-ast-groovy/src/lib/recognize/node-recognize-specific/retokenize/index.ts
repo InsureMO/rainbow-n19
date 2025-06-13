@@ -2,7 +2,6 @@ export * from './types';
 export * from './retokenize-node-walker';
 
 export * from './integral-text-headed';
-export * from './numeric-base-part-headed';
 
 export * from './identifier-text-headed';
 

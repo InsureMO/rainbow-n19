@@ -13,7 +13,7 @@ export const retokenizeWithBackslashHeadedSGL = (recognition: RetokenizeAstRecog
 
 	// to find the node which can be combined with the beginning backslash
 	// in slashy gstring literal, \/ is slash escape, so find next node with / started
-	// token starts with \, possible tokens are \/
+	// token starts with \, possible tokens is \/
 	switch (Walker.currentNode?.tokenId) {
 		// -> \/, and an optional part
 		case TokenId.SlashyGStringQuotationMark: // not created at tokenize phase, actually never happen

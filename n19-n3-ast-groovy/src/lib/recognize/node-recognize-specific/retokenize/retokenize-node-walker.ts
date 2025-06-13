@@ -185,6 +185,10 @@ export abstract class RetokenizeNodeWalker {
 		return this.createNode(TokenId.DivideAssign, TokenType.Operator, '/=');
 	}
 
+	DollarSlashyGStringDollarEscape(): this {
+		return this.createNode(TokenId.DollarSlashyGStringDollarEscape, TokenType.Mark, '$$');
+	}
+
 	DollarSlashyGStringQuotationStartMark(): this {
 		return this.createNode(TokenId.DollarSlashyGStringQuotationStartMark, TokenType.Mark, '$/');
 	}
@@ -207,6 +211,14 @@ export abstract class RetokenizeNodeWalker {
 
 	GreaterThanOrEqual(): this {
 		return this.createNode(TokenId.GreaterThanOrEqual, TokenType.Operator, '>=');
+	}
+
+	GStringInterpolationLBraceStartMark(): this {
+		return this.createNode(TokenId.GStringInterpolationLBraceStartMark, TokenType.Operator, '${');
+	}
+
+	GStringInterpolationStartMark(): this {
+		return this.createNode(TokenId.GStringInterpolationStartMark, TokenType.Operator, '$');
 	}
 
 	Identical(): this {
@@ -247,6 +259,10 @@ export abstract class RetokenizeNodeWalker {
 
 	Power(): this {
 		return this.createNode(TokenId.Power, TokenType.Operator, '**');
+	}
+
+	PowerAssign(): this {
+		return this.createNode(TokenId.PowerAssign, TokenType.Operator, '**=');
 	}
 
 	RangeExclusiveFull(): this {

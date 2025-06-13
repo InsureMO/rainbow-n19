@@ -14,7 +14,7 @@ export const retokenizeWithRshiftHeadedNSL = (recognition: RetokenizeAstRecognit
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('>>', recognition);
 
 	// to find the node which can be combined with the beginning equal
-	// could be >>>, >>=, >>>=
+	// token starts with >>, possible tokens are >>>, >>=, >>>=
 	switch (Walker.currentNode?.tokenId) {
 		// -> >>>
 		case TokenId.GreaterThan: // -> >>>
@@ -42,6 +42,6 @@ export const retokenizeWithRshiftHeadedNSL = (recognition: RetokenizeAstRecognit
 		case TokenId.GreaterThanOrEqual: // -> >>>=
 			return Walker.UrshiftAssign().consumeNode().finalize();
 		default:
-			return Walker.LessThanOrEqual().finalize();
+			return Walker.Rshift().finalize();
 	}
 };
