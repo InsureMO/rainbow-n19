@@ -124,13 +124,13 @@ export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecogni
 			if (text.startsWith('$')) {
 				// to find $, and split to before $, $, after $
 				// part before $ change nature to chars, and call dollar headed again
-				const indexOf$ = text.indexOf('$', 1);
-				if (indexOf$ !== -1) {
+				const indexOf2nd$ = text.indexOf('$', 1);
+				if (indexOf2nd$ !== -1) {
 					// no $ after first $
 					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(text.slice(1)).finalize();
 				}
-				const before$ = text.slice(1, indexOf$);
-				const $AndAfter = text.slice(indexOf$);
+				const before$ = text.slice(1, indexOf2nd$);
+				const $AndAfter = text.slice(indexOf2nd$);
 				if ($AndAfter.length === 1) {
 					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(before$).andUse(retokenizeWithDollarHeadedDSGL).finalize();
 				} else {
