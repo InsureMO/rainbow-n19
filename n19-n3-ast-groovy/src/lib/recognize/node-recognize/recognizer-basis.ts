@@ -219,7 +219,13 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.Add]: 'TODO',
 	[TokenId.Subtract]: 'TODO',
 	[TokenId.Multiple]: 'TODO',
-	[TokenId.Divide]: 'TODO',
+	[TokenId.Divide]: [
+		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to quotation mark when parent is slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).to([TokenId.SlashyGStringQuotationMark, TokenType.Mark]),
+		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
+		// TODO, check it is slashy gstring quotation mark or not
+	],
 	[TokenId.Bitand]: 'TODO',
 	[TokenId.Bitor]: 'TODO',
 	[TokenId.Xor]: 'TODO',
@@ -235,6 +241,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// split to / and $ when parent is slashy gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(DivideAssignRecognizeUtils.splitSGL),
 		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
+		// TODO, check it is slashy gstring quotation mark or not
 	],
 	[TokenId.BitandAssign]: 'TODO',
 	[TokenId.BitorAssign]: 'TODO',
