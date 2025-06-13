@@ -122,8 +122,9 @@ export class NSLRecognizeUtils {
 	 */
 	static splitOctalEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node} = recognition;
+		const remainText = node.text.slice(1);
 		return NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
-			return retokenizeWithIntegralTextHeadedNSL(node.text.slice(1), recognition);
+			return retokenizeWithIntegralTextHeadedNSL(remainText, recognition);
 		})(recognition);
 	};
 
@@ -134,8 +135,9 @@ export class NSLRecognizeUtils {
 	 */
 	static splitUnicodeEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node} = recognition;
+		const remainText = node.text.slice(1);
 		return NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
-			return retokenizeWithIdentifiableTextHeadedNSL(node.text.slice(1), recognition);
+			return retokenizeWithIdentifiableTextHeadedNSL(remainText, recognition);
 		})(recognition);
 	};
 

@@ -43,7 +43,7 @@ export abstract class RetokenizeNodeWalker {
 	}
 
 	get hasAvailableNode(): boolean {
-		return this._createdNodes != null;
+		return this._currentNode != null;
 	}
 
 	get inAirText(): string {

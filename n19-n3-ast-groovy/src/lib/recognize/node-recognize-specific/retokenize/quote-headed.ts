@@ -34,16 +34,15 @@ const buildWithOneOrTwoSingleOrDoubleQuoteHeadedNSLRetokenize = (headText: strin
 			const currentNodeTokenId = Walker.currentNode.tokenId;
 			if (currentNodeTokenId === defs.sl) {
 				if (Walker.inAirText === defs.c2) {
-					Walker.MLMark();
+					Walker.MLMark().consumeNode().clearInAirText();
+					break;
 				} else {
 					// in-air text is '
-					Walker.appendToInAirText(defs.c1);
+					Walker.appendToInAirText(defs.c1).consumeNode();
 				}
-				Walker.consumeNode();
 			} else if (currentNodeTokenId === defs.ml) {
-				Walker.MLMark();
 				// in-air text not change
-				Walker.consumeNode();
+				Walker.MLMark().consumeNode();
 			} else {
 				break;
 			}
