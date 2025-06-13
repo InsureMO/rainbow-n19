@@ -2,7 +2,7 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
-import {NSLRecognizeUtils} from './recognizer-not-any-string-literal';
+import {retokenizeWith2SingleQuotesHeadedNSL} from './retokenize';
 
 /**
  * NSL: When Parent Is Not Any String Literal,
@@ -48,7 +48,7 @@ export class SLRecognizeUtils {
 		// replace node with \
 		node.replaceTokenNatureAndText(TokenId.StringQuotationMark, TokenType.Mark, '\'');
 		// retokenize from next node
-		const [newNodes, consumedNodeCount] = NSLRecognizeUtils.retokenizeWith2SingleQuotesHeadedNSL({
+		const [newNodes, consumedNodeCount] = retokenizeWith2SingleQuotesHeadedNSL({
 			node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1, nodes,
 			compilationUnit, astRecognizer,
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1

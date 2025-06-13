@@ -1,6 +1,6 @@
 import {NodeRehydrateFunc} from '../node-recognize';
-import {RetokenizeAstRecognition, RetokenizedNodes} from './recognizer-common';
 import {NSLRecognizeUtils} from './recognizer-not-any-string-literal';
+import {retokenizeWithDollarHeadedDSGL} from './retokenize';
 
 /**
  * NSL: When Parent Is Not Any String Literal,
@@ -17,13 +17,6 @@ export class DSGLRecognizeUtils {
 	}
 
 	/**
-	 * retokenize tokens with a $ as headed char.
-	 */
-	static retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-		throw 'retokenizeWithDollarHeadedDSGL not supported yet'; // TODO Not supported yet
-	};
-
-	/**
 	 * split \.... to \ and .....
 	 *
 	 * @ok 20250612
@@ -35,5 +28,5 @@ export class DSGLRecognizeUtils {
 	 *
 	 * @ok 20250612
 	 */
-	static splitDollarEscapeDSGL: NodeRehydrateFunc = DSGLRecognizeUtils.splitBackslashHeadedDSGL(DSGLRecognizeUtils.retokenizeWithDollarHeadedDSGL);
+	static splitDollarEscapeDSGL: NodeRehydrateFunc = DSGLRecognizeUtils.splitBackslashHeadedDSGL(retokenizeWithDollarHeadedDSGL);
 }

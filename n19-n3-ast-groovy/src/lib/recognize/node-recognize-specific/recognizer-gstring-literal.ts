@@ -2,9 +2,8 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
-import {RetokenizeAstRecognition, RetokenizedNodes} from './recognizer-common';
-import {NSLRecognizeUtils} from './recognizer-not-any-string-literal';
 import {SLRecognizeUtils} from './recognizer-string-literal';
+import {retokenizeWith2DoubleQuotesHeadedNSL, retokenizeWithDollarHeadedGL} from './retokenize';
 
 /**
  * NSL: When Parent Is Not Any String Literal,
@@ -50,7 +49,7 @@ export class GLRecognizeUtils {
 		// replace node with \
 		node.replaceTokenNatureAndText(TokenId.GStringQuotationMark, TokenType.Mark, '"');
 		// retokenize from next node
-		const [newNodes, consumedNodeCount] = NSLRecognizeUtils.retokenizeWith2DoubleQuotesHeadedNSL({
+		const [newNodes, consumedNodeCount] = retokenizeWith2DoubleQuotesHeadedNSL({
 			node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1, nodes,
 			compilationUnit, astRecognizer,
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
@@ -80,13 +79,6 @@ export class GLRecognizeUtils {
 	};
 
 	/**
-	 * retokenize tokens with a $ as headed char.
-	 */
-	static retokenizeWithDollarHeadedGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-		throw 'retokenizeWithDollarHeadedGL not supported yet'; // TODO Not supported yet
-	};
-
-	/**
 	 * split /$ to / and $,
 	 *
 	 * @ok 20250612
@@ -97,7 +89,7 @@ export class GLRecognizeUtils {
 		// replace node with $
 		node.replaceTokenNatureAndText(TokenId.Chars, TokenType.Chars, '/');
 		// seek more
-		const [newNodes, consumedNodeCount] = GLRecognizeUtils.retokenizeWithDollarHeadedGL({
+		const [newNodes, consumedNodeCount] = retokenizeWithDollarHeadedGL({
 			node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1, nodes,
 			compilationUnit, astRecognizer,
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
@@ -125,7 +117,7 @@ export class GLRecognizeUtils {
 		// replace node with $
 		node.replaceTokenNatureAndText(TokenId.GStringInterpolationStartMark, TokenType.Mark, '$');
 		// seek more
-		const [newNodes, consumedNodeCount] = GLRecognizeUtils.retokenizeWithDollarHeadedGL({
+		const [newNodes, consumedNodeCount] = retokenizeWithDollarHeadedGL({
 			node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1, nodes,
 			compilationUnit, astRecognizer,
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1

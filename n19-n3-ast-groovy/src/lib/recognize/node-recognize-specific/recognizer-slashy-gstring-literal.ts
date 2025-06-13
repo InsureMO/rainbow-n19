@@ -2,8 +2,12 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
-import {RetokenizeAstRecognition, RetokenizedNodes, RetokenizeNodeWalker} from './recognizer-common';
 import {NSLRecognizeUtils} from './recognizer-not-any-string-literal';
+import {
+	retokenizeWithBackslashHeadedSGL,
+	retokenizeWithDollarHeadedNSL,
+	retokenizeWithDollarHeadedSGL
+} from './retokenize';
 
 /**
  * NSL: When Parent Is Not Any String Literal,
@@ -20,54 +24,6 @@ export class SGLRecognizeUtils {
 	}
 
 	/**
-	 * retokenize tokens with a $ as headed char.
-	 */
-	static retokenizeWithDollarHeadedSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-		throw 'retokenizeWithDollarHeadedSGL not supported yet'; // TODO Not supported yet
-	};
-
-	/**
-	 * retokenize tokens with a \ as headed char.
-	 *
-	 * @ok 20250611
-	 */
-	static retokenizeWithBackslashHeadedSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-		const Walker = new class extends RetokenizeNodeWalker {
-			protected finalizeNodeOnInAirText(): this {
-				return this;
-			}
-
-			SlashyGStringSlashEscape(): this {
-				return this.createNode(TokenId.SlashyGStringSlashEscape, TokenType.Mark, '\\/');
-			}
-
-			SlashyGStringQuotationMark() {
-				return this.createNode(TokenId.SlashyGStringQuotationMark, TokenType.Mark, '/');
-			}
-		}('\\', recognition);
-
-		// to find the node which can be combined with the beginning backslash
-		// in slashy gstring literal, \/ is slash escape, so find next node with / started
-		// token starts with \, possible tokens are \/
-		switch (Walker.currentNode?.tokenId) {
-			// -> \/, and an optional part
-			case TokenId.SlashyGStringQuotationMark: // not created at tokenize phase, actually never happen
-			case TokenId.Divide: // -> \/
-				return Walker.SlashyGStringSlashEscape().consumeNode().finalize();
-			case TokenId.DollarSlashyGStringQuotationEndMark: // -> \/ + $
-				return Walker.SlashyGStringSlashEscape().consumeNode().andUse(SGLRecognizeUtils.retokenizeWithDollarHeadedSGL).finalize();
-			case TokenId.DivideAssign: // -> \/ + =
-				return Walker.SlashyGStringSlashEscape().consumeNode().chars('=').finalize();
-			case TokenId.SingleLineCommentStartMark: // -> \/ + /
-				return Walker.SlashyGStringSlashEscape().consumeNode().SlashyGStringQuotationMark().finalize();
-			case TokenId.MultipleLinesCommentStartMark: // -> \/ + *
-				return Walker.SlashyGStringSlashEscape().consumeNode().chars('*').finalize();
-			default: // cannot combine with the beginning \
-				return Walker.Backslash().finalize();
-		}
-	};
-
-	/**
 	 * split \.... to \ and .....
 	 *
 	 * @ok 20250611
@@ -79,14 +35,14 @@ export class SGLRecognizeUtils {
 	 *
 	 * @ok 20250611
 	 */
-	static splitBackslashEscapeSGL: NodeRehydrateFunc = SGLRecognizeUtils.splitBackslashHeadedSGL(SGLRecognizeUtils.retokenizeWithBackslashHeadedSGL);
+	static splitBackslashEscapeSGL: NodeRehydrateFunc = SGLRecognizeUtils.splitBackslashHeadedSGL(retokenizeWithBackslashHeadedSGL);
 
 	/**
 	 * split \$ to \ and $, $ needs check the following node.
 	 *
 	 * @ok 20250612
 	 */
-	static splitDollarEscapeSGL: NodeRehydrateFunc = SGLRecognizeUtils.splitBackslashHeadedSGL(SGLRecognizeUtils.retokenizeWithDollarHeadedSGL);
+	static splitDollarEscapeSGL: NodeRehydrateFunc = SGLRecognizeUtils.splitBackslashHeadedSGL(retokenizeWithDollarHeadedSGL);
 
 	/**
 	 * split $/ to $ and /
@@ -118,7 +74,7 @@ export class SGLRecognizeUtils {
 		// replace node with $
 		node.replaceTokenNatureAndText(TokenId.SlashyGStringQuotationMark, TokenType.Mark, '/');
 		// retokenize from next node
-		const [newNodes, consumedNodeCount] = NSLRecognizeUtils.retokenizeWithDollarHeadedNSL({
+		const [newNodes, consumedNodeCount] = retokenizeWithDollarHeadedNSL({
 			node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1, nodes,
 			compilationUnit, astRecognizer,
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
@@ -139,7 +95,7 @@ export class SGLRecognizeUtils {
 		// replace node with $
 		node.replaceTokenNatureAndText(TokenId.Chars, TokenType.Chars, '$');
 		// seek more
-		const [newNodes, consumedNodeCount] = SGLRecognizeUtils.retokenizeWithDollarHeadedSGL({
+		const [newNodes, consumedNodeCount] = retokenizeWithDollarHeadedSGL({
 			node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1, nodes,
 			compilationUnit, astRecognizer,
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
