@@ -1,9 +1,9 @@
-import {TokenId, TokenType} from '../../../tokens';
+import {TokenId} from '../../../tokens';
 import {retokenizeWithAssignHeadedNSL} from './assign-headed';
 import {retokenizeWithBitandHeadedNSL} from './bitand-headed';
 import {retokenizeWithNumericBasePartHeadedNSL} from './numeric-base-part-headed';
 import {retokenizeWithRangeInclusiveHeadedNSL} from './range-inclusive-headed';
-import {RetokenizeNodeWalker} from './retokenize-node-walker';
+import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
 import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 
 /**
@@ -12,27 +12,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
  * @ok 20250613
  */
 export const retokenizeWithDotHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	const Walker = new class extends RetokenizeNodeWalker {
-		protected finalizeNodeOnInAirText(): this {
-			return this;
-		}
-
-		MethodPointer(): this {
-			return this.createNode(TokenId.MethodPointer, TokenType.Operator, '.&');
-		}
-
-		RangeInclusive(): this {
-			return this.createNode(TokenId.RangeInclusive, TokenType.Operator, '..');
-		}
-
-		Ellipsis(): this {
-			return this.createNode(TokenId.Ellipsis, TokenType.Operator, '...');
-		}
-
-		Dot(): this {
-			return this.createNode(TokenId.Dot, TokenType.Separator, '.');
-		}
-	}('.', recognition);
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('.', recognition);
 
 	// to find the node which can be combined with the beginning dot
 	// could be .&, .., ..., ..<

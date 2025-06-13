@@ -1,9 +1,7 @@
-import {TokenId, TokenType} from '../../../tokens';
+import {TokenId} from '../../../tokens';
 import {retokenizeWithAssignHeadedNSL} from './assign-headed';
-import {retokenizeWithBitnotHeadedNSL} from './bitnot-headed';
 import {retokenizeWithEqualHeadedNSL} from './equal-headed';
-import {retokenizeWithRegexFindHeadedNSL} from './regex-find-headed';
-import {RetokenizeNodeWalker} from './retokenize-node-walker';
+import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
 import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 
 /**
@@ -15,27 +13,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
  * @ok 20250611
  */
 export const retokenizeWithDivideHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	const Walker = new class extends RetokenizeNodeWalker {
-		protected finalizeNodeOnInAirText(): this {
-			return this;
-		}
-
-		Divide(): this {
-			return this.createNode(TokenId.Divide, TokenType.Operator, '/');
-		}
-
-		SLCommentStartMark(): this {
-			return this.createNode(TokenId.SingleLineCommentStartMark, TokenType.Mark, '//');
-		}
-
-		MLCommentStartMark(): this {
-			return this.createNode(TokenId.MultipleLinesCommentStartMark, TokenType.Mark, '/*');
-		}
-
-		DivideAssign(): this {
-			return this.createNode(TokenId.DivideAssign, TokenType.Operator, '/=');
-		}
-	}('/', recognition);
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('/', recognition);
 
 	// to find the node which can be combined with the beginning divide
 	// token starts with /, possible tokens are //, /*, /$, /=
@@ -80,9 +58,9 @@ export const retokenizeWithDivideHeadedNSL = (recognition: RetokenizeAstRecognit
 		case TokenId.Identical:  // -> /= + ==
 			return Walker.DivideAssign().consumeNode().andUse(retokenizeWithEqualHeadedNSL).finalize();
 		case TokenId.RegexFind:  // -> /= + ~
-			return Walker.DivideAssign().consumeNode().andUse(retokenizeWithBitnotHeadedNSL).finalize();
+			return Walker.DivideAssign().consumeNode().Bitnot().finalize();
 		case TokenId.RegexMatch:  // -> /= + =~
-			return Walker.DivideAssign().consumeNode().andUse(retokenizeWithRegexFindHeadedNSL).finalize();
+			return Walker.DivideAssign().consumeNode().RegexFind().finalize();
 		default: // cannot combine with the beginning /
 			return Walker.Divide().finalize();
 	}

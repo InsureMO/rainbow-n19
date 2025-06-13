@@ -1,12 +1,11 @@
-import {TokenId, TokenType} from '../../../tokens';
+import {TokenId} from '../../../tokens';
 import {retokenizeWithBitandHeadedNSL} from './bitand-headed';
 import {retokenizeWithDotHeadedNSL} from './dot-headed';
 import {retokenizeWithLteHeadedNSL} from './less-than-or-equal-headed';
 import {retokenizeWithRangeExclusiveLeftHeadedNSL} from './range-exclusive-left-headed';
 import {retokenizeWithRangeInclusiveHeadedNSL} from './range-inclusive-headed';
-import {RetokenizeNodeWalker} from './retokenize-node-walker';
+import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
 import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
-
 
 /**
  * retokenize tokens with a < as headed char.
@@ -14,33 +13,22 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
  * @ok 20250613
  */
 export const retokenizeWithLtHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	const Walker = new class extends RetokenizeNodeWalker {
-		protected finalizeNodeOnInAirText(): this {
-			return this;
-		}
-
-		RangeExclusiveLeft(): this {
-			return this.createNode(TokenId.RangeExclusiveLeft, TokenType.Operator, '<..');
-		}
-
-		RangeExclusiveFull(): this {
-			return this.createNode(TokenId.RangeExclusiveFull, TokenType.Operator, '<..<');
-		}
-
-		LshiftAssign(): this {
-			return this.createNode(TokenId.LshiftAssign, TokenType.Operator, '<<=');
-		}
-
-		LessThan(): this {
-			return this.createNode(TokenId.LessThan, TokenType.Operator, '<');
-		}
-	}('<', recognition);
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('<', recognition);
 
 	// to find the node which can be combined with the beginning <
-	// could be <.., <..<, <=>, <=, <<=
+	// could be <<, <<=, <.., <..<, <=>, <=,
 	switch (Walker.currentNode?.tokenId) {
+		// -> <<
+		case TokenId.LessThan: // -> <<
+			return Walker.Lshift().consumeNode().finalize();
+		// -> <<=
+		case TokenId.LessThanOrEqual: // -> <<=
+			return Walker.LshiftAssign().consumeNode().finalize();
+		// -> <..<
+		case TokenId.RangeExclusiveRight: // -> <..<
+			return Walker.RangeExclusiveFull().consumeNode().finalize();
 		// -> <..
-		case TokenId.RangeInclusive: {// seek more by <..
+		case TokenId.RangeInclusive: { // -> <.., seek more
 			const [newNodes, consumeNodeCount] = retokenizeWithRangeExclusiveLeftHeadedNSL({
 				node: recognition.nodes[recognition.nodeIndex + 1], nodeIndex: recognition.nodeIndex + 1,
 				nodes: recognition.nodes,
@@ -51,7 +39,7 @@ export const retokenizeWithLtHeadedNSL = (recognition: RetokenizeAstRecognition)
 			// the dot node is consumed anyway
 			return [newNodes, consumeNodeCount + 1];
 		}
-		case TokenId.Dot: { // seek more by <.
+		case TokenId.Dot: { // -> <., seek more
 			const [newNodes, consumeNodeCount] = retokenizeWithLtAndDotHeadedNSL({
 				node: recognition.nodes[recognition.nodeIndex + 1], nodeIndex: recognition.nodeIndex + 1,
 				nodes: recognition.nodes,
@@ -64,11 +52,8 @@ export const retokenizeWithLtHeadedNSL = (recognition: RetokenizeAstRecognition)
 		}
 		case TokenId.Ellipsis: // -> <.. + .
 			return Walker.RangeExclusiveLeft().consumeNode().andUse(retokenizeWithDotHeadedNSL).finalize();
-		// -> <..<
-		case TokenId.RangeExclusiveRight: // -> <..<
-			return Walker.RangeExclusiveFull().consumeNode().finalize();
 		// -> <=>, <=
-		case TokenId.Assign: { // seek more by <=
+		case TokenId.Assign: { // -> <=, seek more
 			const [newNodes, consumeNodeCount] = retokenizeWithLteHeadedNSL({
 				node: recognition.nodes[recognition.nodeIndex + 1], nodeIndex: recognition.nodeIndex + 1,
 				nodes: recognition.nodes,
@@ -79,9 +64,6 @@ export const retokenizeWithLtHeadedNSL = (recognition: RetokenizeAstRecognition)
 			// the dot node is consumed anyway
 			return [newNodes, consumeNodeCount + 1];
 		}
-		// -> <<=
-		case TokenId.LessThanOrEqual: // -> <<=
-			return Walker.LshiftAssign().consumeNode().finalize();
 		default:
 			return Walker.LessThan().finalize();
 	}
@@ -93,23 +75,7 @@ export const retokenizeWithLtHeadedNSL = (recognition: RetokenizeAstRecognition)
  * @ok 20250613
  */
 export const retokenizeWithLtAndDotHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	const Walker = new class extends RetokenizeNodeWalker {
-		protected finalizeNodeOnInAirText(): this {
-			return this;
-		}
-
-		RangeExclusiveLeft(): this {
-			return this.createNode(TokenId.RangeExclusiveLeft, TokenType.Operator, '<..');
-		}
-
-		Dot(): this {
-			return this.createNode(TokenId.Dot, TokenType.Operator, '.');
-		}
-
-		LessThan(): this {
-			return this.createNode(TokenId.LessThan, TokenType.Operator, '<');
-		}
-	}('<.', recognition);
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('<.', recognition);
 
 	// to find the node which can be combined with the beginning <
 	// could be <.., <..<

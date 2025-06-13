@@ -1,6 +1,6 @@
-import {TokenId, TokenType} from '../../../tokens';
+import {TokenId} from '../../../tokens';
 import {retokenizeWithDollarHeadedSGL} from './dollar-headed';
-import {RetokenizeNodeWalker} from './retokenize-node-walker';
+import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
 import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 
 /**
@@ -9,19 +9,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
  * @ok 20250611
  */
 export const retokenizeWithBackslashHeadedSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	const Walker = new class extends RetokenizeNodeWalker {
-		protected finalizeNodeOnInAirText(): this {
-			return this;
-		}
-
-		SlashyGStringSlashEscape(): this {
-			return this.createNode(TokenId.SlashyGStringSlashEscape, TokenType.Mark, '\\/');
-		}
-
-		SlashyGStringQuotationMark() {
-			return this.createNode(TokenId.SlashyGStringQuotationMark, TokenType.Mark, '/');
-		}
-	}('\\', recognition);
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('\\', recognition);
 
 	// to find the node which can be combined with the beginning backslash
 	// in slashy gstring literal, \/ is slash escape, so find next node with / started

@@ -86,10 +86,6 @@ export abstract class RetokenizeNodeWalker {
 		return this;
 	}
 
-	Backslash(): this {
-		return this.createNode(TokenId.UndeterminedChars, TokenType.UndeterminedChars, '\\');
-	}
-
 	Identifier(moreText?: string): this {
 		return this
 			.appendToInAirText(moreText)
@@ -150,5 +146,176 @@ export abstract class RetokenizeNodeWalker {
 			this.finalizeNodeOnInAirText();
 		}
 		return [this._createdNodes, this._consumedNodeCount];
+	}
+
+	// fix text node
+	Add(): this {
+		return this.createNode(TokenId.Add, TokenType.Operator, '+');
+	}
+
+	And(): this {
+		return this.createNode(TokenId.And, TokenType.Operator, '&&');
+	}
+
+	Assign(): this {
+		return this.createNode(TokenId.Assign, TokenType.Operator, '=');
+	}
+
+	Backslash(): this {
+		return this.createNode(TokenId.UndeterminedChars, TokenType.UndeterminedChars, '\\');
+	}
+
+	Bitand(): this {
+		return this.createNode(TokenId.Bitand, TokenType.Operator, '&');
+	}
+
+	BitandAssign(): this {
+		return this.createNode(TokenId.BitandAssign, TokenType.Operator, '&=');
+	}
+
+	Bitnot(): this {
+		return this.createNode(TokenId.Bitnot, TokenType.Operator, '~');
+	}
+
+	Divide(): this {
+		return this.createNode(TokenId.Divide, TokenType.Operator, '/');
+	}
+
+	DivideAssign(): this {
+		return this.createNode(TokenId.DivideAssign, TokenType.Operator, '/=');
+	}
+
+	DollarSlashyGStringQuotationStartMark(): this {
+		return this.createNode(TokenId.DollarSlashyGStringQuotationStartMark, TokenType.Mark, '$/');
+	}
+
+	Dot(): this {
+		return this.createNode(TokenId.Dot, TokenType.Separator, '.');
+	}
+
+	Ellipsis(): this {
+		return this.createNode(TokenId.Ellipsis, TokenType.Operator, '...');
+	}
+
+	Equal(): this {
+		return this.createNode(TokenId.Equal, TokenType.Operator, '==');
+	}
+
+	GreaterThan(): this {
+		return this.createNode(TokenId.GreaterThan, TokenType.Operator, '>');
+	}
+
+	GreaterThanOrEqual(): this {
+		return this.createNode(TokenId.GreaterThanOrEqual, TokenType.Operator, '>=');
+	}
+
+	Identical(): this {
+		return this.createNode(TokenId.Identical, TokenType.Operator, '===');
+	}
+
+	LessThan(): this {
+		return this.createNode(TokenId.LessThan, TokenType.Operator, '<');
+	}
+
+	LessThanOrEqual(): this {
+		return this.createNode(TokenId.LessThanOrEqual, TokenType.Operator, '<=');
+	}
+
+	Lshift(): this {
+		return this.createNode(TokenId.Lshift, TokenType.Operator, '<<');
+	}
+
+	LshiftAssign(): this {
+		return this.createNode(TokenId.LshiftAssign, TokenType.Operator, '<<=');
+	}
+
+	MethodPointer(): this {
+		return this.createNode(TokenId.MethodPointer, TokenType.Operator, '.&');
+	}
+
+	MLCommentStartMark(): this {
+		return this.createNode(TokenId.MultipleLinesCommentStartMark, TokenType.Mark, '/*');
+	}
+
+	Multiple(): this {
+		return this.createNode(TokenId.Multiple, TokenType.Operator, '*');
+	}
+
+	MultipleAssign(): this {
+		return this.createNode(TokenId.MultipleAssign, TokenType.Operator, '*=');
+	}
+
+	Power(): this {
+		return this.createNode(TokenId.Power, TokenType.Operator, '**');
+	}
+
+	RangeExclusiveFull(): this {
+		return this.createNode(TokenId.RangeExclusiveFull, TokenType.Operator, '<..<');
+	}
+
+	RangeExclusiveLeft(): this {
+		return this.createNode(TokenId.RangeExclusiveLeft, TokenType.Operator, '<..');
+	}
+
+	RangeExclusiveRight(): this {
+		return this.createNode(TokenId.RangeExclusiveRight, TokenType.Operator, '..<');
+	}
+
+	RangeInclusive(): this {
+		return this.createNode(TokenId.RangeInclusive, TokenType.Operator, '..');
+	}
+
+	RegexFind(): this {
+		return this.createNode(TokenId.RegexFind, TokenType.Operator, '=~');
+	}
+
+	RegexMatch(): this {
+		return this.createNode(TokenId.RegexMatch, TokenType.Operator, '==~');
+	}
+
+	Rshift(): this {
+		return this.createNode(TokenId.Rshift, TokenType.Operator, '>>');
+	}
+
+	RshiftAssign(): this {
+		return this.createNode(TokenId.RshiftAssign, TokenType.Operator, '>>=');
+	}
+
+	SlashyGStringQuotationMark() {
+		return this.createNode(TokenId.SlashyGStringQuotationMark, TokenType.Mark, '/');
+	}
+
+	SlashyGStringSlashEscape(): this {
+		return this.createNode(TokenId.SlashyGStringSlashEscape, TokenType.Mark, '\\/');
+	}
+
+	SLCommentStartMark(): this {
+		return this.createNode(TokenId.SingleLineCommentStartMark, TokenType.Mark, '//');
+	}
+
+	Spaceship(): this {
+		return this.createNode(TokenId.Spaceship, TokenType.Operator, '<=>');
+	}
+
+	SpreadDot(): this {
+		return this.createNode(TokenId.SpreadDot, TokenType.Operator, '*.');
+	}
+
+	Subtract(): this {
+		return this.createNode(TokenId.Subtract, TokenType.Operator, '-');
+	}
+
+	Urshift(): this {
+		return this.createNode(TokenId.Urshift, TokenType.Operator, '>>>');
+	}
+
+	UrshiftAssign(): this {
+		return this.createNode(TokenId.UrshiftAssign, TokenType.Operator, '>>>=');
+	}
+}
+
+export class UseUpInAirTextRetokenizeNodeWalker extends RetokenizeNodeWalker {
+	protected finalizeNodeOnInAirText(): this {
+		return this;
 	}
 }

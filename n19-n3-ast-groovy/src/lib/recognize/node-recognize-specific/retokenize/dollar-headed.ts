@@ -1,6 +1,6 @@
-import {TokenId, TokenType} from '../../../tokens';
+import {TokenId} from '../../../tokens';
 import {retokenizeWithIdentifiableTextHeadedNSL} from './identifier-text-headed';
-import {RetokenizeNodeWalker} from './retokenize-node-walker';
+import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
 import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 
 /**
@@ -23,31 +23,23 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
  * @ok 20250612
  */
 export const retokenizeWithDollarHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	const Walker = new class extends RetokenizeNodeWalker {
-		protected finalizeNodeOnInAirText(): this {
-			return this;
-		}
-
-		DSGLStartMark(): this {
-			return this.createNode(TokenId.DollarSlashyGStringQuotationStartMark, TokenType.Mark, '$/');
-		}
-	}('$', recognition);
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('$', recognition);
 
 	switch (Walker.currentNode?.tokenId) {
 		// -> //, and an optional part
 		case TokenId.SlashyGStringQuotationMark: // not created at tokenize phase, actually never happen
 		case TokenId.Divide: // -> $/
-			return Walker.DSGLStartMark().consumeNode().finalize();
+			return Walker.DollarSlashyGStringQuotationStartMark().consumeNode().finalize();
 		case TokenId.DollarSlashyGStringQuotationEndMark: // -> $/ + $
-			return Walker.DSGLStartMark().consumeNode().andUse(recognition => {
+			return Walker.DollarSlashyGStringQuotationStartMark().consumeNode().andUse(recognition => {
 				return retokenizeWithDollarHeadedDSGL(recognition);
 			}).finalize();
 		case TokenId.DivideAssign: // -> $/ + =
-			return Walker.DSGLStartMark().consumeNode().chars('=').finalize();
+			return Walker.DollarSlashyGStringQuotationStartMark().consumeNode().chars('=').finalize();
 		case TokenId.SingleLineCommentStartMark: // -> $/ + /
-			return Walker.DSGLStartMark().consumeNode().chars('/').finalize();
+			return Walker.DollarSlashyGStringQuotationStartMark().consumeNode().chars('/').finalize();
 		case TokenId.MultipleLinesCommentStartMark: // -> $/ + *
-			return Walker.DSGLStartMark().consumeNode().chars('*').finalize();
+			return Walker.DollarSlashyGStringQuotationStartMark().consumeNode().chars('*').finalize();
 		default:
 			return retokenizeWithIdentifiableTextHeadedNSL('$', recognition);
 	}

@@ -34,7 +34,7 @@ export const retokenizeWithIdentifiableTextHeadedNSL = (identifiableText: string
 		}
 
 		Operator(operator: Char): this {
-			return this.createNode(operator === '+' ? TokenId.Add : TokenId.Subtract, TokenType.Operator, operator);
+			return operator === '+' ? this.Add() : this.Subtract();
 		}
 	}(identifiableText, recognition);
 

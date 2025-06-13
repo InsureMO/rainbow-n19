@@ -177,7 +177,6 @@ export enum TokenId {
 	Bitor, // |
 	Xor, // ^
 	Mod, // %
-	// TODO 3 shift operators should be supported
 	Lshift, // <<
 	Rshift, // >>
 	Urshift, // >>>

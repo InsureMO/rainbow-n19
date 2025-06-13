@@ -1,11 +1,11 @@
-import {TokenId, TokenType} from '../../../tokens';
+import {TokenId} from '../../../tokens';
 import {retokenizeWithAssignHeadedNSL} from './assign-headed';
 import {retokenizeWithBitandHeadedNSL} from './bitand-headed';
 import {retokenizeWithDotHeadedNSL} from './dot-headed';
 import {retokenizeWithGtHeadedNSL} from './greater-than-headed';
 import {retokenizeWithLtHeadedNSL} from './less-than-headed';
 import {retokenizeWithLteHeadedNSL} from './less-than-or-equal-headed';
-import {RetokenizeNodeWalker} from './retokenize-node-walker';
+import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
 import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 
 /**
@@ -14,31 +14,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
  * @ok 20250613
  */
 export const retokenizeWithRangeInclusiveHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	const Walker = new class extends RetokenizeNodeWalker {
-		protected finalizeNodeOnInAirText(): this {
-			return this;
-		}
-
-		Ellipsis(): this {
-			return this.createNode(TokenId.Ellipsis, TokenType.Operator, '...');
-		}
-
-		Dot(): this {
-			return this.createNode(TokenId.Dot, TokenType.Separator, '.');
-		}
-
-		RangeExclusiveRight(): this {
-			return this.createNode(TokenId.RangeExclusiveRight, TokenType.Operator, '..<');
-		}
-
-		Assign(): this {
-			return this.createNode(TokenId.Assign, TokenType.Operator, '=');
-		}
-
-		RangeInclusive(): this {
-			return this.createNode(TokenId.RangeInclusive, TokenType.Operator, '..');
-		}
-	}('..', recognition);
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('..', recognition);
 
 	// to find the node which can be combined with the beginning 2 dots
 	// could be ..., ..<

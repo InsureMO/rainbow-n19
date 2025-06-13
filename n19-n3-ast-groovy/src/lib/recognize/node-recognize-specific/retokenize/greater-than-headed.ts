@@ -1,8 +1,7 @@
-import {TokenId, TokenType} from '../../../tokens';
+import {TokenId} from '../../../tokens';
 import {retokenizeWithAssignHeadedNSL} from './assign-headed';
-import {retokenizeWithBitnotHeadedNSL} from './bitnot-headed';
 import {retokenizeWithEqualHeadedNSL} from './equal-headed';
-import {RetokenizeNodeWalker} from './retokenize-node-walker';
+import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
 import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 
 /**
@@ -11,47 +10,14 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
  * @ok 20250613
  */
 export const retokenizeWithGtHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
-	const Walker = new class extends RetokenizeNodeWalker {
-		protected finalizeNodeOnInAirText(): this {
-			return this;
-		}
-
-		GreaterThanOrEqual(): this {
-			return this.createNode(TokenId.GreaterThanOrEqual, TokenType.Operator, '>=');
-		}
-
-		RegexFind(): this {
-			return this.createNode(TokenId.RegexFind, TokenType.Operator, '=~');
-		}
-
-		Rshift(): this {
-			return this.createNode(TokenId.Rshift, TokenType.Operator, '>>');
-		}
-
-		RshiftAssign(): this {
-			return this.createNode(TokenId.RshiftAssign, TokenType.Operator, '>>=');
-		}
-
-		UrshiftAssign(): this {
-			return this.createNode(TokenId.UrshiftAssign, TokenType.Operator, '>>>=');
-		}
-
-		Urshift(): this {
-			return this.createNode(TokenId.Urshift, TokenType.Operator, '>>>');
-		}
-
-		GreaterThan(): this {
-			return this.createNode(TokenId.GreaterThan, TokenType.Operator, '>');
-		}
-
-	}('>', recognition);
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('>', recognition);
 
 	// to find the node which can be combined with the beginning <
 	// could be >=, >>, >>=, >>>, >>>=
 	switch (Walker.currentNode?.tokenId) {
 		// -> >=
 		case TokenId.RegexFind: // -> >= + ~
-			return Walker.GreaterThanOrEqual().consumeNode().andUse(retokenizeWithBitnotHeadedNSL).finalize();
+			return Walker.GreaterThanOrEqual().consumeNode().Bitnot().finalize();
 		case TokenId.RegexMatch: // -> >= + =~
 			return Walker.GreaterThanOrEqual().consumeNode().RegexFind().finalize();
 		case TokenId.Identical: // -> >= + ==
