@@ -66,6 +66,7 @@ export const retokenizeWithDollarHeadedGL = (recognition: RetokenizeAstRecogniti
 			return Walker.GStringInterpolationStartMark().finalize();
 	}
 };
+
 /**
  * retokenize tokens with a $ as headed char.
  * $..., the ... part must be an identifier.

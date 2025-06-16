@@ -221,10 +221,12 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.Multiple]: 'TODO',
 	[TokenId.Divide]: [
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// rehydrate to quotation mark when parent is slashy gstring literal
+		// rehydrate to quotation mark (end) when parent is slashy gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).to([TokenId.SlashyGStringQuotationMark, TokenType.Mark]),
-		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
-		// TODO, check it is slashy gstring quotation mark or not
+		// rehydrate to chars when parent is any string literal but slashy gstring literal
+		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// rehydrate to quotation mark (start) when parent is not any string literal, and test function says it is a mark
+		RehydrateToken.when(RecognizeCommonUtils.isSlashyGStringQuotationMark).to([TokenId.SlashyGStringQuotationMark, TokenType.Mark])
 	],
 	[TokenId.Bitand]: 'TODO',
 	[TokenId.Bitor]: 'TODO',
@@ -238,10 +240,12 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.MultipleAssign]: 'TODO',
 	[TokenId.DivideAssign]: [
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// split to / and $ when parent is slashy gstring literal
+		// split to / and = when parent is slashy gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(DivideAssignRecognizeUtils.splitSGL),
-		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
-		// TODO, check it is slashy gstring quotation mark or not
+		// rehydrate to chars when parent is any of string literal but slashy gstring literal
+		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		// split to / and = when parent is not any string literal
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(DivideAssignRecognizeUtils.splitNSL)
 	],
 	[TokenId.BitandAssign]: 'TODO',
 	[TokenId.BitorAssign]: 'TODO',
@@ -791,9 +795,14 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	// chars
 	[TokenId.Identifier]: [
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is string literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
-		// TODO, when in any gstring literal, check $
-		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
+		// use function when parent is gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral).use(GLRecognizeUtils.rehydrateIdentifierGL),
+		// TODO use function when parent is slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(SGLRecognizeUtils.rehydrateIdentifierSGL),
+		// TODO use function when parent is dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).use(DSGLRecognizeUtils.rehydrateIdentifierDSGL)
 	],
 	// will not rehydrate under 4 tokens
 	[TokenId.Whitespaces]: 'NotRequired',

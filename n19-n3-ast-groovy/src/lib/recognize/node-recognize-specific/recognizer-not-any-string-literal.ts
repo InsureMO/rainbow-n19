@@ -149,26 +149,9 @@ export class NSLRecognizeUtils {
 	static splitDollarSlashyGStringQuotationEndMarkNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
-		const [nearestUnignorableNode, nearestUnignorableNodeIndex] = RecognizeCommonUtils.getNearestPreviousUnignorableNode(recognition);
+		const isSlashyGStringQuotationMark = RecognizeCommonUtils.isSlashyGStringQuotationMark(recognition);
 
-		// no like other operators, when no unignorable node before divide operator in the same line,
-		// means the divide operator is slashy gstring start mark
-		// e.g. the following statements are assign 1 to x and a slashy gstring literal which not ended
-		// def x = 1
-		//     / 2
-		// e.g. the following statement is assign 2 to x
-		// def x = 1
-		//     * 2
-		// basically, the divide operator will be treated as slashy gstring start mark when
-		// 1. unignorable node is not in same line,
-		// 2. unignorable node is a dot, such as this./x/ is to visit the x of this,
-		// 3. unignorable node is any operator, such as this * /x/ is this multiple a slashy gstring literal
-		if (nearestUnignorableNodeIndex !== -1
-			&& nearestUnignorableNode.startLine === node.startLine
-			&& nearestUnignorableNode.tokenId !== TokenId.Dot
-			&& nearestUnignorableNode.tokenType !== TokenType.Operator) {
-			// has node in same line, before me
-			// the previous unignorable node is not dot or any operator
+		if (!isSlashyGStringQuotationMark) {
 			// split to divide and more
 			node.replaceTokenNatureAndText(TokenId.Divide, TokenType.Operator, '/');
 			const [newNodes, consumedNodeCount] = retokenizeWithDollarHeadedNSL({
