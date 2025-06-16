@@ -2,13 +2,8 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
-import {IdentifierRecognizeUtils} from './recognizer-identifier';
 import {SLRecognizeUtils} from './recognizer-string-literal';
-import {
-	retokenizeWith2DoubleQuotesHeadedNSL,
-	retokenizeWithDollarHeadedGL,
-	UseUpInAirTextRetokenizeNodeWalker
-} from './retokenize';
+import {retokenizeWith2DoubleQuotesHeadedNSL, retokenizeWithDollarHeadedGL} from './retokenize';
 
 /**
  * NSL: When Parent Is Not Any String Literal,
@@ -129,55 +124,6 @@ export class GLRecognizeUtils {
 		});
 		// replace the original nodes
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
-		return nodeIndex;
-	};
-
-	/**
-	 * split by $
-	 *
-	 * for split text, there are 3 possibilities:
-	 * 1. $,
-	 * 2. identifier
-	 * 3. chars since the first char of text cannot be first char of identifier,
-	 *
-	 * and for last part is $, seek more.
-	 *
-	 * @ok 20250616
-	 */
-	static rehydrateIdentifierGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
-		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
-
-		// will not consume any node but given one
-		const Walker = new UseUpInAirTextRetokenizeNodeWalker('', {
-			node, nodeIndex, nodes,
-			compilationUnit, astRecognizer,
-			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
-		});
-
-		const parts = IdentifierRecognizeUtils.splitWith$(node.text, (part) => part);
-
-		for (const part of parts) {
-			Walker.setInAirText(part[0]);
-			if (part[1] === TokenId.GStringInterpolationStartMark) {
-				Walker.GStringInterpolationStartMark();
-			} else if (part[1] === TokenId.Identifier) {
-				// can be identifier
-				Walker.Identifier();
-			} else if (part[1] === TokenId.Chars) {
-				// cannot be identifier, then rehydrate to chars
-				Walker.chars(part[0]);
-			} else {
-				Walker.andUse(retokenizeWithDollarHeadedGL);
-				Walker.clearInAirText();
-				break;
-			}
-		}
-
-		const [newNodes, consumedNodeCount] = Walker.finalize();
-		// replace node
-		node.replaceTokenNatureAndText(newNodes[0].tokenId, newNodes[0].tokenType, newNodes[0].text);
-		// replace the original nodes
-		nodes.splice(nodeIndex + 1, consumedNodeCount, ...(newNodes.slice(1)));
 		return nodeIndex;
 	};
 }

@@ -1,5 +1,6 @@
 import {TokenId, TokenType} from '../../tokens';
 import {
+	AGLRecognizeUtils,
 	ASLRecognizeUtils,
 	DivideAssignRecognizeUtils,
 	DSGLRecognizeUtils,
@@ -798,11 +799,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is string literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// use function when parent is gstring literal
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral).use(GLRecognizeUtils.rehydrateIdentifierGL),
-		// TODO use function when parent is slashy gstring literal
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(SGLRecognizeUtils.rehydrateIdentifierSGL),
-		// TODO use function when parent is dollar slashy gstring literal
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).use(DSGLRecognizeUtils.rehydrateIdentifierDSGL)
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).use(AGLRecognizeUtils.rehydrateIdentifierAGL)
 	],
 	// will not rehydrate under 4 tokens
 	[TokenId.Whitespaces]: 'NotRequired',
