@@ -22,7 +22,7 @@ export const retokenizeWithMultipleHeadedNSL = (recognition: RetokenizeAstRecogn
 		case TokenId.NumericBasePart: {// if starts with ., then -> *. + ....
 			const text = Walker.currentNode.text;
 			if (text.startsWith('.')) {
-				// a decimal literal, move the . to
+				// a decimal literal, combine . to *.
 				return Walker.SpreadDot().consumeNode().NumericBasePart(text.slice(1)).finalize();
 			} else {
 				return Walker.Multiple().finalize();

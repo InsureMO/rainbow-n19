@@ -296,7 +296,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// split to * and / when parent is slashy gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(MultipleLinesCommentRecognizeUtils.splitEndMarkSGL),
 		// split to * and / when parent is dollar slashy gstring literal
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(MultipleLinesCommentRecognizeUtils.splitEndMarkDSGL),
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).use(MultipleLinesCommentRecognizeUtils.splitEndMarkDSGL),
 		// rehydrate to chars when parent is any string literal
 		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
 	],

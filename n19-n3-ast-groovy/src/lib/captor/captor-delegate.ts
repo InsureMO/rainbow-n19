@@ -197,9 +197,11 @@ export class CaptorDelegate {
 			if (identifierCaptorIndex !== -1) {
 				// identifier captor is at level one, so the given char is the first char
 				if (char === '$') {
-					// there are 2 possibilities:
-					// 1. LtDollarSlashyGStringDollarEscapeCaptor (the next char is still $)
-					// 2. LtGStringInterpolationStartMarkCaptor (if the next char is not $)
+					// there are multiple possibilities:
+					// 1. LtDollarSlashyGStringDollarEscapeCaptor (the next char is $),
+					// 2. LtDollarSlashyGStringQuotationStartMarkCaptor (the next char is /),
+					// 3. LtGStringInterpolationLBraceStartMarkCaptor (the next char is {),
+					// 4. IdentifierCaptor (any other rather than above 3).
 					let winner: AstNodeCaptor;
 					const nextChar = tokenizer.charAt(offset + 1);
 					if (nextChar === '$') {
@@ -222,18 +224,12 @@ export class CaptorDelegate {
 					} else if (nextChar === '/') {
 						// LtDollarSlashyGStringQuotationStartMarkCaptor wins
 						winner = captors.find(captor => captor.constructor.name === 'LtDollarSlashyGStringQuotationStartMarkCaptor');
-					} else if (nextChar == null) {
-						// no more char, $, LtGStringInterpolationStartMarkCaptor wins
-						winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationStartMarkCaptor');
+					} else if (nextChar === '{') {
+						// LtDollarSlashyGStringQuotationStartMarkCaptor wins
+						winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationLBraceStartMarkCaptor');
 					} else {
-						// Identifier or LtGStringInterpolationStartMarkCaptor
-						if (Character.isJavaIdentifierPartAndNotIdentifierIgnorable(nextChar.codePointAt(0))) {
-							// $a, $b, $1, $2, etc., identifier wins
-							winner = captors[identifierCaptorIndex];
-						} else {
-							// LtGStringInterpolationStartMarkCaptor wins
-							winner = captors.find(captor => captor.constructor.name === 'LtGStringInterpolationStartMarkCaptor');
-						}
+						// no more char, $, identifier wins
+						winner = captors[identifierCaptorIndex];
 					}
 					if (captors.length > 2) {
 						// assume never happen, but we should know this
