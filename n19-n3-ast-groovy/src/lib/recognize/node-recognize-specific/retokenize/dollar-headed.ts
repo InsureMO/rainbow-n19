@@ -65,7 +65,7 @@ export const retokenizeWithDollarHeadedGL = (recognition: RetokenizeAstRecogniti
 		case TokenId.LBrace: // -> ${
 			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();
 		case TokenId.Identifier: {  // check first char
-			let text = Walker.currentNode.text;
+			const text = Walker.currentNode.text;
 			Walker.GStringInterpolationStartMark();
 
 			Walker.consumeNode();
