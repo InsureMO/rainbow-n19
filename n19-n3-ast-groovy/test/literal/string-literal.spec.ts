@@ -1020,8 +1020,8 @@ describe('String literal test, for all rehydrations', () => {
 						[TokenId.Chars, 1, 4, 1, 'abc'],
 						[TokenId.Whitespaces, 4, 5, 1, ' '],
 						[TokenId.Chars, 5, 6, 1, '*'],
-						[TokenId.SlashyGStringQuotationMark, 6, 7, 1, '/'],
-					]],
+						[TokenId.SlashyGStringQuotationMark, 6, 7, 1, '/']
+					]]
 				]
 			]);
 		});
@@ -1079,4 +1079,39 @@ describe('String literal test, for all rehydrations', () => {
 			]);
 		});
 	}
+
+	// ', '''
+	{
+		test('Single/Triple Quotes -> Chars, GL/SGL/DSGL', async () => {
+			const text = `"''''"\n/''''/$/''''/$`;
+			const ast = GroovyAstBuilder.ast(text);
+			AstChecker.check(ast, [
+				TokenId.COMPILATION_UNIT, 0, 21, 0, text, [
+					[TokenId.GStringLiteral, 0, 6, 1, `"''''"`, [
+						[TokenId.GStringQuotationMark, 0, 1, 1, '"'],
+						[TokenId.Chars, 1, 4, 1, `'''`],
+						[TokenId.Chars, 4, 5, 1, `'`],
+						[TokenId.GStringQuotationMark, 5, 6, 1, '"']
+					]],
+					[TokenId.NewLine, 6, 7, 1, '\n'],
+					[TokenId.SlashyGStringLiteral, 7, 13, 2, `/''''/`, [
+						[TokenId.SlashyGStringQuotationMark, 7, 8, 2, '/'],
+						[TokenId.Chars, 8, 11, 2, `'''`],
+						[TokenId.Chars, 11, 12, 2, `'`],
+						[TokenId.SlashyGStringQuotationMark, 12, 13, 2, '/']
+					]],
+					[TokenId.DollarSlashyGStringLiteral, 13, 21, 2, `$/''''/$`, [
+						[TokenId.DollarSlashyGStringQuotationStartMark, 13, 15, 2, '$/'],
+						[TokenId.Chars, 15, 18, 2, `'''`],
+						[TokenId.Chars, 18, 19, 2, `'`],
+						[TokenId.DollarSlashyGStringQuotationEndMark, 19, 21, 2, '/$']
+					]]
+				]
+			]);
+		});
+		
+		// TODO ' in ''' started SL and ''' in ' started SL
+	}
+
+	// \b\f\n\r\t
 });
