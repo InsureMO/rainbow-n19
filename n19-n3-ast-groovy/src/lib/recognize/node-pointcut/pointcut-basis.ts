@@ -169,7 +169,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	],
 	[TokenId.SlashyGStringLiteral]: [
 		DisableBase5AsChild,
-		EndWith(TokenId.Divide)
+		EndWithStartMark
 	],
 	[TokenId.DollarSlashyGStringLiteral]: [
 		DisableBase5AsChild,

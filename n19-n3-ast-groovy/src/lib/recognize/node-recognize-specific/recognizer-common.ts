@@ -11,15 +11,14 @@ export class RecognizeCommonUtils {
 	/**
 	 * Check whether, among the currently recognized nodes,
 	 * there are nodes other than newline, whitespaces, tabs, and comments nodes
-	 * after the closest dot node among all the child nodes of the current parent node.
-	 * If there are such nodes, return false. If there is no dot node among these nodes, also return -1.
+	 * after the closest unignorable node among all the child nodes of the current parent node.
+	 * If there is such node, return it and its index of children.
+	 * If there is no such node among these nodes, also return [undefined, -1].
 	 *
-	 * That is to say, there is only one situation returns index of dot node where there is a dot node among these nodes,
-	 * and there are no nodes after the dot node, or all the nodes after it are newline, whitespace, tab, or sl/ml comment nodes.
-	 *
-	 * @return [current parent node, dot node index], or [current parent node, -1] when not after dot directly
+	 * That is to say, if there is such unignorable node,
+	 * then nodes between such node and current node must be newline, whitespaces, tabs or comments.
 	 */
-	static getNearestPreviousUnignorableNode = (recognition: AstRecognition): [GroovyAstNode, number] => {
+	static getNearestPreviousUnignorableNode = (recognition: AstRecognition): [GroovyAstNode, number] | [undefined, -1] => {
 		const {astRecognizer} = recognition;
 		const currentParent = astRecognizer.getCurrentParent();
 		const children = currentParent.children;
@@ -31,11 +30,11 @@ export class RecognizeCommonUtils {
 				|| previousSiblingTokenType === TokenType.Comments) {
 				continue;
 			}
-			return [currentParent, index];
+			return [previousSiblingNode, index];
 		}
 
 		// no previous sibling or all siblings are newline, whitespaces, tabs or comments
-		return [currentParent, -1];
+		return [(void 0), -1];
 	};
 
 	/**

@@ -1,6 +1,6 @@
 import {NodeRehydrateFunc} from '../node-recognize';
 import {NSLRecognizeUtils} from './recognizer-not-any-string-literal';
-import {retokenizeWithDollarHeadedDSGL} from './retokenize';
+import {retokenizeWithDivideHeadedDSGL, retokenizeWithDollarHeadedDSGL} from './retokenize';
 
 /**
  * NSL: When Parent Is Not Any String Literal,
@@ -30,4 +30,11 @@ export class DSGLRecognizeUtils {
 	 * @ok 20250612
 	 */
 	static splitDollarEscapeDSGL: NodeRehydrateFunc = DSGLRecognizeUtils.splitBackslashHeadedDSGL(retokenizeWithDollarHeadedDSGL);
+
+	/**
+	 * split \/ to \ and /, / needs check the following node.
+	 *
+	 * @ok 20250617
+	 */
+	static splitSlashyGStringSlashEscapeDSGL: NodeRehydrateFunc = DSGLRecognizeUtils.splitBackslashHeadedDSGL(retokenizeWithDivideHeadedDSGL);
 }

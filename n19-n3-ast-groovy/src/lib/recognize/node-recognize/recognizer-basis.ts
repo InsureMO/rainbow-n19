@@ -3,6 +3,7 @@ import {
 	AGLRecognizeUtils,
 	ASLRecognizeUtils,
 	DivideAssignRecognizeUtils,
+	DivideRecognizeUtils,
 	DSGLRecognizeUtils,
 	GLRecognizeUtils,
 	GStringInterpolationRecognizeUtils,
@@ -224,6 +225,8 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// rehydrate to quotation mark (end) when parent is slashy gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).to([TokenId.SlashyGStringQuotationMark, TokenType.Mark]),
+		// seek more when parent is dollar slashy gstring literal, could be end mark (/$)
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).use(DivideRecognizeUtils.rehydrateDivideDSGL),
 		// rehydrate to chars when parent is any string literal but slashy gstring literal
 		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// rehydrate to quotation mark (start) when parent is not any string literal, and test function says it is a mark
@@ -272,13 +275,15 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// split to / (slashy gstring literal end mark) and / when parent is slashy gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(SingleLineCommentRecognizeUtils.splitStartMarkSGL),
+		// split to / (chars) and / when parent is dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).use(SingleLineCommentRecognizeUtils.splitStartMarkDSGL),
 		// rehydrate to chars when parent is any string literal
 		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		DeclareAsParent([TokenId.SingleLineComment, TokenType.Comments])
 	],
 	[TokenId.MultipleLinesCommentStartMark]: [ // /*
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// split to / and * when parent is slashy gstring literal
+		// split to / (slashy gstring literal end mark) and * when parent is slashy gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(MultipleLinesCommentRecognizeUtils.splitStartMarkSGL),
 		// rehydrate to chars when parent is any string literal
 		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
@@ -290,6 +295,8 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// split to * and / when parent is slashy gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(MultipleLinesCommentRecognizeUtils.splitEndMarkSGL),
+		// split to * and / when parent is dollar slashy gstring literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(MultipleLinesCommentRecognizeUtils.splitEndMarkDSGL),
 		// rehydrate to chars when parent is any string literal
 		RehydrateToken.whenParentTokenTypeIs(TokenType.StringLiteral).to([TokenId.Chars, TokenType.Chars])
 	],
@@ -495,7 +502,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// split to \ and / when parent is gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral).use(GLRecognizeUtils.splitSlashyGStringSlashEscapeGL),
 		// rehydrate to chars when parent is dollar slashy gstring literal
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).use(DSGLRecognizeUtils.splitSlashyGStringSlashEscapeDSGL),
 		// split to \ and / when parent is not any string literal
 		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(NSLRecognizeUtils.splitSlashyGStringSlashEscapeNSL)
 	],
