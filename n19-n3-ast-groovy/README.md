@@ -183,3 +183,23 @@
 | `\r\n`         | 196, NewLine                               | 2, NewLine            | Newline2CharsCaptor                           | Exactly match.                                                                                   |
 | `...`          | 198, Identifier                            | 8, Identifier         | IdentifierCaptor                              | First is one of the java identifier start chars, optional rest are any of java identifier chars. |
 | `any`          | 199, UndeterminedChars                     | 13, UndeterminedChars | UndeterminedCharsCaptor                       | Any char doesn't captured by any captor.                                                         |
+
+## TODO
+
+- [ ] Annotation
+- [ ] Generic Type
+- [ ] Expression, auto weave by execution priority
+- [ ] Anonymous Class
+- [ ] Java Style Array Initializer
+- [ ] List: []
+- [ ] Map: [:]
+- [ ] Acceptable token of 6 classes, before body appended
+- [ ] Acceptable token of constructor/method, before body appended
+- [ ] Acceptable token of field
+- [ ] Closure
+- [ ] Lambda
+- [ ] Record class parameters
+- [ ] Super call, e.g. A.super.x(), calling super class's/interface's member, extends trait classes or interfaces
+- [ ] This call, e.g. B.this.y(), calling host class's member in not-static inner class
+- [ ] Path element, to visit properties, or call executable (closure, lambda, method, etc)
+- [ ] Build visitable variables in every level
