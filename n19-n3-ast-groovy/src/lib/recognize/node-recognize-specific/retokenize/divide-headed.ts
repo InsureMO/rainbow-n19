@@ -1,5 +1,6 @@
 import {TokenId} from '../../../tokens';
 import {retokenizeWithAssignHeadedNSL} from './assign-headed';
+import {retokenizeWithDollarHeadedNSL} from './dollar-headed';
 import {retokenizeWithEqualHeadedNSL} from './equal-headed';
 import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
 import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
@@ -44,7 +45,8 @@ export const retokenizeWithDivideHeadedNSL = (recognition: RetokenizeAstRecognit
 		case TokenId.MultipleLinesCommentEndMark: // -> /* + /
 			return Walker.MLCommentStartMark().consumeNode().chars('/').finalize();
 		// -> /$, and an optional part
-		case TokenId.DollarSlashyGStringQuotationStartMark: // -> /+ $/
+		// since /$ in NSL is meaningless, which means in NSL, simply remain / as divide is fine.
+		case TokenId.DollarSlashyGStringQuotationStartMark: // -> / + $/
 		case TokenId.DollarSlashyGStringDollarEscape: // -> / + $$
 		case TokenId.GStringInterpolationLBraceStartMark: // / + ${
 		case TokenId.Identifier: // / + identifier
@@ -63,5 +65,27 @@ export const retokenizeWithDivideHeadedNSL = (recognition: RetokenizeAstRecognit
 			return Walker.DivideAssign().consumeNode().RegexFind().finalize();
 		default: // cannot combine with the beginning /
 			return Walker.Divide().finalize();
+	}
+};
+
+export const retokenizeWithDivideHeadedDSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
+	const Walker = new UseUpInAirTextRetokenizeNodeWalker('/', recognition);
+
+	// to find the node which can be combined with the beginning divide
+	// token starts with /, possible tokens are //, /*, /$, /=
+	// //, /*, /= in dollar slashy gstring literal is just chars
+	switch (Walker.currentNode?.tokenId) {
+		// -> /$
+		case TokenId.DollarSlashyGStringQuotationStartMark:
+		case TokenId.DollarSlashyGStringSlashEscape: // -> /$ + /, string end, next / must be a divide
+			return Walker.DollarSlashyGStringQuotationEndMark().consumeNode().Divide().finalize();
+		case TokenId.DollarSlashyGStringDollarEscape: // -> /$ + $
+			return Walker.DollarSlashyGStringQuotationEndMark().consumeNode().andUse(retokenizeWithDollarHeadedNSL).finalize();
+		case TokenId.GStringInterpolationStartMark: // -> /$
+			return Walker.DollarSlashyGStringQuotationEndMark().consumeNode().finalize();
+		case TokenId.GStringInterpolationLBraceStartMark: // -> /$ + {
+			return Walker.DollarSlashyGStringQuotationEndMark().consumeNode().LBrace().finalize();
+		default:
+			return Walker.chars('/').finalize();
 	}
 };

@@ -1,4 +1,5 @@
 import {TokenId} from '../../../tokens';
+import {retokenizeWithDivideHeadedDSGL} from './divide-headed';
 import {retokenizeWithIdentifiableTextHeadedNSL} from './identifier-text-headed';
 import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
 import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
@@ -117,35 +118,48 @@ export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecogni
 		case TokenId.DollarSlashyGStringQuotationStartMark: // -> $$ + /
 			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('/').finalize();
 		case TokenId.DollarSlashyGStringSlashEscape:
-		case TokenId.DollarSlashyGStringDollarEscape: // -> $$ + $
-			return Walker.DollarSlashyGStringDollarEscape().consumeNode().andUse(retokenizeWithDollarHeadedDSGL).finalize();
+		case TokenId.DollarSlashyGStringDollarEscape: // -> $$ + $, let the $ to be an identifier
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().Identifier().finalize();
 		case TokenId.GStringInterpolationStartMark: // -> $$
 			return Walker.DollarSlashyGStringDollarEscape().consumeNode().finalize();
 		case TokenId.GStringInterpolationLBraceStartMark: // -> $$ + {
 			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('{').finalize();
-		case TokenId.LBrace: // -> ${
-			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();
 		case TokenId.Identifier: { // check first char
 			const text = Walker.currentNode.text;
-			if (text.startsWith('$')) {
+			if (text.startsWith('$')) { // -> $$ + ...
 				// to find $, and split to before $, $, after $
 				// part before $ change nature to chars, and call dollar headed again
 				const indexOf2nd$ = text.indexOf('$', 1);
-				if (indexOf2nd$ !== -1) {
+				if (indexOf2nd$ === -1) {
 					// no $ after first $
 					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(text.slice(1)).finalize();
-				}
-				const before$ = text.slice(1, indexOf2nd$);
-				const $AndAfter = text.slice(indexOf2nd$);
-				if ($AndAfter.length === 1) {
-					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(before$).andUse(retokenizeWithDollarHeadedDSGL).finalize();
+				} else if (indexOf2nd$ === 0) {
+					// second $ is directly after first $
+					return Walker.DollarSlashyGStringDollarEscape().consumeNode().Identifier(text.slice(1)).finalize();
 				} else {
+					const before$ = text.slice(1, indexOf2nd$);
+					const $AndAfter = text.slice(indexOf2nd$);
 					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(before$).Identifier($AndAfter).finalize();
 				}
 			} else {
 				return Walker.GStringInterpolationStartMark().finalize();
 			}
 		}
+		// -> $/
+		case TokenId.Divide:
+		case TokenId.SlashyGStringQuotationMark: // -> $/
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().finalize();
+		case TokenId.DivideAssign: // -> $/ + =
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('=').finalize();
+		case TokenId.SingleLineCommentStartMark: // -> $/ + /
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().andUse(retokenizeWithDivideHeadedDSGL).finalize();
+		case TokenId.MultipleLinesCommentStartMark: // -> $/ + *
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('*').finalize();
+		case TokenId.DollarSlashyGStringQuotationEndMark: // -> $/ + $, make the $ to be an identifier
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().Identifier().finalize();
+		// -> ${
+		case TokenId.LBrace: // -> ${
+			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();
 		default: // remain $
 			return Walker.GStringInterpolationStartMark().finalize();
 	}

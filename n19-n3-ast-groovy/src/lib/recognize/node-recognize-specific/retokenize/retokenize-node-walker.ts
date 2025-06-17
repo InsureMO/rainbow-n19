@@ -189,8 +189,16 @@ export abstract class RetokenizeNodeWalker {
 		return this.createNode(TokenId.DollarSlashyGStringDollarEscape, TokenType.Mark, '$$');
 	}
 
+	DollarSlashyGStringQuotationEndMark(): this {
+		return this.createNode(TokenId.DollarSlashyGStringQuotationEndMark, TokenType.Mark, '/$');
+	}
+
 	DollarSlashyGStringQuotationStartMark(): this {
 		return this.createNode(TokenId.DollarSlashyGStringQuotationStartMark, TokenType.Mark, '$/');
+	}
+
+	DollarSlashyGStringSlashEscape(): this {
+		return this.createNode(TokenId.DollarSlashyGStringSlashEscape, TokenType.Mark, '$/');
 	}
 
 	Dot(): this {
@@ -223,6 +231,10 @@ export abstract class RetokenizeNodeWalker {
 
 	Identical(): this {
 		return this.createNode(TokenId.Identical, TokenType.Operator, '===');
+	}
+
+	LBrace(): this {
+		return this.createNode(TokenId.LBrace, TokenType.Separator, '{');
 	}
 
 	LessThan(): this {

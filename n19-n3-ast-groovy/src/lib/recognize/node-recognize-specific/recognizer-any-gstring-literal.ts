@@ -119,7 +119,7 @@ export class AGLRecognizeUtils {
 							case TokenId.DollarSlashyGStringLiteral: {
 								// in dollar slashy gstring literal, $ is start mark only when it follows an identifier
 								// and if it follows another $, it is a dollar escape
-								if (parts[index + 1].type === TokenId.GStringInterpolationStartMark) {
+								if (parts[index + 1]?.type === TokenId.GStringInterpolationStartMark) {
 									// set next part as ignored
 									parts[index + 1].type = Ignored$;
 									return {text: '$$', type: TokenId.DollarSlashyGStringDollarEscape};
