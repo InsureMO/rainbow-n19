@@ -7,6 +7,7 @@ import {retokenizeWith2SingleQuotesHeadedNSL} from './retokenize';
 /**
  * NSL: When Parent Is Not Any String Literal,
  * ASL: When Parent Is Any String Literal,
+ * AGL: When Parent is Any GString Literal,
  * SL: When Parent Is String Literal,
  * GL: When Parent Is GString Literal,
  * SGL: When Parent Is Slashy GString Literal,

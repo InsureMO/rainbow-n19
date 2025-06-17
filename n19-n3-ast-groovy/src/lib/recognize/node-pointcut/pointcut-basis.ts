@@ -2,6 +2,7 @@ import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {
+	ChildAcceptableCheckFunc,
 	OnChildAppendedFunc,
 	OneOfChildAcceptableCheckFunc,
 	OneOfOnChildAppendedFunc,
@@ -22,8 +23,10 @@ import {
 	AcceptableTokenIds,
 	AcceptableTokenTypes,
 	AcceptedWhen,
+	ChildAcceptableCheck,
 	CloseOnChildWithTokenIdClosed,
 	DisableBase5AsChild,
+	DisableElevateTrailingDetachable,
 	EndWithAnyOfTokenIdsAppended,
 	EndWithChecked,
 	OnChildAppended,
@@ -39,10 +42,9 @@ import {
 } from './types';
 
 // pointcut function
-// TODO not use yet
-//  const ChildAcceptableCheck = (func: ChildAcceptableCheckFunc): ChildAcceptableCheck => {
-// 	 return [PointcutBasisDefType.ChildAcceptableCheck, func];
-//  };
+const ChildAcceptableCheck = (func: ChildAcceptableCheckFunc): ChildAcceptableCheck => {
+	return [PointcutBasisDefType.ChildAcceptableCheck, func];
+};
 const OnChildAppended = (func: OnChildAppendedFunc): OnChildAppended => {
 	return [PointcutBasisDefType.OnChildAppended, func];
 };
@@ -133,9 +135,8 @@ const CloseOnChildWithTokenIdClosed = (tokenId: TokenId): CloseOnChildWithTokenI
 	return [PointcutBasisDefType.CloseOnChildWithTokenIdClosed, tokenId];
 };
 // on node closed
-// TODO not use yet
-//  /** disable the default elevate trailing detachable tokens */
-//  const DisableElevateTrailingDetachable: DisableElevateTrailingDetachable = [PointcutBasisDefType.DisableElevateTrailingDetachable];
+/** disable the default elevate trailing detachable tokens */
+const DisableElevateTrailingDetachable: DisableElevateTrailingDetachable = [PointcutBasisDefType.DisableElevateTrailingDetachable];
 
 export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDefs }>> = {
 	// number literal
@@ -155,11 +156,10 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	],
 	[TokenId.GStringInterpolation]: [
 		// start with ${, accept any token
-		Tokens.when(GStringInterpolationPointcuts.startsWithLBrace).reject(TokenId.Tmp$NeverHappen),
-		Tokens.when(GStringInterpolationPointcuts.notStartsWithLBrace).accept(TokenId.Identifier, TokenId.Dot),
-		EndWith(TokenId.GStringInterpolationRBraceEndMark)
-		// TODO continuous dots are now allowed,
-		//  when not starts with lbrace, identifier starts with $ are not allowed
+		ChildAcceptableCheck(GStringInterpolationPointcuts.childAcceptableCheck),
+		EndWithChecked(GStringInterpolationPointcuts.startsWithLBraceAndRBraceAppended),
+		OnNodeClosed(GStringInterpolationPointcuts.finalize),
+		DisableElevateTrailingDetachable
 	],
 	[TokenId.GStringLiteral]: [
 		DisableBase5AsChild,
