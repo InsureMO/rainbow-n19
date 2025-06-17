@@ -1,9 +1,30 @@
+import * as chalk from 'chalk';
+import type {MatcherFunction} from 'expect';
 import {AstUtils, GroovyAst, GroovyAstNode, TokenId} from '../../src';
 
 export type NodeType = any;
 export type NodeSpec =
 	| [TokenId, number, number, number, string] // leaf node
 	| [TokenId, number, number, number, string, Array<NodeSpec>] // container node
+
+const Is: MatcherFunction<[expected: any, where: string]> = function (received, expected, where: string) {
+	return {
+		message: () => `${chalk.red.bold(`❌ With [${where}]`)},\n${this.utils.printDiffOrStringify(expected, received, `       ${chalk.green.underline('Expected')}`, `       ${chalk.red.underline('Received')}`, false)}.`,
+		pass: received == expected
+	};
+};
+expect.extend({
+	is: Is
+});
+declare module 'expect' {
+	interface AsymmetricMatchers {
+		is(expected: any, where: string): void;
+	}
+
+	interface Matchers<R> {
+		is(expected: any, where: string): R;
+	}
+}
 
 export class AstChecker {
 	private readonly _ast: GroovyAst;
@@ -20,49 +41,49 @@ export class AstChecker {
 	}
 
 	private doCheck(node: GroovyAstNode, spec: NodeSpec, bullet: string) {
-		const [type, startOffset, endOffset, startLine, text, children] = spec;
+		const [tokenId, startOffset, endOffset, startLine, text, children] = spec;
 		const indent = new Array(bullet.split('.').length - 2).fill('\t').join('');
 		try {
 			expect(node).not.toBeNull();
-			expect(node.tokenId).toBe(type);
-			expect(node.startOffset).toBe(startOffset);
-			expect(node.endOffset).toBe(endOffset);
-			expect(node.startLine).toBe(startLine);
-			expect(node.text).toBe(text);
+			expect(node.tokenId).is(tokenId, 'TokenId');
+			expect(node.startOffset).is(startOffset, 'StartOffset');
+			expect(node.endOffset).is(endOffset, 'EndOffset');
+			expect(node.startLine).is(startLine, 'StartLine');
+			expect(node.text).is(text, 'Text');
 			this._logs.push([
 				indent,
 				bullet,
 				' ✅ ',
-				`Check [type=${TokenId[type]}, `,
+				`Check [type=${TokenId[tokenId]}, `,
 				`offsetInDoc=[${startOffset}, ${endOffset}], `,
 				`xyInDoc=[${startLine}, ${node.startColumn}], `,
 				`text=${AstUtils.escapeForPrint(text)}`,
 				'].'
 			].join(''));
 		} catch (e) {
-			this._logs.push([
+			this._logs.push(chalk.red([
 				indent,
 				bullet,
 				' 💔 ',
-				`Check [type=${TokenId[type]}, `,
+				`Check [type=${TokenId[tokenId]}, `,
 				`offsetInDoc=[${startOffset}, ${endOffset}], `,
 				`xyInDoc=[${startLine}, ${node.startColumn}], `,
 				`text=${AstUtils.escapeForPrint(text)}`,
 				'].'
-			].join(''));
+			].join('')));
 			this.print();
 			throw e;
 		}
 		if (children != null) {
 			try {
-				expect(node.children.length).toBe(children.length);
+				expect(node.children.length).is(children.length, 'Children Count');
 			} catch (e) {
-				this._logs.push([
+				this._logs.push(chalk.red([
 					indent,
 					bullet,
 					' 💔 ',
-					`Check children count[type=${TokenId[type]}].`
-				].join(''));
+					`Check children count[type=${TokenId[tokenId]}].`
+				].join('')));
 				this.print();
 				throw e;
 			}
