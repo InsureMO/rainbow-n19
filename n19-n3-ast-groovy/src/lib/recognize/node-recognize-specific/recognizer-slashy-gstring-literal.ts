@@ -27,28 +27,28 @@ export class SGLRecognizeUtils {
 	/**
 	 * split \.... to \ and .....
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitBackslashHeadedSGL = NSLRecognizeUtils.splitBackslashHeadedNSL;
 
 	/**
 	 * split \\ to \ and \, 2nd \ needs check the following node.
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitBackslashEscapeSGL: NodeRehydrateFunc = SGLRecognizeUtils.splitBackslashHeadedSGL(retokenizeWithBackslashHeadedSGL);
 
 	/**
 	 * split \$ to \ and $, $ needs check the following node.
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDollarEscapeSGL: NodeRehydrateFunc = SGLRecognizeUtils.splitBackslashHeadedSGL(retokenizeWithDollarHeadedSGL);
 
 	/**
 	 * split $/ to $ and /
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDollarSlashyGStringQuotationStartMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
@@ -67,7 +67,7 @@ export class SGLRecognizeUtils {
 	/**
 	 * split /$ to / and $,
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDollarSlashyGStringQuotationEndMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
@@ -88,7 +88,7 @@ export class SGLRecognizeUtils {
 	/**
 	 * split $$ to $ and $
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDollarSlashyGStringDollarEscapeSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;

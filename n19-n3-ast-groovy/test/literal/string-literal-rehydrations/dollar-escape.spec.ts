@@ -323,4 +323,49 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 			]
 		]);
 	});
+
+	test('DSGL, Dollar Escape + DollarSlashyGStringQuotationStartMark -> Undetermined Chars + DollarSlashyGStringDollarEscape + Chars', async () => {
+		const text = '$/\\$$/';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 6, 0, text, [
+				[TokenId.DollarSlashyGStringLiteral, 0, 6, 1, '$/\\$$/', [
+					[TokenId.DollarSlashyGStringQuotationStartMark, 0, 2, 1, '$/'],
+					[TokenId.UndeterminedChars, 2, 3, 1, '\\'],
+					[TokenId.DollarSlashyGStringDollarEscape, 3, 5, 1, '$$'],
+					[TokenId.Chars, 5, 6, 1, '/']
+				]]
+			]
+		]);
+	});
+
+	test('DSGL, Dollar Escape + DollarSlashyGStringDollarEscape -> Undetermined Chars + DollarSlashyGStringDollarEscape + Chars', async () => {
+		const text = '$/\\$$$';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 6, 0, text, [
+				[TokenId.DollarSlashyGStringLiteral, 0, 6, 1, '$/\\$$$', [
+					[TokenId.DollarSlashyGStringQuotationStartMark, 0, 2, 1, '$/'],
+					[TokenId.UndeterminedChars, 2, 3, 1, '\\'],
+					[TokenId.DollarSlashyGStringDollarEscape, 3, 5, 1, '$$'],
+					[TokenId.Chars, 5, 6, 1, '$']
+				]]
+			]
+		]);
+	});
+	test('DSGL, Dollar Escape + DollarSlashyGStringDollarEscape + Keyword -> Undetermined Chars + DollarSlashyGStringDollarEscape + Chars + Chars', async () => {
+		const text = '$/\\$$$private';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 13, 0, text, [
+				[TokenId.DollarSlashyGStringLiteral, 0, 13, 1, '$/\\$$$private', [
+					[TokenId.DollarSlashyGStringQuotationStartMark, 0, 2, 1, '$/'],
+					[TokenId.UndeterminedChars, 2, 3, 1, '\\'],
+					[TokenId.DollarSlashyGStringDollarEscape, 3, 5, 1, '$$'],
+					[TokenId.Chars, 5, 6, 1, '$'],
+					[TokenId.Chars, 6, 13, 1, 'private']
+				]]
+			]
+		]);
+	});
 });

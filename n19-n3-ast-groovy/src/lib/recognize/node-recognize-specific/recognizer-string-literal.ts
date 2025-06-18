@@ -42,7 +42,7 @@ export class SLRecognizeUtils {
 	 * 2. when `''''a`, split to `'`, `'''`, `a`,
 	 * 3. when `''''''a`, split to `'`, `'''`, `'`, `'`, `a`.
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitStringQuotationMarkML: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
@@ -62,7 +62,7 @@ export class SLRecognizeUtils {
 	/**
 	 * split \/ to \ and /
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitSlashyGStringSlashEscapeSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;

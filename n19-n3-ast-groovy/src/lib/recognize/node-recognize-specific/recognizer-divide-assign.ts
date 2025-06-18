@@ -19,7 +19,7 @@ export class DivideAssignRecognizeUtils {
 	 *
 	 * SGL: When Parent Is Slashy GString Literal.
 	 *
-	 * @ok 20250613
+	 * @done 20250613
 	 */
 	static splitSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
@@ -42,7 +42,7 @@ export class DivideAssignRecognizeUtils {
 	 * 1. 1st / starts slashy gstring literal,
 	 * 2. 2nd =, chars
 	 *
-	 * @ok 20250616
+	 * @done 20250616
 	 */
 	static splitNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;

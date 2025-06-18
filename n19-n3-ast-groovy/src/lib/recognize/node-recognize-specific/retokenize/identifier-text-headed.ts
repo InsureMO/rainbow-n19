@@ -31,7 +31,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
  * 3.4. no dot and no exponent sign, append to given identifier text, and seek more,
  * 4. end and use in-air identifier text to create an identifier node,
  *
- * @ok 20250611
+ * @done 20250611
  */
 export const retokenizeWithIdentifiableTextHeadedNSL = (identifiableText: string, recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new class extends RetokenizeNodeWalker {
@@ -108,7 +108,7 @@ export const retokenizeWithIdentifiableTextHeadedNSL = (identifiableText: string
  *
  * the node could be {@link RecognizeCommonUtils.isWordAndIdentifiable}
  *
- * @ok 20250617
+ * @done 20250617
  */
 export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, previousTokenId: TokenId, recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
@@ -203,8 +203,13 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 								return {text: '$$', type: TokenId.DollarSlashyGStringDollarEscape};
 							}
 							if (type === First$) {
-								if ([TokenId.DollarSlashyGStringDollarEscape, TokenId.DollarSlashyGStringSlashEscape].includes(previousTokenId)) {
-									// $ after $/ and $$ still is $, rehydrate to chars
+								if ([TokenId.DollarSlashyGStringSlashEscape].includes(previousTokenId)) {
+									// $ after $/ still is $, rehydrate to chars
+									// @done 20250618
+									//  $ after $$ might be $, depends on whether there is a gstring interpolation before me or not.
+									//  if gstring interpolation before me exists, $ is a gstring interpolation start mark,
+									//  otherwise is chars.
+									//  since it cannot be precisely confirm here, leave it to gstring interpolation pointcuts.
 									return {text, type: TokenId.Chars};
 								}
 							} else if (parts[index - 1].type === Ignored$) {
@@ -234,10 +239,9 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 				// consume node at first round
 				Walker.consumeNode();
 			}
-			Walker.setInAirText(text);
 			switch (type) {
 				case TokenId.Identifier: {
-					Walker.Identifier();
+					Walker.clearInAirText().Identifier(text);
 					break;
 				}
 				case TokenId.GStringInterpolationStartMark: {

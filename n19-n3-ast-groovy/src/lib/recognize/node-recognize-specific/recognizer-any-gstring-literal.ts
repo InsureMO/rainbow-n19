@@ -28,7 +28,7 @@ export class AGLRecognizeUtils {
 	 *
 	 * works when parent is any gstring literal.
 	 *
-	 * @ok 20250617
+	 * @done 20250617
 	 */
 	static rehydrateIdentifierAGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;

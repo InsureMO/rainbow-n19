@@ -11,7 +11,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
  *
  * the previous node is slashy gstring literal
  *
- * @ok 20250611
+ * @done 20250611
  */
 export const retokenizeWithDivideHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('/', recognition);

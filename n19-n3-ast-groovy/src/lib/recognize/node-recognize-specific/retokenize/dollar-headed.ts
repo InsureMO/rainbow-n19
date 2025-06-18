@@ -23,7 +23,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
  * - if it is, create a dsgl start mark, and handle the rest text of next node,
  * - if not, call retokenize with identifiable text headed NSL and return.
  *
- * @ok 20250612
+ * @done 20250612
  */
 export const retokenizeWithDollarHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('$', recognition);
@@ -55,7 +55,7 @@ export const retokenizeWithDollarHeadedNSL = (recognition: RetokenizeAstRecognit
  * retokenize tokens with a $ as headed char.
  * the $ is interpolation start mark, always. difference is followed or not followed by {.
  *
- * @ok 20250613
+ * @done 20250613
  */
 export const retokenizeWithDollarHeadedGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('$', recognition);
@@ -84,8 +84,7 @@ export const retokenizeWithDollarHeadedGL = (recognition: RetokenizeAstRecogniti
 			}
 			// not $
 			if (Character.isJavaIdentifierPartAndNotIdentifierIgnorable(firstChar.codePointAt(0))) {
-				Walker.setInAirText(firstChar + remainChars);
-				return Walker.Identifier().finalize();
+				return Walker.clearInAirText().Identifier(firstChar + remainChars).finalize();
 			} else {
 				return Walker.chars(firstChar + remainChars).finalize();
 			}
@@ -110,7 +109,7 @@ export const retokenizeWithDollarHeadedGL = (recognition: RetokenizeAstRecogniti
  * $..., the ... part must be an identifier.
  * or ${...}
  *
- * @ok 20250613
+ * @done 20250613
  */
 export const retokenizeWithDollarHeadedSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('$', recognition);
@@ -165,7 +164,7 @@ export const retokenizeWithDollarHeadedSGL = (recognition: RetokenizeAstRecognit
 /**
  * retokenize tokens with a $ as headed char.
  *
- * @ok 20250613
+ * @done 20250613
  */
 export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('$', recognition);
@@ -174,11 +173,11 @@ export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecogni
 	// token starts with $, possible tokens are ${...}, $$, $/
 	switch (Walker.currentNode?.tokenId) {
 		// -> $$
-		case TokenId.DollarSlashyGStringQuotationStartMark: // -> $$ + /
+		case TokenId.DollarSlashyGStringQuotationStartMark:
+		case TokenId.DollarSlashyGStringSlashEscape: // -> $$ + /
 			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('/').finalize();
-		case TokenId.DollarSlashyGStringSlashEscape:
 		case TokenId.DollarSlashyGStringDollarEscape: // -> $$ + $, let the $ to be an identifier
-			return Walker.DollarSlashyGStringDollarEscape().consumeNode().Identifier().finalize();
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().clearInAirText().Identifier('$').finalize();
 		case TokenId.GStringInterpolationStartMark: // -> $$
 			return Walker.DollarSlashyGStringDollarEscape().consumeNode().finalize();
 		case TokenId.GStringInterpolationLBraceStartMark: // -> $$ + {
@@ -192,13 +191,13 @@ export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecogni
 				if (indexOf2nd$ === -1) {
 					// no $ after first $
 					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(text.slice(1)).finalize();
-				} else if (indexOf2nd$ === 0) {
+				} else if (indexOf2nd$ === 1) {
 					// second $ is directly after first $
-					return Walker.DollarSlashyGStringDollarEscape().consumeNode().Identifier(text.slice(1)).finalize();
+					return Walker.DollarSlashyGStringDollarEscape().consumeNode().clearInAirText().Identifier(text.slice(1)).finalize();
 				} else {
 					const before$ = text.slice(1, indexOf2nd$);
 					const $AndAfter = text.slice(indexOf2nd$);
-					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(before$).Identifier($AndAfter).finalize();
+					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(before$).clearInAirText().Identifier($AndAfter).finalize();
 				}
 			} else {
 				// next is identifier and not starts with $
@@ -218,7 +217,7 @@ export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecogni
 		case TokenId.MultipleLinesCommentStartMark: // -> $/ + *
 			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('*').finalize();
 		case TokenId.DollarSlashyGStringQuotationEndMark: // -> $/ + $, make the $ to be an identifier
-			return Walker.DollarSlashyGStringDollarEscape().consumeNode().Identifier().finalize();
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().clearInAirText().Identifier('$').finalize();
 		// -> ${
 		case TokenId.LBrace: // -> ${
 			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();

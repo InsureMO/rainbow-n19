@@ -20,21 +20,21 @@ export class DSGLRecognizeUtils {
 	/**
 	 * split \.... to \ and .....
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitBackslashHeadedDSGL = NSLRecognizeUtils.splitBackslashHeadedNSL;
 
 	/**
 	 * split \$ to \ and $, $ needs check the following node.
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDollarEscapeDSGL: NodeRehydrateFunc = DSGLRecognizeUtils.splitBackslashHeadedDSGL(retokenizeWithDollarHeadedDSGL);
 
 	/**
 	 * split \/ to \ and /, / needs check the following node.
 	 *
-	 * @ok 20250617
+	 * @done 20250617
 	 */
 	static splitSlashyGStringSlashEscapeDSGL: NodeRehydrateFunc = DSGLRecognizeUtils.splitBackslashHeadedDSGL(retokenizeWithDivideHeadedDSGL);
 }

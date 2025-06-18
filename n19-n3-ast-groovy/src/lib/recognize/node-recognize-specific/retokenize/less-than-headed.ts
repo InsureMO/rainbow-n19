@@ -10,7 +10,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 /**
  * retokenize tokens with a < as headed char.
  *
- * @ok 20250613
+ * @done 20250613
  */
 export const retokenizeWithLtHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('<', recognition);
@@ -72,7 +72,7 @@ export const retokenizeWithLtHeadedNSL = (recognition: RetokenizeAstRecognition)
 /**
  * retokenize tokens with a <. as headed chars.
  *
- * @ok 20250613
+ * @done 20250613
  */
 export const retokenizeWithLtAndDotHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('<.', recognition);

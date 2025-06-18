@@ -9,7 +9,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 /**
  * retokenize tokens with a <.. as headed char.
  *
- * @ok 20250613
+ * @done 20250613
  */
 export const retokenizeWithRangeExclusiveLeftHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('<..', recognition);

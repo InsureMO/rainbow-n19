@@ -31,7 +31,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * split \.... to \ and .....
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitBackslashHeadedNSL = (retokenize: Retokenize): NodeRehydrateFunc => {
 		return (recognition: AstRecognition): Optional<number> => {
@@ -53,7 +53,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * split \b to \ and b, b needs check the following node.
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitBackspaceEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 		return retokenizeWithIdentifiableTextHeadedNSL('b', recognition);
@@ -62,7 +62,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * split \f to \ and f, f needs check the following node.
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitFormFeedEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 		return retokenizeWithIdentifiableTextHeadedNSL('f', recognition);
@@ -71,7 +71,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * split \n to \ and n, n needs check the following node.
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitNewlineEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 		return retokenizeWithIdentifiableTextHeadedNSL('n', recognition);
@@ -80,7 +80,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * split \r to \ and r, r needs check the following node.
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitCarriageReturnEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 		return retokenizeWithIdentifiableTextHeadedNSL('r', recognition);
@@ -89,7 +89,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * split \t to \ and t, t needs check the following node.
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitTabulationEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 		return retokenizeWithIdentifiableTextHeadedNSL('t', recognition);
@@ -98,28 +98,28 @@ export class NSLRecognizeUtils {
 	/**
 	 * split \' to \ and ', ' needs check the following node.
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitSingleQuoteEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL(retokenizeWithSingleQuoteHeadedNSL);
 
 	/**
 	 * split \" to \ and ", " needs check the following node.
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDoubleQuoteEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL(retokenizeWithDoubleQuoteHeadedNSL);
 
 	/**
 	 * split \$ to \ and $, $ needs check the following node.
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDollarEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL(retokenizeWithDollarHeadedNSL);
 
 	/**
 	 * split \... to \ and ..., ... needs check the following node. ... is numbers from 0 to 7 with a length of 0 to 3 digits.
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitOctalEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node} = recognition;
@@ -132,7 +132,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * split \u.... to \ and u...., u.... needs check the following node. u.... is u and numbers from 0-9a-fA-F with a length of 4 digits.
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitUnicodeEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node} = recognition;
@@ -145,7 +145,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * split /$ to / and $, needs to check the / is start of slashy gstring literal or just a divide, and $ needs to seek more following nodes
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDollarSlashyGStringQuotationEndMarkNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
@@ -178,7 +178,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * split \/ to \ and /, / after \ and not in any string literal, always treated as slashy gstring quotation mark
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitSlashyGStringSlashEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
@@ -196,7 +196,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * seek more following nodes to combine this $$, or it is an identifier
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static rehydrateDollarSlashyGStringDollarEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
@@ -216,7 +216,7 @@ export class NSLRecognizeUtils {
 	/**
 	 * split to $ and {,
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitGStringInterpolationLBraceStartMarkNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;

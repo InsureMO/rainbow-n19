@@ -19,7 +19,7 @@ export class MultipleLinesCommentRecognizeUtils {
 	 * NSL: When Parent Is Not Any String Literal,
 	 * SGL: When Parent Is Slashy GString Literal.
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitStartMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
@@ -45,7 +45,7 @@ export class MultipleLinesCommentRecognizeUtils {
 	 *
 	 * SGL: When Parent Is Slashy GString Literal.
 	 *
-	 * @ok 20250611
+	 * @done 20250611
 	 */
 	static splitEndMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
@@ -68,7 +68,7 @@ export class MultipleLinesCommentRecognizeUtils {
 	 *
 	 * DSGL: When Parent Is Dollar Slashy GString Literal.
 	 *
-	 * @ok 20250617
+	 * @done 20250617
 	 */
 	static splitEndMarkDSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;

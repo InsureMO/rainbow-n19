@@ -18,7 +18,7 @@ export class DivideRecognizeUtils {
 	 *
 	 * DSGL: When Parent Is Dollar Slashy GString Literal.
 	 *
-	 * @ok 20250617
+	 * @done 20250617
 	 */
 	static rehydrateDivideDSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;

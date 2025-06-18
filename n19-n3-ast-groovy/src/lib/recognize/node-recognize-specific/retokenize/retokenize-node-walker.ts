@@ -86,6 +86,14 @@ export abstract class RetokenizeNodeWalker {
 		return this;
 	}
 
+	/**
+	 * this method will use the in-air text as first part, and append the given {@code moreText},
+	 * to create the identifier node.
+	 * after node created, in-air text will be cleared.
+	 *
+	 * so, to create identifier node by given {@code moreText},
+	 * call {@link clearInAirText} or {@link setInAirText} first to clear the in-air text.
+	 */
 	Identifier(moreText?: string): this {
 		return this
 			.appendToInAirText(moreText)

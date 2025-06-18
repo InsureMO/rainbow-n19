@@ -6,7 +6,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 /**
  * retokenize tokens with an integral text as headed char(s).
  *
- * @ok 20250613
+ * @done 20250613
  */
 export const retokenizeWithIntegralTextHeadedNSL = (integralText: string, recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker(integralText, recognition);

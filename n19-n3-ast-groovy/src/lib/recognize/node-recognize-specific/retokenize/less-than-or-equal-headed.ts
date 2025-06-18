@@ -8,7 +8,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 /**
  * retokenize tokens with an <= as headed char(s).
  *
- * @ok 20250613
+ * @done 20250613
  */
 export const retokenizeWithLteHeadedNSL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('<=', recognition);

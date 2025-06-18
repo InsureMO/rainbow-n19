@@ -43,7 +43,7 @@ export class GLRecognizeUtils {
 	 * 2. when `""""a`, split to `"`, `"""`, `a`,
 	 * 3. when `"""""""a`, split to `"`, `"""`, `"`, `"`, `a`.
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static rehydrateGStringQuotationMarkML: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
@@ -63,7 +63,7 @@ export class GLRecognizeUtils {
 	/**
 	 * split $/ to $ and /,
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDollarSlashyGStringQuotationStartMarkGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes} = recognition;
@@ -82,7 +82,7 @@ export class GLRecognizeUtils {
 	/**
 	 * split /$ to / and $,
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDollarSlashyGStringQuotationEndMarkGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
@@ -103,14 +103,14 @@ export class GLRecognizeUtils {
 	/**
 	 * split \/ to \ and /
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitSlashyGStringSlashEscapeGL: NodeRehydrateFunc = SLRecognizeUtils.splitSlashyGStringSlashEscapeSL;
 
 	/**
 	 * split $$ to $ and $,
 	 *
-	 * @ok 20250612
+	 * @done 20250612
 	 */
 	static splitDollarSlashyGStringDollarEscapeGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;

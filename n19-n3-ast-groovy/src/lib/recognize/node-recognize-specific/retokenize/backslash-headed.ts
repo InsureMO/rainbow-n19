@@ -6,7 +6,7 @@ import {RetokenizeAstRecognition, RetokenizedNodes} from './types';
 /**
  * retokenize tokens with a \ as headed char.
  *
- * @ok 20250611
+ * @done 20250611
  */
 export const retokenizeWithBackslashHeadedSGL = (recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const Walker = new UseUpInAirTextRetokenizeNodeWalker('\\', recognition);
