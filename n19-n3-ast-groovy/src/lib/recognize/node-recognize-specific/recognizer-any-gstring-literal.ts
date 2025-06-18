@@ -19,12 +19,7 @@ export class AGLRecognizeUtils {
 	}
 
 	/**
-	 * split given identifier text with $,
-	 * 1. for identifier part,
-	 * 1.1. if it is the first part, rehydrate to chars,
-	 * 1.2. if previous is a gstring interpolation start mark, keep identifier,
-	 * 1.3. if previous is a chars, rehydrate to chars,
-	 * 2. for chars part,
+	 * split given identifier text might contain $,
 	 *
 	 * works when parent is any gstring literal.
 	 *

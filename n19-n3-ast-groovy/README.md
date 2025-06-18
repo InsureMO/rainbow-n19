@@ -205,7 +205,24 @@
 
 ## Notes
 
-### GString interpolation start mark in Dollar Slashy GString Literal
+### ✅ Identify A Slash (Divide `/`, Divide Assign `/=`, Dollar Slashy GString Quotation End Mark `/$`) as Slash GString Quotation Mark
+
+Meet the following conditions:
+
+- There is no dot (`.`) before this token,
+- There is no operator (`=`, `==`, `*`, etc.) before this token,
+- There are no other tokens except whitespace, tab, and comments (`/*...*/`) before this token on the same line.
+
+> Single line comment on same line and before this token will change nature of this token to chars, so this token never be slashy gstring
+> quotation mark.
+
+For Single Line Comment Start Mark `//` and Multiple Lines Comment Start Mark `/*`, there’s no need to consider whether the slash is part of
+the Slash GString Quotation Mark. Their precedence is higher than this rehydration. That is to say, they will always be regarded as start
+marks, rather than a quotation mark followed by `/` or `*`.
+
+### ✅ GString Interpolation Start Mark (`$`, `${`) in Dollar Slashy GString Literal (`$/.../$`)
+
+- It is a bug or something?
 
 ```groovy
 def abc = 'xyz'
@@ -221,5 +238,5 @@ println $/$abc $/${abc} abc/$            // xyz /${abc} abc, ${abc} of $/${abc} 
 
 Which means:
 
-- `$$$abc` and `$$${abc}` works only when there is interpolation before,
+- `$$$abc` and `$$${abc}` works only when there is at least one interpolation before it,
 - `$/$abc` and `$/${abc}` never works.

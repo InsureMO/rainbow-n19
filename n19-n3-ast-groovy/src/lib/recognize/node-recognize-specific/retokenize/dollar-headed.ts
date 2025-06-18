@@ -189,18 +189,18 @@ export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecogni
 				// part before $ change nature to chars, and call dollar headed again
 				const indexOf2nd$ = text.indexOf('$', 1);
 				if (indexOf2nd$ === -1) {
-					// no $ after first $
+					// no $ after first $ -> $$ + chars
 					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(text.slice(1)).finalize();
 				} else if (indexOf2nd$ === 1) {
-					// second $ is directly after first $
+					// second $ is directly after first $ -> $$ + identifier with $ started
 					return Walker.DollarSlashyGStringDollarEscape().consumeNode().clearInAirText().Identifier(text.slice(1)).finalize();
 				} else {
+					// second $ is not directly after first $ -> $$ + chars + identifier with $ started ($ is second $)
 					const before$ = text.slice(1, indexOf2nd$);
 					const $AndAfter = text.slice(indexOf2nd$);
 					return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars(before$).clearInAirText().Identifier($AndAfter).finalize();
 				}
-			} else {
-				// next is identifier and not starts with $
+			} else { // next is identifier and not starts with $
 				return Walker.GStringInterpolationStartMark().andUse(recognition => {
 					return retokenizeIdentifiableTextWith$AGL(TokenId.DollarSlashyGStringLiteral, TokenId.GStringInterpolationStartMark, recognition);
 				}).finalize();
@@ -216,8 +216,8 @@ export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecogni
 			return Walker.DollarSlashyGStringDollarEscape().consumeNode().andUse(retokenizeWithDivideHeadedDSGL).finalize();
 		case TokenId.MultipleLinesCommentStartMark: // -> $/ + *
 			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('*').finalize();
-		case TokenId.DollarSlashyGStringQuotationEndMark: // -> $/ + $, make the $ to be an identifier
-			return Walker.DollarSlashyGStringDollarEscape().consumeNode().clearInAirText().Identifier('$').finalize();
+		case TokenId.DollarSlashyGStringQuotationEndMark: // -> $/ + $
+			return Walker.DollarSlashyGStringDollarEscape().consumeNode().andUse(retokenizeWithDollarHeadedDSGL).finalize();
 		// -> ${
 		case TokenId.LBrace: // -> ${
 			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();

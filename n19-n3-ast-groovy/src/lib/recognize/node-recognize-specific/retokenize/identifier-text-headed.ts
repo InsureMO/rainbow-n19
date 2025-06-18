@@ -113,12 +113,11 @@ export const retokenizeWithIdentifiableTextHeadedNSL = (identifiableText: string
 export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, previousTokenId: TokenId, recognition: RetokenizeAstRecognition): RetokenizedNodes => {
 	const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
-	const First$ = -1;
-	const Last$ = -2;
-	const Ignored$ = -3;
+	const Last$ = Symbol('Last$');
+	const Ignored$ = Symbol('Ignored$');
 	type SplitPart = {
 		text: string;
-		type: TokenId.GStringInterpolationStartMark | TokenId.DollarSlashyGStringDollarEscape | TokenId.Identifier | TokenId.Chars | -1 | -2 | -3;
+		type: TokenId.GStringInterpolationStartMark | TokenId.DollarSlashyGStringDollarEscape | TokenId.Identifier | TokenId.Chars | Symbol;
 	}
 
 	const text = node.text;
@@ -133,9 +132,7 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 		.filter(p => p.length !== 0)
 		.map<SplitPart>((text, index, parts) => {
 			if (text === '$') {
-				if (index === 0) {
-					return {text, type: First$};
-				} else if (index === parts.length - 1) {
+				if (index === parts.length - 1) {
 					return {text, type: Last$};
 				} else {
 					return {text, type: TokenId.GStringInterpolationStartMark};
@@ -151,19 +148,14 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 				case TokenId.Identifier: {
 					if (index === 0) {
 						if ([TokenId.GStringInterpolationStartMark, TokenId.GStringInterpolationLBraceStartMark].includes(previousTokenId)) {
+							// previous token is interpolation start mark, keep identifier
 							return {text, type};
 						} else {
-							// identifier at index 0, rehydrate to chars
-							// since if previous is some gstring interpolation start mark, parent should be gstring interpolation
+							// otherwise rehydrate to chars
 							return {text, type: TokenId.Chars};
 						}
-					} else if (parts[index - 1].type === Ignored$) {
-						// previous part is ignored, which means previous is a dollar escape in dollar slashy gstring literal
-						// rehydrate to chars
-						return {text, type: TokenId.Chars};
-					} else if (parts[index - 1].type === TokenId.Chars) {
-						// previous part is chars, which means previous is a dollar after dollar escape or slash escape
-						// and parent is dollar slashy gstring literal,
+					} else if (parts[index - 1].type === TokenId.Chars || parts[index - 1].type === Ignored$) {
+						// previous part is chars, means previous is rehydrated
 						// rehydrate to chars
 						return {text, type: TokenId.Chars};
 					} else {
@@ -171,14 +163,12 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 					}
 				}
 				// @formatter:off
-				case Last$:	case Ignored$:case  TokenId.Chars:  {
+				case Last$:	case Ignored$: case TokenId.Chars:  {
 					// @formatter:on
 					// do nothing
 					return {text, type};
 				}
-				// @formatter:off
-				case First$: case TokenId.GStringInterpolationStartMark: {
-					// @formatter:on
+				case TokenId.GStringInterpolationStartMark: {
 					switch (literalTokenId) {
 						case TokenId.GStringLiteral: {
 							// in gstring literal, single $ always be gstring interpolation start mark
@@ -190,33 +180,19 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 								// keep it
 								return {text, type: TokenId.GStringInterpolationStartMark};
 							} else {
-								// not follows an identifier, rehydrate to chars
+								// not follows an identifier (could be $ or chars), rehydrate to chars
 								return {text, type: TokenId.Chars};
 							}
 						}
 						case TokenId.DollarSlashyGStringLiteral: {
 							// in dollar slashy gstring literal, $ is start mark only when it follows an identifier
 							// and if it follows another $, it is a dollar escape
-							if (parts[index + 1]?.type === TokenId.GStringInterpolationStartMark) {
+							const nextType = parts[index + 1]?.type;
+							if (nextType === TokenId.GStringInterpolationStartMark || nextType === Last$) {
 								// set next part as ignored
 								parts[index + 1].type = Ignored$;
 								return {text: '$$', type: TokenId.DollarSlashyGStringDollarEscape};
-							}
-							if (type === First$) {
-								if ([TokenId.DollarSlashyGStringSlashEscape].includes(previousTokenId)) {
-									// $ after $/ still is $, rehydrate to chars
-									// @done 20250618
-									//  $ after $$ might be $, depends on whether there is a gstring interpolation before me or not.
-									//  if gstring interpolation before me exists, $ is a gstring interpolation start mark,
-									//  otherwise is chars.
-									//  since it cannot be precisely confirm here, leave it to gstring interpolation pointcuts.
-									return {text, type: TokenId.Chars};
-								}
-							} else if (parts[index - 1].type === Ignored$) {
-								// previous is $$, and $ after $$ still is $, rehydrate to chars
-								return {text, type: TokenId.Chars};
-							}
-							if (parts[index + 1]?.type === TokenId.Identifier) {
+							} else if (nextType === TokenId.Identifier) {
 								// keep it
 								return {text, type: TokenId.GStringInterpolationStartMark};
 							} else {
