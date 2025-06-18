@@ -7,7 +7,7 @@ describe('String literal rehydration tests: Backslash Escape', () => {
 	});
 
 	test('NSL, Backslash Escape -> Undetermined Chars', async () => {
-		const text = `\\\\`;
+		const text = '\\\\';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 2, 0, text, [
@@ -17,7 +17,7 @@ describe('String literal rehydration tests: Backslash Escape', () => {
 	});
 
 	test('SGL, Backslash Escape -> Undetermined Chars', async () => {
-		const text = `/\\\\a/`;
+		const text = '/\\\\a/';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 5, 0, text, [
@@ -33,7 +33,7 @@ describe('String literal rehydration tests: Backslash Escape', () => {
 	});
 
 	test('SGL, Backslash Escape + Divide -> Undetermined Chars + Slash Escape', async () => {
-		const text = `/\\\\//`;
+		const text = '/\\\\//';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 5, 0, text, [
@@ -48,7 +48,7 @@ describe('String literal rehydration tests: Backslash Escape', () => {
 	});
 
 	test('SGL, Backslash Escape + DollarSlashyGStringQuotationEndMark + Divide -> Undetermined Chars + Slash Escape + Chars + SlashyGStringQuotationMark', async () => {
-		const text = `/\\\\/$/`;
+		const text = '/\\\\/$/';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 6, 0, text, [
@@ -63,7 +63,7 @@ describe('String literal rehydration tests: Backslash Escape', () => {
 		]);
 	});
 	test('SGL, Backslash Escape + DollarSlashyGStringQuotationEndMark + DivideAssign -> Undetermined Chars + Slash Escape + Chars + SlashyGStringQuotationMark + Assign', async () => {
-		const text = `/\\\\/$/=`;
+		const text = '/\\\\/$/=';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 7, 0, text, [
@@ -80,7 +80,7 @@ describe('String literal rehydration tests: Backslash Escape', () => {
 	});
 
 	test('SGL, Backslash Escape + DivideAssign -> Undetermined Chars + Slash Escape + Chars', async () => {
-		const text = `/\\\\/=/`;
+		const text = '/\\\\/=/';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 6, 0, text, [
@@ -96,7 +96,7 @@ describe('String literal rehydration tests: Backslash Escape', () => {
 	});
 
 	test('SGL, Backslash Escape + SLCommentStartMark -> Undetermined Chars + Slash Escape + SlashyGStringQuotationMark', async () => {
-		const text = `/\\\\///`;
+		const text = '/\\\\///';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 6, 0, text, [
@@ -112,7 +112,7 @@ describe('String literal rehydration tests: Backslash Escape', () => {
 	});
 
 	test('SGL, Backslash Escape + MLCommentStartMark -> Undetermined Chars + Slash Escape + Chars', async () => {
-		const text = `/\\\\/*/`;
+		const text = '/\\\\/*/';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 6, 0, text, [
@@ -128,7 +128,7 @@ describe('String literal rehydration tests: Backslash Escape', () => {
 	});
 
 	test('DSGL, Backslash Escape -> Undetermined Chars', async () => {
-		const text = `$/\\\\/$`;
+		const text = '$/\\\\/$';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 6, 0, text, [

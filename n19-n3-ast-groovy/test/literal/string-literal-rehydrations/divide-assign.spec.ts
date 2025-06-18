@@ -8,7 +8,7 @@ describe('String literal rehydration tests: Divide Assign', () => {
 
 	// divide assign: /=
 	test('NSL, When is first node, DivideAssign -> SlashyGStringQuotationMark + Chars', async () => {
-		const text = `/=`;
+		const text = '/=';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 2, 0, text, [
@@ -21,7 +21,7 @@ describe('String literal rehydration tests: Divide Assign', () => {
 	});
 
 	test('NSL, When after operator, DivideAssign -> SlashyGStringQuotationMark + Chars', async () => {
-		const text = `- /=`;
+		const text = '- /=';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 4, 0, text, [
@@ -36,7 +36,7 @@ describe('String literal rehydration tests: Divide Assign', () => {
 	});
 
 	test('NSL, When after dot, DivideAssign -> SlashyGStringQuotationMark', async () => {
-		const text = `. /=`;
+		const text = '. /=';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 4, 0, text, [
@@ -51,7 +51,7 @@ describe('String literal rehydration tests: Divide Assign', () => {
 	});
 
 	test('NSL, When nothing before me at same line, DivideAssign -> SlashyGStringQuotationMark + Chars', async () => {
-		const text = `1\n/=`;
+		const text = '1\n/=';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 4, 0, text, [
