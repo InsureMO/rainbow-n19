@@ -205,24 +205,37 @@
 
 ## Notes
 
+### ✅ Identify the `$` started chars
+
+- `$/`: Dollar Slashy GString Quotation Start Mark,
+- `$$`: Dollar Slashy GString Dollar Escape,
+- `${`: GString Interpolation LBrace Start Mark,
+- others: Identifier.
+
+The gstring interpolation start mark (`$`) will not be identified in the capture phase. It is rehydrated from other token natures.
+For example, in the case of `/$abc`, if `/` is recognized as the start of a slashy gstring literal, and since `abc` is a valid identifier,
+then `$` will be recognized as the gstring interpolation start mark.
+
 ### ✅ Identify A Slash (Divide `/`, Divide Assign `/=`, Dollar Slashy GString Quotation End Mark `/$`) as Slash GString Quotation Mark
 
 Meet the following conditions:
 
-- There is no dot (`.`) before this token,
-- There is no operator (`=`, `==`, `*`, etc.) before this token,
-- There are no other tokens except whitespace, tab, and comments (`/*...*/`) before this token on the same line.
+- There is no dot (`.`) directly before this token,
+- There is no operator (`=`, `==`, `*`, etc.) directly before this token,
+- There are no other tokens except whitespace, tab, and comment (`/*...*/`) before this token on the same line.
+
+> `A directly before B` means that tokens between `A` and `B` can only be whitespace, tab, newline or comment (sl/ml).
 
 > Single line comment on same line and before this token will change nature of this token to chars, so this token never be slashy gstring
 > quotation mark.
 
-For Single Line Comment Start Mark `//` and Multiple Lines Comment Start Mark `/*`, there’s no need to consider whether the slash is part of
-the Slash GString Quotation Mark. Their precedence is higher than this rehydration. That is to say, they will always be regarded as start
+For single line comment start mark `//` and multiple lines comment start mark `/*`, there’s no need to consider whether the slash is part of
+the slash gstring quotation mark. Their precedence is higher than this rehydration. That is to say, they will always be regarded as start
 marks, rather than a quotation mark followed by `/` or `*`.
 
 ### ✅ GString Interpolation Start Mark (`$`, `${`) in Dollar Slashy GString Literal (`$/.../$`)
 
-- It is a bug or something?
+- **It is a bug or something?**
 
 ```groovy
 def abc = 'xyz'
