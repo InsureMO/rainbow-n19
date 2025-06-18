@@ -216,9 +216,9 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 								// previous is $$, and $ after $$ still is $, rehydrate to chars
 								return {text, type: TokenId.Chars};
 							}
-							if (parts[index + 1].type === TokenId.Identifier) {
+							if (parts[index + 1]?.type === TokenId.Identifier) {
 								// keep it
-								return {text, type};
+								return {text, type: TokenId.GStringInterpolationStartMark};
 							} else {
 								// not follows an identifier, rehydrate to chars
 								return {text, type: TokenId.Chars};
