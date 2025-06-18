@@ -7,7 +7,7 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 	});
 
 	test('NSL, Dollar Escape -> Undetermined Chars + Identifier', async () => {
-		const text = `\\$`;
+		const text = '\\$';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 2, 0, text, [
@@ -18,7 +18,7 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 	});
 
 	test('NSL, Dollar Escape + Divide -> Undetermined Chars + DollarSlashyGStringQuotationStartMark', async () => {
-		const text = `\\$/`;
+		const text = '\\$/';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 3, 0, text, [
@@ -31,7 +31,7 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 	});
 
 	test('NSL, Dollar Escape + DollarSlashyGStringQuotationEndMark -> Undetermined Chars + DollarSlashyGStringQuotationStartMark + Chars', async () => {
-		const text = `\\$/$`;
+		const text = '\\$/$';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 4, 0, text, [
@@ -45,7 +45,7 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 	});
 
 	test('NSL, Dollar Escape + DollarSlashyGStringQuotationEndMark + Keyword -> Undetermined Chars + DollarSlashyGStringQuotationStartMark + GStringInterpolation', async () => {
-		const text = `\\$/$private`;
+		const text = '\\$/$private';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 11, 0, text, [
@@ -62,7 +62,7 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 	});
 
 	test('NSL, Dollar Escape + DollarSlashyGStringQuotationEndMark + Keyword -> Undetermined Chars + DollarSlashyGStringQuotationStartMark + DollarSlashyGStringDollarEscape + Chars', async () => {
-		const text = `\\$/$$private`;
+		const text = '\\$/$$private';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 12, 0, text, [
@@ -77,7 +77,7 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 	});
 
 	test('NSL, Dollar Escape + DivideAssign -> Undetermined Chars + DollarSlashyGStringQuotationStartMark + Chars', async () => {
-		const text = `\\$/=`;
+		const text = '\\$/=';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 4, 0, text, [
@@ -91,7 +91,7 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 	});
 
 	test('NSL, Dollar Escape + SLCommentStartMark -> Undetermined Chars + DollarSlashyGStringQuotationStartMark + Chars', async () => {
-		const text = `\\$//`;
+		const text = '\\$//';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 4, 0, text, [
@@ -129,7 +129,7 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 		]);
 	});
 
-	test('SGL, Dollar Escape + DollarSlashyGStringQuotationStartMark -> Chars + Chars + SlashyGStringQuotationMark', async () => {
+	test('SGL, Dollar Escape + DollarSlashyGStringQuotationStartMark -> Undetermined Chars + Chars + SlashyGStringQuotationMark', async () => {
 		const text = '/\\$/';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
@@ -144,8 +144,108 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 		]);
 	});
 
-	test('SGL, Dollar Escape + DollarSlashyGStringSlashEscape -> Chars + Chars + SlashyGStringQuotationMark', async () => {
-		const text = `/\\\\\\`;
+	test('SGL, Dollar Escape + DollarSlashyGStringDollarEscape -> Undetermined Chars + Chars + Chars + Chars', async () => {
+		const text = '/\\$$$';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 5, 0, text, [
+				[TokenId.SlashyGStringLiteral, 0, 5, 1, '/\\$$$', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
+					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
+					[TokenId.Chars, 2, 3, 1, '$'],
+					[TokenId.Chars, 3, 4, 1, '$'],
+					[TokenId.Chars, 4, 5, 1, '$']
+				]]
+			]
+		]);
+	});
+
+	test('SGL, Dollar Escape + GStringInterpolationLBraceStartMark -> Undetermined Chars + Chars + GStringInterpolationLBraceStartMark', async () => {
+		const text = '/\\$\${';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 5, 0, text, [
+				[TokenId.SlashyGStringLiteral, 0, 5, 1, '/\\$\${', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
+					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
+					[TokenId.Chars, 2, 3, 1, '$'],
+					[TokenId.GStringInterpolation, 3, 5, 1, '\${', [
+						[TokenId.GStringInterpolationLBraceStartMark, 3, 5, 1, '\${']
+					]]
+				]]
+			]
+		]);
+	});
+
+	test('SGL, Dollar Escape + LBrace -> Undetermined Chars + GStringInterpolationLBraceStartMark', async () => {
+		const text = '/\\\${';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 4, 0, text, [
+				[TokenId.SlashyGStringLiteral, 0, 4, 1, '/\\\${', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
+					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
+					[TokenId.GStringInterpolation, 2, 4, 1, '\${', [
+						[TokenId.GStringInterpolationLBraceStartMark, 2, 4, 1, '\${']
+					]]
+				]]
+			]
+		]);
+	});
+
+	test('SGL, Dollar Escape + Identifier -> Undetermined Chars + GStringInterpolation', async () => {
+		const text = '/\\$abc';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 6, 0, text, [
+				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/\\$abc', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
+					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
+					[TokenId.GStringInterpolation, 2, 6, 1, '\$abc', [
+						[TokenId.GStringInterpolationStartMark, 2, 3, 1, '$'],
+						[TokenId.Identifier, 3, 6, 1, 'abc']
+					]]
+				]]
+			]
+		]);
+	});
+
+	test('SGL, Dollar Escape + Identifier -> Undetermined Chars + Chars + GStringInterpolation', async () => {
+		const text = '/\\$$abc';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 7, 0, text, [
+				[TokenId.SlashyGStringLiteral, 0, 7, 1, '/\\$$abc', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
+					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
+					[TokenId.Chars, 2, 3, 1, '$'],
+					[TokenId.GStringInterpolation, 3, 7, 1, '\$abc', [
+						[TokenId.GStringInterpolationStartMark, 3, 4, 1, '$'],
+						[TokenId.Identifier, 4, 7, 1, 'abc']
+					]]
+				]]
+			]
+		]);
+	});
+
+	test('SGL, Dollar Escape + DollarSlashyGStringQuotationEndMark -> Undetermined Chars + Chars + SlashyGStringQuotationMark + Identifier', async () => {
+		const text = '/\\$/$';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 5, 0, text, [
+				[TokenId.SlashyGStringLiteral, 0, 4, 1, '/\\$/', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
+					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
+					[TokenId.Chars, 2, 3, 1, '$'],
+					[TokenId.SlashyGStringQuotationMark, 3, 4, 1, '/']
+				]],
+				[TokenId.Identifier, 4, 5, 1, '$']
+			]
+		]);
+	});
+
+	test('SGL, Dollar Escape + Divide -> Undetermined Chars + Chars + SlashyGStringQuotationMark', async () => {
+		const text = '/\\$/';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 4, 0, text, [
@@ -154,6 +254,71 @@ describe('String literal rehydration tests: Dollar Escape', () => {
 					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
 					[TokenId.Chars, 2, 3, 1, '$'],
 					[TokenId.SlashyGStringQuotationMark, 3, 4, 1, '/']
+				]]
+			]
+		]);
+	});
+
+	test('SGL, Dollar Escape + DivideAssign -> Undetermined Chars + Chars + SlashyGStringQuotationMark + Assign', async () => {
+		const text = '/\\$/=';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 5, 0, text, [
+				[TokenId.SlashyGStringLiteral, 0, 4, 1, '/\\$/', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
+					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
+					[TokenId.Chars, 2, 3, 1, '$'],
+					[TokenId.SlashyGStringQuotationMark, 3, 4, 1, '/']
+				]],
+				[TokenId.Assign, 4, 5, 1, '=']
+			]
+		]);
+	});
+
+	test('SGL, Dollar Escape + SLCommentStartMark -> Undetermined Chars + Chars + SlashyGStringQuotationMark + Divide', async () => {
+		const text = '/\\$//';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 5, 0, text, [
+				[TokenId.SlashyGStringLiteral, 0, 4, 1, '/\\$/', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
+					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
+					[TokenId.Chars, 2, 3, 1, '$'],
+					[TokenId.SlashyGStringQuotationMark, 3, 4, 1, '/']
+				]],
+				[TokenId.Divide, 4, 5, 1, '/']
+			]
+		]);
+	});
+
+	test('SGL, Dollar Escape + MLCommentStartMark -> Undetermined Chars + Chars + SlashyGStringQuotationMark + Multiple', async () => {
+		const text = '/\\$/*';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 5, 0, text, [
+				[TokenId.SlashyGStringLiteral, 0, 4, 1, '/\\$/', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
+					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
+					[TokenId.Chars, 2, 3, 1, '$'],
+					[TokenId.SlashyGStringQuotationMark, 3, 4, 1, '/']
+				]],
+				[TokenId.Multiple, 4, 5, 1, '*']
+			]
+		]);
+	});
+
+	test('SGL, Dollar Escape + Keyword -> Undetermined Chars + GStringInterpolation', async () => {
+		const text = '/\\$private';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 10, 0, text, [
+				[TokenId.SlashyGStringLiteral, 0, 10, 1, '/\\$private', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
+					[TokenId.UndeterminedChars, 1, 2, 1, '\\'],
+					[TokenId.GStringInterpolation, 2, 10, 1, '$private', [
+						[TokenId.GStringInterpolationStartMark, 2, 3, 1, '$'],
+						[TokenId.Identifier, 3, 10, 1, 'private']
+					]]
 				]]
 			]
 		]);

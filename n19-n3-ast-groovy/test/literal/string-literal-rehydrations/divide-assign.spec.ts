@@ -12,8 +12,8 @@ describe('String literal rehydration tests: Divide Assign', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 2, 0, text, [
-				[TokenId.SlashyGStringLiteral, 0, 2, 1, `/=`, [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+				[TokenId.SlashyGStringLiteral, 0, 2, 1, '/=', [
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 2, 1, '=']
 				]]
 			]
@@ -27,8 +27,8 @@ describe('String literal rehydration tests: Divide Assign', () => {
 			TokenId.COMPILATION_UNIT, 0, 4, 0, text, [
 				[TokenId.Subtract, 0, 1, 1, '-'],
 				[TokenId.Whitespaces, 1, 2, 1, ' '],
-				[TokenId.SlashyGStringLiteral, 2, 4, 1, `/=`, [
-					[TokenId.SlashyGStringQuotationMark, 2, 3, 1, `/`],
+				[TokenId.SlashyGStringLiteral, 2, 4, 1, '/=', [
+					[TokenId.SlashyGStringQuotationMark, 2, 3, 1, '/'],
 					[TokenId.Chars, 3, 4, 1, '=']
 				]]
 			]
@@ -42,8 +42,8 @@ describe('String literal rehydration tests: Divide Assign', () => {
 			TokenId.COMPILATION_UNIT, 0, 4, 0, text, [
 				[TokenId.Dot, 0, 1, 1, '.'],
 				[TokenId.Whitespaces, 1, 2, 1, ' '],
-				[TokenId.SlashyGStringLiteral, 2, 4, 1, `/=`, [
-					[TokenId.SlashyGStringQuotationMark, 2, 3, 1, `/`],
+				[TokenId.SlashyGStringLiteral, 2, 4, 1, '/=', [
+					[TokenId.SlashyGStringQuotationMark, 2, 3, 1, '/'],
 					[TokenId.Chars, 3, 4, 1, '=']
 				]]
 			]
@@ -59,8 +59,8 @@ describe('String literal rehydration tests: Divide Assign', () => {
 					[TokenId.NumericBasePart, 0, 1, 1, '1']
 				]],
 				[TokenId.NewLine, 1, 2, 1, '\n'],
-				[TokenId.SlashyGStringLiteral, 2, 4, 2, `/=`, [
-					[TokenId.SlashyGStringQuotationMark, 2, 3, 2, `/`],
+				[TokenId.SlashyGStringLiteral, 2, 4, 2, '/=', [
+					[TokenId.SlashyGStringQuotationMark, 2, 3, 2, '/'],
 					[TokenId.Chars, 3, 4, 2, '=']
 				]]
 			]
@@ -68,15 +68,15 @@ describe('String literal rehydration tests: Divide Assign', () => {
 	});
 
 	test('SGL, DivideAssign -> SlashyGStringQuotationMark + Assign', async () => {
-		const text = `/abc /=`;
+		const text = '/abc /=';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 7, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Assign, 6, 7, 1, '=']
 			]
@@ -84,15 +84,15 @@ describe('String literal rehydration tests: Divide Assign', () => {
 	});
 
 	test('SGL, DivideAssign + Bitnot -> SlashyGStringQuotationMark + RegexFind', async () => {
-		const text = `/abc /=~`;
+		const text = '/abc /=~';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 8, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.RegexFind, 6, 8, 1, '=~']
 			]
@@ -100,15 +100,15 @@ describe('String literal rehydration tests: Divide Assign', () => {
 	});
 
 	test('SGL, DivideAssign + RegexFind -> SlashyGStringQuotationMark + RegexMatch', async () => {
-		const text = `/abc /==~`;
+		const text = '/abc /==~';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 9, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.RegexMatch, 6, 9, 1, '==~']
 			]
@@ -116,15 +116,15 @@ describe('String literal rehydration tests: Divide Assign', () => {
 	});
 
 	test('SGL, DivideAssign + RegexMatch -> SlashyGStringQuotationMark + Identical + Bitnot', async () => {
-		const text = `/abc /===~`;
+		const text = '/abc /===~';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 10, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Identical, 6, 9, 1, '==='],
 				[TokenId.Bitnot, 9, 10, 1, '~']
@@ -133,15 +133,15 @@ describe('String literal rehydration tests: Divide Assign', () => {
 	});
 
 	test('SGL, DivideAssign + Assign -> SlashyGStringQuotationMark + Equal', async () => {
-		const text = `/abc /==`;
+		const text = '/abc /==';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 8, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Equal, 6, 8, 1, '==']
 			]
@@ -149,15 +149,15 @@ describe('String literal rehydration tests: Divide Assign', () => {
 	});
 
 	test('SGL, DivideAssign + Equal -> SlashyGStringQuotationMark + Identical', async () => {
-		const text = `/abc /===`;
+		const text = '/abc /===';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 9, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Identical, 6, 9, 1, '===']
 			]
@@ -165,15 +165,15 @@ describe('String literal rehydration tests: Divide Assign', () => {
 	});
 
 	test('SGL, DivideAssign + Identical -> SlashyGStringQuotationMark + Identical + Assign', async () => {
-		const text = `/abc /====`;
+		const text = '/abc /====';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 10, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Identical, 6, 9, 1, '==='],
 				[TokenId.Assign, 9, 10, 1, '=']

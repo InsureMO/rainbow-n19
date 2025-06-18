@@ -8,15 +8,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 
 	// ml comment start mark: /*
 	test('SGL, MLCommentStartMark + Dot -> SlashyGStringQuotationMark + SpreadDot', async () => {
-		const text = `/abc /*.`;
+		const text = '/abc /*.';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 8, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.SpreadDot, 6, 8, 1, '*.']
 			]
@@ -24,15 +24,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + NumericBasePart (starts with .) -> SlashyGStringQuotationMark + SpreadDot + NumericBasePart', async () => {
-		const text = `/abc /*.123e+2g`;
+		const text = '/abc /*.123e+2g';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 15, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.SpreadDot, 6, 8, 1, '*.'],
 				[TokenId.DecimalLiteral, 8, 15, 1, '123e+2g', [
@@ -47,15 +47,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + NumericBasePart (not starts with .) -> SlashyGStringQuotationMark + Multiple + NumericBasePart', async () => {
-		const text = `/abc /*1123e+2g`;
+		const text = '/abc /*1123e+2g';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 15, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Multiple, 6, 7, 1, '*'],
 				[TokenId.DecimalLiteral, 7, 15, 1, '1123e+2g', [
@@ -70,15 +70,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + SpreadDot -> SlashyGStringQuotationMark + Power + Dot', async () => {
-		const text = `/abc /**.`;
+		const text = '/abc /**.';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 9, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Power, 6, 8, 1, '**'],
 				[TokenId.Dot, 8, 9, 1, '.']
@@ -87,15 +87,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + Power -> SlashyGStringQuotationMark + Power + Multiple', async () => {
-		const text = `/abc /***`;
+		const text = '/abc /***';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 9, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Power, 6, 8, 1, '**'],
 				[TokenId.Multiple, 8, 9, 1, '*']
@@ -104,15 +104,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + PowerAssign -> SlashyGStringQuotationMark + Power + MultipleAssign', async () => {
-		const text = `/abc /***=`;
+		const text = '/abc /***=';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 10, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Power, 6, 8, 1, '**'],
 				[TokenId.MultipleAssign, 8, 10, 1, '*=']
@@ -121,15 +121,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + Multiple -> SlashyGStringQuotationMark + Power', async () => {
-		const text = `/abc /**`;
+		const text = '/abc /**';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 8, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Power, 6, 8, 1, '**']
 			]
@@ -137,15 +137,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + MLCommentEndMark -> SlashyGStringQuotationMark + Power + SlashyGStringQuotationMark', async () => {
-		const text = `/abc /**/`;
+		const text = '/abc /**/';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 9, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.Power, 6, 8, 1, '**'],
 				[TokenId.SlashyGStringLiteral, 8, 9, 1, '/', [
@@ -156,15 +156,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + MultipleAssign -> SlashyGStringQuotationMark + PowerAssign', async () => {
-		const text = `/abc /**=`;
+		const text = '/abc /**=';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 9, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.PowerAssign, 6, 9, 1, '**=']
 			]
@@ -172,15 +172,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + Assign -> SlashyGStringQuotationMark + MultipleAssign', async () => {
-		const text = `/abc /*=`;
+		const text = '/abc /*=';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 8, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.MultipleAssign, 6, 8, 1, '*=']
 			]
@@ -188,15 +188,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + Equal -> SlashyGStringQuotationMark + MultipleAssign + Assign', async () => {
-		const text = `/abc /*==`;
+		const text = '/abc /*==';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 9, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.MultipleAssign, 6, 8, 1, '*='],
 				[TokenId.Assign, 8, 9, 1, '=']
@@ -205,15 +205,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + Identical -> SlashyGStringQuotationMark + MultipleAssign + Equal', async () => {
-		const text = `/abc /*===`;
+		const text = '/abc /*===';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 10, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.MultipleAssign, 6, 8, 1, '*='],
 				[TokenId.Equal, 8, 10, 1, '==']
@@ -222,15 +222,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + RegexFind -> SlashyGStringQuotationMark + MultipleAssign + Bitnot', async () => {
-		const text = `/abc /*=~`;
+		const text = '/abc /*=~';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 9, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.MultipleAssign, 6, 8, 1, '*='],
 				[TokenId.Bitnot, 8, 9, 1, '~']
@@ -239,15 +239,15 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 	});
 
 	test('SGL, MLCommentStartMark + RegexMatch -> SlashyGStringQuotationMark + MultipleAssign + RegexFind', async () => {
-		const text = `/abc /*==~`;
+		const text = '/abc /*==~';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 10, 0, text, [
 				[TokenId.SlashyGStringLiteral, 0, 6, 1, '/abc /', [
-					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, `/`],
+					[TokenId.SlashyGStringQuotationMark, 0, 1, 1, '/'],
 					[TokenId.Chars, 1, 4, 1, 'abc'],
 					[TokenId.Whitespaces, 4, 5, 1, ' '],
-					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, `/`]
+					[TokenId.SlashyGStringQuotationMark, 5, 6, 1, '/']
 				]],
 				[TokenId.MultipleAssign, 6, 8, 1, '*='],
 				[TokenId.RegexFind, 8, 10, 1, '=~']

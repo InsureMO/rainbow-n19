@@ -807,7 +807,8 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// use function when parent is gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).use(AGLRecognizeUtils.rehydrateIdentifierAGL)
-		/** note that when parent is gstring interpolation, and start mark not contains lbrace
+		/**
+		 * note that when parent is gstring interpolation, and start mark not contains lbrace
 		 * logically, identifier must not contain $,
 		 * and these are handled by create gstring interpolation start mark (without lbrace)
 		 * find callers of {@link RetokenizeNodeWalker.GStringInterpolationStartMark} to find more details.

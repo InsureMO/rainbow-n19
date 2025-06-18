@@ -53,5 +53,6 @@ export class AGLRecognizeUtils {
 			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 		});
 		nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
+		return nodeIndex;
 	};
 }
