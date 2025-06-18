@@ -93,4 +93,19 @@ export class RecognizeCommonUtils {
 
 		return false;
 	};
+
+	/**
+	 * 8 primitive types, keyword, 2 boolean literal, in, instanceof
+	 */
+	static isWord = (tokenId: TokenId, tokenType: TokenType): boolean => {
+		return [TokenType.PrimitiveType, TokenType.Keyword, TokenType.BooleanLiteral].includes(tokenType)
+			|| [TokenId.IN, TokenId.INSTANCEOF].includes(tokenId);
+	};
+
+	/**
+	 * identifier, or {@link RecognizeCommonUtils.isWord}
+	 */
+	static isWordAndIdentifiable = (tokenId: TokenId, tokenType: TokenType): boolean => {
+		return TokenId.Identifier === tokenId || RecognizeCommonUtils.isWord(tokenId, tokenType);
+	};
 }

@@ -255,7 +255,7 @@ describe('String literal rehydration tests: ML Comment Start Mark', () => {
 		]);
 	});
 
-	test('MLCommentStartMark -> Chars, SL/GL/DSGL', async () => {
+	test('SL/GL/DSGL, MLCommentStartMark -> Chars', async () => {
 		const text = `'/*'"/*"$//*/$`;
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [

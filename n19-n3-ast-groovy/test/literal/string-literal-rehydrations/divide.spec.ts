@@ -63,7 +63,7 @@ describe('String literal rehydration tests: Divide', () => {
 		]);
 	});
 
-	test('Divide -> Chars, SL/GL', async () => {
+	test('SL/GL, Divide -> Chars', async () => {
 		const text = `'/'"/"`;
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [

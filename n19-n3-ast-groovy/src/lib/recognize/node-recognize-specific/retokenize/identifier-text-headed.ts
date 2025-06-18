@@ -1,5 +1,6 @@
 import {Char, Character} from '../../../captor';
-import {TokenId, TokenType} from '../../../tokens';
+import {TokenId} from '../../../tokens';
+import {RecognizeCommonUtils} from '../recognizer-common';
 import {
 	retokenizeWithDollarHeadedDSGL,
 	retokenizeWithDollarHeadedGL,
@@ -44,8 +45,7 @@ export const retokenizeWithIdentifiableTextHeadedNSL = (identifiableText: string
 	}(identifiableText, recognition);
 
 	while (Walker.hasAvailableNode) {
-		if ([TokenType.Identifier, TokenType.PrimitiveType, TokenType.Keyword, TokenType.BooleanLiteral].includes(Walker.currentNode.tokenType)
-			|| [TokenId.IN, TokenId.INSTANCEOF].includes(Walker.currentNode.tokenId)) {
+		if (RecognizeCommonUtils.isWordAndIdentifiable(Walker.currentNode.tokenId, Walker.currentNode.tokenType)) {
 			// combine with given identifier text, continue
 			Walker.consumeNodeAndText();
 		} else if (TokenId.NumericBasePart === Walker.currentNode.tokenId) {
@@ -103,9 +103,10 @@ export const retokenizeWithIdentifiableTextHeadedNSL = (identifiableText: string
 };
 
 /**
- * retokenize an identifier which contains $,
+ * retokenize an identifier which might contains $,
  * only when parent is any gstring literal, or gstring interpolation.
  *
+ * the node could be {@link RecognizeCommonUtils.isWordAndIdentifiable}
  *
  * @ok 20250617
  */
@@ -149,9 +150,13 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 			switch (type) {
 				case TokenId.Identifier: {
 					if (index === 0) {
-						// identifier at index 0, rehydrate to chars
-						// since if previous is some gstring interpolation start mark, parent should be gstring interpolation
-						return {text, type: TokenId.Chars};
+						if ([TokenId.GStringInterpolationStartMark, TokenId.GStringInterpolationLBraceStartMark].includes(previousTokenId)) {
+							return {text, type};
+						} else {
+							// identifier at index 0, rehydrate to chars
+							// since if previous is some gstring interpolation start mark, parent should be gstring interpolation
+							return {text, type: TokenId.Chars};
+						}
 					} else if (parts[index - 1].type === Ignored$) {
 						// previous part is ignored, which means previous is a dollar escape in dollar slashy gstring literal
 						// rehydrate to chars
@@ -226,6 +231,7 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 		})
 		.forEach(({text, type}, index) => {
 			if (index === 0) {
+				// consume node at first round
 				Walker.consumeNode();
 			}
 			Walker.setInAirText(text);

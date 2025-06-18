@@ -26,7 +26,7 @@ export class AGLRecognizeUtils {
 	 * 1.3. if previous is a chars, rehydrate to chars,
 	 * 2. for chars part,
 	 *
-	 * works when parent is gstring literal, slashy gstring literal and dollar gstring literal.
+	 * works when parent is any gstring literal.
 	 *
 	 * @ok 20250617
 	 */

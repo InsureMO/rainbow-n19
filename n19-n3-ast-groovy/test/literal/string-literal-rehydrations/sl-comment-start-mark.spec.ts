@@ -7,7 +7,7 @@ describe('String literal rehydration tests: SL Comment Start Mark', () => {
 	});
 
 	// sl comment start mark: //
-	test('SLCommentStartMark -> Chars, SL/GL', async () => {
+	test('SL/GL, SLCommentStartMark -> Chars', async () => {
 		const text = `'//'"//"`;
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [

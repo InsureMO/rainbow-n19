@@ -7,7 +7,7 @@ describe('String literal rehydration tests: ML Comment End Mark', () => {
 	});
 
 	// ml comment end mark: */
-	test('MLCommentEndMark -> Chars, SL/GL', async () => {
+	test('SL/GL, MLCommentEndMark -> Chars', async () => {
 		const text = `'*/'"*/"`;
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [

@@ -1,5 +1,6 @@
 import {Character} from '../../../captor';
 import {TokenId} from '../../../tokens';
+import {RecognizeCommonUtils} from '../recognizer-common';
 import {retokenizeWithDivideHeadedDSGL} from './divide-headed';
 import {retokenizeIdentifiableTextWith$AGL, retokenizeWithIdentifiableTextHeadedNSL} from './identifier-text-headed';
 import {UseUpInAirTextRetokenizeNodeWalker} from './retokenize-node-walker';
@@ -89,9 +90,18 @@ export const retokenizeWithDollarHeadedGL = (recognition: RetokenizeAstRecogniti
 				return Walker.chars(firstChar + remainChars).finalize();
 			}
 		}
-		default: // remain $
-			// next could be identifier and starts with $
-			return Walker.GStringInterpolationStartMark().finalize();
+		default: {
+			// whatever next is, it doesn't start with $, {
+			if (RecognizeCommonUtils.isWord(Walker.currentNode?.tokenId, Walker.currentNode?.tokenType)) {
+				// next is a word
+				return Walker.GStringInterpolationStartMark().andUse(recognition => {
+					return retokenizeIdentifiableTextWith$AGL(TokenId.GStringLiteral, TokenId.GStringInterpolationStartMark, recognition);
+				}).finalize();
+			} else {
+				// not a word,
+				return Walker.GStringInterpolationStartMark().finalize();
+			}
+		}
 	}
 };
 
@@ -119,18 +129,36 @@ export const retokenizeWithDollarHeadedSGL = (recognition: RetokenizeAstRecognit
 			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();
 		case TokenId.Identifier: { // check first char
 			const text = Walker.currentNode.text;
-			if (text.startsWith('$')) { // -> $, but change nature to chars. leave next identifier handled by identifier rehydration AGL
+			if (text.startsWith('$')) { // -> $, change nature to chars. leave next identifier handled by identifier rehydration AGL
 				return Walker.chars('$').finalize();
-			} else { // remain $
-				// next is identifier and not starts with $
+			} else { // next is identifier and not starts with $
 				return Walker.GStringInterpolationStartMark().andUse(recognition => {
 					return retokenizeIdentifiableTextWith$AGL(TokenId.SlashyGStringLiteral, TokenId.GStringInterpolationStartMark, recognition);
 				}).finalize();
 			}
 		}
-		default: // remain $
-			// whatever next is, it doesn't start with $
-			return Walker.GStringInterpolationStartMark().finalize();
+		// nest char is /
+		case TokenId.SlashyGStringQuotationMark: // /
+		case TokenId.DollarSlashyGStringQuotationEndMark: // /$
+		case TokenId.Divide: // /
+		case TokenId.DivideAssign: // /=
+		case TokenId.SingleLineCommentStartMark: // //
+		case TokenId.MultipleLinesCommentStartMark:  // /*
+			// will end the SGL.
+			// it makes this $ to be a chars
+			return Walker.chars('$').finalize();
+		default: {
+			// whatever next is, it doesn't start with $, /, {
+			if (RecognizeCommonUtils.isWord(Walker.currentNode?.tokenId, Walker.currentNode?.tokenType)) {
+				// next is a word
+				return Walker.GStringInterpolationStartMark().andUse(recognition => {
+					return retokenizeIdentifiableTextWith$AGL(TokenId.SlashyGStringLiteral, TokenId.GStringInterpolationStartMark, recognition);
+				}).finalize();
+			} else {
+				// not a word, it makes this $ to be a chars
+				return Walker.chars('$').finalize();
+			}
+		}
 	}
 };
 
@@ -194,8 +222,17 @@ export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecogni
 		// -> ${
 		case TokenId.LBrace: // -> ${
 			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();
-		default: // remain $
-			// whatever next is, it doesn't start with $
-			return Walker.GStringInterpolationStartMark().finalize();
+		default: {
+			// whatever next is, it doesn't start with $, /, {
+			if (RecognizeCommonUtils.isWord(Walker.currentNode?.tokenId, Walker.currentNode?.tokenType)) {
+				// next is a word
+				return Walker.GStringInterpolationStartMark().andUse(recognition => {
+					return retokenizeIdentifiableTextWith$AGL(TokenId.DollarSlashyGStringLiteral, TokenId.GStringInterpolationStartMark, recognition);
+				}).finalize();
+			} else {
+				// not a word, it makes this $ to be a chars
+				return Walker.chars('$').finalize();
+			}
+		}
 	}
 };
