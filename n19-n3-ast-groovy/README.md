@@ -202,3 +202,24 @@
 - [ ] This call, e.g. B.this.y(), calling host class's member in not-static inner class
 - [ ] Path element, to visit properties, or call executable (closure, lambda, method, etc)
 - [ ] Build visitable variables in every level
+
+## Notes
+
+### GString interpolation start mark in Dollar Slashy GString Literal
+
+```groovy
+def abc = 'xyz'
+println $/$$$abc $abc abc/$              // $$abc xyz abc, $abc of $$$abc not works
+println $/$abc $$$abc abc/$              // xyz $xyz abc, $abc of $$$abc worked
+println $/$$${abc} $abc abc/$            // $${abc} xyz abc, ${abc} of $$${abc} not works
+println $/$abc $$${abc} abc/$            // xyz $xyz abc, ${abc} of $$${abc} worked
+println $/$/$abc $abc abc/$              // /$abc xyz abc, $abc of $/$abc not works
+println $/$abc $/$abc abc/$              // xyz /$abc abc, $abc of $/$abc not works 
+println $/$/${abc} $abc abc/$            // /${abc} xyz abc, ${abc} of $/${abc} not works
+println $/$abc $/${abc} abc/$            // xyz /${abc} abc, ${abc} of $/${abc} not works
+```
+
+Which means:
+
+- `$$$abc` and `$$${abc}` works only when there is interpolation before,
+- `$/$abc` and `$/${abc}` never works.
