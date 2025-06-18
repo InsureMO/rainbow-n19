@@ -205,22 +205,8 @@ export class CaptorDelegate {
 					let winner: AstNodeCaptor;
 					const nextChar = tokenizer.charAt(offset + 1);
 					if (nextChar === '$') {
-						// Identifier or LtDollarSlashyGStringDollarEscapeCaptor
-						// compare the next char of next char
-						const nextCharOfNext = tokenizer.charAt(offset + 2);
-						if (nextCharOfNext == null) {
-							// no more char, is $$
-							// LtDollarSlashyGStringDollarEscapeCaptor wins
-							winner = captors.find(captor => captor.constructor.name === 'LtDollarSlashyGStringDollarEscapeCaptor');
-						} else {
-							if (Character.isJavaIdentifierPartAndNotIdentifierIgnorable(nextCharOfNext.codePointAt(0))) {
-								// $$a, $$b, $$1, $$2, etc., identifier wins
-								winner = captors[identifierCaptorIndex];
-							} else {
-								// LtDollarSlashyGStringDollarEscapeCaptor wins
-								winner = captors.find(captor => captor.constructor.name === 'LtDollarSlashyGStringDollarEscapeCaptor');
-							}
-						}
+						// LtDollarSlashyGStringDollarEscapeCaptor wins
+						winner = captors.find(captor => captor.constructor.name === 'LtDollarSlashyGStringDollarEscapeCaptor');
 					} else if (nextChar === '/') {
 						// LtDollarSlashyGStringQuotationStartMarkCaptor wins
 						winner = captors.find(captor => captor.constructor.name === 'LtDollarSlashyGStringQuotationStartMarkCaptor');
