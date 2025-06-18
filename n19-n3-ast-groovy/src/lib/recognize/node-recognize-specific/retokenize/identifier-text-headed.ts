@@ -182,13 +182,13 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 					switch (literalTokenId) {
 						case TokenId.GStringLiteral: {
 							// in gstring literal, single $ always be gstring interpolation start mark
-							return {text, type};
+							return {text, type: TokenId.GStringInterpolationStartMark};
 						}
 						case TokenId.SlashyGStringLiteral: {
 							// in slashy gstring literal, $ is start mark only when it follows an identifier
 							if (parts[index + 1].type === TokenId.Identifier) {
 								// keep it
-								return {text, type};
+								return {text, type: TokenId.GStringInterpolationStartMark};
 							} else {
 								// not follows an identifier, rehydrate to chars
 								return {text, type: TokenId.Chars};
