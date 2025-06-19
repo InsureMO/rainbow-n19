@@ -559,8 +559,9 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		DeclareAsParent([TokenId.Tmp$CsscmfDeclaration, TokenType.TemporaryStatement])
 	],
 	[TokenId.AS]: [
-		RehydrateToIdentifierWhenAfterDotDirectly
-		// TODO declare as an AsStatement? to identify that following nodes are identifier and dot
+		RehydrateToIdentifierWhenAfterDotDirectly,
+		// declare as an AsStatement
+		DeclareAsParent([TokenId.AsStatement, TokenType.LogicStatement])
 	],
 	[TokenId.ASSERT]: [
 		RehydrateToIdentifierWhenAfterDotDirectly,
@@ -599,8 +600,8 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		RehydrateToIdentifierWhenAfterDotDirectly,
 		PreserveWhenParentIsCsscmfDeclaration,
 		// could be method or field if parent is class body
-		// could be class, method or field is parent is csscmf
-		// could be class, method or field is parent is type
+		// could be class, method or field if parent is csscmf
+		// could be class, method or field if parent is type
 		// otherwise is variable def
 		DeclareAsParent.when(
 			NodeRecognizeUtils.parentIsOneOfTokenIds(TokenId.Tmp$CsscmfDeclaration, TokenId.ClassBody),
@@ -816,12 +817,21 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is string literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// use function when parent is gstring literal
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).use(AGLRecognizeUtils.rehydrateIdentifierAGL)
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).use(AGLRecognizeUtils.rehydrateIdentifierAGL),
 		/**
 		 * note that when parent is gstring interpolation, and start mark not contains lbrace
 		 * logically, identifier must not contain $,
 		 * and these are handled by create gstring interpolation start mark (without lbrace)
-		 * find callers of {@link RetokenizeNodeWalker.GStringInterpolationStartMark} to find more details.
+		 * find call points of function {@link RetokenizeNodeWalker.GStringInterpolationStartMark} to find more details.
+		 */
+		/**
+		 * and for NSL, there are 2 special scenarios need to be handled:
+		 * 1. identifier is $. if the identifier text is $, then this identifier must be created at node recognize phase (by retokenizing).
+		 *    since in capture phase, the single $ is determined as identifier, because it doesn't match the $$, ${ and $/,
+		 *    and the char follows this $ is not allowed to be java identifier. which means there is no need to do more recognizing.
+		 * 2. identifier is $$. in this case, it might be captured as dollar slashy gstring dollar escape, and rehydrated to identifier;
+		 *    or rehydrated in recognize phase by retokenizing. which means also no need to do more recognizing.
+		 * for other cases, after try to apply the above rules, it is definitely just an identifier.
 		 */
 	],
 	// will not rehydrate under 4 tokens

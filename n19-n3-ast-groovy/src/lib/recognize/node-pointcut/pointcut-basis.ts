@@ -158,8 +158,8 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		// start with ${, accept any token
 		ChildAcceptableCheck(GStringInterpolationPointcuts.childAcceptableCheck),
 		EndWithChecked(GStringInterpolationPointcuts.startsWithLBraceAndRBraceAppended),
-		OnNodeClosed(GStringInterpolationPointcuts.finalize),
-		DisableElevateTrailingDetachable
+		DisableElevateTrailingDetachable,
+		OnNodeClosed(GStringInterpolationPointcuts.finalize)
 	],
 	[TokenId.GStringLiteral]: [
 		DisableBase5AsChild,
@@ -199,10 +199,11 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	[TokenId.ImportDeclaration]: [
 		// newline and sl comments is not allowed
 		DisableBase5AsChild,
-		TokenIds.accept(TokenId.STATIC, TokenId.Identifier, TokenId.Dot, TokenId.AS,
+		TokenIds.accept(TokenId.STATIC, TokenId.Identifier, TokenId.Dot, TokenId.AsStatement,
 			TokenId.Whitespaces, TokenId.Tabs, TokenId.MultipleLinesComment),
 		ReviseTokenTo({[TokenId.Multiple]: [TokenId.ImportAllMark, TokenType.Mark]}),
-		EndWithSemicolon
+		EndWithSemicolon,
+		CloseOnChildWithTokenIdClosed(TokenId.AsStatement)
 	],
 	[TokenId.ImportAllMark]: 'TODO',
 	[TokenId.InterfaceDeclaration]: [
@@ -435,6 +436,15 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		EndWithSemicolon
 	],
 	[TokenId.ContinueStatement]: [
+		DisableBase5AsChild,
+		EndWithSemicolon
+	],
+	[TokenId.AsStatement]: [
+		// TODO when parent of statement is import declaration, ends with identifier
+		//  or it is a full class name, class name, primitive types or array type
+		TokenIds.accept(TokenId.AS,
+			TokenId.Whitespaces, TokenId.Tabs, TokenId.MultipleLinesComment,
+			TokenId.Identifier),
 		EndWithSemicolon
 	],
 	[TokenId.DefStatement]: [

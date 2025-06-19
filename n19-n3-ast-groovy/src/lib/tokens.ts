@@ -266,6 +266,7 @@ export enum TokenId {
 	AssertStatement,
 	BreakStatement,
 	ContinueStatement,
+	AsStatement,
 	DefStatement,
 	VarStatement,
 	NewExpression,

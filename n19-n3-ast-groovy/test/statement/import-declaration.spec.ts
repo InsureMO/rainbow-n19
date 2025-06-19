@@ -180,9 +180,11 @@ describe('Import declaration test', () => {
 						[TokenId.MultipleLinesCommentEndMark, 51, 53, 2, '*/']
 					]],
 					[TokenId.Whitespaces, 53, 54, 2, ' '],
-					[TokenId.AS, 54, 56, 2, 'as'],
-					[TokenId.Whitespaces, 56, 57, 2, ' '],
-					[TokenId.Identifier, 57, 59, 2, '$1']
+					[TokenId.AsStatement, 54, 59, 2, 'as $1', [
+						[TokenId.AS, 54, 56, 2, 'as'],
+						[TokenId.Whitespaces, 56, 57, 2, ' '],
+						[TokenId.Identifier, 57, 59, 2, '$1']
+					]]
 				]],
 				[TokenId.Newline, 59, 60, 2, '\n']
 			]
@@ -242,4 +244,19 @@ describe('Import declaration test', () => {
 			]
 		]);
 	});
+
+	test('Import declaration #9', async () => {
+		const text = 'import ;';
+		const ast = GroovyAstBuilder.ast(text);
+		AstChecker.check(ast, [
+			TokenId.COMPILATION_UNIT, 0, 8, 0, text, [
+				[TokenId.ImportDeclaration, 0, 8, 1, 'import ;', [
+					[TokenId.IMPORT, 0, 6, 1, 'import'],
+					[TokenId.Whitespaces, 6, 7, 1, ' '],
+					[TokenId.Semicolon, 7, 8, 1, ';']
+				]]
+			]
+		]);
+	});
 });
+
