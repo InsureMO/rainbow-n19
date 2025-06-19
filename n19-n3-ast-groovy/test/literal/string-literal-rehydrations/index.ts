@@ -12,3 +12,5 @@ export * from './dollar-escape.spec';
 export * from './octal-escape.spec';
 export * from './unicode-escape.spec';
 export * from './double-quote.spec';
+export * from './dollar-slashy-gstring-quotation-start-mark.spec';
+export * from './dollar-slashy-gstring-quotation-end-mark.spec';

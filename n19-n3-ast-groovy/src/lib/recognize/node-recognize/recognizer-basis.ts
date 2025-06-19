@@ -472,16 +472,16 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	],
 	[TokenId.DollarSlashyGStringQuotationStartMark]: [ // $/
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// rehydrate to slash escape when parent is dollar slashy gstring literal
-		// must be handled here instead of by revising on child appended pointcut, otherwise it will be declared as parent
-		// this rehydration leads to the configuration of dollar slashy gstring slash escape
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).to([TokenId.DollarSlashyGStringSlashEscape, TokenType.Mark]),
 		// rehydrate to chars when parent is string literal or gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// split to $ and / when parent is gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral).use(GLRecognizeUtils.splitDollarSlashyGStringQuotationStartMarkGL),
 		// split to $ and / when parent is slashy gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral).use(SGLRecognizeUtils.splitDollarSlashyGStringQuotationStartMarkSGL),
+		// rehydrate to slash escape when parent is dollar slashy gstring literal
+		// must be handled here instead of by revising on child appended pointcut, otherwise it will be declared as parent
+		// this rehydration leads to the configuration of dollar slashy gstring slash escape
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.DollarSlashyGStringLiteral).to([TokenId.DollarSlashyGStringSlashEscape, TokenType.Mark]),
 		DeclareAsParent([TokenId.DollarSlashyGStringLiteral, TokenType.StringLiteral])
 	],
 	[TokenId.DollarSlashyGStringQuotationEndMark]: [ // /$

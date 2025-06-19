@@ -1,4 +1,3 @@
-import {Character} from '../../../captor';
 import {TokenId} from '../../../tokens';
 import {RecognizeCommonUtils} from '../recognizer-common';
 import {retokenizeWithDivideHeadedDSGL} from './divide-headed';
@@ -66,28 +65,9 @@ export const retokenizeWithDollarHeadedGL = (recognition: RetokenizeAstRecogniti
 		case TokenId.LBrace: // -> ${
 			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();
 		case TokenId.Identifier: {  // check first char
-			const text = Walker.currentNode.text;
-			Walker.GStringInterpolationStartMark();
-
-			Walker.consumeNode();
-			// check char by char
-			let firstChar = text[0];
-			let remainChars = text.slice(1);
-			while (firstChar === '$') {
-				// if char is $
-				if (remainChars.length === 0) {
-					// and it is the last char
-					return Walker.andUse(retokenizeWithDollarHeadedGL).finalize();
-				}
-				firstChar = remainChars[0];
-				remainChars = remainChars.slice(1);
-			}
-			// not $
-			if (Character.isJavaIdentifierPartAndNotIdentifierIgnorable(firstChar.codePointAt(0))) {
-				return Walker.clearInAirText().Identifier(firstChar + remainChars).finalize();
-			} else {
-				return Walker.chars(firstChar + remainChars).finalize();
-			}
+			return Walker.GStringInterpolationStartMark().andUse(recognition => {
+				return retokenizeIdentifiableTextWith$AGL(TokenId.GStringLiteral, TokenId.GStringInterpolationStartMark, recognition);
+			}).finalize();
 		}
 		default: {
 			// whatever next is, it doesn't start with $, {
