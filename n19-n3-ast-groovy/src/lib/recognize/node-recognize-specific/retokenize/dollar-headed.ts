@@ -209,15 +209,15 @@ export const retokenizeWithDollarHeadedDSGL = (recognition: RetokenizeAstRecogni
 		// -> $/
 		case TokenId.Divide:
 		case TokenId.SlashyGStringQuotationMark: // -> $/
-			return Walker.DollarSlashyGStringDollarEscape().consumeNode().finalize();
+			return Walker.DollarSlashyGStringSlashEscape().consumeNode().finalize();
 		case TokenId.DivideAssign: // -> $/ + =
-			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('=').finalize();
+			return Walker.DollarSlashyGStringSlashEscape().consumeNode().chars('=').finalize();
 		case TokenId.SingleLineCommentStartMark: // -> $/ + /
-			return Walker.DollarSlashyGStringDollarEscape().consumeNode().andUse(retokenizeWithDivideHeadedDSGL).finalize();
+			return Walker.DollarSlashyGStringSlashEscape().consumeNode().andUse(retokenizeWithDivideHeadedDSGL).finalize();
 		case TokenId.MultipleLinesCommentStartMark: // -> $/ + *
-			return Walker.DollarSlashyGStringDollarEscape().consumeNode().chars('*').finalize();
+			return Walker.DollarSlashyGStringSlashEscape().consumeNode().chars('*').finalize();
 		case TokenId.DollarSlashyGStringQuotationEndMark: // -> $/ + $
-			return Walker.DollarSlashyGStringDollarEscape().consumeNode().andUse(retokenizeWithDollarHeadedDSGL).finalize();
+			return Walker.DollarSlashyGStringSlashEscape().consumeNode().andUse(retokenizeWithDollarHeadedDSGL).finalize();
 		// -> ${
 		case TokenId.LBrace: // -> ${
 			return Walker.GStringInterpolationLBraceStartMark().consumeNode().finalize();

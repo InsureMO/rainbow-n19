@@ -368,7 +368,7 @@ describe('String literal rehydration tests: SL Comment Start Mark', () => {
 	});
 
 	test('DSGL, SLCommentStartMark + GStringInterpolationLBraceStartMark -> Chars + DollarSlashyGStringQuotationEndMark + LBrace', async () => {
-		const text = '$/abc //\${';
+		const text = '$/abc //${';
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 10, 0, text, [
