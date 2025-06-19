@@ -9,5 +9,6 @@ export * from './backslash-escape.spec';
 export * from './quote-escape.spec';
 export * from './double-quote-escape.spec';
 export * from './dollar-escape.spec';
-
+export * from './octal-escape.spec';
+export * from './unicode-escape.spec';
 export * from './double-quote.spec';
