@@ -52,7 +52,7 @@ describe('Single line comment test', () => {
 					[TokenId.Whitespaces, 11, 12, 1, ' '],
 					[TokenId.Chars, 12, 15, 1, 'xyz']
 				]],
-				[TokenId.NewLine, 15, 16, 1, '\n'],
+				[TokenId.Newline, 15, 16, 1, '\n'],
 				[TokenId.Tabs, 16, 17, 2, '\t'],
 				[TokenId.SingleLineComment, 17, 28, 2, '// 2nd line', [
 					[TokenId.SingleLineCommentStartMark, 17, 19, 2, '//'],
@@ -77,7 +77,7 @@ describe('Single line comment test', () => {
 					[TokenId.Tabs, 7, 9, 1, '\t\t'],
 					[TokenId.CommentHighlightChars, 9, 12, 1, 'def']
 				]],
-				[TokenId.NewLine, 12, 13, 1, '\n'],
+				[TokenId.Newline, 12, 13, 1, '\n'],
 				[TokenId.Tabs, 13, 14, 2, '\t'],
 				[TokenId.SingleLineComment, 14, 26, 2, '//  2nd line', [
 					[TokenId.SingleLineCommentStartMark, 14, 16, 2, '//'],
@@ -87,7 +87,7 @@ describe('Single line comment test', () => {
 					[TokenId.Whitespaces, 21, 22, 2, ' '],
 					[TokenId.CommentHighlightChars, 22, 26, 2, 'line']
 				]],
-				[TokenId.NewLine, 26, 27, 2, '\n'],
+				[TokenId.Newline, 26, 27, 2, '\n'],
 				[TokenId.SingleLineComment, 27, 34, 3, '//  3rd', [
 					[TokenId.SingleLineCommentStartMark, 27, 29, 3, '//'],
 					[TokenId.Whitespaces, 29, 31, 3, '  '],

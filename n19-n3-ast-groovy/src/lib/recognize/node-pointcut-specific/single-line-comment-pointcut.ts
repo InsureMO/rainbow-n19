@@ -47,16 +47,16 @@ export class SingleLineCommentPointcuts {
 		}
 
 		const childrenOfParent = node.parent.children;
-		let detectedNewLineCount = 0;
+		let detectedNewlineCount = 0;
 		let previousCommentsNode: Optional<GroovyAstNode> = (void 0);
 		for (let index = childrenOfParent.length - 2; index >= 0; index--) {
 			const previousNode = childrenOfParent[index];
 			if (previousNode.tokenId === TokenId.SingleLineComment) {
 				previousCommentsNode = previousNode;
 				break;
-			} else if (previousNode.tokenId === TokenId.NewLine) {
-				detectedNewLineCount += 1;
-				if (detectedNewLineCount === 2) {
+			} else if (previousNode.tokenId === TokenId.Newline) {
+				detectedNewlineCount += 1;
+				if (detectedNewlineCount === 2) {
 					break;
 				}
 			}

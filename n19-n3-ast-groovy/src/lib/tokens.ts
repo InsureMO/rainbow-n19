@@ -89,10 +89,10 @@ export enum TokenId {
 	// string and gstring
 	StringQuotationMark, // '
 	StringQuotationMarkML, // '''
-	StringMLNewLineEraser, // \ for multiple lines string/gstring literal, and no character after it, erase the following newline
+	StringMLNewlineEraser, // \ for multiple lines string/gstring literal, and no character after it, erase the following newline
 	StringBackspaceEscape, // \b
 	StringFormFeedEscape, // \f
-	StringNewLineEscape, // \n
+	StringNewlineEscape, // \n
 	StringCarriageReturnEscape, // \r
 	StringTabulationEscape, // \t
 	StringBackslashEscape, // \\
@@ -208,7 +208,7 @@ export enum TokenId {
 	// text content
 	Whitespaces,
 	Tabs,
-	NewLine, // \n or \r\n
+	Newline, // \n or \r\n
 	Chars,
 	Identifier,
 	UndeterminedChars,
@@ -310,7 +310,7 @@ export const Tokens: Readonly<TokenRecord> = Object.keys(TokenId).reduce((ret, k
 
 export enum TokenType {
 	CompilationUnit,
-	WhitespaceOrTabs, NewLine,
+	WhitespaceOrTabs, Newline,
 	/**
 	 * brace, brack, paren, comma, semicolon, dot, at
 	 */

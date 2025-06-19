@@ -87,7 +87,7 @@ export class ASLRecognizeUtils {
 		if (node.text !== AstChars.Backslash) {
 			return false;
 		}
-		if (nodes[nodeIndex + 1]?.tokenId !== TokenId.NewLine) {
+		if (nodes[nodeIndex + 1]?.tokenId !== TokenId.Newline) {
 			return false;
 		}
 

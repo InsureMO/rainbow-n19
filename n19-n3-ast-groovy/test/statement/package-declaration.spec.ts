@@ -14,7 +14,7 @@ describe('Package declaration test', () => {
 				[TokenId.PackageDeclaration, 0, 7, 1, 'package', [
 					[TokenId.PACKAGE, 0, 7, 1, 'package']
 				]],
-				[TokenId.NewLine, 7, 8, 1, '\n']
+				[TokenId.Newline, 7, 8, 1, '\n']
 			]
 		]);
 	});
@@ -89,7 +89,7 @@ describe('Package declaration test', () => {
 						[TokenId.MultipleLinesCommentEndMark, 36, 38, 1, '*/']
 					]]
 				]],
-				[TokenId.NewLine, 38, 39, 1, '\n']
+				[TokenId.Newline, 38, 39, 1, '\n']
 			]
 		]);
 	});
@@ -112,7 +112,7 @@ describe('Package declaration test', () => {
 					[TokenId.MultipleLinesComment, 18, 24, 1, '/*b\n*/', [
 						[TokenId.MultipleLinesCommentStartMark, 18, 20, 1, '/*'],
 						[TokenId.Chars, 20, 21, 1, 'b'],
-						[TokenId.NewLine, 21, 22, 1, '\n'],
+						[TokenId.Newline, 21, 22, 1, '\n'],
 						[TokenId.MultipleLinesCommentEndMark, 22, 24, 2, '*/']
 					]],
 					[TokenId.Dot, 24, 25, 2, '.'],
@@ -130,7 +130,7 @@ describe('Package declaration test', () => {
 					[TokenId.Chars, 37, 38, 2, 'd'],
 					[TokenId.MultipleLinesCommentEndMark, 38, 40, 2, '*/']
 				]],
-				[TokenId.NewLine, 40, 41, 2, '\n']
+				[TokenId.Newline, 40, 41, 2, '\n']
 			]
 		]);
 	});

@@ -1,7 +1,7 @@
 import {GroovyAstBuilder, TokenId} from '../../../src';
 import {AstChecker} from '../../utils/ast-checker';
 
-describe('String literal rehydration tests: Divide Assign', () => {
+describe('String literal rehydration test: Divide Assign', () => {
 	beforeAll(() => {
 		GroovyAstBuilder.enableTimeSpentLog();
 	});
@@ -58,7 +58,7 @@ describe('String literal rehydration tests: Divide Assign', () => {
 				[TokenId.IntegralLiteral, 0, 1, 1, '1', [
 					[TokenId.NumericBasePart, 0, 1, 1, '1']
 				]],
-				[TokenId.NewLine, 1, 2, 1, '\n'],
+				[TokenId.Newline, 1, 2, 1, '\n'],
 				[TokenId.SlashyGStringLiteral, 2, 4, 2, '/=', [
 					[TokenId.SlashyGStringQuotationMark, 2, 3, 2, '/'],
 					[TokenId.Chars, 3, 4, 2, '=']

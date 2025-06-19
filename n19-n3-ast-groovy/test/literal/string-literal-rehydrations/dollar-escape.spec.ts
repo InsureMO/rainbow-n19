@@ -1,7 +1,7 @@
 import {GroovyAstBuilder, TokenId} from '../../../src';
 import {AstChecker} from '../../utils/ast-checker';
 
-describe('String literal rehydration tests: Dollar Escape', () => {
+describe('String literal rehydration test: Dollar Escape', () => {
 	beforeAll(() => {
 		GroovyAstBuilder.enableTimeSpentLog();
 	});

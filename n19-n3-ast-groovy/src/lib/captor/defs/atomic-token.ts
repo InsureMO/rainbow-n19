@@ -100,7 +100,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.StringQuotationMarkML]: [Tt.Sl, KwLt.StringQuotationMarkML, 'LtStringQuotationMarkML'],
 	[TokenId.StringBackspaceEscape]: [Tt.Sl, KwLt.StringBackspaceEscape, 'LtStringBackspaceEscape'],
 	[TokenId.StringFormFeedEscape]: [Tt.Sl, KwLt.StringFormFeedEscape, 'LtStringFormFeedEscape'],
-	[TokenId.StringNewLineEscape]: [Tt.Sl, KwLt.StringNewLineEscape, 'LtStringNewLineEscape'],
+	[TokenId.StringNewlineEscape]: [Tt.Sl, KwLt.StringNewlineEscape, 'LtStringNewlineEscape'],
 	[TokenId.StringCarriageReturnEscape]: [Tt.Sl, KwLt.StringCarriageReturnEscape, 'LtStringCarriageReturnEscape'],
 	[TokenId.StringTabulationEscape]: [Tt.Sl, KwLt.StringTabulationEscape, 'LtStringTabulationEscape'],
 	[TokenId.StringBackslashEscape]: [Tt.Sl, KwLt.StringBackslashEscape, 'LtStringBackslashEscape'],
@@ -115,7 +115,6 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	[TokenId.DollarSlashyGStringQuotationEndMark]: [Tt.Sl, KwLt.DollarSlashyGStringQuotationEndMark, 'LtDollarSlashyGStringQuotationEndMark'],
 	[TokenId.SlashyGStringSlashEscape]: [Tt.Sl, KwLt.SlashyGStringSlashEscape, 'LtSlashyGStringSlashEscape'],
 	[TokenId.DollarSlashyGStringDollarEscape]: [Tt.Sl, KwLt.DollarSlashyGStringDollarEscape, 'LtDollarSlashyGStringDollarEscape'],
-	// [TokenId.GStringInterpolationStartMark]: [Tt.Sl, KwLt.GStringInterpolationStartMark, 'LtGStringInterpolationStartMark'],
 	[TokenId.GStringInterpolationLBraceStartMark]: [Tt.Sl, KwLt.GStringInterpolationLBraceStartMark, 'LtGStringInterpolationLBraceStartMark'],
 	// Groovy Operators
 	[TokenId.RangeInclusive]: [Tt.Go, KwOp.RangeInclusive, 'GoRangeInclusive'],
@@ -201,7 +200,7 @@ export const AtomicTokenBasis: Readonly<Partial<{ [key in TokenId]: AtomicTokenB
 	// char(s)
 	[TokenId.Whitespaces]: [Tt.Sch, KwCh.Whitespace, 'Whitespaces', TokenType.WhitespaceOrTabs],
 	[TokenId.Tabs]: [Tt.Sch, KwCh.Tab, 'Tabs', TokenType.WhitespaceOrTabs],
-	[TokenId.NewLine]: [Tt.Snl, [Newline1CharCaptor, Newline2CharsCaptor]],
+	[TokenId.Newline]: [Tt.Snl, [Newline1CharCaptor, Newline2CharsCaptor]],
 	[TokenId.Identifier]: [Tt.Ct, IdentifierCaptor],
 	[TokenId.UndeterminedChars]: [Tt.Ct, UndeterminedCharsCaptor]
 };

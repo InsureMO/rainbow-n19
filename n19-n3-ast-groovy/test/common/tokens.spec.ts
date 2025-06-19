@@ -39,9 +39,9 @@ describe('Token test', () => {
 					[TokenId.SingleLineCommentStartMark, 10, 12, 1, '//'],
 					[TokenId.Chars, 12, 15, 1, 'abc']
 				]],
-				[TokenId.NewLine, 15, 16, 1, '\n'],
-				[TokenId.NewLine, 16, 18, 2, '\r\n'],
-				[TokenId.NewLine, 18, 19, 3, '\n'],
+				[TokenId.Newline, 15, 16, 1, '\n'],
+				[TokenId.Newline, 16, 18, 2, '\r\n'],
+				[TokenId.Newline, 18, 19, 3, '\n'],
 				[TokenId.MultipleLinesComment, 19, 29, 4, '/*  def */', [
 					[TokenId.MultipleLinesCommentStartMark, 19, 21, 4, '/*'],
 					[TokenId.Whitespaces, 21, 23, 4, '  '],

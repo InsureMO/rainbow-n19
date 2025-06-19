@@ -18,7 +18,7 @@ describe('Script command test', () => {
 					[TokenId.Chars, 6, 7, 1, '/'],
 					[TokenId.Chars, 7, 9, 1, 'sh']
 				]],
-				[TokenId.NewLine, 9, 10, 1, '\n']
+				[TokenId.Newline, 9, 10, 1, '\n']
 			]
 		]);
 	});
@@ -35,7 +35,7 @@ describe('Script command test', () => {
 					[TokenId.Chars, 7, 8, 1, '/'],
 					[TokenId.Chars, 8, 10, 1, 'sh']
 				]],
-				[TokenId.NewLine, 10, 11, 1, '\n']
+				[TokenId.Newline, 10, 11, 1, '\n']
 			]
 		]);
 	});
@@ -44,7 +44,7 @@ describe('Script command test', () => {
 		const ast = GroovyAstBuilder.ast(text);
 		AstChecker.check(ast, [
 			TokenId.COMPILATION_UNIT, 0, 11, 0, text, [
-				[TokenId.NewLine, 0, 1, 1, '\n'],
+				[TokenId.Newline, 0, 1, 1, '\n'],
 				[TokenId.ScriptCommand, 1, 10, 2, '#!/bin/sh', [
 					[TokenId.ScriptCommandStartMark, 1, 3, 2, '#!'],
 					[TokenId.Chars, 3, 4, 2, '/'],
@@ -52,7 +52,7 @@ describe('Script command test', () => {
 					[TokenId.Chars, 7, 8, 2, '/'],
 					[TokenId.Chars, 8, 10, 2, 'sh']
 				]],
-				[TokenId.NewLine, 10, 11, 2, '\n']
+				[TokenId.Newline, 10, 11, 2, '\n']
 			]
 		]);
 	});

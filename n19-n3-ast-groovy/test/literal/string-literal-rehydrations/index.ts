@@ -14,3 +14,7 @@ export * from './unicode-escape.spec';
 export * from './double-quote.spec';
 export * from './dollar-slashy-gstring-quotation-start-mark.spec';
 export * from './dollar-slashy-gstring-quotation-end-mark.spec';
+export * from './slash-escape.spec';
+export * from './dollar-slashy-gstring-dollar-escape.spec';
+export * from './gstring-interpolation-lbrace-start-mark.spec';
+export * from './ml-newline-mark.spec';

@@ -25,7 +25,7 @@ export class RecognizeCommonUtils {
 		for (let index = children.length - 1; index >= 0; --index) {
 			const previousSiblingNode = children[index];
 			const {tokenId: previousSiblingTokenId, tokenType: previousSiblingTokenType} = previousSiblingNode;
-			if (previousSiblingTokenId === TokenId.NewLine
+			if (previousSiblingTokenId === TokenId.Newline
 				|| previousSiblingTokenType === TokenType.WhitespaceOrTabs
 				|| previousSiblingTokenType === TokenType.Comments) {
 				continue;

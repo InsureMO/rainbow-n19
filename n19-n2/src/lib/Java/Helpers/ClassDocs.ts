@@ -18,7 +18,7 @@ export type DocSegmentExternalLink = ['a', DocSegmentContent, DocSegmentContent]
 /** list */
 export type DocSegmentList = ['l', Array<DocSegmentBlock>]
 /** new line, aka <br> */
-export type DocSegmentNewLine = ['n']
+export type DocSegmentNewline = ['n']
 /** dl */
 export type DocSegmentDt = ['dt'] | ['dt', Array<DocSegment>]
 export type DocSegmentDd = ['dd'] | ['dd', Array<DocSegment>]
@@ -50,7 +50,7 @@ export type DocSegment =
 	| DocSegmentCodeBlock
 	| DocSegmentExternalLink
 	| DocSegmentList
-	| DocSegmentNewLine
+	| DocSegmentNewline
 	| DocSegmentDl
 	| DocSegmentTable
 	| DocSegmentBlockquote

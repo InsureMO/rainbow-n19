@@ -1,7 +1,7 @@
 import {GroovyAstBuilder, TokenId} from '../../../src';
 import {AstChecker} from '../../utils/ast-checker';
 
-describe('String literal rehydration tests: SL Comment Start Mark', () => {
+describe('String literal rehydration test: SL Comment Start Mark', () => {
 	beforeAll(() => {
 		GroovyAstBuilder.enableTimeSpentLog();
 	});

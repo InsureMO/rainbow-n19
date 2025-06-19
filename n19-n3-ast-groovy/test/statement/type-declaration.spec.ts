@@ -42,20 +42,20 @@ describe('Type declaration test', () => {
 						[TokenId.Whitespaces, 50, 51, 1, ' '],
 						[TokenId.Chars, 51, 53, 1, 'sl']
 					]],
-					[TokenId.NewLine, 53, 54, 1, '\n'],
+					[TokenId.Newline, 53, 54, 1, '\n'],
 					[TokenId.Tabs, 54, 55, 2, '\t'],
 					[TokenId.FINAL, 55, 60, 2, 'final'],
 					[TokenId.Whitespaces, 60, 61, 2, ' '],
 					[TokenId.MultipleLinesComment, 61, 67, 2, '/*a\n*/', [
 						[TokenId.MultipleLinesCommentStartMark, 61, 63, 2, '/*'],
 						[TokenId.Chars, 63, 64, 2, 'a'],
-						[TokenId.NewLine, 64, 65, 2, '\n'],
+						[TokenId.Newline, 64, 65, 2, '\n'],
 						[TokenId.MultipleLinesCommentEndMark, 65, 67, 3, '*/']
 					]],
 					[TokenId.Whitespaces, 67, 68, 3, ' '],
 					[TokenId.STRICTFP, 68, 76, 3, 'strictfp'],
 					[TokenId.Whitespaces, 76, 77, 3, ' '],
-					[TokenId.NewLine, 77, 78, 3, '\n'],
+					[TokenId.Newline, 77, 78, 3, '\n'],
 					[TokenId.NON_SEALED, 78, 88, 4, 'non-sealed'],
 					[TokenId.Whitespaces, 88, 91, 4, '   '],
 					[TokenId.Tabs, 91, 92, 4, '\t'],
@@ -81,7 +81,7 @@ describe('Type declaration test', () => {
 					[TokenId.Whitespaces, 31, 32, 1, ' '],
 					[TokenId.ClassBody, 32, 35, 1, '{\n}', [
 						[TokenId.LBrace, 32, 33, 1, '{'],
-						[TokenId.NewLine, 33, 34, 1, '\n'],
+						[TokenId.Newline, 33, 34, 1, '\n'],
 						[TokenId.RBrace, 34, 35, 2, '}']
 					]]
 				]]
@@ -121,7 +121,7 @@ describe('Type declaration test', () => {
 					[TokenId.Whitespaces, 31, 32, 1, ' '],
 					[TokenId.ClassBody, 32, 57, 1, '{\n\tstatic /* abc */{\n\t}\n}', [
 						[TokenId.LBrace, 32, 33, 1, '{'],
-						[TokenId.NewLine, 33, 34, 1, '\n'],
+						[TokenId.Newline, 33, 34, 1, '\n'],
 						[TokenId.Tabs, 34, 35, 2, '\t'],
 						[TokenId.StaticBlockDeclaration, 35, 55, 2, 'static /* abc */{\n\t}', [
 							[TokenId.STATIC, 35, 41, 2, 'static'],
@@ -135,12 +135,12 @@ describe('Type declaration test', () => {
 							]],
 							[TokenId.StaticBlockBody, 51, 55, 2, '{\n\t}', [
 								[TokenId.LBrace, 51, 52, 2, '{'],
-								[TokenId.NewLine, 52, 53, 2, '\n'],
+								[TokenId.Newline, 52, 53, 2, '\n'],
 								[TokenId.Tabs, 53, 54, 3, '\t'],
 								[TokenId.RBrace, 54, 55, 3, '}']
 							]]
 						]],
-						[TokenId.NewLine, 55, 56, 3, '\n'],
+						[TokenId.Newline, 55, 56, 3, '\n'],
 						[TokenId.RBrace, 56, 57, 4, '}']
 					]]
 				]]
@@ -163,7 +163,7 @@ describe('Type declaration test', () => {
 					[TokenId.Whitespaces, 31, 32, 1, ' '],
 					[TokenId.ClassBody, 32, 89, 1, '{\n\tstatic /* abc */ {\n\t\tsynchronized /* abc */ {\n\t\t}\n\t}\n}', [
 						[TokenId.LBrace, 32, 33, 1, '{'],
-						[TokenId.NewLine, 33, 34, 1, '\n'],
+						[TokenId.Newline, 33, 34, 1, '\n'],
 						[TokenId.Tabs, 34, 35, 2, '\t'],
 						[TokenId.StaticBlockDeclaration, 35, 87, 2, 'static /* abc */ {\n\t\tsynchronized /* abc */ {\n\t\t}\n\t}', [
 							[TokenId.STATIC, 35, 41, 2, 'static'],
@@ -178,7 +178,7 @@ describe('Type declaration test', () => {
 							[TokenId.Whitespaces, 51, 52, 2, ' '],
 							[TokenId.StaticBlockBody, 52, 87, 2, '{\n\t\tsynchronized /* abc */ {\n\t\t}\n\t}', [
 								[TokenId.LBrace, 52, 53, 2, '{'],
-								[TokenId.NewLine, 53, 54, 2, '\n'],
+								[TokenId.Newline, 53, 54, 2, '\n'],
 								[TokenId.Tabs, 54, 56, 3, '\t\t'],
 								[TokenId.SynchronizedBlockDeclaration, 56, 84, 3, 'synchronized /* abc */ {\n\t\t}', [
 									[TokenId.SYNCHRONIZED, 56, 68, 3, 'synchronized'],
@@ -193,17 +193,17 @@ describe('Type declaration test', () => {
 									[TokenId.Whitespaces, 78, 79, 3, ' '],
 									[TokenId.SynchronizedBlockBody, 79, 84, 3, '{\n\t\t}', [
 										[TokenId.LBrace, 79, 80, 3, '{'],
-										[TokenId.NewLine, 80, 81, 3, '\n'],
+										[TokenId.Newline, 80, 81, 3, '\n'],
 										[TokenId.Tabs, 81, 83, 4, '\t\t'],
 										[TokenId.RBrace, 83, 84, 4, '}']
 									]]
 								]],
-								[TokenId.NewLine, 84, 85, 4, '\n'],
+								[TokenId.Newline, 84, 85, 4, '\n'],
 								[TokenId.Tabs, 85, 86, 5, '\t'],
 								[TokenId.RBrace, 86, 87, 5, '}']
 							]]
 						]],
-						[TokenId.NewLine, 87, 88, 5, '\n'],
+						[TokenId.Newline, 87, 88, 5, '\n'],
 						[TokenId.RBrace, 88, 89, 6, '}']
 					]]
 				]]

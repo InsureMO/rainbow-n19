@@ -1,5 +1,5 @@
 export enum AstMarks {
-	CarriageReturnNewLine = '\r\n',
+	CarriageReturnNewline = '\r\n',
 	ScriptCommandStart = '#!',
 	SLCommentStart = '//',
 	MLCommentStart = '/*',

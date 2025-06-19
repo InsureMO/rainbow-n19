@@ -30,7 +30,7 @@ describe('If declaration test', () => {
 		[TokenId.Whitespaces, 9, 10, 1, ' '],
 		[TokenId.IfIfBody, 10, 13, 1, '{\n}', [
 			[TokenId.LBrace, 10, 11, 1, '{'],
-			[TokenId.NewLine, 11, 12, 1, '\n'],
+			[TokenId.Newline, 11, 12, 1, '\n'],
 			[TokenId.RBrace, 12, 13, 2, '}']
 		]]
 	]];
@@ -58,7 +58,7 @@ describe('If declaration test', () => {
 						[TokenId.Whitespaces, 18, 19, 2, ' '],
 						[TokenId.IfElseBody, 19, 22, 2, '{\n}', [
 							[TokenId.LBrace, 19, 20, 2, '{'],
-							[TokenId.NewLine, 20, 21, 2, '\n'],
+							[TokenId.Newline, 20, 21, 2, '\n'],
 							[TokenId.RBrace, 21, 22, 3, '}']
 						]]
 					]]
@@ -87,7 +87,7 @@ describe('If declaration test', () => {
 						[TokenId.Whitespaces, 28, 29, 2, ' '],
 						[TokenId.IfElseIfBody, 29, 32, 2, '{\n}', [
 							[TokenId.LBrace, 29, 30, 2, '{'],
-							[TokenId.NewLine, 30, 31, 2, '\n'],
+							[TokenId.Newline, 30, 31, 2, '\n'],
 							[TokenId.RBrace, 31, 32, 3, '}']
 						]]
 					]],
@@ -97,7 +97,7 @@ describe('If declaration test', () => {
 						[TokenId.Whitespaces, 37, 38, 3, ' '],
 						[TokenId.IfElseBody, 38, 41, 3, '{\n}', [
 							[TokenId.LBrace, 38, 39, 3, '{'],
-							[TokenId.NewLine, 39, 40, 3, '\n'],
+							[TokenId.Newline, 39, 40, 3, '\n'],
 							[TokenId.RBrace, 40, 41, 4, '}']
 						]]
 					]]

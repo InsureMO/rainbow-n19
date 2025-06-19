@@ -203,7 +203,7 @@ export class NSLRecognizeUtils {
 		const [newNodes, consumedNodeCount] = retokenizeWithIdentifiableTextHeadedNSL('$$', {
 			node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1, nodes,
 			compilationUnit, astRecognizer,
-			startOffset: node.startOffset + 2, startLine: node.startLine, startColumn: node.startColumn + 2
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
 		});
 		if (consumedNodeCount === 0) {
 			node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);

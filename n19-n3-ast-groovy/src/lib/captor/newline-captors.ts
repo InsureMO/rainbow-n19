@@ -8,11 +8,11 @@ import {AstChars, AstMarks} from './util';
 
 export class Newline1CharCaptor extends AbstractSingleCharCaptor {
 	constructor() {
-		super(AstChars.NewLine);
+		super(AstChars.Newline);
 	}
 
 	protected getTokenNature(): [TokenId, TokenType] {
-		return [TokenId.NewLine, TokenType.NewLine];
+		return [TokenId.Newline, TokenType.Newline];
 	}
 
 	visit(char: Char, offset: number, tokenizer: AstTokenizer) {
@@ -23,11 +23,11 @@ export class Newline1CharCaptor extends AbstractSingleCharCaptor {
 
 export class Newline2CharsCaptor extends AbstractMultipleCharsCaptor {
 	constructor() {
-		super(AstMarks.CarriageReturnNewLine);
+		super(AstMarks.CarriageReturnNewline);
 	}
 
 	protected getTokenNature(): [TokenId, TokenType] {
-		return [TokenId.NewLine, TokenType.NewLine];
+		return [TokenId.Newline, TokenType.Newline];
 	}
 
 	visit(char: Char, offset: number, tokenizer: AstTokenizer) {
@@ -38,8 +38,8 @@ export class Newline2CharsCaptor extends AbstractMultipleCharsCaptor {
 	describe(): AstNodeCaptorDescription {
 		return {
 			text: '`\\r\\n`',
-			tokenId: TokenId.NewLine,
-			tokenType: TokenType.NewLine,
+			tokenId: TokenId.Newline,
+			tokenType: TokenType.Newline,
 			rule: 'Exactly match.'
 		};
 	}

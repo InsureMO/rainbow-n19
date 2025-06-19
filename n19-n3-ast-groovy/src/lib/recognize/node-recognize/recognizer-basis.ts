@@ -350,7 +350,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		DeclareAsParent([TokenId.StringLiteral, TokenType.StringLiteral])
 	],
 	// it is rehydrated from undetermined chars, so it always appears in the right place.
-	[TokenId.StringMLNewLineEraser]: [ // \
+	[TokenId.StringMLNewlineEraser]: [ // \
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
 	],
 	[TokenId.StringBackspaceEscape]: [ // \b
@@ -367,7 +367,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// split to \ and f when parent is not any string literal
 		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(NSLRecognizeUtils.splitFormFeedEscapeNSL)
 	],
-	[TokenId.StringNewLineEscape]: [ // \n
+	[TokenId.StringNewlineEscape]: [ // \n
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// rehydrate to chars when parent is slashy gstring literal or dollar slashy gstring literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
@@ -829,11 +829,11 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	// will not rehydrate under 4 tokens
 	[TokenId.Tabs]: 'NotRequired',
 	// will not rehydrate under 4 tokens
-	[TokenId.NewLine]: 'NotRequired',
+	[TokenId.Newline]: 'NotRequired',
 	// will not rehydrate under 4 tokens
 	[TokenId.Chars]: 'NotRequired',
 	[TokenId.UndeterminedChars]: [
 		// will not rehydrate under 4 tokens
-		RehydrateToken.when(ASLRecognizeUtils.isBackslashAtLineEndAndIsML).to([TokenId.StringMLNewLineEraser, TokenType.Mark])
+		RehydrateToken.when(ASLRecognizeUtils.isBackslashAtLineEndAndIsML).to([TokenId.StringMLNewlineEraser, TokenType.Mark])
 	]
 };

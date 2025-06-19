@@ -1,7 +1,7 @@
 import {GroovyAstBuilder, TokenId} from '../../../src';
 import {AstChecker} from '../../utils/ast-checker';
 
-describe('String literal rehydration tests: Single Quote and Triple Quotes', () => {
+describe('String literal rehydration test: Single Quote and Triple Quotes', () => {
 	beforeAll(() => {
 		GroovyAstBuilder.enableTimeSpentLog();
 	});
@@ -66,7 +66,7 @@ describe('String literal rehydration tests: Single Quote and Triple Quotes', () 
 					[TokenId.Chars, 4, 5, 1, `'`],
 					[TokenId.GStringQuotationMark, 5, 6, 1, '"']
 				]],
-				[TokenId.NewLine, 6, 7, 1, '\n'],
+				[TokenId.Newline, 6, 7, 1, '\n'],
 				[TokenId.SlashyGStringLiteral, 7, 13, 2, `/''''/`, [
 					[TokenId.SlashyGStringQuotationMark, 7, 8, 2, '/'],
 					[TokenId.Chars, 8, 11, 2, `'''`],

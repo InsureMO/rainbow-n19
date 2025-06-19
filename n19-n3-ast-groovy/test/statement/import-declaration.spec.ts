@@ -14,7 +14,7 @@ describe('Import declaration test', () => {
 				[TokenId.ImportDeclaration, 0, 6, 1, 'import', [
 					[TokenId.IMPORT, 0, 6, 1, 'import']
 				]],
-				[TokenId.NewLine, 6, 7, 1, '\n']
+				[TokenId.Newline, 6, 7, 1, '\n']
 			]
 		]);
 	});
@@ -89,7 +89,7 @@ describe('Import declaration test', () => {
 						[TokenId.MultipleLinesCommentEndMark, 35, 37, 1, '*/']
 					]]
 				]],
-				[TokenId.NewLine, 37, 38, 1, '\n']
+				[TokenId.Newline, 37, 38, 1, '\n']
 			]
 		]);
 	});
@@ -112,7 +112,7 @@ describe('Import declaration test', () => {
 					[TokenId.MultipleLinesComment, 17, 23, 1, '/*b\n*/', [
 						[TokenId.MultipleLinesCommentStartMark, 17, 19, 1, '/*'],
 						[TokenId.Chars, 19, 20, 1, 'b'],
-						[TokenId.NewLine, 20, 21, 1, '\n'],
+						[TokenId.Newline, 20, 21, 1, '\n'],
 						[TokenId.MultipleLinesCommentEndMark, 21, 23, 2, '*/']
 					]],
 					[TokenId.Dot, 23, 24, 2, '.'],
@@ -130,7 +130,7 @@ describe('Import declaration test', () => {
 					[TokenId.Chars, 36, 37, 2, 'd'],
 					[TokenId.MultipleLinesCommentEndMark, 37, 39, 2, '*/']
 				]],
-				[TokenId.NewLine, 39, 40, 2, '\n']
+				[TokenId.Newline, 39, 40, 2, '\n']
 			]
 		]);
 	});
@@ -163,7 +163,7 @@ describe('Import declaration test', () => {
 					[TokenId.MultipleLinesComment, 32, 38, 1, '/*b\n*/', [
 						[TokenId.MultipleLinesCommentStartMark, 32, 34, 1, '/*'],
 						[TokenId.Chars, 34, 35, 1, 'b'],
-						[TokenId.NewLine, 35, 36, 1, '\n'],
+						[TokenId.Newline, 35, 36, 1, '\n'],
 						[TokenId.MultipleLinesCommentEndMark, 36, 38, 2, '*/']
 					]],
 					[TokenId.Dot, 38, 39, 2, '.'],
@@ -184,7 +184,7 @@ describe('Import declaration test', () => {
 					[TokenId.Whitespaces, 56, 57, 2, ' '],
 					[TokenId.Identifier, 57, 59, 2, '$1']
 				]],
-				[TokenId.NewLine, 59, 60, 2, '\n']
+				[TokenId.Newline, 59, 60, 2, '\n']
 			]
 		]);
 	});
@@ -217,7 +217,7 @@ describe('Import declaration test', () => {
 					[TokenId.MultipleLinesComment, 32, 38, 1, '/*b\n*/', [
 						[TokenId.MultipleLinesCommentStartMark, 32, 34, 1, '/*'],
 						[TokenId.Chars, 34, 35, 1, 'b'],
-						[TokenId.NewLine, 35, 36, 1, '\n'],
+						[TokenId.Newline, 35, 36, 1, '\n'],
 						[TokenId.MultipleLinesCommentEndMark, 36, 38, 2, '*/']
 					]],
 					[TokenId.Dot, 38, 39, 2, '.'],
@@ -238,7 +238,7 @@ describe('Import declaration test', () => {
 					[TokenId.Whitespaces, 55, 56, 2, ' '],
 					[TokenId.ImportAllMark, 56, 57, 2, '*']
 				]],
-				[TokenId.NewLine, 57, 58, 2, '\n']
+				[TokenId.Newline, 57, 58, 2, '\n']
 			]
 		]);
 	});

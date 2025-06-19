@@ -33,11 +33,11 @@ describe('Switch declaration test', () => {
 					[TokenId.Whitespaces, 13, 14, 1, ' '],
 					[TokenId.SwitchBody, 14, 17, 1, '{\n}', [
 						[TokenId.LBrace, 14, 15, 1, '{'],
-						[TokenId.NewLine, 15, 16, 1, '\n'],
+						[TokenId.Newline, 15, 16, 1, '\n'],
 						[TokenId.RBrace, 16, 17, 2, '}']
 					]]
 				]],
-				[TokenId.NewLine, 17, 18, 2, '\n']
+				[TokenId.Newline, 17, 18, 2, '\n']
 			]
 		]);
 	});
@@ -57,7 +57,7 @@ describe('Switch declaration test', () => {
 					[TokenId.Whitespaces, 13, 14, 1, ' '],
 					[TokenId.SwitchBody, 14, 53, 1, '{\n\tcase 1: yield 1\n\tdefault: yield 10\n}', [
 						[TokenId.LBrace, 14, 15, 1, '{'],
-						[TokenId.NewLine, 15, 16, 1, '\n'],
+						[TokenId.Newline, 15, 16, 1, '\n'],
 						[TokenId.Tabs, 16, 17, 2, '\t'],
 						[TokenId.SwitchCaseDeclaration, 17, 32, 2, 'case 1: yield 1', [
 							[TokenId.CASE, 17, 21, 2, 'case'],
@@ -73,7 +73,7 @@ describe('Switch declaration test', () => {
 								[TokenId.NumericBasePart, 31, 32, 2, '1']
 							]]
 						]],
-						[TokenId.NewLine, 32, 33, 2, '\n'],
+						[TokenId.Newline, 32, 33, 2, '\n'],
 						[TokenId.Tabs, 33, 34, 3, '\t'],
 						[TokenId.SwitchDefaultDeclaration, 34, 51, 3, 'default: yield 10', [
 							[TokenId.DEFAULT, 34, 41, 3, 'default'],
@@ -85,11 +85,11 @@ describe('Switch declaration test', () => {
 								[TokenId.NumericBasePart, 49, 51, 3, '10']
 							]]
 						]],
-						[TokenId.NewLine, 51, 52, 3, '\n'],
+						[TokenId.Newline, 51, 52, 3, '\n'],
 						[TokenId.RBrace, 52, 53, 4, '}']
 					]]
 				]],
-				[TokenId.NewLine, 53, 54, 4, '\n']
+				[TokenId.Newline, 53, 54, 4, '\n']
 			]
 		]);
 	});

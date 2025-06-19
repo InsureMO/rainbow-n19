@@ -46,7 +46,7 @@ describe('While declaration test', () => {
 						[TokenId.RBrace, 7, 8, 1, '}']
 					]]
 				]],
-				[TokenId.NewLine, 8, 9, 1, '\n']
+				[TokenId.Newline, 8, 9, 1, '\n']
 			]
 		]);
 	});
@@ -66,11 +66,11 @@ describe('While declaration test', () => {
 					[TokenId.Whitespaces, 12, 13, 1, ' '],
 					[TokenId.WhileBody, 13, 16, 1, '{\n}', [
 						[TokenId.LBrace, 13, 14, 1, '{'],
-						[TokenId.NewLine, 14, 15, 1, '\n'],
+						[TokenId.Newline, 14, 15, 1, '\n'],
 						[TokenId.RBrace, 15, 16, 2, '}']
 					]]
 				]],
-				[TokenId.NewLine, 16, 17, 2, '\n']
+				[TokenId.Newline, 16, 17, 2, '\n']
 			]
 		]);
 	});

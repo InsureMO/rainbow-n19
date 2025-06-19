@@ -53,7 +53,7 @@ export class NodeRecognizeUtils {
 		}
 		const previousSiblings = currentParent.children;
 		return previousSiblings.some(node => ![
-			TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine,
+			TokenId.Whitespaces, TokenId.Tabs, TokenId.Newline,
 			TokenId.ScriptCommand
 		].includes(node.tokenId));
 	}

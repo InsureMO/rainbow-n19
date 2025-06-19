@@ -5,7 +5,7 @@ export enum AstLiterals {
 	StringQuotationMarkML = '\'\'\'',
 	StringBackspaceEscape = '\\b',
 	StringFormFeedEscape = '\\f',
-	StringNewLineEscape = '\\n',
+	StringNewlineEscape = '\\n',
 	StringCarriageReturnEscape = '\\r',
 	StringSingleSpaceEscape = '\\s',
 	StringTabulationEscape = '\\t',

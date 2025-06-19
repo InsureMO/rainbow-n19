@@ -37,7 +37,7 @@ describe('GString test', () => {
 				[TokenId.GStringLiteral, 0, 1, 1, '"', [
 					[TokenId.GStringQuotationMark, 0, 1, 1, '"']
 				]],
-				[TokenId.NewLine, 1, 2, 1, '\n'],
+				[TokenId.Newline, 1, 2, 1, '\n'],
 				[TokenId.GStringLiteral, 2, 3, 2, '"', [
 					[TokenId.GStringQuotationMark, 2, 3, 2, '"']
 				]]
@@ -140,7 +140,7 @@ describe('GString test', () => {
 			TokenId.COMPILATION_UNIT, 0, 7, 0, text, [
 				[TokenId.GStringLiteral, 0, 7, 1, text, [
 					[TokenId.GStringQuotationMarkML, 0, 3, 1, '"""'],
-					[TokenId.NewLine, 3, 4, 1, '\n'],
+					[TokenId.Newline, 3, 4, 1, '\n'],
 					[TokenId.GStringQuotationMarkML, 4, 7, 2, '"""']
 				]]
 			]
@@ -155,7 +155,7 @@ describe('GString test', () => {
 					[TokenId.GStringQuotationMarkML, 0, 3, 1, '"""'],
 					[TokenId.StringBackspaceEscape, 3, 5, 1, '\\b'],
 					[TokenId.StringFormFeedEscape, 5, 7, 1, '\\f'],
-					[TokenId.StringNewLineEscape, 7, 9, 1, '\\n'],
+					[TokenId.StringNewlineEscape, 7, 9, 1, '\\n'],
 					[TokenId.StringCarriageReturnEscape, 9, 11, 1, '\\r'],
 					[TokenId.StringTabulationEscape, 11, 13, 1, '\\t'],
 					[TokenId.GStringQuotationMarkML, 13, 16, 1, '"""']

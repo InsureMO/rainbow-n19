@@ -20,7 +20,7 @@ export enum AtomicTokenType {
 	CommentsMark,
 	ScriptCommentMark,
 	SameChars,
-	NewLine,
+	Newline,
 	Custom
 }
 
@@ -38,7 +38,7 @@ export const Tt = {
 	Cm: AtomicTokenType.CommentsMark as AtomicTokenType.CommentsMark,
 	Scm: AtomicTokenType.ScriptCommentMark as AtomicTokenType.ScriptCommentMark,
 	Sch: AtomicTokenType.SameChars as AtomicTokenType.SameChars,
-	Snl: AtomicTokenType.NewLine as AtomicTokenType.NewLine,
+	Snl: AtomicTokenType.Newline as AtomicTokenType.Newline,
 	Ct: AtomicTokenType.Custom as AtomicTokenType.Custom
 };
 export const KwPt = AstPrimitiveTypes;
@@ -74,7 +74,7 @@ export type AtomicSeparatorTokenBasis = [AtomicTokenType.Separator, AstChars, At
 export type AtomicCommentsMarkTokenBasis = [AtomicTokenType.CommentsMark, AstMarks, AtomicTokenName];
 export type AtomicScriptCommentMarkTokenBasis = [AtomicTokenType.ScriptCommentMark, AstMarks, AtomicTokenName];
 export type AtomicSameCharsTokenBasis = [AtomicTokenType.SameChars, Char, AtomicTokenName, TokenType];
-export type AtomicNewLineTokenBasis = [AtomicTokenType.NewLine, AtomicTokenDefOfDualCaptors];
+export type AtomicNewlineTokenBasis = [AtomicTokenType.Newline, AtomicTokenDefOfDualCaptors];
 export type AtomicCustomTokenBasis = [AtomicTokenType.Custom, AtomicTokenCaptors];
 export type AtomicTokenBasisType =
 	| AtomicPrimitiveTokenBasis
@@ -85,5 +85,5 @@ export type AtomicTokenBasisType =
 	| AtomicCommentsMarkTokenBasis
 	| AtomicScriptCommentMarkTokenBasis
 	| AtomicSameCharsTokenBasis
-	| AtomicNewLineTokenBasis
+	| AtomicNewlineTokenBasis
 	| AtomicCustomTokenBasis;

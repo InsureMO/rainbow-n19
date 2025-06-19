@@ -151,7 +151,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	[TokenId.StringLiteral]: [
 		DisableBase5AsChild,
 		// newline is accepted only when string literal allows multiple lines
-		Tokens.when(StringLiteralPointcuts.isSingleLine).reject(TokenId.NewLine),
+		Tokens.when(StringLiteralPointcuts.isSingleLine).reject(TokenId.Newline),
 		EndWithStartMark
 	],
 	[TokenId.GStringInterpolation]: [
@@ -164,7 +164,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	[TokenId.GStringLiteral]: [
 		DisableBase5AsChild,
 		// newline is accepted only when gstring literal allows multiple lines
-		Tokens.when(GStringLiteralPointcuts.isSingleLine).reject(TokenId.NewLine),
+		Tokens.when(GStringLiteralPointcuts.isSingleLine).reject(TokenId.Newline),
 		EndWithStartMark
 	],
 	[TokenId.SlashyGStringLiteral]: [
@@ -178,7 +178,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	// statement
 	[TokenId.SingleLineComment]: [
 		DisableBase5AsChild,
-		TokenIds.reject(TokenId.NewLine),
+		TokenIds.reject(TokenId.Newline),
 		ReviseTokenWhen(PointcutUtils.commentKeywordMatched).to(TokenId.CommentKeyword, TokenType.Chars),
 		OnNodeClosed(SingleLineCommentPointcuts.finalizeCommentHighlighting)
 	],
@@ -189,7 +189,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		EndWith(TokenId.MultipleLinesCommentEndMark),
 		OnNodeClosed(MultipleLinesCommentPointcuts.finalizeCommentHighlighting)
 	],
-	[TokenId.ScriptCommand]: [DisableBase5AsChild, TokenIds.reject(TokenId.NewLine)],
+	[TokenId.ScriptCommand]: [DisableBase5AsChild, TokenIds.reject(TokenId.Newline)],
 	[TokenId.PackageDeclaration]: [
 		// newline and sl comments is not allowed
 		DisableBase5AsChild,

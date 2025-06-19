@@ -40,25 +40,25 @@ export const PointcutUtils = {
 	moveTrailingDetachableNodesToParentOnNodeClosed: ((node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const {children = []} = node;
 		let removeNodes: Array<GroovyAstNode> = [];
-		let firstNewLineIndex = -1;
+		let firstNewlineIndex = -1;
 		for (let index = children.length - 1; index >= 0; --index) {
 			const child = children[index];
 			const {tokenId: childTokenId} = child;
 			if ([TokenId.Whitespaces, TokenId.Tabs, TokenId.SingleLineComment, TokenId.MultipleLinesComment].includes(childTokenId)) {
 				removeNodes.unshift(child);
-				if (firstNewLineIndex >= 0) {
-					firstNewLineIndex = firstNewLineIndex + 1;
+				if (firstNewlineIndex >= 0) {
+					firstNewlineIndex = firstNewlineIndex + 1;
 				}
-			} else if (TokenId.NewLine === childTokenId) {
+			} else if (TokenId.Newline === childTokenId) {
 				removeNodes.unshift(child);
-				firstNewLineIndex = 0;
+				firstNewlineIndex = 0;
 			} else {
 				break;
 			}
 		}
-		if (firstNewLineIndex >= 0) {
+		if (firstNewlineIndex >= 0) {
 			// drop nodes only when they are after newline
-			removeNodes = removeNodes.slice(firstNewLineIndex);
+			removeNodes = removeNodes.slice(firstNewlineIndex);
 			astRecognizer.chopOffFromOldParentAndMoveToCurrentParent(removeNodes);
 		}
 	}) as OnNodeClosedFunc

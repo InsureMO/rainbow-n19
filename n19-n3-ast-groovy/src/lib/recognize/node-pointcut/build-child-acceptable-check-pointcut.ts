@@ -63,7 +63,7 @@ export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Opt
 		// base 5 token ids
 		{
 			if (defs.DisableBase5AsChild == null
-				&& [TokenId.Whitespaces, TokenId.Tabs, TokenId.NewLine, TokenId.SingleLineComment, TokenId.MultipleLinesComment].includes(childTokenId)) {
+				&& [TokenId.Whitespaces, TokenId.Tabs, TokenId.Newline, TokenId.SingleLineComment, TokenId.MultipleLinesComment].includes(childTokenId)) {
 				// base 5 token ids enabled, and given child is one of it, accepted
 				return true;
 			}

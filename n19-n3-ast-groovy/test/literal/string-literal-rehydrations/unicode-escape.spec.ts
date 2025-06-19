@@ -1,7 +1,7 @@
 import {GroovyAstBuilder, TokenId} from '../../../src';
 import {AstChecker} from '../../utils/ast-checker';
 
-describe('String literal rehydration tests: Unicode Escape', () => {
+describe('String literal rehydration test: Unicode Escape', () => {
 	beforeAll(() => {
 		GroovyAstBuilder.enableTimeSpentLog();
 	});
@@ -64,7 +64,7 @@ describe('String literal rehydration tests: Unicode Escape', () => {
 					]],
 					[TokenId.GStringQuotationMark, 15, 16, 1, '"']
 				]],
-				[TokenId.NewLine, 16, 17, 1, '\n'],
+				[TokenId.Newline, 16, 17, 1, '\n'],
 				[TokenId.SlashyGStringLiteral, 17, 25, 2, '/\\u89ab/', [
 					[TokenId.SlashyGStringQuotationMark, 17, 18, 2, '/'],
 					[TokenId.StringUnicodeEscape, 18, 24, 2, '\\u89ab', [

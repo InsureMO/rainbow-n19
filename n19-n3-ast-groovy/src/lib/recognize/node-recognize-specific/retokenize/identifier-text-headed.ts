@@ -117,7 +117,7 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 	const Ignored$ = Symbol('Ignored$');
 	type SplitPart = {
 		text: string;
-		type: TokenId.GStringInterpolationStartMark | TokenId.DollarSlashyGStringDollarEscape | TokenId.Identifier | TokenId.Chars | Symbol;
+		type: TokenId.GStringInterpolationStartMark | TokenId.DollarSlashyGStringDollarEscape | TokenId.Identifier | TokenId.Chars | typeof Last$ | typeof Ignored$;
 	}
 
 	const text = node.text;
@@ -257,7 +257,7 @@ export const retokenizeIdentifiableTextWith$AGL = (literalTokenId: TokenId, prev
 					break;
 				}
 				default: {
-					throw new Error(`Part type[text=${text}, type=${type}] is not supported.`);
+					throw new Error(`Part type[text=${text}, type=${String(type)}] is not supported.`);
 				}
 			}
 		});

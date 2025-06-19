@@ -21,7 +21,7 @@ export class MultipleLinesCommentPointcuts {
 		// last one is me, first one is start mark, both ignored
 		for (let i = children.length - 2; i >= 1; i--) {
 			const previousSiblingNode = children[i];
-			if (previousSiblingNode.tokenId === TokenId.NewLine) {
+			if (previousSiblingNode.tokenId === TokenId.Newline) {
 				// not in same line
 				return true;
 			} else if (previousSiblingNode.tokenType !== TokenType.WhitespaceOrTabs && previousSiblingNode.startLine === startLine) {
@@ -83,7 +83,7 @@ export class MultipleLinesCommentPointcuts {
 			if (line.highlightColumn === -1 && childNode.tokenId === TokenId.CommentKeyword) {
 				// only the first keyword of line needs to be captured
 				line.highlightColumn = childNode.startColumn;
-			} else if (line.highlightColumn !== -1 && childNode.tokenType !== TokenType.WhitespaceOrTabs && childNode.tokenId !== TokenId.NewLine) {
+			} else if (line.highlightColumn !== -1 && childNode.tokenType !== TokenType.WhitespaceOrTabs && childNode.tokenId !== TokenId.Newline) {
 				// keyword found, highlight the following parts
 				childNode.replaceTokenNature(TokenId.CommentHighlightChars, TokenType.Chars);
 			}
@@ -106,7 +106,7 @@ export class MultipleLinesCommentPointcuts {
 			// find the first chars node, compare column with previous line
 			const firstCharsNodeIndex = line.nodes.findIndex(node => {
 				return node.tokenType !== TokenType.WhitespaceOrTabs
-					&& node.tokenId !== TokenId.NewLine
+					&& node.tokenId !== TokenId.Newline
 					&& node.tokenId !== TokenId.MultipleLinesCommentsHeadAsterisks;
 			});
 			if (firstCharsNodeIndex === -1) {
@@ -125,7 +125,7 @@ export class MultipleLinesCommentPointcuts {
 				line.highlightColumn = previousHighlightColumn;
 				// do highlight
 				line.nodes.slice(firstCharsNodeIndex).forEach(node => {
-					if (node.tokenType !== TokenType.WhitespaceOrTabs && node.tokenId !== TokenId.NewLine) {
+					if (node.tokenType !== TokenType.WhitespaceOrTabs && node.tokenId !== TokenId.Newline) {
 						node.replaceTokenNature(TokenId.CommentHighlightChars, TokenType.Chars);
 					}
 				});

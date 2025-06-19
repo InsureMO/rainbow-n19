@@ -46,7 +46,7 @@ describe('Do-While declaration test', () => {
 						[TokenId.RBrace, 4, 5, 1, '}']
 					]]
 				]],
-				[TokenId.NewLine, 5, 6, 1, '\n']
+				[TokenId.Newline, 5, 6, 1, '\n']
 			]
 		]);
 	});
@@ -73,7 +73,7 @@ describe('Do-While declaration test', () => {
 					[TokenId.Whitespaces, 2, 3, 1, ' '],
 					[TokenId.DoWhileBody, 3, 6, 1, '{\n}', [
 						[TokenId.LBrace, 3, 4, 1, '{'],
-						[TokenId.NewLine, 4, 5, 1, '\n'],
+						[TokenId.Newline, 4, 5, 1, '\n'],
 						[TokenId.RBrace, 5, 6, 2, '}']
 					]],
 					[TokenId.Whitespaces, 6, 7, 2, ' '],
@@ -85,7 +85,7 @@ describe('Do-While declaration test', () => {
 						[TokenId.RParen, 18, 19, 2, ')']
 					]]
 				]],
-				[TokenId.NewLine, 19, 20, 2, '\n']
+				[TokenId.Newline, 19, 20, 2, '\n']
 			]
 		]);
 	});

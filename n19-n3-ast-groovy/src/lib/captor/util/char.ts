@@ -1,7 +1,7 @@
 export enum AstChars {
 	Whitespace = ' ',
 	Tab = '\t',
-	NewLine = '\n',
+	Newline = '\n',
 	// CarriageReturn = '\r',
 	WellNumber = '#',
 	At = '@',
