@@ -156,7 +156,6 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	[TokenId.GStringInterpolation]: [
 		// start with ${, accept any token
 		ChildAcceptableCheck(GStringInterpolationPointcuts.childAcceptableCheck),
-		ReviseTokenWhen(GStringInterpolationPointcuts.startsFromLBrace).to(TokenId.GStringInterpolationRBraceEndMark, TokenType.Mark),
 		EndWith(TokenId.GStringInterpolationLBraceStartMark),
 		DisableElevateTrailingDetachable,
 		OnNodeClosed(GStringInterpolationPointcuts.finalize)

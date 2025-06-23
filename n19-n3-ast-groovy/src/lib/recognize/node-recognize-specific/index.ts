@@ -21,3 +21,5 @@ export * from './recognizer-divide';
 export * from './recognizer-divide-assign';
 
 export * from './recognizer-threadsafe';
+
+export * from './recognizer-rbrace';

@@ -1,18 +1,13 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {ChildAcceptableCheckFunc, OneOfOnChildAppendedFunc, OnNodeClosedFunc} from '../node-attribute';
+import {ChildAcceptableCheckFunc, OnNodeClosedFunc} from '../node-attribute';
 
 export class GStringInterpolationPointcuts {
 	// noinspection JSUnusedLocalSymbols
 	private constructor() {
 		// avoid extend
 	}
-
-	static startsFromLBrace: OneOfOnChildAppendedFunc = (_lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		const currentParent = astRecognizer.getCurrentParent();
-		return currentParent.children[0]?.tokenId === TokenId.GStringInterpolationLBraceStartMark;
-	};
 
 	/**
 	 * for lbrace started, accept anything.

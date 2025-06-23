@@ -9,6 +9,7 @@ import {
 	MultipleLinesCommentRecognizeUtils,
 	NSLRecognizeUtils,
 	NumericBasePartRecognizer,
+	RBraceRecognizeUtils,
 	RecognizeCommonUtils,
 	ScriptCommandRecognizeUtils,
 	SGLRecognizeUtils,
@@ -162,7 +163,9 @@ DeclareAsParent.when = (when: DoDeclareAsParentWhen, ...more: Array<DoDeclareAsP
 export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasisDefs }>> = {
 	// separator
 	[TokenId.LBrace]: [DeclareAsParent([TokenId.CodeBlock, TokenType.LogicBlock])],
-	[TokenId.RBrace]: 'NotRequired',
+	[TokenId.RBrace]: [
+		RehydrateToken.when(RBraceRecognizeUtils.parentIsGStringInterpolationAndStartsWithLBrace).to([TokenId.GStringInterpolationRBraceEndMark, TokenType.Mark])
+	],
 	[TokenId.LParen]: [DeclareAsParent([TokenId.ParenBlock, TokenType.LogicBlock])],
 	[TokenId.RParen]: 'NotRequired',
 	[TokenId.LBrack]: 'TODO',
@@ -544,7 +547,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(NSLRecognizeUtils.splitGStringInterpolationLBraceStartMarkNSL),
 		DeclareAsParent([TokenId.GStringInterpolation, TokenType.StringLiteral])
 	],
-	// created in on child appended pointcut of gstring interpolation, and node recognizer will not be used under any circumstances.
+	// created in lbrace recognizing, so it always appears in the right place.
 	[TokenId.GStringInterpolationRBraceEndMark]: [ // }
 		DisableToCharsWhenParentTokenTypeIsStringLiteral
 	],
