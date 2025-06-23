@@ -26,7 +26,7 @@ import {
 	DisableBase5AsChild,
 	DisableElevateTrailingDetachable,
 	EndWithAnyOfTokenIdsAppended,
-	EndWithChecked,
+	EndWithUseFunc,
 	OnChildAppended,
 	OnNodeClosed,
 	PointcutBasisDefs,
@@ -108,25 +108,21 @@ const SplitTokenWhen = (when: OneOfOnChildAppendedFunc) => {
 	};
 };
 /** if one of given token id appended as child, close current parent (me) */
-const EndWith = (tokenId: TokenId, ...tokenIds: Array<TokenId>): EndWithAnyOfTokenIdsAppended => {
-	return [PointcutBasisDefType.EndWithAnyOfTokenIdsAppended, tokenId, ...tokenIds];
-};
+const EndWith = (tokenId: TokenId, ...tokenIds: Array<TokenId>): EndWithAnyOfTokenIdsAppended => [PointcutBasisDefType.EndWithAnyOfTokenIdsAppended, tokenId, ...tokenIds];
 /** if semicolon appended as child, close current parent (me) */
-const EndWithSemicolon: EndWithAnyOfTokenIdsAppended = EndWith(TokenId.Semicolon);
+const EndWithSemicolon = [PointcutBasisDefType.EndWithAnyOfTokenIdsAppended, TokenId.Semicolon] as const;
 /** if rbrace appended as child, close current parent (me) */
-const EndWithRBrace: EndWithAnyOfTokenIdsAppended = EndWith(TokenId.RBrace);
+const EndWithRBrace = [PointcutBasisDefType.EndWithAnyOfTokenIdsAppended, TokenId.RBrace] as const;
 /** if rparen appended as child, close current parent (me) */
-const EndWithRParen: EndWithAnyOfTokenIdsAppended = EndWith(TokenId.RParen);
-/** if some token appended as child, and pass when check, close current parent (me) */
-const EndWithChecked = (when: OneOfOnChildAppendedFunc): EndWithChecked => {
-	return [PointcutBasisDefType.EndWithChecked, when];
-};
+const EndWithRParen = [PointcutBasisDefType.EndWithAnyOfTokenIdsAppended, TokenId.RParen] as const;
+const EndWhen = (when: OneOfOnChildAppendedFunc): EndWithUseFunc => [PointcutBasisDefType.EndWithUseFunc, when];
 /** if some token appended as child, and same as start mark token, close current parent (me) */
-const EndWithStartMark: EndWithChecked = EndWithChecked((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+const EndWithStartMarkAgain: EndWithUseFunc = EndWhen((lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 	const parentNode = astRecognizer.getCurrentParent();
 	const firstChildNode = parentNode.children[0];
 	return firstChildNode !== lastChildNode && firstChildNode.tokenId === lastChildNode.tokenId;
 });
+
 // on child closed
 /** if given token id closed, close current parent (me) */
 const CloseOnChildWithTokenIdClosed = (tokenId: TokenId): CloseOnChildWithTokenIdClosed => {
@@ -150,13 +146,14 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		DisableBase5AsChild,
 		// newline is accepted only when string literal allows multiple lines
 		Tokens.when(StringLiteralPointcuts.isSingleLine).reject(TokenId.Newline),
-		EndWithStartMark
+		EndWithStartMarkAgain
 	],
 	[TokenId.GStringInterpolation]: [
 		// start with ${, accept any token
-		// TODO Tokens.when(GStringInterpolationPointcuts.startsWithLBrace).accept(),
 		Tokens.when(GStringInterpolationPointcuts.notStartsWithLBrace).accept(TokenId.Dot, TokenId.Identifier),
-		EndWith(TokenId.GStringInterpolationLBraceStartMark),
+		// GStringInterpolationRBraceEndMark is created only when parent is GStringInterpolation and starts with LBrace
+		// therefore no parent and start mark check here
+		EndWith(TokenId.GStringInterpolationRBraceEndMark),
 		DisableElevateTrailingDetachable,
 		OnNodeClosed(GStringInterpolationPointcuts.finalize)
 	],
@@ -164,11 +161,11 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		DisableBase5AsChild,
 		// newline is accepted only when gstring literal allows multiple lines
 		Tokens.when(GStringLiteralPointcuts.isSingleLine).reject(TokenId.Newline),
-		EndWithStartMark
+		EndWithStartMarkAgain
 	],
 	[TokenId.SlashyGStringLiteral]: [
 		DisableBase5AsChild,
-		EndWithStartMark
+		EndWithStartMarkAgain
 	],
 	[TokenId.DollarSlashyGStringLiteral]: [
 		DisableBase5AsChild,

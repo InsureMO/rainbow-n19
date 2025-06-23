@@ -6,7 +6,7 @@ import {OnChildAppendedFunc, OneOfOnChildAppendedFunc} from '../node-attribute';
 import {NodePointcuts} from './pointcut-defs';
 import {
 	EndWithAnyOfTokenIdsAppended,
-	EndWithChecked,
+	EndWithUseFunc,
 	PointcutBasisDef,
 	PointcutBasisDefType,
 	ReviseTokenTo,
@@ -77,7 +77,7 @@ export class OnChildAppendedPointcutBuilder {
 		};
 	}
 
-	static buildEndWithChecked(defs: EndWithChecked): OneOfOnChildAppendedFunc {
+	static buildEndWithUseFunc(defs: EndWithUseFunc): OneOfOnChildAppendedFunc {
 		return (_lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			// the revise function SplitTokenWhen might make the passed in lastChildNode is not the actual last child node,
 			// so need to retrieve the last child node again
@@ -118,8 +118,8 @@ export const buildOnChildAppendedPointcut = (tokenId: TokenId, items?: PointcutB
 				endWithFuncs.push(OnChildAppendedPointcutBuilder.buildEndWithAnyOfTokenIdsAppended(item));
 				break;
 			}
-			case PointcutBasisDefType.EndWithChecked: {
-				endWithFuncs.push(OnChildAppendedPointcutBuilder.buildEndWithChecked(item));
+			case PointcutBasisDefType.EndWithUseFunc: {
+				endWithFuncs.push(OnChildAppendedPointcutBuilder.buildEndWithUseFunc(item));
 				break;
 			}
 			case PointcutBasisDefType.OnChildAppended: {

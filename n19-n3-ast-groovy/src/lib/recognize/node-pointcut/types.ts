@@ -30,7 +30,7 @@ export enum PointcutBasisDefType {
 	ReviseTokenToWhen = 'ReviseTokenToWhen',
 	SplitTokenWhen = 'SplitTokenWhen',
 	EndWithAnyOfTokenIdsAppended = 'EndWithAnyOfTokenIdsAppended',
-	EndWithChecked = 'EndWithChecked',
+	EndWithUseFunc = 'EndWithUseFunc',
 	// on child closed
 	CloseOnChildWithTokenIdClosed = 'CloseOnChildWithTokenIdClosed',
 	// on node closed
@@ -54,7 +54,7 @@ export type ReviseTokenTo = Readonly<[PointcutBasisDefType.ReviseTokenTo, Partia
 export type ReviseTokenToWhen = Readonly<[PointcutBasisDefType.ReviseTokenToWhen, OneOfOnChildAppendedFunc, TokenId | [TokenId, TokenType]]>;
 export type SplitTokenWhen = Readonly<[PointcutBasisDefType.SplitTokenWhen, OneOfOnChildAppendedFunc, OnChildAppendedFunc]>;
 export type EndWithAnyOfTokenIdsAppended = Readonly<[PointcutBasisDefType.EndWithAnyOfTokenIdsAppended, ...Array<TokenId>]>;
-export type EndWithChecked = Readonly<[PointcutBasisDefType.EndWithChecked, OneOfOnChildAppendedFunc]>;
+export type EndWithUseFunc = Readonly<[PointcutBasisDefType.EndWithUseFunc, OneOfOnChildAppendedFunc]>;
 // on child closed
 export type CloseOnChildWithTokenIdClosed = Readonly<[PointcutBasisDefType.CloseOnChildWithTokenIdClosed, TokenId]>;
 // on node closed
@@ -68,7 +68,7 @@ export type PointcutBasisChildAcceptableCheck =
 export type PointcutBasisOnChildAppended =
 	| OnChildAppended
 	| ReviseTokenTo | ReviseTokenToWhen | SplitTokenWhen
-	| EndWithAnyOfTokenIdsAppended | EndWithChecked;
+	| EndWithAnyOfTokenIdsAppended | EndWithUseFunc;
 export type PointcutBasisOnChildClosed =
 	| OnChildClosed
 	| CloseOnChildWithTokenIdClosed;

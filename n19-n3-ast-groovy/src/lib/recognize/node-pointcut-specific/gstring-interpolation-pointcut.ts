@@ -1,5 +1,5 @@
 import {GroovyAstNode} from '../../node';
-import {TokenId} from '../../tokens';
+import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 
 export class GStringInterpolationPointcuts {
@@ -29,6 +29,7 @@ export class GStringInterpolationPointcuts {
 
 		const lastNode = children[children.length - 1];
 		if (lastNode.tokenId === TokenId.Dot) {
+			lastNode.replaceTokenNature(TokenId.Chars, TokenType.Chars);
 			astRecognizer.chopOffFromOldParentAndMoveToCurrentParent([lastNode]);
 		}
 	}

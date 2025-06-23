@@ -15,35 +15,37 @@ import {
 	UnacceptedWhen
 } from './types';
 
+export type ExplicitChildAcceptableCheckFunc = (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer) => [FuncApplied: boolean, ChildAccepted: boolean];
+
 export class ChildAcceptableCheckPointcutBuilder {
 	// noinspection JSUnusedLocalSymbols
 	private constructor() {
 		// avoid extend
 	}
 
-	static buildAcceptableTokenIds(defs: AcceptableTokenIds): OneOfChildAcceptableCheckFunc {
+	static buildAcceptableTokenIds(defs: AcceptableTokenIds): ExplicitChildAcceptableCheckFunc {
 		const [, ...tokenIds] = defs;
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-			return tokenIds.includes(mightBeChildNode.tokenId);
+		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): ReturnType<ExplicitChildAcceptableCheckFunc> => {
+			return [true, tokenIds.includes(mightBeChildNode.tokenId)];
 		};
 	}
 
-	static buildAcceptableTokenTypes(defs: AcceptableTokenTypes): OneOfChildAcceptableCheckFunc {
+	static buildAcceptableTokenTypes(defs: AcceptableTokenTypes): ExplicitChildAcceptableCheckFunc {
 		const [, ...tokenTypes] = defs;
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
-			return tokenTypes.includes(mightBeChildNode.tokenType);
+		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): ReturnType<ExplicitChildAcceptableCheckFunc> => {
+			return [true, tokenTypes.includes(mightBeChildNode.tokenType)];
 		};
 	}
 
-	static buildAcceptedWhen(defs: AcceptedWhen): OneOfChildAcceptableCheckFunc {
+	static buildAcceptedWhen(defs: AcceptedWhen): ExplicitChildAcceptableCheckFunc {
 		const [, func, ...tokenIds] = defs;
-		return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+		return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): ReturnType<ExplicitChildAcceptableCheckFunc> => {
 			if (func(mightBeChildNode, astRecognizer)) {
-				return tokenIds.includes(mightBeChildNode.tokenId);
+				return [true, tokenIds.includes(mightBeChildNode.tokenId)];
 			}
-			return false;
+			return [false, false];
 		};
 	}
 
@@ -100,7 +102,7 @@ export const buildChildAcceptableCheckPointcut = (tokenId: TokenId, items?: Poin
 	let disableBase5AsChild = false;
 	const acceptedByChildAppendedFuncs: Array<OneOfChildAcceptableCheckFunc> = [];
 	const rejectFuncs: Array<OneOfChildAcceptableCheckFunc> = [];
-	const acceptFuncs: Array<OneOfChildAcceptableCheckFunc> = [];
+	const acceptFuncs: Array<ExplicitChildAcceptableCheckFunc> = [];
 	let childAcceptableCheck: Optional<ChildAcceptableCheckFunc> = (void 0);
 	for (const item of items) {
 		switch (item[0]) {
@@ -151,6 +153,13 @@ export const buildChildAcceptableCheckPointcut = (tokenId: TokenId, items?: Poin
 		}
 	}
 
+	if (acceptedByChildAppendedFuncs.length === 0
+		&& rejectFuncs.length === 0
+		&& acceptFuncs.length === 0
+		&& childAcceptableCheck == null) {
+		return (void 0);
+	}
+
 	return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 		// base 5 token ids
 		if (!disableBase5AsChild
@@ -170,14 +179,15 @@ export const buildChildAcceptableCheckPointcut = (tokenId: TokenId, items?: Poin
 				return false;
 			}
 		}
+		// accept
 		let hasExplicitAcceptRule = false;
 		for (const func of acceptFuncs) {
-			hasExplicitAcceptRule = true;
-			if (func(mightBeChildNode, astRecognizer)) {
+			const [applied, accepted] = func(mightBeChildNode, astRecognizer);
+			if (accepted) {
 				return true;
 			}
+			hasExplicitAcceptRule = hasExplicitAcceptRule || applied;
 		}
-
 		// pointcut function
 		if (childAcceptableCheck != null) {
 			return childAcceptableCheck(mightBeChildNode, astRecognizer);
