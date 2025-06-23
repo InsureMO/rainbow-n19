@@ -9,6 +9,11 @@ export class GStringInterpolationPointcuts {
 		// avoid extend
 	}
 
+	static startsFromLBrace: OneOfOnChildAppendedFunc = (_lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+		const currentParent = astRecognizer.getCurrentParent();
+		return currentParent.children[0]?.tokenId === TokenId.GStringInterpolationLBraceStartMark;
+	};
+
 	/**
 	 * for lbrace started, accept anything.
 	 * for not lbrace started,
@@ -37,11 +42,6 @@ export class GStringInterpolationPointcuts {
 			// previous is dot, must be identifier
 			return mightBeChildNode.tokenId === TokenId.Identifier;
 		}
-	};
-
-	static readonly startsWithLBraceAndRBraceAppended: OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		return astRecognizer.getCurrentParent().children[0].tokenId === TokenId.GStringInterpolationLBraceStartMark
-			&& lastChildNode.tokenId === TokenId.RBrace;
 	};
 
 	/**

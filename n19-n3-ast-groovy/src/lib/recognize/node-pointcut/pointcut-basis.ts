@@ -33,7 +33,6 @@ import {
 	OnNodeClosed,
 	PointcutBasisDefs,
 	PointcutBasisDefType,
-	ReviseCodeBlockTo,
 	ReviseTokenTo,
 	ReviseTokenToWhen,
 	SplitTokenWhen,
@@ -89,8 +88,8 @@ const Tokens = {
 };
 // on child appended
 /** revise code block to given token id */
-const ReviseCodeBlockTo = (tokenId: TokenId): ReviseCodeBlockTo => {
-	return [PointcutBasisDefType.ReviseCodeBlockTo, tokenId];
+const ReviseCodeBlockTo = (tokenId: TokenId): ReviseTokenTo => {
+	return [PointcutBasisDefType.ReviseTokenTo, {[TokenId.CodeBlock]: tokenId}];
 };
 const ReviseTokenTo = (mapping: ReviseTokenTo[1]): ReviseTokenTo => {
 	return [PointcutBasisDefType.ReviseTokenTo, mapping];
@@ -157,7 +156,8 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	[TokenId.GStringInterpolation]: [
 		// start with ${, accept any token
 		ChildAcceptableCheck(GStringInterpolationPointcuts.childAcceptableCheck),
-		EndWithChecked(GStringInterpolationPointcuts.startsWithLBraceAndRBraceAppended),
+		ReviseTokenWhen(GStringInterpolationPointcuts.startsFromLBrace).to(TokenId.GStringInterpolationRBraceEndMark, TokenType.Mark),
+		EndWith(TokenId.GStringInterpolationLBraceStartMark),
 		DisableElevateTrailingDetachable,
 		OnNodeClosed(GStringInterpolationPointcuts.finalize)
 	],

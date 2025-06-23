@@ -1,34 +1,71 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
+import {TokenId} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {OnChildClosedFunc} from '../node-attribute';
-import {PointcutBasisDef, PointcutBasisDefType, PointcutBasisOnChildClosed, PointcutItemsToRecord} from './types';
+import {OnChildClosedFunc, OneOfOnChildClosedFunc} from '../node-attribute';
+import {CloseOnChildWithTokenIdClosed, PointcutBasisDef, PointcutBasisDefType} from './types';
 
-type OnChildClosedPointcutDefs = PointcutItemsToRecord<PointcutBasisOnChildClosed>;
+export class OnChildClosedPointcutBuilder {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
+	}
 
-export const buildOnChildClosedPointcut = (items?: PointcutBasisDef): Optional<OnChildClosedFunc> => {
+	static buildCloseOnChildWithTokenIdClosed = (defs: CloseOnChildWithTokenIdClosed): OneOfOnChildClosedFunc => {
+		const [, ...tokenIds] = defs;
+		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+			if (tokenIds.includes(lastChildNode.tokenId)) {
+				astRecognizer.closeCurrentParent();
+				return true;
+			}
+			return false;
+		};
+	};
+}
+
+export const buildOnChildClosedPointcut = (tokenId: TokenId, items?: PointcutBasisDef): Optional<OnChildClosedFunc> => {
 	if (items == null || items.length === 0) {
 		return (void 0);
 	}
 
-	const defs = items?.reduce((defs, item) => {
-		if ([
-			PointcutBasisDefType.OnChildClosed,
-			PointcutBasisDefType.CloseOnChildWithTokenIdClosed
-		].includes(item[0])) {
-			defs[item[0]] = item;
+	const closeOnChildClosedFuncs: Array<OneOfOnChildClosedFunc> = [];
+	let onChildClosed: Optional<OnChildClosedFunc> = (void 0);
+	for (const item of items) {
+		switch (item[0]) {
+			case PointcutBasisDefType.CloseOnChildWithTokenIdClosed: {
+				closeOnChildClosedFuncs.push(OnChildClosedPointcutBuilder.buildCloseOnChildWithTokenIdClosed(item));
+				break;
+			}
+			case PointcutBasisDefType.OnChildClosed: {
+				if (onChildClosed != null) {
+					throw new Error(`Multiple OnChildClosed on token[name=${TokenId[tokenId]}, tokenId=${tokenId}] is not supported.`);
+				} else {
+					onChildClosed = item[1];
+				}
+				break;
+			}
+			default: {
+				// do nothing
+				break;
+			}
 		}
-		return defs;
-	}, {} as OnChildClosedPointcutDefs) ?? {};
+	}
+
+	if (closeOnChildClosedFuncs.length === 0 && onChildClosed == null) {
+		return (void 0);
+	}
 
 	return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
-		const {tokenId: childTokenId} = lastChildNode;
-
-		if (defs.CloseOnChildWithTokenIdClosed?.includes(childTokenId) ?? false) {
-			astRecognizer.closeCurrentParent();
-			return;
+		let closed = false;
+		for (const func of closeOnChildClosedFuncs) {
+			if (func(lastChildNode, astRecognizer)) {
+				closed = true;
+				break;
+			}
 		}
 
-		defs.OnChildClosed?.[1]?.(lastChildNode, astRecognizer);
+		if (!closed) {
+			onChildClosed?.(lastChildNode, astRecognizer);
+		}
 	};
 };

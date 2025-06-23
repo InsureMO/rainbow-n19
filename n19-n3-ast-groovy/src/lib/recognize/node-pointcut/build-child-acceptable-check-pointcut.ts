@@ -2,148 +2,182 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {ChildAcceptableCheckFunc} from '../node-attribute';
+import {ChildAcceptableCheckFunc, OneOfChildAcceptableCheckFunc} from '../node-attribute';
 import {
+	AcceptableTokenIds,
+	AcceptableTokenTypes,
+	AcceptedWhen,
 	EndWithAnyOfTokenIdsAppended,
-	PointcutBasisChildAcceptableCheck,
 	PointcutBasisDef,
 	PointcutBasisDefType,
-	PointcutItemsToRecord,
-	ReviseCodeBlockTo,
-	ReviseTokenTo
+	ReviseTokenTo,
+	UnacceptableTokenIds,
+	UnacceptedWhen
 } from './types';
 
-type ChildAcceptableCheckPointcutDefs = PointcutItemsToRecord<
-	| PointcutBasisChildAcceptableCheck
-	| ReviseCodeBlockTo | ReviseTokenTo
-	| EndWithAnyOfTokenIdsAppended>;
+export class ChildAcceptableCheckPointcutBuilder {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
+	}
 
-export const buildChildAcceptableCheckPointcut = (items?: PointcutBasisDef): Optional<ChildAcceptableCheckFunc> => {
+	static buildAcceptableTokenIds = (defs: AcceptableTokenIds): OneOfChildAcceptableCheckFunc => {
+		const [, ...tokenIds] = defs;
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+			return tokenIds.includes(mightBeChildNode.tokenId);
+		};
+	};
+	static buildAcceptableTokenTypes = (defs: AcceptableTokenTypes): OneOfChildAcceptableCheckFunc => {
+		const [, ...tokenTypes] = defs;
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+			return tokenTypes.includes(mightBeChildNode.tokenType);
+		};
+	};
+	static buildAcceptedWhen = (defs: AcceptedWhen): OneOfChildAcceptableCheckFunc => {
+		const [, func, ...tokenIds] = defs;
+		return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+			if (func(mightBeChildNode, astRecognizer)) {
+				return tokenIds.includes(mightBeChildNode.tokenId);
+			}
+			return false;
+		};
+	};
+	static buildUnacceptableTokenIds = (defs: UnacceptableTokenIds): OneOfChildAcceptableCheckFunc => {
+		const [, ...tokenIds] = defs;
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+			return tokenIds.includes(mightBeChildNode.tokenId);
+		};
+	};
+	static buildUnacceptedWhen = (defs: UnacceptedWhen): OneOfChildAcceptableCheckFunc => {
+		const [, func, ...tokenIds] = defs;
+		return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+			if (func(mightBeChildNode, astRecognizer)) {
+				return tokenIds.includes(mightBeChildNode.tokenId);
+			}
+			return false;
+		};
+	};
+	static buildReviseTokenTo = (defs: ReviseTokenTo): OneOfChildAcceptableCheckFunc => {
+		const [, map] = defs;
+		const tokenIds: Array<TokenId> = [
+			...Object.keys(map).map(tokenIdInStr => Number(tokenIdInStr)),
+			...Object.values(map).map(tokenIdOrIdType => {
+				if (Array.isArray(tokenIdOrIdType)) {
+					return tokenIdOrIdType[0];
+				} else {
+					return tokenIdOrIdType;
+				}
+			})
+		];
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+			return tokenIds.includes(mightBeChildNode.tokenId);
+		};
+	};
+	static buildEndWithAnyOfTokenIdsAppended = (defs: EndWithAnyOfTokenIdsAppended): OneOfChildAcceptableCheckFunc => {
+		const [, ...tokenIds] = defs;
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+			return tokenIds.includes(mightBeChildNode.tokenId);
+		};
+	};
+}
+
+export const buildChildAcceptableCheckPointcut = (tokenId: TokenId, items?: PointcutBasisDef): Optional<ChildAcceptableCheckFunc> => {
 	if (items == null || items.length === 0) {
 		return (void 0);
 	}
 
-	const defs = items?.reduce((defs, item) => {
-		if ([
-			PointcutBasisDefType.ChildAcceptableCheck,
-			PointcutBasisDefType.DisableBase5AsChild,
-			PointcutBasisDefType.AcceptableTokenIds,
-			PointcutBasisDefType.AcceptableTokenTypes,
-			PointcutBasisDefType.AcceptedWhen,
-			PointcutBasisDefType.UnacceptableTokenIds,
-			PointcutBasisDefType.UnacceptedWhen,
-			PointcutBasisDefType.ReviseCodeBlockTo,
-			PointcutBasisDefType.ReviseTokenTo,
-			PointcutBasisDefType.EndWithAnyOfTokenIdsAppended
-		].includes(item[0])) {
-			defs[item[0]] = item;
-		}
-		return defs;
-	}, {} as ChildAcceptableCheckPointcutDefs) ?? {};
-
-	let tokenIdsAcceptedByReviseTokenTo: Optional<Array<TokenId>> = (void 0);
-	const reviseTokenTo = defs.ReviseTokenTo;
-	if (reviseTokenTo != null) {
-		tokenIdsAcceptedByReviseTokenTo = [];
-		const fromTokenIds = Object.keys(reviseTokenTo[1]).map(tokenId => Number(tokenId) as TokenId);
-		tokenIdsAcceptedByReviseTokenTo.push(...fromTokenIds);
-		fromTokenIds.forEach(fromTokenId => {
-			const to = reviseTokenTo[1][fromTokenId];
-			if (Array.isArray(to)) {
-				tokenIdsAcceptedByReviseTokenTo.push(to[0]);
-			} else {
-				tokenIdsAcceptedByReviseTokenTo.push(to);
+	let disableBase5AsChild = false;
+	const acceptedByChildAppendedFuncs: Array<OneOfChildAcceptableCheckFunc> = [];
+	const rejectFuncs: Array<OneOfChildAcceptableCheckFunc> = [];
+	const acceptFuncs: Array<OneOfChildAcceptableCheckFunc> = [];
+	let childAcceptableCheck: Optional<ChildAcceptableCheckFunc> = (void 0);
+	for (const item of items) {
+		switch (item[0]) {
+			case PointcutBasisDefType.DisableBase5AsChild: {
+				disableBase5AsChild = true;
+				break;
 			}
-		});
+			case PointcutBasisDefType.AcceptableTokenIds: {
+				acceptFuncs.push(ChildAcceptableCheckPointcutBuilder.buildAcceptableTokenIds(item));
+				break;
+			}
+			case PointcutBasisDefType.AcceptableTokenTypes: {
+				acceptFuncs.push(ChildAcceptableCheckPointcutBuilder.buildAcceptableTokenTypes(item));
+				break;
+			}
+			case PointcutBasisDefType.AcceptedWhen: {
+				acceptFuncs.push(ChildAcceptableCheckPointcutBuilder.buildAcceptedWhen(item));
+				break;
+			}
+			case PointcutBasisDefType.UnacceptableTokenIds: {
+				rejectFuncs.push(ChildAcceptableCheckPointcutBuilder.buildUnacceptableTokenIds(item));
+				break;
+			}
+			case PointcutBasisDefType.UnacceptedWhen: {
+				rejectFuncs.push(ChildAcceptableCheckPointcutBuilder.buildUnacceptedWhen(item));
+				break;
+			}
+			case PointcutBasisDefType.ReviseTokenTo: {
+				acceptedByChildAppendedFuncs.push(ChildAcceptableCheckPointcutBuilder.buildReviseTokenTo(item));
+				break;
+			}
+			case PointcutBasisDefType.EndWithAnyOfTokenIdsAppended: {
+				acceptedByChildAppendedFuncs.push(ChildAcceptableCheckPointcutBuilder.buildEndWithAnyOfTokenIdsAppended(item));
+				break;
+			}
+			case PointcutBasisDefType.ChildAcceptableCheck: {
+				if (childAcceptableCheck != null) {
+					throw new Error(`Multiple ChildAcceptableCheck on token[name=${TokenId[tokenId]}, tokenId=${tokenId}] is not supported.`);
+				} else {
+					childAcceptableCheck = item[1];
+				}
+				break;
+			}
+			default: {
+				// do nothing
+				break;
+			}
+		}
 	}
 
 	return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
-		const {tokenId: childTokenId, tokenType: childTokenType} = mightBeChildNode;
-
 		// base 5 token ids
-		{
-			if (defs.DisableBase5AsChild == null
-				&& [TokenId.Whitespaces, TokenId.Tabs, TokenId.Newline, TokenId.SingleLineComment, TokenId.MultipleLinesComment].includes(childTokenId)) {
-				// base 5 token ids enabled, and given child is one of it, accepted
+		if (!disableBase5AsChild
+			&& [TokenId.Whitespaces, TokenId.Tabs, TokenId.Newline, TokenId.SingleLineComment, TokenId.MultipleLinesComment].includes(mightBeChildNode.tokenId)) {
+			// base 5 token ids enabled, and given child is one of it, accepted
+			return true;
+		}
+		// accepted by child appended
+		for (const func of acceptedByChildAppendedFuncs) {
+			if (func(mightBeChildNode, astRecognizer)) {
 				return true;
 			}
 		}
-		// revise code block to, accept code block and token which revised to
-		{
-			if (defs.ReviseCodeBlockTo != null
-				&& (TokenId.CodeBlock === childTokenId || defs.ReviseCodeBlockTo.includes(childTokenId))) {
-				return true;
-			}
-		}
-		// revise token to, accept from/to token ids
-		{
-			if (tokenIdsAcceptedByReviseTokenTo?.includes(childTokenId)) {
-				return true;
-			}
-		}
-		// end token ids
-		{
-			if (defs.EndWithAnyOfTokenIdsAppended?.includes(childTokenId) ?? false) {
-				return true;
-			}
-		}
-		// reject token ids
-		{
-			if (defs.UnacceptableTokenIds?.includes(childTokenId) ?? false) {
+		// reject
+		for (const func of rejectFuncs) {
+			if (func(mightBeChildNode, astRecognizer)) {
 				return false;
 			}
 		}
-		// reject when
-		{
-			const unacceptedWhen = defs.UnacceptedWhen;
-			if (unacceptedWhen != null && unacceptedWhen[1](mightBeChildNode, astRecognizer) === true) {
-				if (unacceptedWhen.includes(mightBeChildNode.tokenId)) {
-					return false;
-				}
+		let hasExplicitAcceptRule = false;
+		for (const func of acceptFuncs) {
+			hasExplicitAcceptRule = true;
+			if (func(mightBeChildNode, astRecognizer)) {
+				return true;
 			}
 		}
 
-		let hasRule = false;
-		// accept token ids
-		{
-			const acceptableTokenIds = defs.AcceptableTokenIds;
-			if (acceptableTokenIds != null) {
-				if (acceptableTokenIds.includes(childTokenId)) {
-					return true;
-				}
-				hasRule = true;
-			}
-		}
-		// accept token types
-		{
-			const acceptableTokenTypes = defs.AcceptableTokenTypes;
-			if (acceptableTokenTypes != null) {
-				if (acceptableTokenTypes.includes(childTokenType)) {
-					return true;
-				}
-				hasRule = true;
-			}
-		}
-		// accept when
-		{
-			const acceptableTokenIdsWhen = defs.AcceptedWhen;
-			if (acceptableTokenIdsWhen != null) {
-				if (acceptableTokenIdsWhen[1](mightBeChildNode, astRecognizer)) {
-					return true;
-				}
-				hasRule = true;
-			}
-		}
 		// pointcut function
-		{
-			const func = defs.ChildAcceptableCheck;
-			if (func != null) {
-				return func[1](mightBeChildNode, astRecognizer);
-			}
+		if (childAcceptableCheck != null) {
+			return childAcceptableCheck(mightBeChildNode, astRecognizer);
 		}
-		// not "acceptXXX" function specified, then check if there is any rule on token ids or types
-		// 1. if exists, means the given child not pass the check, return false
-		// 2. no exists, means no rule, return true, accept any token
-		return !hasRule;
+		// no explicit "acceptXXX" function specified, and not accepted by any other rule, or rejected by any other rule
+		// means accepted
+		return !hasExplicitAcceptRule;
 	};
 };

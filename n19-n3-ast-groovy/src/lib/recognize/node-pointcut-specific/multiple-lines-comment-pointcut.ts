@@ -32,6 +32,7 @@ export class MultipleLinesCommentPointcuts {
 
 		return true;
 	};
+
 	static readonly splitToAsteriskHeadAnd: OnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
 		const {originTokenId, startLine} = lastChildNode;
 
@@ -45,23 +46,25 @@ export class MultipleLinesCommentPointcuts {
 			case TokenId.MultipleAssign: {
 				// *=, split to * and =
 				lastChildNode.replaceTokenNatureAndText(TokenId.MultipleLinesCommentsHeadAsterisks, TokenType.Chars, AstOperators.Multiple);
-				const splitNode = GroovyAstNode.createAstNode({
+				const assignNode = GroovyAstNode.createAstNode({
 					tokenId: TokenId.Assign, tokenType: TokenType.Operator,
 					text: AstOperators.Assign, startOffset: lastChildNode.startOffset + 1,
 					startLine, startColumn: lastChildNode.startColumn + 1
 				});
-				astRecognizer.getCurrentParent().asParentOf(splitNode);
+				assignNode.replaceTokenNature(TokenId.Chars, TokenType.Chars);
+				astRecognizer.getCurrentParent().asParentOf(assignNode);
 				break;
 			}
 			case TokenId.PowerAssign: {
 				// **=, split to ** and =
 				lastChildNode.replaceTokenNatureAndText(TokenId.MultipleLinesCommentsHeadAsterisks, TokenType.Chars, AstOperators.Power);
-				const splitNode = GroovyAstNode.createAstNode({
+				const assignNode = GroovyAstNode.createAstNode({
 					tokenId: TokenId.Assign, tokenType: TokenType.Operator,
 					text: AstOperators.Assign, startOffset: lastChildNode.startOffset + 1,
 					startLine, startColumn: lastChildNode.startColumn + 1
 				});
-				astRecognizer.getCurrentParent().asParentOf(splitNode);
+				assignNode.replaceTokenNature(TokenId.Chars, TokenType.Chars);
+				astRecognizer.getCurrentParent().asParentOf(assignNode);
 				break;
 			}
 		}

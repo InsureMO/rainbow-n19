@@ -6,7 +6,6 @@ import {
 	DivideRecognizeUtils,
 	DSGLRecognizeUtils,
 	GLRecognizeUtils,
-	GStringInterpolationRecognizeUtils,
 	MultipleLinesCommentRecognizeUtils,
 	NSLRecognizeUtils,
 	NumericBasePartRecognizer,
@@ -163,9 +162,7 @@ DeclareAsParent.when = (when: DoDeclareAsParentWhen, ...more: Array<DoDeclareAsP
 export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasisDefs }>> = {
 	// separator
 	[TokenId.LBrace]: [DeclareAsParent([TokenId.CodeBlock, TokenType.LogicBlock])],
-	[TokenId.RBrace]: [
-		RehydrateToken.when(GStringInterpolationRecognizeUtils.startsFromLBrace).to([TokenId.GStringInterpolationRBraceEndMark, TokenType.Mark])
-	],
+	[TokenId.RBrace]: 'NotRequired',
 	[TokenId.LParen]: [DeclareAsParent([TokenId.ParenBlock, TokenType.LogicBlock])],
 	[TokenId.RParen]: 'NotRequired',
 	[TokenId.LBrack]: 'TODO',
@@ -817,7 +814,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		// rehydrate to chars when parent is string literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// use function when parent is gstring literal
-		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).use(AGLRecognizeUtils.rehydrateIdentifierAGL),
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).use(AGLRecognizeUtils.rehydrateIdentifierAGL)
 		/**
 		 * note that when parent is gstring interpolation, and start mark not contains lbrace
 		 * logically, identifier must not contain $,

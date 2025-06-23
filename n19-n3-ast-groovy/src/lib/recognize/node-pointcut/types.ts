@@ -10,9 +10,13 @@ import {
 
 export enum PointcutBasisDefType {
 	// pointcut functions
+	/** at most one definition */
 	ChildAcceptableCheck = 'ChildAcceptableCheck',
+	/** at most one definition */
 	OnChildAppended = 'OnChildAppended',
+	/** at most one definition */
 	OnChildClosed = 'OnChildClosed',
+	/** at most one definition */
 	OnNodeClosed = 'OnNodeClosed',
 	// child acceptable check
 	DisableBase5AsChild = 'DisableBase5AsChild',
@@ -22,7 +26,6 @@ export enum PointcutBasisDefType {
 	UnacceptableTokenIds = 'UnacceptableTokenIds',
 	UnacceptedWhen = 'UnacceptedWhen',
 	// on child appended
-	ReviseCodeBlockTo = 'ReviseCodeBlockTo',
 	ReviseTokenTo = 'ReviseTokenTo',
 	ReviseTokenToWhen = 'ReviseTokenToWhen',
 	SplitTokenWhen = 'SplitTokenWhen',
@@ -47,7 +50,6 @@ export type AcceptedWhen = Readonly<[PointcutBasisDefType.AcceptedWhen, OneOfChi
 export type UnacceptableTokenIds = Readonly<[PointcutBasisDefType.UnacceptableTokenIds, ...Array<TokenId>]>;
 export type UnacceptedWhen = Readonly<[PointcutBasisDefType.UnacceptedWhen, OneOfChildAcceptableCheckFunc, ...Array<TokenId>]>;
 // on child appended
-export type ReviseCodeBlockTo = Readonly<[PointcutBasisDefType.ReviseCodeBlockTo, TokenId]>;
 export type ReviseTokenTo = Readonly<[PointcutBasisDefType.ReviseTokenTo, Partial<Record<TokenId, TokenId | [TokenId, TokenType]>>]>;
 export type ReviseTokenToWhen = Readonly<[PointcutBasisDefType.ReviseTokenToWhen, OneOfOnChildAppendedFunc, TokenId | [TokenId, TokenType]]>;
 export type SplitTokenWhen = Readonly<[PointcutBasisDefType.SplitTokenWhen, OneOfOnChildAppendedFunc, OnChildAppendedFunc]>;
@@ -65,8 +67,7 @@ export type PointcutBasisChildAcceptableCheck =
 	| UnacceptableTokenIds | UnacceptedWhen;
 export type PointcutBasisOnChildAppended =
 	| OnChildAppended
-	| ReviseCodeBlockTo | ReviseTokenTo | ReviseTokenToWhen
-	| SplitTokenWhen
+	| ReviseTokenTo | ReviseTokenToWhen | SplitTokenWhen
 	| EndWithAnyOfTokenIdsAppended | EndWithChecked;
 export type PointcutBasisOnChildClosed =
 	| OnChildClosed
@@ -87,5 +88,3 @@ export type PointcutBasisDef = ReadonlyArray<
 >
 export type PointcutBasisDefs = PointcutBasisDef | 'TODO' | 'NotRequired';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type PointcutItemsToRecord<T extends readonly [PointcutBasisDefType, ...any[]]> = Partial<{ [K in T[0]]: Extract<T, readonly [K, ...any[]]> }>;

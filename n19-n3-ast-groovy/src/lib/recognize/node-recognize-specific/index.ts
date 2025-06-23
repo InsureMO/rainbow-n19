@@ -16,7 +16,6 @@ export * from './recognizer-slashy-gstring-literal';
 export * from './recognizer-dollar-slashy-gstring-literal';
 export * from './recognizer-any-string-literal';
 export * from './recognizer-any-gstring-literal';
-export * from './recognizer-gstring-interpolation';
 
 export * from './recognizer-divide';
 export * from './recognizer-divide-assign';

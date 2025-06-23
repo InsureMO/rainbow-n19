@@ -2,7 +2,6 @@ import {AstUtils} from '../ast-utils';
 import {TokenId, TokenType} from '../tokens';
 import {AstTokenizer} from './ast-tokenizer';
 import {AstNodeCaptor, AstNodeCaptorCharChecker, AstNodeCaptorCharFuncCheck, AstNodeCaptorCharsChecker} from './captor';
-import {Character} from './character';
 import {IdentifierCaptor} from './identifier-captor';
 import {Char} from './types';
 import {isArrayCheck, isCharCheck, isFuncCheck, isMultiChecks} from './util';

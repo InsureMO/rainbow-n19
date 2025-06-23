@@ -29,7 +29,7 @@ export class NodePointcutsHelper {
 				const pointcut = PointcutBasis[tokenId];
 				if (pointcut !== 'TODO' && pointcut !== 'NotRequired') {
 					this._helpers.set(tokenId, {
-						initialize: buildNodePointcut(pointcut)
+						initialize: buildNodePointcut(tokenId, pointcut)
 					});
 				}
 			});
