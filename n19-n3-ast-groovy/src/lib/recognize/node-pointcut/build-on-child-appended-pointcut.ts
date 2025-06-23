@@ -20,7 +20,7 @@ export class OnChildAppendedPointcutBuilder {
 		// avoid extend
 	}
 
-	static buildReviseTokenTo = (defs: ReviseTokenTo): OneOfOnChildAppendedFunc => {
+	static buildReviseTokenTo(defs: ReviseTokenTo): OneOfOnChildAppendedFunc {
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		return (lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 			const reviseTo = defs[1][lastChildNode.tokenId];
@@ -35,8 +35,9 @@ export class OnChildAppendedPointcutBuilder {
 			}
 			return false;
 		};
-	};
-	static buildReviseTokenToWhen = (defs: ReviseTokenToWhen): OneOfOnChildAppendedFunc => {
+	}
+
+	static buildReviseTokenToWhen(defs: ReviseTokenToWhen): OneOfOnChildAppendedFunc {
 		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			if (defs[1](lastChildNode, astRecognizer)) {
 				if (Array.isArray(defs[2])) {
@@ -49,8 +50,9 @@ export class OnChildAppendedPointcutBuilder {
 			}
 			return false;
 		};
-	};
-	static buildSplitTokenWhen = (defs: SplitTokenWhen): OneOfOnChildAppendedFunc => {
+	}
+
+	static buildSplitTokenWhen(defs: SplitTokenWhen): OneOfOnChildAppendedFunc {
 		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			if (defs[1](lastChildNode, astRecognizer)) {
 				defs[2](lastChildNode, astRecognizer);
@@ -58,8 +60,9 @@ export class OnChildAppendedPointcutBuilder {
 			}
 			return false;
 		};
-	};
-	static buildEndWithAnyOfTokenIdsAppended = (defs: EndWithAnyOfTokenIdsAppended): OneOfOnChildAppendedFunc => {
+	}
+
+	static buildEndWithAnyOfTokenIdsAppended(defs: EndWithAnyOfTokenIdsAppended): OneOfOnChildAppendedFunc {
 		const [, ...tokenIds] = defs;
 		return (_lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			// the revise function SplitTokenWhen might make the passed in lastChildNode is not the actual last child node,
@@ -72,8 +75,9 @@ export class OnChildAppendedPointcutBuilder {
 			}
 			return false;
 		};
-	};
-	static buildEndWithChecked = (defs: EndWithChecked): OneOfOnChildAppendedFunc => {
+	}
+
+	static buildEndWithChecked(defs: EndWithChecked): OneOfOnChildAppendedFunc {
 		return (_lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			// the revise function SplitTokenWhen might make the passed in lastChildNode is not the actual last child node,
 			// so need to retrieve the last child node again
@@ -85,7 +89,7 @@ export class OnChildAppendedPointcutBuilder {
 			}
 			return false;
 		};
-	};
+	}
 }
 
 export const buildOnChildAppendedPointcut = (tokenId: TokenId, items?: PointcutBasisDef): Optional<OnChildAppendedFunc> => {

@@ -1,7 +1,7 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 import {retokenizeWithDivideHeadedDSGL, retokenizeWithMultipleHeadedNSL} from './retokenize';
 
 export class MultipleLinesCommentRecognizeUtils {
@@ -21,7 +21,7 @@ export class MultipleLinesCommentRecognizeUtils {
 	 *
 	 * @done 20250611
 	 */
-	static splitStartMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitStartMarkSGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		// replace node with /
@@ -35,7 +35,7 @@ export class MultipleLinesCommentRecognizeUtils {
 		// replace the consumed nodes and insert new node
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * split * / (no blank actually) to * and /.
@@ -47,7 +47,7 @@ export class MultipleLinesCommentRecognizeUtils {
 	 *
 	 * @done 20250611
 	 */
-	static splitEndMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitEndMarkSGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes} = recognition;
 		// replace node with *
 		node.replaceTokenNatureAndText(TokenId.Multiple, TokenType.Operator, '*');
@@ -58,7 +58,7 @@ export class MultipleLinesCommentRecognizeUtils {
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
 		}));
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * split * / (no blank actually)  to * and /.
@@ -70,7 +70,7 @@ export class MultipleLinesCommentRecognizeUtils {
 	 *
 	 * @done 20250617
 	 */
-	static splitEndMarkDSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitEndMarkDSGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 		// replace node with *
 		node.replaceTokenNatureAndText(TokenId.Multiple, TokenType.Operator, '*');
@@ -83,5 +83,5 @@ export class MultipleLinesCommentRecognizeUtils {
 		// replace the consumed nodes and insert new node
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 }

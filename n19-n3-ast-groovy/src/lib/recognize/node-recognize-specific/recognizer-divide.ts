@@ -1,6 +1,6 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 import {
 	retokenizeWithDivideHeadedNSL,
 	retokenizeWithDollarHeadedNSL,
@@ -20,7 +20,7 @@ export class DivideRecognizeUtils {
 	 *
 	 * @done 20250617
 	 */
-	static rehydrateDivideDSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rehydrateDivideDSGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		const Walker = new UseUpInAirTextRetokenizeNodeWalker('', {
@@ -63,5 +63,5 @@ export class DivideRecognizeUtils {
 			}
 		}
 		return nodeIndex;
-	};
+	}
 }

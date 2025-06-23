@@ -2,7 +2,6 @@ import {AstOperators} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {OnChildAppendedFunc, OneOfOnChildAppendedFunc, OnNodeClosedFunc} from '../node-attribute';
 
 export class MultipleLinesCommentPointcuts {
 	// noinspection JSUnusedLocalSymbols
@@ -10,7 +9,7 @@ export class MultipleLinesCommentPointcuts {
 		// avoid extend
 	}
 
-	static readonly asteriskHeadMatched: OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+	static asteriskHeadMatched(lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean {
 		const {originTokenId, startLine} = lastChildNode;
 		if (![TokenId.Multiple, TokenId.MultipleAssign, TokenId.Power, TokenId.PowerAssign].includes(originTokenId)) {
 			return false;
@@ -31,9 +30,9 @@ export class MultipleLinesCommentPointcuts {
 		}
 
 		return true;
-	};
+	}
 
-	static readonly splitToAsteriskHeadAnd: OnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+	static splitToAsteriskHeadAnd(lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): void {
 		const {originTokenId, startLine} = lastChildNode;
 
 		switch (originTokenId) {
@@ -68,8 +67,9 @@ export class MultipleLinesCommentPointcuts {
 				break;
 			}
 		}
-	};
-	static readonly finalizeCommentHighlighting: OnNodeClosedFunc = (node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+	}
+
+	static finalizeCommentHighlighting(node: GroovyAstNode, astRecognizer: AstRecognizer): void {
 		// split to lines
 		const lines: Array<{ highlightColumn: number, nodes: Array<GroovyAstNode> }> = [];
 		const children = node.children;
@@ -134,5 +134,5 @@ export class MultipleLinesCommentPointcuts {
 				});
 			}
 		});
-	};
+	}
 }

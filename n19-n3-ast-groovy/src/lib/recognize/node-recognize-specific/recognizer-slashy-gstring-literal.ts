@@ -29,28 +29,28 @@ export class SGLRecognizeUtils {
 	 *
 	 * @done 20250611
 	 */
-	static splitBackslashHeadedSGL = NSLRecognizeUtils.splitBackslashHeadedNSL;
+	static readonly splitBackslashHeadedSGL = NSLRecognizeUtils.splitBackslashHeadedNSL;
 
 	/**
 	 * split \\ to \ and \, 2nd \ needs check the following node.
 	 *
 	 * @done 20250611
 	 */
-	static splitBackslashEscapeSGL: NodeRehydrateFunc = SGLRecognizeUtils.splitBackslashHeadedSGL(retokenizeWithBackslashHeadedSGL);
+	static readonly splitBackslashEscapeSGL: NodeRehydrateFunc = SGLRecognizeUtils.splitBackslashHeadedSGL(retokenizeWithBackslashHeadedSGL);
 
 	/**
 	 * split \$ to \ and $, $ needs check the following node.
 	 *
 	 * @done 20250612
 	 */
-	static splitDollarEscapeSGL: NodeRehydrateFunc = SGLRecognizeUtils.splitBackslashHeadedSGL(retokenizeWithDollarHeadedSGL);
+	static readonly splitDollarEscapeSGL: NodeRehydrateFunc = SGLRecognizeUtils.splitBackslashHeadedSGL(retokenizeWithDollarHeadedSGL);
 
 	/**
 	 * split $/ to $ and /
 	 *
 	 * @done 20250612
 	 */
-	static splitDollarSlashyGStringQuotationStartMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringQuotationStartMarkSGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes} = recognition;
 
 		// replace node with $
@@ -62,14 +62,14 @@ export class SGLRecognizeUtils {
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
 		}));
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * split /$ to / and $,
 	 *
 	 * @done 20250612
 	 */
-	static splitDollarSlashyGStringQuotationEndMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringQuotationEndMarkSGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		// replace node with $
@@ -83,14 +83,14 @@ export class SGLRecognizeUtils {
 		// replace the original nodes
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * split $$ to $ and $
 	 *
 	 * @done 20250612
 	 */
-	static splitDollarSlashyGStringDollarEscapeSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringDollarEscapeSGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		// replace node with $
@@ -104,5 +104,5 @@ export class SGLRecognizeUtils {
 		// replace the original nodes
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 }

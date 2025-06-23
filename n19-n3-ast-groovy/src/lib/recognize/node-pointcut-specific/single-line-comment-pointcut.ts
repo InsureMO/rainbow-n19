@@ -2,7 +2,7 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {NodeAttributeOperator, OnNodeClosedFunc} from '../node-attribute';
+import {NodeAttributeOperator} from '../node-attribute';
 
 export class SingleLineCommentPointcuts {
 	// noinspection JSUnusedLocalSymbols
@@ -10,7 +10,7 @@ export class SingleLineCommentPointcuts {
 		// avoid extend
 	}
 
-	static readonly finalizeCommentHighlighting: OnNodeClosedFunc = (node: GroovyAstNode, astRecognizer: AstRecognizer): void => {
+	static finalizeCommentHighlighting(node: GroovyAstNode, astRecognizer: AstRecognizer): void {
 		// ignore the start mark
 		const [, ...restNodes] = node.children;
 		if (restNodes.length === 0) {
@@ -80,5 +80,5 @@ export class SingleLineCommentPointcuts {
 				}
 			});
 		}
-	};
+	}
 }

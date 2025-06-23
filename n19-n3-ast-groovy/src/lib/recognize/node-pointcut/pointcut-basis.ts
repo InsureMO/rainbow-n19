@@ -2,7 +2,6 @@ import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
 import {
-	ChildAcceptableCheckFunc,
 	OnChildAppendedFunc,
 	OneOfChildAcceptableCheckFunc,
 	OneOfOnChildAppendedFunc,
@@ -23,7 +22,6 @@ import {
 	AcceptableTokenIds,
 	AcceptableTokenTypes,
 	AcceptedWhen,
-	ChildAcceptableCheck,
 	CloseOnChildWithTokenIdClosed,
 	DisableBase5AsChild,
 	DisableElevateTrailingDetachable,
@@ -41,9 +39,10 @@ import {
 } from './types';
 
 // pointcut function
-const ChildAcceptableCheck = (func: ChildAcceptableCheckFunc): ChildAcceptableCheck => {
-	return [PointcutBasisDefType.ChildAcceptableCheck, func];
-};
+// TODO not use yet
+//  const ChildAcceptableCheck = (func: ChildAcceptableCheckFunc): ChildAcceptableCheck => {
+//  	return [PointcutBasisDefType.ChildAcceptableCheck, func];
+//  };
 const OnChildAppended = (func: OnChildAppendedFunc): OnChildAppended => {
 	return [PointcutBasisDefType.OnChildAppended, func];
 };
@@ -155,7 +154,8 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 	],
 	[TokenId.GStringInterpolation]: [
 		// start with ${, accept any token
-		ChildAcceptableCheck(GStringInterpolationPointcuts.childAcceptableCheck),
+		// TODO Tokens.when(GStringInterpolationPointcuts.startsWithLBrace).accept(),
+		Tokens.when(GStringInterpolationPointcuts.notStartsWithLBrace).accept(TokenId.Dot, TokenId.Identifier),
 		EndWith(TokenId.GStringInterpolationLBraceStartMark),
 		DisableElevateTrailingDetachable,
 		OnNodeClosed(GStringInterpolationPointcuts.finalize)

@@ -3,22 +3,28 @@ import {TokenId, TokenType} from '../../tokens';
 import {AstRecognition} from './recognizer';
 import {NodePreservableCheckFunc, RecognizeBasisDef, RecognizeBasisType} from './types';
 
-export const NodePreservation = {
-	buildPreserveWhenParentIsOneOfTokenIds: (tokenId: TokenId, ...tokenIds: Array<TokenId>) => {
+export class NodePreservation {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
+	}
+
+	static buildPreserveWhenParentIsOneOfTokenIds(tokenId: TokenId, ...tokenIds: Array<TokenId>) {
 		return (recognition: AstRecognition): boolean => {
 			const {astRecognizer} = recognition;
 			const parentTokenId = astRecognizer.getCurrentParent().tokenId;
 			return tokenId === parentTokenId || tokenIds.includes(parentTokenId);
 		};
-	},
-	buildPreserveWhenParentIsOneOfTokenType: (tokenType: TokenType) => {
+	}
+
+	static buildPreserveWhenParentIsOneOfTokenType(tokenType: TokenType) {
 		return (recognition: AstRecognition): boolean => {
 			const {astRecognizer} = recognition;
 			const parentTokenType = astRecognizer.getCurrentParent().tokenType;
 			return tokenType === parentTokenType;
 		};
 	}
-} as const;
+}
 
 export const buildPreserveFuncs = (items?: RecognizeBasisDef): Optional<Array<NodePreservableCheckFunc>> => {
 	if (items == null || items.length === 0) {

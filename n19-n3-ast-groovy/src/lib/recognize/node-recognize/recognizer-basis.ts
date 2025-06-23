@@ -527,16 +527,19 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	// so it always appears in the right place.
 	[TokenId.GStringInterpolationStartMark]: [ // $
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
+		// rehydrate to chars when parent is string literal
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// rehydrate to chars when
 		// 1. parent is dollar slashy gstring literal,
 		// 2. previous is slashy escape,
 		// 3. or previous is dollar escape and no gstring interpolation before me
 		RehydrateToken.when(DSGLRecognizeUtils.shouldIgnoreInterpolationStartMarkDSGL).to([TokenId.Chars, TokenType.Chars]),
+		RehydrateToken.whenParentTokenTypeIsNot(TokenType.StringLiteral).use(NSLRecognizeUtils.rehydrateGStringInterpolationStartMarkNSL),
 		DeclareAsParent([TokenId.GStringInterpolation, TokenType.StringLiteral])
 	],
 	[TokenId.GStringInterpolationLBraceStartMark]: [ // ${
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
-		// rehydrate to chars when parent is dollar slashy gstring literal
+		// rehydrate to chars when parent is string literal
 		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.StringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// rehydrate to chars when
 		// 1. parent is dollar slashy gstring literal,

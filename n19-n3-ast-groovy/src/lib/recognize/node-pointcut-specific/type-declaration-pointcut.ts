@@ -1,12 +1,7 @@
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
 import {AstRecognizer} from '../ast-recognizer';
-import {
-	NodeAttributeOperator,
-	NodeAttributeOperatorHelper,
-	OneOfOnChildAppendedFunc,
-	OnNodeClosedFunc
-} from '../node-attribute';
+import {NodeAttributeOperator, NodeAttributeOperatorHelper} from '../node-attribute';
 import {NodePointcuts} from '../node-pointcut';
 
 export class TypeDeclarationPointcuts {
@@ -16,22 +11,25 @@ export class TypeDeclarationPointcuts {
 	}
 
 	// noinspection JSUnusedGlobalSymbols
-	static readonly isAccessModifier = (tokenId: TokenId): boolean => {
+	static isAccessModifier(tokenId: TokenId): boolean {
 		return [TokenId.PUBLIC, TokenId.PROTECTED, TokenId.PRIVATE].includes(tokenId);
-	};
+	}
+
 	// noinspection JSUnusedGlobalSymbols
-	static readonly isClassKeyword = (tokenId: TokenId): boolean => {
+	static isClassKeyword(tokenId: TokenId): boolean {
 		return [
 			TokenId.SEALED, TokenId.NON_SEALED, TokenId.PERMITS,
 			TokenId.CLASS, TokenId.INTERFACE, TokenId.AT_INTERFACE, TokenId.ENUM, TokenId.RECORD, TokenId.TRAIT
 		].includes(tokenId);
-	};
-	static readonly isMethodKeyword = (tokenId: TokenId): boolean => {
+	}
+
+	static isMethodKeyword(tokenId: TokenId): boolean {
 		return [TokenId.NATIVE, TokenId.DEFAULT, TokenId.VOID].includes(tokenId);
-	};
-	static readonly isFieldKeyword = (tokenId: TokenId): boolean => {
+	}
+
+	static isFieldKeyword(tokenId: TokenId): boolean {
 		return [TokenId.TRANSIENT, TokenId.VOLATILE].includes(tokenId);
-	};
+	}
 
 	// standard behaviors of type declaration, node must be one of 6 type declarations.
 	// TODO 6 type keywords should be added into acceptable token ids?
@@ -60,8 +58,8 @@ export class CsscmfDeclarationPointcuts {
 	 * check the given child node can be identified as type declaration or not,
 	 * replace token nature when it is.
 	 */
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly onClassKeywordAppended: OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static onClassKeywordAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
 		const statementNode = lastChildNode.parent;
 		// need to check which keyword
 		switch (lastChildNode.tokenId) {
@@ -105,13 +103,14 @@ export class CsscmfDeclarationPointcuts {
 		NodePointcuts.initialize(statementNode);
 
 		return true;
-	};
+	}
+
 	/**
 	 * check the given child node can be identified as method declaration or not,
 	 * replace token nature when it is.
 	 */
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly onMethodKeywordAppended: OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static onMethodKeywordAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
 		if (!TypeDeclarationPointcuts.isMethodKeyword(lastChildNode.tokenId)) {
 			return false;
 		}
@@ -120,13 +119,14 @@ export class CsscmfDeclarationPointcuts {
 		statementNode.replaceTokenNature(TokenId.MethodDeclaration, TokenType.MethodDeclaration);
 		NodePointcuts.initialize(statementNode);
 		return true;
-	};
+	}
+
 	/**
 	 * check the given child node can be identified as field declaration or not,
 	 * replace token nature when it is.
 	 */
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly onFieldKeywordAppended: OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static onFieldKeywordAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
 		if (!TypeDeclarationPointcuts.isFieldKeyword(lastChildNode.tokenId)) {
 			return false;
 		}
@@ -135,12 +135,13 @@ export class CsscmfDeclarationPointcuts {
 		statementNode.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
 		NodePointcuts.initialize(statementNode);
 		return true;
-	};
+	}
+
 	/**
 	 * check the given child node can be identified as identifier or not,
 	 * increase the identifier count if it is
 	 */
-	static onIdentifierAppended: OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+	static onIdentifierAppended(lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean {
 		if (lastChildNode.tokenId !== TokenId.Identifier) {
 			return false;
 		}
@@ -155,7 +156,8 @@ export class CsscmfDeclarationPointcuts {
 			astRecognizer.chopOffFromOldParentAndMoveToCurrentParent([lastChildNode]);
 		}
 		return true;
-	};
+	}
+
 	/**
 	 * check the given child node can be identified as a code block or not.
 	 * if so, when the existing previous siblings
@@ -167,8 +169,8 @@ export class CsscmfDeclarationPointcuts {
 	 * it already was identified before the code block appended.
 	 * e.g., left parenthesis appended, comma appended, equal appended, etc.
 	 */
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly onCodeBlockAppended: OneOfOnChildAppendedFunc = (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static onCodeBlockAppended(mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
 		if (mightBeChildNode.tokenId !== TokenId.CodeBlock) {
 			return false;
 		}
@@ -216,7 +218,8 @@ export class CsscmfDeclarationPointcuts {
 		NodePointcuts.initialize(mightBeChildNode);
 
 		return true;
-	};
+	}
+
 	/**
 	 * check the given child node can be identified as a paren block or not,
 	 * if so,
@@ -232,8 +235,8 @@ export class CsscmfDeclarationPointcuts {
 	 * Therefore, if it is determined that they are in other positions, they are simply considered as an incorrect method definitions,
 	 * and the rationality of the names will no longer be checked.
 	 */
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly onParenBlockAppended: OneOfOnChildAppendedFunc = (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static onParenBlockAppended(mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
 		if (mightBeChildNode.tokenId !== TokenId.LParen) {
 			return false;
 		}
@@ -285,14 +288,15 @@ export class CsscmfDeclarationPointcuts {
 		NodePointcuts.initialize(statementNode);
 
 		return true;
-	};
+	}
+
 	/**
 	 * check the given child node can be identified as left parenthesis or not,
 	 * if so, find identifier in previous siblings. if not exists, it is identified as method declaration.
 	 * if identifier is same as class name, it is identified as constructor declaration, otherwise as method declaration.
 	 */
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly onEqualAppended: OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static onEqualAppended(lastChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean {
 		if (lastChildNode.tokenId !== TokenId.Equal) {
 			return false;
 		}
@@ -301,14 +305,15 @@ export class CsscmfDeclarationPointcuts {
 		statementNode.replaceTokenNature(TokenId.FieldDeclaration, TokenType.FieldDeclaration);
 		NodePointcuts.initialize(statementNode);
 		return true;
-	};
+	}
+
 	/**
 	 * comma appended, and currently the exact type of declaration is still not determined.
 	 * check the previous sibling nodes, if there is keyword def, or primitive types,
 	 * then it will be identified as field.
 	 * otherwise simply close current parent, and move the comma node to my parent
 	 */
-	static readonly onCommaAppended: OneOfOnChildAppendedFunc = (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
+	static onCommaAppended(lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean {
 		if (lastChildNode.tokenId !== TokenId.Comma) {
 			return false;
 		}
@@ -325,7 +330,8 @@ export class CsscmfDeclarationPointcuts {
 			astRecognizer.closeCurrentParent();
 		}
 		return true;
-	};
+	}
+
 	/**
 	 * No modifier can determine the exact type of statement.
 	 * Therefore, it is necessary to make judgments based on different scenarios.
@@ -340,6 +346,7 @@ export class CsscmfDeclarationPointcuts {
 		CsscmfDeclarationPointcuts.onEqualAppended,
 		CsscmfDeclarationPointcuts.onCommaAppended
 	);
+
 	/**
 	 * The node is not recognized as any of type, static block, constructor, method, or field declaration.
 	 * This means that no child nodes that can be used for identification have appeared.
@@ -355,8 +362,8 @@ export class CsscmfDeclarationPointcuts {
 	 * 4. has generic type declaration -> cannot be field,
 	 * 5. parent is not class body -> cannot be method or field.
 	 */
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	static readonly onNodeClosed: OnNodeClosedFunc = (node: GroovyAstNode, _astRecognizer: AstRecognizer): void => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	static onNodeClosed(node: GroovyAstNode, _astRecognizer: AstRecognizer): void {
 		const possibilities = {class: true, method: true, field: true};
 		node.children.forEach(node => {
 			const {tokenId, tokenType} = node;
@@ -404,5 +411,5 @@ export class CsscmfDeclarationPointcuts {
 				break;
 			}
 		}
-	};
+	}
 }

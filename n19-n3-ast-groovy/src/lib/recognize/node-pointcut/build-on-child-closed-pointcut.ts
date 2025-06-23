@@ -11,7 +11,7 @@ export class OnChildClosedPointcutBuilder {
 		// avoid extend
 	}
 
-	static buildCloseOnChildWithTokenIdClosed = (defs: CloseOnChildWithTokenIdClosed): OneOfOnChildClosedFunc => {
+	static buildCloseOnChildWithTokenIdClosed(defs: CloseOnChildWithTokenIdClosed): OneOfOnChildClosedFunc {
 		const [, ...tokenIds] = defs;
 		return (lastChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			if (tokenIds.includes(lastChildNode.tokenId)) {
@@ -20,7 +20,7 @@ export class OnChildClosedPointcutBuilder {
 			}
 			return false;
 		};
-	};
+	}
 }
 
 export const buildOnChildClosedPointcut = (tokenId: TokenId, items?: PointcutBasisDef): Optional<OnChildClosedFunc> => {

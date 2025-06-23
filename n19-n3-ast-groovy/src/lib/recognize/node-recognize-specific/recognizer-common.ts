@@ -18,7 +18,7 @@ export class RecognizeCommonUtils {
 	 * That is to say, if there is such unignorable node,
 	 * then nodes between such node and current node must be newline, whitespaces, tabs or comments.
 	 */
-	static getNearestPreviousUnignorableNode = (recognition: AstRecognition): [GroovyAstNode, number] | [undefined, -1] => {
+	static getNearestPreviousUnignorableNode(recognition: AstRecognition): [GroovyAstNode, number] | [undefined, -1] {
 		const {astRecognizer} = recognition;
 		const currentParent = astRecognizer.getCurrentParent();
 		const children = currentParent.children;
@@ -35,15 +35,15 @@ export class RecognizeCommonUtils {
 
 		// no previous sibling or all siblings are newline, whitespaces, tabs or comments
 		return [(void 0), -1];
-	};
+	}
 
 	/**
 	 * nodes between the dot before me and me, includes newline, whitespaces, tabs, sl/ml comments only
 	 */
-	static isAfterDot = (recognition: AstRecognition): boolean => {
+	static isAfterDot(recognition: AstRecognition): boolean {
 		const [node, nodeIndex] = RecognizeCommonUtils.getNearestPreviousUnignorableNode(recognition);
 		return nodeIndex !== -1 && node.tokenId === TokenId.Dot;
-	};
+	}
 
 	/**
 	 * only works when current node is {@link TokenId.Divide}, {@link Token.DivideAssign} or {@link TokenId.DollarSlashyGStringQuotationEndMark}.
@@ -62,7 +62,7 @@ export class RecognizeCommonUtils {
 	 * 2. unignorable node is a dot, such as this./x/ is to visit the x of this,
 	 * 3. unignorable node is any operator, such as this * /x/ is this multiple a slashy gstring literal
 	 */
-	static isSlashyGStringQuotationMark = (recognition: AstRecognition): boolean => {
+	static isSlashyGStringQuotationMark(recognition: AstRecognition): boolean {
 		const {node, astRecognizer} = recognition;
 
 		const currentParent = astRecognizer.getCurrentParent();
@@ -92,20 +92,20 @@ export class RecognizeCommonUtils {
 		}
 
 		return false;
-	};
+	}
 
 	/**
 	 * 8 primitive types, keyword, 2 boolean literal, in, instanceof
 	 */
-	static isWord = (tokenId: TokenId, tokenType: TokenType): boolean => {
+	static isWord(tokenId: TokenId, tokenType: TokenType): boolean {
 		return [TokenType.PrimitiveType, TokenType.Keyword, TokenType.BooleanLiteral].includes(tokenType)
 			|| [TokenId.IN, TokenId.INSTANCEOF].includes(tokenId);
-	};
+	}
 
 	/**
 	 * identifier, or {@link RecognizeCommonUtils.isWord}
 	 */
-	static isWordAndIdentifiable = (tokenId: TokenId, tokenType: TokenType): boolean => {
+	static isWordAndIdentifiable(tokenId: TokenId, tokenType: TokenType): boolean {
 		return TokenId.Identifier === tokenId || RecognizeCommonUtils.isWord(tokenId, tokenType);
-	};
+	}
 }

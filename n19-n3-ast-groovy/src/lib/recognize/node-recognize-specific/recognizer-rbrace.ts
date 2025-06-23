@@ -1,5 +1,5 @@
 import {TokenId} from '../../tokens';
-import {AstRecognition, DoRehydrateWhen} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 
 export class RBraceRecognizeUtils {
 	// noinspection JSUnusedLocalSymbols
@@ -7,9 +7,9 @@ export class RBraceRecognizeUtils {
 		// avoid extend
 	}
 
-	static parentIsGStringInterpolationAndStartsWithLBrace: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
+	static parentIsGStringInterpolationAndStartsWithLBrace(recognition: AstRecognition): boolean {
 		const currentParent = recognition.astRecognizer.getCurrentParent();
 		return currentParent.tokenId === TokenId.GStringInterpolation
 			&& currentParent.children[0]?.tokenId === TokenId.GStringInterpolationLBraceStartMark;
-	};
+	}
 }

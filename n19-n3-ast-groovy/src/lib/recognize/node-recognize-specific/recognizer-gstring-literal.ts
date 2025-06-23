@@ -1,7 +1,7 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 import {SLRecognizeUtils} from './recognizer-string-literal';
 import {retokenizeWith2DoubleQuotesHeadedNSL, retokenizeWithDollarHeadedGL} from './retokenize';
 
@@ -20,17 +20,17 @@ export class GLRecognizeUtils {
 		// avoid extend
 	}
 
-	static isSingleLine: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
+	static isSingleLine(recognition: AstRecognition): boolean {
 		const currentParent = recognition.astRecognizer.getCurrentParent();
 		return currentParent.tokenId === TokenId.GStringLiteral
 			&& currentParent.children[0]?.tokenId === TokenId.GStringQuotationMark;
-	};
+	}
 
-	static isMultipleLines: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
+	static isMultipleLines(recognition: AstRecognition): boolean {
 		const currentParent = recognition.astRecognizer.getCurrentParent();
 		return currentParent.tokenId === TokenId.GStringLiteral
 			&& currentParent.children[0]?.tokenId === TokenId.GStringQuotationMarkML;
-	};
+	}
 
 	/**
 	 * 1. split to one `"` and two `""`, and check the next token,
@@ -45,7 +45,7 @@ export class GLRecognizeUtils {
 	 *
 	 * @done 20250612
 	 */
-	static rehydrateGStringQuotationMarkML: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rehydrateGStringQuotationMarkML(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 		// replace node with \
 		node.replaceTokenNatureAndText(TokenId.GStringQuotationMark, TokenType.Mark, '"');
@@ -58,14 +58,14 @@ export class GLRecognizeUtils {
 		// replace the original nodes
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * split $/ to $ and /,
 	 *
 	 * @done 20250612
 	 */
-	static splitDollarSlashyGStringQuotationStartMarkGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringQuotationStartMarkGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes} = recognition;
 
 		// replace node with $
@@ -77,14 +77,14 @@ export class GLRecognizeUtils {
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
 		}));
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * split /$ to / and $,
 	 *
 	 * @done 20250612
 	 */
-	static splitDollarSlashyGStringQuotationEndMarkGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringQuotationEndMarkGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		// replace node with $
@@ -98,21 +98,21 @@ export class GLRecognizeUtils {
 		// replace the original nodes
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * split \/ to \ and /
 	 *
 	 * @done 20250612
 	 */
-	static splitSlashyGStringSlashEscapeGL: NodeRehydrateFunc = SLRecognizeUtils.splitSlashyGStringSlashEscapeSL;
+	static readonly splitSlashyGStringSlashEscapeGL = SLRecognizeUtils.splitSlashyGStringSlashEscapeSL;
 
 	/**
 	 * split $$ to $ and $,
 	 *
 	 * @done 20250612
 	 */
-	static splitDollarSlashyGStringDollarEscapeGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringDollarEscapeGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		// replace node with $
@@ -126,5 +126,5 @@ export class GLRecognizeUtils {
 		// replace the original nodes
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 }

@@ -2,7 +2,7 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {AstChars, AstOperators} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 
 export class ScriptCommandRecognizeUtils {
 	// noinspection JSUnusedLocalSymbols
@@ -18,7 +18,7 @@ export class ScriptCommandRecognizeUtils {
 	 * 4. if next is {@link TokenId.INSTANCEOF}, create {@link TokenId.NOT_INSTANCEOF} token, replace the next {@link TokenId.INSTANCEOF},<br>
 	 * 5. create {@link TokenId.Not} token, insert after given token.<br>
 	 */
-	static rehydrateScriptCommandStartMarkTo2Parts: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rehydrateScriptCommandStartMarkTo2Parts(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, astRecognizer} = recognition;
 
 		const {startOffset, startLine, startColumn} = node;
@@ -78,5 +78,5 @@ export class ScriptCommandRecognizeUtils {
 			nodes.splice(nodeIndex + 1, 0, node2);
 		}
 		return nodeIndex + 1;
-	};
+	}
 }

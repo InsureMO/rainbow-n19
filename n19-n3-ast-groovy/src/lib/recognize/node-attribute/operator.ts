@@ -15,6 +15,11 @@ import {
 } from './types';
 
 export class NodeAttributeOperatorHelper {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
+	}
+
 	static createAttrVisitor<V>(key: GroovyAstNodeAttributeNames): RecognizerExtraAttribute<V> {
 		return {
 			get: (node: GroovyAstNode) => node.getAttr<V>(key),

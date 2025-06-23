@@ -2,7 +2,7 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {AstKeywords} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 
 export class ThreadsafeRecognizeUtils {
 	// noinspection JSUnusedLocalSymbols
@@ -13,7 +13,7 @@ export class ThreadsafeRecognizeUtils {
 	/**
 	 * works only after dot
 	 */
-	static splitTo2Parts: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitTo2Parts(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes} = recognition;
 		// replace node with @
 		node.replaceTokenNatureAndText(TokenId.At, TokenType.Separator, '@');
@@ -24,5 +24,5 @@ export class ThreadsafeRecognizeUtils {
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
 		}));
 		return nodeIndex;
-	};
+	}
 }

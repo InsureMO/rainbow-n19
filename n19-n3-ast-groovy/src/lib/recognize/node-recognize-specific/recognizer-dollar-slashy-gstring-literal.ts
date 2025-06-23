@@ -1,5 +1,5 @@
 import {TokenId} from '../../tokens';
-import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 import {NSLRecognizeUtils} from './recognizer-not-any-string-literal';
 import {retokenizeWithDivideHeadedDSGL, retokenizeWithDollarHeadedDSGL} from './retokenize';
 
@@ -23,21 +23,21 @@ export class DSGLRecognizeUtils {
 	 *
 	 * @done 20250612
 	 */
-	static splitBackslashHeadedDSGL = NSLRecognizeUtils.splitBackslashHeadedNSL;
+	static readonly splitBackslashHeadedDSGL = NSLRecognizeUtils.splitBackslashHeadedNSL;
 
 	/**
 	 * split \$ to \ and $, $ needs check the following node.
 	 *
 	 * @done 20250612
 	 */
-	static splitDollarEscapeDSGL: NodeRehydrateFunc = DSGLRecognizeUtils.splitBackslashHeadedDSGL(retokenizeWithDollarHeadedDSGL);
+	static readonly splitDollarEscapeDSGL = DSGLRecognizeUtils.splitBackslashHeadedDSGL(retokenizeWithDollarHeadedDSGL);
 
 	/**
 	 * split \/ to \ and /, / needs check the following node.
 	 *
 	 * @done 20250617
 	 */
-	static splitSlashyGStringSlashEscapeDSGL: NodeRehydrateFunc = DSGLRecognizeUtils.splitBackslashHeadedDSGL(retokenizeWithDivideHeadedDSGL);
+	static readonly splitSlashyGStringSlashEscapeDSGL = DSGLRecognizeUtils.splitBackslashHeadedDSGL(retokenizeWithDivideHeadedDSGL);
 
 	/**
 	 * returns true when
@@ -45,7 +45,7 @@ export class DSGLRecognizeUtils {
 	 * 2. previous is slashy escape,
 	 * 3. or previous is dollar escape and no gstring interpolation before me
 	 */
-	static shouldIgnoreInterpolationStartMarkDSGL: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
+	static shouldIgnoreInterpolationStartMarkDSGL(recognition: AstRecognition): boolean {
 		const {astRecognizer} = recognition;
 
 		const currentParent = astRecognizer.getCurrentParent();
@@ -69,5 +69,5 @@ export class DSGLRecognizeUtils {
 		} else {
 			return true;
 		}
-	};
+	}
 }

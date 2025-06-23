@@ -1,6 +1,6 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 import {retokenizeIdentifiableTextWith$AGL} from './retokenize';
 
 /**
@@ -25,7 +25,7 @@ export class AGLRecognizeUtils {
 	 *
 	 * @done 20250617
 	 */
-	static rehydrateIdentifierAGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rehydrateIdentifierAGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		const text = node.text;
@@ -49,5 +49,5 @@ export class AGLRecognizeUtils {
 		});
 		nodes.splice(nodeIndex, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 }

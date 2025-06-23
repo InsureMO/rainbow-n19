@@ -33,7 +33,7 @@ export class NSLRecognizeUtils {
 	 *
 	 * @done 20250611
 	 */
-	static splitBackslashHeadedNSL = (retokenize: Retokenize): NodeRehydrateFunc => {
+	static splitBackslashHeadedNSL(retokenize: Retokenize): NodeRehydrateFunc {
 		return (recognition: AstRecognition): Optional<number> => {
 			const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 			// replace node with \
@@ -48,14 +48,14 @@ export class NSLRecognizeUtils {
 			nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 			return nodeIndex;
 		};
-	};
+	}
 
 	/**
 	 * split \b to \ and b, b needs check the following node.
 	 *
 	 * @done 20250611
 	 */
-	static splitBackspaceEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
+	static readonly splitBackspaceEscapeNSL = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 		return retokenizeWithIdentifiableTextHeadedNSL('b', recognition);
 	});
 
@@ -64,7 +64,7 @@ export class NSLRecognizeUtils {
 	 *
 	 * @done 20250611
 	 */
-	static splitFormFeedEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
+	static readonly splitFormFeedEscapeNSL = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 		return retokenizeWithIdentifiableTextHeadedNSL('f', recognition);
 	});
 
@@ -73,7 +73,7 @@ export class NSLRecognizeUtils {
 	 *
 	 * @done 20250611
 	 */
-	static splitNewlineEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
+	static readonly splitNewlineEscapeNSL = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 		return retokenizeWithIdentifiableTextHeadedNSL('n', recognition);
 	});
 
@@ -82,7 +82,7 @@ export class NSLRecognizeUtils {
 	 *
 	 * @done 20250611
 	 */
-	static splitCarriageReturnEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
+	static readonly splitCarriageReturnEscapeNSL = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 		return retokenizeWithIdentifiableTextHeadedNSL('r', recognition);
 	});
 
@@ -91,7 +91,7 @@ export class NSLRecognizeUtils {
 	 *
 	 * @done 20250611
 	 */
-	static splitTabulationEscapeNSL: NodeRehydrateFunc = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
+	static readonly splitTabulationEscapeNSL = NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 		return retokenizeWithIdentifiableTextHeadedNSL('t', recognition);
 	});
 
@@ -121,33 +121,33 @@ export class NSLRecognizeUtils {
 	 *
 	 * @done 20250612
 	 */
-	static splitOctalEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitOctalEscapeNSL(recognition: AstRecognition): Optional<number> {
 		const {node} = recognition;
 		const remainText = node.text.slice(1);
 		return NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 			return retokenizeWithIntegralTextHeadedNSL(remainText, recognition);
 		})(recognition);
-	};
+	}
 
 	/**
 	 * split \u.... to \ and u...., u.... needs check the following node. u.... is u and numbers from 0-9a-fA-F with a length of 4 digits.
 	 *
 	 * @done 20250612
 	 */
-	static splitUnicodeEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitUnicodeEscapeNSL(recognition: AstRecognition): Optional<number> {
 		const {node} = recognition;
 		const remainText = node.text.slice(1);
 		return NSLRecognizeUtils.splitBackslashHeadedNSL((recognition) => {
 			return retokenizeWithIdentifiableTextHeadedNSL(remainText, recognition);
 		})(recognition);
-	};
+	}
 
 	/**
 	 * split /$ to / and $, needs to check the / is start of slashy gstring literal or just a divide, and $ needs to seek more following nodes
 	 *
 	 * @done 20250612
 	 */
-	static splitDollarSlashyGStringQuotationEndMarkNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitDollarSlashyGStringQuotationEndMarkNSL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		const isSlashyGStringQuotationMark = RecognizeCommonUtils.isSlashyGStringQuotationMark(recognition);
@@ -173,14 +173,14 @@ export class NSLRecognizeUtils {
 			nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 			return nodeIndex;
 		}
-	};
+	}
 
 	/**
 	 * split \/ to \ and /, / after \ and not in any string literal, always treated as slashy gstring quotation mark
 	 *
 	 * @done 20250611
 	 */
-	static splitSlashyGStringSlashEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitSlashyGStringSlashEscapeNSL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes} = recognition;
 		// replace node with \
 		node.replaceTokenNatureAndText(TokenId.UndeterminedChars, TokenType.UndeterminedChars, '\\');
@@ -191,14 +191,14 @@ export class NSLRecognizeUtils {
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
 		}));
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * seek more following nodes to combine this $$, or it is an identifier
 	 *
 	 * @done 20250612
 	 */
-	static rehydrateDollarSlashyGStringDollarEscapeNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rehydrateDollarSlashyGStringDollarEscapeNSL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 		const [newNodes, consumedNodeCount] = retokenizeWithIdentifiableTextHeadedNSL('$$', {
 			node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1, nodes,
@@ -211,14 +211,34 @@ export class NSLRecognizeUtils {
 			nodes.splice(nodeIndex, 1 + consumedNodeCount, ...newNodes);
 		}
 		return nodeIndex;
-	};
+	}
+
+	/**
+	 * seek more following nodes to combine this $, or it is an identifier
+	 *
+	 * @done 20250623
+	 */
+	static rehydrateGStringInterpolationStartMarkNSL(recognition: AstRecognition): Optional<number> {
+		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
+		const [newNodes, consumedNodeCount] = retokenizeWithIdentifiableTextHeadedNSL('$', {
+			node: nodes[nodeIndex + 1], nodeIndex: nodeIndex + 1, nodes,
+			compilationUnit, astRecognizer,
+			startOffset: node.startOffset, startLine: node.startLine, startColumn: node.startColumn
+		});
+		if (consumedNodeCount === 0) {
+			node.replaceTokenNature(TokenId.Identifier, TokenType.Identifier);
+		} else {
+			nodes.splice(nodeIndex, 1 + consumedNodeCount, ...newNodes);
+		}
+		return nodeIndex;
+	}
 
 	/**
 	 * split to $ and {,
 	 *
 	 * @done 20250612
 	 */
-	static splitGStringInterpolationLBraceStartMarkNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitGStringInterpolationLBraceStartMarkNSL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes} = recognition;
 		// replace node with \
 		node.replaceTokenNatureAndText(TokenId.Identifier, TokenType.Identifier, '$');
@@ -229,5 +249,5 @@ export class NSLRecognizeUtils {
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
 		}));
 		return nodeIndex;
-	};
+	}
 }

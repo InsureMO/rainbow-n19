@@ -1,7 +1,7 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 import {retokenizeWith2SingleQuotesHeadedNSL} from './retokenize';
 
 /**
@@ -19,17 +19,17 @@ export class SLRecognizeUtils {
 		// avoid extend
 	}
 
-	static isSingleLine: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
+	static isSingleLine(recognition: AstRecognition): boolean {
 		const currentParent = recognition.astRecognizer.getCurrentParent();
 		return currentParent.tokenId === TokenId.StringLiteral
 			&& currentParent.children[0]?.tokenId === TokenId.StringQuotationMark;
-	};
+	}
 
-	static isMultipleLines: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
+	static isMultipleLines(recognition: AstRecognition): boolean {
 		const currentParent = recognition.astRecognizer.getCurrentParent();
 		return currentParent.tokenId === TokenId.StringLiteral
 			&& currentParent.children[0]?.tokenId === TokenId.StringQuotationMarkML;
-	};
+	}
 
 	/**
 	 * 1. split to one `'` and two `''`, and check the next token,
@@ -44,7 +44,7 @@ export class SLRecognizeUtils {
 	 *
 	 * @done 20250612
 	 */
-	static splitStringQuotationMarkML: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitStringQuotationMarkML(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 		// replace node with \
 		node.replaceTokenNatureAndText(TokenId.StringQuotationMark, TokenType.Mark, '\'');
@@ -57,14 +57,14 @@ export class SLRecognizeUtils {
 		// replace the original nodes
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * split \/ to \ and /
 	 *
 	 * @done 20250612
 	 */
-	static splitSlashyGStringSlashEscapeSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitSlashyGStringSlashEscapeSL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes} = recognition;
 
 		// replace node with $
@@ -76,5 +76,5 @@ export class SLRecognizeUtils {
 			startOffset: node.startOffset + 1, startLine: node.startLine, startColumn: node.startColumn + 1
 		}));
 		return nodeIndex;
-	};
+	}
 }

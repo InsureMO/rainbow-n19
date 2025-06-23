@@ -1,7 +1,7 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 import {RecognizeCommonUtils} from './recognizer-common';
 import {retokenizeWithAssignHeadedNSL} from './retokenize';
 
@@ -21,7 +21,7 @@ export class DivideAssignRecognizeUtils {
 	 *
 	 * @done 20250613
 	 */
-	static splitSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitSGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		// replace node with /
@@ -35,7 +35,7 @@ export class DivideAssignRecognizeUtils {
 		// replace the consumed nodes and insert new node
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * split to / and =
@@ -44,7 +44,7 @@ export class DivideAssignRecognizeUtils {
 	 *
 	 * @done 20250616
 	 */
-	static splitNSL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitNSL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes} = recognition;
 
 		const isSlashyGStringQuotationMark = RecognizeCommonUtils.isSlashyGStringQuotationMark(recognition);
@@ -59,5 +59,5 @@ export class DivideAssignRecognizeUtils {
 		} else {
 			return (void 0);
 		}
-	};
+	}
 }

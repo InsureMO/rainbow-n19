@@ -21,21 +21,23 @@ export class ChildAcceptableCheckPointcutBuilder {
 		// avoid extend
 	}
 
-	static buildAcceptableTokenIds = (defs: AcceptableTokenIds): OneOfChildAcceptableCheckFunc => {
+	static buildAcceptableTokenIds(defs: AcceptableTokenIds): OneOfChildAcceptableCheckFunc {
 		const [, ...tokenIds] = defs;
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 			return tokenIds.includes(mightBeChildNode.tokenId);
 		};
-	};
-	static buildAcceptableTokenTypes = (defs: AcceptableTokenTypes): OneOfChildAcceptableCheckFunc => {
+	}
+
+	static buildAcceptableTokenTypes(defs: AcceptableTokenTypes): OneOfChildAcceptableCheckFunc {
 		const [, ...tokenTypes] = defs;
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 			return tokenTypes.includes(mightBeChildNode.tokenType);
 		};
-	};
-	static buildAcceptedWhen = (defs: AcceptedWhen): OneOfChildAcceptableCheckFunc => {
+	}
+
+	static buildAcceptedWhen(defs: AcceptedWhen): OneOfChildAcceptableCheckFunc {
 		const [, func, ...tokenIds] = defs;
 		return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			if (func(mightBeChildNode, astRecognizer)) {
@@ -43,15 +45,17 @@ export class ChildAcceptableCheckPointcutBuilder {
 			}
 			return false;
 		};
-	};
-	static buildUnacceptableTokenIds = (defs: UnacceptableTokenIds): OneOfChildAcceptableCheckFunc => {
+	}
+
+	static buildUnacceptableTokenIds(defs: UnacceptableTokenIds): OneOfChildAcceptableCheckFunc {
 		const [, ...tokenIds] = defs;
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 			return tokenIds.includes(mightBeChildNode.tokenId);
 		};
-	};
-	static buildUnacceptedWhen = (defs: UnacceptedWhen): OneOfChildAcceptableCheckFunc => {
+	}
+
+	static buildUnacceptedWhen(defs: UnacceptedWhen): OneOfChildAcceptableCheckFunc {
 		const [, func, ...tokenIds] = defs;
 		return (mightBeChildNode: GroovyAstNode, astRecognizer: AstRecognizer): boolean => {
 			if (func(mightBeChildNode, astRecognizer)) {
@@ -59,8 +63,9 @@ export class ChildAcceptableCheckPointcutBuilder {
 			}
 			return false;
 		};
-	};
-	static buildReviseTokenTo = (defs: ReviseTokenTo): OneOfChildAcceptableCheckFunc => {
+	}
+
+	static buildReviseTokenTo(defs: ReviseTokenTo): OneOfChildAcceptableCheckFunc {
 		const [, map] = defs;
 		const tokenIds: Array<TokenId> = [
 			...Object.keys(map).map(tokenIdInStr => Number(tokenIdInStr)),
@@ -76,14 +81,15 @@ export class ChildAcceptableCheckPointcutBuilder {
 		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 			return tokenIds.includes(mightBeChildNode.tokenId);
 		};
-	};
-	static buildEndWithAnyOfTokenIdsAppended = (defs: EndWithAnyOfTokenIdsAppended): OneOfChildAcceptableCheckFunc => {
+	}
+
+	static buildEndWithAnyOfTokenIdsAppended(defs: EndWithAnyOfTokenIdsAppended): OneOfChildAcceptableCheckFunc {
 		const [, ...tokenIds] = defs;
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		return (mightBeChildNode: GroovyAstNode, _astRecognizer: AstRecognizer): boolean => {
 			return tokenIds.includes(mightBeChildNode.tokenId);
 		};
-	};
+	}
 }
 
 export const buildChildAcceptableCheckPointcut = (tokenId: TokenId, items?: PointcutBasisDef): Optional<ChildAcceptableCheckFunc> => {

@@ -2,7 +2,7 @@ import {Optional} from '@rainbow-n19/n3-ast';
 import {AstChars, AstLiterals} from '../../captor';
 import {GroovyAstNode} from '../../node';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, DoRehydrateWhen, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 
 /**
  * NSL: When Parent Is Not Any String Literal,
@@ -22,7 +22,7 @@ export class ASLRecognizeUtils {
 	/**
 	 * for octal escape \..., rebuild it.
 	 */
-	static rebuildOctalEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rebuildOctalEscape(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, astRecognizer} = recognition;
 
 		const {startOffset, startLine, startColumn, text} = node;
@@ -44,12 +44,12 @@ export class ASLRecognizeUtils {
 		node.asParentOf(contentNode);
 		astRecognizer.closeCurrentParent();
 		return nodeIndex + 1;
-	};
+	}
 
 	/**
 	 * for \u...., rebuild it.
 	 */
-	static rebuildUnicodeEscape: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static rebuildUnicodeEscape(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, astRecognizer} = recognition;
 
 		const {startOffset, startLine, startColumn, text} = node;
@@ -71,7 +71,7 @@ export class ASLRecognizeUtils {
 		node.asParentOf(contentNode);
 		astRecognizer.closeCurrentParent();
 		return nodeIndex + 1;
-	};
+	}
 
 	/**
 	 * return true when,
@@ -81,7 +81,7 @@ export class ASLRecognizeUtils {
 	 *
 	 * ML: Multiple Lines
 	 */
-	static isBackslashAtLineEndAndIsML: DoRehydrateWhen = (recognition: AstRecognition): boolean => {
+	static isBackslashAtLineEndAndIsML(recognition: AstRecognition): boolean {
 		const {node, nodeIndex, nodes, astRecognizer} = recognition;
 
 		if (node.text !== AstChars.Backslash) {
@@ -112,5 +112,5 @@ export class ASLRecognizeUtils {
 		}
 
 		return true;
-	};
+	}
 }

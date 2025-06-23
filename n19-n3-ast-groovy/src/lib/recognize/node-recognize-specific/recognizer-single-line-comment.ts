@@ -1,6 +1,6 @@
 import {Optional} from '@rainbow-n19/n3-ast';
 import {TokenId, TokenType} from '../../tokens';
-import {AstRecognition, NodeRehydrateFunc} from '../node-recognize';
+import {AstRecognition} from '../node-recognize';
 import {retokenizeWithDivideHeadedDSGL, retokenizeWithDivideHeadedNSL} from './retokenize';
 
 export class SingleLineCommentRecognizeUtils {
@@ -20,7 +20,7 @@ export class SingleLineCommentRecognizeUtils {
 	 *
 	 * @done 20250611
 	 */
-	static splitStartMarkSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitStartMarkSGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		// replace node with /
@@ -34,7 +34,7 @@ export class SingleLineCommentRecognizeUtils {
 		// replace the consumed nodes and insert new node
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 
 	/**
 	 * split // to / and /.
@@ -46,7 +46,7 @@ export class SingleLineCommentRecognizeUtils {
 	 *
 	 * @done 20250617
 	 */
-	static splitStartMarkDSGL: NodeRehydrateFunc = (recognition: AstRecognition): Optional<number> => {
+	static splitStartMarkDSGL(recognition: AstRecognition): Optional<number> {
 		const {node, nodeIndex, nodes, compilationUnit, astRecognizer} = recognition;
 
 		// replace node with /
@@ -60,5 +60,5 @@ export class SingleLineCommentRecognizeUtils {
 		// replace the consumed nodes and insert new node
 		nodes.splice(nodeIndex + 1, consumedNodeCount, ...newNodes);
 		return nodeIndex;
-	};
+	}
 }

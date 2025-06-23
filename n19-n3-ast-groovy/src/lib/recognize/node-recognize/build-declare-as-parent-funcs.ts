@@ -9,15 +9,21 @@ import {
 	RecognizeBasisType
 } from './types';
 
-export const NodeAsParentDeclaring = {
-	buildDeclareAsParent: (parent: NodeAsParentDeclaration, ...ancestors: Array<NodeAsParentDeclaration>): NodeAsParentDeclareFunc => {
+export class NodeAsParentDeclaring {
+	// noinspection JSUnusedLocalSymbols
+	private constructor() {
+		// avoid extend
+	}
+
+	static buildDeclareAsParent(parent: NodeAsParentDeclaration, ...ancestors: Array<NodeAsParentDeclaration>): NodeAsParentDeclareFunc {
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		return (_recognition: AstRecognition): NodeAsAncestorsDeclaration => [parent, ...ancestors];
-	},
-	buildDeclareAsParentWhenAndOtherwise: (when: DoDeclareAsParentWhen, to: NodeAsParentDeclaration, otherwise: NodeAsParentDeclaration): NodeAsParentDeclareFunc => {
+	}
+
+	static buildDeclareAsParentWhenAndOtherwise(when: DoDeclareAsParentWhen, to: NodeAsParentDeclaration, otherwise: NodeAsParentDeclaration): NodeAsParentDeclareFunc {
 		return (recognition: AstRecognition): NodeAsAncestorsDeclaration => when(recognition) ? [to] : [otherwise];
 	}
-} as const;
+}
 
 export const buildDeclareAsParentFuncs = (items?: RecognizeBasisDef): Optional<Array<NodeAsParentDeclareFunc>> => {
 	if (items == null || items.length === 0) {
