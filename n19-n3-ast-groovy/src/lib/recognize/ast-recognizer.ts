@@ -10,6 +10,7 @@ import {AstRecognitionCommentKeywordOption, AstRecognizerOptions} from './types'
  * Stateful, and an instance needs to be created for each use.
  */
 export class AstRecognizer {
+	private static _timeLogs: boolean = false;
 	private readonly _scriptCommandEnabled: boolean;
 	private readonly _buildCommentKeywords: CommentKeywords;
 	private readonly _multipleLinesCommentHighlightEnabled: boolean;
@@ -35,6 +36,14 @@ export class AstRecognizer {
 		this._jdkVersion = jdkVersion ?? 17;
 		// recognizers
 		this._recognizerRepository = new NodeRecognizerRepository(restOptions);
+	}
+
+	static enableTimeLogs(): void {
+		AstRecognizer._timeLogs = true;
+	}
+
+	static disableTimeLogs(): void {
+		AstRecognizer._timeLogs = false;
 	}
 
 	// initializing
@@ -265,8 +274,7 @@ export class AstRecognizer {
 		}
 
 		const debugTimeLogs = {
-			/* TODO change to true to enable the dev logs */
-			enabled: false,
+			enabled: AstRecognizer._timeLogs,
 			startOfRound: [0, 0] as [number, number],
 			nodeIndexOfRound: 0,
 			total: 0,

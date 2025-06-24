@@ -55,7 +55,10 @@ const OnNodeClosed = (func: OnNodeClosedFunc): OnNodeClosed => {
 };
 
 // child acceptable check
-/** disable the default 5 base tokens as child */
+/**
+ * disable the default 5 base tokens as child.
+ * if there are no other rules having an impact, there is actually no difference whether it is disabled or not.
+ */
 const DisableBase5AsChild: DisableBase5AsChild = [PointcutBasisDefType.DisableBase5AsChild];
 /** accept or reject the given token ids */
 const TokenIds = {
@@ -149,6 +152,7 @@ export const PointcutBasis: Readonly<Partial<{ [key in TokenId]: PointcutBasisDe
 		EndWithStartMarkAgain
 	],
 	[TokenId.GStringInterpolation]: [
+		DisableBase5AsChild,
 		// start with ${, accept any token
 		Tokens.when(GStringInterpolationPointcuts.notStartsWithLBrace).accept(TokenId.Dot, TokenId.Identifier),
 		// GStringInterpolationRBraceEndMark is created only when parent is GStringInterpolation and starts with LBrace
