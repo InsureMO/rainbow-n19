@@ -6,10 +6,10 @@ import {
 	DivideRecognizeUtils,
 	DSGLRecognizeUtils,
 	GLRecognizeUtils,
+	GStringInterpolationRecognizeUtils,
 	MultipleLinesCommentRecognizeUtils,
 	NSLRecognizeUtils,
 	NumericBasePartRecognizer,
-	RBraceRecognizeUtils,
 	RecognizeCommonUtils,
 	ScriptCommandRecognizeUtils,
 	SGLRecognizeUtils,
@@ -164,7 +164,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	// separator
 	[TokenId.LBrace]: [DeclareAsParent([TokenId.CodeBlock, TokenType.LogicBlock])],
 	[TokenId.RBrace]: [
-		RehydrateToken.when(RBraceRecognizeUtils.parentIsGStringInterpolationAndStartsWithLBrace).to([TokenId.GStringInterpolationRBraceEndMark, TokenType.Mark])
+		RehydrateToken.when(GStringInterpolationRecognizeUtils.startsWithLBrace).to([TokenId.GStringInterpolationRBraceEndMark, TokenType.Mark])
 	],
 	[TokenId.LParen]: [DeclareAsParent([TokenId.ParenBlock, TokenType.LogicBlock])],
 	[TokenId.RParen]: 'NotRequired',
@@ -328,9 +328,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.StringQuotationMark]: [ // '
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// rehydrate to chars, when parent is standard/slashy/dollar slashy gstring literal
-		RehydrateToken
-			.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
-			.to([TokenId.Chars, TokenType.Chars]),
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// it is an incorrect syntax, should be a single quotation escape
 		RehydrateToken.when(SLRecognizeUtils.isMultipleLines).to([TokenId.Chars, TokenType.Chars]),
 		// only in sl string literal, since ml already rehydrated
@@ -340,9 +338,7 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 	[TokenId.StringQuotationMarkML]: [ // '''
 		DisableToCharsWhenParentTokenTypeIsStringLiteral,
 		// rehydrate to chars when parent is standard/slashy/dollar slashy gstring literal
-		RehydrateToken
-			.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral)
-			.to([TokenId.Chars, TokenType.Chars]),
+		RehydrateToken.whenParentTokenIdIsOneOf(TokenId.GStringLiteral, TokenId.SlashyGStringLiteral, TokenId.DollarSlashyGStringLiteral).to([TokenId.Chars, TokenType.Chars]),
 		// split when start mark of literal is SL mark
 		RehydrateToken.when(SLRecognizeUtils.isSingleLine).use(SLRecognizeUtils.splitStringQuotationMarkML),
 		// only in ml string literal since sl already rehydrated
@@ -618,7 +614,8 @@ export const RecognizerBasis: Readonly<Partial<{ [key in TokenId]: RecognizeBasi
 		PreserveWhenParentIsMethodDeclaration,
 		// should be default route when parent is switch declaration, body or other route declaration
 		// otherwise is default method in interface
-		DeclareAsParent.when(NodeRecognizeUtils.parentIsOneOfTokenIds(TokenId.SwitchDeclaration, TokenId.SwitchBody, TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration))
+		DeclareAsParent
+			.when(NodeRecognizeUtils.parentIsOneOfTokenIds(TokenId.SwitchDeclaration, TokenId.SwitchBody, TokenId.SwitchCaseDeclaration, TokenId.SwitchDefaultDeclaration))
 			.to([TokenId.SwitchDefaultDeclaration, TokenType.LogicBlockDeclaration])
 			.otherwise([TokenId.MethodDeclaration, TokenType.MethodDeclaration])
 	],
