@@ -9,3 +9,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/deprecated-modules/n19-n3.zip
+/deprecated-modules/n19-n3-ast.zip
+/deprecated-modules/n19-n3-ast-groovy.zip
+/deprecated-modules/n19-n6.zip
+/deprecated-modules/n19-n7.zip
